@@ -163,7 +163,7 @@
       ],
       "status": "to_fix",
       "drawing_correct": false,
-      "evidence": "Nested port helper exists. v3.6 says 10/37/36 identified equipment supply-return bindings are not proven, and proximity is not a port."
+      "evidence": "Nested port helper exists. v3.6 says 10/37/36 identified equipment supply-return bindings are not proven, and proximity is not a port. Shared halo labels are no longer a unique identity. That does not prove a supply or return port."
     },
     {
       "id": "boundary-riser-and-omission",
@@ -1184,6 +1184,23 @@
       "status": "fixed_pending_regression",
       "drawing_correct": false,
       "evidence": "Sheet 08 return circles 112 and 11C have two arms and two forward bars. Two bars from the supply symbols 200 units away, handles 113 and 11D, also fell inside the 230 radius, so the old bar count rejected the return symbols. A bar now counts only when both ends are in front of that circle's own arms. Extra forward bars stay unmatched and the neighbor is not bound. The same radius-80 read left sheets 09 and 10 unchanged and left 16 other sheet 08 radius-80 circles unmatched because they have no two-arm pattern. The ceiling batch, parameter library, and enrichment inputs are absent, so the sheet graph was not rebuilt. Equipment ports remain unresolved."
+    },
+    {
+      "id": "s1-shared-equipment-label",
+      "group": "equipment_ports",
+      "source": "output/dwg-region-split/panels/09-二层顶部水管平面图/09-二层顶部水管平面图.dxf",
+      "entry": "skills/build-cad-pipe-topology/scripts/ceiling_equipment_labels.py",
+      "tests": [
+        "skills/build-cad-pipe-topology/scripts/test_ceiling_equipment_labels.py"
+      ],
+      "drawings": [
+        "SH16-08",
+        "SH16-09",
+        "SH16-10"
+      ],
+      "status": "fixed_pending_regression",
+      "drawing_correct": false,
+      "evidence": "Sheet 09 text 6A (CRAH-4#-2-2) is outside inserts 63 and 65 and is inside both 600-unit boxes. The old sole-candidate counter gave it to insert 65 because 63 also saw text 69. A label selected by two blocks now stays unresolved. The same check found no other stolen label on sheets 08 or 10. No supply or return port was created. The ceiling batch was not rebuilt."
     }
   ],
   "milestones": {
@@ -1214,5 +1231,5 @@
       "C:/Users/lenovo/.codex/skills/orchestrate-cad-drawing-pipeline/assets/feature-registry.json"
     ]
   },
-  "s1_meaning": "Ceiling edge labels follow node type, and an omission symbol keeps only the bars in front of its own arms. Supply and return equipment ports, double-line ports, shaft multi-pipe, and source comparison remain open."
+  "s1_meaning": "Ceiling edge labels follow node type, omission bars stay in front of their own arms, and a shared equipment label stays unresolved. Supply and return ports, double-line ports, shaft multi-pipe, and source comparison remain open."
 }

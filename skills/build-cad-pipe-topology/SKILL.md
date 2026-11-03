@@ -61,6 +61,7 @@ Immutable source files, material tables and verified symbol libraries may be sha
 - Do not promote valves or display artifacts to physical nodes.
 - On SH16 ceiling sheets 08–10, set `edge_type` from the endpoint `node_type`. A riser (`RIF`) or an unresolved virtual terminal (`UT`) is `tee_to_virtual_equipment`. A `VIF` prefix is not the only virtual endpoint, and this label does not create an equipment port.
 - An out-of-plane omission symbol keeps the two bars in front of its own arms. Bars behind that V, including a neighboring symbol inside the search radius, stay out. Extra forward bars stay unmatched. Do not choose the nearest bar or bind the other system. This match does not create an equipment port.
+- A ceiling equipment label inside another block's selected set is not a unique identity. Do not give that label to the block that happens to have no second label, and do not create a supply or return port from the label.
 - Do not connect two pipes merely because they cross in the drawing; an over/under crossover gap restores only the broken pipe and never creates a node at the crossing.
 - Treat a crossover jump arc as a non-connectivity symbol, not a physical bend. Do not infer which pipe is above or below unless a separate project standard or elevation annotation states it.
 - Do not replace omission-separated source paths with a synthetic straight line when edge attributes must be recovered later.

@@ -7,6 +7,7 @@ import argparse
 from topology_normalization import snap_near_junction_endpoints
 from proven_contacts import canonical_contact_points,validate_junction_contacts
 from ceiling_edge_types import ceiling_edge_type,endpoint_role
+from ceiling_equipment_labels import bind_ceiling_equipment_labels
 from native_inline_coordinates import ball_valve_anchor,balancing_valve_anchor
 cli=argparse.ArgumentParser();cli.add_argument('--input-root',type=pathlib.Path,required=True);cli.add_argument('--output-root',type=pathlib.Path,required=True);cli.add_argument('--normalization-config',type=pathlib.Path,required=True);args=cli.parse_args()
 BATCH=args.input_root;OUT=args.output_root;TOL=.05;NORM=json.loads(args.normalization_config.read_text(encoding='utf8'))
@@ -160,20 +161,20 @@ for task in reg['tasks']:
   if e['end_node_id'].startswith(('VIF','RIF')):e['end_port_id']=e['end_node_id']+'-P1'
  for i in interface_evidence:i['graph_state']='loaded_connected_interface' if i['interface_id'] in active_virtual_ids else 'source_candidate_no_completed_logical_edge'
  # Equipment identity is source bounded, not nearest graph/node attachment.
- inventory=json.loads((old/'enrichment/cad-elements.json').read_text(encoding='utf-8'));bounds={x['source_handle']:x['bounds'] for x in inventory};equipment=[]
+ inventory=json.loads((old/'enrichment/cad-elements.json').read_text(encoding='utf-8'));bounds={x['source_handle']:x['bounds'] for x in inventory}; equipment=[]
  labels=[e for e in m.query('TEXT') if e.dxf.layer=='空调编号' and e.dxf.text.startswith('CRAH-')]
  eqblocks=[e for e in m.query('INSERT') if e.dxf.layer=='空调' and e.dxf.name in ['40kW','A$C478B2BA9']]
+ label_rows=[{'text':t.dxf.text,'x':t.dxf.insert.x,'y':t.dxf.insert.y} for t in labels]
+ block_rows=[]
  for e in eqblocks:
   bb=bounds.get(e.dxf.handle)
   if not bb:continue
-  lo,hi=bb;hits=[t for t in labels if lo[0]-600<=t.dxf.insert.x<=hi[0]+600 and lo[1]-600<=t.dxf.insert.y<=hi[1]+600]
-  inside=[t for t in labels if lo[0]-TOL<=t.dxf.insert.x<=hi[0]+TOL and lo[1]-TOL<=t.dxf.insert.y<=hi[1]+TOL]
-  if inside:hits=inside
-  equipment.append({'source_handle':e.dxf.handle,'source_block':e.dxf.name,'bounds':bb,'label_candidates':[t.dxf.text for t in hits],'association_status':'unique_bounded_source_label' if len(hits)==1 else 'label_unresolved','connection_status':'ports_unresolved','parameter_candidates':['CRAH-40-BATTERY','CRAH-40-CARRIER'] if e.dxf.name=='40kW' else ['CRAH-155-DOWN','CRAH-155-UP'],'parameters_effective':False})
- # Keep unconnected identified equipment in graph only when unique label/block evidence.
- unique=collections.Counter(r['label_candidates'][0] for r in equipment if len(r['label_candidates'])==1)
+  block_rows.append({'source_handle':e.dxf.handle,'source_block':e.dxf.name,'bounds':(tuple(bb[0][:2]),tuple(bb[1][:2])),'parameter_candidates':['CRAH-40-BATTERY','CRAH-40-CARRIER'] if e.dxf.name=='40kW' else ['CRAH-155-DOWN','CRAH-155-UP']})
+ for block,bound in zip(block_rows,bind_ceiling_equipment_labels(block_rows,label_rows,TOL,600)):
+  equipment.append({'source_handle':block['source_handle'],'source_block':block['source_block'],'bounds':block['bounds'],'label_candidates':bound['label_candidates'],'association_status':bound['association_status'],'connection_status':'ports_unresolved','parameter_candidates':block['parameter_candidates'],'parameters_effective':False})
+ # Keep unconnected identified equipment in graph only when the label is not shared.
  for r in equipment:
-  if len(r['label_candidates'])==1 and unique[r['label_candidates'][0]]==1:
+  if r['association_status']=='unique_bounded_source_label':
    lo,hi=r['bounds'];nodes.append({'node_id':r['label_candidates'][0],'node_type':'equipment','subtype':'CRAH','floor':int(sheet)-7,'label':r['label_candidates'][0],'x':(lo[0]+hi[0])/2,'y':(lo[1]+hi[1])/2,'source_handle':r['source_handle'],'source_block':r['source_block'],'connection_status':'ports_unresolved','parameter_candidates':r['parameter_candidates']})
  devices=[]
  for e in m.query('INSERT'):
