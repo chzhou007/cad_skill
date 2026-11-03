@@ -1201,6 +1201,21 @@
       "status": "fixed_pending_regression",
       "drawing_correct": false,
       "evidence": "Sheet 09 text 6A (CRAH-4#-2-2) is outside inserts 63 and 65 and is inside both 600-unit boxes. The old sole-candidate counter gave it to insert 65 because 63 also saw text 69. A label selected by two blocks now stays unresolved. The same check found no other stolen label on sheets 08 or 10. No supply or return port was created. The ceiling batch was not rebuilt."
+    },
+    {
+      "id": "s1-ceiling-08-10-rebuild",
+      "group": "plan_topology",
+      "source": "E:/codex/CAD/releases/SH16-all-tasks-v3.7.1-crossover-completion",
+      "entry": "skills/build-cad-pipe-topology/scripts/build_ceiling_family.py",
+      "tests": [],
+      "drawings": [
+        "SH16-08",
+        "SH16-09",
+        "SH16-10"
+      ],
+      "status": "to_fix",
+      "drawing_correct": false,
+      "evidence": "Rebuilt into work/sh16-ceiling-rebuild-s1/output from the copied v3.7.1 batch JSON and family-config.json. Existing local DXFs were used and were not copied again. Counts are not correctness. Sheet 08: 126 nodes, 102 edges, 118/118 inline components assigned, 10 equipment nodes ports_unresolved, 8 label_unresolved handles B386 B387 B38A B38B B38F B390 1680C 1680D. Sheet 09: 384 nodes, 254 edges, 160/160 inline assigned, 36 equipment ports_unresolved, label_unresolved handles B3B1 and B3B2 (shared CRAH-4#-2-2), pending junctions on circles 12E9B and 12E9A. Sheet 10: 374 nodes, 181 edges, 196/196 inline assigned, 36 equipment ports_unresolved. Virtual nodes remain riser_destination_unresolved, equipment_beyond_interface_unresolved, or source_boundary_unconfirmed. Full IDs are in work/sh16-ceiling-rebuild-s1/output/rebuild-record.json. No proximity ports were added."
     }
   ],
   "milestones": {
@@ -1231,5 +1246,5 @@
       "C:/Users/lenovo/.codex/skills/orchestrate-cad-drawing-pipeline/assets/feature-registry.json"
     ]
   },
-  "s1_meaning": "Ceiling edge labels follow node type, omission bars stay in front of their own arms, and a shared equipment label stays unresolved. Supply and return ports, double-line ports, shaft multi-pipe, and source comparison remain open."
+  "s1_meaning": "Sheets 08-10 were rebuilt from the copied v3.7.1 ceiling batch. Counts are not correctness. Shared equipment labels stay unresolved, and supply and return ports, double-line ports, shaft multi-pipe, and source comparison remain open."
 }
