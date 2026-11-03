@@ -1,6 +1,6 @@
 import json,csv,math,pathlib,hashlib,collections,html
 import ezdxf
-from cad_ceiling_native_rules import circle_connection_candidate,match_out_of_plane_symbol,riser_terminal_candidate
+from cad_ceiling_native_rules import accept_physical_tee,circle_connection_candidate,match_out_of_plane_symbol,nearby_circle_blocks_physical_tee,riser_terminal_candidate
 from straight_crossovers import recover_straight_crossovers
 import pipe_geometry as pg
 import argparse
@@ -103,17 +103,18 @@ for task in reg['tasks']:
    ka,kb=(s['system'],key(a)),(s['system'],key(b));verts.setdefault(ka,a);verts.setdefault(kb,b)
    if any(atomic[j]['b']==kb if atomic[j]['a']==ka else atomic[j]['a']==kb for j in adj[ka]):continue
    eid=len(atomic);atomic.append({'a':ka,'b':kb,'source_handle':s['handle'],'source_handles':s.get('source_handles',[s['handle']]),'source_segment':s['id'],'length':distance(a,b)});adj[ka].append(eid);adj[kb].append(eid)
- tee=[];pending=[]
+ tee=[];pending=[];glyphs=[u for u in segments if u['layer']=='空调立管、水平支管']
  for k,eds in adj.items():
   if len(eds)<3:continue
-  p=verts[k];near=[c['handle'] for c in circles if c['system']==k[0] and distance(c['center'],p)<=400 and c['handle'] not in {b['circle_handle'] for b in circle_bridges}]
+  p=verts[k];near=[c for c in circles if c['system']==k[0] and distance(c['center'],p)<=400 and c['handle'] not in {b['circle_handle'] for b in circle_bridges}]
   rays=[]
   for ae in eds:
    atom=atomic[ae];other=atom['b'] if atom['a']==k else atom['a'];q=verts[other];dx,dy=q[0]-p[0],q[1]-p[1];ln=math.hypot(dx,dy);v=(dx/ln,dy/ln)
    if not any(v[0]*r[0]+v[1]*r[1]>.999999 for r in rays):rays.append(v)
   centered=[c for c in circles if c['system']==k[0]and distance(c['center'],p)<=TOL]
-  if len(eds)==3 and len(rays)==3 and(not near or centered):tee.append(k)
-  else:pending.append({'system':k[0],'x':p[0],'y':p[1],'degree':len(eds),'reason':'riser_or_circle_symbol_contact' if near else 'non_three_way_intersection','circle_handles':near})
+  blocking=[c for c in near if nearby_circle_blocks_physical_tee(c,glyphs,segments,NORM[sheet].get('riser_terminal_radii',[]),TOL)]
+  if accept_physical_tee(len(eds),len(rays),blocking,centered):tee.append(k)
+  else:pending.append({'system':k[0],'x':p[0],'y':p[1],'degree':len(eds),'reason':'riser_or_circle_symbol_contact' if blocking else 'non_three_way_intersection','circle_handles':[c['handle'] for c in (blocking or near)]})
  tee.sort(key=lambda k:(k[0],verts[k][1],verts[k][0]));nodeid={k:f'T{i+1:03}' for i,k in enumerate(tee)}
  nodes=[{'node_id':nodeid[k],'node_type':'tee','subtype':'physical_tee','floor':int(sheet)-7,'system':k[0],'x':verts[k][0],'y':verts[k][1],'label':nodeid[k],'source_handles':sorted({atomic[x]['source_handle'] for x in adj[k]}),'evidence':'three endpoint-incidence rays; no interior-crossing join'} for k in tee]
  interface_evidence=[];virtual_ports=[]
@@ -123,7 +124,6 @@ for task in reg['tasks']:
   vid=f'RIF{len(interface_evidence)+1:03}';nodeid[k]=vid;pid=vid+'-P1';interface_evidence.append(dict(interface_id=vid,circle_handle=c['handle'],pipe_handles=[r['pipe_handle']],center=center,system=c['system'],semantic='out_of_plane_riser_terminal',evidence_state='source_profile_circle_and_unique_radial_pipe',equipment_association='unresolved'))
   nodes.append(dict(node_id=vid,node_type='virtual_equipment',subtype='out_of_plane_riser',floor=int(sheet)-7,system=c['system'],x=center[0],y=center[1],label=vid,source_handle=c['handle'],source_handles=[c['handle'],r['pipe_handle']],ports=[dict(port_id=pid,system=c['system'],x=center[0],y=center[1])],connection_status='riser_destination_unresolved'))
   virtual_ports.append(dict(virtual_equipment_id=vid,port_id=pid,system=c['system'],x=center[0],y=center[1]))
- glyphs=[u for u in segments if u['layer']=='空调立管、水平支管']
  for c in circles:
   match=match_out_of_plane_symbol(c,glyphs,TOL)
   if match is None:continue

@@ -450,8 +450,7 @@
       "source": "skills/orchestrate-cad-drawing-pipeline/assets/historical/feature-registry.json#native_text",
       "entry": "skills/build-cad-pipe-topology/scripts/source_readability.py",
       "tests": [
-        "skills/build-cad-pipe-topology/scripts/test_source_readability.py",
-        "skills/build-cad-pipe-topology/scripts/test_alignment_utf8.py"
+        "not-in-tracked-tree"
       ],
       "drawings": [
         "SH16-03",
@@ -471,8 +470,8 @@
       "source": "skills/orchestrate-cad-drawing-pipeline/assets/historical/feature-registry.json#proxy_evidence",
       "entry": "skills/build-cad-pipe-topology/scripts/native_proxy_evidence.py",
       "tests": [
-        "skills/build-cad-pipe-topology/scripts/test_proxy_metadata_inventory.py",
-        "skills/build-cad-pipe-topology/scripts/test_native_proxy_evidence.py"
+        "skills/build-cad-pipe-topology/scripts/test_native_proxy_evidence.py",
+        "not-in-tracked-tree"
       ],
       "drawings": [
         "SH16-03",
@@ -497,8 +496,7 @@
         "skills/build-cad-pipe-topology/scripts/test_offset_crossovers.py",
         "skills/build-cad-pipe-topology/scripts/test_unknown_service_crossovers.py",
         "skills/build-cad-pipe-topology/scripts/test_double_line_pipes.py",
-        "skills/build-cad-pipe-topology/scripts/test_single_crossbar_candidates.py",
-        "skills/build-cad-pipe-topology/scripts/test_source_internal_junction_candidates.py"
+        "not-in-tracked-tree"
       ],
       "drawings": [
         "SH16-03",
@@ -520,8 +518,7 @@
       "tests": [
         "skills/build-cad-pipe-topology/scripts/test_proven_contacts.py",
         "skills/build-cad-pipe-topology/scripts/test_near_junctions.py",
-        "skills/build-cad-pipe-topology/scripts/test_source_mixed_service_tee_candidates.py",
-        "skills/build-cad-pipe-topology/scripts/test_source_pending_main_continuity.py"
+        "not-in-tracked-tree"
       ],
       "drawings": [
         "SH16-03",
@@ -543,16 +540,9 @@
       "tests": [
         "skills/build-cad-pipe-topology/scripts/test_equipment_assemblies.py",
         "skills/build-cad-pipe-topology/scripts/test_nested_equipment_ports.py",
-        "skills/build-cad-pipe-topology/scripts/test_native_module_equipment.py",
         "skills/build-cad-pipe-topology/scripts/test_native_equipment_preservation.py",
-        "skills/build-cad-pipe-topology/scripts/test_source_equipment_group_candidates.py",
         "skills/build-cad-pipe-topology/scripts/test_source_fidelity.py",
-        "skills/build-cad-pipe-topology/scripts/test_source_labeled_equipment_pairs.py",
-        "skills/build-cad-pipe-topology/scripts/test_source_roof_tower_reconciliation.py",
-        "skills/build-cad-pipe-topology/scripts/test_source_tower_overlap_reconciliation.py",
-        "skills/build-cad-pipe-topology/scripts/test_source_tower_terminal_contact_audit.py",
-        "skills/build-cad-pipe-topology/scripts/test_source_enclosed_return_groups.py",
-        "skills/build-cad-pipe-topology/scripts/test_common_schedule_evidence.py"
+        "not-in-tracked-tree"
       ],
       "drawings": [
         "SH16-03",
@@ -574,15 +564,9 @@
         "skills/build-cad-pipe-topology/scripts/test_instrumentation.py",
         "skills/build-cad-pipe-topology/scripts/test_native_inline_coordinates.py",
         "skills/build-cad-pipe-topology/scripts/test_exploded_templates.py",
-        "skills/build-cad-pipe-topology/scripts/test_repair_native_flexible_joints.py",
-        "skills/build-cad-pipe-topology/scripts/test_bind_component_inventory.py",
         "skills/build-cad-pipe-topology/scripts/test_instrument_heads.py",
-        "skills/build-cad-pipe-topology/scripts/test_native_instrument_heads.py",
         "skills/build-cad-pipe-topology/scripts/test_source_glyphs.py",
-        "skills/build-cad-pipe-topology/scripts/test_source_inline_axis_coverage.py",
-        "skills/build-cad-pipe-topology/scripts/test_source_inline_endpoint_groups.py",
-        "skills/build-cad-pipe-topology/scripts/test_source_inline_group_provenance.py",
-        "skills/build-cad-pipe-topology/scripts/test_source_symbol_bounds.py"
+        "not-in-tracked-tree"
       ],
       "drawings": [
         "SH16-03",
@@ -602,12 +586,7 @@
       "source": "skills/orchestrate-cad-drawing-pipeline/assets/historical/feature-registry.json#circle_detection",
       "entry": "skills/build-cad-pipe-topology/scripts/circle_witness_inventory.py",
       "tests": [
-        "skills/build-cad-pipe-topology/scripts/test_circle_witness_inventory.py",
-        "skills/build-cad-pipe-topology/scripts/test_source_three_rim_candidates.py",
-        "skills/build-cad-pipe-topology/scripts/test_source_concentric_terminal_glyphs.py",
-        "skills/build-cad-pipe-topology/scripts/test_source_labeled_circle_interfaces.py",
-        "skills/build-cad-pipe-topology/scripts/test_source_midpath_circle_candidates.py",
-        "skills/build-cad-pipe-topology/scripts/test_source_three_rim_equipment_families.py"
+        "not-in-tracked-tree"
       ],
       "drawings": [
         "SH16-08",
@@ -626,8 +605,7 @@
       "source": "skills/orchestrate-cad-drawing-pipeline/assets/historical/feature-registry.json#confirmed_circles",
       "entry": "skills/build-cad-pipe-topology/scripts/confirmed_circle_junctions.py",
       "tests": [
-        "skills/build-cad-pipe-topology/scripts/test_confirmed_circle_junctions.py",
-        "skills/build-cad-pipe-topology/scripts/test_reconcile_confirmed_circle_references.py"
+        "not-in-tracked-tree"
       ],
       "drawings": [
         "LF20-03"
@@ -642,8 +620,7 @@
       "source": "skills/orchestrate-cad-drawing-pipeline/assets/historical/feature-registry.json#overlaid_supply",
       "entry": "skills/build-cad-pipe-topology/scripts/confirmed_overlaid_supply.py",
       "tests": [
-        "skills/build-cad-pipe-topology/scripts/test_confirmed_overlaid_supply.py",
-        "skills/build-cad-pipe-topology/scripts/test_overlaid_service_network.py"
+        "not-in-tracked-tree"
       ],
       "drawings": [
         "LF20-03"
@@ -658,8 +635,7 @@
       "source": "skills/orchestrate-cad-drawing-pipeline/assets/historical/feature-registry.json#tangent_pairs",
       "entry": "skills/build-cad-pipe-topology/scripts/source_tangent_circle_candidates.py",
       "tests": [
-        "skills/build-cad-pipe-topology/scripts/test_source_tangent_circle_candidates.py",
-        "skills/build-cad-pipe-topology/scripts/test_rebase_tangent_circle_evidence.py"
+        "not-in-tracked-tree"
       ],
       "drawings": [
         "LF20-03"
@@ -674,13 +650,7 @@
       "source": "skills/orchestrate-cad-drawing-pipeline/assets/historical/feature-registry.json#wave_interfaces",
       "entry": "skills/build-cad-pipe-topology/scripts/source_wave_terminals.py",
       "tests": [
-        "skills/build-cad-pipe-topology/scripts/test_source_wave_terminals.py",
-        "skills/build-cad-pipe-topology/scripts/test_repair_expert_wave_scoped_09.py",
-        "skills/build-cad-pipe-topology/scripts/test_expert_native_wave_terminals.py",
-        "skills/build-cad-pipe-topology/scripts/test_source_annotation_references.py",
-        "skills/build-cad-pipe-topology/scripts/test_source_declared_interfaces.py",
-        "skills/build-cad-pipe-topology/scripts/test_source_downturn_terminals.py",
-        "skills/build-cad-pipe-topology/scripts/test_source_endpoint_leader_labels.py"
+        "not-in-tracked-tree"
       ],
       "drawings": [
         "SH16-09",
@@ -696,15 +666,9 @@
       "source": "skills/orchestrate-cad-drawing-pipeline/assets/historical/feature-registry.json#riser_boundary",
       "entry": "skills/build-cad-pipe-topology/scripts/build_ceiling_family.py",
       "tests": [
-        "skills/build-cad-pipe-topology/scripts/test_expert_riser_connection.py",
-        "skills/build-cad-pipe-topology/scripts/test_riser_source_lengths.py",
-        "skills/build-cad-pipe-topology/scripts/test_convert_expert_non_node_boundaries.py",
         "skills/build-cad-pipe-topology/scripts/test_riser_terminal.py",
         "skills/build-cad-pipe-topology/scripts/test_expert_source_rules.py",
-        "skills/build-cad-pipe-topology/scripts/test_edge_endpoint_semantics.py",
-        "skills/build-cad-pipe-topology/scripts/test_ceiling_interface_glyph.py",
-        "skills/build-cad-pipe-topology/scripts/test_unbound_ceiling_symbols.py",
-        "skills/build-cad-pipe-topology/scripts/test_source_glyph_system_conflicts.py"
+        "not-in-tracked-tree"
       ],
       "drawings": [
         "SH16-10"
@@ -720,10 +684,7 @@
       "entry": "skills/build-cad-pipe-topology/scripts/pipe_annotation_attributes.py",
       "tests": [
         "skills/build-cad-pipe-topology/scripts/test_pipe_annotation_attributes.py",
-        "skills/build-cad-pipe-topology/scripts/test_source_floor_group_diameter_evidence.py",
-        "skills/build-cad-pipe-topology/scripts/test_source_floor_alignment_candidates.py",
-        "skills/build-cad-pipe-topology/scripts/test_dn_source_annotations.py",
-        "skills/build-cad-pipe-topology/scripts/test_diameter_tee_inheritance.py"
+        "not-in-tracked-tree"
       ],
       "drawings": [
         "SH16-08",
@@ -744,8 +705,7 @@
       "entry": "skills/build-cad-pipe-topology/scripts/pipe_section_connections.py",
       "tests": [
         "skills/build-cad-pipe-topology/scripts/test_pipe_section_connections.py",
-        "skills/build-cad-pipe-topology/scripts/test_rebase_section_length_updates.py",
-        "skills/build-cad-pipe-topology/scripts/test_source_detail_branch_lengths.py"
+        "not-in-tracked-tree"
       ],
       "drawings": [
         "SH16-08",
@@ -764,8 +724,8 @@
       "source": "skills/orchestrate-cad-drawing-pipeline/assets/historical/feature-registry.json#detail_alternative",
       "entry": "skills/build-cad-pipe-topology/scripts/compare_expert_detail_scoped_09.py",
       "tests": [
-        "skills/build-cad-pipe-topology/scripts/test_compare_expert_detail_scoped_09.py",
-        "skills/build-cad-pipe-topology/scripts/test_hydraulic_projection.py"
+        "skills/build-cad-pipe-topology/scripts/test_hydraulic_projection.py",
+        "not-in-tracked-tree"
       ],
       "drawings": [
         "SH16-09"
@@ -780,8 +740,7 @@
       "source": "skills/orchestrate-cad-drawing-pipeline/assets/historical/feature-registry.json#expert_circle_tee",
       "entry": "skills/build-cad-pipe-topology/scripts/repair_expert_circle_pair_scoped_09.py",
       "tests": [
-        "skills/build-cad-pipe-topology/scripts/test_expert_circle_connection.py",
-        "skills/build-cad-pipe-topology/scripts/test_repair_expert_circle_pair_scoped_09.py"
+        "not-in-tracked-tree"
       ],
       "drawings": [
         "SH16-09",
@@ -797,7 +756,7 @@
       "source": "skills/orchestrate-cad-drawing-pipeline/assets/historical/feature-registry.json#node_label",
       "entry": "skills/build-cad-pipe-topology/scripts/source_expert_node_label_policy.py",
       "tests": [
-        "skills/build-cad-pipe-topology/scripts/test_source_expert_node_label_policy.py"
+        "not-in-tracked-tree"
       ],
       "drawings": [
         "SH16-03",
@@ -815,7 +774,7 @@
       "tests": [
         "skills/build-cad-pipe-topology/scripts/test_profile_source_coverage.py",
         "skills/build-cad-pipe-topology/scripts/test_parallel_edge_ids.py",
-        "skills/build-cad-pipe-topology/scripts/test_stable_normalized_edges.py"
+        "not-in-tracked-tree"
       ],
       "drawings": [
         "SH16-03",
@@ -876,9 +835,7 @@
       "tests": [
         "skills/orchestrate-cad-drawing-pipeline/scripts/test_source_comparison_gate.py",
         "skills/build-cad-pipe-topology/scripts/test_source_semantic_reconciliation.py",
-        "skills/build-cad-pipe-topology/scripts/test_source_named_service_evidence.py",
-        "skills/build-cad-pipe-topology/scripts/test_terminal_inventory_reconciliation.py",
-        "skills/orchestrate-cad-drawing-pipeline/scripts/test_source_graph_pending_gate.py"
+        "not-in-tracked-tree"
       ],
       "drawings": [
         "SH16-03",
@@ -901,7 +858,6 @@
         "skills/visualize-cad-pipe-topology/scripts/test_builder.py",
         "skills/visualize-cad-pipe-topology/scripts/test_post_drawing_gate.py",
         "skills/visualize-cad-pipe-topology/scripts/test_system_boundaries.mjs",
-        "skills/visualize-cad-pipe-topology/scripts/test_node_label_policy.mjs",
         "skills/visualize-cad-pipe-topology/scripts/test_pair_rendering.mjs",
         "skills/visualize-cad-pipe-topology/scripts/test_hil_frontend.mjs",
         "skills/visualize-cad-pipe-topology/scripts/test_architecture_context.py",
@@ -915,9 +871,7 @@
         "skills/visualize-cad-pipe-topology/scripts/test_portable_launcher.py",
         "skills/visualize-cad-pipe-topology/scripts/test_region_guides.mjs",
         "skills/visualize-cad-pipe-topology/scripts/test_source_context_fit.mjs",
-        "skills/visualize-cad-pipe-topology/scripts/test_source_evidence.py",
-        "skills/visualize-cad-pipe-topology/scripts/test_typed_boundary_adapter.py",
-        "skills/visualize-cad-pipe-topology/scripts/test_typed_boundary_builder.py"
+        "not-in-tracked-tree"
       ],
       "drawings": [
         "SH16-03",
@@ -937,7 +891,7 @@
       "source": "skills/orchestrate-cad-drawing-pipeline/assets/historical/feature-registry.json#composition",
       "entry": "skills/build-cad-pipe-topology/scripts/run_confirmed_circle_pipeline.py",
       "tests": [
-        "skills/build-cad-pipe-topology/scripts/test_run_confirmed_circle_pipeline.py"
+        "not-in-tracked-tree"
       ],
       "drawings": [
         "LF20-03"
@@ -953,8 +907,7 @@
       "entry": "skills/orchestrate-cad-drawing-pipeline/scripts/pipeline.py",
       "tests": [
         "skills/orchestrate-cad-drawing-pipeline/scripts/test_pipeline.py",
-        "skills/orchestrate-cad-drawing-pipeline/scripts/test_verify_dependencies.py",
-        "skills/orchestrate-cad-drawing-pipeline/scripts/test_feature_impact.py"
+        "not-in-tracked-tree"
       ],
       "drawings": [
         "SH16-03",
@@ -974,7 +927,7 @@
       "source": "skills/orchestrate-cad-drawing-pipeline/assets/historical/expert-issues.json#ERR-BB565D",
       "entry": "skills/build-cad-pipe-topology/scripts/repair_expert_circle_pair_scoped_09.py",
       "tests": [
-        "skills/build-cad-pipe-topology/scripts/test_repair_expert_circle_pair_scoped_09.py"
+        "not-in-tracked-tree"
       ],
       "drawings": [
         "SH16-09"
@@ -989,7 +942,7 @@
       "source": "skills/orchestrate-cad-drawing-pipeline/assets/historical/expert-issues.json#ERR-789DBB",
       "entry": "skills/build-cad-pipe-topology/scripts/source_wave_terminals.py",
       "tests": [
-        "skills/build-cad-pipe-topology/scripts/test_repair_expert_wave_scoped_09.py"
+        "not-in-tracked-tree"
       ],
       "drawings": [
         "SH16-09"
@@ -1004,7 +957,7 @@
       "source": "skills/orchestrate-cad-drawing-pipeline/assets/historical/expert-issues.json#ERR-4F2867",
       "entry": "skills/build-cad-pipe-topology/scripts/expert_riser_connection.py",
       "tests": [
-        "skills/build-cad-pipe-topology/scripts/test_convert_expert_non_node_boundaries.py"
+        "not-in-tracked-tree"
       ],
       "drawings": [
         "SH16-09"
@@ -1019,9 +972,8 @@
       "source": "skills/orchestrate-cad-drawing-pipeline/assets/historical/expert-issues.json#ERR-15B0E8",
       "entry": "skills/build-cad-pipe-topology/scripts/compare_expert_detail_scoped_09.py",
       "tests": [
-        "skills/build-cad-pipe-topology/scripts/test_compare_expert_detail_scoped_09.py",
-        "skills/build-cad-pipe-topology/scripts/test_source_detail_branch_lengths.py",
-        "skills/build-cad-pipe-topology/scripts/test_hydraulic_projection.py"
+        "skills/build-cad-pipe-topology/scripts/test_hydraulic_projection.py",
+        "not-in-tracked-tree"
       ],
       "drawings": [
         "SH16-09"
@@ -1036,7 +988,7 @@
       "source": "skills/orchestrate-cad-drawing-pipeline/assets/historical/expert-issues.json#ERR-67F23F",
       "entry": "skills/build-cad-pipe-topology/scripts/source_wave_terminals.py",
       "tests": [
-        "skills/build-cad-pipe-topology/scripts/test_expert_native_wave_terminals.py"
+        "not-in-tracked-tree"
       ],
       "drawings": [
         "SH16-10"
@@ -1051,7 +1003,7 @@
       "source": "skills/orchestrate-cad-drawing-pipeline/assets/historical/expert-issues.json#ERR-1B4777",
       "entry": "skills/build-cad-pipe-topology/scripts/expert_riser_connection.py",
       "tests": [
-        "skills/build-cad-pipe-topology/scripts/test_expert_riser_connection.py"
+        "not-in-tracked-tree"
       ],
       "drawings": [
         "SH16-10"
@@ -1066,7 +1018,7 @@
       "source": "skills/orchestrate-cad-drawing-pipeline/assets/historical/expert-issues.json#ERR-A03211",
       "entry": "skills/build-cad-pipe-topology/scripts/instrumentation.py",
       "tests": [
-        "skills/build-cad-pipe-topology/scripts/test_repair_native_flexible_joints.py"
+        "not-in-tracked-tree"
       ],
       "drawings": [
         "SH16-10"
@@ -1081,8 +1033,8 @@
       "source": "skills/orchestrate-cad-drawing-pipeline/assets/historical/expert-issues.json#ERR-A67D75",
       "entry": "skills/build-cad-pipe-topology/scripts/expert_riser_connection.py",
       "tests": [
-        "skills/build-cad-pipe-topology/scripts/test_riser_source_lengths.py",
-        "skills/build-cad-pipe-topology/scripts/test_riser_terminal.py"
+        "skills/build-cad-pipe-topology/scripts/test_riser_terminal.py",
+        "not-in-tracked-tree"
       ],
       "drawings": [
         "SH16-10"
@@ -1097,7 +1049,7 @@
       "source": "skills/orchestrate-cad-drawing-pipeline/assets/historical/expert-issues.json#ERR-D713A5",
       "entry": "skills/build-cad-pipe-topology/scripts/expert_riser_connection.py",
       "tests": [
-        "skills/build-cad-pipe-topology/scripts/test_convert_expert_non_node_boundaries.py"
+        "not-in-tracked-tree"
       ],
       "drawings": [
         "SH16-10"
@@ -1112,7 +1064,7 @@
       "source": "skills/orchestrate-cad-drawing-pipeline/assets/historical/expert-issues.json#ERR-1E73DD",
       "entry": "skills/build-cad-pipe-topology/scripts/repair_expert_circle_pair_scoped_09.py",
       "tests": [
-        "skills/build-cad-pipe-topology/scripts/test_expert_circle_connection.py"
+        "not-in-tracked-tree"
       ],
       "drawings": [
         "SH16-10"
@@ -1127,7 +1079,7 @@
       "source": "skills/orchestrate-cad-drawing-pipeline/assets/historical/expert-issues.json#ERR-46339B",
       "entry": "skills/build-cad-pipe-topology/scripts/source_expert_node_label_policy.py",
       "tests": [
-        "skills/build-cad-pipe-topology/scripts/test_source_expert_node_label_policy.py"
+        "not-in-tracked-tree"
       ],
       "drawings": [
         "SH16-03"
@@ -1142,7 +1094,7 @@
       "source": "skills/orchestrate-cad-drawing-pipeline/assets/historical/expert-issues.json#ERR-E404BD",
       "entry": "skills/build-cad-pipe-topology/scripts/source_expert_node_label_policy.py",
       "tests": [
-        "skills/build-cad-pipe-topology/scripts/test_source_expert_node_label_policy.py"
+        "not-in-tracked-tree"
       ],
       "drawings": [
         "SH16-04"
@@ -1207,7 +1159,9 @@
       "group": "plan_topology",
       "source": "E:/codex/CAD/releases/SH16-all-tasks-v3.7.1-crossover-completion",
       "entry": "skills/build-cad-pipe-topology/scripts/build_ceiling_family.py",
-      "tests": [],
+      "tests": [
+        "not-in-tracked-tree"
+      ],
       "drawings": [
         "SH16-08",
         "SH16-09",
@@ -1216,6 +1170,21 @@
       "status": "to_fix",
       "drawing_correct": false,
       "evidence": "Rebuilt into work/sh16-ceiling-rebuild-s1/output from the copied v3.7.1 batch JSON and family-config.json. Existing local DXFs were used and were not copied again. Counts are not correctness. Sheet 08: 126 nodes, 102 edges, 118/118 inline components assigned, 10 equipment nodes ports_unresolved, 8 label_unresolved handles B386 B387 B38A B38B B38F B390 1680C 1680D. Sheet 09: 384 nodes, 254 edges, 160/160 inline assigned, 36 equipment ports_unresolved, label_unresolved handles B3B1 and B3B2 (shared CRAH-4#-2-2), pending junctions on circles 12E9B and 12E9A. Sheet 10: 374 nodes, 181 edges, 196/196 inline assigned, 36 equipment ports_unresolved. Virtual nodes remain riser_destination_unresolved, equipment_beyond_interface_unresolved, or source_boundary_unconfirmed. Full IDs are in work/sh16-ceiling-rebuild-s1/output/rebuild-record.json. No proximity ports were added."
+    },
+    {
+      "id": "s1-circle-adjacent-real-tee",
+      "group": "geometry_connection",
+      "source": "work/sh16-ceiling-rebuild-s1/output/tasks/SH16-09-ffeda2df/topology/pending-junctions.json",
+      "entry": "skills/build-cad-pipe-topology/scripts/cad_ceiling_native_rules.py",
+      "tests": [
+        "skills/build-cad-pipe-topology/scripts/test_ceiling_real_tee.py"
+      ],
+      "drawings": [
+        "SH16-09"
+      ],
+      "status": "fixed_pending_regression",
+      "drawing_correct": false,
+      "evidence": "Sheet 09 return circle 12E9B and supply circle 12E9A are radius 80 and have no V or bars. Each center is 1.3 units off a perpendicular endpoint-incidence contact: return main B669 with branch 12E98, supply main B66A with branch 12E99. The old 400-unit circle test withheld both tees. An unmatched circle no longer blocks a three-ray tee. A matched omission symbol or calibrated riser still does. Rebuild work/sh16-ceiling-rebuild-s1b changed only sheet 09 tees from 78 to 80 (T025 return, T065 supply). Nodes stayed 384 and edges stayed 254. Sheets 08 and 10 were unchanged. No equipment port was added. drawing_correct stays false."
     }
   ],
   "milestones": {
@@ -1246,5 +1215,5 @@
       "C:/Users/lenovo/.codex/skills/orchestrate-cad-drawing-pipeline/assets/feature-registry.json"
     ]
   },
-  "s1_meaning": "Sheets 08-10 were rebuilt from the copied v3.7.1 ceiling batch. Counts are not correctness. Shared equipment labels stay unresolved, and supply and return ports, double-line ports, shaft multi-pipe, and source comparison remain open."
+  "s1_meaning": "Sheets 08-10 were rebuilt from the copied v3.7.1 ceiling batch. Sheet 09 now keeps two real tees beside unmatched radius-80 circles. Counts are not correctness. Shared equipment labels stay unresolved, and supply and return ports, double-line ports, shaft multi-pipe, and source comparison remain open."
 }

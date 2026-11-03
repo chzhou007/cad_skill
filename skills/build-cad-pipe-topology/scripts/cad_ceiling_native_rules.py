@@ -54,6 +54,21 @@ def match_out_of_plane_symbol(c,glyphs,tol=.05):
  if abs(vv[0][0]*vv[1][1]-vv[0][1]*vv[1][0])/(math.hypot(*vv[0])*math.hypot(*vv[1]))>.001:return None
  return arms,bars
 
+def nearby_circle_blocks_physical_tee(circle, glyphs, segments, riser_radii, tol=.05):
+ """A nearby circle blocks a physical tee only when it is a resolved symbol.
+
+ An unmatched radius-80 circle, including one a little off a three-ray
+ contact, is not an omission symbol and is not a calibrated riser. It must
+ not erase endpoint-incidence rays. A matched V-and-bar symbol or a
+ calibrated riser still blocks, and this function does not create a port.
+ """
+ if match_out_of_plane_symbol(circle, glyphs, tol):
+  return True
+ return riser_terminal_candidate(circle, segments, riser_radii, tol) is not None
+
+def accept_physical_tee(edge_count, ray_count, blocking, centered):
+ return edge_count == 3 and ray_count == 3 and (not blocking or bool(centered))
+
 def riser_terminal_candidate(c,segments,radii,tol=.05):
  if not any(abs(c['radius']-r)<=tol for r in radii):return None
  center=c['center'];matches=[]
