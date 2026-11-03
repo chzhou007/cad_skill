@@ -33,18 +33,24 @@ def perimeter(p,poly):
     return min(distance(p,a,b) for a,b in zip(poly,poly[1:]+poly[:1]))
 
 
+def resolve_instance_chain(doc,chain):
+    matrix=Matrix44();parent=None
+    for handle in chain:
+        entity=doc.entitydb[handle]
+        if entity.dxftype()!='INSERT':raise ValueError('Native source chain must name INSERTs')
+        if parent is None and entity not in doc.modelspace():raise ValueError('Native source chain must start at modelspace')
+        if parent is not None and entity.dxf.owner!=doc.blocks[parent.dxf.name].block_record_handle:
+            raise ValueError('Native source chain ownership mismatch')
+        matrix=entity.matrix44()@matrix;parent=entity
+    if parent is None:raise ValueError('Native source chain must not be empty')
+    return matrix,parent
+
+
 def native_instances(doc,profile):
     """Audit explicit instance chains with all source handles and WCS transforms."""
     result=[]
     for root in profile['roots']:
-        matrix=Matrix44();parent=None
-        for handle in root['source_chain']:
-            entity=doc.entitydb[handle]
-            if entity.dxftype()!='INSERT':raise ValueError('Native source chain must name INSERTs')
-            if parent is None and entity not in doc.modelspace():raise ValueError('Native source chain must start at modelspace')
-            if parent is not None and entity.dxf.owner!=doc.blocks[parent.dxf.name].block_record_handle:
-                raise ValueError('Native source chain ownership mismatch')
-            matrix=entity.matrix44()@matrix;parent=entity
+        matrix,parent=resolve_instance_chain(doc,root['source_chain'])
         for child in doc.blocks[parent.dxf.name]:
             if child.dxftype()!='INSERT':continue
             rule=next((r for r in profile['prototypes'] if r['block']==child.dxf.name),None)
@@ -86,12 +92,15 @@ def bind(graph,instances,profile,prior=None):
         if n['node_type']!='virtual_equipment'or len(inc[n['node_id']])!=1:continue
         if n.get('destination')or n.get('interface_destination')or n.get('boundary_type')=='interface_destination':continue
         edge,side=inc[n['node_id']][0];p=[n['x'],n['y']];path=edge['path_points'] if side=='start' else list(reversed(edge['path_points']))
-        if math.dist(p,path[0])>tol:raise ValueError('Source endpoint differs from candidate interface')
+        if math.dist(p,path[0])>profile['contact_tolerance']:raise ValueError('Source endpoint differs from candidate interface')
         for item in instances:
+            tol=item.get('outline_contact_tolerance',profile['contact_tolerance'])
             poly=item['polygon'];bb=item['bounds']
             if not(bb[0]-tol<=p[0]<=bb[2]+tol and bb[1]-tol<=p[1]<=bb[3]+tol):continue
             row={'old_node_id':n['node_id'],'equipment_id':item['node_id'],'edge_id':edge['edge_id'],'side':side,'x':p[0],'y':p[1],
-                'source_chain':item['source_chain'],'source_pipe_handles':edge['source_handles'],'system':edge['system']}
+                'source_chain':item['source_chain'],'source_pipe_handles':edge['source_handles'],'system':edge['system'],
+                'native_outline_distance':perimeter(p,poly),'outline_contact_tolerance':tol}
+            if item.get('outline_precision_evidence'):row['outline_precision_evidence']=item['outline_precision_evidence']
             if n.get('floor')not in (None,'Schematic',item['floor']):row['status']='pending_floor_conflict'
             elif perimeter(p,poly)>tol:row['status']='rejected_inside_body_without_native_outline_contact'
             else:
