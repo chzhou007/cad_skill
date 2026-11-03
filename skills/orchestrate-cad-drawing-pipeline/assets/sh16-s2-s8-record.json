@@ -1,0 +1,302 @@
+{
+  "program": "sh16-dual-view",
+  "drawing_correct": false,
+  "human_confirmation": "none",
+  "hil_ready": false,
+  "plan_comparison": {
+    "binding": "current_release_dxf",
+    "count_is_not_acceptance": true,
+    "tees": [
+      {
+        "node_id": "T025",
+        "sheet": "SH16-09",
+        "system": "return",
+        "main_handle": "B669",
+        "branch_handle": "12E98",
+        "circle_handle": "12E9B",
+        "junction": [
+          2374172.639008695,
+          78189.36496305224
+        ],
+        "circle_offset": 1.3044962788699195,
+        "branch_line_length": 16349.999999994412,
+        "status": "matches_source",
+        "drawing_acceptance": false
+      },
+      {
+        "node_id": "T065",
+        "sheet": "SH16-09",
+        "system": "supply",
+        "main_handle": "B66A",
+        "branch_handle": "12E99",
+        "circle_handle": "12E9A",
+        "junction": [
+          2374772.639008694,
+          77789.36496305224
+        ],
+        "circle_offset": 1.3044962788699195,
+        "branch_line_length": 16149.999999995343,
+        "status": "matches_source",
+        "drawing_acceptance": false
+      }
+    ],
+    "omission_symbols": [
+      {
+        "sheet": "SH16-08",
+        "circle_handle": "B99D",
+        "system": "return",
+        "arm_handles": [
+          "B9A3",
+          "B9A4"
+        ],
+        "bar_handles": [
+          "B9A5",
+          "B9A6"
+        ],
+        "status": "matches_source",
+        "drawing_acceptance": false
+      },
+      {
+        "sheet": "SH16-08",
+        "circle_handle": "B99E",
+        "system": "supply",
+        "arm_handles": [
+          "B99F",
+          "B9A0"
+        ],
+        "bar_handles": [
+          "B9A1",
+          "B9A2"
+        ],
+        "status": "matches_source",
+        "drawing_acceptance": false
+      },
+      {
+        "sheet": "SH16-08",
+        "circle_handle": "B9A7",
+        "system": "return",
+        "arm_handles": [
+          "B9AD",
+          "B9AE"
+        ],
+        "bar_handles": [
+          "B9AF",
+          "B9B0"
+        ],
+        "status": "matches_source",
+        "drawing_acceptance": false
+      },
+      {
+        "sheet": "SH16-08",
+        "circle_handle": "B9A8",
+        "system": "supply",
+        "arm_handles": [
+          "B9A9",
+          "B9AA"
+        ],
+        "bar_handles": [
+          "B9AB",
+          "B9AC"
+        ],
+        "status": "matches_source",
+        "drawing_acceptance": false
+      }
+    ],
+    "shared_label": {
+      "sheet": "SH16-09",
+      "insert_handles": [
+        "B3B1",
+        "B3B2"
+      ],
+      "text_handles": {
+        "B3BF": "CRAH-4#-2-1",
+        "B3C0": "CRAH-4#-2-2"
+      },
+      "rows": [
+        {
+          "source_handle": "B3B1",
+          "label_candidates": [
+            "CRAH-4#-2-1",
+            "CRAH-4#-2-2"
+          ],
+          "association_status": "label_unresolved",
+          "connection_status": "ports_unresolved"
+        },
+        {
+          "source_handle": "B3B2",
+          "label_candidates": [
+            "CRAH-4#-2-2"
+          ],
+          "association_status": "label_unresolved",
+          "connection_status": "ports_unresolved"
+        }
+      ],
+      "status": "matches_source_identity_unresolved",
+      "drawing_acceptance": false
+    },
+    "equipment_ports": {
+      "status": "ports_unresolved",
+      "ports_created": 0,
+      "reason": "No unresolved terminal lies on an equipment outline. The nearest distances in the s1b rebuild are 380, 300 and 300 drawing units on sheets 08, 09 and 10.",
+      "drawing_acceptance": false
+    }
+  },
+  "loop": {
+    "isometric_inspection": {
+      "fixture": "fixtures/isometric-sh16-11/graph_with_edges.json",
+      "nodes": 424,
+      "edges": 576,
+      "tees": 302,
+      "count_is_not_correctness": true,
+      "proven_fix": null,
+      "unresolved_external_interface": "VDEV001"
+    },
+    "mapping": [],
+    "mapping_reason": "S4 starts only for a range that passed both the plan and isometric checks. This loop passed the plan check only.",
+    "differences": [
+      {
+        "kind": "plan_only",
+        "plan_evidence": {
+          "sheet": "SH16-09",
+          "nodes": [
+            "T025",
+            "T065"
+          ],
+          "source": "endpoint incidence on B669/B66A"
+        },
+        "isometric_evidence": {
+          "sheet": "SH16-11",
+          "correspondence": "none_proven",
+          "filled_from_plan": false
+        },
+        "disposition": "unresolved",
+        "may_overwrite_other_view": false
+      },
+      {
+        "kind": "isometric_only",
+        "plan_evidence": {
+          "sheet": "SH16-08-10",
+          "correspondence": "none_proven",
+          "filled_from_isometric": false
+        },
+        "isometric_evidence": {
+          "node_id": "VDEV001",
+          "semantic_status": "unresolved",
+          "source_marker_handle": "2BCE3"
+        },
+        "disposition": "unresolved",
+        "may_overwrite_other_view": false
+      }
+    ],
+    "candidate_attributes": [
+      {
+        "id": "SH16-09-12E98",
+        "fused": false,
+        "diameter": null,
+        "length": {
+          "value": 16349.999999994412,
+          "source_view": "plan",
+          "method": "source_line_length",
+          "expected_source": "plan",
+          "completeness": "complete"
+        },
+        "reason": "no mapping survived S5"
+      },
+      {
+        "id": "SH16-09-T025-vertical",
+        "fused": false,
+        "diameter": null,
+        "length": {
+          "value": null,
+          "source_view": "plan",
+          "method": "not_present_on_plan",
+          "expected_source": "isometric",
+          "completeness": "incomplete"
+        },
+        "reason": "plan has no vertical length"
+      }
+    ],
+    "checked_regions": [
+      {
+        "sheet": "SH16-09",
+        "class": "circle_adjacent_real_tee",
+        "instances": [
+          "T025",
+          "T065"
+        ],
+        "plan_check": "matches_source",
+        "isometric_check": "not_run_for_this_range",
+        "eligible_for_mapping": false
+      },
+      {
+        "sheet": "SH16-08",
+        "class": "adjacent_omission_symbol",
+        "instances": [
+          "B99D",
+          "B99E",
+          "B9A7",
+          "B9A8"
+        ],
+        "plan_check": "matches_source",
+        "isometric_check": "not_run_for_this_range",
+        "eligible_for_mapping": false
+      }
+    ],
+    "isolated_regions": [
+      "SH16-08/09/10 equipment supply and return ports",
+      "SH16-09 shared labels B3B1 and B3B2",
+      "unmatched radius-80 circles",
+      "plan riser destinations",
+      "SH16-11 VDEV001",
+      "same-name equipment across sheets"
+    ]
+  },
+  "hashes": {
+    "plan_sheet09_graph_sha256": "64398c4b590693fdc91aea2d95eac3f41da8063596c04cc67624c316c16c6104",
+    "isometric_fixture_sha256": "2287909e99a73b6c536dbf5ccee0e5509cd4aa17733056178229ac63dbf2b9d8"
+  },
+  "attribute_fusion": {
+    "state": "not_started",
+    "reason": "no connection survived S5",
+    "human_confirmation": "none",
+    "values": []
+  },
+  "lf20": {
+    "backtest_ran": false,
+    "gain": null,
+    "regression": null,
+    "project_difference": "LF20 02 is a cooling-source schematic, 03 is an A-building water plan, and 06 is a terminal system diagram. The SH16 ceiling extractor was not applied to them.",
+    "sheets": [
+      {
+        "sheet": "LF20-02",
+        "path": "E:\\codex\\CAD\\output\\02双盘管冷源-冷塔回水对照-v2\\inputs\\02双盘管冷源系统原理图.dxf",
+        "exists": true,
+        "bytes": 4556521
+      },
+      {
+        "sheet": "LF20-03",
+        "path": "E:\\codex\\CAD\\output\\A楼-03空调水管平面-阶段验收-v1\\inputs\\03空调水管平面图.dxf",
+        "exists": true,
+        "bytes": 4759174
+      },
+      {
+        "sheet": "LF20-06",
+        "path": "E:\\codex\\CAD\\output\\A楼-06末端空调-管径楼层-v3\\inputs\\06末端空调系统图.dxf",
+        "exists": true,
+        "bytes": 3148547
+      }
+    ],
+    "missing_skill_inputs": [
+      "skills/build-cad-pipe-topology/scripts/confirmed_circle_junctions.py",
+      "skills/build-cad-pipe-topology/scripts/source_readability.py",
+      "skills/build-cad-pipe-topology/scripts/run_confirmed_circle_pipeline.py"
+    ],
+    "reason": "The native DXFs exist. The family runners named by the registry are not in this checkout, so no gain or regression number was produced."
+  },
+  "progress": {
+    "historical_features": "M1 copied seven registered sources from the CAD v7 snapshot and left every other absent name to_fix.",
+    "plan_correctness": "Two sheet 09 tees and four sheet 08 omission symbols match the release DXF. Equipment ports stay unresolved and no drawing is accepted.",
+    "isometric_cross_check": "The SH16-11 count lock was rechecked and no isometric connection was repaired or filled from the plan. Mapping did not start.",
+    "shared_delivery": "The HIL package is unreviewed. LF20 drawings were found, and the missing family runners blocked a backtest."
+  }
+}

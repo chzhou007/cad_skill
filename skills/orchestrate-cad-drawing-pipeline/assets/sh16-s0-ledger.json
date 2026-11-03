@@ -1,6 +1,6 @@
 {
   "program": "sh16-dual-view",
-  "stage": "S1",
+  "stage": "S2",
   "historical_baseline_is_correct": false,
   "code_baseline": {
     "commit": "d66dc70",
@@ -13,7 +13,7 @@
   ],
   "untracked_inputs": [
     "1242 DWG/DXF files copied under archive/, output/, packages/, releases/, and work/; those trees contain no text ledger",
-    "LF20 02/03/06 native inputs were not used",
+    "LF20 02/03/06 native DXFs exist in E:/codex/CAD/output and were not copied into this checkout",
     "The expert list and feature registry were read from E:/codex/CAD/work and the installed skill, then copied into assets/historical/"
   ],
   "layers": [
@@ -379,7 +379,8 @@
       "source": "docs/sh16-dual-view-plan.md",
       "entry": "skills/orchestrate-cad-drawing-pipeline/scripts/dual_view_scope.py",
       "tests": [
-        "skills/orchestrate-cad-drawing-pipeline/scripts/test_dual_view_scope.py"
+        "skills/orchestrate-cad-drawing-pipeline/scripts/test_dual_view_scope.py",
+        "skills/orchestrate-cad-drawing-pipeline/scripts/test_sh16_dual_view_loop.py"
       ],
       "drawings": [
         "SH16-08",
@@ -389,7 +390,7 @@
       ],
       "status": "to_fix",
       "drawing_correct": false,
-      "evidence": "S0 only locks the mapping contract: both views, evidence, and no fusion without hashes. No SH16 correspondence is accepted."
+      "evidence": "One loop recorded the two sheet 09 tees and four sheet 08 omission symbols as plan-checked only. Mapping is empty because the isometric check of those ranges has not passed."
     },
     {
       "id": "dual-view-diameter-and-length",
@@ -397,7 +398,8 @@
       "source": "docs/sh16-dual-view-plan.md",
       "entry": "skills/build-cad-pipe-topology/scripts/dual_view_attributes.py",
       "tests": [
-        "skills/build-cad-pipe-topology/scripts/test_dual_view_attributes.py"
+        "skills/build-cad-pipe-topology/scripts/test_dual_view_attributes.py",
+        "skills/orchestrate-cad-drawing-pipeline/scripts/test_sh16_dual_view_loop.py"
       ],
       "drawings": [
         "SH16-08",
@@ -407,7 +409,7 @@
       ],
       "status": "to_fix",
       "drawing_correct": false,
-      "evidence": "Inheritance, conflict and horizontal/vertical source rules run on synthetic segments. They have not been applied to SH16 graphs."
+      "evidence": "Candidate horizontal length for source line 12E98 stays unfused. Its vertical length is null because the plan has no vertical measurement. Unknown diameter stays null."
     },
     {
       "id": "dual-view-difference-loop",
@@ -415,7 +417,8 @@
       "source": "docs/sh16-dual-view-plan.md",
       "entry": "skills/build-cad-pipe-topology/scripts/dual_view_attributes.py",
       "tests": [
-        "skills/build-cad-pipe-topology/scripts/test_dual_view_attributes.py"
+        "skills/build-cad-pipe-topology/scripts/test_dual_view_attributes.py",
+        "skills/orchestrate-cad-drawing-pipeline/scripts/test_sh16_dual_view_loop.py"
       ],
       "drawings": [
         "SH16-08",
@@ -425,7 +428,7 @@
       ],
       "status": "to_fix",
       "drawing_correct": false,
-      "evidence": "A difference record cannot overwrite either view. Plan-only, isometric-only, system and riser differences are not yet extracted from drawings."
+      "evidence": "The loop records plan_only for T025/T065 and isometric_only for unresolved VDEV001. Neither record may overwrite the other view. No branch mismatch, system conflict, or riser identity was inferred."
     },
     {
       "id": "lf20-backtest",
@@ -433,6 +436,7 @@
       "source": "docs/sh16-dual-view-plan.md",
       "entry": "skills/orchestrate-cad-drawing-pipeline/scripts/pipeline.py",
       "tests": [
+        "skills/orchestrate-cad-drawing-pipeline/scripts/test_sh16_dual_view_loop.py",
         "not-in-tracked-tree"
       ],
       "drawings": [
@@ -442,7 +446,7 @@
       ],
       "status": "to_fix",
       "drawing_correct": false,
-      "evidence": "LF20 is the generalization set after SH16 rules are stable. Inputs are not in this checkout, so no backtest was run."
+      "evidence": "LF20 DXFs exist and were not copied: E:/codex/CAD/output/02双盘管冷源-冷塔回水对照-v2/inputs/02双盘管冷源系统原理图.dxf, E:/codex/CAD/output/A楼-03空调水管平面-阶段验收-v1/inputs/03空调水管平面图.dxf, and E:/codex/CAD/output/A楼-06末端空调-管径楼层-v3/inputs/06末端空调系统图.dxf. The family runners confirmed_circle_junctions.py, source_readability.py and run_confirmed_circle_pipeline.py are absent from this checkout. No backtest ran, so gain and regression are null rather than zero."
     },
     {
       "id": "historical-feature-native_text",
@@ -1129,7 +1133,8 @@
       "source": "output/dwg-region-split/panels/08-一层顶部水管平面图/08-一层顶部水管平面图.dxf",
       "entry": "skills/build-cad-pipe-topology/scripts/cad_ceiling_native_rules.py",
       "tests": [
-        "skills/build-cad-pipe-topology/scripts/test_ceiling_omission_symbols.py"
+        "skills/build-cad-pipe-topology/scripts/test_ceiling_omission_symbols.py",
+        "skills/orchestrate-cad-drawing-pipeline/scripts/test_sh16_dual_view_loop.py"
       ],
       "drawings": [
         "SH16-08",
@@ -1138,7 +1143,7 @@
       ],
       "status": "fixed_pending_regression",
       "drawing_correct": false,
-      "evidence": "Sheet 08 return circles 112 and 11C have two arms and two forward bars. Two bars from the supply symbols 200 units away, handles 113 and 11D, also fell inside the 230 radius, so the old bar count rejected the return symbols. A bar now counts only when both ends are in front of that circle's own arms. Extra forward bars stay unmatched and the neighbor is not bound. The same radius-80 read left sheets 09 and 10 unchanged and left 16 other sheet 08 radius-80 circles unmatched because they have no two-arm pattern. The ceiling batch, parameter library, and enrichment inputs are absent, so the sheet graph was not rebuilt. Equipment ports remain unresolved."
+      "evidence": "S2 matched sheet 08 circles B99D, B99E, B9A7 and B9A8 to their own arms and forward bars in the release 08 DXF. Neighbor bars 200 units away did not reject the symbol. The earlier handles 112 and 11C are not those DXF entities. Other radius-80 circles stay unmatched. drawing_correct stays false."
     },
     {
       "id": "s1-shared-equipment-label",
@@ -1146,7 +1151,8 @@
       "source": "output/dwg-region-split/panels/09-二层顶部水管平面图/09-二层顶部水管平面图.dxf",
       "entry": "skills/build-cad-pipe-topology/scripts/ceiling_equipment_labels.py",
       "tests": [
-        "skills/build-cad-pipe-topology/scripts/test_ceiling_equipment_labels.py"
+        "skills/build-cad-pipe-topology/scripts/test_ceiling_equipment_labels.py",
+        "skills/orchestrate-cad-drawing-pipeline/scripts/test_sh16_dual_view_loop.py"
       ],
       "drawings": [
         "SH16-08",
@@ -1155,7 +1161,7 @@
       ],
       "status": "fixed_pending_regression",
       "drawing_correct": false,
-      "evidence": "Sheet 09 text 6A (CRAH-4#-2-2) is outside inserts 63 and 65 and is inside both 600-unit boxes. The old sole-candidate counter gave it to insert 65 because 63 also saw text 69. A label selected by two blocks now stays unresolved. The same check found no other stolen label on sheets 08 or 10. No supply or return port was created. The ceiling batch was not rebuilt."
+      "evidence": "S2 read inserts B3B1 and B3B2 and texts B3BF (CRAH-4#-2-1) and B3C0 (CRAH-4#-2-2) from the release 09 DXF. The shared label stays unresolved and no port was created. drawing_correct stays false."
     },
     {
       "id": "s1-ceiling-08-10-rebuild",
@@ -1163,7 +1169,7 @@
       "source": "E:/codex/CAD/releases/SH16-all-tasks-v3.7.1-crossover-completion",
       "entry": "skills/build-cad-pipe-topology/scripts/build_ceiling_family.py",
       "tests": [
-        "not-in-tracked-tree"
+        "skills/orchestrate-cad-drawing-pipeline/scripts/test_sh16_dual_view_loop.py"
       ],
       "drawings": [
         "SH16-08",
@@ -1172,7 +1178,7 @@
       ],
       "status": "to_fix",
       "drawing_correct": false,
-      "evidence": "Rebuilt into work/sh16-ceiling-rebuild-s1/output from the copied v3.7.1 batch JSON and family-config.json. Existing local DXFs were used and were not copied again. Counts are not correctness. Sheet 08: 126 nodes, 102 edges, 118/118 inline components assigned, 10 equipment nodes ports_unresolved, 8 label_unresolved handles B386 B387 B38A B38B B38F B390 1680C 1680D. Sheet 09: 384 nodes, 254 edges, 160/160 inline assigned, 36 equipment ports_unresolved, label_unresolved handles B3B1 and B3B2 (shared CRAH-4#-2-2), pending junctions on circles 12E9B and 12E9A. Sheet 10: 374 nodes, 181 edges, 196/196 inline assigned, 36 equipment ports_unresolved. Virtual nodes remain riser_destination_unresolved, equipment_beyond_interface_unresolved, or source_boundary_unconfirmed. Full IDs are in work/sh16-ceiling-rebuild-s1/output/rebuild-record.json. No proximity ports were added."
+      "evidence": "S2 did not turn the rebuild counts into acceptance. Equipment supply and return ports remain ports_unresolved. The nearest unresolved terminal is 380, 300 and 300 drawing units from an equipment outline on sheets 08, 09 and 10, so no port was created from proximity."
     },
     {
       "id": "s1-circle-adjacent-real-tee",
@@ -1180,19 +1186,20 @@
       "source": "work/sh16-ceiling-rebuild-s1/output/tasks/SH16-09-ffeda2df/topology/pending-junctions.json",
       "entry": "skills/build-cad-pipe-topology/scripts/cad_ceiling_native_rules.py",
       "tests": [
-        "skills/build-cad-pipe-topology/scripts/test_ceiling_real_tee.py"
+        "skills/build-cad-pipe-topology/scripts/test_ceiling_real_tee.py",
+        "skills/orchestrate-cad-drawing-pipeline/scripts/test_sh16_dual_view_loop.py"
       ],
       "drawings": [
         "SH16-09"
       ],
       "status": "fixed_pending_regression",
       "drawing_correct": false,
-      "evidence": "Sheet 09 return circle 12E9B and supply circle 12E9A are radius 80 and have no V or bars. Each center is 1.3 units off a perpendicular endpoint-incidence contact: return main B669 with branch 12E98, supply main B66A with branch 12E99. The old 400-unit circle test withheld both tees. An unmatched circle no longer blocks a three-ray tee. A matched omission symbol or calibrated riser still does. Rebuild work/sh16-ceiling-rebuild-s1b changed only sheet 09 tees from 78 to 80 (T025 return, T065 supply). Nodes stayed 384 and edges stayed 254. Sheets 08 and 10 were unchanged. No equipment port was added. drawing_correct stays false."
+      "evidence": "S2 compared T025 (return, B669+12E98, circle 12E9B offset about 1.3) and T065 (supply, B66A+12E99, circle 12E9A) with the release 09 DXF. Both are endpoint-incidence tees and neither circle has branch-layer geometry inside 230 units. The region is not eligible for mapping until the isometric check of that range passes. drawing_correct stays false."
     }
   ],
   "milestones": {
     "M1": "closed",
-    "M2": "open",
+    "M2": "source_comparison_recorded",
     "M3": "open",
     "M4": "open",
     "M5": "open"
@@ -1243,5 +1250,17 @@
       "not_a_dump": true
     }
   },
-  "s1_meaning": "Sheets 08-10 were rebuilt from the copied v3.7.1 ceiling batch. Sheet 09 now keeps two real tees beside unmatched radius-80 circles. Counts are not correctness. Shared equipment labels stay unresolved, and supply and return ports, double-line ports, shaft multi-pipe, and source comparison remain open."
+  "s1_meaning": "Sheets 08-10 were rebuilt from the copied v3.7.1 ceiling batch. Sheet 09 keeps two real tees beside unmatched radius-80 circles, and those two tees were compared with the release DXF. Counts are not correctness. Shared equipment labels stay unresolved. Supply and return ports, double-line ports, and shaft multi-pipe remain open.",
+  "s2_meaning": "Changed plan classes were compared with the release DXF. Two tees and four omission symbols match source instances. Equipment ports, shared labels, and whole sheets are not accepted. Mapping has not started.",
+  "m2_meaning": "M2 is not closed. Source comparison is recorded for the classes changed in S1. Blockers: equipment ports have no proven contact, SH16-06/07 double-line ports remain to_fix, shaft multi-pipe has no tracked test, and drawing_correct is false.",
+  "m3_meaning": "M3 is not closed. The isometric fixture count was rechecked and is not correctness. No isometric error was proven from the isometric source. S4 did not start because no range passed both views.",
+  "m4_meaning": "M4 is not closed. No connection survived S5, so no attribute was fused. The HIL package is unreviewed and has no human confirmation.",
+  "m5_meaning": "M5 is not closed. LF20 02, 03 and 06 DXFs exist under E:/codex/CAD/output. The applicable family runners are missing, so gain, regression and a backtest were not invented.",
+  "progress": {
+    "historical_features": "Seven registered sources found in the CAD v7 snapshot were copied and tested. The remaining registered names were not in E:/codex/CAD and stay to_fix.",
+    "plan_correctness": "Sheet 09 T025 and T065 and sheet 08 circles B99D, B99E, B9A7 and B9A8 match the release DXF. Equipment ports stay unresolved. drawing_correct is false.",
+    "isometric_cross_check": "SH16-11 remains 424 nodes, 576 edges and 302 tees. That count is not correctness. No mapping was created.",
+    "shared_delivery": "HIL is an unreviewed package. LF20 native files exist and the missing family runners blocked the backtest."
+  },
+  "source_comparison_record": "skills/orchestrate-cad-drawing-pipeline/assets/sh16-s2-s8-record.json"
 }

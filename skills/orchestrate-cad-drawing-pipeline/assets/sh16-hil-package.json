@@ -1,0 +1,8 @@
+{
+  "package": "sh16-dual-view",
+  "hil_ready": false,
+  "human_confirmation": "none",
+  "review_state": "unreviewed",
+  "reason": "no connection survived S5",
+  "record": "skills/orchestrate-cad-drawing-pipeline/assets/sh16-s2-s8-record.json"
+}
