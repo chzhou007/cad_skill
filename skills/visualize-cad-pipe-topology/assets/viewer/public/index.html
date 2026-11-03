@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>CAD · Pipe Topology</title><meta name="cad-viewer-build" content="__BUILD_ID__"><link rel="icon" href="data:,">
+  <link rel="stylesheet" href="style.css"><link rel="stylesheet" href="polish.css">
+</head>
+<body>
+<svg id="symbol-library" aria-hidden="true" width="0" height="0"><defs id="symbol-defs"></defs></svg>
+<header class="app-header">
+  <div class="brand"><span class="brand-mark">⌘</span><div><strong id="brand-title">Pipe Topology</strong><span id="brand-subtitle">Loading dataset…</span></div></div>
+  <div class="search-wrap"><span class="search-icon">⌕</span><input id="search" aria-label="Search equipment, node, edge or component" placeholder="Search equipment, node, edge or component…" autocomplete="off"><kbd>/</kbd><div id="search-results" class="search-results" hidden></div></div>
+  <nav class="view-switch" aria-label="View"><button id="view-topology" class="active">Topology</button><button id="view-cad">CAD Compare</button></nav>
+  <details id="export-menu" class="export-menu"><summary>Export <span>↗</span></summary><div class="menu"><button data-export="png">Current view · PNG</button><button data-export="svg">Current view · SVG</button><button data-export="equipment">Connected equipment · CSV</button><button data-export="edges">Selected edges · CSV</button><button data-export="instances">Component instances · CSV</button></div></details>
+</header>
+<div class="workspace">
+  <aside class="sidebar">
+    <div class="sidebar-title"><span class="eyebrow">PROJECT EXPLORER</span><span class="project-dot"></span></div>
+    <section><h2>Floors</h2><div id="floor-buttons" class="floor-buttons"></div><small>Equipment count by floor</small></section>
+    <section><h2>Systems</h2><div id="system-controls"></div></section>
+    <section><h2>Graph overlays</h2><label class="check"><input id="layer-equipment" type="checkbox" checked><span>Equipment</span></label><label class="check"><input id="layer-tee" type="checkbox" checked><span>T-junctions</span></label><label class="check"><input id="layer-virtual" type="checkbox" checked><span>Virtual interfaces</span></label><label class="check"><input id="layer-components" type="checkbox"><span>Inline components</span></label><label class="check"><input id="layer-labels" type="checkbox"><span>Node labels</span></label></section>
+    <section class="review-section"><button id="review-toggle" class="review-toggle"><span>⚠ &nbsp; Pending review</span><b>0</b></button><div id="review-list" hidden></div></section>
+    <details class="symbol-key"><summary>CAD symbol key</summary><div id="legend-symbols"></div><small>Source DXF geometry.<br>Graph dots and diamonds are overlays.</small></details>
+    <button id="source-info" class="source-button">ⓘ &nbsp; Dataset & provenance</button>
+  </aside>
+  <main class="main">
+    <div class="context-row"><div><span id="project-eyebrow" class="eyebrow">CAD PIPE TOPOLOGY</span><h1 id="view-title">All-floor topology</h1></div><div class="dataset-badge"><span class="green-dot"></span> Local dataset <b>v2 HIL</b></div></div>
+    <div class="canvas-toolbar"><div class="scope-switch" aria-label="Selection scope"><button id="scope-segment" class="active">Current segment</button><button id="scope-network">Same-system network</button></div><div class="toolbar-actions"><button id="path-toggle">⇄ &nbsp; Path explorer</button><button id="fit">⛶ &nbsp; Fit view</button><button id="clear" title="Clear selection (Escape)">Clear</button></div></div>
+    <div id="path-panel" class="path-panel" hidden><label>From<input id="path-from" list="node-options" placeholder="Node ID"></label><label>To<input id="path-to" list="node-options" placeholder="Node ID"></label><label>System<select id="path-system"><option value="supply">CHWS · Supply</option><option value="return">CHWR · Return</option></select></label><button id="find-path" class="primary">Find path</button><span id="path-result">Undirected · Equipment and interfaces are boundaries</span><datalist id="node-options"></datalist></div>
+    <div id="compare-options" class="compare-options" hidden><label><input id="sync-views" type="checkbox" checked> Sync views</label><label><input id="source-paths" type="checkbox" checked> Show source paths</label><span>Source vectors · English building aliases; originals retained</span></div>
+    <div id="canvas-panes" class="canvas-panes">
+      <div class="canvas-pane" id="topology-pane"><div class="pane-label"><span id="topology-caption">TOPOLOGY · ORIGINAL CAD POSITIONS</span><span id="view-filter-label">All floors</span></div><svg id="graph-svg" tabindex="0" aria-label="Interactive pipe topology. Click a pipe or node; drag to pan; scroll to zoom." role="img"></svg><div class="canvas-empty" id="empty-view" hidden>No visible systems. Enable CHWS or CHWR.</div><div id="graph-tooltip" class="graph-tooltip" hidden></div><div class="canvas-hint" id="canvas-hint">Select a pipe to inspect its connected equipment</div><div class="zoom-controls"><button id="zoom-out" aria-label="Zoom out">−</button><span id="zoom-value">100%</span><button id="zoom-in" aria-label="Zoom in">+</button><button id="focus-selection" title="Fit selection" aria-label="Fit selection">⊙</button></div><div class="minimap-box"><span>Overview</span><svg id="minimap" aria-label="Overview. Click to move viewport."></svg></div></div>
+      <div class="canvas-pane" id="cad-pane" hidden><div class="pane-label"><span>CAD · SOURCE GEOMETRY</span><span>DXF</span></div><svg id="cad-svg" tabindex="0" role="img" aria-label="Actual CAD geometry and selected original paths"></svg><div class="cad-note">Geometry from source DXF · Native drawing units</div></div>
+    </div>
+    <div class="canvas-status"><div class="compact-legend" id="system-legend"></div><span id="selection-status">Loading dataset…</span></div>
+  </main>
+  <aside class="inspector"><div id="detail-header"></div><div class="inspector-tabs" role="tablist"><button id="tab-connections" class="active" role="tab">Connections <span id="equipment-count">0</span></button><button id="tab-components" role="tab">Components <span id="component-count">0</span></button><button id="tab-instances" role="tab">Instances</button></div><div class="inspector-filter"><input id="inspector-search" aria-label="Filter selected records" placeholder="Filter selected records…"></div><div id="detail-content" class="detail-content"></div><div class="inspector-footer"><button id="locate-cad">Locate in CAD ↗</button><button id="show-instances">View instances</button></div></aside>
+</div>
+<footer class="app-footer"><span><i class="green-dot"></i> <span id="footer-project">Local dataset</span> <span class="divider">/</span> English · Local workspace</span><span>Connectivity only · Flow direction unverified</span></footer>
+<div id="toast" role="status" class="toast" hidden></div>
+<dialog id="info-dialog"><div class="dialog-heading"><h2>Dataset & provenance</h2><button id="close-info" aria-label="Close dataset information">×</button></div><div id="info-content"></div></dialog>
+<div id="loading" class="loading"><span class="spinner"></span><strong>Loading pipe topology</strong><span>Preparing source geometry and graph records…</span></div>
+<script type="module" src="app.js"></script>
+</body></html>
+

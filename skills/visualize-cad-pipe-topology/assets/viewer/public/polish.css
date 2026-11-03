@@ -1,0 +1,23 @@
+/* Readability and viewport alignment. */
+#symbol-library{position:absolute;overflow:hidden;width:0;height:0}
+.detail-description{font-size:12px}
+.properties{font-size:11px}
+.record .record-title{font-size:12px}
+.record .record-subtitle{font-size:10px}
+.record .record-end{font-size:11px}
+.inspector-tabs button{font-size:11px}
+.inspector-filter input{font-size:11px}
+.section-note{font-size:10px}
+.inspector-footer button,.link-row{font-size:11px}
+.canvas-toolbar button{font-size:11px}
+.canvas-status{font-size:10px}
+.app-footer{font-size:10px}
+.check{font-size:12px}
+.record:focus-visible{outline-offset:-2px}
+.port-record{padding:8px;border-bottom:1px solid #eef2f7;font-size:10px;line-height:1.7}
+.port-record strong{display:block;color:#536783}
+.source-loading{position:absolute;inset:0;display:grid;place-content:center;color:#8190a3;pointer-events:none;background:#ffffffbb}
+@media(max-width:1200px){.canvas-toolbar button{font-size:10px}.canvas-status{font-size:9px}.inspector-tabs button{font-size:10px}}
+@media(max-width:850px){.app-footer{font-size:8px}.canvas-status{font-size:8px}.record .record-title{font-size:11px}}
+
+.line.supply{border-top-style:var(--supply-border-style,solid)}.line.return{border-top-style:var(--return-border-style,dashed)}

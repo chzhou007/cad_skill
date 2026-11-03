@@ -1,0 +1,40 @@
+# ===== 大体积工作产物：不入 git（交付物走 releases/ 归档或对象存储）=====
+output/
+work/
+releases/
+archive/
+*.zip
+
+# ===== 历史快照与非 v1 代码：不入 git =====
+packages/
+visualizer/
+
+# ===== Python =====
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+visualizer/.venv/
+
+# ===== 测试与运行时产物 =====
+test-results/
+visualizer/test-results/
+*.log
+
+# ===== 大二进制（对照图、预览图、截图不入库；小图标可用 LFS 另议）=====
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.pdf
+!docs/**/*.png
+
+# ===== 系统/编辑器 =====
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# ===== 敏感/本机路径配置（示例配置入库前须去本机绝对路径）=====
+**/local-config.json

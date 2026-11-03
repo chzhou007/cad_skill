@@ -1,0 +1,13 @@
+# Exploded components and layer coverage v1.6.2
+
+Inventory all model-space layers before declaring a component missing from CAD. Compare source INSERTs, exploded primitives, recognized candidates, source role, owning edge and selection filters separately. A missing selected symbol may be an omitted family, an unmatched contact or a component owned by another edge.
+
+`exploded_templates.py` matches every LINE/straight LWPOLYLINE segment of a configured native block under uniform scale, rotation and reflection. It scans all model-space layers, rejects partial polylines, incomplete/ambiguous primitive matches and overlap with recognized INSERTs. The bounded default families are the configured native sensor and metal flexible connector prototypes; `exploded_template_blocks` can override them after source verification. Unsupported curves/hatches and unconstrained nearest matches are not permitted by this matcher.
+
+A sensor needs its complete rectangle and native-ratio pipe lead plus a unique tagged circular head joined to the body by a real radial source connector. The connector may be on another layer only because its two ends and radial alignment are proven. A square with a line alone is insufficient. Metal flexible connectors require all five native strokes. Do not classify their zigzag as a valve bowtie or a hydraulic branch. Preserve actual source geometry and type mapping, never substitute a generated glyph.
+
+Emit `exploded_template_recognition.json` and `source_tagged_head_coverage.json`. Discover tagged heads independently from sensor-body detection; classify them as represented geometry, reference legend or pending. Pass `sourceTaggedHeadCoverage` to the viewer gate. Known pending heads do not become accepted connections or human errors. This ledger covers recognized tagged head families; it is not proof that every unknown CAD symbol has been interpreted.
+
+The SH16 03 v5 fixture adds two pipe SFIT-X2 sensors, four metal flexible connectors and one legend-only sensor. Its 69 nodes, 89 edge paths, all 230 prior assigned instance records and 35/35 equipment ports remain unchanged. Assigned instances become 236. E0063 has two butterfly valves, one metal flexible connector and three sensors. Source PIT-B1 head 240DC remains pending because its connection evidence is incomplete.
+
+Keep v4 immutable; the v5 expected results are justified by individual native handles and regional evidence. Test complete rotated/mirrored/scaled symbols, a missing stroke, a sensor without a tagged head, cross-layer head connectors, and an exported graph missing a discovered head.

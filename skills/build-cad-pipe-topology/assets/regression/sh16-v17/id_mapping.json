@@ -1,0 +1,40 @@
+{
+  "retired_nodes": [
+    "T053",
+    "T054",
+    "T055",
+    "T056"
+  ],
+  "retired_edges": [
+    "E0093",
+    "E0095",
+    "E0097",
+    "E0098"
+  ],
+  "merged_edges": [
+    {
+      "retained_edge_id": "E0063",
+      "old_start": "T053",
+      "new_start": "T045",
+      "end": "CRAH-4#-1-5"
+    },
+    {
+      "retained_edge_id": "E0064",
+      "old_start": "T054",
+      "new_start": "T046",
+      "end": "CRAH-4#-1-6"
+    },
+    {
+      "retained_edge_id": "E0065",
+      "old_start": "T055",
+      "new_start": "T047",
+      "end": "CRAH-4#-1-7"
+    },
+    {
+      "retained_edge_id": "E0066",
+      "old_start": "T056",
+      "new_start": "T048",
+      "end": "CRAH-4#-1-8"
+    }
+  ]
+}

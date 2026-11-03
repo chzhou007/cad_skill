@@ -1,0 +1,7 @@
+interface:
+  display_name: "CAD Topology Viewer"
+  short_description: "Build portable CAD topology viewers and source comparisons"
+  default_prompt: "Use $visualize-cad-pipe-topology to generate a portable English visualization package from these completed CAD topology results, matching the source CAD table symbols."
+
+policy:
+  allow_implicit_invocation: true

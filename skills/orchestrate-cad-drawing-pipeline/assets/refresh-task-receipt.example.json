@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "purpose": "Fill per task after specialist execution; pending template is not completion evidence.",
+  "task_id": "REPLACE_WITH_TASK_ID",
+  "family": "REPLACE_WITH_SOURCE_EVIDENCED_FAMILY",
+  "source_sha256": null,
+  "profile_hashes": {},
+  "owner_versions_and_hashes": {},
+  "applicability": {"topology": "pending", "architecture": "pending", "parameters": "pending", "evidence": []},
+  "execution": {"status": "not_run", "executed_stages": [], "fresh_artifacts": []},
+  "comparison": {
+    "baseline_identity": null,
+    "counts_before_after": {},
+    "full_source_paths_and_endpoints": "not_run",
+    "node_positions_types_groups": "not_run",
+    "component_identity_and_ownership": "not_run",
+    "equipment_ports": "not_run",
+    "parameters_and_pending_changes": "not_run",
+    "canonical_id_mapping_artifact": null
+  },
+  "normalization": {"discovery_artifact": null, "accepted_final_span_evidence": null, "dispositions_artifact": null},
+  "architecture": {"invocation_mode": null, "actual_records": null, "coordinate_validation": "not_run", "zero_result_reason": null},
+  "visualization": {"default_node_filter_coverage": "not_run", "native_geometry_evidence": [], "browser_evidence": [], "pair_evidence": []},
+  "tests": [],
+  "blocking_defects": [],
+  "pending_with_reasons": [],
+  "review": {"scope": "this_task_only", "confirmation_inherited": false, "technical_checks_are_human_confirmation": false}
+}

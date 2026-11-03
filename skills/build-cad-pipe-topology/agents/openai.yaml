@@ -1,0 +1,4 @@
+interface:
+  display_name: "CAD Pipe Topology"
+  short_description: "Convert CAD piping drawings into validated topology"
+  default_prompt: "Use $build-cad-pipe-topology to convert this CAD piping drawing into validated topology, then use $visualize-cad-pipe-topology to deliver the local English viewer and portable ZIP."

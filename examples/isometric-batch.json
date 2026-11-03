@@ -1,0 +1,15 @@
+{
+  "project_id": "isometric-example",
+  "profile_files": [],
+  "tasks": [
+    {
+      "task_id": "ISO-01-example",
+      "source": "<PATH_TO_ISOMETRIC_DXF>/11-空调水系统图.dxf",
+      "family": "isometric",
+      "tags": ["pipe", "equipment"],
+      "evidence": [
+        "Example entry. Replace <PATH_TO_ISOMETRIC_DXF> with the actual source DXF path; record source inventory/task evidence here."
+      ]
+    }
+  ]
+}

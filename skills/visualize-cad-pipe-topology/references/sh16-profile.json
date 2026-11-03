@@ -1,0 +1,18 @@
+{
+  "project": {"id":"SH16", "title":"Pipe Topology", "description":"Air-conditioning water", "equipmentLabel":"CRAH cabinet"},
+  "preferred_port": 8767,
+  "systems": {
+    "supply": {"code":"CHWS", "name":"Supply", "color":"#cf26bd", "dash":""},
+    "return": {"code":"CHWR", "name":"Return", "color":"#aa7a10", "dash":"5 3"}
+  },
+  "device_types": [
+    {"code":"BV", "label":"Ball Valve", "source_names":["球阀"], "symbol":{"drawing":"main", "block":"H-PICPNT-91"}},
+    {"code":"BFV", "label":"Butterfly Valve", "source_names":["蝶阀"], "symbol":{"drawing":"main", "block":"H-PICPNT-87"}},
+    {"code":"MFJ", "label":"Metal Hose", "source_names":["金属软接"], "symbol":{"drawing":"main", "block":"H-PICPNT-74"}},
+    {"code":"YS", "label":"Y-Strainer", "source_names":["Y型汽/水过滤器"], "symbol":{"drawing":"main", "block":"H-PICPNT-76"}},
+    {"code":"PG", "label":"Pressure Gauge", "source_names":["压力表"], "symbol":{"drawing":"main", "block":"H-PICPNT-81"}},
+    {"code":"TG", "label":"Thermometer", "source_names":["温度计"], "symbol":{"drawing":"main", "block":"H-PICPNT-82"}},
+    {"code":"AAV", "label":"Automatic Air Vent", "source_names":["自动放气阀"], "symbol":{"drawing":"legend", "block":"A$C69C93C30", "mode":"insert"}}
+  ],
+  "equipment_symbol": {"drawing":"main", "block":"1", "colors":[1]}
+}

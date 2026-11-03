@@ -1,0 +1,14 @@
+{
+  "version": "1.7.0",
+  "source_sha256": "46e141850450148aca1951b76b249298a45c32cc12e4f21474f2bb580fcd677b",
+  "nodes": 423,
+  "edges": 575,
+  "components": 1560,
+  "retired_nodes": [
+    "T053",
+    "T054",
+    "T055",
+    "T056"
+  ],
+  "historical_fixture_unchanged": true
+}

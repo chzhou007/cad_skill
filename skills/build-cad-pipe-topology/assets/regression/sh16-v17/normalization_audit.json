@@ -1,0 +1,83 @@
+{
+  "elbow_overshoots": [
+    {
+      "source_handles": [
+        "14BA6"
+      ],
+      "source_handle_scope": "top_level_owner",
+      "original_endpoint": [
+        2525481.274588409,
+        152026.3559285814
+      ],
+      "semantic_endpoint": [
+        2525481.27458841,
+        152024.25553987
+      ],
+      "removed_length": 2.100388711405685,
+      "rule": "dangling_micro_overshoot_at_two_ray_elbow",
+      "status": "applied"
+    },
+    {
+      "source_handles": [
+        "14BD5"
+      ],
+      "source_handle_scope": "top_level_owner",
+      "original_endpoint": [
+        2529374.772357774,
+        152026.3559285814
+      ],
+      "semantic_endpoint": [
+        2529374.772357775,
+        152024.25553987
+      ],
+      "removed_length": 2.100388711405685,
+      "rule": "dangling_micro_overshoot_at_two_ray_elbow",
+      "status": "applied"
+    },
+    {
+      "source_handles": [
+        "14BDA"
+      ],
+      "source_handle_scope": "top_level_owner",
+      "original_endpoint": [
+        2533268.270127139,
+        152026.3559285814
+      ],
+      "semantic_endpoint": [
+        2533268.27012714,
+        152024.25553987
+      ],
+      "removed_length": 2.100388711405685,
+      "rule": "dangling_micro_overshoot_at_two_ray_elbow",
+      "status": "applied"
+    },
+    {
+      "source_handles": [
+        "14BDF"
+      ],
+      "source_handle_scope": "top_level_owner",
+      "original_endpoint": [
+        2537161.767896504,
+        152026.3559285814
+      ],
+      "semantic_endpoint": [
+        2537161.767896505,
+        152024.25553987
+      ],
+      "removed_length": 2.100388711405685,
+      "rule": "dangling_micro_overshoot_at_two_ray_elbow",
+      "status": "applied"
+    }
+  ],
+  "config": {
+    "system_layers": {
+      "\u7a7a\u8c03\u51b7\u51bb\u6c34\u4f9b\u6c34": "supply",
+      "\u7a7a\u8c03\u51b7\u51bb\u6c34\u56de\u6c34": "return"
+    },
+    "elbow_overshoot": {
+      "maximum_length": 10,
+      "maximum_ratio": 0.1,
+      "minimum_angle_degrees": 20
+    }
+  }
+}

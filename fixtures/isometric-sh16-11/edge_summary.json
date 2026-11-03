@@ -1,0 +1,63 @@
+{
+  "source_dxf": "E:\\codex\\CAD\\output\\SH16-topology-build-v33\\sources\\DXF\\11-空调水系统图.dxf",
+  "legend_dxf": "E:\\codex\\CAD\\output\\SH16-topology-build-v33\\sources\\DXF\\02-设备材料表二.dxf",
+  "nodes": {
+    "physical_equipment": 92,
+    "virtual_equipment": 30,
+    "virtual_equipment_ports": 62,
+    "tee": 302,
+    "total": 424
+  },
+  "edges": {
+    "total": 576,
+    "by_type": {
+      "tee_to_equipment": 184,
+      "tee_to_tee": 330,
+      "tee_to_virtual_equipment": 62
+    },
+    "by_system": {
+      "return": 288,
+      "supply": 288
+    },
+    "with_equipment_attributes": 514
+  },
+  "edge_device_instances": {
+    "detected_in_drawing_scope": 1560,
+    "assigned_to_adjacent_node_edges": 1560,
+    "outside_current_node_graph": 0,
+    "by_type": {
+      "Y型汽/水过滤器": 92,
+      "压力表": 276,
+      "温度计": 184,
+      "球阀": 706,
+      "自动放气阀": 4,
+      "蝶阀": 92,
+      "金属软接": 206
+    },
+    "outside_current_node_graph_by_type": {}
+  },
+  "preprocessing_reused": {
+    "overshoot_trims": 9,
+    "butterfly_display_legs_folded": 92,
+    "automatic_air_vent_display_legs_folded": 4,
+    "pipe_crossover_gaps_healed_without_junction": 2,
+    "inline_metal_hose_gaps_healed": 4,
+    "exploded_ball_valves_recovered": 90
+  },
+  "virtual_omission_interfaces": {
+    "standalone_markers_audited": 32,
+    "virtual_nodes_created": 30,
+    "ports_created": 62,
+    "excluded_detail_markers": 2,
+    "healed_or_stitched_ports": 4
+  },
+  "validation": {
+    "physical_node_baseline_preserved": true,
+    "every_physical_equipment_has_supply_and_return_edge": true,
+    "every_virtual_port_has_one_adjacent_T_edge": true,
+    "no_valve_or_air_vent_promoted_to_node": true,
+    "no_pipe_crossover_promoted_to_node": true,
+    "all_detected_edge_devices_assigned_once": true,
+    "unresolved_boundary_tail_devices": 0
+  }
+}
