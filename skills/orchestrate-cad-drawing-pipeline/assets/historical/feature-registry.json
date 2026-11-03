@@ -1,0 +1,716 @@
+{
+  "schema_version": 1,
+  "status": "curated_working_registry_not_full_acceptance",
+  "description": "Explicit feature/test impact map. Source-specific full builds, unresolved expert issues and human review remain separate gates.",
+  "features": [
+    {
+      "id": "native_text",
+      "description": "原生中文严格读取",
+      "families": [
+        "all"
+      ],
+      "files": [
+        "build-cad-pipe-topology/scripts/source_readability.py"
+      ],
+      "tests": [
+        "build-cad-pipe-topology/scripts/test_source_readability.py",
+        "build-cad-pipe-topology/scripts/test_alignment_utf8.py"
+      ],
+      "depends_on": [],
+      "origin": "historical_skill_and_regression",
+      "acceptance_status": "not_established_by_registry",
+      "evidence_references": [
+        "build-cad-pipe-topology/SKILL.md"
+      ]
+    },
+    {
+      "id": "proxy_evidence",
+      "description": "代理对象来源与不确定性",
+      "families": [
+        "all"
+      ],
+      "files": [
+        "build-cad-pipe-topology/scripts/proxy_metadata_inventory.py",
+        "build-cad-pipe-topology/scripts/native_proxy_evidence.py"
+      ],
+      "tests": [
+        "build-cad-pipe-topology/scripts/test_proxy_metadata_inventory.py",
+        "build-cad-pipe-topology/scripts/test_native_proxy_evidence.py"
+      ],
+      "depends_on": [
+        "native_text"
+      ],
+      "origin": "historical_skill_and_regression",
+      "acceptance_status": "not_established_by_registry",
+      "evidence_references": [
+        "build-cad-pipe-topology/SKILL.md"
+      ]
+    },
+    {
+      "id": "geometry",
+      "description": "几何与跨线恢复",
+      "families": [
+        "schematic",
+        "plan",
+        "isometric"
+      ],
+      "files": [
+        "build-cad-pipe-topology/scripts/pipe_geometry.py",
+        "build-cad-pipe-topology/scripts/topology_normalization.py",
+        "build-cad-pipe-topology/scripts/double_line_pipes.py",
+        "build-cad-pipe-topology/scripts/single_crossbar_candidates.py",
+        "build-cad-pipe-topology/scripts/source_internal_junction_candidates.py"
+      ],
+      "tests": [
+        "build-cad-pipe-topology/scripts/test_pipe_geometry.py",
+        "build-cad-pipe-topology/scripts/test_topology_normalization.py",
+        "build-cad-pipe-topology/scripts/test_offset_crossovers.py",
+        "build-cad-pipe-topology/scripts/test_unknown_service_crossovers.py",
+        "build-cad-pipe-topology/scripts/test_double_line_pipes.py",
+        "build-cad-pipe-topology/scripts/test_single_crossbar_candidates.py",
+        "build-cad-pipe-topology/scripts/test_source_internal_junction_candidates.py"
+      ],
+      "depends_on": [
+        "native_text"
+      ],
+      "origin": "historical_skill_and_regression",
+      "acceptance_status": "not_established_by_registry",
+      "evidence_references": [
+        "build-cad-pipe-topology/SKILL.md"
+      ]
+    },
+    {
+      "id": "contacts",
+      "description": "源接触与三通恢复",
+      "families": [
+        "schematic",
+        "plan",
+        "isometric"
+      ],
+      "files": [
+        "build-cad-pipe-topology/scripts/proven_contacts.py",
+        "build-cad-pipe-topology/scripts/source_mixed_service_tee_candidates.py",
+        "build-cad-pipe-topology/scripts/source_pending_main_continuity.py"
+      ],
+      "tests": [
+        "build-cad-pipe-topology/scripts/test_proven_contacts.py",
+        "build-cad-pipe-topology/scripts/test_near_junctions.py",
+        "build-cad-pipe-topology/scripts/test_source_mixed_service_tee_candidates.py",
+        "build-cad-pipe-topology/scripts/test_source_pending_main_continuity.py"
+      ],
+      "depends_on": [
+        "geometry"
+      ],
+      "origin": "historical_skill_and_regression",
+      "acceptance_status": "not_established_by_registry",
+      "evidence_references": [
+        "build-cad-pipe-topology/SKILL.md"
+      ]
+    },
+    {
+      "id": "equipment",
+      "description": "设备主体、端口及归并",
+      "families": [
+        "schematic",
+        "plan"
+      ],
+      "files": [
+        "build-cad-pipe-topology/scripts/equipment_assemblies.py",
+        "build-cad-pipe-topology/scripts/nested_equipment_ports.py",
+        "build-cad-pipe-topology/scripts/native_module_equipment.py",
+        "build-cad-pipe-topology/scripts/source_equipment_group_candidates.py",
+        "build-cad-pipe-topology/scripts/source_fidelity.py",
+        "build-cad-pipe-topology/scripts/source_labeled_equipment_pairs.py",
+        "build-cad-pipe-topology/scripts/source_roof_tower_reconciliation.py",
+        "build-cad-pipe-topology/scripts/source_tower_overlap_reconciliation.py",
+        "build-cad-pipe-topology/scripts/source_tower_terminal_contact_audit.py",
+        "build-cad-pipe-topology/scripts/source_enclosed_return_groups.py",
+        "build-cad-pipe-topology/scripts/common_schedule_evidence.py"
+      ],
+      "tests": [
+        "build-cad-pipe-topology/scripts/test_equipment_assemblies.py",
+        "build-cad-pipe-topology/scripts/test_nested_equipment_ports.py",
+        "build-cad-pipe-topology/scripts/test_native_module_equipment.py",
+        "build-cad-pipe-topology/scripts/test_native_equipment_preservation.py",
+        "build-cad-pipe-topology/scripts/test_source_equipment_group_candidates.py",
+        "build-cad-pipe-topology/scripts/test_source_fidelity.py",
+        "build-cad-pipe-topology/scripts/test_source_labeled_equipment_pairs.py",
+        "build-cad-pipe-topology/scripts/test_source_roof_tower_reconciliation.py",
+        "build-cad-pipe-topology/scripts/test_source_tower_overlap_reconciliation.py",
+        "build-cad-pipe-topology/scripts/test_source_tower_terminal_contact_audit.py",
+        "build-cad-pipe-topology/scripts/test_source_enclosed_return_groups.py",
+        "build-cad-pipe-topology/scripts/test_common_schedule_evidence.py"
+      ],
+      "depends_on": [
+        "geometry",
+        "contacts"
+      ],
+      "origin": "historical_skill_and_regression",
+      "acceptance_status": "not_established_by_registry",
+      "evidence_references": [
+        "build-cad-pipe-topology/SKILL.md"
+      ]
+    },
+    {
+      "id": "components",
+      "description": "阀门软接仪表和实例归属",
+      "families": [
+        "schematic",
+        "plan",
+        "isometric"
+      ],
+      "files": [
+        "build-cad-pipe-topology/scripts/instrumentation.py",
+        "build-cad-pipe-topology/scripts/native_inline_coordinates.py",
+        "build-cad-pipe-topology/scripts/bind_component_inventory.py",
+        "build-cad-pipe-topology/scripts/native_instrument_heads.py",
+        "build-cad-pipe-topology/scripts/source_glyphs.py",
+        "build-cad-pipe-topology/scripts/source_inline_axis_coverage.py",
+        "build-cad-pipe-topology/scripts/source_inline_endpoint_groups.py",
+        "build-cad-pipe-topology/scripts/source_inline_group_provenance.py",
+        "build-cad-pipe-topology/scripts/source_symbol_bounds.py"
+      ],
+      "tests": [
+        "build-cad-pipe-topology/scripts/test_instrumentation.py",
+        "build-cad-pipe-topology/scripts/test_native_inline_coordinates.py",
+        "build-cad-pipe-topology/scripts/test_exploded_templates.py",
+        "build-cad-pipe-topology/scripts/test_repair_native_flexible_joints.py",
+        "build-cad-pipe-topology/scripts/test_bind_component_inventory.py",
+        "build-cad-pipe-topology/scripts/test_instrument_heads.py",
+        "build-cad-pipe-topology/scripts/test_native_instrument_heads.py",
+        "build-cad-pipe-topology/scripts/test_source_glyphs.py",
+        "build-cad-pipe-topology/scripts/test_source_inline_axis_coverage.py",
+        "build-cad-pipe-topology/scripts/test_source_inline_endpoint_groups.py",
+        "build-cad-pipe-topology/scripts/test_source_inline_group_provenance.py",
+        "build-cad-pipe-topology/scripts/test_source_symbol_bounds.py"
+      ],
+      "depends_on": [
+        "geometry",
+        "equipment"
+      ],
+      "origin": "historical_skill_and_regression",
+      "acceptance_status": "not_established_by_registry",
+      "evidence_references": [
+        "build-cad-pipe-topology/SKILL.md"
+      ]
+    },
+    {
+      "id": "circle_detection",
+      "description": "圆环与三圆周候选",
+      "families": [
+        "plan",
+        "schematic"
+      ],
+      "files": [
+        "build-cad-pipe-topology/scripts/circle_witness_inventory.py",
+        "build-cad-pipe-topology/scripts/source_three_rim_candidates.py",
+        "build-cad-pipe-topology/scripts/source_concentric_terminal_glyphs.py",
+        "build-cad-pipe-topology/scripts/source_labeled_circle_interfaces.py",
+        "build-cad-pipe-topology/scripts/source_midpath_circle_candidates.py",
+        "build-cad-pipe-topology/scripts/source_three_rim_equipment_families.py"
+      ],
+      "tests": [
+        "build-cad-pipe-topology/scripts/test_circle_witness_inventory.py",
+        "build-cad-pipe-topology/scripts/test_source_three_rim_candidates.py",
+        "build-cad-pipe-topology/scripts/test_source_concentric_terminal_glyphs.py",
+        "build-cad-pipe-topology/scripts/test_source_labeled_circle_interfaces.py",
+        "build-cad-pipe-topology/scripts/test_source_midpath_circle_candidates.py",
+        "build-cad-pipe-topology/scripts/test_source_three_rim_equipment_families.py"
+      ],
+      "depends_on": [
+        "geometry",
+        "contacts"
+      ],
+      "origin": "historical_skill_and_regression",
+      "acceptance_status": "not_established_by_registry",
+      "evidence_references": [
+        "build-cad-pipe-topology/SKILL.md"
+      ]
+    },
+    {
+      "id": "confirmed_circles",
+      "description": "用户确认的同系统圆内连接",
+      "families": [
+        "plan"
+      ],
+      "files": [
+        "build-cad-pipe-topology/scripts/confirmed_circle_junctions.py",
+        "build-cad-pipe-topology/scripts/reconcile_confirmed_circle_references.py"
+      ],
+      "tests": [
+        "build-cad-pipe-topology/scripts/test_confirmed_circle_junctions.py",
+        "build-cad-pipe-topology/scripts/test_reconcile_confirmed_circle_references.py"
+      ],
+      "depends_on": [
+        "circle_detection",
+        "equipment",
+        "components"
+      ],
+      "origin": "user_confirmed_lf20_03_circles",
+      "acceptance_status": "not_established_by_registry",
+      "evidence_references": [
+        "build-cad-pipe-topology/SKILL.md",
+        "build-cad-pipe-topology/references/expert-roundtrip-v18.md"
+      ]
+    },
+    {
+      "id": "overlaid_supply",
+      "description": "圆环前提下供回水重叠",
+      "families": [
+        "plan"
+      ],
+      "files": [
+        "build-cad-pipe-topology/scripts/confirmed_overlaid_supply.py"
+      ],
+      "tests": [
+        "build-cad-pipe-topology/scripts/test_confirmed_overlaid_supply.py",
+        "build-cad-pipe-topology/scripts/test_overlaid_service_network.py"
+      ],
+      "depends_on": [
+        "confirmed_circles",
+        "contacts"
+      ],
+      "origin": "user_confirmed_lf20_03_overlaid_systems",
+      "acceptance_status": "not_established_by_registry",
+      "evidence_references": [
+        "build-cad-pipe-topology/SKILL.md",
+        "build-cad-pipe-topology/references/expert-roundtrip-v18.md"
+      ]
+    },
+    {
+      "id": "tangent_pairs",
+      "description": "相切圆源证据与系统隔离",
+      "families": [
+        "plan"
+      ],
+      "files": [
+        "build-cad-pipe-topology/scripts/source_tangent_circle_candidates.py",
+        "build-cad-pipe-topology/scripts/rebase_tangent_circle_evidence.py"
+      ],
+      "tests": [
+        "build-cad-pipe-topology/scripts/test_source_tangent_circle_candidates.py",
+        "build-cad-pipe-topology/scripts/test_rebase_tangent_circle_evidence.py"
+      ],
+      "depends_on": [
+        "circle_detection",
+        "overlaid_supply"
+      ],
+      "origin": "lf20_03_source_comparison",
+      "acceptance_status": "not_established_by_registry",
+      "evidence_references": [
+        "build-cad-pipe-topology/SKILL.md",
+        "build-cad-pipe-topology/references/expert-roundtrip-v18.md"
+      ]
+    },
+    {
+      "id": "wave_interfaces",
+      "description": "波浪符与远端未知接口",
+      "families": [
+        "plan",
+        "schematic"
+      ],
+      "files": [
+        "build-cad-pipe-topology/scripts/source_wave_terminals.py",
+        "build-cad-pipe-topology/scripts/repair_expert_wave_scoped_09.py",
+        "build-cad-pipe-topology/scripts/expert_native_wave_terminals.py",
+        "build-cad-pipe-topology/scripts/source_annotation_references.py",
+        "build-cad-pipe-topology/scripts/source_declared_interfaces.py",
+        "build-cad-pipe-topology/scripts/source_downturn_terminals.py",
+        "build-cad-pipe-topology/scripts/source_endpoint_leader_labels.py"
+      ],
+      "tests": [
+        "build-cad-pipe-topology/scripts/test_source_wave_terminals.py",
+        "build-cad-pipe-topology/scripts/test_repair_expert_wave_scoped_09.py",
+        "build-cad-pipe-topology/scripts/test_expert_native_wave_terminals.py",
+        "build-cad-pipe-topology/scripts/test_source_annotation_references.py",
+        "build-cad-pipe-topology/scripts/test_source_declared_interfaces.py",
+        "build-cad-pipe-topology/scripts/test_source_downturn_terminals.py",
+        "build-cad-pipe-topology/scripts/test_source_endpoint_leader_labels.py"
+      ],
+      "depends_on": [
+        "geometry",
+        "contacts"
+      ],
+      "origin": "sh16_expert_round2_789DBB_67F23F",
+      "acceptance_status": "not_established_by_registry",
+      "evidence_references": [
+        "build-cad-pipe-topology/SKILL.md",
+        "build-cad-pipe-topology/references/expert-roundtrip-v18.md"
+      ]
+    },
+    {
+      "id": "riser_boundary",
+      "description": "立管及非节点边界",
+      "families": [
+        "plan"
+      ],
+      "files": [
+        "build-cad-pipe-topology/scripts/expert_riser_connection.py",
+        "build-cad-pipe-topology/scripts/riser_source_lengths.py",
+        "build-cad-pipe-topology/scripts/convert_expert_non_node_boundaries.py",
+        "build-cad-pipe-topology/scripts/edge_endpoint_semantics.py",
+        "build-cad-pipe-topology/scripts/build_ceiling_family.py",
+        "build-cad-pipe-topology/scripts/cad_ceiling_native_rules.py",
+        "build-cad-pipe-topology/scripts/unbound_ceiling_symbols.py",
+        "build-cad-pipe-topology/scripts/source_glyph_system_conflicts.py"
+      ],
+      "tests": [
+        "build-cad-pipe-topology/scripts/test_expert_riser_connection.py",
+        "build-cad-pipe-topology/scripts/test_riser_source_lengths.py",
+        "build-cad-pipe-topology/scripts/test_convert_expert_non_node_boundaries.py",
+        "build-cad-pipe-topology/scripts/test_riser_terminal.py",
+        "build-cad-pipe-topology/scripts/test_expert_source_rules.py",
+        "build-cad-pipe-topology/scripts/test_edge_endpoint_semantics.py",
+        "build-cad-pipe-topology/scripts/test_ceiling_interface_glyph.py",
+        "build-cad-pipe-topology/scripts/test_unbound_ceiling_symbols.py",
+        "build-cad-pipe-topology/scripts/test_source_glyph_system_conflicts.py"
+      ],
+      "depends_on": [
+        "circle_detection",
+        "wave_interfaces"
+      ],
+      "origin": "sh16_expert_round2_1B4777_A67D75_D713A5",
+      "acceptance_status": "not_established_by_registry",
+      "evidence_references": [
+        "build-cad-pipe-topology/SKILL.md",
+        "build-cad-pipe-topology/references/expert-roundtrip-v18.md"
+      ]
+    },
+    {
+      "id": "diameter_floor",
+      "description": "楼层与管径源标注",
+      "families": [
+        "plan",
+        "schematic",
+        "isometric"
+      ],
+      "files": [
+        "build-cad-pipe-topology/scripts/source_floor_group_diameter_evidence.py",
+        "build-cad-pipe-topology/scripts/source_floor_alignment_candidates.py",
+        "build-cad-pipe-topology/scripts/pipe_annotation_attributes.py",
+        "build-cad-pipe-topology/scripts/diameter_tee_inheritance.py"
+      ],
+      "tests": [
+        "build-cad-pipe-topology/scripts/test_pipe_annotation_attributes.py",
+        "build-cad-pipe-topology/scripts/test_source_floor_group_diameter_evidence.py",
+        "build-cad-pipe-topology/scripts/test_source_floor_alignment_candidates.py",
+        "build-cad-pipe-topology/scripts/test_dn_source_annotations.py",
+        "build-cad-pipe-topology/scripts/test_diameter_tee_inheritance.py"
+      ],
+      "depends_on": [
+        "native_text",
+        "geometry"
+      ],
+      "origin": "historical_skill_and_regression",
+      "acceptance_status": "not_established_by_registry",
+      "evidence_references": [
+        "build-cad-pipe-topology/SKILL.md"
+      ]
+    },
+    {
+      "id": "source_lengths",
+      "description": "图示连接与源管长度分离",
+      "families": [
+        "plan",
+        "schematic"
+      ],
+      "files": [
+        "build-cad-pipe-topology/scripts/pipe_section_connections.py",
+        "build-cad-pipe-topology/scripts/rebase_section_length_updates.py",
+        "build-cad-pipe-topology/scripts/source_detail_branch_lengths.py"
+      ],
+      "tests": [
+        "build-cad-pipe-topology/scripts/test_pipe_section_connections.py",
+        "build-cad-pipe-topology/scripts/test_rebase_section_length_updates.py",
+        "build-cad-pipe-topology/scripts/test_source_detail_branch_lengths.py"
+      ],
+      "depends_on": [
+        "geometry",
+        "circle_detection"
+      ],
+      "origin": "historical_skill_and_regression",
+      "acceptance_status": "not_established_by_registry",
+      "evidence_references": [
+        "build-cad-pipe-topology/SKILL.md"
+      ]
+    },
+    {
+      "id": "detail_alternative",
+      "description": "主详图候选及计算防重门禁",
+      "families": [
+        "plan"
+      ],
+      "files": [
+        "build-cad-pipe-topology/scripts/compare_expert_detail_scoped_09.py"
+      ],
+      "tests": [
+        "build-cad-pipe-topology/scripts/test_compare_expert_detail_scoped_09.py",
+        "build-cad-pipe-topology/scripts/test_hydraulic_projection.py"
+      ],
+      "depends_on": [
+        "equipment",
+        "riser_boundary",
+        "source_lengths"
+      ],
+      "origin": "sh16_expert_round2_15B0E8",
+      "acceptance_status": "not_established_by_registry",
+      "evidence_references": [
+        "build-cad-pipe-topology/SKILL.md",
+        "build-cad-pipe-topology/references/expert-roundtrip-v18.md"
+      ]
+    },
+    {
+      "id": "expert_circle_tee",
+      "description": "专家指定圆圈三通",
+      "families": [
+        "plan"
+      ],
+      "files": [
+        "build-cad-pipe-topology/scripts/repair_expert_circle_pair_scoped_09.py",
+        "build-cad-pipe-topology/scripts/expert_circle_source_lengths.py"
+      ],
+      "tests": [
+        "build-cad-pipe-topology/scripts/test_expert_circle_connection.py",
+        "build-cad-pipe-topology/scripts/test_repair_expert_circle_pair_scoped_09.py"
+      ],
+      "depends_on": [
+        "circle_detection",
+        "contacts",
+        "source_lengths"
+      ],
+      "origin": "sh16_expert_round2_BB565D_1E73DD",
+      "acceptance_status": "not_established_by_registry",
+      "evidence_references": [
+        "build-cad-pipe-topology/SKILL.md",
+        "build-cad-pipe-topology/references/expert-roundtrip-v18.md"
+      ]
+    },
+    {
+      "id": "node_label",
+      "description": "专家指定节点标注范围",
+      "families": [
+        "schematic"
+      ],
+      "files": [
+        "build-cad-pipe-topology/scripts/source_expert_node_label_policy.py"
+      ],
+      "tests": [
+        "build-cad-pipe-topology/scripts/test_source_expert_node_label_policy.py"
+      ],
+      "depends_on": [
+        "geometry"
+      ],
+      "origin": "sh16_expert_round2_46339B_E404BD",
+      "acceptance_status": "not_established_by_registry",
+      "evidence_references": [
+        "build-cad-pipe-topology/SKILL.md",
+        "build-cad-pipe-topology/references/expert-roundtrip-v18.md"
+      ]
+    },
+    {
+      "id": "graph_coverage",
+      "description": "稳定 ID、源覆盖与构件守恒",
+      "families": [
+        "all"
+      ],
+      "files": [
+        "build-cad-pipe-topology/scripts/source_coverage_gate.py",
+        "build-cad-pipe-topology/scripts/reconcile_graph_ids.py",
+        "build-cad-pipe-topology/scripts/stable_normalized_edges.py"
+      ],
+      "tests": [
+        "build-cad-pipe-topology/scripts/test_profile_source_coverage.py",
+        "build-cad-pipe-topology/scripts/test_parallel_edge_ids.py",
+        "build-cad-pipe-topology/scripts/test_stable_normalized_edges.py"
+      ],
+      "depends_on": [
+        "equipment",
+        "components",
+        "contacts"
+      ],
+      "origin": "historical_skill_and_regression",
+      "acceptance_status": "not_established_by_registry",
+      "evidence_references": [
+        "build-cad-pipe-topology/SKILL.md"
+      ]
+    },
+    {
+      "id": "calculation",
+      "description": "设备保留、计算投影及未知长度",
+      "families": [
+        "all"
+      ],
+      "files": [
+        "build-cad-pipe-topology/scripts/derive_hydraulic_graph.py",
+        "build-cad-pipe-topology/scripts/build_calculation_aggregate.py"
+      ],
+      "tests": [
+        "build-cad-pipe-topology/scripts/test_hydraulic_projection.py",
+        "build-cad-pipe-topology/scripts/test_calculation_aggregate.py"
+      ],
+      "depends_on": [
+        "graph_coverage",
+        "source_lengths",
+        "detail_alternative"
+      ],
+      "origin": "historical_skill_and_regression",
+      "acceptance_status": "not_established_by_registry",
+      "evidence_references": [
+        "build-cad-pipe-topology/SKILL.md"
+      ]
+    },
+    {
+      "id": "building_context",
+      "description": "建筑原图上下文及排除管道",
+      "families": [
+        "plan"
+      ],
+      "files": [
+        "extract-cad-building-context/scripts/architecture_context.py"
+      ],
+      "tests": [
+        "extract-cad-building-context/scripts/test_architecture_context.py",
+        "extract-cad-building-context/scripts/test_layer_exclusions.py"
+      ],
+      "depends_on": [
+        "native_text"
+      ],
+      "origin": "historical_skill_and_regression",
+      "acceptance_status": "not_established_by_registry",
+      "evidence_references": [
+        "extract-cad-building-context/SKILL.md"
+      ]
+    },
+    {
+      "id": "source_comparison",
+      "description": "原图对照及 HIL 前门禁",
+      "families": [
+        "all"
+      ],
+      "files": [
+        "orchestrate-cad-drawing-pipeline/scripts/source_comparison_gate.py",
+        "build-cad-pipe-topology/scripts/source_semantic_reconciliation.py",
+        "build-cad-pipe-topology/scripts/source_named_service_evidence.py",
+        "build-cad-pipe-topology/scripts/terminal_inventory_reconciliation.py"
+      ],
+      "tests": [
+        "orchestrate-cad-drawing-pipeline/scripts/test_source_comparison_gate.py",
+        "build-cad-pipe-topology/scripts/test_source_semantic_reconciliation.py",
+        "build-cad-pipe-topology/scripts/test_source_named_service_evidence.py",
+        "build-cad-pipe-topology/scripts/test_terminal_inventory_reconciliation.py",
+        "orchestrate-cad-drawing-pipeline/scripts/test_source_graph_pending_gate.py"
+      ],
+      "depends_on": [
+        "graph_coverage",
+        "detail_alternative",
+        "building_context"
+      ],
+      "origin": "historical_skill_and_regression",
+      "acceptance_status": "not_established_by_registry",
+      "evidence_references": [
+        "build-cad-pipe-topology/SKILL.md"
+      ]
+    },
+    {
+      "id": "viewer",
+      "description": "图、原图、构件及未知长度展示",
+      "families": [
+        "all"
+      ],
+      "files": [
+        "visualize-cad-pipe-topology/scripts/build_visualization.py",
+        "visualize-cad-pipe-topology/scripts/validate_visualization.py",
+        "visualize-cad-pipe-topology/assets/viewer/public/app.js",
+        "visualize-cad-pipe-topology/assets/viewer/public/core.js",
+        "visualize-cad-pipe-topology/scripts/architecture_context.py",
+        "visualize-cad-pipe-topology/scripts/instance_geometry.py",
+        "visualize-cad-pipe-topology/scripts/source_evidence.py",
+        "visualize-cad-pipe-topology/scripts/typed_boundary_adapter.py"
+      ],
+      "tests": [
+        "visualize-cad-pipe-topology/scripts/test_builder.py",
+        "visualize-cad-pipe-topology/scripts/test_post_drawing_gate.py",
+        "visualize-cad-pipe-topology/scripts/test_system_boundaries.mjs",
+        "visualize-cad-pipe-topology/scripts/test_node_label_policy.mjs",
+        "visualize-cad-pipe-topology/scripts/test_pair_rendering.mjs",
+        "visualize-cad-pipe-topology/scripts/test_hil_frontend.mjs",
+        "visualize-cad-pipe-topology/scripts/test_architecture_context.py",
+        "visualize-cad-pipe-topology/scripts/test_building_pair.mjs",
+        "visualize-cad-pipe-topology/scripts/test_edge_attributes.mjs",
+        "visualize-cad-pipe-topology/scripts/test_hil.py",
+        "visualize-cad-pipe-topology/scripts/test_hydraulic_properties.mjs",
+        "visualize-cad-pipe-topology/scripts/test_instance_geometry.py",
+        "visualize-cad-pipe-topology/scripts/test_new_drawings.py",
+        "visualize-cad-pipe-topology/scripts/test_pipeline_identity.py",
+        "visualize-cad-pipe-topology/scripts/test_portable_launcher.py",
+        "visualize-cad-pipe-topology/scripts/test_region_guides.mjs",
+        "visualize-cad-pipe-topology/scripts/test_source_context_fit.mjs",
+        "visualize-cad-pipe-topology/scripts/test_source_evidence.py",
+        "visualize-cad-pipe-topology/scripts/test_typed_boundary_adapter.py",
+        "visualize-cad-pipe-topology/scripts/test_typed_boundary_builder.py"
+      ],
+      "depends_on": [
+        "source_comparison",
+        "calculation",
+        "node_label",
+        "tangent_pairs"
+      ],
+      "origin": "historical_skill_and_regression",
+      "acceptance_status": "not_established_by_registry",
+      "evidence_references": [
+        "visualize-cad-pipe-topology/SKILL.md"
+      ]
+    },
+    {
+      "id": "composition",
+      "description": "源图绑定后处理组合",
+      "families": [
+        "plan"
+      ],
+      "files": [
+        "build-cad-pipe-topology/scripts/run_confirmed_circle_pipeline.py"
+      ],
+      "tests": [
+        "build-cad-pipe-topology/scripts/test_run_confirmed_circle_pipeline.py"
+      ],
+      "depends_on": [
+        "overlaid_supply",
+        "tangent_pairs",
+        "source_lengths",
+        "components"
+      ],
+      "origin": "historical_skill_and_regression",
+      "acceptance_status": "not_established_by_registry",
+      "evidence_references": [
+        "build-cad-pipe-topology/SKILL.md"
+      ]
+    },
+    {
+      "id": "pipeline",
+      "description": "任务隔离、版本锁与阶段路由",
+      "families": [
+        "all"
+      ],
+      "files": [
+        "orchestrate-cad-drawing-pipeline/scripts/pipeline.py",
+        "orchestrate-cad-drawing-pipeline/scripts/verify_dependencies.py",
+        "orchestrate-cad-drawing-pipeline/scripts/feature_impact.py"
+      ],
+      "tests": [
+        "orchestrate-cad-drawing-pipeline/scripts/test_pipeline.py",
+        "orchestrate-cad-drawing-pipeline/scripts/test_verify_dependencies.py",
+        "orchestrate-cad-drawing-pipeline/scripts/test_feature_impact.py"
+      ],
+      "depends_on": [
+        "source_comparison",
+        "viewer",
+        "composition"
+      ],
+      "origin": "historical_skill_and_regression",
+      "acceptance_status": "not_established_by_registry",
+      "evidence_references": [
+        "orchestrate-cad-drawing-pipeline/SKILL.md"
+      ]
+    }
+  ]
+}

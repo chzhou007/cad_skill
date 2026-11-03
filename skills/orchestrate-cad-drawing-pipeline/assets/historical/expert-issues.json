@@ -1,0 +1,169 @@
+{
+  "schema_version": 1,
+  "status": "initial_evidence_mapping_not_acceptance",
+  "source": "E:/codex/CAD/work/expert-feedback-round2/第二波反馈与现行功能对照.md",
+  "current_evidence": "C:/Users/lenovo/.codex/skills/build-cad-pipe-topology/references/expert-roundtrip-v18.md",
+  "issues": [
+    {
+      "id": "ERR-BB565D",
+      "drawing": "09",
+      "feature": "expert_circle_pair",
+      "tests": [
+        "test_repair_expert_circle_pair_scoped_09"
+      ],
+      "state": "source_scoped_partial_unreviewed",
+      "remaining": "下方相似点为推断，投影及物理长度未证实",
+      "feature_ids": [
+        "expert_circle_tee"
+      ]
+    },
+    {
+      "id": "ERR-789DBB",
+      "drawing": "09",
+      "feature": "expert_wave_continuation",
+      "tests": [
+        "test_repair_expert_wave_scoped_09"
+      ],
+      "state": "source_scoped_partial_unreviewed",
+      "remaining": "两侧外端仍为未解决边界",
+      "feature_ids": [
+        "wave_interfaces"
+      ]
+    },
+    {
+      "id": "ERR-4F2867",
+      "drawing": "09",
+      "feature": "typed_non_node_boundary",
+      "tests": [
+        "test_convert_expert_non_node_boundaries"
+      ],
+      "state": "source_scoped_partial_unreviewed",
+      "remaining": "下游消费者需显式支持边界锚点",
+      "feature_ids": [
+        "riser_boundary"
+      ]
+    },
+    {
+      "id": "ERR-15B0E8",
+      "drawing": "09",
+      "feature": "detail_alternative",
+      "tests": [
+        "test_compare_expert_detail_scoped_09",
+        "test_source_detail_branch_lengths",
+        "test_hydraulic_projection"
+      ],
+      "state": "candidate_comparison_only",
+      "remaining": "20 组候选尚未证明设备和边界映射，未替代或去重",
+      "feature_ids": [
+        "detail_alternative",
+        "source_lengths"
+      ]
+    },
+    {
+      "id": "ERR-67F23F",
+      "drawing": "10",
+      "feature": "native_wave_terminal",
+      "tests": [
+        "test_expert_native_wave_terminals"
+      ],
+      "state": "source_scoped_unreviewed",
+      "remaining": "远端连接未证实",
+      "feature_ids": [
+        "wave_interfaces"
+      ]
+    },
+    {
+      "id": "ERR-1B4777",
+      "drawing": "10",
+      "feature": "riser_connection_non_node",
+      "tests": [
+        "test_expert_riser_connection"
+      ],
+      "state": "source_scoped_unreviewed",
+      "remaining": "立管物理长度未知",
+      "feature_ids": [
+        "riser_boundary"
+      ]
+    },
+    {
+      "id": "ERR-A03211",
+      "drawing": "10",
+      "feature": "native_flexible_joints",
+      "tests": [
+        "test_repair_native_flexible_joints"
+      ],
+      "state": "source_scoped_unreviewed",
+      "remaining": "阻力参数未提供",
+      "feature_ids": [
+        "components"
+      ]
+    },
+    {
+      "id": "ERR-A67D75",
+      "drawing": "10",
+      "feature": "riser_source_lengths",
+      "tests": [
+        "test_riser_source_lengths",
+        "test_riser_terminal"
+      ],
+      "state": "source_scoped_unreviewed",
+      "remaining": "远端及物理长度未知",
+      "feature_ids": [
+        "riser_boundary"
+      ]
+    },
+    {
+      "id": "ERR-D713A5",
+      "drawing": "10",
+      "feature": "two_bar_boundary",
+      "tests": [
+        "test_convert_expert_non_node_boundaries"
+      ],
+      "state": "source_scoped_partial_unreviewed",
+      "remaining": "同类八处为推断；另有圆周端点待定",
+      "feature_ids": [
+        "riser_boundary"
+      ]
+    },
+    {
+      "id": "ERR-1E73DD",
+      "drawing": "10",
+      "feature": "expert_circle_tee",
+      "tests": [
+        "test_expert_circle_connection"
+      ],
+      "state": "source_scoped_unreviewed",
+      "remaining": "GAP-014 已有独立供水跨越源证据；间隙物理长度及相对高度未知",
+      "feature_ids": [
+        "expert_circle_tee"
+      ]
+    },
+    {
+      "id": "ERR-46339B",
+      "drawing": "03",
+      "feature": "expert_node_label_policy",
+      "tests": [
+        "test_source_expert_node_label_policy"
+      ],
+      "state": "source_scoped_partial_unreviewed",
+      "remaining": "仅专家选定位置的显示标注，不改变连通性",
+      "feature_ids": [
+        "node_label"
+      ]
+    },
+    {
+      "id": "ERR-E404BD",
+      "drawing": "04",
+      "feature": "expert_node_label_policy",
+      "tests": [
+        "test_source_expert_node_label_policy"
+      ],
+      "state": "source_scoped_partial_unreviewed",
+      "remaining": "仅专家选定位置的显示标注，不改变连通性",
+      "feature_ids": [
+        "node_label"
+      ]
+    }
+  ],
+  "feature_registry": "C:/Users/lenovo/.codex/skills/orchestrate-cad-drawing-pipeline/assets/feature-registry.json"
+}

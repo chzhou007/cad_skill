@@ -8,21 +8,34 @@
     "inherited_from": "E:/codex/CAD",
     "working_copy": "E:/codex/cursor-cad_skill"
   },
-  "tracked_inputs": ["fixtures/isometric-sh16-11/"],
-  "untracked_inputs": [
-    "SH16 sheets 01-10 native DWG/DXF are outside git",
-    "LF20 02/03/06 are outside git",
-    "releases/, work/, output/ were not copied"
+  "tracked_inputs": [
+    "fixtures/isometric-sh16-11/"
   ],
-  "layers": ["plan_topology", "isometric_topology", "cross_view_fusion"],
+  "untracked_inputs": [
+    "1242 DWG/DXF files copied under archive/, output/, packages/, releases/, and work/; those trees contain no text ledger",
+    "LF20 02/03/06 native inputs were not used",
+    "The expert list and feature registry were read from E:/codex/CAD/work and the installed skill, then copied into assets/historical/"
+  ],
+  "layers": [
+    "plan_topology",
+    "isometric_topology",
+    "cross_view_fusion"
+  ],
   "items": [
     {
       "id": "source-chinese-and-comparison",
       "group": "source_elements",
       "source": "skills/build-cad-pipe-topology/references/source-semantic-reconciliation.md",
       "entry": "skills/orchestrate-cad-drawing-pipeline/scripts/source_comparison_gate.py",
-      "tests": ["skills/orchestrate-cad-drawing-pipeline/scripts/test_source_comparison_gate.py"],
-      "drawings": ["SH16-08", "SH16-09", "SH16-10", "SH16-11"],
+      "tests": [
+        "skills/orchestrate-cad-drawing-pipeline/scripts/test_source_comparison_gate.py"
+      ],
+      "drawings": [
+        "SH16-08",
+        "SH16-09",
+        "SH16-10",
+        "SH16-11"
+      ],
       "status": "reproduced",
       "drawing_correct": false,
       "evidence": "Gate rejects unresolved native comparison. Passing the gate test does not prove SH16 text or geometry."
@@ -36,7 +49,11 @@
         "skills/build-cad-pipe-topology/scripts/test_native_proxy_evidence.py",
         "skills/build-cad-pipe-topology/scripts/test_native_inline_coordinates.py"
       ],
-      "drawings": ["SH16-08", "SH16-09", "SH16-10"],
+      "drawings": [
+        "SH16-08",
+        "SH16-09",
+        "SH16-10"
+      ],
       "status": "fixed_pending_regression",
       "drawing_correct": false,
       "evidence": "v3.6 records an OCS/WCS ball-valve miss. The unit rules exist. Sheet-level regression artifacts are not in the tracked tree."
@@ -46,8 +63,12 @@
       "group": "source_elements",
       "source": "skills/build-cad-pipe-topology/SKILL.md",
       "entry": "skills/build-cad-pipe-topology/scripts/source_semantic_reconciliation.py",
-      "tests": ["skills/build-cad-pipe-topology/scripts/test_source_fidelity.py"],
-      "drawings": ["SH16-11"],
+      "tests": [
+        "skills/build-cad-pipe-topology/scripts/test_source_fidelity.py"
+      ],
+      "drawings": [
+        "SH16-11"
+      ],
       "status": "reproduced",
       "drawing_correct": false,
       "evidence": "Source fidelity is a unit rule. The isometric count fixture is not a correctness proof."
@@ -62,7 +83,12 @@
         "skills/build-cad-pipe-topology/scripts/test_unknown_service_crossovers.py",
         "skills/build-cad-pipe-topology/scripts/test_near_junctions.py"
       ],
-      "drawings": ["SH16-08", "SH16-09", "SH16-10", "SH16-11"],
+      "drawings": [
+        "SH16-08",
+        "SH16-09",
+        "SH16-10",
+        "SH16-11"
+      ],
       "status": "reproduced",
       "drawing_correct": false,
       "evidence": "Crossover stays a non-node and near-contact acceptance is narrower than discovery. Drawing coverage is not rechecked here."
@@ -76,7 +102,11 @@
         "skills/build-cad-pipe-topology/scripts/test_topology_normalization.py",
         "skills/build-cad-pipe-topology/scripts/test_pipe_section_connections.py"
       ],
-      "drawings": ["SH16-08", "SH16-09", "SH16-10"],
+      "drawings": [
+        "SH16-08",
+        "SH16-09",
+        "SH16-10"
+      ],
       "status": "reproduced",
       "drawing_correct": false,
       "evidence": "Normalization and section-connection tests exist. They do not close the plan-sheet topology ledger."
@@ -86,8 +116,13 @@
       "group": "geometry_connection",
       "source": "docs/SH16-v3.6-未完成项复查与修复.md",
       "entry": "skills/build-cad-pipe-topology/scripts/pipe_section_connections.py",
-      "tests": ["skills/build-cad-pipe-topology/scripts/test_double_line_pipes.py"],
-      "drawings": ["SH16-06", "SH16-07"],
+      "tests": [
+        "skills/build-cad-pipe-topology/scripts/test_double_line_pipes.py"
+      ],
+      "drawings": [
+        "SH16-06",
+        "SH16-07"
+      ],
       "status": "to_fix",
       "drawing_correct": false,
       "evidence": "v3.6 left double-line turns, fittings and equipment ports without a proven centerline. No new physical ports were added."
@@ -102,7 +137,13 @@
         "skills/build-cad-pipe-topology/scripts/test_expert_source_rules.py",
         "skills/build-cad-pipe-topology/scripts/test_native_equipment_preservation.py"
       ],
-      "drawings": ["SH16-06", "SH16-07", "SH16-08", "SH16-09", "SH16-10"],
+      "drawings": [
+        "SH16-06",
+        "SH16-07",
+        "SH16-08",
+        "SH16-09",
+        "SH16-10"
+      ],
       "status": "reproduced",
       "drawing_correct": false,
       "evidence": "Package folding keeps a verified through-main. Supply/return binding for identified plan equipment is still unproven."
@@ -112,8 +153,14 @@
       "group": "equipment_ports",
       "source": "docs/SH16-v3.6-未完成项复查与修复.md",
       "entry": "skills/build-cad-pipe-topology/scripts/nested_equipment_ports.py",
-      "tests": ["skills/build-cad-pipe-topology/scripts/test_nested_equipment_ports.py"],
-      "drawings": ["SH16-08", "SH16-09", "SH16-10"],
+      "tests": [
+        "skills/build-cad-pipe-topology/scripts/test_nested_equipment_ports.py"
+      ],
+      "drawings": [
+        "SH16-08",
+        "SH16-09",
+        "SH16-10"
+      ],
       "status": "to_fix",
       "drawing_correct": false,
       "evidence": "Nested port helper exists. v3.6 says 10/37/36 identified equipment supply-return bindings are not proven, and proximity is not a port."
@@ -123,8 +170,15 @@
       "group": "boundary_riser",
       "source": "skills/build-cad-pipe-topology/references/expert-roundtrip-v18.md",
       "entry": "skills/build-cad-pipe-topology/scripts/native_inline_anchors.py",
-      "tests": ["skills/build-cad-pipe-topology/scripts/test_riser_terminal.py"],
-      "drawings": ["SH16-08", "SH16-09", "SH16-10", "SH16-11"],
+      "tests": [
+        "skills/build-cad-pipe-topology/scripts/test_riser_terminal.py"
+      ],
+      "drawings": [
+        "SH16-08",
+        "SH16-09",
+        "SH16-10",
+        "SH16-11"
+      ],
       "status": "reproduced",
       "drawing_correct": false,
       "evidence": "Calibrated riser circle can be an explicit virtual port. Unrecognized radii stay pending. This is not a cross-view riser match."
@@ -134,8 +188,12 @@
       "group": "boundary_riser",
       "source": "skills/build-cad-pipe-topology/references/source-semantic-reconciliation.md",
       "entry": "skills/build-cad-pipe-topology/scripts/source_semantic_reconciliation.py",
-      "tests": ["skills/build-cad-pipe-topology/scripts/test_source_semantic_reconciliation.py"],
-      "drawings": ["SH16-11"],
+      "tests": [
+        "skills/build-cad-pipe-topology/scripts/test_source_semantic_reconciliation.py"
+      ],
+      "drawings": [
+        "SH16-11"
+      ],
       "status": "reproduced",
       "drawing_correct": false,
       "evidence": "Known-destination interfaces stay distinct from equipment and glyphs. Candidate grouping is not a hydraulic merge."
@@ -149,7 +207,12 @@
         "skills/build-cad-pipe-topology/scripts/test_exploded_templates.py",
         "skills/build-cad-pipe-topology/scripts/test_instrumentation.py"
       ],
-      "drawings": ["SH16-08", "SH16-09", "SH16-10", "SH16-11"],
+      "drawings": [
+        "SH16-08",
+        "SH16-09",
+        "SH16-10",
+        "SH16-11"
+      ],
       "status": "fixed_pending_regression",
       "drawing_correct": false,
       "evidence": "v3.6 assigned 60 already-recognized valves on sheets 08-10. Unknown components can still be missed. Result tables are outside git."
@@ -159,8 +222,15 @@
       "group": "components_attributes",
       "source": "skills/build-cad-pipe-topology/references/equipment-parameter-foundation.md",
       "entry": "skills/build-cad-pipe-topology/scripts/pipe_annotation_attributes.py",
-      "tests": ["skills/build-cad-pipe-topology/scripts/test_pipe_annotation_attributes.py"],
-      "drawings": ["SH16-08", "SH16-09", "SH16-10", "SH16-11"],
+      "tests": [
+        "skills/build-cad-pipe-topology/scripts/test_pipe_annotation_attributes.py"
+      ],
+      "drawings": [
+        "SH16-08",
+        "SH16-09",
+        "SH16-10",
+        "SH16-11"
+      ],
       "status": "reproduced",
       "drawing_correct": false,
       "evidence": "Annotation parsing is tested. Cross-view inheritance is a separate open rule and is not applied by this parser."
@@ -170,8 +240,15 @@
       "group": "components_attributes",
       "source": "docs/SH16-v3.6-未完成项复查与修复.md",
       "entry": "skills/build-cad-pipe-topology/scripts/derive_hydraulic_graph.py",
-      "tests": ["skills/build-cad-pipe-topology/scripts/test_hydraulic_projection.py"],
-      "drawings": ["SH16-08", "SH16-09", "SH16-10", "SH16-11"],
+      "tests": [
+        "skills/build-cad-pipe-topology/scripts/test_hydraulic_projection.py"
+      ],
+      "drawings": [
+        "SH16-08",
+        "SH16-09",
+        "SH16-10",
+        "SH16-11"
+      ],
       "status": "source_ambiguity",
       "drawing_correct": false,
       "evidence": "Missing resistance stays Required/Not assumed. Zero was not filled and the network is not claimed solvable."
@@ -181,8 +258,12 @@
       "group": "main_detail_context",
       "source": "docs/SH16-v3.6-未完成项复查与修复.md",
       "entry": "skills/orchestrate-cad-drawing-pipeline/scripts/source_comparison_gate.py",
-      "tests": ["skills/orchestrate-cad-drawing-pipeline/scripts/test_source_comparison_gate.py"],
-      "drawings": ["SH16-09"],
+      "tests": [
+        "skills/orchestrate-cad-drawing-pipeline/scripts/test_source_comparison_gate.py"
+      ],
+      "drawings": [
+        "SH16-09"
+      ],
       "status": "source_ambiguity",
       "drawing_correct": false,
       "evidence": "Twenty main/detail candidates remain unproven. Aggregate count or proximity is not an individual correspondence."
@@ -192,8 +273,15 @@
       "group": "main_detail_context",
       "source": "skills/extract-cad-building-context/SKILL.md",
       "entry": "skills/extract-cad-building-context/scripts/architecture_context.py",
-      "tests": ["skills/extract-cad-building-context/scripts/test_architecture_context.py"],
-      "drawings": ["SH16-05", "SH16-08", "SH16-09", "SH16-10"],
+      "tests": [
+        "skills/extract-cad-building-context/scripts/test_architecture_context.py"
+      ],
+      "drawings": [
+        "SH16-05",
+        "SH16-08",
+        "SH16-09",
+        "SH16-10"
+      ],
       "status": "reproduced",
       "drawing_correct": false,
       "evidence": "Building context is a sidecar. Shaft names locate a region and do not by themselves prove a pipe connection."
@@ -203,8 +291,15 @@
       "group": "main_detail_context",
       "source": "docs/sh16-dual-view-plan.md",
       "entry": "skills/extract-cad-building-context/scripts/architecture_context.py",
-      "tests": ["not-in-tracked-tree"],
-      "drawings": ["SH16-08", "SH16-09", "SH16-10", "SH16-11"],
+      "tests": [
+        "not-in-tracked-tree"
+      ],
+      "drawings": [
+        "SH16-08",
+        "SH16-09",
+        "SH16-10",
+        "SH16-11"
+      ],
       "status": "to_fix",
       "drawing_correct": false,
       "evidence": "No tracked test distinguishes multiple pipes in one shaft. Well name or nearby position is not connection evidence."
@@ -219,7 +314,9 @@
         "skills/visualize-cad-pipe-topology/scripts/test_portable_launcher.py",
         "skills/visualize-cad-pipe-topology/scripts/test_hil.py"
       ],
-      "drawings": ["SH16-11"],
+      "drawings": [
+        "SH16-11"
+      ],
       "status": "reproduced",
       "drawing_correct": false,
       "evidence": "Stable parallel-edge IDs, launcher diagnostics and HIL history are unit-tested. Human acceptance is separate and currently none."
@@ -229,8 +326,12 @@
       "group": "completeness_delivery",
       "source": "README.md",
       "entry": "fixtures/isometric-sh16-11/edge_summary.json",
-      "tests": ["skills/build-cad-pipe-topology/scripts/test_source_fidelity.py"],
-      "drawings": ["SH16-11"],
+      "tests": [
+        "skills/build-cad-pipe-topology/scripts/test_source_fidelity.py"
+      ],
+      "drawings": [
+        "SH16-11"
+      ],
       "status": "reproduced",
       "drawing_correct": false,
       "evidence": "Tracked fixture records 424 nodes / 576 edges / 302 tees. Equal counts do not prove the isometric is correct."
@@ -245,7 +346,12 @@
         "skills/build-cad-pipe-topology/scripts/test_near_junctions.py",
         "skills/build-cad-pipe-topology/scripts/test_riser_terminal.py"
       ],
-      "drawings": ["SH16-08", "SH16-09", "SH16-10", "SH16-11"],
+      "drawings": [
+        "SH16-08",
+        "SH16-09",
+        "SH16-10",
+        "SH16-11"
+      ],
       "status": "reproduced",
       "drawing_correct": false,
       "evidence": "The tracked expert note has six numbered source rules. Unit tests cover display tails, package through-paths, near contacts and riser ports."
@@ -253,21 +359,34 @@
     {
       "id": "expert-twelve-list-not-in-git",
       "group": "expert_rules",
-      "source": "docs/sh16-dual-view-plan.md",
-      "entry": "skills/build-cad-pipe-topology/references/expert-roundtrip-v18.md",
-      "tests": ["not-in-tracked-tree"],
-      "drawings": ["SH16-08", "SH16-09", "SH16-10"],
-      "status": "to_fix",
+      "source": "skills/orchestrate-cad-drawing-pipeline/assets/historical/expert-issues.json",
+      "entry": "skills/orchestrate-cad-drawing-pipeline/assets/historical/expert-feedback-round2.md",
+      "tests": [
+        "not-in-tracked-tree"
+      ],
+      "drawings": [
+        "SH16-08",
+        "SH16-09",
+        "SH16-10"
+      ],
+      "status": "not_applicable",
       "drawing_correct": false,
-      "evidence": "The plan requires the previous expert list of 12. The git tree only preserves six numbered rules. The other six were not invented."
+      "evidence": "Placeholder retired. The twelve expert issues are the expert-issue-ERR-* rows, copied from E:/codex/CAD/work/feature-regression-registry/expert-issues.json. Searches that did not contain the list: docs/*.md, skills/build-cad-pipe-topology/references/expert-roundtrip-v18.md (six numbered rules only), and archive/, output/, packages/, releases/, work/ in this checkout (DWG/DXF only, 1242 files)."
     },
     {
       "id": "dual-view-mapping",
       "group": "dual_view",
       "source": "docs/sh16-dual-view-plan.md",
       "entry": "skills/orchestrate-cad-drawing-pipeline/scripts/dual_view_scope.py",
-      "tests": ["skills/orchestrate-cad-drawing-pipeline/scripts/test_dual_view_scope.py"],
-      "drawings": ["SH16-08", "SH16-09", "SH16-10", "SH16-11"],
+      "tests": [
+        "skills/orchestrate-cad-drawing-pipeline/scripts/test_dual_view_scope.py"
+      ],
+      "drawings": [
+        "SH16-08",
+        "SH16-09",
+        "SH16-10",
+        "SH16-11"
+      ],
       "status": "to_fix",
       "drawing_correct": false,
       "evidence": "S0 only locks the mapping contract: both views, evidence, and no fusion without hashes. No SH16 correspondence is accepted."
@@ -277,8 +396,15 @@
       "group": "dual_view",
       "source": "docs/sh16-dual-view-plan.md",
       "entry": "skills/build-cad-pipe-topology/scripts/dual_view_attributes.py",
-      "tests": ["skills/build-cad-pipe-topology/scripts/test_dual_view_attributes.py"],
-      "drawings": ["SH16-08", "SH16-09", "SH16-10", "SH16-11"],
+      "tests": [
+        "skills/build-cad-pipe-topology/scripts/test_dual_view_attributes.py"
+      ],
+      "drawings": [
+        "SH16-08",
+        "SH16-09",
+        "SH16-10",
+        "SH16-11"
+      ],
       "status": "to_fix",
       "drawing_correct": false,
       "evidence": "Inheritance, conflict and horizontal/vertical source rules run on synthetic segments. They have not been applied to SH16 graphs."
@@ -288,8 +414,15 @@
       "group": "dual_view",
       "source": "docs/sh16-dual-view-plan.md",
       "entry": "skills/build-cad-pipe-topology/scripts/dual_view_attributes.py",
-      "tests": ["skills/build-cad-pipe-topology/scripts/test_dual_view_attributes.py"],
-      "drawings": ["SH16-08", "SH16-09", "SH16-10", "SH16-11"],
+      "tests": [
+        "skills/build-cad-pipe-topology/scripts/test_dual_view_attributes.py"
+      ],
+      "drawings": [
+        "SH16-08",
+        "SH16-09",
+        "SH16-10",
+        "SH16-11"
+      ],
       "status": "to_fix",
       "drawing_correct": false,
       "evidence": "A difference record cannot overwrite either view. Plan-only, isometric-only, system and riser differences are not yet extracted from drawings."
@@ -299,11 +432,752 @@
       "group": "generalization",
       "source": "docs/sh16-dual-view-plan.md",
       "entry": "skills/orchestrate-cad-drawing-pipeline/scripts/pipeline.py",
-      "tests": ["not-in-tracked-tree"],
-      "drawings": ["LF20-02", "LF20-03", "LF20-06"],
+      "tests": [
+        "not-in-tracked-tree"
+      ],
+      "drawings": [
+        "LF20-02",
+        "LF20-03",
+        "LF20-06"
+      ],
       "status": "to_fix",
       "drawing_correct": false,
       "evidence": "LF20 is the generalization set after SH16 rules are stable. Inputs are not in this checkout, so no backtest was run."
+    },
+    {
+      "id": "historical-feature-native_text",
+      "group": "historical_feature",
+      "source": "skills/orchestrate-cad-drawing-pipeline/assets/historical/feature-registry.json#native_text",
+      "entry": "skills/build-cad-pipe-topology/scripts/source_readability.py",
+      "tests": [
+        "skills/build-cad-pipe-topology/scripts/test_source_readability.py",
+        "skills/build-cad-pipe-topology/scripts/test_alignment_utf8.py"
+      ],
+      "drawings": [
+        "SH16-03",
+        "SH16-04",
+        "SH16-08",
+        "SH16-09",
+        "SH16-10",
+        "SH16-11"
+      ],
+      "status": "to_fix",
+      "drawing_correct": false,
+      "evidence": "0/1 registry files and 0/2 registry tests are in this checkout. Absent: build-cad-pipe-topology/scripts/source_readability.py; build-cad-pipe-topology/scripts/test_source_readability.py; build-cad-pipe-topology/scripts/test_alignment_utf8.py. Registry acceptance_status is not_established_by_registry. Drawing ids follow the registry origin or family and were not rechecked on source CAD."
+    },
+    {
+      "id": "historical-feature-proxy_evidence",
+      "group": "historical_feature",
+      "source": "skills/orchestrate-cad-drawing-pipeline/assets/historical/feature-registry.json#proxy_evidence",
+      "entry": "skills/build-cad-pipe-topology/scripts/native_proxy_evidence.py",
+      "tests": [
+        "skills/build-cad-pipe-topology/scripts/test_proxy_metadata_inventory.py",
+        "skills/build-cad-pipe-topology/scripts/test_native_proxy_evidence.py"
+      ],
+      "drawings": [
+        "SH16-03",
+        "SH16-04",
+        "SH16-08",
+        "SH16-09",
+        "SH16-10",
+        "SH16-11"
+      ],
+      "status": "to_fix",
+      "drawing_correct": false,
+      "evidence": "1/2 registry files and 1/2 registry tests are in this checkout. Absent: build-cad-pipe-topology/scripts/proxy_metadata_inventory.py; build-cad-pipe-topology/scripts/test_proxy_metadata_inventory.py. Registry acceptance_status is not_established_by_registry. Drawing ids follow the registry origin or family and were not rechecked on source CAD."
+    },
+    {
+      "id": "historical-feature-geometry",
+      "group": "historical_feature",
+      "source": "skills/orchestrate-cad-drawing-pipeline/assets/historical/feature-registry.json#geometry",
+      "entry": "skills/build-cad-pipe-topology/scripts/pipe_geometry.py",
+      "tests": [
+        "skills/build-cad-pipe-topology/scripts/test_pipe_geometry.py",
+        "skills/build-cad-pipe-topology/scripts/test_topology_normalization.py",
+        "skills/build-cad-pipe-topology/scripts/test_offset_crossovers.py",
+        "skills/build-cad-pipe-topology/scripts/test_unknown_service_crossovers.py",
+        "skills/build-cad-pipe-topology/scripts/test_double_line_pipes.py",
+        "skills/build-cad-pipe-topology/scripts/test_single_crossbar_candidates.py",
+        "skills/build-cad-pipe-topology/scripts/test_source_internal_junction_candidates.py"
+      ],
+      "drawings": [
+        "SH16-03",
+        "SH16-04",
+        "SH16-08",
+        "SH16-09",
+        "SH16-10",
+        "SH16-11"
+      ],
+      "status": "to_fix",
+      "drawing_correct": false,
+      "evidence": "3/5 registry files and 5/7 registry tests are in this checkout. Absent: build-cad-pipe-topology/scripts/single_crossbar_candidates.py; build-cad-pipe-topology/scripts/source_internal_junction_candidates.py; build-cad-pipe-topology/scripts/test_single_crossbar_candidates.py; build-cad-pipe-topology/scripts/test_source_internal_junction_candidates.py. Registry acceptance_status is not_established_by_registry. Drawing ids follow the registry origin or family and were not rechecked on source CAD."
+    },
+    {
+      "id": "historical-feature-contacts",
+      "group": "historical_feature",
+      "source": "skills/orchestrate-cad-drawing-pipeline/assets/historical/feature-registry.json#contacts",
+      "entry": "skills/build-cad-pipe-topology/scripts/proven_contacts.py",
+      "tests": [
+        "skills/build-cad-pipe-topology/scripts/test_proven_contacts.py",
+        "skills/build-cad-pipe-topology/scripts/test_near_junctions.py",
+        "skills/build-cad-pipe-topology/scripts/test_source_mixed_service_tee_candidates.py",
+        "skills/build-cad-pipe-topology/scripts/test_source_pending_main_continuity.py"
+      ],
+      "drawings": [
+        "SH16-03",
+        "SH16-04",
+        "SH16-08",
+        "SH16-09",
+        "SH16-10",
+        "SH16-11"
+      ],
+      "status": "to_fix",
+      "drawing_correct": false,
+      "evidence": "1/3 registry files and 2/4 registry tests are in this checkout. Absent: build-cad-pipe-topology/scripts/source_mixed_service_tee_candidates.py; build-cad-pipe-topology/scripts/source_pending_main_continuity.py; build-cad-pipe-topology/scripts/test_source_mixed_service_tee_candidates.py; build-cad-pipe-topology/scripts/test_source_pending_main_continuity.py. Registry acceptance_status is not_established_by_registry. Drawing ids follow the registry origin or family and were not rechecked on source CAD."
+    },
+    {
+      "id": "historical-feature-equipment",
+      "group": "historical_feature",
+      "source": "skills/orchestrate-cad-drawing-pipeline/assets/historical/feature-registry.json#equipment",
+      "entry": "skills/build-cad-pipe-topology/scripts/equipment_assemblies.py",
+      "tests": [
+        "skills/build-cad-pipe-topology/scripts/test_equipment_assemblies.py",
+        "skills/build-cad-pipe-topology/scripts/test_nested_equipment_ports.py",
+        "skills/build-cad-pipe-topology/scripts/test_native_module_equipment.py",
+        "skills/build-cad-pipe-topology/scripts/test_native_equipment_preservation.py",
+        "skills/build-cad-pipe-topology/scripts/test_source_equipment_group_candidates.py",
+        "skills/build-cad-pipe-topology/scripts/test_source_fidelity.py",
+        "skills/build-cad-pipe-topology/scripts/test_source_labeled_equipment_pairs.py",
+        "skills/build-cad-pipe-topology/scripts/test_source_roof_tower_reconciliation.py",
+        "skills/build-cad-pipe-topology/scripts/test_source_tower_overlap_reconciliation.py",
+        "skills/build-cad-pipe-topology/scripts/test_source_tower_terminal_contact_audit.py",
+        "skills/build-cad-pipe-topology/scripts/test_source_enclosed_return_groups.py",
+        "skills/build-cad-pipe-topology/scripts/test_common_schedule_evidence.py"
+      ],
+      "drawings": [
+        "SH16-03",
+        "SH16-04",
+        "SH16-08",
+        "SH16-09",
+        "SH16-10"
+      ],
+      "status": "to_fix",
+      "drawing_correct": false,
+      "evidence": "3/11 registry files and 4/12 registry tests are in this checkout. Absent: build-cad-pipe-topology/scripts/native_module_equipment.py; build-cad-pipe-topology/scripts/source_equipment_group_candidates.py; build-cad-pipe-topology/scripts/source_labeled_equipment_pairs.py; build-cad-pipe-topology/scripts/source_roof_tower_reconciliation.py; build-cad-pipe-topology/scripts/source_tower_overlap_reconciliation.py; build-cad-pipe-topology/scripts/source_tower_terminal_contact_audit.py; build-cad-pipe-topology/scripts/source_enclosed_return_groups.py; build-cad-pipe-topology/scripts/common_schedule_evidence.py; build-cad-pipe-topology/scripts/test_native_module_equipment.py; build-cad-pipe-topology/scripts/test_source_equipment_group_candidates.py; build-cad-pipe-topology/scripts/test_source_labeled_equipment_pairs.py; build-cad-pipe-topology/scripts/test_source_roof_tower_reconciliation.py; build-cad-pipe-topology/scripts/test_source_tower_overlap_reconciliation.py; build-cad-pipe-topology/scripts/test_source_tower_terminal_contact_audit.py; build-cad-pipe-topology/scripts/test_source_enclosed_return_groups.py; build-cad-pipe-topology/scripts/test_common_schedule_evidence.py. Registry acceptance_status is not_established_by_registry. Drawing ids follow the registry origin or family and were not rechecked on source CAD."
+    },
+    {
+      "id": "historical-feature-components",
+      "group": "historical_feature",
+      "source": "skills/orchestrate-cad-drawing-pipeline/assets/historical/feature-registry.json#components",
+      "entry": "skills/build-cad-pipe-topology/scripts/instrumentation.py",
+      "tests": [
+        "skills/build-cad-pipe-topology/scripts/test_instrumentation.py",
+        "skills/build-cad-pipe-topology/scripts/test_native_inline_coordinates.py",
+        "skills/build-cad-pipe-topology/scripts/test_exploded_templates.py",
+        "skills/build-cad-pipe-topology/scripts/test_repair_native_flexible_joints.py",
+        "skills/build-cad-pipe-topology/scripts/test_bind_component_inventory.py",
+        "skills/build-cad-pipe-topology/scripts/test_instrument_heads.py",
+        "skills/build-cad-pipe-topology/scripts/test_native_instrument_heads.py",
+        "skills/build-cad-pipe-topology/scripts/test_source_glyphs.py",
+        "skills/build-cad-pipe-topology/scripts/test_source_inline_axis_coverage.py",
+        "skills/build-cad-pipe-topology/scripts/test_source_inline_endpoint_groups.py",
+        "skills/build-cad-pipe-topology/scripts/test_source_inline_group_provenance.py",
+        "skills/build-cad-pipe-topology/scripts/test_source_symbol_bounds.py"
+      ],
+      "drawings": [
+        "SH16-03",
+        "SH16-04",
+        "SH16-08",
+        "SH16-09",
+        "SH16-10",
+        "SH16-11"
+      ],
+      "status": "to_fix",
+      "drawing_correct": false,
+      "evidence": "3/9 registry files and 5/12 registry tests are in this checkout. Absent: build-cad-pipe-topology/scripts/bind_component_inventory.py; build-cad-pipe-topology/scripts/native_instrument_heads.py; build-cad-pipe-topology/scripts/source_inline_axis_coverage.py; build-cad-pipe-topology/scripts/source_inline_endpoint_groups.py; build-cad-pipe-topology/scripts/source_inline_group_provenance.py; build-cad-pipe-topology/scripts/source_symbol_bounds.py; build-cad-pipe-topology/scripts/test_repair_native_flexible_joints.py; build-cad-pipe-topology/scripts/test_bind_component_inventory.py; build-cad-pipe-topology/scripts/test_native_instrument_heads.py; build-cad-pipe-topology/scripts/test_source_inline_axis_coverage.py; build-cad-pipe-topology/scripts/test_source_inline_endpoint_groups.py; build-cad-pipe-topology/scripts/test_source_inline_group_provenance.py; build-cad-pipe-topology/scripts/test_source_symbol_bounds.py. Registry acceptance_status is not_established_by_registry. Drawing ids follow the registry origin or family and were not rechecked on source CAD."
+    },
+    {
+      "id": "historical-feature-circle_detection",
+      "group": "historical_feature",
+      "source": "skills/orchestrate-cad-drawing-pipeline/assets/historical/feature-registry.json#circle_detection",
+      "entry": "skills/build-cad-pipe-topology/scripts/circle_witness_inventory.py",
+      "tests": [
+        "skills/build-cad-pipe-topology/scripts/test_circle_witness_inventory.py",
+        "skills/build-cad-pipe-topology/scripts/test_source_three_rim_candidates.py",
+        "skills/build-cad-pipe-topology/scripts/test_source_concentric_terminal_glyphs.py",
+        "skills/build-cad-pipe-topology/scripts/test_source_labeled_circle_interfaces.py",
+        "skills/build-cad-pipe-topology/scripts/test_source_midpath_circle_candidates.py",
+        "skills/build-cad-pipe-topology/scripts/test_source_three_rim_equipment_families.py"
+      ],
+      "drawings": [
+        "SH16-08",
+        "SH16-09",
+        "SH16-10",
+        "SH16-03",
+        "SH16-04"
+      ],
+      "status": "to_fix",
+      "drawing_correct": false,
+      "evidence": "0/6 registry files and 0/6 registry tests are in this checkout. Absent: build-cad-pipe-topology/scripts/circle_witness_inventory.py; build-cad-pipe-topology/scripts/source_three_rim_candidates.py; build-cad-pipe-topology/scripts/source_concentric_terminal_glyphs.py; build-cad-pipe-topology/scripts/source_labeled_circle_interfaces.py; build-cad-pipe-topology/scripts/source_midpath_circle_candidates.py; build-cad-pipe-topology/scripts/source_three_rim_equipment_families.py; build-cad-pipe-topology/scripts/test_circle_witness_inventory.py; build-cad-pipe-topology/scripts/test_source_three_rim_candidates.py; build-cad-pipe-topology/scripts/test_source_concentric_terminal_glyphs.py; build-cad-pipe-topology/scripts/test_source_labeled_circle_interfaces.py; build-cad-pipe-topology/scripts/test_source_midpath_circle_candidates.py; build-cad-pipe-topology/scripts/test_source_three_rim_equipment_families.py. Registry acceptance_status is not_established_by_registry. Drawing ids follow the registry origin or family and were not rechecked on source CAD."
+    },
+    {
+      "id": "historical-feature-confirmed_circles",
+      "group": "historical_feature",
+      "source": "skills/orchestrate-cad-drawing-pipeline/assets/historical/feature-registry.json#confirmed_circles",
+      "entry": "skills/build-cad-pipe-topology/scripts/confirmed_circle_junctions.py",
+      "tests": [
+        "skills/build-cad-pipe-topology/scripts/test_confirmed_circle_junctions.py",
+        "skills/build-cad-pipe-topology/scripts/test_reconcile_confirmed_circle_references.py"
+      ],
+      "drawings": [
+        "LF20-03"
+      ],
+      "status": "to_fix",
+      "drawing_correct": false,
+      "evidence": "0/2 registry files and 0/2 registry tests are in this checkout. Absent: build-cad-pipe-topology/scripts/confirmed_circle_junctions.py; build-cad-pipe-topology/scripts/reconcile_confirmed_circle_references.py; build-cad-pipe-topology/scripts/test_confirmed_circle_junctions.py; build-cad-pipe-topology/scripts/test_reconcile_confirmed_circle_references.py. Registry acceptance_status is not_established_by_registry. Drawing ids follow the registry origin or family and were not rechecked on source CAD."
+    },
+    {
+      "id": "historical-feature-overlaid_supply",
+      "group": "historical_feature",
+      "source": "skills/orchestrate-cad-drawing-pipeline/assets/historical/feature-registry.json#overlaid_supply",
+      "entry": "skills/build-cad-pipe-topology/scripts/confirmed_overlaid_supply.py",
+      "tests": [
+        "skills/build-cad-pipe-topology/scripts/test_confirmed_overlaid_supply.py",
+        "skills/build-cad-pipe-topology/scripts/test_overlaid_service_network.py"
+      ],
+      "drawings": [
+        "LF20-03"
+      ],
+      "status": "to_fix",
+      "drawing_correct": false,
+      "evidence": "0/1 registry files and 0/2 registry tests are in this checkout. Absent: build-cad-pipe-topology/scripts/confirmed_overlaid_supply.py; build-cad-pipe-topology/scripts/test_confirmed_overlaid_supply.py; build-cad-pipe-topology/scripts/test_overlaid_service_network.py. Registry acceptance_status is not_established_by_registry. Drawing ids follow the registry origin or family and were not rechecked on source CAD."
+    },
+    {
+      "id": "historical-feature-tangent_pairs",
+      "group": "historical_feature",
+      "source": "skills/orchestrate-cad-drawing-pipeline/assets/historical/feature-registry.json#tangent_pairs",
+      "entry": "skills/build-cad-pipe-topology/scripts/source_tangent_circle_candidates.py",
+      "tests": [
+        "skills/build-cad-pipe-topology/scripts/test_source_tangent_circle_candidates.py",
+        "skills/build-cad-pipe-topology/scripts/test_rebase_tangent_circle_evidence.py"
+      ],
+      "drawings": [
+        "LF20-03"
+      ],
+      "status": "to_fix",
+      "drawing_correct": false,
+      "evidence": "0/2 registry files and 0/2 registry tests are in this checkout. Absent: build-cad-pipe-topology/scripts/source_tangent_circle_candidates.py; build-cad-pipe-topology/scripts/rebase_tangent_circle_evidence.py; build-cad-pipe-topology/scripts/test_source_tangent_circle_candidates.py; build-cad-pipe-topology/scripts/test_rebase_tangent_circle_evidence.py. Registry acceptance_status is not_established_by_registry. Drawing ids follow the registry origin or family and were not rechecked on source CAD."
+    },
+    {
+      "id": "historical-feature-wave_interfaces",
+      "group": "historical_feature",
+      "source": "skills/orchestrate-cad-drawing-pipeline/assets/historical/feature-registry.json#wave_interfaces",
+      "entry": "skills/build-cad-pipe-topology/scripts/source_wave_terminals.py",
+      "tests": [
+        "skills/build-cad-pipe-topology/scripts/test_source_wave_terminals.py",
+        "skills/build-cad-pipe-topology/scripts/test_repair_expert_wave_scoped_09.py",
+        "skills/build-cad-pipe-topology/scripts/test_expert_native_wave_terminals.py",
+        "skills/build-cad-pipe-topology/scripts/test_source_annotation_references.py",
+        "skills/build-cad-pipe-topology/scripts/test_source_declared_interfaces.py",
+        "skills/build-cad-pipe-topology/scripts/test_source_downturn_terminals.py",
+        "skills/build-cad-pipe-topology/scripts/test_source_endpoint_leader_labels.py"
+      ],
+      "drawings": [
+        "SH16-09",
+        "SH16-10"
+      ],
+      "status": "to_fix",
+      "drawing_correct": false,
+      "evidence": "0/7 registry files and 0/7 registry tests are in this checkout. Absent: build-cad-pipe-topology/scripts/source_wave_terminals.py; build-cad-pipe-topology/scripts/repair_expert_wave_scoped_09.py; build-cad-pipe-topology/scripts/expert_native_wave_terminals.py; build-cad-pipe-topology/scripts/source_annotation_references.py; build-cad-pipe-topology/scripts/source_declared_interfaces.py; build-cad-pipe-topology/scripts/source_downturn_terminals.py; build-cad-pipe-topology/scripts/source_endpoint_leader_labels.py; build-cad-pipe-topology/scripts/test_source_wave_terminals.py; build-cad-pipe-topology/scripts/test_repair_expert_wave_scoped_09.py; build-cad-pipe-topology/scripts/test_expert_native_wave_terminals.py; build-cad-pipe-topology/scripts/test_source_annotation_references.py; build-cad-pipe-topology/scripts/test_source_declared_interfaces.py; build-cad-pipe-topology/scripts/test_source_downturn_terminals.py; build-cad-pipe-topology/scripts/test_source_endpoint_leader_labels.py. Registry acceptance_status is not_established_by_registry. Drawing ids follow the registry origin or family and were not rechecked on source CAD."
+    },
+    {
+      "id": "historical-feature-riser_boundary",
+      "group": "historical_feature",
+      "source": "skills/orchestrate-cad-drawing-pipeline/assets/historical/feature-registry.json#riser_boundary",
+      "entry": "skills/build-cad-pipe-topology/scripts/build_ceiling_family.py",
+      "tests": [
+        "skills/build-cad-pipe-topology/scripts/test_expert_riser_connection.py",
+        "skills/build-cad-pipe-topology/scripts/test_riser_source_lengths.py",
+        "skills/build-cad-pipe-topology/scripts/test_convert_expert_non_node_boundaries.py",
+        "skills/build-cad-pipe-topology/scripts/test_riser_terminal.py",
+        "skills/build-cad-pipe-topology/scripts/test_expert_source_rules.py",
+        "skills/build-cad-pipe-topology/scripts/test_edge_endpoint_semantics.py",
+        "skills/build-cad-pipe-topology/scripts/test_ceiling_interface_glyph.py",
+        "skills/build-cad-pipe-topology/scripts/test_unbound_ceiling_symbols.py",
+        "skills/build-cad-pipe-topology/scripts/test_source_glyph_system_conflicts.py"
+      ],
+      "drawings": [
+        "SH16-10"
+      ],
+      "status": "to_fix",
+      "drawing_correct": false,
+      "evidence": "2/8 registry files and 2/9 registry tests are in this checkout. Absent: build-cad-pipe-topology/scripts/expert_riser_connection.py; build-cad-pipe-topology/scripts/riser_source_lengths.py; build-cad-pipe-topology/scripts/convert_expert_non_node_boundaries.py; build-cad-pipe-topology/scripts/edge_endpoint_semantics.py; build-cad-pipe-topology/scripts/unbound_ceiling_symbols.py; build-cad-pipe-topology/scripts/source_glyph_system_conflicts.py; build-cad-pipe-topology/scripts/test_expert_riser_connection.py; build-cad-pipe-topology/scripts/test_riser_source_lengths.py; build-cad-pipe-topology/scripts/test_convert_expert_non_node_boundaries.py; build-cad-pipe-topology/scripts/test_edge_endpoint_semantics.py; build-cad-pipe-topology/scripts/test_ceiling_interface_glyph.py; build-cad-pipe-topology/scripts/test_unbound_ceiling_symbols.py; build-cad-pipe-topology/scripts/test_source_glyph_system_conflicts.py. Registry acceptance_status is not_established_by_registry. Drawing ids follow the registry origin or family and were not rechecked on source CAD."
+    },
+    {
+      "id": "historical-feature-diameter_floor",
+      "group": "historical_feature",
+      "source": "skills/orchestrate-cad-drawing-pipeline/assets/historical/feature-registry.json#diameter_floor",
+      "entry": "skills/build-cad-pipe-topology/scripts/pipe_annotation_attributes.py",
+      "tests": [
+        "skills/build-cad-pipe-topology/scripts/test_pipe_annotation_attributes.py",
+        "skills/build-cad-pipe-topology/scripts/test_source_floor_group_diameter_evidence.py",
+        "skills/build-cad-pipe-topology/scripts/test_source_floor_alignment_candidates.py",
+        "skills/build-cad-pipe-topology/scripts/test_dn_source_annotations.py",
+        "skills/build-cad-pipe-topology/scripts/test_diameter_tee_inheritance.py"
+      ],
+      "drawings": [
+        "SH16-08",
+        "SH16-09",
+        "SH16-10",
+        "SH16-03",
+        "SH16-04",
+        "SH16-11"
+      ],
+      "status": "to_fix",
+      "drawing_correct": false,
+      "evidence": "1/4 registry files and 1/5 registry tests are in this checkout. Absent: build-cad-pipe-topology/scripts/source_floor_group_diameter_evidence.py; build-cad-pipe-topology/scripts/source_floor_alignment_candidates.py; build-cad-pipe-topology/scripts/diameter_tee_inheritance.py; build-cad-pipe-topology/scripts/test_source_floor_group_diameter_evidence.py; build-cad-pipe-topology/scripts/test_source_floor_alignment_candidates.py; build-cad-pipe-topology/scripts/test_dn_source_annotations.py; build-cad-pipe-topology/scripts/test_diameter_tee_inheritance.py. Registry acceptance_status is not_established_by_registry. Drawing ids follow the registry origin or family and were not rechecked on source CAD."
+    },
+    {
+      "id": "historical-feature-source_lengths",
+      "group": "historical_feature",
+      "source": "skills/orchestrate-cad-drawing-pipeline/assets/historical/feature-registry.json#source_lengths",
+      "entry": "skills/build-cad-pipe-topology/scripts/pipe_section_connections.py",
+      "tests": [
+        "skills/build-cad-pipe-topology/scripts/test_pipe_section_connections.py",
+        "skills/build-cad-pipe-topology/scripts/test_rebase_section_length_updates.py",
+        "skills/build-cad-pipe-topology/scripts/test_source_detail_branch_lengths.py"
+      ],
+      "drawings": [
+        "SH16-08",
+        "SH16-09",
+        "SH16-10",
+        "SH16-03",
+        "SH16-04"
+      ],
+      "status": "to_fix",
+      "drawing_correct": false,
+      "evidence": "1/3 registry files and 1/3 registry tests are in this checkout. Absent: build-cad-pipe-topology/scripts/rebase_section_length_updates.py; build-cad-pipe-topology/scripts/source_detail_branch_lengths.py; build-cad-pipe-topology/scripts/test_rebase_section_length_updates.py; build-cad-pipe-topology/scripts/test_source_detail_branch_lengths.py. Registry acceptance_status is not_established_by_registry. Drawing ids follow the registry origin or family and were not rechecked on source CAD."
+    },
+    {
+      "id": "historical-feature-detail_alternative",
+      "group": "historical_feature",
+      "source": "skills/orchestrate-cad-drawing-pipeline/assets/historical/feature-registry.json#detail_alternative",
+      "entry": "skills/build-cad-pipe-topology/scripts/compare_expert_detail_scoped_09.py",
+      "tests": [
+        "skills/build-cad-pipe-topology/scripts/test_compare_expert_detail_scoped_09.py",
+        "skills/build-cad-pipe-topology/scripts/test_hydraulic_projection.py"
+      ],
+      "drawings": [
+        "SH16-09"
+      ],
+      "status": "to_fix",
+      "drawing_correct": false,
+      "evidence": "0/1 registry files and 1/2 registry tests are in this checkout. Absent: build-cad-pipe-topology/scripts/compare_expert_detail_scoped_09.py; build-cad-pipe-topology/scripts/test_compare_expert_detail_scoped_09.py. Registry acceptance_status is not_established_by_registry. Drawing ids follow the registry origin or family and were not rechecked on source CAD."
+    },
+    {
+      "id": "historical-feature-expert_circle_tee",
+      "group": "historical_feature",
+      "source": "skills/orchestrate-cad-drawing-pipeline/assets/historical/feature-registry.json#expert_circle_tee",
+      "entry": "skills/build-cad-pipe-topology/scripts/repair_expert_circle_pair_scoped_09.py",
+      "tests": [
+        "skills/build-cad-pipe-topology/scripts/test_expert_circle_connection.py",
+        "skills/build-cad-pipe-topology/scripts/test_repair_expert_circle_pair_scoped_09.py"
+      ],
+      "drawings": [
+        "SH16-09",
+        "SH16-10"
+      ],
+      "status": "to_fix",
+      "drawing_correct": false,
+      "evidence": "0/2 registry files and 0/2 registry tests are in this checkout. Absent: build-cad-pipe-topology/scripts/repair_expert_circle_pair_scoped_09.py; build-cad-pipe-topology/scripts/expert_circle_source_lengths.py; build-cad-pipe-topology/scripts/test_expert_circle_connection.py; build-cad-pipe-topology/scripts/test_repair_expert_circle_pair_scoped_09.py. Registry acceptance_status is not_established_by_registry. Drawing ids follow the registry origin or family and were not rechecked on source CAD."
+    },
+    {
+      "id": "historical-feature-node_label",
+      "group": "historical_feature",
+      "source": "skills/orchestrate-cad-drawing-pipeline/assets/historical/feature-registry.json#node_label",
+      "entry": "skills/build-cad-pipe-topology/scripts/source_expert_node_label_policy.py",
+      "tests": [
+        "skills/build-cad-pipe-topology/scripts/test_source_expert_node_label_policy.py"
+      ],
+      "drawings": [
+        "SH16-03",
+        "SH16-04"
+      ],
+      "status": "to_fix",
+      "drawing_correct": false,
+      "evidence": "0/1 registry files and 0/1 registry tests are in this checkout. Absent: build-cad-pipe-topology/scripts/source_expert_node_label_policy.py; build-cad-pipe-topology/scripts/test_source_expert_node_label_policy.py. Registry acceptance_status is not_established_by_registry. Drawing ids follow the registry origin or family and were not rechecked on source CAD."
+    },
+    {
+      "id": "historical-feature-graph_coverage",
+      "group": "historical_feature",
+      "source": "skills/orchestrate-cad-drawing-pipeline/assets/historical/feature-registry.json#graph_coverage",
+      "entry": "skills/build-cad-pipe-topology/scripts/source_coverage_gate.py",
+      "tests": [
+        "skills/build-cad-pipe-topology/scripts/test_profile_source_coverage.py",
+        "skills/build-cad-pipe-topology/scripts/test_parallel_edge_ids.py",
+        "skills/build-cad-pipe-topology/scripts/test_stable_normalized_edges.py"
+      ],
+      "drawings": [
+        "SH16-03",
+        "SH16-04",
+        "SH16-08",
+        "SH16-09",
+        "SH16-10",
+        "SH16-11"
+      ],
+      "status": "to_fix",
+      "drawing_correct": false,
+      "evidence": "2/3 registry files and 2/3 registry tests are in this checkout. Absent: build-cad-pipe-topology/scripts/stable_normalized_edges.py; build-cad-pipe-topology/scripts/test_stable_normalized_edges.py. Registry acceptance_status is not_established_by_registry. Drawing ids follow the registry origin or family and were not rechecked on source CAD."
+    },
+    {
+      "id": "historical-feature-calculation",
+      "group": "historical_feature",
+      "source": "skills/orchestrate-cad-drawing-pipeline/assets/historical/feature-registry.json#calculation",
+      "entry": "skills/build-cad-pipe-topology/scripts/derive_hydraulic_graph.py",
+      "tests": [
+        "skills/build-cad-pipe-topology/scripts/test_hydraulic_projection.py",
+        "skills/build-cad-pipe-topology/scripts/test_calculation_aggregate.py"
+      ],
+      "drawings": [
+        "SH16-03",
+        "SH16-04",
+        "SH16-08",
+        "SH16-09",
+        "SH16-10",
+        "SH16-11"
+      ],
+      "status": "reproduced",
+      "drawing_correct": false,
+      "evidence": "Every file and test named by the historical feature registry is in this checkout. The registry acceptance_status remains not_established_by_registry. This row does not accept a drawing."
+    },
+    {
+      "id": "historical-feature-building_context",
+      "group": "historical_feature",
+      "source": "skills/orchestrate-cad-drawing-pipeline/assets/historical/feature-registry.json#building_context",
+      "entry": "skills/extract-cad-building-context/scripts/architecture_context.py",
+      "tests": [
+        "skills/extract-cad-building-context/scripts/test_architecture_context.py",
+        "skills/extract-cad-building-context/scripts/test_layer_exclusions.py"
+      ],
+      "drawings": [
+        "SH16-08",
+        "SH16-09",
+        "SH16-10"
+      ],
+      "status": "reproduced",
+      "drawing_correct": false,
+      "evidence": "Every file and test named by the historical feature registry is in this checkout. The registry acceptance_status remains not_established_by_registry. This row does not accept a drawing."
+    },
+    {
+      "id": "historical-feature-source_comparison",
+      "group": "historical_feature",
+      "source": "skills/orchestrate-cad-drawing-pipeline/assets/historical/feature-registry.json#source_comparison",
+      "entry": "skills/orchestrate-cad-drawing-pipeline/scripts/source_comparison_gate.py",
+      "tests": [
+        "skills/orchestrate-cad-drawing-pipeline/scripts/test_source_comparison_gate.py",
+        "skills/build-cad-pipe-topology/scripts/test_source_semantic_reconciliation.py",
+        "skills/build-cad-pipe-topology/scripts/test_source_named_service_evidence.py",
+        "skills/build-cad-pipe-topology/scripts/test_terminal_inventory_reconciliation.py",
+        "skills/orchestrate-cad-drawing-pipeline/scripts/test_source_graph_pending_gate.py"
+      ],
+      "drawings": [
+        "SH16-03",
+        "SH16-04",
+        "SH16-08",
+        "SH16-09",
+        "SH16-10",
+        "SH16-11"
+      ],
+      "status": "to_fix",
+      "drawing_correct": false,
+      "evidence": "2/4 registry files and 2/5 registry tests are in this checkout. Absent: build-cad-pipe-topology/scripts/source_named_service_evidence.py; build-cad-pipe-topology/scripts/terminal_inventory_reconciliation.py; build-cad-pipe-topology/scripts/test_source_named_service_evidence.py; build-cad-pipe-topology/scripts/test_terminal_inventory_reconciliation.py; orchestrate-cad-drawing-pipeline/scripts/test_source_graph_pending_gate.py. Registry acceptance_status is not_established_by_registry. Drawing ids follow the registry origin or family and were not rechecked on source CAD."
+    },
+    {
+      "id": "historical-feature-viewer",
+      "group": "historical_feature",
+      "source": "skills/orchestrate-cad-drawing-pipeline/assets/historical/feature-registry.json#viewer",
+      "entry": "skills/visualize-cad-pipe-topology/scripts/build_visualization.py",
+      "tests": [
+        "skills/visualize-cad-pipe-topology/scripts/test_builder.py",
+        "skills/visualize-cad-pipe-topology/scripts/test_post_drawing_gate.py",
+        "skills/visualize-cad-pipe-topology/scripts/test_system_boundaries.mjs",
+        "skills/visualize-cad-pipe-topology/scripts/test_node_label_policy.mjs",
+        "skills/visualize-cad-pipe-topology/scripts/test_pair_rendering.mjs",
+        "skills/visualize-cad-pipe-topology/scripts/test_hil_frontend.mjs",
+        "skills/visualize-cad-pipe-topology/scripts/test_architecture_context.py",
+        "skills/visualize-cad-pipe-topology/scripts/test_building_pair.mjs",
+        "skills/visualize-cad-pipe-topology/scripts/test_edge_attributes.mjs",
+        "skills/visualize-cad-pipe-topology/scripts/test_hil.py",
+        "skills/visualize-cad-pipe-topology/scripts/test_hydraulic_properties.mjs",
+        "skills/visualize-cad-pipe-topology/scripts/test_instance_geometry.py",
+        "skills/visualize-cad-pipe-topology/scripts/test_new_drawings.py",
+        "skills/visualize-cad-pipe-topology/scripts/test_pipeline_identity.py",
+        "skills/visualize-cad-pipe-topology/scripts/test_portable_launcher.py",
+        "skills/visualize-cad-pipe-topology/scripts/test_region_guides.mjs",
+        "skills/visualize-cad-pipe-topology/scripts/test_source_context_fit.mjs",
+        "skills/visualize-cad-pipe-topology/scripts/test_source_evidence.py",
+        "skills/visualize-cad-pipe-topology/scripts/test_typed_boundary_adapter.py",
+        "skills/visualize-cad-pipe-topology/scripts/test_typed_boundary_builder.py"
+      ],
+      "drawings": [
+        "SH16-03",
+        "SH16-04",
+        "SH16-08",
+        "SH16-09",
+        "SH16-10",
+        "SH16-11"
+      ],
+      "status": "to_fix",
+      "drawing_correct": false,
+      "evidence": "6/8 registry files and 16/20 registry tests are in this checkout. Absent: visualize-cad-pipe-topology/scripts/source_evidence.py; visualize-cad-pipe-topology/scripts/typed_boundary_adapter.py; visualize-cad-pipe-topology/scripts/test_node_label_policy.mjs; visualize-cad-pipe-topology/scripts/test_source_evidence.py; visualize-cad-pipe-topology/scripts/test_typed_boundary_adapter.py; visualize-cad-pipe-topology/scripts/test_typed_boundary_builder.py. Registry acceptance_status is not_established_by_registry. Drawing ids follow the registry origin or family and were not rechecked on source CAD."
+    },
+    {
+      "id": "historical-feature-composition",
+      "group": "historical_feature",
+      "source": "skills/orchestrate-cad-drawing-pipeline/assets/historical/feature-registry.json#composition",
+      "entry": "skills/build-cad-pipe-topology/scripts/run_confirmed_circle_pipeline.py",
+      "tests": [
+        "skills/build-cad-pipe-topology/scripts/test_run_confirmed_circle_pipeline.py"
+      ],
+      "drawings": [
+        "LF20-03"
+      ],
+      "status": "to_fix",
+      "drawing_correct": false,
+      "evidence": "0/1 registry files and 0/1 registry tests are in this checkout. Absent: build-cad-pipe-topology/scripts/run_confirmed_circle_pipeline.py; build-cad-pipe-topology/scripts/test_run_confirmed_circle_pipeline.py. Registry acceptance_status is not_established_by_registry. Drawing ids follow the registry origin or family and were not rechecked on source CAD."
+    },
+    {
+      "id": "historical-feature-pipeline",
+      "group": "historical_feature",
+      "source": "skills/orchestrate-cad-drawing-pipeline/assets/historical/feature-registry.json#pipeline",
+      "entry": "skills/orchestrate-cad-drawing-pipeline/scripts/pipeline.py",
+      "tests": [
+        "skills/orchestrate-cad-drawing-pipeline/scripts/test_pipeline.py",
+        "skills/orchestrate-cad-drawing-pipeline/scripts/test_verify_dependencies.py",
+        "skills/orchestrate-cad-drawing-pipeline/scripts/test_feature_impact.py"
+      ],
+      "drawings": [
+        "SH16-03",
+        "SH16-04",
+        "SH16-08",
+        "SH16-09",
+        "SH16-10",
+        "SH16-11"
+      ],
+      "status": "to_fix",
+      "drawing_correct": false,
+      "evidence": "2/3 registry files and 1/3 registry tests are in this checkout. Absent: orchestrate-cad-drawing-pipeline/scripts/feature_impact.py; orchestrate-cad-drawing-pipeline/scripts/test_verify_dependencies.py; orchestrate-cad-drawing-pipeline/scripts/test_feature_impact.py. Registry acceptance_status is not_established_by_registry. Drawing ids follow the registry origin or family and were not rechecked on source CAD."
+    },
+    {
+      "id": "expert-issue-ERR-BB565D",
+      "group": "expert_issue",
+      "source": "skills/orchestrate-cad-drawing-pipeline/assets/historical/expert-issues.json#ERR-BB565D",
+      "entry": "skills/build-cad-pipe-topology/scripts/repair_expert_circle_pair_scoped_09.py",
+      "tests": [
+        "skills/build-cad-pipe-topology/scripts/test_repair_expert_circle_pair_scoped_09.py"
+      ],
+      "drawings": [
+        "SH16-09"
+      ],
+      "status": "to_fix",
+      "drawing_correct": false,
+      "evidence": "下方相似点为推断，投影及物理长度未证实。Source state is source_scoped_partial_unreviewed. mapped tests absent from this checkout: build-cad-pipe-topology/scripts/test_repair_expert_circle_pair_scoped_09.py. The copied DWG/DXF trees did not contain this note. No drawing was accepted. Entry file is not in this checkout."
+    },
+    {
+      "id": "expert-issue-ERR-789DBB",
+      "group": "expert_issue",
+      "source": "skills/orchestrate-cad-drawing-pipeline/assets/historical/expert-issues.json#ERR-789DBB",
+      "entry": "skills/build-cad-pipe-topology/scripts/source_wave_terminals.py",
+      "tests": [
+        "skills/build-cad-pipe-topology/scripts/test_repair_expert_wave_scoped_09.py"
+      ],
+      "drawings": [
+        "SH16-09"
+      ],
+      "status": "to_fix",
+      "drawing_correct": false,
+      "evidence": "两侧外端仍为未解决边界。Source state is source_scoped_partial_unreviewed. mapped tests absent from this checkout: build-cad-pipe-topology/scripts/test_repair_expert_wave_scoped_09.py. The copied DWG/DXF trees did not contain this note. No drawing was accepted. Entry file is not in this checkout."
+    },
+    {
+      "id": "expert-issue-ERR-4F2867",
+      "group": "expert_issue",
+      "source": "skills/orchestrate-cad-drawing-pipeline/assets/historical/expert-issues.json#ERR-4F2867",
+      "entry": "skills/build-cad-pipe-topology/scripts/expert_riser_connection.py",
+      "tests": [
+        "skills/build-cad-pipe-topology/scripts/test_convert_expert_non_node_boundaries.py"
+      ],
+      "drawings": [
+        "SH16-09"
+      ],
+      "status": "to_fix",
+      "drawing_correct": false,
+      "evidence": "下游消费者需显式支持边界锚点。Source state is source_scoped_partial_unreviewed. mapped tests absent from this checkout: build-cad-pipe-topology/scripts/test_convert_expert_non_node_boundaries.py. The copied DWG/DXF trees did not contain this note. No drawing was accepted. Entry file is not in this checkout."
+    },
+    {
+      "id": "expert-issue-ERR-15B0E8",
+      "group": "expert_issue",
+      "source": "skills/orchestrate-cad-drawing-pipeline/assets/historical/expert-issues.json#ERR-15B0E8",
+      "entry": "skills/build-cad-pipe-topology/scripts/compare_expert_detail_scoped_09.py",
+      "tests": [
+        "skills/build-cad-pipe-topology/scripts/test_compare_expert_detail_scoped_09.py",
+        "skills/build-cad-pipe-topology/scripts/test_source_detail_branch_lengths.py",
+        "skills/build-cad-pipe-topology/scripts/test_hydraulic_projection.py"
+      ],
+      "drawings": [
+        "SH16-09"
+      ],
+      "status": "source_ambiguity",
+      "drawing_correct": false,
+      "evidence": "20 组候选尚未证明设备和边界映射，未替代或去重。Source state is candidate_comparison_only. mapped tests absent from this checkout: build-cad-pipe-topology/scripts/test_compare_expert_detail_scoped_09.py; build-cad-pipe-topology/scripts/test_source_detail_branch_lengths.py. The copied DWG/DXF trees did not contain this note. No drawing was accepted. Entry file is not in this checkout."
+    },
+    {
+      "id": "expert-issue-ERR-67F23F",
+      "group": "expert_issue",
+      "source": "skills/orchestrate-cad-drawing-pipeline/assets/historical/expert-issues.json#ERR-67F23F",
+      "entry": "skills/build-cad-pipe-topology/scripts/source_wave_terminals.py",
+      "tests": [
+        "skills/build-cad-pipe-topology/scripts/test_expert_native_wave_terminals.py"
+      ],
+      "drawings": [
+        "SH16-10"
+      ],
+      "status": "to_fix",
+      "drawing_correct": false,
+      "evidence": "远端连接未证实。Source state is source_scoped_unreviewed. mapped tests absent from this checkout: build-cad-pipe-topology/scripts/test_expert_native_wave_terminals.py. The copied DWG/DXF trees did not contain this note. No drawing was accepted. Entry file is not in this checkout."
+    },
+    {
+      "id": "expert-issue-ERR-1B4777",
+      "group": "expert_issue",
+      "source": "skills/orchestrate-cad-drawing-pipeline/assets/historical/expert-issues.json#ERR-1B4777",
+      "entry": "skills/build-cad-pipe-topology/scripts/expert_riser_connection.py",
+      "tests": [
+        "skills/build-cad-pipe-topology/scripts/test_expert_riser_connection.py"
+      ],
+      "drawings": [
+        "SH16-10"
+      ],
+      "status": "to_fix",
+      "drawing_correct": false,
+      "evidence": "立管物理长度未知。Source state is source_scoped_unreviewed. mapped tests absent from this checkout: build-cad-pipe-topology/scripts/test_expert_riser_connection.py. The copied DWG/DXF trees did not contain this note. No drawing was accepted. Entry file is not in this checkout."
+    },
+    {
+      "id": "expert-issue-ERR-A03211",
+      "group": "expert_issue",
+      "source": "skills/orchestrate-cad-drawing-pipeline/assets/historical/expert-issues.json#ERR-A03211",
+      "entry": "skills/build-cad-pipe-topology/scripts/instrumentation.py",
+      "tests": [
+        "skills/build-cad-pipe-topology/scripts/test_repair_native_flexible_joints.py"
+      ],
+      "drawings": [
+        "SH16-10"
+      ],
+      "status": "to_fix",
+      "drawing_correct": false,
+      "evidence": "阻力参数未提供。Source state is source_scoped_unreviewed. mapped tests absent from this checkout: build-cad-pipe-topology/scripts/test_repair_native_flexible_joints.py. The copied DWG/DXF trees did not contain this note. No drawing was accepted."
+    },
+    {
+      "id": "expert-issue-ERR-A67D75",
+      "group": "expert_issue",
+      "source": "skills/orchestrate-cad-drawing-pipeline/assets/historical/expert-issues.json#ERR-A67D75",
+      "entry": "skills/build-cad-pipe-topology/scripts/expert_riser_connection.py",
+      "tests": [
+        "skills/build-cad-pipe-topology/scripts/test_riser_source_lengths.py",
+        "skills/build-cad-pipe-topology/scripts/test_riser_terminal.py"
+      ],
+      "drawings": [
+        "SH16-10"
+      ],
+      "status": "to_fix",
+      "drawing_correct": false,
+      "evidence": "远端及物理长度未知。Source state is source_scoped_unreviewed. mapped tests absent from this checkout: build-cad-pipe-topology/scripts/test_riser_source_lengths.py. The copied DWG/DXF trees did not contain this note. No drawing was accepted. Entry file is not in this checkout."
+    },
+    {
+      "id": "expert-issue-ERR-D713A5",
+      "group": "expert_issue",
+      "source": "skills/orchestrate-cad-drawing-pipeline/assets/historical/expert-issues.json#ERR-D713A5",
+      "entry": "skills/build-cad-pipe-topology/scripts/expert_riser_connection.py",
+      "tests": [
+        "skills/build-cad-pipe-topology/scripts/test_convert_expert_non_node_boundaries.py"
+      ],
+      "drawings": [
+        "SH16-10"
+      ],
+      "status": "to_fix",
+      "drawing_correct": false,
+      "evidence": "同类八处为推断；另有圆周端点待定。Source state is source_scoped_partial_unreviewed. mapped tests absent from this checkout: build-cad-pipe-topology/scripts/test_convert_expert_non_node_boundaries.py. The copied DWG/DXF trees did not contain this note. No drawing was accepted. Entry file is not in this checkout."
+    },
+    {
+      "id": "expert-issue-ERR-1E73DD",
+      "group": "expert_issue",
+      "source": "skills/orchestrate-cad-drawing-pipeline/assets/historical/expert-issues.json#ERR-1E73DD",
+      "entry": "skills/build-cad-pipe-topology/scripts/repair_expert_circle_pair_scoped_09.py",
+      "tests": [
+        "skills/build-cad-pipe-topology/scripts/test_expert_circle_connection.py"
+      ],
+      "drawings": [
+        "SH16-10"
+      ],
+      "status": "to_fix",
+      "drawing_correct": false,
+      "evidence": "GAP-014 已有独立供水跨越源证据；间隙物理长度及相对高度未知。Source state is source_scoped_unreviewed. mapped tests absent from this checkout: build-cad-pipe-topology/scripts/test_expert_circle_connection.py. The copied DWG/DXF trees did not contain this note. No drawing was accepted. Entry file is not in this checkout."
+    },
+    {
+      "id": "expert-issue-ERR-46339B",
+      "group": "expert_issue",
+      "source": "skills/orchestrate-cad-drawing-pipeline/assets/historical/expert-issues.json#ERR-46339B",
+      "entry": "skills/build-cad-pipe-topology/scripts/source_expert_node_label_policy.py",
+      "tests": [
+        "skills/build-cad-pipe-topology/scripts/test_source_expert_node_label_policy.py"
+      ],
+      "drawings": [
+        "SH16-03"
+      ],
+      "status": "to_fix",
+      "drawing_correct": false,
+      "evidence": "仅专家选定位置的显示标注，不改变连通性。Source state is source_scoped_partial_unreviewed. mapped tests absent from this checkout: build-cad-pipe-topology/scripts/test_source_expert_node_label_policy.py. The copied DWG/DXF trees did not contain this note. No drawing was accepted. Entry file is not in this checkout."
+    },
+    {
+      "id": "expert-issue-ERR-E404BD",
+      "group": "expert_issue",
+      "source": "skills/orchestrate-cad-drawing-pipeline/assets/historical/expert-issues.json#ERR-E404BD",
+      "entry": "skills/build-cad-pipe-topology/scripts/source_expert_node_label_policy.py",
+      "tests": [
+        "skills/build-cad-pipe-topology/scripts/test_source_expert_node_label_policy.py"
+      ],
+      "drawings": [
+        "SH16-04"
+      ],
+      "status": "to_fix",
+      "drawing_correct": false,
+      "evidence": "仅专家选定位置的显示标注，不改变连通性。Source state is source_scoped_partial_unreviewed. mapped tests absent from this checkout: build-cad-pipe-topology/scripts/test_source_expert_node_label_policy.py. The copied DWG/DXF trees did not contain this note. No drawing was accepted. Entry file is not in this checkout."
     }
-  ]
+  ],
+  "milestones": {
+    "M1": "closed_ledger_only",
+    "M2": "open",
+    "M3": "open",
+    "M4": "open",
+    "M5": "open"
+  },
+  "m1_meaning": "Historical feature registry rows and the twelve expert issues are itemized. No drawing is correct, and M2-M5 are open.",
+  "source_search": {
+    "copied_dwg_dxf_count": 1242,
+    "copied_roots_without_text_ledger": [
+      "archive",
+      "output",
+      "packages",
+      "releases",
+      "work"
+    ],
+    "tracked_docs_without_the_twelve": [
+      "docs/sh16-dual-view-plan.md",
+      "docs/SH16-v3.6-未完成项复查与修复.md",
+      "skills/build-cad-pipe-topology/references/expert-roundtrip-v18.md"
+    ],
+    "found": [
+      "E:/codex/CAD/work/expert-feedback-round2/第二波反馈与现行功能对照.md",
+      "E:/codex/CAD/work/feature-regression-registry/expert-issues.json",
+      "C:/Users/lenovo/.codex/skills/orchestrate-cad-drawing-pipeline/assets/feature-registry.json"
+    ]
+  }
 }
