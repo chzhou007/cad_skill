@@ -1167,6 +1167,23 @@
       "status": "fixed_pending_regression",
       "drawing_correct": false,
       "evidence": "Ceiling edges now take edge_type from the endpoint node_type. Riser RIF nodes and unresolved UT terminals are tee_to_virtual_equipment. A VIF prefix is no longer required for that label. Connectivity, equipment ports, and sheet-level regression are unchanged. test_ceiling_edge_types passed; no SH16 drawing was accepted."
+    },
+    {
+      "id": "s1-adjacent-omission-bars",
+      "group": "boundary_riser",
+      "source": "output/dwg-region-split/panels/08-一层顶部水管平面图/08-一层顶部水管平面图.dxf",
+      "entry": "skills/build-cad-pipe-topology/scripts/cad_ceiling_native_rules.py",
+      "tests": [
+        "skills/build-cad-pipe-topology/scripts/test_ceiling_omission_symbols.py"
+      ],
+      "drawings": [
+        "SH16-08",
+        "SH16-09",
+        "SH16-10"
+      ],
+      "status": "fixed_pending_regression",
+      "drawing_correct": false,
+      "evidence": "Sheet 08 return circles 112 and 11C have two arms and two forward bars. Two bars from the supply symbols 200 units away, handles 113 and 11D, also fell inside the 230 radius, so the old bar count rejected the return symbols. A bar now counts only when both ends are in front of that circle's own arms. Extra forward bars stay unmatched and the neighbor is not bound. The same radius-80 read left sheets 09 and 10 unchanged and left 16 other sheet 08 radius-80 circles unmatched because they have no two-arm pattern. The ceiling batch, parameter library, and enrichment inputs are absent, so the sheet graph was not rebuilt. Equipment ports remain unresolved."
     }
   ],
   "milestones": {
@@ -1197,5 +1214,5 @@
       "C:/Users/lenovo/.codex/skills/orchestrate-cad-drawing-pipeline/assets/feature-registry.json"
     ]
   },
-  "s1_meaning": "Started. Ceiling sheets 08-10 classify edge type from endpoint node_type. Supply and return ports, double-line ports, shaft multi-pipe, and source comparison remain open."
+  "s1_meaning": "Ceiling edge labels follow node type, and an omission symbol keeps only the bars in front of its own arms. Supply and return equipment ports, double-line ports, shaft multi-pipe, and source comparison remain open."
 }
