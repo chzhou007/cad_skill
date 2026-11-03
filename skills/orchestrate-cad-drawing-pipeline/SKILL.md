@@ -47,3 +47,7 @@ Read [log-driven routing and whole-batch refresh](references/log-driven-refresh.
 
 Portable review v1.0.5: copy the viewer-owned guarded start.cmd/launch_review.py into batch distributions. Default to a selected drawing; make launching all services explicit. Include dependency/file diagnostics and preserve error output. Do not infer memory exhaustion from a closing console; distinguish remote runtime failure from browser rendering. Startup-only updates preserve data and annotations and may be delivered as an overlay patch.
 
+## Dual-view scope
+
+SH16 plan topology, isometric topology and cross-view fusion stay independent. Read [dual-view scope](references/dual-view-scope.md). The S0 ledger does not mark a drawing correct, and a local connection change invalidates mapping and fused attributes. Do not start formal cross-view mapping while a required plan or isometric check is still open.
+

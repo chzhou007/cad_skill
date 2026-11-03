@@ -1,0 +1,309 @@
+{
+  "program": "sh16-dual-view",
+  "stage": "S0",
+  "historical_baseline_is_correct": false,
+  "code_baseline": {
+    "commit": "d66dc70",
+    "summary": "v1.0.0 isometric topology pipeline core",
+    "inherited_from": "E:/codex/CAD",
+    "working_copy": "E:/codex/cursor-cad_skill"
+  },
+  "tracked_inputs": ["fixtures/isometric-sh16-11/"],
+  "untracked_inputs": [
+    "SH16 sheets 01-10 native DWG/DXF are outside git",
+    "LF20 02/03/06 are outside git",
+    "releases/, work/, output/ were not copied"
+  ],
+  "layers": ["plan_topology", "isometric_topology", "cross_view_fusion"],
+  "items": [
+    {
+      "id": "source-chinese-and-comparison",
+      "group": "source_elements",
+      "source": "skills/build-cad-pipe-topology/references/source-semantic-reconciliation.md",
+      "entry": "skills/orchestrate-cad-drawing-pipeline/scripts/source_comparison_gate.py",
+      "tests": ["skills/orchestrate-cad-drawing-pipeline/scripts/test_source_comparison_gate.py"],
+      "drawings": ["SH16-08", "SH16-09", "SH16-10", "SH16-11"],
+      "status": "reproduced",
+      "drawing_correct": false,
+      "evidence": "Gate rejects unresolved native comparison. Passing the gate test does not prove SH16 text or geometry."
+    },
+    {
+      "id": "source-proxy-and-nested-transform",
+      "group": "source_elements",
+      "source": "docs/SH16-v3.6-未完成项复查与修复.md",
+      "entry": "skills/build-cad-pipe-topology/scripts/native_proxy_evidence.py",
+      "tests": [
+        "skills/build-cad-pipe-topology/scripts/test_native_proxy_evidence.py",
+        "skills/build-cad-pipe-topology/scripts/test_native_inline_coordinates.py"
+      ],
+      "drawings": ["SH16-08", "SH16-09", "SH16-10"],
+      "status": "fixed_pending_regression",
+      "drawing_correct": false,
+      "evidence": "v3.6 records an OCS/WCS ball-valve miss. The unit rules exist. Sheet-level regression artifacts are not in the tracked tree."
+    },
+    {
+      "id": "source-fidelity",
+      "group": "source_elements",
+      "source": "skills/build-cad-pipe-topology/SKILL.md",
+      "entry": "skills/build-cad-pipe-topology/scripts/source_semantic_reconciliation.py",
+      "tests": ["skills/build-cad-pipe-topology/scripts/test_source_fidelity.py"],
+      "drawings": ["SH16-11"],
+      "status": "reproduced",
+      "drawing_correct": false,
+      "evidence": "Source fidelity is a unit rule. The isometric count fixture is not a correctness proof."
+    },
+    {
+      "id": "geometry-crossover-and-real-tee",
+      "group": "geometry_connection",
+      "source": "skills/orchestrate-cad-drawing-pipeline/references/sh16-routing.md",
+      "entry": "skills/build-cad-pipe-topology/scripts/straight_crossovers.py",
+      "tests": [
+        "skills/build-cad-pipe-topology/scripts/test_offset_crossovers.py",
+        "skills/build-cad-pipe-topology/scripts/test_unknown_service_crossovers.py",
+        "skills/build-cad-pipe-topology/scripts/test_near_junctions.py"
+      ],
+      "drawings": ["SH16-08", "SH16-09", "SH16-10", "SH16-11"],
+      "status": "reproduced",
+      "drawing_correct": false,
+      "evidence": "Crossover stays a non-node and near-contact acceptance is narrower than discovery. Drawing coverage is not rechecked here."
+    },
+    {
+      "id": "geometry-short-gap-and-sections",
+      "group": "geometry_connection",
+      "source": "skills/build-cad-pipe-topology/references/normalization-v17.md",
+      "entry": "skills/build-cad-pipe-topology/scripts/topology_normalization.py",
+      "tests": [
+        "skills/build-cad-pipe-topology/scripts/test_topology_normalization.py",
+        "skills/build-cad-pipe-topology/scripts/test_pipe_section_connections.py"
+      ],
+      "drawings": ["SH16-08", "SH16-09", "SH16-10"],
+      "status": "reproduced",
+      "drawing_correct": false,
+      "evidence": "Normalization and section-connection tests exist. They do not close the plan-sheet topology ledger."
+    },
+    {
+      "id": "geometry-double-line-ports",
+      "group": "geometry_connection",
+      "source": "docs/SH16-v3.6-未完成项复查与修复.md",
+      "entry": "skills/build-cad-pipe-topology/scripts/pipe_section_connections.py",
+      "tests": ["skills/build-cad-pipe-topology/scripts/test_double_line_pipes.py"],
+      "drawings": ["SH16-06", "SH16-07"],
+      "status": "to_fix",
+      "drawing_correct": false,
+      "evidence": "v3.6 left double-line turns, fittings and equipment ports without a proven centerline. No new physical ports were added."
+    },
+    {
+      "id": "equipment-package-and-preservation",
+      "group": "equipment_ports",
+      "source": "skills/build-cad-pipe-topology/references/expert-roundtrip-v18.md",
+      "entry": "skills/build-cad-pipe-topology/scripts/equipment_assemblies.py",
+      "tests": [
+        "skills/build-cad-pipe-topology/scripts/test_equipment_assemblies.py",
+        "skills/build-cad-pipe-topology/scripts/test_expert_source_rules.py",
+        "skills/build-cad-pipe-topology/scripts/test_native_equipment_preservation.py"
+      ],
+      "drawings": ["SH16-06", "SH16-07", "SH16-08", "SH16-09", "SH16-10"],
+      "status": "reproduced",
+      "drawing_correct": false,
+      "evidence": "Package folding keeps a verified through-main. Supply/return binding for identified plan equipment is still unproven."
+    },
+    {
+      "id": "equipment-nested-ports-unproven",
+      "group": "equipment_ports",
+      "source": "docs/SH16-v3.6-未完成项复查与修复.md",
+      "entry": "skills/build-cad-pipe-topology/scripts/nested_equipment_ports.py",
+      "tests": ["skills/build-cad-pipe-topology/scripts/test_nested_equipment_ports.py"],
+      "drawings": ["SH16-08", "SH16-09", "SH16-10"],
+      "status": "to_fix",
+      "drawing_correct": false,
+      "evidence": "Nested port helper exists. v3.6 says 10/37/36 identified equipment supply-return bindings are not proven, and proximity is not a port."
+    },
+    {
+      "id": "boundary-riser-and-omission",
+      "group": "boundary_riser",
+      "source": "skills/build-cad-pipe-topology/references/expert-roundtrip-v18.md",
+      "entry": "skills/build-cad-pipe-topology/scripts/native_inline_anchors.py",
+      "tests": ["skills/build-cad-pipe-topology/scripts/test_riser_terminal.py"],
+      "drawings": ["SH16-08", "SH16-09", "SH16-10", "SH16-11"],
+      "status": "reproduced",
+      "drawing_correct": false,
+      "evidence": "Calibrated riser circle can be an explicit virtual port. Unrecognized radii stay pending. This is not a cross-view riser match."
+    },
+    {
+      "id": "boundary-known-destination",
+      "group": "boundary_riser",
+      "source": "skills/build-cad-pipe-topology/references/source-semantic-reconciliation.md",
+      "entry": "skills/build-cad-pipe-topology/scripts/source_semantic_reconciliation.py",
+      "tests": ["skills/build-cad-pipe-topology/scripts/test_source_semantic_reconciliation.py"],
+      "drawings": ["SH16-11"],
+      "status": "reproduced",
+      "drawing_correct": false,
+      "evidence": "Known-destination interfaces stay distinct from equipment and glyphs. Candidate grouping is not a hydraulic merge."
+    },
+    {
+      "id": "components-inline-unique-assignment",
+      "group": "components_attributes",
+      "source": "skills/build-cad-pipe-topology/references/output-schema.md",
+      "entry": "skills/build-cad-pipe-topology/scripts/exploded_templates.py",
+      "tests": [
+        "skills/build-cad-pipe-topology/scripts/test_exploded_templates.py",
+        "skills/build-cad-pipe-topology/scripts/test_instrumentation.py"
+      ],
+      "drawings": ["SH16-08", "SH16-09", "SH16-10", "SH16-11"],
+      "status": "fixed_pending_regression",
+      "drawing_correct": false,
+      "evidence": "v3.6 assigned 60 already-recognized valves on sheets 08-10. Unknown components can still be missed. Result tables are outside git."
+    },
+    {
+      "id": "components-f-diameter-annotation",
+      "group": "components_attributes",
+      "source": "skills/build-cad-pipe-topology/references/equipment-parameter-foundation.md",
+      "entry": "skills/build-cad-pipe-topology/scripts/pipe_annotation_attributes.py",
+      "tests": ["skills/build-cad-pipe-topology/scripts/test_pipe_annotation_attributes.py"],
+      "drawings": ["SH16-08", "SH16-09", "SH16-10", "SH16-11"],
+      "status": "reproduced",
+      "drawing_correct": false,
+      "evidence": "Annotation parsing is tested. Cross-view inheritance is a separate open rule and is not applied by this parser."
+    },
+    {
+      "id": "components-resistance-not-assumed",
+      "group": "components_attributes",
+      "source": "docs/SH16-v3.6-未完成项复查与修复.md",
+      "entry": "skills/build-cad-pipe-topology/scripts/derive_hydraulic_graph.py",
+      "tests": ["skills/build-cad-pipe-topology/scripts/test_hydraulic_projection.py"],
+      "drawings": ["SH16-08", "SH16-09", "SH16-10", "SH16-11"],
+      "status": "source_ambiguity",
+      "drawing_correct": false,
+      "evidence": "Missing resistance stays Required/Not assumed. Zero was not filled and the network is not claimed solvable."
+    },
+    {
+      "id": "detail-sh16-09-candidates",
+      "group": "main_detail_context",
+      "source": "docs/SH16-v3.6-未完成项复查与修复.md",
+      "entry": "skills/orchestrate-cad-drawing-pipeline/scripts/source_comparison_gate.py",
+      "tests": ["skills/orchestrate-cad-drawing-pipeline/scripts/test_source_comparison_gate.py"],
+      "drawings": ["SH16-09"],
+      "status": "source_ambiguity",
+      "drawing_correct": false,
+      "evidence": "Twenty main/detail candidates remain unproven. Aggregate count or proximity is not an individual correspondence."
+    },
+    {
+      "id": "context-building-isolation",
+      "group": "main_detail_context",
+      "source": "skills/extract-cad-building-context/SKILL.md",
+      "entry": "skills/extract-cad-building-context/scripts/architecture_context.py",
+      "tests": ["skills/extract-cad-building-context/scripts/test_architecture_context.py"],
+      "drawings": ["SH16-05", "SH16-08", "SH16-09", "SH16-10"],
+      "status": "reproduced",
+      "drawing_correct": false,
+      "evidence": "Building context is a sidecar. Shaft names locate a region and do not by themselves prove a pipe connection."
+    },
+    {
+      "id": "context-shaft-multi-pipe",
+      "group": "main_detail_context",
+      "source": "docs/sh16-dual-view-plan.md",
+      "entry": "skills/extract-cad-building-context/scripts/architecture_context.py",
+      "tests": ["not-in-tracked-tree"],
+      "drawings": ["SH16-08", "SH16-09", "SH16-10", "SH16-11"],
+      "status": "to_fix",
+      "drawing_correct": false,
+      "evidence": "No tracked test distinguishes multiple pipes in one shaft. Well name or nearby position is not connection evidence."
+    },
+    {
+      "id": "delivery-stable-ids-and-launcher",
+      "group": "completeness_delivery",
+      "source": "skills/build-cad-pipe-topology/SKILL.md",
+      "entry": "skills/visualize-cad-pipe-topology/assets/viewer/launch_review.py",
+      "tests": [
+        "skills/build-cad-pipe-topology/scripts/test_parallel_edge_ids.py",
+        "skills/visualize-cad-pipe-topology/scripts/test_portable_launcher.py",
+        "skills/visualize-cad-pipe-topology/scripts/test_hil.py"
+      ],
+      "drawings": ["SH16-11"],
+      "status": "reproduced",
+      "drawing_correct": false,
+      "evidence": "Stable parallel-edge IDs, launcher diagnostics and HIL history are unit-tested. Human acceptance is separate and currently none."
+    },
+    {
+      "id": "delivery-isometric-count-fixture",
+      "group": "completeness_delivery",
+      "source": "README.md",
+      "entry": "fixtures/isometric-sh16-11/edge_summary.json",
+      "tests": ["skills/build-cad-pipe-topology/scripts/test_source_fidelity.py"],
+      "drawings": ["SH16-11"],
+      "status": "reproduced",
+      "drawing_correct": false,
+      "evidence": "Tracked fixture records 424 nodes / 576 edges / 302 tees. Equal counts do not prove the isometric is correct."
+    },
+    {
+      "id": "expert-tracked-six-rules",
+      "group": "expert_rules",
+      "source": "skills/build-cad-pipe-topology/references/expert-roundtrip-v18.md",
+      "entry": "skills/build-cad-pipe-topology/scripts/topology_normalization.py",
+      "tests": [
+        "skills/build-cad-pipe-topology/scripts/test_expert_source_rules.py",
+        "skills/build-cad-pipe-topology/scripts/test_near_junctions.py",
+        "skills/build-cad-pipe-topology/scripts/test_riser_terminal.py"
+      ],
+      "drawings": ["SH16-08", "SH16-09", "SH16-10", "SH16-11"],
+      "status": "reproduced",
+      "drawing_correct": false,
+      "evidence": "The tracked expert note has six numbered source rules. Unit tests cover display tails, package through-paths, near contacts and riser ports."
+    },
+    {
+      "id": "expert-twelve-list-not-in-git",
+      "group": "expert_rules",
+      "source": "docs/sh16-dual-view-plan.md",
+      "entry": "skills/build-cad-pipe-topology/references/expert-roundtrip-v18.md",
+      "tests": ["not-in-tracked-tree"],
+      "drawings": ["SH16-08", "SH16-09", "SH16-10"],
+      "status": "to_fix",
+      "drawing_correct": false,
+      "evidence": "The plan requires the previous expert list of 12. The git tree only preserves six numbered rules. The other six were not invented."
+    },
+    {
+      "id": "dual-view-mapping",
+      "group": "dual_view",
+      "source": "docs/sh16-dual-view-plan.md",
+      "entry": "skills/orchestrate-cad-drawing-pipeline/scripts/dual_view_scope.py",
+      "tests": ["skills/orchestrate-cad-drawing-pipeline/scripts/test_dual_view_scope.py"],
+      "drawings": ["SH16-08", "SH16-09", "SH16-10", "SH16-11"],
+      "status": "to_fix",
+      "drawing_correct": false,
+      "evidence": "S0 only locks the mapping contract: both views, evidence, and no fusion without hashes. No SH16 correspondence is accepted."
+    },
+    {
+      "id": "dual-view-diameter-and-length",
+      "group": "dual_view",
+      "source": "docs/sh16-dual-view-plan.md",
+      "entry": "skills/build-cad-pipe-topology/scripts/dual_view_attributes.py",
+      "tests": ["skills/build-cad-pipe-topology/scripts/test_dual_view_attributes.py"],
+      "drawings": ["SH16-08", "SH16-09", "SH16-10", "SH16-11"],
+      "status": "to_fix",
+      "drawing_correct": false,
+      "evidence": "Inheritance, conflict and horizontal/vertical source rules run on synthetic segments. They have not been applied to SH16 graphs."
+    },
+    {
+      "id": "dual-view-difference-loop",
+      "group": "dual_view",
+      "source": "docs/sh16-dual-view-plan.md",
+      "entry": "skills/build-cad-pipe-topology/scripts/dual_view_attributes.py",
+      "tests": ["skills/build-cad-pipe-topology/scripts/test_dual_view_attributes.py"],
+      "drawings": ["SH16-08", "SH16-09", "SH16-10", "SH16-11"],
+      "status": "to_fix",
+      "drawing_correct": false,
+      "evidence": "A difference record cannot overwrite either view. Plan-only, isometric-only, system and riser differences are not yet extracted from drawings."
+    },
+    {
+      "id": "lf20-backtest",
+      "group": "generalization",
+      "source": "docs/sh16-dual-view-plan.md",
+      "entry": "skills/orchestrate-cad-drawing-pipeline/scripts/pipeline.py",
+      "tests": ["not-in-tracked-tree"],
+      "drawings": ["LF20-02", "LF20-03", "LF20-06"],
+      "status": "to_fix",
+      "drawing_correct": false,
+      "evidence": "LF20 is the generalization set after SH16 rules are stable. Inputs are not in this checkout, so no backtest was run."
+    }
+  ]
+}
