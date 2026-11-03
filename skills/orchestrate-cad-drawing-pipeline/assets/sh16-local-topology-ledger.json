@@ -1,0 +1,105 @@
+{
+  "drawing_correct": false,
+  "rule": "A repair invalidates only presentation rows whose depends_on cites the changed connection.",
+  "fixed_pending_regression": [
+    {
+      "id": "sheet09-real-tee-beside-unmatched-circle",
+      "evidence": "Three-ray endpoint incidence remains a tee when the nearby circle is not an omission symbol or a calibrated riser.",
+      "dependent_presentation_edges": []
+    }
+  ],
+  "isolated": [
+    {
+      "id": "equipment-ports-08-10",
+      "wall": "equipment_ports_unproven",
+      "note": "No port is created from proximity. Mapped equipment keeps its identity and leaves ports unmapped."
+    },
+    {
+      "id": "shared-equipment-labels",
+      "wall": "label_not_unique",
+      "bindings": [
+        {
+          "task_id": "SH16-08-208d1e5a",
+          "source_handle": "B386",
+          "label_candidates": [
+            "CRAH-4#-1-2"
+          ]
+        },
+        {
+          "task_id": "SH16-08-208d1e5a",
+          "source_handle": "B387",
+          "label_candidates": [
+            "CRAH-4#-1-2"
+          ]
+        },
+        {
+          "task_id": "SH16-08-208d1e5a",
+          "source_handle": "B38A",
+          "label_candidates": [
+            "CRAH-4#-1-4"
+          ]
+        },
+        {
+          "task_id": "SH16-08-208d1e5a",
+          "source_handle": "B38B",
+          "label_candidates": [
+            "CRAH-4#-1-4"
+          ]
+        },
+        {
+          "task_id": "SH16-08-208d1e5a",
+          "source_handle": "B38F",
+          "label_candidates": [
+            "CRAH-4#-1-14"
+          ]
+        },
+        {
+          "task_id": "SH16-08-208d1e5a",
+          "source_handle": "B390",
+          "label_candidates": [
+            "CRAH-4#-1-14"
+          ]
+        },
+        {
+          "task_id": "SH16-08-208d1e5a",
+          "source_handle": "1680C",
+          "label_candidates": [
+            "CRAH-4#-1-18"
+          ]
+        },
+        {
+          "task_id": "SH16-08-208d1e5a",
+          "source_handle": "1680D",
+          "label_candidates": [
+            "CRAH-4#-1-18"
+          ]
+        },
+        {
+          "task_id": "SH16-09-ffeda2df",
+          "source_handle": "B3B1",
+          "label_candidates": [
+            "CRAH-4#-2-1",
+            "CRAH-4#-2-2"
+          ]
+        },
+        {
+          "task_id": "SH16-09-ffeda2df",
+          "source_handle": "B3B2",
+          "label_candidates": [
+            "CRAH-4#-2-2"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "double-line-ports-06-07",
+      "wall": "ports_unproven",
+      "note": "Outdoor double-line ports stay isolated. They do not block another unique SH16-11 loop."
+    },
+    {
+      "id": "shaft-multiple-pipes",
+      "wall": "shaft_name_is_not_a_connection",
+      "note": "A shaft name or a distance does not prove a cross-view connection."
+    }
+  ]
+}

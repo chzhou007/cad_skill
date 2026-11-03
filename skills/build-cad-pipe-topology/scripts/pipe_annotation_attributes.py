@@ -32,7 +32,7 @@ def point_edges(point,handles,edges,service=None):
 
 def recognize_f_leaders(doc,texts,segments,edges,layers):
  legs=annotation_legs(doc,layers);rows=[];used=set();frames=[]
- dn=[t for t in texts if re.fullmatch(r'DN\s*\d+(?:\.\d+)?',t['text'],re.I)and t['layer']in layers]
+ dn=[t for t in texts if re.fullmatch(r'DN\s*\d+(?:\.\d+)?(?:\([^)]*\))?',t['text'],re.I)and t['layer']in layers]
  for low in legs:
   candidates=[hi for hi in legs if hi is not low and hi['layer']==low['layer']and pg.dist(hi['a'],low['b'])<=pg.TOL and pg.dot(low['u'],hi['u'])>0 and abs(pg.cross(low['u'],hi['u']))<=pg.TOL*max(low['lu'],hi['lu'])and pg.dot(low['v'],hi['v'])>0 and pg.dist(low['v'],hi['v'])<=pg.TOL]
   if len(candidates)!=1:continue
@@ -88,7 +88,7 @@ def recognize_f_leaders(doc,texts,segments,edges,layers):
 def direct_diameters(texts,edges,excluded_ids,layers):
  assigned=[];pending=[]
  for t in texts:
-  if t['id']in excluded_ids or t['layer']not in layers or not re.fullmatch(r'DN\s*\d+(?:\.\d+)?',t['text'],re.I):continue
+  if t['id']in excluded_ids or t['layer']not in layers or not re.fullmatch(r'DN\s*\d+(?:\.\d+)?(?:\([^)]*\))?',t['text'],re.I):continue
   angle=math.radians(t['rotation']);u=(math.cos(angle),math.sin(angle));p=t['position'];candidates=[]
   for e in edges:
    for path in e['attribute_paths']:

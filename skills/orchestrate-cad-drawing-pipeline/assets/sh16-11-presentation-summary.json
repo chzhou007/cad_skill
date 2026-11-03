@@ -1,0 +1,1414 @@
+{
+  "drawing_correct": false,
+  "human_confirmation": "none",
+  "hil_ready": false,
+  "plan_sha256": "0e138bcb75e899a15294e24d1f6965b03b8a90d68c1301fbc05f928763d3b8aa",
+  "isometric_sha256": "2287909e99a73b6c536dbf5ccee0e5509cd4aa17733056178229ac63dbf2b9d8",
+  "equipment_mapped": 82,
+  "equipment_unmapped": 10,
+  "plan_equipment_nodes": 82,
+  "unresolved_plan_bindings": 10,
+  "direct_diameter_edges": 226,
+  "conflict_diameter_edges": 4,
+  "unknown_diameter_edges": 346,
+  "physical_length_known": 0,
+  "path_mapped": 0,
+  "stop_counts": {
+    "plan_equipment_absent": 4,
+    "label_not_unique": 6,
+    "equipment_ports_unproven": 82
+  },
+  "stops": [
+    {
+      "label": "CRAH-4#-1-1",
+      "floor": 1,
+      "isometric_node_id": "CRAH-4#-1-1",
+      "systems": [
+        "supply",
+        "return"
+      ],
+      "wall": "plan_equipment_absent",
+      "path": "unmapped"
+    },
+    {
+      "label": "CRAH-4#-1-2",
+      "floor": 1,
+      "isometric_node_id": "CRAH-4#-1-2",
+      "systems": [
+        "supply",
+        "return"
+      ],
+      "wall": "label_not_unique",
+      "path": "unmapped"
+    },
+    {
+      "label": "CRAH-4#-1-3",
+      "floor": 1,
+      "isometric_node_id": "CRAH-4#-1-3",
+      "systems": [
+        "supply",
+        "return"
+      ],
+      "wall": "plan_equipment_absent",
+      "path": "unmapped"
+    },
+    {
+      "label": "CRAH-4#-1-4",
+      "floor": 1,
+      "isometric_node_id": "CRAH-4#-1-4",
+      "systems": [
+        "supply",
+        "return"
+      ],
+      "wall": "label_not_unique",
+      "path": "unmapped"
+    },
+    {
+      "label": "CRAH-4#-1-5",
+      "floor": 1,
+      "isometric_node_id": "CRAH-4#-1-5",
+      "plan_task": "SH16-08-208d1e5a",
+      "plan_source_handle": "12E73",
+      "systems": [
+        "supply",
+        "return"
+      ],
+      "wall": "equipment_ports_unproven",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped"
+    },
+    {
+      "label": "CRAH-4#-1-6",
+      "floor": 1,
+      "isometric_node_id": "CRAH-4#-1-6",
+      "plan_task": "SH16-08-208d1e5a",
+      "plan_source_handle": "12E75",
+      "systems": [
+        "supply",
+        "return"
+      ],
+      "wall": "equipment_ports_unproven",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped"
+    },
+    {
+      "label": "CRAH-4#-1-7",
+      "floor": 1,
+      "isometric_node_id": "CRAH-4#-1-7",
+      "plan_task": "SH16-08-208d1e5a",
+      "plan_source_handle": "12E77",
+      "systems": [
+        "supply",
+        "return"
+      ],
+      "wall": "equipment_ports_unproven",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped"
+    },
+    {
+      "label": "CRAH-4#-1-8",
+      "floor": 1,
+      "isometric_node_id": "CRAH-4#-1-8",
+      "plan_task": "SH16-08-208d1e5a",
+      "plan_source_handle": "12E78",
+      "systems": [
+        "supply",
+        "return"
+      ],
+      "wall": "equipment_ports_unproven",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped"
+    },
+    {
+      "label": "CRAH-4#-1-9",
+      "floor": 1,
+      "isometric_node_id": "CRAH-4#-1-9",
+      "plan_task": "SH16-08-208d1e5a",
+      "plan_source_handle": "12E7B",
+      "systems": [
+        "supply",
+        "return"
+      ],
+      "wall": "equipment_ports_unproven",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped"
+    },
+    {
+      "label": "CRAH-4#-1-10",
+      "floor": 1,
+      "isometric_node_id": "CRAH-4#-1-10",
+      "plan_task": "SH16-08-208d1e5a",
+      "plan_source_handle": "12E7C",
+      "systems": [
+        "supply",
+        "return"
+      ],
+      "wall": "equipment_ports_unproven",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped"
+    },
+    {
+      "label": "CRAH-4#-1-11",
+      "floor": 1,
+      "isometric_node_id": "CRAH-4#-1-11",
+      "plan_task": "SH16-08-208d1e5a",
+      "plan_source_handle": "12E7D",
+      "systems": [
+        "supply",
+        "return"
+      ],
+      "wall": "equipment_ports_unproven",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped"
+    },
+    {
+      "label": "CRAH-4#-1-12",
+      "floor": 1,
+      "isometric_node_id": "CRAH-4#-1-12",
+      "plan_task": "SH16-08-208d1e5a",
+      "plan_source_handle": "12E7E",
+      "systems": [
+        "supply",
+        "return"
+      ],
+      "wall": "equipment_ports_unproven",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped"
+    },
+    {
+      "label": "CRAH-4#-1-13",
+      "floor": 1,
+      "isometric_node_id": "CRAH-4#-1-13",
+      "systems": [
+        "supply",
+        "return"
+      ],
+      "wall": "plan_equipment_absent",
+      "path": "unmapped"
+    },
+    {
+      "label": "CRAH-4#-1-14",
+      "floor": 1,
+      "isometric_node_id": "CRAH-4#-1-14",
+      "systems": [
+        "supply",
+        "return"
+      ],
+      "wall": "label_not_unique",
+      "path": "unmapped"
+    },
+    {
+      "label": "CRAH-4#-1-15",
+      "floor": 1,
+      "isometric_node_id": "CRAH-4#-1-15",
+      "plan_task": "SH16-08-208d1e5a",
+      "plan_source_handle": "B38D",
+      "systems": [
+        "supply",
+        "return"
+      ],
+      "wall": "equipment_ports_unproven",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped"
+    },
+    {
+      "label": "CRAH-4#-1-16",
+      "floor": 1,
+      "isometric_node_id": "CRAH-4#-1-16",
+      "plan_task": "SH16-08-208d1e5a",
+      "plan_source_handle": "B38E",
+      "systems": [
+        "supply",
+        "return"
+      ],
+      "wall": "equipment_ports_unproven",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped"
+    },
+    {
+      "label": "CRAH-4#-1-17",
+      "floor": 1,
+      "isometric_node_id": "CRAH-4#-1-17",
+      "systems": [
+        "supply",
+        "return"
+      ],
+      "wall": "plan_equipment_absent",
+      "path": "unmapped"
+    },
+    {
+      "label": "CRAH-4#-1-18",
+      "floor": 1,
+      "isometric_node_id": "CRAH-4#-1-18",
+      "systems": [
+        "supply",
+        "return"
+      ],
+      "wall": "label_not_unique",
+      "path": "unmapped"
+    },
+    {
+      "label": "CRAH-4#-2-1",
+      "floor": 2,
+      "isometric_node_id": "CRAH-4#-2-1",
+      "systems": [
+        "supply",
+        "return"
+      ],
+      "wall": "label_not_unique",
+      "path": "unmapped"
+    },
+    {
+      "label": "CRAH-4#-2-2",
+      "floor": 2,
+      "isometric_node_id": "CRAH-4#-2-2",
+      "systems": [
+        "supply",
+        "return"
+      ],
+      "wall": "label_not_unique",
+      "path": "unmapped"
+    },
+    {
+      "label": "CRAH-4#-2-3",
+      "floor": 2,
+      "isometric_node_id": "CRAH-4#-2-3",
+      "plan_task": "SH16-09-ffeda2df",
+      "plan_source_handle": "B3AB",
+      "systems": [
+        "supply",
+        "return"
+      ],
+      "wall": "equipment_ports_unproven",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped"
+    },
+    {
+      "label": "CRAH-4#-2-4",
+      "floor": 2,
+      "isometric_node_id": "CRAH-4#-2-4",
+      "plan_task": "SH16-09-ffeda2df",
+      "plan_source_handle": "B3AA",
+      "systems": [
+        "supply",
+        "return"
+      ],
+      "wall": "equipment_ports_unproven",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped"
+    },
+    {
+      "label": "CRAH-4#-2-5",
+      "floor": 2,
+      "isometric_node_id": "CRAH-4#-2-5",
+      "plan_task": "SH16-09-ffeda2df",
+      "plan_source_handle": "B3AC",
+      "systems": [
+        "supply",
+        "return"
+      ],
+      "wall": "equipment_ports_unproven",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped"
+    },
+    {
+      "label": "CRAH-4#-2-6",
+      "floor": 2,
+      "isometric_node_id": "CRAH-4#-2-6",
+      "plan_task": "SH16-09-ffeda2df",
+      "plan_source_handle": "B3AD",
+      "systems": [
+        "supply",
+        "return"
+      ],
+      "wall": "equipment_ports_unproven",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped"
+    },
+    {
+      "label": "CRAH-4#-2-7",
+      "floor": 2,
+      "isometric_node_id": "CRAH-4#-2-7",
+      "plan_task": "SH16-09-ffeda2df",
+      "plan_source_handle": "B391",
+      "systems": [
+        "supply",
+        "return"
+      ],
+      "wall": "equipment_ports_unproven",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped"
+    },
+    {
+      "label": "CRAH-4#-2-8",
+      "floor": 2,
+      "isometric_node_id": "CRAH-4#-2-8",
+      "plan_task": "SH16-09-ffeda2df",
+      "plan_source_handle": "B392",
+      "systems": [
+        "supply",
+        "return"
+      ],
+      "wall": "equipment_ports_unproven",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped"
+    },
+    {
+      "label": "CRAH-4#-2-9",
+      "floor": 2,
+      "isometric_node_id": "CRAH-4#-2-9",
+      "plan_task": "SH16-09-ffeda2df",
+      "plan_source_handle": "1603C",
+      "systems": [
+        "supply",
+        "return"
+      ],
+      "wall": "equipment_ports_unproven",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped"
+    },
+    {
+      "label": "CRAH-4#-2-10",
+      "floor": 2,
+      "isometric_node_id": "CRAH-4#-2-10",
+      "plan_task": "SH16-09-ffeda2df",
+      "plan_source_handle": "1603D",
+      "systems": [
+        "supply",
+        "return"
+      ],
+      "wall": "equipment_ports_unproven",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped"
+    },
+    {
+      "label": "CRAH-4#-2-11",
+      "floor": 2,
+      "isometric_node_id": "CRAH-4#-2-11",
+      "plan_task": "SH16-09-ffeda2df",
+      "plan_source_handle": "16044",
+      "systems": [
+        "supply",
+        "return"
+      ],
+      "wall": "equipment_ports_unproven",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped"
+    },
+    {
+      "label": "CRAH-4#-2-12",
+      "floor": 2,
+      "isometric_node_id": "CRAH-4#-2-12",
+      "plan_task": "SH16-09-ffeda2df",
+      "plan_source_handle": "B393",
+      "systems": [
+        "supply",
+        "return"
+      ],
+      "wall": "equipment_ports_unproven",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped"
+    },
+    {
+      "label": "CRAH-4#-2-13",
+      "floor": 2,
+      "isometric_node_id": "CRAH-4#-2-13",
+      "plan_task": "SH16-09-ffeda2df",
+      "plan_source_handle": "B394",
+      "systems": [
+        "supply",
+        "return"
+      ],
+      "wall": "equipment_ports_unproven",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped"
+    },
+    {
+      "label": "CRAH-4#-2-14",
+      "floor": 2,
+      "isometric_node_id": "CRAH-4#-2-14",
+      "plan_task": "SH16-09-ffeda2df",
+      "plan_source_handle": "B395",
+      "systems": [
+        "supply",
+        "return"
+      ],
+      "wall": "equipment_ports_unproven",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped"
+    },
+    {
+      "label": "CRAH-4#-2-15",
+      "floor": 2,
+      "isometric_node_id": "CRAH-4#-2-15",
+      "plan_task": "SH16-09-ffeda2df",
+      "plan_source_handle": "B396",
+      "systems": [
+        "supply",
+        "return"
+      ],
+      "wall": "equipment_ports_unproven",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped"
+    },
+    {
+      "label": "CRAH-4#-2-16",
+      "floor": 2,
+      "isometric_node_id": "CRAH-4#-2-16",
+      "plan_task": "SH16-09-ffeda2df",
+      "plan_source_handle": "B397",
+      "systems": [
+        "supply",
+        "return"
+      ],
+      "wall": "equipment_ports_unproven",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped"
+    },
+    {
+      "label": "CRAH-4#-2-17",
+      "floor": 2,
+      "isometric_node_id": "CRAH-4#-2-17",
+      "plan_task": "SH16-09-ffeda2df",
+      "plan_source_handle": "B39E",
+      "systems": [
+        "supply",
+        "return"
+      ],
+      "wall": "equipment_ports_unproven",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped"
+    },
+    {
+      "label": "CRAH-4#-2-18",
+      "floor": 2,
+      "isometric_node_id": "CRAH-4#-2-18",
+      "plan_task": "SH16-09-ffeda2df",
+      "plan_source_handle": "B39F",
+      "systems": [
+        "supply",
+        "return"
+      ],
+      "wall": "equipment_ports_unproven",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped"
+    },
+    {
+      "label": "CRAH-4#-2-19",
+      "floor": 2,
+      "isometric_node_id": "CRAH-4#-2-19",
+      "plan_task": "SH16-09-ffeda2df",
+      "plan_source_handle": "B3A0",
+      "systems": [
+        "supply",
+        "return"
+      ],
+      "wall": "equipment_ports_unproven",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped"
+    },
+    {
+      "label": "CRAH-4#-2-20",
+      "floor": 2,
+      "isometric_node_id": "CRAH-4#-2-20",
+      "plan_task": "SH16-09-ffeda2df",
+      "plan_source_handle": "B3A1",
+      "systems": [
+        "supply",
+        "return"
+      ],
+      "wall": "equipment_ports_unproven",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped"
+    },
+    {
+      "label": "CRAH-4#-2-21",
+      "floor": 2,
+      "isometric_node_id": "CRAH-4#-2-21",
+      "plan_task": "SH16-09-ffeda2df",
+      "plan_source_handle": "B3A2",
+      "systems": [
+        "supply",
+        "return"
+      ],
+      "wall": "equipment_ports_unproven",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped"
+    },
+    {
+      "label": "CRAH-4#-2-22",
+      "floor": 2,
+      "isometric_node_id": "CRAH-4#-2-22",
+      "plan_task": "SH16-09-ffeda2df",
+      "plan_source_handle": "B3A3",
+      "systems": [
+        "supply",
+        "return"
+      ],
+      "wall": "equipment_ports_unproven",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped"
+    },
+    {
+      "label": "CRAH-4#-2-23",
+      "floor": 2,
+      "isometric_node_id": "CRAH-4#-2-23",
+      "plan_task": "SH16-09-ffeda2df",
+      "plan_source_handle": "B3A4",
+      "systems": [
+        "supply",
+        "return"
+      ],
+      "wall": "equipment_ports_unproven",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped"
+    },
+    {
+      "label": "CRAH-4#-2-24",
+      "floor": 2,
+      "isometric_node_id": "CRAH-4#-2-24",
+      "plan_task": "SH16-09-ffeda2df",
+      "plan_source_handle": "B3A5",
+      "systems": [
+        "supply",
+        "return"
+      ],
+      "wall": "equipment_ports_unproven",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped"
+    },
+    {
+      "label": "CRAH-4#-2-25",
+      "floor": 2,
+      "isometric_node_id": "CRAH-4#-2-25",
+      "plan_task": "SH16-09-ffeda2df",
+      "plan_source_handle": "B398",
+      "systems": [
+        "supply",
+        "return"
+      ],
+      "wall": "equipment_ports_unproven",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped"
+    },
+    {
+      "label": "CRAH-4#-2-26",
+      "floor": 2,
+      "isometric_node_id": "CRAH-4#-2-26",
+      "plan_task": "SH16-09-ffeda2df",
+      "plan_source_handle": "B399",
+      "systems": [
+        "supply",
+        "return"
+      ],
+      "wall": "equipment_ports_unproven",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped"
+    },
+    {
+      "label": "CRAH-4#-2-27",
+      "floor": 2,
+      "isometric_node_id": "CRAH-4#-2-27",
+      "plan_task": "SH16-09-ffeda2df",
+      "plan_source_handle": "B39A",
+      "systems": [
+        "supply",
+        "return"
+      ],
+      "wall": "equipment_ports_unproven",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped"
+    },
+    {
+      "label": "CRAH-4#-2-28",
+      "floor": 2,
+      "isometric_node_id": "CRAH-4#-2-28",
+      "plan_task": "SH16-09-ffeda2df",
+      "plan_source_handle": "B39B",
+      "systems": [
+        "supply",
+        "return"
+      ],
+      "wall": "equipment_ports_unproven",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped"
+    },
+    {
+      "label": "CRAH-4#-2-29",
+      "floor": 2,
+      "isometric_node_id": "CRAH-4#-2-29",
+      "plan_task": "SH16-09-ffeda2df",
+      "plan_source_handle": "16070",
+      "systems": [
+        "supply",
+        "return"
+      ],
+      "wall": "equipment_ports_unproven",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped"
+    },
+    {
+      "label": "CRAH-4#-2-30",
+      "floor": 2,
+      "isometric_node_id": "CRAH-4#-2-30",
+      "plan_task": "SH16-09-ffeda2df",
+      "plan_source_handle": "16071",
+      "systems": [
+        "supply",
+        "return"
+      ],
+      "wall": "equipment_ports_unproven",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped"
+    },
+    {
+      "label": "CRAH-4#-2-31",
+      "floor": 2,
+      "isometric_node_id": "CRAH-4#-2-31",
+      "plan_task": "SH16-09-ffeda2df",
+      "plan_source_handle": "B39C",
+      "systems": [
+        "supply",
+        "return"
+      ],
+      "wall": "equipment_ports_unproven",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped"
+    },
+    {
+      "label": "CRAH-4#-2-32",
+      "floor": 2,
+      "isometric_node_id": "CRAH-4#-2-32",
+      "plan_task": "SH16-09-ffeda2df",
+      "plan_source_handle": "B39D",
+      "systems": [
+        "supply",
+        "return"
+      ],
+      "wall": "equipment_ports_unproven",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped"
+    },
+    {
+      "label": "CRAH-4#-2-33",
+      "floor": 2,
+      "isometric_node_id": "CRAH-4#-2-33",
+      "plan_task": "SH16-09-ffeda2df",
+      "plan_source_handle": "144A8",
+      "systems": [
+        "supply",
+        "return"
+      ],
+      "wall": "equipment_ports_unproven",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped"
+    },
+    {
+      "label": "CRAH-4#-2-34",
+      "floor": 2,
+      "isometric_node_id": "CRAH-4#-2-34",
+      "plan_task": "SH16-09-ffeda2df",
+      "plan_source_handle": "144A7",
+      "systems": [
+        "supply",
+        "return"
+      ],
+      "wall": "equipment_ports_unproven",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped"
+    },
+    {
+      "label": "CRAH-4#-2-35",
+      "floor": 2,
+      "isometric_node_id": "CRAH-4#-2-35",
+      "plan_task": "SH16-09-ffeda2df",
+      "plan_source_handle": "144AA",
+      "systems": [
+        "supply",
+        "return"
+      ],
+      "wall": "equipment_ports_unproven",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped"
+    },
+    {
+      "label": "CRAH-4#-2-36",
+      "floor": 2,
+      "isometric_node_id": "CRAH-4#-2-36",
+      "plan_task": "SH16-09-ffeda2df",
+      "plan_source_handle": "144A9",
+      "systems": [
+        "supply",
+        "return"
+      ],
+      "wall": "equipment_ports_unproven",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped"
+    },
+    {
+      "label": "CRAH-4#-2-37",
+      "floor": 2,
+      "isometric_node_id": "CRAH-4#-2-37",
+      "plan_task": "SH16-09-ffeda2df",
+      "plan_source_handle": "144A6",
+      "systems": [
+        "supply",
+        "return"
+      ],
+      "wall": "equipment_ports_unproven",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped"
+    },
+    {
+      "label": "CRAH-4#-2-38",
+      "floor": 2,
+      "isometric_node_id": "CRAH-4#-2-38",
+      "plan_task": "SH16-09-ffeda2df",
+      "plan_source_handle": "144A5",
+      "systems": [
+        "supply",
+        "return"
+      ],
+      "wall": "equipment_ports_unproven",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped"
+    },
+    {
+      "label": "CRAH-4#-3-1",
+      "floor": 3,
+      "isometric_node_id": "CRAH-4#-3-1",
+      "plan_task": "SH16-10-072841a6",
+      "plan_source_handle": "129D5",
+      "systems": [
+        "supply",
+        "return"
+      ],
+      "wall": "equipment_ports_unproven",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped"
+    },
+    {
+      "label": "CRAH-4#-3-2",
+      "floor": 3,
+      "isometric_node_id": "CRAH-4#-3-2",
+      "plan_task": "SH16-10-072841a6",
+      "plan_source_handle": "129D6",
+      "systems": [
+        "supply",
+        "return"
+      ],
+      "wall": "equipment_ports_unproven",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped"
+    },
+    {
+      "label": "CRAH-4#-3-3",
+      "floor": 3,
+      "isometric_node_id": "CRAH-4#-3-3",
+      "plan_task": "SH16-10-072841a6",
+      "plan_source_handle": "129D7",
+      "systems": [
+        "supply",
+        "return"
+      ],
+      "wall": "equipment_ports_unproven",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped"
+    },
+    {
+      "label": "CRAH-4#-3-4",
+      "floor": 3,
+      "isometric_node_id": "CRAH-4#-3-4",
+      "plan_task": "SH16-10-072841a6",
+      "plan_source_handle": "129D8",
+      "systems": [
+        "supply",
+        "return"
+      ],
+      "wall": "equipment_ports_unproven",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped"
+    },
+    {
+      "label": "CRAH-4#-3-5",
+      "floor": 3,
+      "isometric_node_id": "CRAH-4#-3-5",
+      "plan_task": "SH16-10-072841a6",
+      "plan_source_handle": "129D9",
+      "systems": [
+        "supply",
+        "return"
+      ],
+      "wall": "equipment_ports_unproven",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped"
+    },
+    {
+      "label": "CRAH-4#-3-6",
+      "floor": 3,
+      "isometric_node_id": "CRAH-4#-3-6",
+      "plan_task": "SH16-10-072841a6",
+      "plan_source_handle": "12A02",
+      "systems": [
+        "supply",
+        "return"
+      ],
+      "wall": "equipment_ports_unproven",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped"
+    },
+    {
+      "label": "CRAH-4#-3-7",
+      "floor": 3,
+      "isometric_node_id": "CRAH-4#-3-7",
+      "plan_task": "SH16-10-072841a6",
+      "plan_source_handle": "129D0",
+      "systems": [
+        "supply",
+        "return"
+      ],
+      "wall": "equipment_ports_unproven",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped"
+    },
+    {
+      "label": "CRAH-4#-3-8",
+      "floor": 3,
+      "isometric_node_id": "CRAH-4#-3-8",
+      "plan_task": "SH16-10-072841a6",
+      "plan_source_handle": "129D1",
+      "systems": [
+        "supply",
+        "return"
+      ],
+      "wall": "equipment_ports_unproven",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped"
+    },
+    {
+      "label": "CRAH-4#-3-9",
+      "floor": 3,
+      "isometric_node_id": "CRAH-4#-3-9",
+      "plan_task": "SH16-10-072841a6",
+      "plan_source_handle": "129D2",
+      "systems": [
+        "supply",
+        "return"
+      ],
+      "wall": "equipment_ports_unproven",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped"
+    },
+    {
+      "label": "CRAH-4#-3-10",
+      "floor": 3,
+      "isometric_node_id": "CRAH-4#-3-10",
+      "plan_task": "SH16-10-072841a6",
+      "plan_source_handle": "129D3",
+      "systems": [
+        "supply",
+        "return"
+      ],
+      "wall": "equipment_ports_unproven",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped"
+    },
+    {
+      "label": "CRAH-4#-3-11",
+      "floor": 3,
+      "isometric_node_id": "CRAH-4#-3-11",
+      "plan_task": "SH16-10-072841a6",
+      "plan_source_handle": "129D4",
+      "systems": [
+        "supply",
+        "return"
+      ],
+      "wall": "equipment_ports_unproven",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped"
+    },
+    {
+      "label": "CRAH-4#-3-12",
+      "floor": 3,
+      "isometric_node_id": "CRAH-4#-3-12",
+      "plan_task": "SH16-10-072841a6",
+      "plan_source_handle": "12A04",
+      "systems": [
+        "supply",
+        "return"
+      ],
+      "wall": "equipment_ports_unproven",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped"
+    },
+    {
+      "label": "CRAH-4#-3-13",
+      "floor": 3,
+      "isometric_node_id": "CRAH-4#-3-13",
+      "plan_task": "SH16-10-072841a6",
+      "plan_source_handle": "129C6",
+      "systems": [
+        "supply",
+        "return"
+      ],
+      "wall": "equipment_ports_unproven",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped"
+    },
+    {
+      "label": "CRAH-4#-3-14",
+      "floor": 3,
+      "isometric_node_id": "CRAH-4#-3-14",
+      "plan_task": "SH16-10-072841a6",
+      "plan_source_handle": "129C7",
+      "systems": [
+        "supply",
+        "return"
+      ],
+      "wall": "equipment_ports_unproven",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped"
+    },
+    {
+      "label": "CRAH-4#-3-15",
+      "floor": 3,
+      "isometric_node_id": "CRAH-4#-3-15",
+      "plan_task": "SH16-10-072841a6",
+      "plan_source_handle": "129C8",
+      "systems": [
+        "supply",
+        "return"
+      ],
+      "wall": "equipment_ports_unproven",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped"
+    },
+    {
+      "label": "CRAH-4#-3-16",
+      "floor": 3,
+      "isometric_node_id": "CRAH-4#-3-16",
+      "plan_task": "SH16-10-072841a6",
+      "plan_source_handle": "129C9",
+      "systems": [
+        "supply",
+        "return"
+      ],
+      "wall": "equipment_ports_unproven",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped"
+    },
+    {
+      "label": "CRAH-4#-3-17",
+      "floor": 3,
+      "isometric_node_id": "CRAH-4#-3-17",
+      "plan_task": "SH16-10-072841a6",
+      "plan_source_handle": "129CA",
+      "systems": [
+        "supply",
+        "return"
+      ],
+      "wall": "equipment_ports_unproven",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped"
+    },
+    {
+      "label": "CRAH-4#-3-18",
+      "floor": 3,
+      "isometric_node_id": "CRAH-4#-3-18",
+      "plan_task": "SH16-10-072841a6",
+      "plan_source_handle": "129CB",
+      "systems": [
+        "supply",
+        "return"
+      ],
+      "wall": "equipment_ports_unproven",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped"
+    },
+    {
+      "label": "CRAH-4#-3-19",
+      "floor": 3,
+      "isometric_node_id": "CRAH-4#-3-19",
+      "plan_task": "SH16-10-072841a6",
+      "plan_source_handle": "129CC",
+      "systems": [
+        "supply",
+        "return"
+      ],
+      "wall": "equipment_ports_unproven",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped"
+    },
+    {
+      "label": "CRAH-4#-3-20",
+      "floor": 3,
+      "isometric_node_id": "CRAH-4#-3-20",
+      "plan_task": "SH16-10-072841a6",
+      "plan_source_handle": "129CD",
+      "systems": [
+        "supply",
+        "return"
+      ],
+      "wall": "equipment_ports_unproven",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped"
+    },
+    {
+      "label": "CRAH-4#-3-21",
+      "floor": 3,
+      "isometric_node_id": "CRAH-4#-3-21",
+      "plan_task": "SH16-10-072841a6",
+      "plan_source_handle": "129CE",
+      "systems": [
+        "supply",
+        "return"
+      ],
+      "wall": "equipment_ports_unproven",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped"
+    },
+    {
+      "label": "CRAH-4#-3-22",
+      "floor": 3,
+      "isometric_node_id": "CRAH-4#-3-22",
+      "plan_task": "SH16-10-072841a6",
+      "plan_source_handle": "129CF",
+      "systems": [
+        "supply",
+        "return"
+      ],
+      "wall": "equipment_ports_unproven",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped"
+    },
+    {
+      "label": "CRAH-4#-3-23",
+      "floor": 3,
+      "isometric_node_id": "CRAH-4#-3-23",
+      "plan_task": "SH16-10-072841a6",
+      "plan_source_handle": "129DA",
+      "systems": [
+        "supply",
+        "return"
+      ],
+      "wall": "equipment_ports_unproven",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped"
+    },
+    {
+      "label": "CRAH-4#-3-24",
+      "floor": 3,
+      "isometric_node_id": "CRAH-4#-3-24",
+      "plan_task": "SH16-10-072841a6",
+      "plan_source_handle": "129DB",
+      "systems": [
+        "supply",
+        "return"
+      ],
+      "wall": "equipment_ports_unproven",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped"
+    },
+    {
+      "label": "CRAH-4#-3-25",
+      "floor": 3,
+      "isometric_node_id": "CRAH-4#-3-25",
+      "plan_task": "SH16-10-072841a6",
+      "plan_source_handle": "129DC",
+      "systems": [
+        "supply",
+        "return"
+      ],
+      "wall": "equipment_ports_unproven",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped"
+    },
+    {
+      "label": "CRAH-4#-3-26",
+      "floor": 3,
+      "isometric_node_id": "CRAH-4#-3-26",
+      "plan_task": "SH16-10-072841a6",
+      "plan_source_handle": "129DD",
+      "systems": [
+        "supply",
+        "return"
+      ],
+      "wall": "equipment_ports_unproven",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped"
+    },
+    {
+      "label": "CRAH-4#-3-27",
+      "floor": 3,
+      "isometric_node_id": "CRAH-4#-3-27",
+      "plan_task": "SH16-10-072841a6",
+      "plan_source_handle": "129DE",
+      "systems": [
+        "supply",
+        "return"
+      ],
+      "wall": "equipment_ports_unproven",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped"
+    },
+    {
+      "label": "CRAH-4#-3-28",
+      "floor": 3,
+      "isometric_node_id": "CRAH-4#-3-28",
+      "plan_task": "SH16-10-072841a6",
+      "plan_source_handle": "129DF",
+      "systems": [
+        "supply",
+        "return"
+      ],
+      "wall": "equipment_ports_unproven",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped"
+    },
+    {
+      "label": "CRAH-4#-3-29",
+      "floor": 3,
+      "isometric_node_id": "CRAH-4#-3-29",
+      "plan_task": "SH16-10-072841a6",
+      "plan_source_handle": "129E0",
+      "systems": [
+        "supply",
+        "return"
+      ],
+      "wall": "equipment_ports_unproven",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped"
+    },
+    {
+      "label": "CRAH-4#-3-30",
+      "floor": 3,
+      "isometric_node_id": "CRAH-4#-3-30",
+      "plan_task": "SH16-10-072841a6",
+      "plan_source_handle": "129E1",
+      "systems": [
+        "supply",
+        "return"
+      ],
+      "wall": "equipment_ports_unproven",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped"
+    },
+    {
+      "label": "CRAH-4#-3-31",
+      "floor": 3,
+      "isometric_node_id": "CRAH-4#-3-31",
+      "plan_task": "SH16-10-072841a6",
+      "plan_source_handle": "14497",
+      "systems": [
+        "supply",
+        "return"
+      ],
+      "wall": "equipment_ports_unproven",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped"
+    },
+    {
+      "label": "CRAH-4#-3-32",
+      "floor": 3,
+      "isometric_node_id": "CRAH-4#-3-32",
+      "plan_task": "SH16-10-072841a6",
+      "plan_source_handle": "14496",
+      "systems": [
+        "supply",
+        "return"
+      ],
+      "wall": "equipment_ports_unproven",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped"
+    },
+    {
+      "label": "CRAH-4#-3-33",
+      "floor": 3,
+      "isometric_node_id": "CRAH-4#-3-33",
+      "plan_task": "SH16-10-072841a6",
+      "plan_source_handle": "14499",
+      "systems": [
+        "supply",
+        "return"
+      ],
+      "wall": "equipment_ports_unproven",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped"
+    },
+    {
+      "label": "CRAH-4#-3-34",
+      "floor": 3,
+      "isometric_node_id": "CRAH-4#-3-34",
+      "plan_task": "SH16-10-072841a6",
+      "plan_source_handle": "14498",
+      "systems": [
+        "supply",
+        "return"
+      ],
+      "wall": "equipment_ports_unproven",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped"
+    },
+    {
+      "label": "CRAH-4#-3-35",
+      "floor": 3,
+      "isometric_node_id": "CRAH-4#-3-35",
+      "plan_task": "SH16-10-072841a6",
+      "plan_source_handle": "14495",
+      "systems": [
+        "supply",
+        "return"
+      ],
+      "wall": "equipment_ports_unproven",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped"
+    },
+    {
+      "label": "CRAH-4#-3-36",
+      "floor": 3,
+      "isometric_node_id": "CRAH-4#-3-36",
+      "plan_task": "SH16-10-072841a6",
+      "plan_source_handle": "144A1",
+      "systems": [
+        "supply",
+        "return"
+      ],
+      "wall": "equipment_ports_unproven",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped"
+    }
+  ],
+  "isometric_annotations": {
+    "assigned_diameter_count": 236,
+    "pending_diameter_count": 26,
+    "assigned_length_count": 0,
+    "pending_length_count": 0,
+    "elevation_note": "A parenthetical number on a DN label is an elevation annotation, not a pipe length."
+  },
+  "plan_annotations": [
+    {
+      "task_id": "SH16-08-208d1e5a",
+      "source_dxf": "08-一层顶部水管平面图.dxf",
+      "floor": 1,
+      "assigned_diameter_count": 22,
+      "pending_diameter_count": 3,
+      "assigned_length_count": 0,
+      "pending_length_count": 0,
+      "annotated_edges": 18
+    },
+    {
+      "task_id": "SH16-09-ffeda2df",
+      "source_dxf": "09-二层顶部水管平面图.dxf",
+      "floor": 2,
+      "assigned_diameter_count": 23,
+      "pending_diameter_count": 3,
+      "assigned_length_count": 0,
+      "pending_length_count": 0,
+      "annotated_edges": 23
+    },
+    {
+      "task_id": "SH16-10-072841a6",
+      "source_dxf": "10-三层顶部水管平面图.dxf",
+      "floor": 3,
+      "assigned_diameter_count": 21,
+      "pending_diameter_count": 3,
+      "assigned_length_count": 0,
+      "pending_length_count": 0,
+      "annotated_edges": 19
+    }
+  ],
+  "annotation_ambiguous": 9,
+  "lf20": {
+    "backtest_ran": false,
+    "gain": null,
+    "regression": null,
+    "missing_skill_inputs": [
+      "skills/build-cad-pipe-topology/scripts/confirmed_circle_junctions.py",
+      "skills/build-cad-pipe-topology/scripts/source_readability.py",
+      "skills/build-cad-pipe-topology/scripts/run_confirmed_circle_pipeline.py"
+    ]
+  },
+  "viewer_graph": "work/sh16-11-presentation/graph_with_edges.json"
+}

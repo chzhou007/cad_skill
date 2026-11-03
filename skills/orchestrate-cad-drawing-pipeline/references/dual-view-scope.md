@@ -11,7 +11,12 @@ python ./skills/build-cad-pipe-topology/scripts/test_dual_view_attributes.py
 
 `drawing_correct` stays false until a later stage compares the repaired topology with native CAD and accepts that class. A recorded comparison that does not accept the sheet leaves it false. The isometric fixture count is a historical lock, not acceptance.
 
-The S2–S8 record is `assets/sh16-s2-s8-record.json`. It keeps plan checks, the isometric inspection, and fusion apart. Mapping stays empty until the same range passes both views. The HIL file `assets/sh16-hil-package.json` is unreviewed and has no human confirmation. Unknown diameter and length stay null.
+The S2–S8 record is `assets/sh16-s2-s8-record.json`. It keeps plan checks, the isometric inspection, and fusion apart. The derived presentation is `assets/sh16-11-presentation-summary.json`. A unique label, system and floor may map one equipment identity. Duplicate labels stay unmapped. Unproven ports stay unmapped and do not block another unique equipment row. Path fusion waits for a proven port. The HIL file `assets/sh16-hil-package.json` is unreviewed and has no human confirmation. Unknown diameter and length stay null.
+
+```powershell
+python ./skills/build-cad-pipe-topology/scripts/test_isometric_presentation.py
+python ./skills/orchestrate-cad-drawing-pipeline/scripts/build_sh16_presentation.py
+```
 
 ```powershell
 python ./skills/orchestrate-cad-drawing-pipeline/scripts/test_sh16_dual_view_loop.py

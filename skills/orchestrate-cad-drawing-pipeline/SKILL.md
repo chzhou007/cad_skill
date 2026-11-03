@@ -49,5 +49,5 @@ Portable review v1.0.5: copy the viewer-owned guarded start.cmd/launch_review.py
 
 ## Dual-view scope
 
-SH16 plan topology, isometric topology and cross-view fusion stay independent. Read [dual-view scope](references/dual-view-scope.md). The S0 ledger does not mark a drawing correct, and a local connection change invalidates mapping and fused attributes. Do not start formal cross-view mapping while a required plan or isometric check is still open. The current SH16 record compares only the plan classes that were checked against native CAD; it does not fuse attributes or confirm HIL.
+SH16 plan topology, isometric topology and cross-view fusion stay independent. Read [dual-view scope](references/dual-view-scope.md). The S0 ledger does not mark a drawing correct. A local connection change invalidates only the presentation rows that cite that connection. A unique equipment label can be mapped while its ports, and every other unresolved port, stay unmapped. Shared labels stay unmapped and do not stop the next unique label. The derived SH16-11 presentation is built by `scripts/build_sh16_presentation.py`. It does not confirm HIL.
 

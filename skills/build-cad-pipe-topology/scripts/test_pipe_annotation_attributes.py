@@ -39,6 +39,10 @@ class AnnotationAttributes(unittest.TestCase):
   t=dict(id='T',text='DN40',layer='A',rotation=0,position=[5,-1.8],height=1)
   edges=[dict(edge_id='E',attribute_paths=[[(0,0),(10,0)]]),dict(edge_id='OTHER',attribute_paths=[[(10,0),(20,0)]])]
   yes,no=direct_diameters([t],edges,set(),['A']);self.assertEqual(len(yes),1);self.assertEqual(yes[0]['edge_id'],'E')
+ def test_parenthetical_elevation_does_not_change_the_nominal(self):
+  t=dict(id='T',text='DN450(2.900)',layer='A',rotation=0,position=[5,-1.8],height=1)
+  edges=[dict(edge_id='E',attribute_paths=[[(0,0),(10,0)]])]
+  yes,no=direct_diameters([t],edges,set(),['A']);self.assertEqual(len(yes),1);self.assertEqual(yes[0]['nominal_mm'],450.)
  def test_ambiguous_parallel_direct_label_stays_pending(self):
   t=dict(id='T',text='DN40',layer='A',rotation=0,position=[5,1],height=1)
   edges=[dict(edge_id='E',attribute_paths=[[(0,0),(10,0)]]),dict(edge_id='OTHER',attribute_paths=[[(0,2),(10,2)]])]
