@@ -1,6 +1,6 @@
 {
   "program": "sh16-dual-view",
-  "stage": "S0",
+  "stage": "S1",
   "historical_baseline_is_correct": false,
   "code_baseline": {
     "commit": "d66dc70",
@@ -1150,6 +1150,23 @@
       "status": "to_fix",
       "drawing_correct": false,
       "evidence": "仅专家选定位置的显示标注，不改变连通性。Source state is source_scoped_partial_unreviewed. mapped tests absent from this checkout: build-cad-pipe-topology/scripts/test_source_expert_node_label_policy.py. The copied DWG/DXF trees did not contain this note. No drawing was accepted. Entry file is not in this checkout."
+    },
+    {
+      "id": "s1-ceiling-endpoint-edge-type",
+      "group": "geometry_connection",
+      "source": "skills/build-cad-pipe-topology/scripts/build_ceiling_family.py",
+      "entry": "skills/build-cad-pipe-topology/scripts/ceiling_edge_types.py",
+      "tests": [
+        "skills/build-cad-pipe-topology/scripts/test_ceiling_edge_types.py"
+      ],
+      "drawings": [
+        "SH16-08",
+        "SH16-09",
+        "SH16-10"
+      ],
+      "status": "fixed_pending_regression",
+      "drawing_correct": false,
+      "evidence": "Ceiling edges now take edge_type from the endpoint node_type. Riser RIF nodes and unresolved UT terminals are tee_to_virtual_equipment. A VIF prefix is no longer required for that label. Connectivity, equipment ports, and sheet-level regression are unchanged. test_ceiling_edge_types passed; no SH16 drawing was accepted."
     }
   ],
   "milestones": {
@@ -1179,5 +1196,6 @@
       "E:/codex/CAD/work/feature-regression-registry/expert-issues.json",
       "C:/Users/lenovo/.codex/skills/orchestrate-cad-drawing-pipeline/assets/feature-registry.json"
     ]
-  }
+  },
+  "s1_meaning": "Started. Ceiling sheets 08-10 classify edge type from endpoint node_type. Supply and return ports, double-line ports, shaft multi-pipe, and source comparison remain open."
 }
