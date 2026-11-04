@@ -25,6 +25,7 @@ from isometric_presentation import (  # noqa: E402
     attach_diameter_annotations,
     attach_length_annotations,
     build_presentation,
+    fuse_walked_paths,
 )
 from pipe_annotation_attributes import source_texts  # noqa: E402
 from sh16_dual_view_loop import lf20_backtest_record  # noqa: E402
@@ -54,10 +55,29 @@ def _load_plan():
     bindings = []
     graphs = []
     annotations = []
+    topology_nodes = []
+    topology_edges = []
     for task_id, (dxf_name, floor) in PLAN_DRAWINGS.items():
         graph_path = PLAN_TASKS / task_id / "topology" / "graph_with_edges.json"
         graph = json.loads(graph_path.read_text(encoding="utf-8"))
         graphs.append(graph_path)
+        for node in graph["nodes"]:
+            topology_nodes.append({
+                "task_id": task_id,
+                "node_id": f"{task_id}:{node['node_id']}",
+                "node_type": "physical_junction" if node.get("node_type") == "tee" else node.get("node_type"),
+                "floor": node.get("floor", floor),
+                "label": node.get("label") or node["node_id"],
+            })
+        for edge in graph["edges"]:
+            topology_edges.append({
+                "edge_id": f"{task_id}:{edge['edge_id']}",
+                "start_node_id": f"{task_id}:{edge['start_node_id']}",
+                "end_node_id": f"{task_id}:{edge['end_node_id']}",
+                "system": edge.get("system"),
+                "floor_start": edge.get("start_floor", floor),
+                "floor_end": edge.get("end_floor", floor),
+            })
         for node in graph["nodes"]:
             if node.get("node_type") != "equipment":
                 continue
@@ -101,7 +121,7 @@ def _load_plan():
     plan_hash = hashlib.sha256()
     for path in graphs:
         plan_hash.update(path.read_bytes())
-    return nodes, bindings, annotations, plan_hash.hexdigest()
+    return nodes, bindings, annotations, topology_nodes, topology_edges, plan_hash.hexdigest()
 
 
 def _plan_edge_annotations(edges, assigned, lengths):
@@ -151,10 +171,20 @@ def build():
     texts = source_texts(doc, "SH16-11", _sha256(ISO_DXF))
     assigned, pending = attach_diameter_annotations(doc, texts, iso["edges"])
     lengths, length_pending = attach_length_annotations(texts, iso["edges"], "isometric")
-    plan_nodes, bindings, plan_annotations, plan_hash = _load_plan()
+    plan_nodes, bindings, plan_annotations, topology_nodes, topology_edges, plan_hash = _load_plan()
     iso_hash = _sha256(ISO_GRAPH)
     presentation = build_presentation(
         iso["edges"], iso["nodes"], plan_nodes, bindings, assigned, plan_hash, iso_hash, lengths
+    )
+    for row in presentation["equipment"]:
+        if row.get("status") == "mapped" and row.get("plan_task"):
+            row["plan_node_id"] = f"{row['plan_task']}:{row['plan_node_id']}"
+    plan_diameter_by_edge = {}
+    for sheet in plan_annotations:
+        for edge in sheet.get("edges") or []:
+            plan_diameter_by_edge[f"{sheet['task_id']}:{edge['edge_id']}"] = edge.get("diameters") or []
+    presentation = fuse_walked_paths(
+        presentation, iso["edges"], iso["nodes"], topology_edges, topology_nodes, plan_diameter_by_edge
     )
     annotation_stops, unknown_edges = _annotation_stops(presentation["edges"], pending)
     presentation["annotation_stops"] = annotation_stops
@@ -188,6 +218,7 @@ def build():
         "unknown_diameter_edges": summary["unknown_diameter_edges"],
         "conflict_diameter_edges": summary["conflict_diameter_edges"],
         "physical_length_known": summary["physical_length_known"],
+        "path_mapped": summary["path_mapped"],
         "stops": summary["stop_counts"],
         "drawing_correct": False,
     }, ensure_ascii=False, indent=2))
@@ -276,7 +307,7 @@ def _viewer_config():
     if not source.is_file():
         return
     config = json.loads(source.read_text(encoding="utf-8"))
-    config["preferred_port"] = 8772
+    config["preferred_port"] = 8773
     config.setdefault("display", {})["edge_attribute_language"] = "zh-CN"
     config["project"]["description"] = "Derived SH16-11 presentation. Unknown diameter and physical length stay empty. HIL is not ready."
     (OUT / "visualization-config.json").write_text(json.dumps(config, ensure_ascii=False, indent=2), encoding="utf-8")

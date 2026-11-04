@@ -5,8 +5,11 @@ from isometric_presentation import (
     apply_presentation,
     build_presentation,
     display_diameter,
+    fuse_walked_paths,
     invalidate_touched,
     parse_diameter_text,
+    vertical_lengths_from_elevations,
+    walk_system_path,
 )
 
 
@@ -160,6 +163,83 @@ class PresentationContractTest(unittest.TestCase):
         self.assertFalse(shown["metadata"]["drawing_correct"])
         self.assertEqual(graph["edges"][0].get("pipe_diameter"), None)
         self.assertEqual(json.loads(json.dumps(edge["pipe_diameter"]))["nominal_mm"], 450.0)
+
+
+class PathFusionTest(unittest.TestCase):
+    def test_a_header_fork_stops_without_choosing_a_direction(self):
+        nodes = [
+            {"node_id": "EQ", "node_type": "equipment"},
+            {"node_id": "T", "node_type": "physical_junction"},
+            {"node_id": "A", "node_type": "physical_junction"},
+            {"node_id": "B", "node_type": "physical_junction"},
+        ]
+        edges = [
+            {"edge_id": "stub", "start_node_id": "EQ", "end_node_id": "T", "system": "supply", "floor_start": 2, "floor_end": 2},
+            {"edge_id": "left", "start_node_id": "T", "end_node_id": "A", "system": "supply", "floor_start": 2, "floor_end": 2},
+            {"edge_id": "right", "start_node_id": "T", "end_node_id": "B", "system": "supply", "floor_start": 2, "floor_end": 2},
+        ]
+        walked = walk_system_path("EQ", "supply", edges, nodes)
+        self.assertEqual(walked["edges"], ["stub"])
+        self.assertEqual(walked["stop"]["kind"], "branch_fork")
+        self.assertEqual(sorted(walked["stop"]["continuations"]), ["left", "right"])
+
+    def test_plan_without_an_incident_edge_does_not_receive_the_isometric_diameter(self):
+        graph = iso_graph()
+        record = build_presentation(
+            graph["edges"], graph["nodes"], plan_nodes(), bindings(), diameters(), "plan-hash", "iso-hash"
+        )
+        fused = fuse_walked_paths(record, graph["edges"], graph["nodes"], [], plan_nodes(), {})
+        supply = next(row for row in fused["stops"] if row["label"] == "CRAH-4#-2-7" and row["system"] == "supply")
+        self.assertEqual(supply["path"], "unmapped")
+        self.assertEqual(supply["plan_stop"], "no_incident_edge")
+        self.assertEqual(fused["edges"][0]["diameter"]["source_view"], "isometric")
+        self.assertEqual(fused["path_mapped"], 0)
+
+    def test_a_connected_plan_path_supplies_the_horizontal_diameter(self):
+        graph = iso_graph()
+        record = build_presentation(
+            graph["edges"], graph["nodes"], plan_nodes(), bindings(), diameters(), "plan-hash", "iso-hash"
+        )
+        plan = [
+            {"node_id": "CRAH-4#-2-7", "node_type": "equipment", "floor": 2},
+            {"node_id": "TP", "node_type": "tee", "floor": 2},
+        ]
+        plan_edges = [{
+            "edge_id": "P1",
+            "start_node_id": "CRAH-4#-2-7",
+            "end_node_id": "TP",
+            "system": "supply",
+            "floor_start": 2,
+            "floor_end": 2,
+        }]
+        fused = fuse_walked_paths(
+            record, graph["edges"], graph["nodes"], plan_edges, plan, {"P1": [{"nominal_mm": 200.0, "handle": "PLAN"}]}
+        )
+        supply = next(row for row in fused["stops"] if row["label"] == "CRAH-4#-2-7" and row["system"] == "supply")
+        self.assertEqual(supply["path"], "mapped")
+        edge = next(item for item in fused["edges"] if item["edge_id"] == "E1")
+        self.assertEqual(edge["diameter"]["status"], "conflict")
+        self.assertIsNone(edge["diameter"]["value"])
+        self.assertIn("PLAN", edge["diameter"]["handles"])
+        self.assertIn("AB", edge["diameter"]["handles"])
+
+    def test_riser_length_uses_one_elevation_at_each_end(self):
+        edges = [
+            {"edge_id": "riser", "start_node_id": "A", "end_node_id": "B", "system": "return", "floor_start": 1, "floor_end": 2, "path_length": 27000.0},
+            {"edge_id": "low", "start_node_id": "A", "end_node_id": "C", "system": "return", "floor_start": 1, "floor_end": 1},
+            {"edge_id": "high", "start_node_id": "B", "end_node_id": "D", "system": "return", "floor_start": 2, "floor_end": 2},
+        ]
+        rows = [
+            {"edge_id": "riser", "diameter": {"observations": []}},
+            {"edge_id": "low", "diameter": {"observations": [{"elevation_annotation": 2.9}]}},
+            {"edge_id": "high", "diameter": {"observations": [{"elevation_annotation": 3.2}]}},
+        ]
+        measured = vertical_lengths_from_elevations(edges, rows)
+        self.assertEqual(measured["riser"]["value"], 0.3)
+        self.assertEqual(measured["riser"]["method"], "elevation_difference")
+        self.assertNotEqual(measured["riser"]["value"], 27000.0)
+        rows[2]["diameter"]["observations"].append({"elevation_annotation": 4.0})
+        self.assertIsNone(vertical_lengths_from_elevations(edges, rows).get("riser"))
 
 
 if __name__ == "__main__":

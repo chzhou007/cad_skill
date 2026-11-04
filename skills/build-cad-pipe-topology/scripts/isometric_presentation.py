@@ -321,6 +321,9 @@ def display_diameter(diameter):
         return "冲突"
     if status in {"direct", "inherited"} and value is not None:
         nominal = int(value) if float(value).is_integer() else value
+        if status == "direct" and diameter.get("source_view") == "plan":
+            note = "与轴测一致" if diameter.get("crosscheck") == "matches_isometric" else "来自已对应平面路径"
+            return f"DN{nominal}（{note}）"
         if status == "direct" and diameter.get("source_view") == "isometric" and diameter.get("crosscheck") == "not_run":
             return f"DN{nominal}（轴测直接值，尚未与平面图互证）"
         if status == "inherited":
@@ -446,6 +449,279 @@ def attach_length_annotations(texts, edges, source_view):
     return assigned, pending
 
 
+JUNCTION_TYPES = {"physical_junction", "tee"}
+
+
+def _adjacency(edges):
+    adjacent = defaultdict(list)
+    for edge in edges:
+        adjacent[edge["start_node_id"]].append(edge)
+        adjacent[edge["end_node_id"]].append(edge)
+    return adjacent
+
+
+def _other_node(edge, node_id):
+    if edge["start_node_id"] == node_id:
+        return edge["end_node_id"]
+    return edge["start_node_id"]
+
+
+def walk_system_path(start_id, system, edges, nodes):
+    """Follow one existing same-system path. A fork is a stop, not a guess."""
+
+    nodes_by_id = {node["node_id"]: node for node in nodes}
+    adjacent = _adjacency(edges)
+    incident = [edge for edge in adjacent.get(start_id, []) if edge.get("system") == system]
+    if not incident:
+        return {"edges": [], "stop": {"kind": "no_incident_edge", "node_id": start_id, "system": system}}
+    if len(incident) != 1:
+        return {
+            "edges": [],
+            "stop": {
+                "kind": "ambiguous_incident_edges",
+                "node_id": start_id,
+                "system": system,
+                "edge_ids": [edge["edge_id"] for edge in incident],
+            },
+        }
+    walked = []
+    seen = set()
+    previous = start_id
+    current = incident[0]
+    while current is not None:
+        walked.append(current["edge_id"])
+        seen.add(current["edge_id"])
+        arrived = _other_node(current, previous)
+        node = nodes_by_id.get(arrived)
+        if node is None:
+            return {"edges": walked, "stop": {"kind": "missing_node", "node_id": arrived, "system": system}}
+        if current.get("floor_start") != current.get("floor_end"):
+            return {"edges": walked, "stop": {"kind": "riser", "node_id": arrived, "system": system, "edge_id": current["edge_id"]}}
+        if node.get("node_type") not in JUNCTION_TYPES:
+            return {"edges": walked, "stop": {"kind": node.get("node_type") or "endpoint", "node_id": arrived, "system": system}}
+        continuations = [
+            edge for edge in adjacent.get(arrived, [])
+            if edge["edge_id"] not in seen and edge.get("system") == system
+        ]
+        headers = []
+        for edge in continuations:
+            other = nodes_by_id.get(_other_node(edge, arrived))
+            if other and other.get("node_type") in JUNCTION_TYPES and edge.get("floor_start") == edge.get("floor_end"):
+                headers.append(edge)
+        chosen = headers if headers else continuations
+        if len(chosen) != 1:
+            return {
+                "edges": walked,
+                "stop": {
+                    "kind": "branch_fork" if len(chosen) > 1 else "dead_end",
+                    "node_id": arrived,
+                    "system": system,
+                    "continuations": [edge["edge_id"] for edge in chosen],
+                },
+            }
+        previous = arrived
+        current = chosen[0]
+    return {"edges": walked, "stop": {"kind": "dead_end", "node_id": previous, "system": system}}
+
+
+def _elevations(edge_row):
+    values = []
+    for observation in (edge_row.get("diameter") or {}).get("observations") or []:
+        elevation = observation.get("elevation_annotation")
+        if elevation is not None and elevation not in values:
+            values.append(elevation)
+    return values
+
+
+def vertical_lengths_from_elevations(iso_edges, presentation_edges):
+    """Riser length is the difference of one elevation at each end.
+
+    Equal elevations and mixed elevations at one end stay empty. The drawing-unit
+    path length is not used.
+    """
+
+    rows = {edge["edge_id"]: edge for edge in presentation_edges}
+    adjacent = _adjacency(iso_edges)
+    measured = {}
+    for edge in iso_edges:
+        if edge.get("floor_start") == edge.get("floor_end"):
+            continue
+        row = rows.get(edge["edge_id"])
+        if row is None:
+            continue
+        end_values = []
+        usable = True
+        for node_id in (edge["start_node_id"], edge["end_node_id"]):
+            found = []
+            for other in adjacent.get(node_id, []):
+                if other.get("system") != edge.get("system"):
+                    continue
+                for elevation in _elevations(rows.get(other["edge_id"], {})):
+                    if elevation not in found:
+                        found.append(elevation)
+            if len(found) != 1:
+                usable = False
+                break
+            end_values.append(found[0])
+        if not usable or len(end_values) != 2 or end_values[0] == end_values[1]:
+            continue
+        value = round(abs(end_values[0] - end_values[1]), 3)
+        if value == 0:
+            continue
+        measured[edge["edge_id"]] = physical_length("vertical", "isometric", value, "elevation_difference")
+        measured[edge["edge_id"]]["elevations"] = end_values
+    return measured
+
+
+def fuse_walked_paths(presentation, iso_edges, iso_nodes, plan_edges, plan_nodes, plan_diameter_by_edge):
+    """Attach a walked path to each mapped equipment. Fuse only when both views have edges."""
+
+    updated = json.loads(json.dumps(presentation))
+    edge_rows = {edge["edge_id"]: edge for edge in updated["edges"]}
+    stops = []
+    for row in updated["equipment"]:
+        systems = {}
+        for system in ("supply", "return"):
+            isometric_walk = walk_system_path(row["isometric_node_id"], system, iso_edges, iso_nodes)
+            plan_walk = {"edges": [], "stop": {"kind": "equipment_unmapped", "system": system}}
+            if row.get("status") == "mapped":
+                plan_walk = walk_system_path(row["plan_node_id"], system, plan_edges, plan_nodes)
+            fused = bool(isometric_walk["edges"] and plan_walk["edges"])
+            systems[system] = {
+                "isometric_edges": isometric_walk["edges"],
+                "plan_edges": plan_walk["edges"],
+                "isometric_stop": isometric_walk["stop"],
+                "plan_stop": plan_walk["stop"],
+                "fused": fused,
+            }
+            if fused:
+                _fuse_horizontal(edge_rows, isometric_walk["edges"], plan_walk["edges"], plan_diameter_by_edge)
+            wall = row.get("reason") if row.get("status") != "mapped" else plan_walk["stop"]["kind"]
+            stops.append({
+                "label": row["label"],
+                "floor": row["floor"],
+                "isometric_node_id": row["isometric_node_id"],
+                "plan_task": row.get("plan_task"),
+                "plan_source_handle": row.get("plan_source_handle"),
+                "system": system,
+                "wall": wall,
+                "equipment": row.get("status"),
+                "ports": row.get("ports"),
+                "path": "mapped" if fused else "unmapped",
+                "isometric_stop": isometric_walk["stop"]["kind"],
+                "plan_stop": plan_walk["stop"]["kind"],
+                "isometric_edges": isometric_walk["edges"],
+                "plan_edges": plan_walk["edges"],
+            })
+        row["paths"] = systems
+    for edge in updated["edges"]:
+        owners = []
+        for row in updated["equipment"]:
+            for system, path in row.get("paths", {}).items():
+                if edge["edge_id"] in path["isometric_edges"]:
+                    owners.append({
+                        "label": row["label"],
+                        "system": system,
+                        "fused": path["fused"],
+                        "plan_stop": path["plan_stop"]["kind"],
+                        "isometric_stop": path["isometric_stop"]["kind"],
+                    })
+        if not owners:
+            continue
+        fused_owners = [owner for owner in owners if owner["fused"]]
+        edge["path"] = {
+            "status": "mapped" if fused_owners else "unmapped",
+            "reason": "both_views_have_edges" if fused_owners else owners[0]["plan_stop"],
+            "isometric_stop": owners[0]["isometric_stop"],
+            "owners": owners,
+        }
+        if fused_owners:
+            edge["depends_on"]["plan_edge_ids"] = sorted({
+                edge_id
+                for row in updated["equipment"]
+                for path in row.get("paths", {}).values()
+                for edge_id in path["plan_edges"]
+                if edge["edge_id"] in path["isometric_edges"] and path["fused"]
+            })
+    for edge_id, measured in vertical_lengths_from_elevations(iso_edges, updated["edges"]).items():
+        edge_rows[edge_id]["length"] = measured
+    updated["stops"] = stops
+    updated["path_mapped"] = sum(edge["path"]["status"] == "mapped" for edge in updated["edges"])
+    return updated
+
+
+def _fuse_horizontal(edge_rows, isometric_ids, plan_ids, plan_diameter_by_edge):
+    plan_values = []
+    plan_handles = []
+    for plan_id in plan_ids:
+        for item in plan_diameter_by_edge.get(plan_id, []):
+            value = item.get("nominal_mm")
+            if value is None or value in plan_values:
+                if value is not None and item.get("handle") not in plan_handles:
+                    plan_handles.append(item.get("handle"))
+                continue
+            plan_values.append(value)
+            plan_handles.append(item.get("handle"))
+    for edge_id in isometric_ids:
+        edge = edge_rows.get(edge_id)
+        if edge is None or edge.get("orientation") != "horizontal":
+            continue
+        own = edge["diameter"]["value"] if edge["diameter"]["status"] == "direct" else None
+        if len(plan_values) > 1 or (len(plan_values) == 1 and own is not None and own != plan_values[0]):
+            edge["diameter"] = {
+                "status": "conflict",
+                "value": None,
+                "source_view": "plan",
+                "crosscheck": "conflict",
+                "handles": [handle for handle in edge["diameter"].get("handles", []) + plan_handles if handle],
+                "observations": edge["diameter"].get("observations") or [],
+                "chain": plan_ids,
+            }
+            continue
+        if len(plan_values) == 1:
+            edge["diameter"] = {
+                "status": "direct",
+                "value": plan_values[0],
+                "source_view": "plan",
+                "crosscheck": "matches_isometric" if own == plan_values[0] else "plan_only",
+                "handles": [handle for handle in plan_handles if handle],
+                "observations": edge["diameter"].get("observations") or [],
+                "chain": list(plan_ids),
+            }
+
+
+def _length_display(length):
+    if length.get("value") is None:
+        return "未知"
+    if length.get("method") == "elevation_difference":
+        elevations = length.get("elevations") or []
+        shown = "/".join(str(item) for item in elevations)
+        return f"{length['value']}（轴测标高差 {shown}）"
+    return str(length["value"])
+
+
+def _path_display(path):
+    if path.get("status") == "mapped":
+        return "两侧路径已对应"
+    labels = {
+        "no_incident_edge": "平面图设备没有入射边",
+        "branch_fork": "轴测干管在三通处分叉",
+        "ambiguous_incident_edges": "设备上有多条同系统边",
+        "plan_equipment_absent": "平面图没有这台设备",
+        "label_not_unique": "平面标签不唯一",
+        "no_equipment_endpoint": "边端不是设备",
+        "equipment_unmapped": "设备未对应",
+    }
+    plan_text = labels.get(path.get("reason"), path.get("reason") or "未对应")
+    isometric_stop = path.get("isometric_stop")
+    if not isometric_stop:
+        return plan_text
+    isometric_text = labels.get(isometric_stop, isometric_stop)
+    if isometric_text == plan_text:
+        return plan_text
+    return plan_text + "；" + isometric_text
+
+
 def apply_presentation(graph, presentation):
     """Copy viewer fields onto a graph. Connectivity and path_length stay unchanged."""
 
@@ -472,7 +748,8 @@ def apply_presentation(graph, presentation):
             "orientation": row["orientation"],
             "diameter_status": row["diameter"]["status"],
             "crosscheck": row["diameter"]["crosscheck"],
-            "physical_length_display": "未知" if length_value is None else str(length_value),
+            "physical_length_display": _length_display(row["length"]),
+            "path_display": _path_display(row.get("path") or {}),
             "physical_length_value": length_value,
             "physical_length_source": row["length"].get("source_view"),
             "physical_length_completeness": row["length"].get("completeness"),

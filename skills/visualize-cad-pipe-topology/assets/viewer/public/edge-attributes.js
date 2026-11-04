@@ -11,6 +11,7 @@ export function edgeAttributeProperties(edge,data){
   const unknown=zh?'\u672a\u77e5':'Unknown';
   if(!rows.length)rows.push([label.diameter,edge.pipe_diameter?.display||unknown]);
   rows.push([label.length,edge.presentation.physical_length_display||unknown],[label.equipment,edge.presentation.plan_equipment_display||unknown]);
+  if(edge.presentation.path_display)rows.push([zh?'\u8def\u5f84\u5bf9\u5e94':'Path correspondence',edge.presentation.path_display]);
  }
  return rows;
 }

@@ -11,57 +11,157 @@
   "direct_diameter_edges": 226,
   "conflict_diameter_edges": 4,
   "unknown_diameter_edges": 346,
-  "physical_length_known": 0,
+  "physical_length_known": 4,
   "path_mapped": 0,
   "stop_counts": {
-    "plan_equipment_absent": 4,
-    "label_not_unique": 6,
-    "equipment_ports_unproven": 82
+    "plan_equipment_absent": 8,
+    "label_not_unique": 12,
+    "no_incident_edge": 164
   },
   "stops": [
     {
       "label": "CRAH-4#-1-1",
       "floor": 1,
       "isometric_node_id": "CRAH-4#-1-1",
-      "systems": [
-        "supply",
-        "return"
-      ],
+      "plan_task": null,
+      "plan_source_handle": null,
+      "system": "supply",
       "wall": "plan_equipment_absent",
-      "path": "unmapped"
+      "equipment": "unmapped",
+      "ports": "unmapped",
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "equipment_unmapped",
+      "isometric_edges": [
+        "E0057"
+      ],
+      "plan_edges": []
+    },
+    {
+      "label": "CRAH-4#-1-1",
+      "floor": 1,
+      "isometric_node_id": "CRAH-4#-1-1",
+      "plan_task": null,
+      "plan_source_handle": null,
+      "system": "return",
+      "wall": "plan_equipment_absent",
+      "equipment": "unmapped",
+      "ports": "unmapped",
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "equipment_unmapped",
+      "isometric_edges": [
+        "E0009"
+      ],
+      "plan_edges": []
     },
     {
       "label": "CRAH-4#-1-2",
       "floor": 1,
       "isometric_node_id": "CRAH-4#-1-2",
-      "systems": [
-        "supply",
-        "return"
-      ],
+      "plan_task": null,
+      "plan_source_handle": null,
+      "system": "supply",
       "wall": "label_not_unique",
-      "path": "unmapped"
+      "equipment": "unmapped",
+      "ports": "unmapped",
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "equipment_unmapped",
+      "isometric_edges": [
+        "E0060"
+      ],
+      "plan_edges": []
+    },
+    {
+      "label": "CRAH-4#-1-2",
+      "floor": 1,
+      "isometric_node_id": "CRAH-4#-1-2",
+      "plan_task": null,
+      "plan_source_handle": null,
+      "system": "return",
+      "wall": "label_not_unique",
+      "equipment": "unmapped",
+      "ports": "unmapped",
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "equipment_unmapped",
+      "isometric_edges": [
+        "E0010"
+      ],
+      "plan_edges": []
     },
     {
       "label": "CRAH-4#-1-3",
       "floor": 1,
       "isometric_node_id": "CRAH-4#-1-3",
-      "systems": [
-        "supply",
-        "return"
-      ],
+      "plan_task": null,
+      "plan_source_handle": null,
+      "system": "supply",
       "wall": "plan_equipment_absent",
-      "path": "unmapped"
+      "equipment": "unmapped",
+      "ports": "unmapped",
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "equipment_unmapped",
+      "isometric_edges": [
+        "E0055"
+      ],
+      "plan_edges": []
+    },
+    {
+      "label": "CRAH-4#-1-3",
+      "floor": 1,
+      "isometric_node_id": "CRAH-4#-1-3",
+      "plan_task": null,
+      "plan_source_handle": null,
+      "system": "return",
+      "wall": "plan_equipment_absent",
+      "equipment": "unmapped",
+      "ports": "unmapped",
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "equipment_unmapped",
+      "isometric_edges": [
+        "E0003"
+      ],
+      "plan_edges": []
     },
     {
       "label": "CRAH-4#-1-4",
       "floor": 1,
       "isometric_node_id": "CRAH-4#-1-4",
-      "systems": [
-        "supply",
-        "return"
-      ],
+      "plan_task": null,
+      "plan_source_handle": null,
+      "system": "supply",
       "wall": "label_not_unique",
-      "path": "unmapped"
+      "equipment": "unmapped",
+      "ports": "unmapped",
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "equipment_unmapped",
+      "isometric_edges": [
+        "E0056"
+      ],
+      "plan_edges": []
+    },
+    {
+      "label": "CRAH-4#-1-4",
+      "floor": 1,
+      "isometric_node_id": "CRAH-4#-1-4",
+      "plan_task": null,
+      "plan_source_handle": null,
+      "system": "return",
+      "wall": "label_not_unique",
+      "equipment": "unmapped",
+      "ports": "unmapped",
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "equipment_unmapped",
+      "isometric_edges": [
+        "E0008"
+      ],
+      "plan_edges": []
     },
     {
       "label": "CRAH-4#-1-5",
@@ -69,14 +169,35 @@
       "isometric_node_id": "CRAH-4#-1-5",
       "plan_task": "SH16-08-208d1e5a",
       "plan_source_handle": "12E73",
-      "systems": [
-        "supply",
-        "return"
-      ],
-      "wall": "equipment_ports_unproven",
+      "system": "supply",
+      "wall": "no_incident_edge",
       "equipment": "mapped",
       "ports": "unmapped",
-      "path": "unmapped"
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0063"
+      ],
+      "plan_edges": []
+    },
+    {
+      "label": "CRAH-4#-1-5",
+      "floor": 1,
+      "isometric_node_id": "CRAH-4#-1-5",
+      "plan_task": "SH16-08-208d1e5a",
+      "plan_source_handle": "12E73",
+      "system": "return",
+      "wall": "no_incident_edge",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0015"
+      ],
+      "plan_edges": []
     },
     {
       "label": "CRAH-4#-1-6",
@@ -84,14 +205,35 @@
       "isometric_node_id": "CRAH-4#-1-6",
       "plan_task": "SH16-08-208d1e5a",
       "plan_source_handle": "12E75",
-      "systems": [
-        "supply",
-        "return"
-      ],
-      "wall": "equipment_ports_unproven",
+      "system": "supply",
+      "wall": "no_incident_edge",
       "equipment": "mapped",
       "ports": "unmapped",
-      "path": "unmapped"
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0064"
+      ],
+      "plan_edges": []
+    },
+    {
+      "label": "CRAH-4#-1-6",
+      "floor": 1,
+      "isometric_node_id": "CRAH-4#-1-6",
+      "plan_task": "SH16-08-208d1e5a",
+      "plan_source_handle": "12E75",
+      "system": "return",
+      "wall": "no_incident_edge",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0016"
+      ],
+      "plan_edges": []
     },
     {
       "label": "CRAH-4#-1-7",
@@ -99,14 +241,35 @@
       "isometric_node_id": "CRAH-4#-1-7",
       "plan_task": "SH16-08-208d1e5a",
       "plan_source_handle": "12E77",
-      "systems": [
-        "supply",
-        "return"
-      ],
-      "wall": "equipment_ports_unproven",
+      "system": "supply",
+      "wall": "no_incident_edge",
       "equipment": "mapped",
       "ports": "unmapped",
-      "path": "unmapped"
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0065"
+      ],
+      "plan_edges": []
+    },
+    {
+      "label": "CRAH-4#-1-7",
+      "floor": 1,
+      "isometric_node_id": "CRAH-4#-1-7",
+      "plan_task": "SH16-08-208d1e5a",
+      "plan_source_handle": "12E77",
+      "system": "return",
+      "wall": "no_incident_edge",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0017"
+      ],
+      "plan_edges": []
     },
     {
       "label": "CRAH-4#-1-8",
@@ -114,14 +277,35 @@
       "isometric_node_id": "CRAH-4#-1-8",
       "plan_task": "SH16-08-208d1e5a",
       "plan_source_handle": "12E78",
-      "systems": [
-        "supply",
-        "return"
-      ],
-      "wall": "equipment_ports_unproven",
+      "system": "supply",
+      "wall": "no_incident_edge",
       "equipment": "mapped",
       "ports": "unmapped",
-      "path": "unmapped"
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0066"
+      ],
+      "plan_edges": []
+    },
+    {
+      "label": "CRAH-4#-1-8",
+      "floor": 1,
+      "isometric_node_id": "CRAH-4#-1-8",
+      "plan_task": "SH16-08-208d1e5a",
+      "plan_source_handle": "12E78",
+      "system": "return",
+      "wall": "no_incident_edge",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0018"
+      ],
+      "plan_edges": []
     },
     {
       "label": "CRAH-4#-1-9",
@@ -129,14 +313,35 @@
       "isometric_node_id": "CRAH-4#-1-9",
       "plan_task": "SH16-08-208d1e5a",
       "plan_source_handle": "12E7B",
-      "systems": [
-        "supply",
-        "return"
-      ],
-      "wall": "equipment_ports_unproven",
+      "system": "supply",
+      "wall": "no_incident_edge",
       "equipment": "mapped",
       "ports": "unmapped",
-      "path": "unmapped"
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0051"
+      ],
+      "plan_edges": []
+    },
+    {
+      "label": "CRAH-4#-1-9",
+      "floor": 1,
+      "isometric_node_id": "CRAH-4#-1-9",
+      "plan_task": "SH16-08-208d1e5a",
+      "plan_source_handle": "12E7B",
+      "system": "return",
+      "wall": "no_incident_edge",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0004"
+      ],
+      "plan_edges": []
     },
     {
       "label": "CRAH-4#-1-10",
@@ -144,14 +349,35 @@
       "isometric_node_id": "CRAH-4#-1-10",
       "plan_task": "SH16-08-208d1e5a",
       "plan_source_handle": "12E7C",
-      "systems": [
-        "supply",
-        "return"
-      ],
-      "wall": "equipment_ports_unproven",
+      "system": "supply",
+      "wall": "no_incident_edge",
       "equipment": "mapped",
       "ports": "unmapped",
-      "path": "unmapped"
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0052"
+      ],
+      "plan_edges": []
+    },
+    {
+      "label": "CRAH-4#-1-10",
+      "floor": 1,
+      "isometric_node_id": "CRAH-4#-1-10",
+      "plan_task": "SH16-08-208d1e5a",
+      "plan_source_handle": "12E7C",
+      "system": "return",
+      "wall": "no_incident_edge",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0005"
+      ],
+      "plan_edges": []
     },
     {
       "label": "CRAH-4#-1-11",
@@ -159,14 +385,35 @@
       "isometric_node_id": "CRAH-4#-1-11",
       "plan_task": "SH16-08-208d1e5a",
       "plan_source_handle": "12E7D",
-      "systems": [
-        "supply",
-        "return"
-      ],
-      "wall": "equipment_ports_unproven",
+      "system": "supply",
+      "wall": "no_incident_edge",
       "equipment": "mapped",
       "ports": "unmapped",
-      "path": "unmapped"
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0053"
+      ],
+      "plan_edges": []
+    },
+    {
+      "label": "CRAH-4#-1-11",
+      "floor": 1,
+      "isometric_node_id": "CRAH-4#-1-11",
+      "plan_task": "SH16-08-208d1e5a",
+      "plan_source_handle": "12E7D",
+      "system": "return",
+      "wall": "no_incident_edge",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0006"
+      ],
+      "plan_edges": []
     },
     {
       "label": "CRAH-4#-1-12",
@@ -174,36 +421,107 @@
       "isometric_node_id": "CRAH-4#-1-12",
       "plan_task": "SH16-08-208d1e5a",
       "plan_source_handle": "12E7E",
-      "systems": [
-        "supply",
-        "return"
-      ],
-      "wall": "equipment_ports_unproven",
+      "system": "supply",
+      "wall": "no_incident_edge",
       "equipment": "mapped",
       "ports": "unmapped",
-      "path": "unmapped"
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0054"
+      ],
+      "plan_edges": []
+    },
+    {
+      "label": "CRAH-4#-1-12",
+      "floor": 1,
+      "isometric_node_id": "CRAH-4#-1-12",
+      "plan_task": "SH16-08-208d1e5a",
+      "plan_source_handle": "12E7E",
+      "system": "return",
+      "wall": "no_incident_edge",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0007"
+      ],
+      "plan_edges": []
     },
     {
       "label": "CRAH-4#-1-13",
       "floor": 1,
       "isometric_node_id": "CRAH-4#-1-13",
-      "systems": [
-        "supply",
-        "return"
-      ],
+      "plan_task": null,
+      "plan_source_handle": null,
+      "system": "supply",
       "wall": "plan_equipment_absent",
-      "path": "unmapped"
+      "equipment": "unmapped",
+      "ports": "unmapped",
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "equipment_unmapped",
+      "isometric_edges": [
+        "E0058"
+      ],
+      "plan_edges": []
+    },
+    {
+      "label": "CRAH-4#-1-13",
+      "floor": 1,
+      "isometric_node_id": "CRAH-4#-1-13",
+      "plan_task": null,
+      "plan_source_handle": null,
+      "system": "return",
+      "wall": "plan_equipment_absent",
+      "equipment": "unmapped",
+      "ports": "unmapped",
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "equipment_unmapped",
+      "isometric_edges": [
+        "E0011"
+      ],
+      "plan_edges": []
     },
     {
       "label": "CRAH-4#-1-14",
       "floor": 1,
       "isometric_node_id": "CRAH-4#-1-14",
-      "systems": [
-        "supply",
-        "return"
-      ],
+      "plan_task": null,
+      "plan_source_handle": null,
+      "system": "supply",
       "wall": "label_not_unique",
-      "path": "unmapped"
+      "equipment": "unmapped",
+      "ports": "unmapped",
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "equipment_unmapped",
+      "isometric_edges": [
+        "E0059"
+      ],
+      "plan_edges": []
+    },
+    {
+      "label": "CRAH-4#-1-14",
+      "floor": 1,
+      "isometric_node_id": "CRAH-4#-1-14",
+      "plan_task": null,
+      "plan_source_handle": null,
+      "system": "return",
+      "wall": "label_not_unique",
+      "equipment": "unmapped",
+      "ports": "unmapped",
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "equipment_unmapped",
+      "isometric_edges": [
+        "E0012"
+      ],
+      "plan_edges": []
     },
     {
       "label": "CRAH-4#-1-15",
@@ -211,14 +529,35 @@
       "isometric_node_id": "CRAH-4#-1-15",
       "plan_task": "SH16-08-208d1e5a",
       "plan_source_handle": "B38D",
-      "systems": [
-        "supply",
-        "return"
-      ],
-      "wall": "equipment_ports_unproven",
+      "system": "supply",
+      "wall": "no_incident_edge",
       "equipment": "mapped",
       "ports": "unmapped",
-      "path": "unmapped"
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0061"
+      ],
+      "plan_edges": []
+    },
+    {
+      "label": "CRAH-4#-1-15",
+      "floor": 1,
+      "isometric_node_id": "CRAH-4#-1-15",
+      "plan_task": "SH16-08-208d1e5a",
+      "plan_source_handle": "B38D",
+      "system": "return",
+      "wall": "no_incident_edge",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0013"
+      ],
+      "plan_edges": []
     },
     {
       "label": "CRAH-4#-1-16",
@@ -226,58 +565,179 @@
       "isometric_node_id": "CRAH-4#-1-16",
       "plan_task": "SH16-08-208d1e5a",
       "plan_source_handle": "B38E",
-      "systems": [
-        "supply",
-        "return"
-      ],
-      "wall": "equipment_ports_unproven",
+      "system": "supply",
+      "wall": "no_incident_edge",
       "equipment": "mapped",
       "ports": "unmapped",
-      "path": "unmapped"
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0062"
+      ],
+      "plan_edges": []
+    },
+    {
+      "label": "CRAH-4#-1-16",
+      "floor": 1,
+      "isometric_node_id": "CRAH-4#-1-16",
+      "plan_task": "SH16-08-208d1e5a",
+      "plan_source_handle": "B38E",
+      "system": "return",
+      "wall": "no_incident_edge",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0014"
+      ],
+      "plan_edges": []
     },
     {
       "label": "CRAH-4#-1-17",
       "floor": 1,
       "isometric_node_id": "CRAH-4#-1-17",
-      "systems": [
-        "supply",
-        "return"
-      ],
+      "plan_task": null,
+      "plan_source_handle": null,
+      "system": "supply",
       "wall": "plan_equipment_absent",
-      "path": "unmapped"
+      "equipment": "unmapped",
+      "ports": "unmapped",
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "equipment_unmapped",
+      "isometric_edges": [
+        "E0049"
+      ],
+      "plan_edges": []
+    },
+    {
+      "label": "CRAH-4#-1-17",
+      "floor": 1,
+      "isometric_node_id": "CRAH-4#-1-17",
+      "plan_task": null,
+      "plan_source_handle": null,
+      "system": "return",
+      "wall": "plan_equipment_absent",
+      "equipment": "unmapped",
+      "ports": "unmapped",
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "equipment_unmapped",
+      "isometric_edges": [
+        "E0002"
+      ],
+      "plan_edges": []
     },
     {
       "label": "CRAH-4#-1-18",
       "floor": 1,
       "isometric_node_id": "CRAH-4#-1-18",
-      "systems": [
-        "supply",
-        "return"
-      ],
+      "plan_task": null,
+      "plan_source_handle": null,
+      "system": "supply",
       "wall": "label_not_unique",
-      "path": "unmapped"
+      "equipment": "unmapped",
+      "ports": "unmapped",
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "equipment_unmapped",
+      "isometric_edges": [
+        "E0050"
+      ],
+      "plan_edges": []
+    },
+    {
+      "label": "CRAH-4#-1-18",
+      "floor": 1,
+      "isometric_node_id": "CRAH-4#-1-18",
+      "plan_task": null,
+      "plan_source_handle": null,
+      "system": "return",
+      "wall": "label_not_unique",
+      "equipment": "unmapped",
+      "ports": "unmapped",
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "equipment_unmapped",
+      "isometric_edges": [
+        "E0001"
+      ],
+      "plan_edges": []
     },
     {
       "label": "CRAH-4#-2-1",
       "floor": 2,
       "isometric_node_id": "CRAH-4#-2-1",
-      "systems": [
-        "supply",
-        "return"
-      ],
+      "plan_task": null,
+      "plan_source_handle": null,
+      "system": "supply",
       "wall": "label_not_unique",
-      "path": "unmapped"
+      "equipment": "unmapped",
+      "ports": "unmapped",
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "equipment_unmapped",
+      "isometric_edges": [
+        "E0246"
+      ],
+      "plan_edges": []
+    },
+    {
+      "label": "CRAH-4#-2-1",
+      "floor": 2,
+      "isometric_node_id": "CRAH-4#-2-1",
+      "plan_task": null,
+      "plan_source_handle": null,
+      "system": "return",
+      "wall": "label_not_unique",
+      "equipment": "unmapped",
+      "ports": "unmapped",
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "equipment_unmapped",
+      "isometric_edges": [
+        "E0126"
+      ],
+      "plan_edges": []
     },
     {
       "label": "CRAH-4#-2-2",
       "floor": 2,
       "isometric_node_id": "CRAH-4#-2-2",
-      "systems": [
-        "supply",
-        "return"
-      ],
+      "plan_task": null,
+      "plan_source_handle": null,
+      "system": "supply",
       "wall": "label_not_unique",
-      "path": "unmapped"
+      "equipment": "unmapped",
+      "ports": "unmapped",
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "equipment_unmapped",
+      "isometric_edges": [
+        "E0251"
+      ],
+      "plan_edges": []
+    },
+    {
+      "label": "CRAH-4#-2-2",
+      "floor": 2,
+      "isometric_node_id": "CRAH-4#-2-2",
+      "plan_task": null,
+      "plan_source_handle": null,
+      "system": "return",
+      "wall": "label_not_unique",
+      "equipment": "unmapped",
+      "ports": "unmapped",
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "equipment_unmapped",
+      "isometric_edges": [
+        "E0127"
+      ],
+      "plan_edges": []
     },
     {
       "label": "CRAH-4#-2-3",
@@ -285,14 +745,35 @@
       "isometric_node_id": "CRAH-4#-2-3",
       "plan_task": "SH16-09-ffeda2df",
       "plan_source_handle": "B3AB",
-      "systems": [
-        "supply",
-        "return"
-      ],
-      "wall": "equipment_ports_unproven",
+      "system": "supply",
+      "wall": "no_incident_edge",
       "equipment": "mapped",
       "ports": "unmapped",
-      "path": "unmapped"
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0248"
+      ],
+      "plan_edges": []
+    },
+    {
+      "label": "CRAH-4#-2-3",
+      "floor": 2,
+      "isometric_node_id": "CRAH-4#-2-3",
+      "plan_task": "SH16-09-ffeda2df",
+      "plan_source_handle": "B3AB",
+      "system": "return",
+      "wall": "no_incident_edge",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0130"
+      ],
+      "plan_edges": []
     },
     {
       "label": "CRAH-4#-2-4",
@@ -300,14 +781,35 @@
       "isometric_node_id": "CRAH-4#-2-4",
       "plan_task": "SH16-09-ffeda2df",
       "plan_source_handle": "B3AA",
-      "systems": [
-        "supply",
-        "return"
-      ],
-      "wall": "equipment_ports_unproven",
+      "system": "supply",
+      "wall": "no_incident_edge",
       "equipment": "mapped",
       "ports": "unmapped",
-      "path": "unmapped"
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0249"
+      ],
+      "plan_edges": []
+    },
+    {
+      "label": "CRAH-4#-2-4",
+      "floor": 2,
+      "isometric_node_id": "CRAH-4#-2-4",
+      "plan_task": "SH16-09-ffeda2df",
+      "plan_source_handle": "B3AA",
+      "system": "return",
+      "wall": "no_incident_edge",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0133"
+      ],
+      "plan_edges": []
     },
     {
       "label": "CRAH-4#-2-5",
@@ -315,14 +817,35 @@
       "isometric_node_id": "CRAH-4#-2-5",
       "plan_task": "SH16-09-ffeda2df",
       "plan_source_handle": "B3AC",
-      "systems": [
-        "supply",
-        "return"
-      ],
-      "wall": "equipment_ports_unproven",
+      "system": "supply",
+      "wall": "no_incident_edge",
       "equipment": "mapped",
       "ports": "unmapped",
-      "path": "unmapped"
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0253"
+      ],
+      "plan_edges": []
+    },
+    {
+      "label": "CRAH-4#-2-5",
+      "floor": 2,
+      "isometric_node_id": "CRAH-4#-2-5",
+      "plan_task": "SH16-09-ffeda2df",
+      "plan_source_handle": "B3AC",
+      "system": "return",
+      "wall": "no_incident_edge",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0132"
+      ],
+      "plan_edges": []
     },
     {
       "label": "CRAH-4#-2-6",
@@ -330,14 +853,35 @@
       "isometric_node_id": "CRAH-4#-2-6",
       "plan_task": "SH16-09-ffeda2df",
       "plan_source_handle": "B3AD",
-      "systems": [
-        "supply",
-        "return"
-      ],
-      "wall": "equipment_ports_unproven",
+      "system": "supply",
+      "wall": "no_incident_edge",
       "equipment": "mapped",
       "ports": "unmapped",
-      "path": "unmapped"
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0254"
+      ],
+      "plan_edges": []
+    },
+    {
+      "label": "CRAH-4#-2-6",
+      "floor": 2,
+      "isometric_node_id": "CRAH-4#-2-6",
+      "plan_task": "SH16-09-ffeda2df",
+      "plan_source_handle": "B3AD",
+      "system": "return",
+      "wall": "no_incident_edge",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0134"
+      ],
+      "plan_edges": []
     },
     {
       "label": "CRAH-4#-2-7",
@@ -345,14 +889,35 @@
       "isometric_node_id": "CRAH-4#-2-7",
       "plan_task": "SH16-09-ffeda2df",
       "plan_source_handle": "B391",
-      "systems": [
-        "supply",
-        "return"
-      ],
-      "wall": "equipment_ports_unproven",
+      "system": "supply",
+      "wall": "no_incident_edge",
       "equipment": "mapped",
       "ports": "unmapped",
-      "path": "unmapped"
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0225"
+      ],
+      "plan_edges": []
+    },
+    {
+      "label": "CRAH-4#-2-7",
+      "floor": 2,
+      "isometric_node_id": "CRAH-4#-2-7",
+      "plan_task": "SH16-09-ffeda2df",
+      "plan_source_handle": "B391",
+      "system": "return",
+      "wall": "no_incident_edge",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0105"
+      ],
+      "plan_edges": []
     },
     {
       "label": "CRAH-4#-2-8",
@@ -360,14 +925,35 @@
       "isometric_node_id": "CRAH-4#-2-8",
       "plan_task": "SH16-09-ffeda2df",
       "plan_source_handle": "B392",
-      "systems": [
-        "supply",
-        "return"
-      ],
-      "wall": "equipment_ports_unproven",
+      "system": "supply",
+      "wall": "no_incident_edge",
       "equipment": "mapped",
       "ports": "unmapped",
-      "path": "unmapped"
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0226"
+      ],
+      "plan_edges": []
+    },
+    {
+      "label": "CRAH-4#-2-8",
+      "floor": 2,
+      "isometric_node_id": "CRAH-4#-2-8",
+      "plan_task": "SH16-09-ffeda2df",
+      "plan_source_handle": "B392",
+      "system": "return",
+      "wall": "no_incident_edge",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0106"
+      ],
+      "plan_edges": []
     },
     {
       "label": "CRAH-4#-2-9",
@@ -375,14 +961,35 @@
       "isometric_node_id": "CRAH-4#-2-9",
       "plan_task": "SH16-09-ffeda2df",
       "plan_source_handle": "1603C",
-      "systems": [
-        "supply",
-        "return"
-      ],
-      "wall": "equipment_ports_unproven",
+      "system": "supply",
+      "wall": "no_incident_edge",
       "equipment": "mapped",
       "ports": "unmapped",
-      "path": "unmapped"
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0227"
+      ],
+      "plan_edges": []
+    },
+    {
+      "label": "CRAH-4#-2-9",
+      "floor": 2,
+      "isometric_node_id": "CRAH-4#-2-9",
+      "plan_task": "SH16-09-ffeda2df",
+      "plan_source_handle": "1603C",
+      "system": "return",
+      "wall": "no_incident_edge",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0107"
+      ],
+      "plan_edges": []
     },
     {
       "label": "CRAH-4#-2-10",
@@ -390,14 +997,35 @@
       "isometric_node_id": "CRAH-4#-2-10",
       "plan_task": "SH16-09-ffeda2df",
       "plan_source_handle": "1603D",
-      "systems": [
-        "supply",
-        "return"
-      ],
-      "wall": "equipment_ports_unproven",
+      "system": "supply",
+      "wall": "no_incident_edge",
       "equipment": "mapped",
       "ports": "unmapped",
-      "path": "unmapped"
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0228"
+      ],
+      "plan_edges": []
+    },
+    {
+      "label": "CRAH-4#-2-10",
+      "floor": 2,
+      "isometric_node_id": "CRAH-4#-2-10",
+      "plan_task": "SH16-09-ffeda2df",
+      "plan_source_handle": "1603D",
+      "system": "return",
+      "wall": "no_incident_edge",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0108"
+      ],
+      "plan_edges": []
     },
     {
       "label": "CRAH-4#-2-11",
@@ -405,14 +1033,35 @@
       "isometric_node_id": "CRAH-4#-2-11",
       "plan_task": "SH16-09-ffeda2df",
       "plan_source_handle": "16044",
-      "systems": [
-        "supply",
-        "return"
-      ],
-      "wall": "equipment_ports_unproven",
+      "system": "supply",
+      "wall": "no_incident_edge",
       "equipment": "mapped",
       "ports": "unmapped",
-      "path": "unmapped"
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0229"
+      ],
+      "plan_edges": []
+    },
+    {
+      "label": "CRAH-4#-2-11",
+      "floor": 2,
+      "isometric_node_id": "CRAH-4#-2-11",
+      "plan_task": "SH16-09-ffeda2df",
+      "plan_source_handle": "16044",
+      "system": "return",
+      "wall": "no_incident_edge",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0109"
+      ],
+      "plan_edges": []
     },
     {
       "label": "CRAH-4#-2-12",
@@ -420,14 +1069,35 @@
       "isometric_node_id": "CRAH-4#-2-12",
       "plan_task": "SH16-09-ffeda2df",
       "plan_source_handle": "B393",
-      "systems": [
-        "supply",
-        "return"
-      ],
-      "wall": "equipment_ports_unproven",
+      "system": "supply",
+      "wall": "no_incident_edge",
       "equipment": "mapped",
       "ports": "unmapped",
-      "path": "unmapped"
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0230"
+      ],
+      "plan_edges": []
+    },
+    {
+      "label": "CRAH-4#-2-12",
+      "floor": 2,
+      "isometric_node_id": "CRAH-4#-2-12",
+      "plan_task": "SH16-09-ffeda2df",
+      "plan_source_handle": "B393",
+      "system": "return",
+      "wall": "no_incident_edge",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0110"
+      ],
+      "plan_edges": []
     },
     {
       "label": "CRAH-4#-2-13",
@@ -435,14 +1105,35 @@
       "isometric_node_id": "CRAH-4#-2-13",
       "plan_task": "SH16-09-ffeda2df",
       "plan_source_handle": "B394",
-      "systems": [
-        "supply",
-        "return"
-      ],
-      "wall": "equipment_ports_unproven",
+      "system": "supply",
+      "wall": "no_incident_edge",
       "equipment": "mapped",
       "ports": "unmapped",
-      "path": "unmapped"
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0231"
+      ],
+      "plan_edges": []
+    },
+    {
+      "label": "CRAH-4#-2-13",
+      "floor": 2,
+      "isometric_node_id": "CRAH-4#-2-13",
+      "plan_task": "SH16-09-ffeda2df",
+      "plan_source_handle": "B394",
+      "system": "return",
+      "wall": "no_incident_edge",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0111"
+      ],
+      "plan_edges": []
     },
     {
       "label": "CRAH-4#-2-14",
@@ -450,14 +1141,35 @@
       "isometric_node_id": "CRAH-4#-2-14",
       "plan_task": "SH16-09-ffeda2df",
       "plan_source_handle": "B395",
-      "systems": [
-        "supply",
-        "return"
-      ],
-      "wall": "equipment_ports_unproven",
+      "system": "supply",
+      "wall": "no_incident_edge",
       "equipment": "mapped",
       "ports": "unmapped",
-      "path": "unmapped"
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0232"
+      ],
+      "plan_edges": []
+    },
+    {
+      "label": "CRAH-4#-2-14",
+      "floor": 2,
+      "isometric_node_id": "CRAH-4#-2-14",
+      "plan_task": "SH16-09-ffeda2df",
+      "plan_source_handle": "B395",
+      "system": "return",
+      "wall": "no_incident_edge",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0112"
+      ],
+      "plan_edges": []
     },
     {
       "label": "CRAH-4#-2-15",
@@ -465,14 +1177,35 @@
       "isometric_node_id": "CRAH-4#-2-15",
       "plan_task": "SH16-09-ffeda2df",
       "plan_source_handle": "B396",
-      "systems": [
-        "supply",
-        "return"
-      ],
-      "wall": "equipment_ports_unproven",
+      "system": "supply",
+      "wall": "no_incident_edge",
       "equipment": "mapped",
       "ports": "unmapped",
-      "path": "unmapped"
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0233"
+      ],
+      "plan_edges": []
+    },
+    {
+      "label": "CRAH-4#-2-15",
+      "floor": 2,
+      "isometric_node_id": "CRAH-4#-2-15",
+      "plan_task": "SH16-09-ffeda2df",
+      "plan_source_handle": "B396",
+      "system": "return",
+      "wall": "no_incident_edge",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0113"
+      ],
+      "plan_edges": []
     },
     {
       "label": "CRAH-4#-2-16",
@@ -480,14 +1213,35 @@
       "isometric_node_id": "CRAH-4#-2-16",
       "plan_task": "SH16-09-ffeda2df",
       "plan_source_handle": "B397",
-      "systems": [
-        "supply",
-        "return"
-      ],
-      "wall": "equipment_ports_unproven",
+      "system": "supply",
+      "wall": "no_incident_edge",
       "equipment": "mapped",
       "ports": "unmapped",
-      "path": "unmapped"
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0234"
+      ],
+      "plan_edges": []
+    },
+    {
+      "label": "CRAH-4#-2-16",
+      "floor": 2,
+      "isometric_node_id": "CRAH-4#-2-16",
+      "plan_task": "SH16-09-ffeda2df",
+      "plan_source_handle": "B397",
+      "system": "return",
+      "wall": "no_incident_edge",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0114"
+      ],
+      "plan_edges": []
     },
     {
       "label": "CRAH-4#-2-17",
@@ -495,14 +1249,35 @@
       "isometric_node_id": "CRAH-4#-2-17",
       "plan_task": "SH16-09-ffeda2df",
       "plan_source_handle": "B39E",
-      "systems": [
-        "supply",
-        "return"
-      ],
-      "wall": "equipment_ports_unproven",
+      "system": "supply",
+      "wall": "no_incident_edge",
       "equipment": "mapped",
       "ports": "unmapped",
-      "path": "unmapped"
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0255"
+      ],
+      "plan_edges": []
+    },
+    {
+      "label": "CRAH-4#-2-17",
+      "floor": 2,
+      "isometric_node_id": "CRAH-4#-2-17",
+      "plan_task": "SH16-09-ffeda2df",
+      "plan_source_handle": "B39E",
+      "system": "return",
+      "wall": "no_incident_edge",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0135"
+      ],
+      "plan_edges": []
     },
     {
       "label": "CRAH-4#-2-18",
@@ -510,14 +1285,35 @@
       "isometric_node_id": "CRAH-4#-2-18",
       "plan_task": "SH16-09-ffeda2df",
       "plan_source_handle": "B39F",
-      "systems": [
-        "supply",
-        "return"
-      ],
-      "wall": "equipment_ports_unproven",
+      "system": "supply",
+      "wall": "no_incident_edge",
       "equipment": "mapped",
       "ports": "unmapped",
-      "path": "unmapped"
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0256"
+      ],
+      "plan_edges": []
+    },
+    {
+      "label": "CRAH-4#-2-18",
+      "floor": 2,
+      "isometric_node_id": "CRAH-4#-2-18",
+      "plan_task": "SH16-09-ffeda2df",
+      "plan_source_handle": "B39F",
+      "system": "return",
+      "wall": "no_incident_edge",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0136"
+      ],
+      "plan_edges": []
     },
     {
       "label": "CRAH-4#-2-19",
@@ -525,14 +1321,35 @@
       "isometric_node_id": "CRAH-4#-2-19",
       "plan_task": "SH16-09-ffeda2df",
       "plan_source_handle": "B3A0",
-      "systems": [
-        "supply",
-        "return"
-      ],
-      "wall": "equipment_ports_unproven",
+      "system": "supply",
+      "wall": "no_incident_edge",
       "equipment": "mapped",
       "ports": "unmapped",
-      "path": "unmapped"
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0257"
+      ],
+      "plan_edges": []
+    },
+    {
+      "label": "CRAH-4#-2-19",
+      "floor": 2,
+      "isometric_node_id": "CRAH-4#-2-19",
+      "plan_task": "SH16-09-ffeda2df",
+      "plan_source_handle": "B3A0",
+      "system": "return",
+      "wall": "no_incident_edge",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0137"
+      ],
+      "plan_edges": []
     },
     {
       "label": "CRAH-4#-2-20",
@@ -540,14 +1357,35 @@
       "isometric_node_id": "CRAH-4#-2-20",
       "plan_task": "SH16-09-ffeda2df",
       "plan_source_handle": "B3A1",
-      "systems": [
-        "supply",
-        "return"
-      ],
-      "wall": "equipment_ports_unproven",
+      "system": "supply",
+      "wall": "no_incident_edge",
       "equipment": "mapped",
       "ports": "unmapped",
-      "path": "unmapped"
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0258"
+      ],
+      "plan_edges": []
+    },
+    {
+      "label": "CRAH-4#-2-20",
+      "floor": 2,
+      "isometric_node_id": "CRAH-4#-2-20",
+      "plan_task": "SH16-09-ffeda2df",
+      "plan_source_handle": "B3A1",
+      "system": "return",
+      "wall": "no_incident_edge",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0138"
+      ],
+      "plan_edges": []
     },
     {
       "label": "CRAH-4#-2-21",
@@ -555,14 +1393,35 @@
       "isometric_node_id": "CRAH-4#-2-21",
       "plan_task": "SH16-09-ffeda2df",
       "plan_source_handle": "B3A2",
-      "systems": [
-        "supply",
-        "return"
-      ],
-      "wall": "equipment_ports_unproven",
+      "system": "supply",
+      "wall": "no_incident_edge",
       "equipment": "mapped",
       "ports": "unmapped",
-      "path": "unmapped"
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0259"
+      ],
+      "plan_edges": []
+    },
+    {
+      "label": "CRAH-4#-2-21",
+      "floor": 2,
+      "isometric_node_id": "CRAH-4#-2-21",
+      "plan_task": "SH16-09-ffeda2df",
+      "plan_source_handle": "B3A2",
+      "system": "return",
+      "wall": "no_incident_edge",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0139"
+      ],
+      "plan_edges": []
     },
     {
       "label": "CRAH-4#-2-22",
@@ -570,14 +1429,35 @@
       "isometric_node_id": "CRAH-4#-2-22",
       "plan_task": "SH16-09-ffeda2df",
       "plan_source_handle": "B3A3",
-      "systems": [
-        "supply",
-        "return"
-      ],
-      "wall": "equipment_ports_unproven",
+      "system": "supply",
+      "wall": "no_incident_edge",
       "equipment": "mapped",
       "ports": "unmapped",
-      "path": "unmapped"
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0260"
+      ],
+      "plan_edges": []
+    },
+    {
+      "label": "CRAH-4#-2-22",
+      "floor": 2,
+      "isometric_node_id": "CRAH-4#-2-22",
+      "plan_task": "SH16-09-ffeda2df",
+      "plan_source_handle": "B3A3",
+      "system": "return",
+      "wall": "no_incident_edge",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0140"
+      ],
+      "plan_edges": []
     },
     {
       "label": "CRAH-4#-2-23",
@@ -585,14 +1465,35 @@
       "isometric_node_id": "CRAH-4#-2-23",
       "plan_task": "SH16-09-ffeda2df",
       "plan_source_handle": "B3A4",
-      "systems": [
-        "supply",
-        "return"
-      ],
-      "wall": "equipment_ports_unproven",
+      "system": "supply",
+      "wall": "no_incident_edge",
       "equipment": "mapped",
       "ports": "unmapped",
-      "path": "unmapped"
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0261"
+      ],
+      "plan_edges": []
+    },
+    {
+      "label": "CRAH-4#-2-23",
+      "floor": 2,
+      "isometric_node_id": "CRAH-4#-2-23",
+      "plan_task": "SH16-09-ffeda2df",
+      "plan_source_handle": "B3A4",
+      "system": "return",
+      "wall": "no_incident_edge",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0141"
+      ],
+      "plan_edges": []
     },
     {
       "label": "CRAH-4#-2-24",
@@ -600,14 +1501,35 @@
       "isometric_node_id": "CRAH-4#-2-24",
       "plan_task": "SH16-09-ffeda2df",
       "plan_source_handle": "B3A5",
-      "systems": [
-        "supply",
-        "return"
-      ],
-      "wall": "equipment_ports_unproven",
+      "system": "supply",
+      "wall": "no_incident_edge",
       "equipment": "mapped",
       "ports": "unmapped",
-      "path": "unmapped"
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0262"
+      ],
+      "plan_edges": []
+    },
+    {
+      "label": "CRAH-4#-2-24",
+      "floor": 2,
+      "isometric_node_id": "CRAH-4#-2-24",
+      "plan_task": "SH16-09-ffeda2df",
+      "plan_source_handle": "B3A5",
+      "system": "return",
+      "wall": "no_incident_edge",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0142"
+      ],
+      "plan_edges": []
     },
     {
       "label": "CRAH-4#-2-25",
@@ -615,14 +1537,35 @@
       "isometric_node_id": "CRAH-4#-2-25",
       "plan_task": "SH16-09-ffeda2df",
       "plan_source_handle": "B398",
-      "systems": [
-        "supply",
-        "return"
-      ],
-      "wall": "equipment_ports_unproven",
+      "system": "supply",
+      "wall": "no_incident_edge",
       "equipment": "mapped",
       "ports": "unmapped",
-      "path": "unmapped"
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0235"
+      ],
+      "plan_edges": []
+    },
+    {
+      "label": "CRAH-4#-2-25",
+      "floor": 2,
+      "isometric_node_id": "CRAH-4#-2-25",
+      "plan_task": "SH16-09-ffeda2df",
+      "plan_source_handle": "B398",
+      "system": "return",
+      "wall": "no_incident_edge",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0115"
+      ],
+      "plan_edges": []
     },
     {
       "label": "CRAH-4#-2-26",
@@ -630,14 +1573,35 @@
       "isometric_node_id": "CRAH-4#-2-26",
       "plan_task": "SH16-09-ffeda2df",
       "plan_source_handle": "B399",
-      "systems": [
-        "supply",
-        "return"
-      ],
-      "wall": "equipment_ports_unproven",
+      "system": "supply",
+      "wall": "no_incident_edge",
       "equipment": "mapped",
       "ports": "unmapped",
-      "path": "unmapped"
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0236"
+      ],
+      "plan_edges": []
+    },
+    {
+      "label": "CRAH-4#-2-26",
+      "floor": 2,
+      "isometric_node_id": "CRAH-4#-2-26",
+      "plan_task": "SH16-09-ffeda2df",
+      "plan_source_handle": "B399",
+      "system": "return",
+      "wall": "no_incident_edge",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0116"
+      ],
+      "plan_edges": []
     },
     {
       "label": "CRAH-4#-2-27",
@@ -645,14 +1609,35 @@
       "isometric_node_id": "CRAH-4#-2-27",
       "plan_task": "SH16-09-ffeda2df",
       "plan_source_handle": "B39A",
-      "systems": [
-        "supply",
-        "return"
-      ],
-      "wall": "equipment_ports_unproven",
+      "system": "supply",
+      "wall": "no_incident_edge",
       "equipment": "mapped",
       "ports": "unmapped",
-      "path": "unmapped"
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0237"
+      ],
+      "plan_edges": []
+    },
+    {
+      "label": "CRAH-4#-2-27",
+      "floor": 2,
+      "isometric_node_id": "CRAH-4#-2-27",
+      "plan_task": "SH16-09-ffeda2df",
+      "plan_source_handle": "B39A",
+      "system": "return",
+      "wall": "no_incident_edge",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0117"
+      ],
+      "plan_edges": []
     },
     {
       "label": "CRAH-4#-2-28",
@@ -660,14 +1645,35 @@
       "isometric_node_id": "CRAH-4#-2-28",
       "plan_task": "SH16-09-ffeda2df",
       "plan_source_handle": "B39B",
-      "systems": [
-        "supply",
-        "return"
-      ],
-      "wall": "equipment_ports_unproven",
+      "system": "supply",
+      "wall": "no_incident_edge",
       "equipment": "mapped",
       "ports": "unmapped",
-      "path": "unmapped"
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0238"
+      ],
+      "plan_edges": []
+    },
+    {
+      "label": "CRAH-4#-2-28",
+      "floor": 2,
+      "isometric_node_id": "CRAH-4#-2-28",
+      "plan_task": "SH16-09-ffeda2df",
+      "plan_source_handle": "B39B",
+      "system": "return",
+      "wall": "no_incident_edge",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0118"
+      ],
+      "plan_edges": []
     },
     {
       "label": "CRAH-4#-2-29",
@@ -675,14 +1681,35 @@
       "isometric_node_id": "CRAH-4#-2-29",
       "plan_task": "SH16-09-ffeda2df",
       "plan_source_handle": "16070",
-      "systems": [
-        "supply",
-        "return"
-      ],
-      "wall": "equipment_ports_unproven",
+      "system": "supply",
+      "wall": "no_incident_edge",
       "equipment": "mapped",
       "ports": "unmapped",
-      "path": "unmapped"
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0239"
+      ],
+      "plan_edges": []
+    },
+    {
+      "label": "CRAH-4#-2-29",
+      "floor": 2,
+      "isometric_node_id": "CRAH-4#-2-29",
+      "plan_task": "SH16-09-ffeda2df",
+      "plan_source_handle": "16070",
+      "system": "return",
+      "wall": "no_incident_edge",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0119"
+      ],
+      "plan_edges": []
     },
     {
       "label": "CRAH-4#-2-30",
@@ -690,14 +1717,35 @@
       "isometric_node_id": "CRAH-4#-2-30",
       "plan_task": "SH16-09-ffeda2df",
       "plan_source_handle": "16071",
-      "systems": [
-        "supply",
-        "return"
-      ],
-      "wall": "equipment_ports_unproven",
+      "system": "supply",
+      "wall": "no_incident_edge",
       "equipment": "mapped",
       "ports": "unmapped",
-      "path": "unmapped"
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0240"
+      ],
+      "plan_edges": []
+    },
+    {
+      "label": "CRAH-4#-2-30",
+      "floor": 2,
+      "isometric_node_id": "CRAH-4#-2-30",
+      "plan_task": "SH16-09-ffeda2df",
+      "plan_source_handle": "16071",
+      "system": "return",
+      "wall": "no_incident_edge",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0120"
+      ],
+      "plan_edges": []
     },
     {
       "label": "CRAH-4#-2-31",
@@ -705,14 +1753,35 @@
       "isometric_node_id": "CRAH-4#-2-31",
       "plan_task": "SH16-09-ffeda2df",
       "plan_source_handle": "B39C",
-      "systems": [
-        "supply",
-        "return"
-      ],
-      "wall": "equipment_ports_unproven",
+      "system": "supply",
+      "wall": "no_incident_edge",
       "equipment": "mapped",
       "ports": "unmapped",
-      "path": "unmapped"
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0241"
+      ],
+      "plan_edges": []
+    },
+    {
+      "label": "CRAH-4#-2-31",
+      "floor": 2,
+      "isometric_node_id": "CRAH-4#-2-31",
+      "plan_task": "SH16-09-ffeda2df",
+      "plan_source_handle": "B39C",
+      "system": "return",
+      "wall": "no_incident_edge",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0121"
+      ],
+      "plan_edges": []
     },
     {
       "label": "CRAH-4#-2-32",
@@ -720,14 +1789,35 @@
       "isometric_node_id": "CRAH-4#-2-32",
       "plan_task": "SH16-09-ffeda2df",
       "plan_source_handle": "B39D",
-      "systems": [
-        "supply",
-        "return"
-      ],
-      "wall": "equipment_ports_unproven",
+      "system": "supply",
+      "wall": "no_incident_edge",
       "equipment": "mapped",
       "ports": "unmapped",
-      "path": "unmapped"
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0242"
+      ],
+      "plan_edges": []
+    },
+    {
+      "label": "CRAH-4#-2-32",
+      "floor": 2,
+      "isometric_node_id": "CRAH-4#-2-32",
+      "plan_task": "SH16-09-ffeda2df",
+      "plan_source_handle": "B39D",
+      "system": "return",
+      "wall": "no_incident_edge",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0122"
+      ],
+      "plan_edges": []
     },
     {
       "label": "CRAH-4#-2-33",
@@ -735,14 +1825,35 @@
       "isometric_node_id": "CRAH-4#-2-33",
       "plan_task": "SH16-09-ffeda2df",
       "plan_source_handle": "144A8",
-      "systems": [
-        "supply",
-        "return"
-      ],
-      "wall": "equipment_ports_unproven",
+      "system": "supply",
+      "wall": "no_incident_edge",
       "equipment": "mapped",
       "ports": "unmapped",
-      "path": "unmapped"
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0243"
+      ],
+      "plan_edges": []
+    },
+    {
+      "label": "CRAH-4#-2-33",
+      "floor": 2,
+      "isometric_node_id": "CRAH-4#-2-33",
+      "plan_task": "SH16-09-ffeda2df",
+      "plan_source_handle": "144A8",
+      "system": "return",
+      "wall": "no_incident_edge",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0123"
+      ],
+      "plan_edges": []
     },
     {
       "label": "CRAH-4#-2-34",
@@ -750,14 +1861,35 @@
       "isometric_node_id": "CRAH-4#-2-34",
       "plan_task": "SH16-09-ffeda2df",
       "plan_source_handle": "144A7",
-      "systems": [
-        "supply",
-        "return"
-      ],
-      "wall": "equipment_ports_unproven",
+      "system": "supply",
+      "wall": "no_incident_edge",
       "equipment": "mapped",
       "ports": "unmapped",
-      "path": "unmapped"
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0244"
+      ],
+      "plan_edges": []
+    },
+    {
+      "label": "CRAH-4#-2-34",
+      "floor": 2,
+      "isometric_node_id": "CRAH-4#-2-34",
+      "plan_task": "SH16-09-ffeda2df",
+      "plan_source_handle": "144A7",
+      "system": "return",
+      "wall": "no_incident_edge",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0124"
+      ],
+      "plan_edges": []
     },
     {
       "label": "CRAH-4#-2-35",
@@ -765,14 +1897,35 @@
       "isometric_node_id": "CRAH-4#-2-35",
       "plan_task": "SH16-09-ffeda2df",
       "plan_source_handle": "144AA",
-      "systems": [
-        "supply",
-        "return"
-      ],
-      "wall": "equipment_ports_unproven",
+      "system": "supply",
+      "wall": "no_incident_edge",
       "equipment": "mapped",
       "ports": "unmapped",
-      "path": "unmapped"
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0245"
+      ],
+      "plan_edges": []
+    },
+    {
+      "label": "CRAH-4#-2-35",
+      "floor": 2,
+      "isometric_node_id": "CRAH-4#-2-35",
+      "plan_task": "SH16-09-ffeda2df",
+      "plan_source_handle": "144AA",
+      "system": "return",
+      "wall": "no_incident_edge",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0125"
+      ],
+      "plan_edges": []
     },
     {
       "label": "CRAH-4#-2-36",
@@ -780,14 +1933,35 @@
       "isometric_node_id": "CRAH-4#-2-36",
       "plan_task": "SH16-09-ffeda2df",
       "plan_source_handle": "144A9",
-      "systems": [
-        "supply",
-        "return"
-      ],
-      "wall": "equipment_ports_unproven",
+      "system": "supply",
+      "wall": "no_incident_edge",
       "equipment": "mapped",
       "ports": "unmapped",
-      "path": "unmapped"
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0247"
+      ],
+      "plan_edges": []
+    },
+    {
+      "label": "CRAH-4#-2-36",
+      "floor": 2,
+      "isometric_node_id": "CRAH-4#-2-36",
+      "plan_task": "SH16-09-ffeda2df",
+      "plan_source_handle": "144A9",
+      "system": "return",
+      "wall": "no_incident_edge",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0128"
+      ],
+      "plan_edges": []
     },
     {
       "label": "CRAH-4#-2-37",
@@ -795,14 +1969,35 @@
       "isometric_node_id": "CRAH-4#-2-37",
       "plan_task": "SH16-09-ffeda2df",
       "plan_source_handle": "144A6",
-      "systems": [
-        "supply",
-        "return"
-      ],
-      "wall": "equipment_ports_unproven",
+      "system": "supply",
+      "wall": "no_incident_edge",
       "equipment": "mapped",
       "ports": "unmapped",
-      "path": "unmapped"
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0250"
+      ],
+      "plan_edges": []
+    },
+    {
+      "label": "CRAH-4#-2-37",
+      "floor": 2,
+      "isometric_node_id": "CRAH-4#-2-37",
+      "plan_task": "SH16-09-ffeda2df",
+      "plan_source_handle": "144A6",
+      "system": "return",
+      "wall": "no_incident_edge",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0129"
+      ],
+      "plan_edges": []
     },
     {
       "label": "CRAH-4#-2-38",
@@ -810,14 +2005,35 @@
       "isometric_node_id": "CRAH-4#-2-38",
       "plan_task": "SH16-09-ffeda2df",
       "plan_source_handle": "144A5",
-      "systems": [
-        "supply",
-        "return"
-      ],
-      "wall": "equipment_ports_unproven",
+      "system": "supply",
+      "wall": "no_incident_edge",
       "equipment": "mapped",
       "ports": "unmapped",
-      "path": "unmapped"
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0252"
+      ],
+      "plan_edges": []
+    },
+    {
+      "label": "CRAH-4#-2-38",
+      "floor": 2,
+      "isometric_node_id": "CRAH-4#-2-38",
+      "plan_task": "SH16-09-ffeda2df",
+      "plan_source_handle": "144A5",
+      "system": "return",
+      "wall": "no_incident_edge",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0131"
+      ],
+      "plan_edges": []
     },
     {
       "label": "CRAH-4#-3-1",
@@ -825,14 +2041,35 @@
       "isometric_node_id": "CRAH-4#-3-1",
       "plan_task": "SH16-10-072841a6",
       "plan_source_handle": "129D5",
-      "systems": [
-        "supply",
-        "return"
-      ],
-      "wall": "equipment_ports_unproven",
+      "system": "supply",
+      "wall": "no_incident_edge",
       "equipment": "mapped",
       "ports": "unmapped",
-      "path": "unmapped"
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0488"
+      ],
+      "plan_edges": []
+    },
+    {
+      "label": "CRAH-4#-3-1",
+      "floor": 3,
+      "isometric_node_id": "CRAH-4#-3-1",
+      "plan_task": "SH16-10-072841a6",
+      "plan_source_handle": "129D5",
+      "system": "return",
+      "wall": "no_incident_edge",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0372"
+      ],
+      "plan_edges": []
     },
     {
       "label": "CRAH-4#-3-2",
@@ -840,14 +2077,35 @@
       "isometric_node_id": "CRAH-4#-3-2",
       "plan_task": "SH16-10-072841a6",
       "plan_source_handle": "129D6",
-      "systems": [
-        "supply",
-        "return"
-      ],
-      "wall": "equipment_ports_unproven",
+      "system": "supply",
+      "wall": "no_incident_edge",
       "equipment": "mapped",
       "ports": "unmapped",
-      "path": "unmapped"
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0489"
+      ],
+      "plan_edges": []
+    },
+    {
+      "label": "CRAH-4#-3-2",
+      "floor": 3,
+      "isometric_node_id": "CRAH-4#-3-2",
+      "plan_task": "SH16-10-072841a6",
+      "plan_source_handle": "129D6",
+      "system": "return",
+      "wall": "no_incident_edge",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0373"
+      ],
+      "plan_edges": []
     },
     {
       "label": "CRAH-4#-3-3",
@@ -855,14 +2113,35 @@
       "isometric_node_id": "CRAH-4#-3-3",
       "plan_task": "SH16-10-072841a6",
       "plan_source_handle": "129D7",
-      "systems": [
-        "supply",
-        "return"
-      ],
-      "wall": "equipment_ports_unproven",
+      "system": "supply",
+      "wall": "no_incident_edge",
       "equipment": "mapped",
       "ports": "unmapped",
-      "path": "unmapped"
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0490"
+      ],
+      "plan_edges": []
+    },
+    {
+      "label": "CRAH-4#-3-3",
+      "floor": 3,
+      "isometric_node_id": "CRAH-4#-3-3",
+      "plan_task": "SH16-10-072841a6",
+      "plan_source_handle": "129D7",
+      "system": "return",
+      "wall": "no_incident_edge",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0374"
+      ],
+      "plan_edges": []
     },
     {
       "label": "CRAH-4#-3-4",
@@ -870,14 +2149,35 @@
       "isometric_node_id": "CRAH-4#-3-4",
       "plan_task": "SH16-10-072841a6",
       "plan_source_handle": "129D8",
-      "systems": [
-        "supply",
-        "return"
-      ],
-      "wall": "equipment_ports_unproven",
+      "system": "supply",
+      "wall": "no_incident_edge",
       "equipment": "mapped",
       "ports": "unmapped",
-      "path": "unmapped"
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0491"
+      ],
+      "plan_edges": []
+    },
+    {
+      "label": "CRAH-4#-3-4",
+      "floor": 3,
+      "isometric_node_id": "CRAH-4#-3-4",
+      "plan_task": "SH16-10-072841a6",
+      "plan_source_handle": "129D8",
+      "system": "return",
+      "wall": "no_incident_edge",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0375"
+      ],
+      "plan_edges": []
     },
     {
       "label": "CRAH-4#-3-5",
@@ -885,14 +2185,35 @@
       "isometric_node_id": "CRAH-4#-3-5",
       "plan_task": "SH16-10-072841a6",
       "plan_source_handle": "129D9",
-      "systems": [
-        "supply",
-        "return"
-      ],
-      "wall": "equipment_ports_unproven",
+      "system": "supply",
+      "wall": "no_incident_edge",
       "equipment": "mapped",
       "ports": "unmapped",
-      "path": "unmapped"
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0492"
+      ],
+      "plan_edges": []
+    },
+    {
+      "label": "CRAH-4#-3-5",
+      "floor": 3,
+      "isometric_node_id": "CRAH-4#-3-5",
+      "plan_task": "SH16-10-072841a6",
+      "plan_source_handle": "129D9",
+      "system": "return",
+      "wall": "no_incident_edge",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0376"
+      ],
+      "plan_edges": []
     },
     {
       "label": "CRAH-4#-3-6",
@@ -900,14 +2221,35 @@
       "isometric_node_id": "CRAH-4#-3-6",
       "plan_task": "SH16-10-072841a6",
       "plan_source_handle": "12A02",
-      "systems": [
-        "supply",
-        "return"
-      ],
-      "wall": "equipment_ports_unproven",
+      "system": "supply",
+      "wall": "no_incident_edge",
       "equipment": "mapped",
       "ports": "unmapped",
-      "path": "unmapped"
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0493"
+      ],
+      "plan_edges": []
+    },
+    {
+      "label": "CRAH-4#-3-6",
+      "floor": 3,
+      "isometric_node_id": "CRAH-4#-3-6",
+      "plan_task": "SH16-10-072841a6",
+      "plan_source_handle": "12A02",
+      "system": "return",
+      "wall": "no_incident_edge",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0377"
+      ],
+      "plan_edges": []
     },
     {
       "label": "CRAH-4#-3-7",
@@ -915,14 +2257,35 @@
       "isometric_node_id": "CRAH-4#-3-7",
       "plan_task": "SH16-10-072841a6",
       "plan_source_handle": "129D0",
-      "systems": [
-        "supply",
-        "return"
-      ],
-      "wall": "equipment_ports_unproven",
+      "system": "supply",
+      "wall": "no_incident_edge",
       "equipment": "mapped",
       "ports": "unmapped",
-      "path": "unmapped"
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0494"
+      ],
+      "plan_edges": []
+    },
+    {
+      "label": "CRAH-4#-3-7",
+      "floor": 3,
+      "isometric_node_id": "CRAH-4#-3-7",
+      "plan_task": "SH16-10-072841a6",
+      "plan_source_handle": "129D0",
+      "system": "return",
+      "wall": "no_incident_edge",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0378"
+      ],
+      "plan_edges": []
     },
     {
       "label": "CRAH-4#-3-8",
@@ -930,14 +2293,35 @@
       "isometric_node_id": "CRAH-4#-3-8",
       "plan_task": "SH16-10-072841a6",
       "plan_source_handle": "129D1",
-      "systems": [
-        "supply",
-        "return"
-      ],
-      "wall": "equipment_ports_unproven",
+      "system": "supply",
+      "wall": "no_incident_edge",
       "equipment": "mapped",
       "ports": "unmapped",
-      "path": "unmapped"
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0495"
+      ],
+      "plan_edges": []
+    },
+    {
+      "label": "CRAH-4#-3-8",
+      "floor": 3,
+      "isometric_node_id": "CRAH-4#-3-8",
+      "plan_task": "SH16-10-072841a6",
+      "plan_source_handle": "129D1",
+      "system": "return",
+      "wall": "no_incident_edge",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0379"
+      ],
+      "plan_edges": []
     },
     {
       "label": "CRAH-4#-3-9",
@@ -945,14 +2329,35 @@
       "isometric_node_id": "CRAH-4#-3-9",
       "plan_task": "SH16-10-072841a6",
       "plan_source_handle": "129D2",
-      "systems": [
-        "supply",
-        "return"
-      ],
-      "wall": "equipment_ports_unproven",
+      "system": "supply",
+      "wall": "no_incident_edge",
       "equipment": "mapped",
       "ports": "unmapped",
-      "path": "unmapped"
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0496"
+      ],
+      "plan_edges": []
+    },
+    {
+      "label": "CRAH-4#-3-9",
+      "floor": 3,
+      "isometric_node_id": "CRAH-4#-3-9",
+      "plan_task": "SH16-10-072841a6",
+      "plan_source_handle": "129D2",
+      "system": "return",
+      "wall": "no_incident_edge",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0380"
+      ],
+      "plan_edges": []
     },
     {
       "label": "CRAH-4#-3-10",
@@ -960,14 +2365,35 @@
       "isometric_node_id": "CRAH-4#-3-10",
       "plan_task": "SH16-10-072841a6",
       "plan_source_handle": "129D3",
-      "systems": [
-        "supply",
-        "return"
-      ],
-      "wall": "equipment_ports_unproven",
+      "system": "supply",
+      "wall": "no_incident_edge",
       "equipment": "mapped",
       "ports": "unmapped",
-      "path": "unmapped"
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0497"
+      ],
+      "plan_edges": []
+    },
+    {
+      "label": "CRAH-4#-3-10",
+      "floor": 3,
+      "isometric_node_id": "CRAH-4#-3-10",
+      "plan_task": "SH16-10-072841a6",
+      "plan_source_handle": "129D3",
+      "system": "return",
+      "wall": "no_incident_edge",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0381"
+      ],
+      "plan_edges": []
     },
     {
       "label": "CRAH-4#-3-11",
@@ -975,14 +2401,35 @@
       "isometric_node_id": "CRAH-4#-3-11",
       "plan_task": "SH16-10-072841a6",
       "plan_source_handle": "129D4",
-      "systems": [
-        "supply",
-        "return"
-      ],
-      "wall": "equipment_ports_unproven",
+      "system": "supply",
+      "wall": "no_incident_edge",
       "equipment": "mapped",
       "ports": "unmapped",
-      "path": "unmapped"
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0498"
+      ],
+      "plan_edges": []
+    },
+    {
+      "label": "CRAH-4#-3-11",
+      "floor": 3,
+      "isometric_node_id": "CRAH-4#-3-11",
+      "plan_task": "SH16-10-072841a6",
+      "plan_source_handle": "129D4",
+      "system": "return",
+      "wall": "no_incident_edge",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0382"
+      ],
+      "plan_edges": []
     },
     {
       "label": "CRAH-4#-3-12",
@@ -990,14 +2437,35 @@
       "isometric_node_id": "CRAH-4#-3-12",
       "plan_task": "SH16-10-072841a6",
       "plan_source_handle": "12A04",
-      "systems": [
-        "supply",
-        "return"
-      ],
-      "wall": "equipment_ports_unproven",
+      "system": "supply",
+      "wall": "no_incident_edge",
       "equipment": "mapped",
       "ports": "unmapped",
-      "path": "unmapped"
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0499"
+      ],
+      "plan_edges": []
+    },
+    {
+      "label": "CRAH-4#-3-12",
+      "floor": 3,
+      "isometric_node_id": "CRAH-4#-3-12",
+      "plan_task": "SH16-10-072841a6",
+      "plan_source_handle": "12A04",
+      "system": "return",
+      "wall": "no_incident_edge",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0383"
+      ],
+      "plan_edges": []
     },
     {
       "label": "CRAH-4#-3-13",
@@ -1005,14 +2473,35 @@
       "isometric_node_id": "CRAH-4#-3-13",
       "plan_task": "SH16-10-072841a6",
       "plan_source_handle": "129C6",
-      "systems": [
-        "supply",
-        "return"
-      ],
-      "wall": "equipment_ports_unproven",
+      "system": "supply",
+      "wall": "no_incident_edge",
       "equipment": "mapped",
       "ports": "unmapped",
-      "path": "unmapped"
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0464"
+      ],
+      "plan_edges": []
+    },
+    {
+      "label": "CRAH-4#-3-13",
+      "floor": 3,
+      "isometric_node_id": "CRAH-4#-3-13",
+      "plan_task": "SH16-10-072841a6",
+      "plan_source_handle": "129C6",
+      "system": "return",
+      "wall": "no_incident_edge",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0348"
+      ],
+      "plan_edges": []
     },
     {
       "label": "CRAH-4#-3-14",
@@ -1020,14 +2509,35 @@
       "isometric_node_id": "CRAH-4#-3-14",
       "plan_task": "SH16-10-072841a6",
       "plan_source_handle": "129C7",
-      "systems": [
-        "supply",
-        "return"
-      ],
-      "wall": "equipment_ports_unproven",
+      "system": "supply",
+      "wall": "no_incident_edge",
       "equipment": "mapped",
       "ports": "unmapped",
-      "path": "unmapped"
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0465"
+      ],
+      "plan_edges": []
+    },
+    {
+      "label": "CRAH-4#-3-14",
+      "floor": 3,
+      "isometric_node_id": "CRAH-4#-3-14",
+      "plan_task": "SH16-10-072841a6",
+      "plan_source_handle": "129C7",
+      "system": "return",
+      "wall": "no_incident_edge",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0349"
+      ],
+      "plan_edges": []
     },
     {
       "label": "CRAH-4#-3-15",
@@ -1035,14 +2545,35 @@
       "isometric_node_id": "CRAH-4#-3-15",
       "plan_task": "SH16-10-072841a6",
       "plan_source_handle": "129C8",
-      "systems": [
-        "supply",
-        "return"
-      ],
-      "wall": "equipment_ports_unproven",
+      "system": "supply",
+      "wall": "no_incident_edge",
       "equipment": "mapped",
       "ports": "unmapped",
-      "path": "unmapped"
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0466"
+      ],
+      "plan_edges": []
+    },
+    {
+      "label": "CRAH-4#-3-15",
+      "floor": 3,
+      "isometric_node_id": "CRAH-4#-3-15",
+      "plan_task": "SH16-10-072841a6",
+      "plan_source_handle": "129C8",
+      "system": "return",
+      "wall": "no_incident_edge",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0350"
+      ],
+      "plan_edges": []
     },
     {
       "label": "CRAH-4#-3-16",
@@ -1050,14 +2581,35 @@
       "isometric_node_id": "CRAH-4#-3-16",
       "plan_task": "SH16-10-072841a6",
       "plan_source_handle": "129C9",
-      "systems": [
-        "supply",
-        "return"
-      ],
-      "wall": "equipment_ports_unproven",
+      "system": "supply",
+      "wall": "no_incident_edge",
       "equipment": "mapped",
       "ports": "unmapped",
-      "path": "unmapped"
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0467"
+      ],
+      "plan_edges": []
+    },
+    {
+      "label": "CRAH-4#-3-16",
+      "floor": 3,
+      "isometric_node_id": "CRAH-4#-3-16",
+      "plan_task": "SH16-10-072841a6",
+      "plan_source_handle": "129C9",
+      "system": "return",
+      "wall": "no_incident_edge",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0351"
+      ],
+      "plan_edges": []
     },
     {
       "label": "CRAH-4#-3-17",
@@ -1065,14 +2617,35 @@
       "isometric_node_id": "CRAH-4#-3-17",
       "plan_task": "SH16-10-072841a6",
       "plan_source_handle": "129CA",
-      "systems": [
-        "supply",
-        "return"
-      ],
-      "wall": "equipment_ports_unproven",
+      "system": "supply",
+      "wall": "no_incident_edge",
       "equipment": "mapped",
       "ports": "unmapped",
-      "path": "unmapped"
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0468"
+      ],
+      "plan_edges": []
+    },
+    {
+      "label": "CRAH-4#-3-17",
+      "floor": 3,
+      "isometric_node_id": "CRAH-4#-3-17",
+      "plan_task": "SH16-10-072841a6",
+      "plan_source_handle": "129CA",
+      "system": "return",
+      "wall": "no_incident_edge",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0352"
+      ],
+      "plan_edges": []
     },
     {
       "label": "CRAH-4#-3-18",
@@ -1080,14 +2653,35 @@
       "isometric_node_id": "CRAH-4#-3-18",
       "plan_task": "SH16-10-072841a6",
       "plan_source_handle": "129CB",
-      "systems": [
-        "supply",
-        "return"
-      ],
-      "wall": "equipment_ports_unproven",
+      "system": "supply",
+      "wall": "no_incident_edge",
       "equipment": "mapped",
       "ports": "unmapped",
-      "path": "unmapped"
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0469"
+      ],
+      "plan_edges": []
+    },
+    {
+      "label": "CRAH-4#-3-18",
+      "floor": 3,
+      "isometric_node_id": "CRAH-4#-3-18",
+      "plan_task": "SH16-10-072841a6",
+      "plan_source_handle": "129CB",
+      "system": "return",
+      "wall": "no_incident_edge",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0353"
+      ],
+      "plan_edges": []
     },
     {
       "label": "CRAH-4#-3-19",
@@ -1095,14 +2689,35 @@
       "isometric_node_id": "CRAH-4#-3-19",
       "plan_task": "SH16-10-072841a6",
       "plan_source_handle": "129CC",
-      "systems": [
-        "supply",
-        "return"
-      ],
-      "wall": "equipment_ports_unproven",
+      "system": "supply",
+      "wall": "no_incident_edge",
       "equipment": "mapped",
       "ports": "unmapped",
-      "path": "unmapped"
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0470"
+      ],
+      "plan_edges": []
+    },
+    {
+      "label": "CRAH-4#-3-19",
+      "floor": 3,
+      "isometric_node_id": "CRAH-4#-3-19",
+      "plan_task": "SH16-10-072841a6",
+      "plan_source_handle": "129CC",
+      "system": "return",
+      "wall": "no_incident_edge",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0354"
+      ],
+      "plan_edges": []
     },
     {
       "label": "CRAH-4#-3-20",
@@ -1110,14 +2725,35 @@
       "isometric_node_id": "CRAH-4#-3-20",
       "plan_task": "SH16-10-072841a6",
       "plan_source_handle": "129CD",
-      "systems": [
-        "supply",
-        "return"
-      ],
-      "wall": "equipment_ports_unproven",
+      "system": "supply",
+      "wall": "no_incident_edge",
       "equipment": "mapped",
       "ports": "unmapped",
-      "path": "unmapped"
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0471"
+      ],
+      "plan_edges": []
+    },
+    {
+      "label": "CRAH-4#-3-20",
+      "floor": 3,
+      "isometric_node_id": "CRAH-4#-3-20",
+      "plan_task": "SH16-10-072841a6",
+      "plan_source_handle": "129CD",
+      "system": "return",
+      "wall": "no_incident_edge",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0355"
+      ],
+      "plan_edges": []
     },
     {
       "label": "CRAH-4#-3-21",
@@ -1125,14 +2761,35 @@
       "isometric_node_id": "CRAH-4#-3-21",
       "plan_task": "SH16-10-072841a6",
       "plan_source_handle": "129CE",
-      "systems": [
-        "supply",
-        "return"
-      ],
-      "wall": "equipment_ports_unproven",
+      "system": "supply",
+      "wall": "no_incident_edge",
       "equipment": "mapped",
       "ports": "unmapped",
-      "path": "unmapped"
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0472"
+      ],
+      "plan_edges": []
+    },
+    {
+      "label": "CRAH-4#-3-21",
+      "floor": 3,
+      "isometric_node_id": "CRAH-4#-3-21",
+      "plan_task": "SH16-10-072841a6",
+      "plan_source_handle": "129CE",
+      "system": "return",
+      "wall": "no_incident_edge",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0356"
+      ],
+      "plan_edges": []
     },
     {
       "label": "CRAH-4#-3-22",
@@ -1140,14 +2797,35 @@
       "isometric_node_id": "CRAH-4#-3-22",
       "plan_task": "SH16-10-072841a6",
       "plan_source_handle": "129CF",
-      "systems": [
-        "supply",
-        "return"
-      ],
-      "wall": "equipment_ports_unproven",
+      "system": "supply",
+      "wall": "no_incident_edge",
       "equipment": "mapped",
       "ports": "unmapped",
-      "path": "unmapped"
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0473"
+      ],
+      "plan_edges": []
+    },
+    {
+      "label": "CRAH-4#-3-22",
+      "floor": 3,
+      "isometric_node_id": "CRAH-4#-3-22",
+      "plan_task": "SH16-10-072841a6",
+      "plan_source_handle": "129CF",
+      "system": "return",
+      "wall": "no_incident_edge",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0357"
+      ],
+      "plan_edges": []
     },
     {
       "label": "CRAH-4#-3-23",
@@ -1155,14 +2833,35 @@
       "isometric_node_id": "CRAH-4#-3-23",
       "plan_task": "SH16-10-072841a6",
       "plan_source_handle": "129DA",
-      "systems": [
-        "supply",
-        "return"
-      ],
-      "wall": "equipment_ports_unproven",
+      "system": "supply",
+      "wall": "no_incident_edge",
       "equipment": "mapped",
       "ports": "unmapped",
-      "path": "unmapped"
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0474"
+      ],
+      "plan_edges": []
+    },
+    {
+      "label": "CRAH-4#-3-23",
+      "floor": 3,
+      "isometric_node_id": "CRAH-4#-3-23",
+      "plan_task": "SH16-10-072841a6",
+      "plan_source_handle": "129DA",
+      "system": "return",
+      "wall": "no_incident_edge",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0358"
+      ],
+      "plan_edges": []
     },
     {
       "label": "CRAH-4#-3-24",
@@ -1170,14 +2869,35 @@
       "isometric_node_id": "CRAH-4#-3-24",
       "plan_task": "SH16-10-072841a6",
       "plan_source_handle": "129DB",
-      "systems": [
-        "supply",
-        "return"
-      ],
-      "wall": "equipment_ports_unproven",
+      "system": "supply",
+      "wall": "no_incident_edge",
       "equipment": "mapped",
       "ports": "unmapped",
-      "path": "unmapped"
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0475"
+      ],
+      "plan_edges": []
+    },
+    {
+      "label": "CRAH-4#-3-24",
+      "floor": 3,
+      "isometric_node_id": "CRAH-4#-3-24",
+      "plan_task": "SH16-10-072841a6",
+      "plan_source_handle": "129DB",
+      "system": "return",
+      "wall": "no_incident_edge",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0359"
+      ],
+      "plan_edges": []
     },
     {
       "label": "CRAH-4#-3-25",
@@ -1185,14 +2905,35 @@
       "isometric_node_id": "CRAH-4#-3-25",
       "plan_task": "SH16-10-072841a6",
       "plan_source_handle": "129DC",
-      "systems": [
-        "supply",
-        "return"
-      ],
-      "wall": "equipment_ports_unproven",
+      "system": "supply",
+      "wall": "no_incident_edge",
       "equipment": "mapped",
       "ports": "unmapped",
-      "path": "unmapped"
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0476"
+      ],
+      "plan_edges": []
+    },
+    {
+      "label": "CRAH-4#-3-25",
+      "floor": 3,
+      "isometric_node_id": "CRAH-4#-3-25",
+      "plan_task": "SH16-10-072841a6",
+      "plan_source_handle": "129DC",
+      "system": "return",
+      "wall": "no_incident_edge",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0360"
+      ],
+      "plan_edges": []
     },
     {
       "label": "CRAH-4#-3-26",
@@ -1200,14 +2941,35 @@
       "isometric_node_id": "CRAH-4#-3-26",
       "plan_task": "SH16-10-072841a6",
       "plan_source_handle": "129DD",
-      "systems": [
-        "supply",
-        "return"
-      ],
-      "wall": "equipment_ports_unproven",
+      "system": "supply",
+      "wall": "no_incident_edge",
       "equipment": "mapped",
       "ports": "unmapped",
-      "path": "unmapped"
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0477"
+      ],
+      "plan_edges": []
+    },
+    {
+      "label": "CRAH-4#-3-26",
+      "floor": 3,
+      "isometric_node_id": "CRAH-4#-3-26",
+      "plan_task": "SH16-10-072841a6",
+      "plan_source_handle": "129DD",
+      "system": "return",
+      "wall": "no_incident_edge",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0361"
+      ],
+      "plan_edges": []
     },
     {
       "label": "CRAH-4#-3-27",
@@ -1215,14 +2977,35 @@
       "isometric_node_id": "CRAH-4#-3-27",
       "plan_task": "SH16-10-072841a6",
       "plan_source_handle": "129DE",
-      "systems": [
-        "supply",
-        "return"
-      ],
-      "wall": "equipment_ports_unproven",
+      "system": "supply",
+      "wall": "no_incident_edge",
       "equipment": "mapped",
       "ports": "unmapped",
-      "path": "unmapped"
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0478"
+      ],
+      "plan_edges": []
+    },
+    {
+      "label": "CRAH-4#-3-27",
+      "floor": 3,
+      "isometric_node_id": "CRAH-4#-3-27",
+      "plan_task": "SH16-10-072841a6",
+      "plan_source_handle": "129DE",
+      "system": "return",
+      "wall": "no_incident_edge",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0362"
+      ],
+      "plan_edges": []
     },
     {
       "label": "CRAH-4#-3-28",
@@ -1230,14 +3013,35 @@
       "isometric_node_id": "CRAH-4#-3-28",
       "plan_task": "SH16-10-072841a6",
       "plan_source_handle": "129DF",
-      "systems": [
-        "supply",
-        "return"
-      ],
-      "wall": "equipment_ports_unproven",
+      "system": "supply",
+      "wall": "no_incident_edge",
       "equipment": "mapped",
       "ports": "unmapped",
-      "path": "unmapped"
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0479"
+      ],
+      "plan_edges": []
+    },
+    {
+      "label": "CRAH-4#-3-28",
+      "floor": 3,
+      "isometric_node_id": "CRAH-4#-3-28",
+      "plan_task": "SH16-10-072841a6",
+      "plan_source_handle": "129DF",
+      "system": "return",
+      "wall": "no_incident_edge",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0363"
+      ],
+      "plan_edges": []
     },
     {
       "label": "CRAH-4#-3-29",
@@ -1245,14 +3049,35 @@
       "isometric_node_id": "CRAH-4#-3-29",
       "plan_task": "SH16-10-072841a6",
       "plan_source_handle": "129E0",
-      "systems": [
-        "supply",
-        "return"
-      ],
-      "wall": "equipment_ports_unproven",
+      "system": "supply",
+      "wall": "no_incident_edge",
       "equipment": "mapped",
       "ports": "unmapped",
-      "path": "unmapped"
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0480"
+      ],
+      "plan_edges": []
+    },
+    {
+      "label": "CRAH-4#-3-29",
+      "floor": 3,
+      "isometric_node_id": "CRAH-4#-3-29",
+      "plan_task": "SH16-10-072841a6",
+      "plan_source_handle": "129E0",
+      "system": "return",
+      "wall": "no_incident_edge",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0364"
+      ],
+      "plan_edges": []
     },
     {
       "label": "CRAH-4#-3-30",
@@ -1260,14 +3085,35 @@
       "isometric_node_id": "CRAH-4#-3-30",
       "plan_task": "SH16-10-072841a6",
       "plan_source_handle": "129E1",
-      "systems": [
-        "supply",
-        "return"
-      ],
-      "wall": "equipment_ports_unproven",
+      "system": "supply",
+      "wall": "no_incident_edge",
       "equipment": "mapped",
       "ports": "unmapped",
-      "path": "unmapped"
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0481"
+      ],
+      "plan_edges": []
+    },
+    {
+      "label": "CRAH-4#-3-30",
+      "floor": 3,
+      "isometric_node_id": "CRAH-4#-3-30",
+      "plan_task": "SH16-10-072841a6",
+      "plan_source_handle": "129E1",
+      "system": "return",
+      "wall": "no_incident_edge",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0365"
+      ],
+      "plan_edges": []
     },
     {
       "label": "CRAH-4#-3-31",
@@ -1275,14 +3121,35 @@
       "isometric_node_id": "CRAH-4#-3-31",
       "plan_task": "SH16-10-072841a6",
       "plan_source_handle": "14497",
-      "systems": [
-        "supply",
-        "return"
-      ],
-      "wall": "equipment_ports_unproven",
+      "system": "supply",
+      "wall": "no_incident_edge",
       "equipment": "mapped",
       "ports": "unmapped",
-      "path": "unmapped"
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0482"
+      ],
+      "plan_edges": []
+    },
+    {
+      "label": "CRAH-4#-3-31",
+      "floor": 3,
+      "isometric_node_id": "CRAH-4#-3-31",
+      "plan_task": "SH16-10-072841a6",
+      "plan_source_handle": "14497",
+      "system": "return",
+      "wall": "no_incident_edge",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0366"
+      ],
+      "plan_edges": []
     },
     {
       "label": "CRAH-4#-3-32",
@@ -1290,14 +3157,35 @@
       "isometric_node_id": "CRAH-4#-3-32",
       "plan_task": "SH16-10-072841a6",
       "plan_source_handle": "14496",
-      "systems": [
-        "supply",
-        "return"
-      ],
-      "wall": "equipment_ports_unproven",
+      "system": "supply",
+      "wall": "no_incident_edge",
       "equipment": "mapped",
       "ports": "unmapped",
-      "path": "unmapped"
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0483"
+      ],
+      "plan_edges": []
+    },
+    {
+      "label": "CRAH-4#-3-32",
+      "floor": 3,
+      "isometric_node_id": "CRAH-4#-3-32",
+      "plan_task": "SH16-10-072841a6",
+      "plan_source_handle": "14496",
+      "system": "return",
+      "wall": "no_incident_edge",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0367"
+      ],
+      "plan_edges": []
     },
     {
       "label": "CRAH-4#-3-33",
@@ -1305,14 +3193,35 @@
       "isometric_node_id": "CRAH-4#-3-33",
       "plan_task": "SH16-10-072841a6",
       "plan_source_handle": "14499",
-      "systems": [
-        "supply",
-        "return"
-      ],
-      "wall": "equipment_ports_unproven",
+      "system": "supply",
+      "wall": "no_incident_edge",
       "equipment": "mapped",
       "ports": "unmapped",
-      "path": "unmapped"
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0484"
+      ],
+      "plan_edges": []
+    },
+    {
+      "label": "CRAH-4#-3-33",
+      "floor": 3,
+      "isometric_node_id": "CRAH-4#-3-33",
+      "plan_task": "SH16-10-072841a6",
+      "plan_source_handle": "14499",
+      "system": "return",
+      "wall": "no_incident_edge",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0368"
+      ],
+      "plan_edges": []
     },
     {
       "label": "CRAH-4#-3-34",
@@ -1320,14 +3229,35 @@
       "isometric_node_id": "CRAH-4#-3-34",
       "plan_task": "SH16-10-072841a6",
       "plan_source_handle": "14498",
-      "systems": [
-        "supply",
-        "return"
-      ],
-      "wall": "equipment_ports_unproven",
+      "system": "supply",
+      "wall": "no_incident_edge",
       "equipment": "mapped",
       "ports": "unmapped",
-      "path": "unmapped"
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0485"
+      ],
+      "plan_edges": []
+    },
+    {
+      "label": "CRAH-4#-3-34",
+      "floor": 3,
+      "isometric_node_id": "CRAH-4#-3-34",
+      "plan_task": "SH16-10-072841a6",
+      "plan_source_handle": "14498",
+      "system": "return",
+      "wall": "no_incident_edge",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0369"
+      ],
+      "plan_edges": []
     },
     {
       "label": "CRAH-4#-3-35",
@@ -1335,14 +3265,35 @@
       "isometric_node_id": "CRAH-4#-3-35",
       "plan_task": "SH16-10-072841a6",
       "plan_source_handle": "14495",
-      "systems": [
-        "supply",
-        "return"
-      ],
-      "wall": "equipment_ports_unproven",
+      "system": "supply",
+      "wall": "no_incident_edge",
       "equipment": "mapped",
       "ports": "unmapped",
-      "path": "unmapped"
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0486"
+      ],
+      "plan_edges": []
+    },
+    {
+      "label": "CRAH-4#-3-35",
+      "floor": 3,
+      "isometric_node_id": "CRAH-4#-3-35",
+      "plan_task": "SH16-10-072841a6",
+      "plan_source_handle": "14495",
+      "system": "return",
+      "wall": "no_incident_edge",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0370"
+      ],
+      "plan_edges": []
     },
     {
       "label": "CRAH-4#-3-36",
@@ -1350,14 +3301,35 @@
       "isometric_node_id": "CRAH-4#-3-36",
       "plan_task": "SH16-10-072841a6",
       "plan_source_handle": "144A1",
-      "systems": [
-        "supply",
-        "return"
-      ],
-      "wall": "equipment_ports_unproven",
+      "system": "supply",
+      "wall": "no_incident_edge",
       "equipment": "mapped",
       "ports": "unmapped",
-      "path": "unmapped"
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0487"
+      ],
+      "plan_edges": []
+    },
+    {
+      "label": "CRAH-4#-3-36",
+      "floor": 3,
+      "isometric_node_id": "CRAH-4#-3-36",
+      "plan_task": "SH16-10-072841a6",
+      "plan_source_handle": "144A1",
+      "system": "return",
+      "wall": "no_incident_edge",
+      "equipment": "mapped",
+      "ports": "unmapped",
+      "path": "unmapped",
+      "isometric_stop": "branch_fork",
+      "plan_stop": "no_incident_edge",
+      "isometric_edges": [
+        "E0371"
+      ],
+      "plan_edges": []
     }
   ],
   "isometric_annotations": {
