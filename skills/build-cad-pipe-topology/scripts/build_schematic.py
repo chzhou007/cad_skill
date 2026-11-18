@@ -73,11 +73,14 @@ def build(args):
  segments,instrument_groups,instrument_members=measurement_assemblies(doc,segments,ns['symbols'],cfg.get('instrumentation',{}));dump(out/'source_instrument_assemblies.json',instrument_groups)
  segments,elbow_trims=trim_elbow_overshoots(segments,cfg.get('elbow_overshoot'))
  segments,tail_exclusions=exclude_paired_bar_display_tails(segments,doc,cfg.get('paired_bar_display_tails'))
- segments,junction_snaps=snap_near_junction_endpoints(segments,cfg.get('near_junction'))
+ junction_profile=cfg.get('near_junction')
+ if junction_profile and junction_profile.get('verified_contact_overrides') and not junction_profile.get('source_sha256'):raise ValueError('Scoped near-junction overrides require a source hash')
+ if junction_profile and junction_profile.get('source_sha256') and junction_profile['source_sha256']!=hashlib.sha256(args.dxf.read_bytes()).hexdigest():raise ValueError('Near-junction calibration belongs to another source')
+ segments,junction_snaps=snap_near_junction_endpoints(segments,junction_profile)
  dump(out/'straight_crossover_inputs.json',segments);gap_discovery=[]
  spans,straight_audit=recover_straight_crossovers(segments,ns['symbols'],cfg.get('straight_crossover_calibration'),discovery_audit=gap_discovery);segments+=spans;dump(out/'straight_crossover_audit.json',straight_audit);dump(out/'straight_crossover_discovery.json',gap_discovery)
  dump(out/'normalization_audit.json',{'elbow_overshoots':elbow_trims,'crossovers':straight_audit,'junction_snaps':junction_snaps,'display_tail_exclusions':tail_exclusions,'relative_elevation':'unknown','execution_stage':'before_source_junction_and_edge_extraction'})
- vs,ps,ad=build_network(segments);systems_by_handle=collections.defaultdict(set)
+ vs,ps,ad=build_network(segments,partition_by_source_system=cfg.get('separate_coincident_source_systems',False));systems_by_handle=collections.defaultdict(set)
  for s in segments:
   for h in s.get('source_handles',[s['handle']]):systems_by_handle[h].add(s['source_system'])
  # Explicit source-native rule permits preserving a real assembly even if schedule parameters are missing.
@@ -124,11 +127,15 @@ def build(args):
   nodes.append({'node_id':nid,'node_type':'virtual_equipment','subtype':'source_noted_external_interface','floor':'Schematic','label':c['label'],'x':vs[v][0],'y':vs[v][1],'system':c['system'],'source_handle':c['evidence']['source_note_handle'],'source_evidence':c['evidence'],'ports':[{'port_id':nid+'-P1','system':c['system'],'x':vs[v][0],'y':vs[v][1],'source_marker_handle':c['evidence']['source_note_handle']}]});ends[v]=nid
  # Preserve established T IDs spatially; append newly recovered contacts.
  prior=json.loads(args.previous_graph.read_text(encoding='utf8'))if args.previous_graph else {'nodes':[],'edges':[]};prior_t=[n for n in prior['nodes']if n['node_type']in ['tee','physical_junction']];next_t=max([int(n['node_id'][1:])for n in prior_t if re.fullmatch('T[0-9]+',n['node_id'])]+[0])+1;used_t=set();junction_audit=[]
+ def prior_system_matches(node,inds):
+  if not cfg.get('separate_coincident_source_systems',False):return True
+  classes={sy for j in inds for h in ps[j]['source_handles'] for sy in systems_by_handle[h]}
+  return len(classes)==1 and node.get('system')==next(iter(classes))
  for v,point in sorted(enumerate(vs),key=lambda x:(-x[1][1],x[1][0])):
   inds=ad.get(('physical',v),[])
   if v in ends or len(inds)<3:continue
   if len(inds)>3:junction_audit.append({'x':point[0],'y':point[1],'degree':len(inds),'reason':'four_or_more_physical_source_rays_pending'});continue
-  old=next((n for n in prior_t if dist(point,(n['x'],n['y']))<=pg_constants.TOL and n['node_id']not in used_t),None);nid=old['node_id']if old else 'T'+str(next_t).zfill(3)
+  eligible=[n for n in prior_t if dist(point,(n['x'],n['y']))<=pg_constants.TOL and n['node_id']not in used_t and prior_system_matches(n,inds)];old=eligible[0] if eligible and (len(eligible)==1 or not cfg.get('separate_coincident_source_systems',False)) else None;nid=old['node_id']if old else 'T'+str(next_t).zfill(3)
   if not old:next_t+=1
   used_t.add(nid);nodes.append({'node_id':nid,'node_type':'tee','floor':'Schematic','label':nid,'x':point[0],'y':point[1],'source_handles':sorted({h for j in inds for h in ps[j]['source_handles']}),'recognition_status':'three_distinct_source_endpoint_contact_rays_unreviewed'});ends[v]=nid
  # A source contact with more than three rays is not a proven T. An opt-in
@@ -154,7 +161,7 @@ def build(args):
   # Unknown ends are explicit review boundaries, never confirmed physical equipment.
   candidates=[v for v in range(len(vs))if v not in ends and len(ad.get(('physical',v),[]))==1]
   for ordinal,v in enumerate(sorted(candidates,key=lambda v:(-vs[v][1],vs[v][0])),1):
-   p=vs[v];old_ut=[n for n in prior_ut if n['node_id']not in used_ut and dist(p,(n['x'],n['y']))<=pg_constants.TOL];nid=old_ut[0]['node_id']if len(old_ut)==1 else 'UT'+str(next_ut).zfill(4)
+   p=vs[v];old_ut=[n for n in prior_ut if n['node_id']not in used_ut and dist(p,(n['x'],n['y']))<=pg_constants.TOL and prior_system_matches(n,ad[('physical',v)])];nid=old_ut[0]['node_id']if len(old_ut)==1 else 'UT'+str(next_ut).zfill(4)
    if len(old_ut)!=1:next_ut+=1
    used_ut.add(nid);piece=ps[ad[('physical',v)][0]];classes=sorted({sy for h in piece['source_handles']for sy in systems_by_handle[h]if sy!=unknown});sy=classes[0]if len(classes)==1 else unknown
    evidence={'source_pipe_handles':piece['source_handles'],'x':p[0],'y':p[1],'status':'unresolved_source_endpoint','rule':'retained_native_pipe_endpoint_without_proven_equipment_or_external_boundary','external_connection_confirmed':False}
@@ -220,17 +227,68 @@ def build(args):
   from nested_equipment_ports import apply as bind_nested_equipment
   normalized,nested_audit=bind_nested_equipment({'nodes':nodes,'edges':edges},cfg['nested_equipment_ports'],prior)
   nodes,edges=normalized['nodes'],normalized['edges'];node_map={n['node_id']:n for n in nodes}
+  from pipe_section_connections import remap_length_audit
+  remap_length_audit(section_audit,nested_audit.get('stable_edge_reconciliation',{}))
   source_equipment.extend(n for n in nodes if n.get('recognition_status')=='native_nested_body_and_caption_verified')
   contacts.extend(nested_audit['contacts'])
   for record in terminal_audit:
    if record['node_id']in nested_audit['retired_nodes']:record.update(final_status='promoted_native_equipment_port',replacement=nested_audit['retired_nodes'][record['node_id']])
   dump(out/'unresolved_terminal_audit.json',terminal_audit)
   dump(out/'native_equipment_reconciliation.json',nested_audit)
+ stable_normalized=None
+ if cfg.get('stable_normalized_edge_ids')and prior.get('edges'):
+  from stable_normalized_edges import reconcile as reconcile_normalized_ids
+  witness={h for row in elbow_trims+straight_audit for h in row.get('source_handles',[])}
+  stable_normalized=reconcile_normalized_ids({'nodes':nodes,'edges':edges},prior,witness);mapping=stable_normalized['edge_id_mapping']
+  for record in contacts:
+   if record.get('edge_id'):record['edge_id']=mapping.get(record['edge_id'],record['edge_id'])
+  for record in section_audit.get('connections',[]):
+   if record.get('retained_edge_id'):record['retained_edge_id']=mapping.get(record['retained_edge_id'],record['retained_edge_id'])
+  for record in section_audit.get('retired_nodes',{}).values():
+   if record.get('edge_id'):record['edge_id']=mapping.get(record['edge_id'],record['edge_id'])
+  from pipe_section_connections import remap_length_audit
+  remap_length_audit(section_audit,mapping)
+  for key in ('edge_id_mapping','stable_edge_reconciliation'):
+   if key in section_audit:section_audit[key]={k:mapping.get(v,v)for k,v in section_audit[key].items()}
+  if nested_audit is not None:
+   for record in nested_audit.get('candidate_contacts',[]):
+    if record.get('edge_id'):record['edge_id']=mapping.get(record['edge_id'],record['edge_id'])
+   dump(out/'native_equipment_reconciliation.json',nested_audit)
+  dump(out/'unresolved_terminal_audit.json',terminal_audit);dump(out/'source_section_connections_audit.json',section_audit);dump(out/'stable_normalized_edge_ids.json',stable_normalized)
+ wave_audit=None
+ if cfg.get('source_wave_terminals'):
+  wave_profile=cfg['source_wave_terminals']
+  if wave_profile.get('source_sha256')!=hashlib.sha256(args.dxf.read_bytes()).hexdigest():raise ValueError('Wave glyph calibration belongs to another source')
+  from source_wave_terminals import reconcile as reconcile_wave_terminals
+  normalized,wave_audit=reconcile_wave_terminals(doc,{'nodes':nodes,'edges':edges},wave_profile,prior)
+  nodes,edges=normalized['nodes'],normalized['edges'];node_map={n['node_id']:n for n in nodes}
+  for record in terminal_audit:
+   node=node_map.get(record['node_id'])
+   if node and node.get('source_terminal_glyph_ids'):record.update(final_status='native_wave_source_boundary_identified',source_terminal_glyph_ids=node['source_terminal_glyph_ids'])
+  dump(out/'source_wave_terminal_audit.json',wave_audit);dump(out/'unresolved_terminal_audit.json',terminal_audit)
+ three_rim_candidates=None
+ if cfg.get('source_three_rim_candidates'):
+  three_rim_profile=cfg['source_three_rim_candidates']
+  if three_rim_profile.get('source_sha256')!=hashlib.sha256(args.dxf.read_bytes()).hexdigest():raise ValueError('Three-rim calibration belongs to another source')
+  from source_three_rim_candidates import identify_in_doc,with_prior_floor
+  # Preserve source-backed floor evidence from the prior graph only when the
+  # exact node identity and native position still agree; never guess by proximity.
+  comparison_nodes=with_prior_floor(nodes,prior.get('nodes',[]))
+  three_rim_candidates=identify_in_doc(doc,{'nodes':comparison_nodes,'edges':edges},three_rim_profile)
+  dump(out/'source_three_rim_candidates.json',{'source_sha256':three_rim_profile['source_sha256'],'status':'algorithm_pending','connectivity_changed':False,'candidates':three_rim_candidates})
  assigned=[];unassigned=[];component_roles=[];gauges=source_gauges(doc);legend_regions=source_reference_regions(doc,set(cfg['inline_types']));dump(out/'source_reference_regions.json',legend_regions)
  for s in ns['symbols']:
   if s['handle']in instrument_members:
    component_roles.append({'source_handle':s['handle'],'role':'measurement_assembly_member','group_ids':[g['id']for g in instrument_groups if s['handle']in g['component_handles']]});continue
-  label,code=cfg['inline_types'][s['block']];bb=s['bounds'];p=((bb[0]+bb[2])/2,(bb[1]+bb[3])/2);candidates,contact_rule=symbol_pipe_contacts(s,edges,doc,cfg.get('sensor_extension_blocks',[]),cfg.get('native_inline_anchor_rules',[]));r={'device_name':code+'-'+s['handle'],'equipment_type':label,'type_code':code,'source_kind':s.get('source_kind','block_insert'),'source_block_name':s['block'],'source_top_handle':s['handle'],'source_handles':symbol_display_handles(s,doc,gauges),'x':p[0],'y':p[1],'assignment_x':p[0],'assignment_y':p[1],'source_insert_x':s['insert'][0],'source_insert_y':s['insert'][1],'assignment_rule':contact_rule+'_unreviewed'}
+  label,code=cfg['inline_types'][s['block']];bb=s['bounds'];p=((bb[0]+bb[2])/2,(bb[1]+bb[3])/2)
+  from native_instrument_heads import recognize as recognize_native_instrument
+  native_head=recognize_native_instrument(s,edges,doc,gauges,cfg.get('native_instrument_head_rules',[]))
+  if native_head is not None:
+   s['head_evidence']=native_head;candidates=[e for e in edges if e['edge_id']in native_head['edge_ids']];contact_rule=native_head.get('rule',native_head['status'])
+   if native_head['status']=='complete_tagged_head':label,code=native_head['label'],native_head['type_code']
+  else:candidates,contact_rule=symbol_pipe_contacts(s,edges,doc,cfg.get('sensor_extension_blocks',[]),cfg.get('native_inline_anchor_rules',[]))
+  r={'device_name':code+'-'+s['handle'],'equipment_type':label,'type_code':code,'source_kind':s.get('source_kind','block_insert'),'source_block_name':s['block'],'source_top_handle':s['handle'],'source_handles':symbol_display_handles(s,doc,gauges),'x':p[0],'y':p[1],'assignment_x':p[0],'assignment_y':p[1],'source_insert_x':s['insert'][0],'source_insert_y':s['insert'][1],'assignment_rule':contact_rule+'_unreviewed'}
+  if s.get('nonrendering_metadata'):r['source_attributes']=[{key:attribute.get(key)for key in('source_handle','tag','text','invisible')}for attribute in s['nonrendering_metadata']]
   container=next((c for c in contours if c.get('package_boundary')and point_bbox(p,c['bounds'])<=pg_constants.TOL),None)
   if container is None and not candidates and s.get('entity')is not None:
    native_ends=[xy(z)for pe in native_primitives(s['entity'])if pe.dxftype()=='LINE'for z in [pe.dxf.start,pe.dxf.end]]
@@ -253,11 +311,12 @@ def build(args):
  dump(out/'source_component_geometry.json',[{'device_name':r['device_name'],'source_handles':r['source_handles'],'source_kind':r['source_kind'],'related_edge_ids':r.get('related_edge_ids',[r['edge_id']])}for r in assigned])
  head_audit=[]
  for symbol in ns['symbols']:
-  if symbol['block']!='传感器':continue
+  if symbol['block']!='传感器'and not any(r['block']==symbol['block']for r in cfg.get('native_instrument_head_rules',[])):continue
   head=instrument_head_match(symbol,doc,gauges);role=next(r['role']for r in component_roles if r.get('source_handle',r.get('source_top_handle'))==symbol['handle']);head['source_role']=role
   record=next((r for r in assigned if r['source_top_handle']==symbol['handle']),None)
   if record is not None:
    head['edge_id']=record['edge_id'];record['source_head_status']=head['status'];record['source_head_handle']=head.get('source_head_handle','');record['source_head_tag']=head.get('source_head_tag','')
+   if head.get('source_service_tag_conflict'):record['source_service_tag_conflict']=True
   head_audit.append(head)
  dump(out/'instrument_head_coverage.json',head_audit)
  # Discover tagged heads independently of accepted sensor bodies. Previously
@@ -283,12 +342,38 @@ def build(args):
  for n in source_equipment:
   cc=[c for c in contacts if c['node_id']==n['node_id']];n['source_ports']=cc;ledger.append({'equipment_id':n['node_id'],'source_block':n['source_block'],'source_port_count':len(cc),'ports_with_logical_edges':sum('edge_id'in c for c in cc),'ports_without_completed_edges':[c for c in cc if 'edge_id'not in c],'edges':[{'edge_id':e['edge_id'],'system':e['system'],'source_systems':e['source_systems']}for e in edges if n['node_id']in[e['start_node_id'],e['end_node_id']]]})
  graph={'metadata':{'task_id':cfg['project_id'],'project_id':cfg['project_id'],'extraction_status':'partial','graph_complete':False,'source_dxf':args.dxf.name,'source_sha256':hashlib.sha256(args.dxf.read_bytes()).hexdigest(),'shared_geometry_version':'1.0.0','review_status':'unreviewed','system_policy':'Physical continuity is preserved separately from uncertain hydraulic classification. No supply/return tracing across an unclassified segment.','relative_elevation':'unknown'},'nodes':nodes,'edges':edges}
+ if cfg.get('source_section_connections',{}).get('separate_graphic_bridge_length',False):
+  graph['metadata']['hil_ready']=False
+ if cfg.get('separate_coincident_source_systems',False):
+  graph['metadata'].update(hil_ready=False,stage_status='experimental_service_partition_pending_reconstruction',system_policy='Source systems partitioned at network construction; hidden coincident channels and earlier normalization require source-specific reconstruction and validation.')
+  graph['preHilComparison']={'status':'pending','families':[{'id':'overlaid-service-channel-reconstruction','status':'algorithm_pending'}]}
  if cfg.get('source_section_connections'):graph['sourceSectionConnections']=section_audit
+ if stable_normalized is not None:graph['stableNormalizedEdgeIds']=stable_normalized
  if nested_audit is not None:
   graph['sourceNativeEquipment']=nested_audit
-  graph['metadata'].update(hil_ready=False,stage_status='source_comparison_after_native_equipment_recovery')
+  graph['metadata'].update(hil_ready=False,stage_status='experimental_service_partition_pending_reconstruction' if cfg.get('separate_coincident_source_systems',False) else 'source_comparison_after_native_equipment_recovery')
+ if wave_audit is not None:graph['sourceTerminalGlyphs']=wave_audit['glyphs']
+ if three_rim_candidates is not None:
+  graph['sourceThreeRimCandidates']=three_rim_candidates
+  if three_rim_candidates:
+   graph['metadata']['hil_ready']=False
+   graph.setdefault('technicalPending',[]).append({'id':'THREE-RIM-SOURCE-SEMANTICS','kind':'algorithm_interpretation','reason':'Three same-layer rim contacts are grouped for source comparison; interior connectivity remains unproven.'})
+ mixed_profile=cfg.get('source_mixed_service_tee_candidates')
+ if mixed_profile is not None:
+  if mixed_profile.get('source_sha256')!=graph['metadata']['source_sha256']:raise ValueError('Mixed-service tee calibration belongs to another source')
+  from source_mixed_service_tee_candidates import identify as identify_mixed_tees
+  mixed_inventory=identify_mixed_tees(graph,point_tolerance=mixed_profile['point_tolerance'],straight_angle_tolerance_degrees=mixed_profile['straight_angle_tolerance_degrees'],branch_angle_tolerance_degrees=mixed_profile['branch_angle_tolerance_degrees'])
+  mixed_inventory['source_sha256']=graph['metadata']['source_sha256'];dump(out/'source_mixed_service_tee_candidates.json',mixed_inventory)
+  graph['sourceMixedServiceTeeCandidates']=mixed_inventory
+  if mixed_inventory['status']=='algorithm_pending':
+   graph['metadata']['hil_ready']=False
+   graph.setdefault('technicalPending',[]).append({'id':'MIXED-SERVICE-TEE-SOURCE-SEMANTICS','kind':'algorithm_interpretation','reason':'Mixed-service tees require source-specific comparison of overlaid trunks, independent crossings and unresolved service before hydraulic repair.'})
+   gate=graph.setdefault('preHilComparison',{'status':'pending','families':[]});gate['status']='pending';gate.setdefault('families',[]).append({'id':'mixed-service-tee-source-semantics','status':'algorithm_pending'})
  graph['sourceFidelity']=fidelity
  graph['sourceTaggedHeadCoverage']=tagged_coverage
+ if cfg.get('native_instrument_head_rules'):
+  graph['sourceInstrumentHeadCoverage']=head_audit
+  graph.setdefault('technicalPending',[]).extend([{'id':r['source_sensor_handle'],'kind':'source_instrument_service_tag_conflict','reason':'Complete pressure head and exact native tap are proven, but source service tag '+str(r.get('source_service_tags'))+' conflicts with tap pipe service '+str(r.get('tap_source_services'))+'. No source label or pipe service changed.'}for r in head_audit if r.get('source_service_tag_conflict')])
  pending_curves=[]
  for arc in ns['arc_audit']:
   if arc['normalization_status']=='normalized':continue
@@ -297,13 +382,20 @@ def build(args):
   start=math.radians(geo['start_angle']);span=math.radians((geo['end_angle']-geo['start_angle'])%360);count=max(8,int(abs(span)/math.radians(5)));radius=geo['radius']
   path=[(center[0]+radius*math.cos(start+span*i/count),center[1]+radius*math.sin(start+span*i/count))for i in range(count+1)]
   pending_curves.append({'path_points':path,'source_handles':[arc.get('source_entity_handle',arc['handle'])],'reason':'Unqualified native curve: '+arc['normalization_status']+'; source context only, connectivity unconfirmed','source_display_geometry':geo})
+ if cfg.get('source_expert_node_label_policy') is not None:
+  from source_expert_node_label_policy import apply as apply_expert_labels
+  label_audit=apply_expert_labels(graph,doc,cfg['source_expert_node_label_policy'])
+  dump(out/'source_expert_node_label_policy.json',label_audit)
+  graph['metadata']['hil_ready']=False
  source_coverage_gate(doc,graph,cfg,out)
  dump(out/'pending_source_curves.json',pending_curves)
  if pending_curves:graph['pendingSourcePaths']=pending_curves
  summary={'task_id':cfg['project_id'],'status':'partial_unreviewed','nodes':len(nodes),'edges':len(edges),'equipment_nodes':len(source_equipment),'tee_nodes':sum(n['node_type']=='tee'for n in nodes),'virtual_interfaces':sum(n['node_type']=='virtual_equipment'for n in nodes),'edges_by_system':dict(collections.Counter(e['system']for e in edges)),'assigned_components':len(assigned),'unresolved_components':len(unassigned),'recognized_inline_instances':len(ns['symbols']),'source_arcs':len(ns['arc_audit']),'normalized_jumps':sum(a['normalization_status']=='normalized'for a in ns['arc_audit']),'equipment_physical_ports':len(contacts),'equipment_ports_with_edges':sum('edge_id'in c for c in contacts),'unresolved_equipment_tags':len(unresolved_tags),'unresolved_path_groups':len(unresolved),'atomic_source_pieces':len(ps),'atomic_pieces_on_edges':len(represented),'mixed_source_junctions':sum(n.get('mixed_source_contact',False)for n in nodes),'unknown_system_edges':sum(e['system']==unknown for e in edges),'human_review':'unreviewed','unresolved_terminal_nodes':sum(n.get('boundary_type')=='unresolved_source_terminal'for n in nodes),'measurement_assemblies':len(instrument_groups),'inline_members_in_measurement_groups':len(instrument_members),'reference_legend_components':sum(r['role']=='reference_legend_only'for r in component_roles),'equipment_internal_components':sum(r['role']=='equipment_internal_component'for r in component_roles),'straight_crossovers':len(straight_audit),'edge_sensor_heads_complete':sum(r['source_role']=='edge_component'and r['status']=='complete_tagged_head'for r in head_audit),'edge_sensor_heads_pending':sum(r['source_role']=='edge_component'and r['status']!='complete_tagged_head'for r in head_audit)}
  if cfg.get('source_section_connections'):summary['source_section_connections']=sum(r['status']=='applied'for r in section_audit['connections'])
+ if wave_audit is not None:summary['native_wave_terminal_glyphs']=wave_audit['represented_glyphs']
+ if three_rim_candidates is not None:summary['three_rim_source_candidates']=len(three_rim_candidates)
  for name,data in [('graph_with_edges.json',graph),('graph_all_systems.json',graph),('edge_summary.json',summary),('equipment_ports.json',contacts),('equipment_port_coverage.json',ledger),('equipment_assembly_recognition.json',assembly_audit),('external_interface_evidence.json',external_audit),('unresolved_equipment.json',unresolved_tags),('unresolved_paths.json',unresolved),('unresolved_components.json',unassigned),('pipe_crossover_arc_normalizations.json',ns['arc_audit']),('ambiguous_junctions.json',junction_audit),('source_physical_segments.json',segments)]:dump(out/name,data)
- table(out/'topology_nodes.csv',nodes);table(out/'edges.csv',edges);table(out/'edge_device_instances.csv',assigned,['device_name','equipment_type','type_code','source_kind','source_block_name','source_top_handle','x','y','assignment_x','assignment_y','source_insert_x','source_insert_y','edge_id','edge_distance','assignment_status','assignment_rule','source_handles','related_edge_ids','source_instrument_tags','source_head_status','source_head_handle','source_head_tag']);table(out/'unresolved_components.csv',unassigned);table(out/'equipment_ports.csv',contacts);table(out/'edge_equipment_by_type.csv',[dict(edge_id=e['edge_id'],start_node_id=e['start_node_id'],end_node_id=e['end_node_id'],equipment_type=a['equipment_type'],device_count=a['count'],device_names=a['device_names'])for e in edges for a in e['equipment_inventory']]);table(out/'virtual_equipment_ports.csv',[dict(node_id=n['node_id'],port_id=p['port_id'],system=p['system'],port_x=p['x'],port_y=p['y'],source_marker_handle=p.get('source_marker_handle',''))for n in nodes if n['node_type']=='virtual_equipment'for p in n['ports']],['node_id','port_id','system','port_x','port_y','source_marker_handle']);print(json.dumps(summary,ensure_ascii=False,indent=2))
+ table(out/'topology_nodes.csv',nodes);table(out/'edges.csv',edges);table(out/'edge_device_instances.csv',assigned,['device_name','equipment_type','type_code','source_kind','source_block_name','source_top_handle','x','y','assignment_x','assignment_y','source_insert_x','source_insert_y','edge_id','edge_distance','assignment_status','assignment_rule','source_handles','related_edge_ids','source_instrument_tags','source_head_status','source_head_handle','source_head_tag','source_attributes']);table(out/'unresolved_components.csv',unassigned);table(out/'equipment_ports.csv',contacts);table(out/'edge_equipment_by_type.csv',[dict(edge_id=e['edge_id'],start_node_id=e['start_node_id'],end_node_id=e['end_node_id'],equipment_type=a['equipment_type'],device_count=a['count'],device_names=a['device_names'])for e in edges for a in e['equipment_inventory']]);table(out/'virtual_equipment_ports.csv',[dict(node_id=n['node_id'],port_id=p['port_id'],system=p['system'],port_x=p['x'],port_y=p['y'],source_marker_handle=p.get('source_marker_handle',''))for n in nodes if n['node_type']=='virtual_equipment'for p in n['ports']],['node_id','port_id','system','port_x','port_y','source_marker_handle']);print(json.dumps(summary,ensure_ascii=False,indent=2))
 
 def main():
  p=argparse.ArgumentParser(description=__doc__);p.add_argument('--dxf',type=Path,required=True);p.add_argument('--bindings',type=Path,required=True);p.add_argument('--profiles',type=Path,required=True);p.add_argument('--config',type=Path,required=True);p.add_argument('--materials',type=Path);p.add_argument('--output-dir',type=Path,required=True);p.add_argument('--previous-graph',type=Path);p.add_argument('--no-overwrite',action='store_true');args=p.parse_args();build(args)

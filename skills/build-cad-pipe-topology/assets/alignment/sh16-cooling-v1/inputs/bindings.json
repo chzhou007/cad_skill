@@ -1,0 +1,446 @@
+[
+  {
+    "binding_id": "SH16-04-7072a12b-TAG-19549",
+    "task_id": "SH16-04-7072a12b",
+    "source_sheet": "04",
+    "object_kind": "equipment_tag",
+    "source_handle": "19549",
+    "equipment_tag": "CT-01",
+    "x": 2209886.292022404,
+    "y": 267813.1079808183,
+    "profile_candidates": [
+      "CT-01-03"
+    ],
+    "binding_status": "exact_family_and_numeric_tag_range_unreviewed",
+    "match_evidence": "explicit schedule tag range; zero padding normalized for matching only",
+    "port_mapping": "not_inferred",
+    "geometry_recognition": "tag_anchor_only_until_symbol_signature_verified",
+    "glyph_candidates": [
+      {
+        "block": "A$C491C4D06",
+        "source_handle": "194E9",
+        "bounds": [
+          [
+            2208921.8285888047,
+            261491.9232471406,
+            -23083.96643905786
+          ],
+          [
+            2211716.0564357867,
+            267355.01954439626,
+            -23083.96643905786
+          ]
+        ],
+        "tag_to_bbox_distance": 458.08843642205466,
+        "maximum_distance": 1623.7227182416038,
+        "recognition_rule": "native_two_fan_tower_block_and_unique_local_CT_tag_unreviewed"
+      }
+    ]
+  },
+  {
+    "binding_id": "SH16-04-7072a12b-TAG-19A63",
+    "task_id": "SH16-04-7072a12b",
+    "source_sheet": "04",
+    "object_kind": "equipment_tag",
+    "source_handle": "19A63",
+    "equipment_tag": "CWP-1",
+    "x": 2214575.48999997,
+    "y": 237461.6362697461,
+    "profile_candidates": [
+      "CWP-01-03"
+    ],
+    "binding_status": "exact_family_and_numeric_tag_range_unreviewed",
+    "match_evidence": "explicit schedule tag range; zero padding normalized for matching only",
+    "port_mapping": "not_inferred",
+    "geometry_recognition": "tag_anchor_only_until_symbol_signature_verified",
+    "glyph_candidates": [
+      {
+        "block": "EXPLODED_PUMP",
+        "source_handle": "19A3A",
+        "component_handles": [
+          "19A39",
+          "19A3B",
+          "19A3C"
+        ],
+        "radius": 225.259865600124,
+        "center": [
+          2215051.216600373,
+          237876.5157455567
+        ],
+        "recognition_rule": "complete_circle_plus_closed_inscribed_triangle_and_unique_bounded_CWP_tag_unreviewed"
+      }
+    ]
+  },
+  {
+    "binding_id": "SH16-04-7072a12b-TAG-19A64",
+    "task_id": "SH16-04-7072a12b",
+    "source_sheet": "04",
+    "object_kind": "equipment_tag",
+    "source_handle": "19A64",
+    "equipment_tag": "CH-01",
+    "x": 2209861.381087991,
+    "y": 223830.5398390009,
+    "profile_candidates": [
+      "CH-01-03"
+    ],
+    "binding_status": "exact_family_and_numeric_tag_range_unreviewed",
+    "match_evidence": "explicit schedule tag range; zero padding normalized for matching only",
+    "port_mapping": "not_inferred",
+    "geometry_recognition": "source_block_class_and_unique_local_tag_association_unreviewed",
+    "glyph_candidates": [
+      {
+        "block": "chiller",
+        "source_handle": "1983B",
+        "bounds": [
+          [
+            2209046.608402828,
+            224470.84953475746,
+            -16573.5784464391
+          ],
+          [
+            2211536.461098319,
+            228453.29690068387,
+            -16573.5784464391
+          ]
+        ],
+        "tag_to_bbox_distance": 640.3096957565576,
+        "maximum_distance": 1174.1819883331666
+      }
+    ],
+    "prototype_reference": "PLANT-01"
+  },
+  {
+    "binding_id": "SH16-04-7072a12b-TAG-19A65",
+    "task_id": "SH16-04-7072a12b",
+    "source_sheet": "04",
+    "object_kind": "equipment_tag",
+    "source_handle": "19A65",
+    "equipment_tag": "HE-01",
+    "x": 2214152.668604947,
+    "y": 225385.6466286795,
+    "profile_candidates": [
+      "HE-01-03"
+    ],
+    "binding_status": "exact_family_and_numeric_tag_range_unreviewed",
+    "match_evidence": "explicit schedule tag range; zero padding normalized for matching only",
+    "port_mapping": "not_inferred",
+    "geometry_recognition": "source_block_class_and_unique_local_tag_association_unreviewed",
+    "glyph_candidates": [
+      {
+        "block": "HX",
+        "source_handle": "19824",
+        "bounds": [
+          [
+            2214050.7468117205,
+            225912.1137388287,
+            -16557.55421704712
+          ],
+          [
+            2215119.231973406,
+            228453.2969028631,
+            -16557.55421704712
+          ]
+        ],
+        "tag_to_bbox_distance": 526.467110149184,
+        "maximum_distance": 689.1694464132993
+      }
+    ],
+    "prototype_reference": "PLANT-02"
+  },
+  {
+    "binding_id": "SH16-04-7072a12b-TAG-19AC4",
+    "task_id": "SH16-04-7072a12b",
+    "source_sheet": "04",
+    "object_kind": "equipment_tag",
+    "source_handle": "19AC4",
+    "equipment_tag": "CWP-2",
+    "x": 2235442.659537511,
+    "y": 237461.6362697191,
+    "profile_candidates": [
+      "CWP-01-03"
+    ],
+    "binding_status": "exact_family_and_numeric_tag_range_unreviewed",
+    "match_evidence": "explicit schedule tag range; zero padding normalized for matching only",
+    "port_mapping": "not_inferred",
+    "geometry_recognition": "tag_anchor_only_until_symbol_signature_verified",
+    "glyph_candidates": [
+      {
+        "block": "EXPLODED_PUMP",
+        "source_handle": "19AB3",
+        "component_handles": [
+          "19AB2",
+          "19AB4",
+          "19AB5"
+        ],
+        "radius": 225.259865600124,
+        "center": [
+          2235918.386137914,
+          237876.5157455288
+        ],
+        "recognition_rule": "complete_circle_plus_closed_inscribed_triangle_and_unique_bounded_CWP_tag_unreviewed"
+      }
+    ]
+  },
+  {
+    "binding_id": "SH16-04-7072a12b-TAG-19AC5",
+    "task_id": "SH16-04-7072a12b",
+    "source_sheet": "04",
+    "object_kind": "equipment_tag",
+    "source_handle": "19AC5",
+    "equipment_tag": "CH-02",
+    "x": 2230728.550625532,
+    "y": 223830.539838973,
+    "profile_candidates": [
+      "CH-01-03"
+    ],
+    "binding_status": "exact_family_and_numeric_tag_range_unreviewed",
+    "match_evidence": "explicit schedule tag range; zero padding normalized for matching only",
+    "port_mapping": "not_inferred",
+    "geometry_recognition": "source_block_class_and_unique_local_tag_association_unreviewed",
+    "glyph_candidates": [
+      {
+        "block": "chiller",
+        "source_handle": "19A7C",
+        "bounds": [
+          [
+            2229913.777940369,
+            224470.84953473046,
+            -16573.5784464391
+          ],
+          [
+            2232403.63063586,
+            228453.29690065686,
+            -16573.5784464391
+          ]
+        ],
+        "tag_to_bbox_distance": 640.3096957574598,
+        "maximum_distance": 1174.1819883331666
+      }
+    ],
+    "prototype_reference": "PLANT-01"
+  },
+  {
+    "binding_id": "SH16-04-7072a12b-TAG-19AC6",
+    "task_id": "SH16-04-7072a12b",
+    "source_sheet": "04",
+    "object_kind": "equipment_tag",
+    "source_handle": "19AC6",
+    "equipment_tag": "HE-02",
+    "x": 2235019.838142488,
+    "y": 225385.6466286516,
+    "profile_candidates": [
+      "HE-01-03"
+    ],
+    "binding_status": "exact_family_and_numeric_tag_range_unreviewed",
+    "match_evidence": "explicit schedule tag range; zero padding normalized for matching only",
+    "port_mapping": "not_inferred",
+    "geometry_recognition": "source_block_class_and_unique_local_tag_association_unreviewed",
+    "glyph_candidates": [
+      {
+        "block": "HX",
+        "source_handle": "19A7B",
+        "bounds": [
+          [
+            2234917.9163492606,
+            225912.11373880078,
+            -16557.55421704712
+          ],
+          [
+            2235986.401510946,
+            228453.2969028352,
+            -16557.55421704712
+          ]
+        ],
+        "tag_to_bbox_distance": 526.467110149184,
+        "maximum_distance": 689.1694464132993
+      }
+    ],
+    "prototype_reference": "PLANT-02"
+  },
+  {
+    "binding_id": "SH16-04-7072a12b-TAG-19B0B",
+    "task_id": "SH16-04-7072a12b",
+    "source_sheet": "04",
+    "object_kind": "equipment_tag",
+    "source_handle": "19B0B",
+    "equipment_tag": "CT-02",
+    "x": 2230753.461559944,
+    "y": 267813.1079808173,
+    "profile_candidates": [
+      "CT-01-03"
+    ],
+    "binding_status": "exact_family_and_numeric_tag_range_unreviewed",
+    "match_evidence": "explicit schedule tag range; zero padding normalized for matching only",
+    "port_mapping": "not_inferred",
+    "geometry_recognition": "tag_anchor_only_until_symbol_signature_verified",
+    "glyph_candidates": [
+      {
+        "block": "A$C491C4D06",
+        "source_handle": "19AF3",
+        "bounds": [
+          [
+            2229788.9981263448,
+            261491.9232471388,
+            -23083.96643905786
+          ],
+          [
+            2232583.2259733267,
+            267355.01954439445,
+            -23083.96643905786
+          ]
+        ],
+        "tag_to_bbox_distance": 458.08843642286956,
+        "maximum_distance": 1623.7227182416038,
+        "recognition_rule": "native_two_fan_tower_block_and_unique_local_CT_tag_unreviewed"
+      }
+    ]
+  },
+  {
+    "binding_id": "SH16-04-7072a12b-TAG-19D2C",
+    "task_id": "SH16-04-7072a12b",
+    "source_sheet": "04",
+    "object_kind": "equipment_tag",
+    "source_handle": "19D2C",
+    "equipment_tag": "CWP-3",
+    "x": 2256582.777532653,
+    "y": 237461.6362697173,
+    "profile_candidates": [
+      "CWP-01-03"
+    ],
+    "binding_status": "exact_family_and_numeric_tag_range_unreviewed",
+    "match_evidence": "explicit schedule tag range; zero padding normalized for matching only",
+    "port_mapping": "not_inferred",
+    "geometry_recognition": "tag_anchor_only_until_symbol_signature_verified",
+    "glyph_candidates": [
+      {
+        "block": "EXPLODED_PUMP",
+        "source_handle": "19D1B",
+        "component_handles": [
+          "19D1A",
+          "19D1C",
+          "19D1D"
+        ],
+        "radius": 225.259865600124,
+        "center": [
+          2257058.504133056,
+          237876.5157455278
+        ],
+        "recognition_rule": "complete_circle_plus_closed_inscribed_triangle_and_unique_bounded_CWP_tag_unreviewed"
+      }
+    ]
+  },
+  {
+    "binding_id": "SH16-04-7072a12b-TAG-19D2D",
+    "task_id": "SH16-04-7072a12b",
+    "source_sheet": "04",
+    "object_kind": "equipment_tag",
+    "source_handle": "19D2D",
+    "equipment_tag": "CH-03",
+    "x": 2251868.668620674,
+    "y": 223830.539838972,
+    "profile_candidates": [
+      "CH-01-03"
+    ],
+    "binding_status": "exact_family_and_numeric_tag_range_unreviewed",
+    "match_evidence": "explicit schedule tag range; zero padding normalized for matching only",
+    "port_mapping": "not_inferred",
+    "geometry_recognition": "source_block_class_and_unique_local_tag_association_unreviewed",
+    "glyph_candidates": [
+      {
+        "block": "chiller",
+        "source_handle": "19CE4",
+        "bounds": [
+          [
+            2251053.895935511,
+            224470.84953472856,
+            -16573.5784464391
+          ],
+          [
+            2253543.748631002,
+            228453.29690065497,
+            -16573.5784464391
+          ]
+        ],
+        "tag_to_bbox_distance": 640.3096957565576,
+        "maximum_distance": 1174.1819883331666
+      }
+    ],
+    "prototype_reference": "PLANT-01"
+  },
+  {
+    "binding_id": "SH16-04-7072a12b-TAG-19D2E",
+    "task_id": "SH16-04-7072a12b",
+    "source_sheet": "04",
+    "object_kind": "equipment_tag",
+    "source_handle": "19D2E",
+    "equipment_tag": "HE-03",
+    "x": 2256159.95613763,
+    "y": 225385.6466286506,
+    "profile_candidates": [
+      "HE-01-03"
+    ],
+    "binding_status": "exact_family_and_numeric_tag_range_unreviewed",
+    "match_evidence": "explicit schedule tag range; zero padding normalized for matching only",
+    "port_mapping": "not_inferred",
+    "geometry_recognition": "source_block_class_and_unique_local_tag_association_unreviewed",
+    "glyph_candidates": [
+      {
+        "block": "HX",
+        "source_handle": "19CE3",
+        "bounds": [
+          [
+            2256058.0343444026,
+            225912.1137387989,
+            -16557.55421704712
+          ],
+          [
+            2257126.519506088,
+            228453.2969028333,
+            -16557.55421704712
+          ]
+        ],
+        "tag_to_bbox_distance": 526.4671101482818,
+        "maximum_distance": 689.1694464132993
+      }
+    ],
+    "prototype_reference": "PLANT-02"
+  },
+  {
+    "binding_id": "SH16-04-7072a12b-TAG-19E92",
+    "task_id": "SH16-04-7072a12b",
+    "source_sheet": "04",
+    "object_kind": "equipment_tag",
+    "source_handle": "19E92",
+    "equipment_tag": "CT-03",
+    "x": 2251893.579555087,
+    "y": 267813.1079808136,
+    "profile_candidates": [
+      "CT-01-03"
+    ],
+    "binding_status": "exact_family_and_numeric_tag_range_unreviewed",
+    "match_evidence": "explicit schedule tag range; zero padding normalized for matching only",
+    "port_mapping": "not_inferred",
+    "geometry_recognition": "tag_anchor_only_until_symbol_signature_verified",
+    "glyph_candidates": [
+      {
+        "block": "A$C491C4D06",
+        "source_handle": "19E7A",
+        "bounds": [
+          [
+            2250929.1161214868,
+            261491.923247135,
+            -23083.96643905786
+          ],
+          [
+            2253723.3439684687,
+            267355.01954439067,
+            -23083.96643905786
+          ]
+        ],
+        "tag_to_bbox_distance": 458.08843642292777,
+        "maximum_distance": 1623.7227182416038,
+        "recognition_rule": "native_two_fan_tower_block_and_unique_local_CT_tag_unreviewed"
+      }
+    ]
+  }
+]

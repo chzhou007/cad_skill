@@ -24,6 +24,11 @@ class MeasurementContracts(unittest.TestCase):
   (spans,audit),ss=self.gap();self.assertEqual(len(spans),1);vs,ps,ad=build_network(ss+spans);self.assertFalse(any(len(v)>2 for v in ad.values()));self.assertEqual(audit[0]['relative_elevation'],'unknown')
  def test_plain_gap_without_crossed_pipe_not_healed(self):self.assertEqual(self.gap(cross=False)[0][0],[])
  def test_large_unqualified_gap_not_healed(self):self.assertEqual(self.gap(long=True)[0][0],[])
+ def test_circle_at_crossing_blocks_automatic_crossover(self):
+  (_, _),ss=self.gap();syms=[dict(block='VALVE',bounds=[0,0,10,10])];cfg=dict(blocks=['VALVE'],maximum_gap_symbol_diagonals=2);conflicts=[]
+  spans,audit=recover_straight_crossovers(ss,syms,cfg,source_circles=[{'handle':'C','center':(0,0),'radius':5,'system':'return'}],circle_conflicts=conflicts)
+  self.assertEqual(spans,[]);self.assertEqual(audit,[]);self.assertEqual(conflicts[0]['reason'],'source_circle_at_crossing_requires_comparison');self.assertEqual(conflicts[0]['circle_conflicts'][0]['circle_handle'],'C')
+  spans,_=recover_straight_crossovers(ss,syms,cfg,source_circles=[{'handle':'C','center':(30,0),'radius':5,'system':'return'}]);self.assertEqual(len(spans),1)
  def test_dps_label_and_circle_alone_not_hydraulic_assembly(self):
   d=ezdxf.new();d.modelspace().add_circle((0,0),10);d.modelspace().add_text('DPS',dxfattribs={'insert':(-5,-2),'height':3});ss,g,c=measurement_assemblies(d,[],[],dict(hydraulic_main_layers=['MAIN'],capillary_layers=['CAP']));self.assertEqual(g,[])
  def test_shared_layer_loop_ignores_disconnected_main_strokes(self):

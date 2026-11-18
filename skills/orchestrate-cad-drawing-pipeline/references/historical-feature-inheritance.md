@@ -1,0 +1,7 @@
+# Original skill and current feature inheritance
+
+Run `scripts/audit_historical_skill_inheritance.py --baseline ORIGINAL.zip --unit-report CURRENT.json --output NEW.json` before declaring the historical scope inherited. The audit compares every original skill asset, identifies original executable entries without a registry owner, and requires current executable evidence for original and registered tests. Root package notes/logs remain explicitly listed as archive artifacts. Changed implementations are recorded rather than rejected: retaining old bytes is not the objective.
+
+The unit evidence reader compares declared test files with successful Python/Node execution commands. An aggregate report must bind its inherited report by SHA256 and account for the exact fresh test set. Missing old tests cannot be hidden by a newer subset or a large overall count. Update the existing feature owners for inherited entry/helper files; do not present registration as algorithm implementation or formal pipeline integration.
+
+The output includes each feature's origin, applicable families, implementation entries, tests, dependencies and declared status. Asset preservation and passing units do not establish native source correctness, current drawing applicability, complete project rebuild, LF20 generalization or human acceptance. Keep those independently sourced matrix entries and the original expert replies. Never update old receipts or substitute this audit for native replay.

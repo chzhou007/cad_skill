@@ -28,6 +28,16 @@ def exclude_paired_bar_display_tails(segments,doc,config):
 def snap_near_junction_endpoints(segments,config):
  """Extend a dangling tail only along its own axis to a unique same-class main."""
  if not config:return list(segments),[]
+ overrides=config.get('verified_contact_overrides',[])
+ if overrides and (not config.get('source_sha256') or not config.get('calibration_evidence')):
+  raise ValueError('Scoped junction overrides require source hash and calibration evidence')
+ seen=set()
+ for o in overrides:
+  if not o.get('source_handles') or not o.get('main_source_handles') or len(o.get('original_endpoint',[]))!=2 or not o.get('evidence_ref') or o.get('maximum_gap',0)<=config['maximum_gap']:
+   raise ValueError('Invalid scoped junction override')
+  key=(tuple(sorted(o['source_handles'])),tuple(sorted(o['main_source_handles'])),tuple(o['original_endpoint']))
+  if key in seen:raise ValueError('Duplicate scoped junction override')
+  seen.add(key)
  result=[dict(s)for s in segments];audit=[]
  def cls(s):
   service=s.get('source_system',s['system'])
@@ -50,21 +60,27 @@ def snap_near_junction_endpoints(segments,config):
     if any(pg.on(q,tip,p)for q in config.get('protected_points',[])):continue
     hits.append((p,t))
    if len(hits)!=1:continue
-   if pg.dist(tip,hits[0][0])>config['maximum_gap']:
+   matches=[o for o in overrides if sorted(o['source_handles'])==sorted(s.get('source_handles',[s['handle']])) and sorted(o['main_source_handles'])==sorted(hits[0][1].get('source_handles',[hits[0][1]['handle']])) and pg.dist(o['original_endpoint'],tip)<=pg.TOL and pg.dist(tip,hits[0][0])<=o['maximum_gap']]
+   if len(matches)>1:raise ValueError('Ambiguous scoped junction override')
+   if pg.dist(tip,hits[0][0])>config['maximum_gap'] and not matches:
     audit.append(dict(source_handles=s.get('source_handles',[s['handle']]),main_source_handles=hits[0][1].get('source_handles',[hits[0][1]['handle']]),original_endpoint=tip,candidate_endpoint=hits[0][0],gap_length=pg.dist(tip,hits[0][0]),status='pending',reason='Outside source-profile verified junction contact precision; graph and equipment bindings unchanged'));continue
-   p,t=hits[0];s[end]=p;audit.append(dict(source_handles=s.get('source_handles',[s['handle']]),main_source_handles=t.get('source_handles',[t['handle']]),original_endpoint=tip,semantic_endpoint=p,added_length=pg.dist(tip,p),action='extend'if pg.dot(pg.sub(p,tip),u)>0 else'trim',rule='unique_same_class_axial_tail_contact_to_main_interior',status='applied'))
+   p,t=hits[0];s.setdefault('original_'+end,tip);s[end]=p;action='extend' if pg.dot(pg.sub(p,tip),u)>0 else 'trim';change=pg.dist(tip,p)
+   audit.append(dict(source_handles=s.get('source_handles',[s['handle']]),main_source_handles=t.get('source_handles',[t['handle']]),original_endpoint=tip,semantic_endpoint=p,added_length=change if action=='extend' else 0.,removed_length=change if action=='trim' else 0.,normalization_distance=change,physical_length='unknown',action=action,rule='unique_same_class_axial_tail_contact_to_main_interior',scoped_override_evidence=matches[0]['evidence_ref'] if matches else None,status='applied'))
  return result,audit
 
 def trim_elbow_overshoots(segments,config):
  if not config:return list(segments),[]
  result=[dict(s)for s in segments];audit=[]
+ def source_class(s):
+  value=s.get('source_system',s['system'])
+  return ('unclassified_source_layer',s.get('source_layer'))if value in (None,'pending','unclassified_water')else value
  for i,s in enumerate(result):
   for endpoint,other in [('a','b'),('b','a')]:
    tip=s[endpoint];length=pg.dist(s['a'],s['b'])
    if any(j!=i and t['system']==s['system']and pg.on(tip,t['a'],t['b'])for j,t in enumerate(result)):continue
    candidates=[]
    for j,t in enumerate(result):
-    if j==i or t['system']!=s['system']:continue
+    if j==i or t['system']!=s['system']or source_class(t)!=source_class(s):continue
     for p,z in [(t['a'],t['b']),(t['b'],t['a'])]:
      stub=pg.dist(tip,p)
      if not pg.TOL<stub<=config['maximum_length']or stub/length>config['maximum_ratio']or not pg.on(p,s['a'],s['b']):continue

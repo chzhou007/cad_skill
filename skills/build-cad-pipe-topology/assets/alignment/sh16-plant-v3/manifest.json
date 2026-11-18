@@ -1,0 +1,13 @@
+{
+  "expected/edge_summary.json": "982104016217589e14cee6f1d94b356eef44e27a4e527da3fb4611b0220eab43",
+  "expected/equipment_port_coverage.json": "fbadcd61f996f1bd80c769dd2911e1aa313b9e56362af1836fa777971e63aa7f",
+  "expected/equipment_ports.json": "d4a01c2c420a8eeb2ba63ec06608edbfd34e57ff49000660a5cf379a605bc85e",
+  "expected/graph_with_edges.json": "99d25da609fc0ea2dac7f2422554c16bb5c7a3473b599afbf5e540876d266ee3",
+  "expected/pipe_crossover_arc_normalizations.json": "0c1eaa7dea57b9b3f053ca0607e14f930a1b1a7bc3acb51a7d08c7b0330f1213",
+  "inputs/03-\u51b7\u51bb\u6c34\u7cfb\u7edf\u539f\u7406\u56fe.dxf": "a44a241690d88cf67276e986b5e84d6b356763f1bae07737521df073a0125c2c",
+  "inputs/bindings.json": "4ca73a6e0ff6c693b40e33b267c281d5fe1eebd48e64884f7b5eb6ebd99fd48e",
+  "inputs/materials.json": "572d012cfda031e0fd9d2a5bb86e8923445105336c28b9873f171fe7a356eb8c",
+  "inputs/previous-graph.json": "938206cd4cf0731b35d3c3427d1f87bf06b2dfb76de4ab15662a29e60da06653",
+  "inputs/profiles.json": "cd81a81c1081a046de17fb0e97940108fe7d4dfb973dd85221cf6e62bcdf3dbc",
+  "inputs/source-profile.json": "b75a9c9977fed891e2217de2f80c3e2a56914c7c3ca43572738f3d7edee1ddcf"
+}

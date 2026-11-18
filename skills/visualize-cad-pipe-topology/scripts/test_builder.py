@@ -9,6 +9,7 @@ import tempfile
 import unittest
 import zipfile
 import ezdxf
+from unittest.mock import patch
 
 HERE=Path(__file__).resolve().parent
 
@@ -41,6 +42,47 @@ def create_fixture(root):
     return root
 
 class BuilderContract(unittest.TestCase):
+    def test_bundle_validation_reuses_native_source_context_and_rejects_wrong_hash(self):
+        from validate_visualization import validate_bundle
+        from coverage_display_paths import partition
+        result=self.run_builder();self.assertEqual(result.returncode,0,result.stderr)
+        doc=ezdxf.readfile(self.root/'demo.dxf');source_hash=hashlib.sha256((self.root/'demo.dxf').read_bytes()).hexdigest()
+        with patch('validate_visualization.partition_source_coverage',wraps=partition) as replay:
+            self.assertEqual(validate_bundle(self.out,native_doc=doc,native_source_sha256=source_hash)['status'],'passed')
+        self.assertTrue(replay.call_args_list);self.assertTrue(all(call.args[1] is doc and call.args[2]==source_hash for call in replay.call_args_list))
+        with self.assertRaisesRegex(ValueError,'source hash mismatch'):validate_bundle(self.out,native_doc=doc,native_source_sha256='wrong')
+    def test_unpaired_wave_rejects_stale_source_or_wrong_endpoint(self):
+        g=self.read('graph.json');e=g['edges'][1];e['source_handles']=['line'];e['source_wave_terminal']={'source_sha256':'wrong','endpoint_node_id':e['start_node_id'],'source_pipe_handle':'line','source_wave_handle':'wave','destination':'unknown','paired_continuation':'not_established','physical_length':'unknown'};self.write('graph.json',g)
+        self.assertNotEqual(self.run_builder().returncode,0)
+        e['source_wave_terminal']['source_sha256']=hashlib.sha256((self.root/'demo.dxf').read_bytes()).hexdigest();e['source_wave_terminal']['endpoint_node_id']='wrong';self.write('graph.json',g)
+        self.assertNotEqual(self.run_builder().returncode,0)
+    def test_source_conflict_cannot_be_marked_hil_ready(self):
+        g=self.read('graph.json');g['metadata']={'hil_ready':True};g['junctionValidation']={'new_unexplained_degree_exceptions':[],'existing_pending':[{'node_id':'J-A'},{'node_id':'J-B'}]};g['sourceInlineSystemConflicts']=[{'joint_handle':'J'}];self.write('graph.json',g)
+        result=self.run_builder();self.assertEqual(result.returncode,0,result.stderr)
+        graph=json.loads((self.out/'public/data/graph.json').read_text(encoding='utf8'));self.assertIs(graph['metadata']['hil_ready'],False);self.assertIn('sourceInlineSystemConflicts',graph['metadata']['hil_block_reason'])
+    def test_missing_junction_audit_keeps_preview_but_blocks_hil(self):
+        result=self.run_builder();self.assertEqual(result.returncode,0,result.stderr)
+        graph=json.loads((self.out/'public/data/graph.json').read_text(encoding='utf8'))
+        self.assertIs(graph['metadata']['hil_ready'],False)
+        self.assertIn('Junction validation',graph['metadata']['hil_block_reason'])
+        gate=json.loads((self.out/'quality-gate.json').read_text(encoding='utf8'))
+        self.assertTrue(any(item['id']=='junction-validation' for item in gate['pending']))
+    def test_reference_equipment_coverage_detects_omitted_nested_body(self):
+        from build_visualization import validate_reference_equipment_coverage
+        nodes=[{'node_id':'CT1','node_type':'equipment','display_source_chain':['R','F','C'],'display_source_handles':['C']}]
+        refs=[{'handle':'R','mode':'architectural_context','retained_mep_chains':[]}]
+        with self.assertRaisesRegex(ValueError,'omits nested graph equipment'):validate_reference_equipment_coverage(nodes,refs)
+        refs[0]['retained_mep_chains']=[{'source_chain':['R','F','C']}]
+        self.assertEqual(validate_reference_equipment_coverage(nodes,refs)['status'],'PASS')
+        nodes[0]['display_source_chain']=['R','F'];nodes[0]['display_source_handles']=['C','D']
+        with self.assertRaisesRegex(ValueError,'omits nested graph equipment'):validate_reference_equipment_coverage(nodes,refs)
+        refs[0]['retained_mep_chains'].append({'source_chain':['R','F','D']})
+        self.assertEqual(validate_reference_equipment_coverage(nodes,refs)['status'],'PASS')
+    def test_source_building_labels_fail_closed_on_unreadable_text(self):
+        from build_visualization import validate_native_building_text
+        validate_native_building_text({'records':[{'id':'B1','source_text':'不上人屋面'}]})
+        with self.assertRaisesRegex(ValueError,'Unreadable native building text'):validate_native_building_text({'records':[{'id':'B2','source_text':'乱码\ufffd'}]})
+        with self.assertRaisesRegex(ValueError,'Unreadable native building text'):validate_native_building_text({'records':[{'id':'B3','source_text':'\ud800'}]})
     def test_reference_scope_retains_audited_nested_mep_without_changing_walls(self):
         from build_visualization import cad_reference_chunks
         from architecture_context import extract
@@ -49,7 +91,7 @@ class BuilderContract(unittest.TestCase):
         top=d.modelspace().add_blockref('Building',(20,30));building=extract(d,dict(originX=0,originY=0,scale=1))
         chain=[top.dxf.handle,child.dxf.handle];spec=[dict(handle=top.dxf.handle,block='Building',mode='architectural_context',reason='native scope',retained_mep_chains=[dict(source_chain=chain,reason='verified whole equipment body')])]
         chunks,count=cad_reference_chunks(d,building,spec,lambda x,y:(x,-y),1)
-        self.assertEqual(count,2);self.assertIn('data-mep-source-chain=', ''.join(chunks));self.assertIn('25.000,-35.000',''.join(chunks))
+        self.assertEqual(count,2);self.assertIn('data-mep-source-chain=', ''.join(chunks));self.assertIn('25.000,-35.000',''.join(chunks));self.assertIn('data-source-handle="'+'/'.join(chain)+'"',''.join(chunks))
         spec[0]['retained_mep_chains'][0]['source_chain']=[child.dxf.handle]
         with self.assertRaisesRegex(ValueError,'actual reference parent'):cad_reference_chunks(d,building,spec,lambda x,y:(x,y),1)
     def test_reference_scope_keeps_primary_geometry_and_native_architecture(self):
@@ -74,6 +116,52 @@ class BuilderContract(unittest.TestCase):
         return subprocess.run([sys.executable,str(HERE/'build_visualization.py'),'--graph',str(self.root/'graph.json'),'--devices',str(self.root/'devices.csv'),'--dxf',str(self.root/'demo.dxf'),'--config',str(self.root/'config.json'),'--output',str(self.out)],capture_output=True,text=True)
     def read(self,name):return json.loads((self.root/name).read_text())
     def write(self,name,value):(self.root/name).write_text(json.dumps(value),encoding='utf8')
+    def test_upstream_colour_resolution_requires_reproducible_source_audit(self):
+        g=self.read('graph.json');g['sourceInlineSystemResolutions']=[{'joint_handle':'J'}]
+        self.write('graph.json',g);r=self.run_builder()
+        self.assertNotEqual(r.returncode,0)
+        self.assertIn('upstream-system-repair-audit.json',r.stderr)
+        self.assertFalse(self.out.exists())
+    def test_floor_label_correction_requires_reproducible_source_audit(self):
+        g=self.read('graph.json');g['sourceFloorLabelRepair']={'changes':[{'node_id':'J-A'}]}
+        self.write('graph.json',g);r=self.run_builder()
+        self.assertNotEqual(r.returncode,0)
+        self.assertIn('floor-label-repair-audit.json',r.stderr)
+        self.assertFalse(self.out.exists())
+    def test_manifest_binds_actual_built_viewer_graph(self):
+        import hashlib
+        result=self.run_builder();self.assertEqual(result.returncode,0,result.stderr)
+        data=self.out/'public/data'
+        manifest=json.loads((data/'manifest.json').read_text(encoding='utf8'))
+        self.assertEqual(manifest['reviewContentHashes']['viewer_graph'],hashlib.sha256((data/'graph.json').read_bytes()).hexdigest())
+    def test_explicit_unicode_labels_are_readable_and_reject_markup(self):
+        cfg=self.read('config.json');cfg['project']['title']='供回水管网';self.write('config.json',cfg)
+        self.assertNotEqual(self.run_builder().returncode,0)
+        cfg['display']={'human_label_language':'unicode'};cfg['systems']['supply']['name']='供水';cfg['project']['description']='候选连接待核';self.write('config.json',cfg)
+        result=self.run_builder();self.assertEqual(result.returncode,0,result.stderr)
+        graph=json.loads((self.out/'public/data/graph.json').read_text(encoding='utf8'));self.assertEqual(graph['project']['title'],'供回水管网');self.assertEqual(graph['systems']['supply']['name'],'供水')
+    def test_unicode_labels_reject_unreadable_and_html(self):
+        cfg=self.read('config.json');cfg['display']={'human_label_language':'unicode'}
+        for value in ('供水<script>', '供水\ufffd', '供水\ud800', '供水\u202e'):
+            cfg['project']['title']=value;self.write('config.json',cfg);self.assertNotEqual(self.run_builder().returncode,0)
+    def test_folded_valve_recovers_native_chain_in_full_builder(self):
+        doc=ezdxf.readfile(self.root/'demo.dxf');valve=next(e for e in doc.modelspace().query('INSERT') if e.dxf.name=='CUSTOM_VALVE')
+        path=self.root/'devices.csv'
+        with path.open(encoding='utf8',newline='') as f:
+            reader=csv.DictReader(f);rows=list(reader);fields=reader.fieldnames
+        rows[0]['source_kind']='turn_display_valve_folded_to_elbow';rows[0]['source_top_handle']=valve.dxf.handle
+        with path.open('w',encoding='utf8',newline='') as f:
+            writer=csv.DictWriter(f,fieldnames=fields);writer.writeheader();writer.writerows(rows)
+        result=self.run_builder();self.assertEqual(result.returncode,0,result.stderr)
+        graph=json.loads((self.out/'public/data/graph.json').read_text(encoding='utf8'));instance=graph['instances'][0]
+        self.assertEqual(instance['display_source_chain'],[valve.dxf.handle]);self.assertEqual(instance['edge_id'],'P-A')
+        self.assertTrue(instance['sourceGeometry']);self.assertEqual(instance['display_source_status'],'verified_nested_folded_valve_insert_chain')
+    def test_suppressed_node_label_requires_scoped_source_evidence(self):
+        g=self.read('graph.json');g['nodes'][0]['node_label_visible']=False;self.write('graph.json',g)
+        r=self.run_builder();self.assertNotEqual(r.returncode,0);self.assertIn('hidden node label requires expert issue',r.stderr)
+    def test_node_label_visibility_rejects_string(self):
+        g=self.read('graph.json');g['nodes'][0]['node_label_visible']='false';self.write('graph.json',g)
+        r=self.run_builder();self.assertNotEqual(r.returncode,0);self.assertIn('must be boolean',r.stderr)
     def test_other_project_named_floors_and_tiny_geometry(self):
         before={p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in self.root.iterdir()}
         result=self.run_builder();self.assertEqual(result.returncode,0,result.stderr)
@@ -117,6 +205,41 @@ class BuilderContract(unittest.TestCase):
     def test_missing_source_paths_are_not_synthesized(self):
         g=self.read('graph.json');del g['edges'][0]['attribute_paths'];self.write('graph.json',g)
         r=self.run_builder();self.assertNotEqual(r.returncode,0);self.assertIn('attribute_paths',r.stderr)
+    def test_explicit_user_confirmed_overlay_has_no_source_path_or_length(self):
+        g=self.read('graph.json');e=g['edges'][0];e.update(attribute_paths=[],source_handles=[],source_path_status='user_confirmed_overlay_no_native_supply_path',connection_mode='user_confirmed_overlaid_supply',path_length_complete=False,physical_length='unknown',path_length=0);self.write('graph.json',g)
+        r=self.run_builder();self.assertEqual(r.returncode,0,r.stderr)
+        rendered=json.loads((self.out/'public/data/graph.json').read_text(encoding='utf8'));edge=next(x for x in rendered['edges'] if x['edge_id']==e['edge_id']);self.assertEqual(edge['sourcePaths'],[]);self.assertFalse(edge['path_length_complete'])
+    def test_partial_source_paths_exclude_unwitnessed_segment(self):
+        import math
+        g=self.read('graph.json');e=g['edges'][0];a,z=e['attribute_paths'][0][0],e['attribute_paths'][0][-1];mid=[(a[i]+z[i])/2 for i in (0,1)]
+        e['attribute_paths']=[[a,mid,z]];e['path_length_complete']=False;e['source_path_coverage']={'source_sha256':hashlib.sha256((self.root/'demo.dxf').read_bytes()).hexdigest(),'coverage_sha256':'c','input_graph_sha256':'g','unverified_segment_indices':[1],'unverified_drawing_length':math.dist(mid,z)};self.write('graph.json',g)
+        r=self.run_builder();self.assertEqual(r.returncode,0,r.stderr)
+        rendered=json.loads((self.out/'public/data/graph.json').read_text(encoding='utf8'));edge=next(x for x in rendered['edges'] if x['edge_id']==e['edge_id'])
+        self.assertEqual(len(edge['sourcePaths']),1);self.assertEqual(len(edge['unverifiedPaths']),1);self.assertEqual(edge['sourcePaths'][0][-1],edge['unverifiedPaths'][0][0])
+        from validate_visualization import validate_bundle
+        edge['unverifiedPaths'][0][0][0]+=1;(self.out/'public/data/graph.json').write_text(json.dumps(rendered),encoding='utf8')
+        with self.assertRaisesRegex(ValueError,'coordinates changed'):validate_bundle(self.out)
+    def test_partial_source_paths_reject_stale_drawing(self):
+        import math
+        g=self.read('graph.json');e=g['edges'][0];a,z=e['attribute_paths'][0][0],e['attribute_paths'][0][-1];mid=[(a[i]+z[i])/2 for i in (0,1)]
+        e['attribute_paths']=[[a,mid,z]];e['path_length_complete']=False;e['source_path_coverage']={'source_sha256':'wrong','coverage_sha256':'c','input_graph_sha256':'g','unverified_segment_indices':[1],'unverified_drawing_length':math.dist(mid,z)};self.write('graph.json',g)
+        r=self.run_builder();self.assertNotEqual(r.returncode,0);self.assertIn('partial coverage source hash mismatch',r.stderr)
+    def test_crossover_paths_reject_stale_source(self):
+        g=self.read('graph.json');e=g['edges'][0]
+        e.update(path_length_scope='drawing_paths_excluding_source_crossover_gaps_physical_length_unknown',source_normalized_crossovers=[{'source_sha256':'wrong','source_gap_coverage_sha256':'a','source_fragments_sha256':'b'}])
+        self.write('graph.json',g);r=self.run_builder();self.assertNotEqual(r.returncode,0);self.assertIn('crossover evidence source mismatch',r.stderr)
+    def test_unverified_overlay_cannot_bypass_source_path_requirement(self):
+        g=self.read('graph.json');e=g['edges'][0];e.update(attribute_paths=[],source_handles=[],source_path_status='user_confirmed_overlay_no_native_supply_path',connection_mode='user_confirmed_overlaid_supply',path_length_complete=True,physical_length='unknown',path_length=0);self.write('graph.json',g)
+        r=self.run_builder();self.assertNotEqual(r.returncode,0);self.assertIn('attribute_paths',r.stderr)
+    def test_calculation_unknown_length_stays_null_with_evidence(self):
+        g=self.read('graph.json');e=g['edges'][0];e.update(path_length=None,path_length_complete=False,path_length_scope='sum_of_source_edge_lengths_no_display_connector',calculation_source_length_evidence=[{'edge_id':'X','recorded_source_length':1},{'edge_id':'Y','recorded_source_length':None}]);self.write('graph.json',g)
+        r=self.run_builder();self.assertEqual(r.returncode,0,r.stderr)
+        rendered=json.loads((self.out/'public/data/graph.json').read_text(encoding='utf8'));edge=next(x for x in rendered['edges'] if x['edge_id']==e['edge_id'])
+        self.assertIsNone(edge['path_length']);self.assertFalse(edge['path_length_complete'])
+        self.assertIn('e.path_length===null', (self.out/'public/app.js').read_text(encoding='utf8'))
+    def test_unknown_length_without_evidence_is_rejected(self):
+        g=self.read('graph.json');g['edges'][0].update(path_length=None,path_length_complete=False);self.write('graph.json',g)
+        r=self.run_builder();self.assertNotEqual(r.returncode,0);self.assertIn('unknown length requires',r.stderr);self.assertFalse(self.out.exists())
     def test_bad_endpoint_fails_before_publication(self):
         g=self.read('graph.json');g['edges'][0]['end_node_id']='MISSING';self.write('graph.json',g)
         r=self.run_builder();self.assertNotEqual(r.returncode,0);self.assertIn('missing endpoint',r.stderr)

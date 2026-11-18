@@ -31,5 +31,9 @@ class Crossovers(unittest.TestCase):
   ss=self.elbow()+[dict(a=(0,2.1),b=(50,2.1),system='supply',handle='PORT')];self.assertEqual(trim_elbow_overshoots(ss,dict(maximum_length=10,maximum_ratio=.1,minimum_angle_degrees=20))[1],[])
  def test_protected_equipment_port_not_trimmed(self):
   self.assertEqual(trim_elbow_overshoots(self.elbow(),dict(maximum_length=10,maximum_ratio=.1,minimum_angle_degrees=20,protected_points=[(0,2.1)]))[1],[])
+ def test_flattened_geometry_does_not_trim_across_source_services(self):
+  ss=self.elbow()
+  for i,s in enumerate(ss):s.update(system='physical',source_system=['supply','return'][i])
+  self.assertEqual(trim_elbow_overshoots(ss,dict(maximum_length=10,maximum_ratio=.1,minimum_angle_degrees=20))[1],[])
 
 if __name__=='__main__':unittest.main()

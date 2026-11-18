@@ -1,0 +1,10 @@
+import assert from 'node:assert/strict';
+import {reviewCsvValues,midpoint} from '../assets/viewer/public/edge-review.js';
+const e={edge_id:'X'},old={crossview_whole_edge_length_mm:2200},queue=new Map([['X',{reasons:['人工长度待核']}]]);
+assert.equal(reviewCsvValues(e,old,null,queue).review_effective_length_m,2.2);
+const doc={edgeEdits:{X:{length:{valueM:12.35,source:'manual_user_override',author:'专家'}}}};
+const row=reviewCsvValues(e,old,doc,queue);assert.equal(row.review_effective_length_m,12.35);assert.equal(row.review_effective_length_source,'manual_user_override');assert.equal(row.review_required,true);assert.equal(old.crossview_whole_edge_length_mm,2200);
+doc.edgeEdits.X.reviewed={};assert.equal(reviewCsvValues(e,old,doc,queue).review_required,false);
+assert.equal(reviewCsvValues(e,{},null,queue).review_effective_length_m,'');
+assert.deepEqual(midpoint([[0,0],[10,0],[10,30]]),[10,10]);
+console.log('edge review CSV / source preservation / metric midpoint passed');

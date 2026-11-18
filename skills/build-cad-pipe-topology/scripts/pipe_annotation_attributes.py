@@ -3,6 +3,26 @@ import math,re,collections
 import pipe_geometry as pg
 from ezdxf import bbox
 
+def parse_dn_annotation(text):
+ """Parse a single DN and retain any parenthesized source suffix verbatim."""
+ m=re.fullmatch(r'\s*DN\s*(\d+(?:\.\d+)?)\s*(?:\(\s*([+-]?\d+(?:\.\d+)?)\s*\))?\s*',text,re.I)
+ if not m:return None
+ value=float(m.group(1))
+ if not math.isfinite(value) or value<=0:return None
+ return dict(nominal_mm=value,parenthesized_source_value=m.group(2))
+
+
+def parse_named_dn_annotation(text):
+ """Read a whole numbered CHWS/CHWR plus DN label as source evidence only."""
+ if not isinstance(text,str):return None
+ m=re.fullmatch(r'\s*(CHWS|CHWR)\s*([1-9]\d*)\s+DN\s*(\d+(?:\.\d+)?)\s*',text,re.I)
+ if not m:return None
+ value=float(m.group(3))
+ if not math.isfinite(value) or value<=0:return None
+ service=m.group(1).upper()
+ return {'service_code':service,'route_number':m.group(2),'system':'supply' if service=='CHWS' else 'return','nominal_mm':value,'original_text':text,'binding_status':'unbound_source_text_candidate'}
+
+
 def source_texts(doc,source_id,source_hash):
  out=[]
  for e in doc.modelspace():
@@ -32,7 +52,7 @@ def point_edges(point,handles,edges,service=None):
 
 def recognize_f_leaders(doc,texts,segments,edges,layers):
  legs=annotation_legs(doc,layers);rows=[];used=set();frames=[]
- dn=[t for t in texts if re.fullmatch(r'DN\s*\d+(?:\.\d+)?',t['text'],re.I)and t['layer']in layers]
+ dn=[t for t in texts if parse_dn_annotation(t['text']) is not None and t['layer']in layers]
  for low in legs:
   candidates=[hi for hi in legs if hi is not low and hi['layer']==low['layer']and pg.dist(hi['a'],low['b'])<=pg.TOL and pg.dot(low['u'],hi['u'])>0 and abs(pg.cross(low['u'],hi['u']))<=pg.TOL*max(low['lu'],hi['lu'])and pg.dot(low['v'],hi['v'])>0 and pg.dist(low['v'],hi['v'])<=pg.TOL]
   if len(candidates)!=1:continue
@@ -81,14 +101,15 @@ def recognize_f_leaders(doc,texts,segments,edges,layers):
   crosses.sort(key=lambda c:c['order_distance']);row['pipe_crossings']=crosses
   if len(crosses)!=2:row['reason']='expected_two_unique_pipe_crossings';continue
   if any(len(c['edge_ids'])!=1 for c in crosses):row['reason']='crossing_on_ambiguous_edge_junction';continue
-  for i,c in enumerate(crosses):row['bindings'].append(dict(c,text=bound[i][0],nominal_mm=float(re.search(r'[0-9.]+',bound[i][0]['text']).group()),order=i+1,rule='F_bar_order_from_stem_cap_to_tip_matches_pipe_crossing_order'))
+  for i,c in enumerate(crosses):row['bindings'].append(dict(c,text=bound[i][0],nominal_mm=parse_dn_annotation(bound[i][0]['text'])['nominal_mm'],order=i+1,rule='F_bar_order_from_stem_cap_to_tip_matches_pipe_crossing_order'))
   row.update(status='assigned',reason='two_qualified_bars_two_native_texts_two_ordered_source_pipe_crossings')
  return rows
 
 def direct_diameters(texts,edges,excluded_ids,layers):
  assigned=[];pending=[]
  for t in texts:
-  if t['id']in excluded_ids or t['layer']not in layers or not re.fullmatch(r'DN\s*\d+(?:\.\d+)?',t['text'],re.I):continue
+  parsed=parse_dn_annotation(t['text'])
+  if t['id']in excluded_ids or t['layer']not in layers or parsed is None:continue
   angle=math.radians(t['rotation']);u=(math.cos(angle),math.sin(angle));p=t['position'];candidates=[]
   for e in edges:
    for path in e['attribute_paths']:
@@ -104,7 +125,7 @@ def direct_diameters(texts,edges,excluded_ids,layers):
    if c[1]not in best or c[0]<best[c[1]][0]:best[c[1]]=c
   values=sorted(best.values());row=dict(text=t,status='pending',candidate_edge_ids=[v[1]for v in values])
   if values and (len(values)==1 or values[1][0]-values[0][0]>.5*t['height']):
-   row.update(status='assigned',edge_id=values[0][1],point=values[0][2],nominal_mm=float(re.search(r'[0-9.]+',t['text']).group()),rule='single_text_axial_projection_unique_parallel_source_edge_within_two_text_heights');assigned.append(row)
+   row.update(status='assigned',edge_id=values[0][1],point=values[0][2],nominal_mm=parsed['nominal_mm'],parenthesized_source_value=parsed['parenthesized_source_value'],rule='single_text_axial_projection_unique_parallel_source_edge_within_two_text_heights');assigned.append(row)
   else:pending.append(row)
  return assigned,pending
 

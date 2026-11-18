@@ -1,0 +1,14 @@
+import assert from'node:assert/strict';
+import {savedEdgeNote,reviewCsvValues,reviewCsvFields,reviewAttributeCsvFields}from'../assets/viewer/public/edge-review.js';
+import {withManual,directionalCsvValues}from'../assets/viewer/public/directional-pipe-attributes.js';
+assert.equal(reviewCsvFields.length,8);assert.equal(reviewAttributeCsvFields.length,6);
+assert.equal(savedEdgeNote({length:{note:'中文旧备注'}}),'中文旧备注');
+assert.equal(savedEdgeNote({},[{edgeId:'E',note:'历史备注'}],'E'),'历史备注');
+assert.equal(savedEdgeNote({note:'',length:{note:'旧备注'}}),'');
+const a={horizontal:{applicability:'present',diameter:{value_mm:300,status:'known'},length:{value_m:4}},vertical:{applicability:'present',diameter:{value_mm:450,status:'known'},length:{value_m:null}},unresolved_direction:{segments:[]},whole_edge_manual:{value_m:null,status:'not_set'}};
+const doc={edgeEdits:{E:{diameters:{horizontal:{nominalMm:250,scope:'horizontal'}},note:'新备注'}},edgeEditHistory:[]};
+const values=reviewCsvValues({edge_id:'E'},{diameter_nominal_mm:300},doc,new Map());
+const manual=withManual(a,values);assert.equal(manual.horizontal.diameter.value_mm,250);assert.equal(manual.horizontal.diameter.original.value_mm,300);assert.equal(manual.vertical.diameter.value_mm,450);assert.equal(manual.note,'新备注');assert.equal(a.horizontal.diameter.value_mm,300);
+assert.equal(JSON.parse(directionalCsvValues(a,values).pipe_horizontal_attributes_json).diameter.value_mm,250);
+doc.edgeEdits.E.diameters.whole_edge={nominalMm:400};const whole=withManual(a,reviewCsvValues({edge_id:'E'},{},doc));assert.equal(whole.horizontal.diameter.value_mm,250);assert.equal(whole.vertical.diameter.value_mm,400);assert.equal(whole.whole_edge_manual.diameter_nominal_mm,400);
+console.log('diameter scope isolation, original preservation, CSV/JSON and legacy/cleared notes passed');

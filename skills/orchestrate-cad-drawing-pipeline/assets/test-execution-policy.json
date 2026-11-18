@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "scope": "Independent test methods only; changed bytes or module/class fixtures retain original module execution.",
+  "isolated_method_modules": {
+    "visualize-cad-pipe-topology/scripts/test_builder.py": "2091e8bb5f7825e41bb25345dc572e2888d389c99365f8534015b04427fe5f72",
+    "visualize-cad-pipe-topology/scripts/test_new_drawings.py": "782d88b1bf3c3ef48355beaac67bf64693b115bd5b1fd0404942eb5d2e4a16bb"
+  }
+}

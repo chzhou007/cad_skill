@@ -1,0 +1,93 @@
+{
+  "source_scope": "SH16 空调水系统主图",
+  "node_definition": {
+    "equipment": "带 CRAH 编号的非阀门设备图形，每台折叠为 1 个设备节点",
+    "physical_junction": "同一供水或回水管网上形成三条唯一射线且含一对反向共线射线的 T 型连通点"
+  },
+  "excluded": [
+    "阀门、软接、仪表和标注不计为节点",
+    "图框和文字不计为节点",
+    "双层水氟换热器接管示意图、冷冻水型机房专用空调接管示意图、水氟换热器接管示意图不计入主系统实例",
+    "本轮未把管线端点和普通弯头定义为节点"
+  ],
+  "counts": {
+    "equipment_nodes": 92,
+    "tee_junction_nodes": 301,
+    "total_nodes": 393,
+    "equipment_by_floor": {
+      "1": 18,
+      "2": 38,
+      "3": 36
+    },
+    "tee_by_floor_band": {
+      "1": 56,
+      "2": 127,
+      "3": 118
+    },
+    "tee_by_system": {
+      "return": 149,
+      "supply": 152
+    }
+  },
+  "preprocessing": {
+    "tee_counts_by_stage": {
+      "raw": 388,
+      "after_overshoot_trim": 397,
+      "after_valve_stub_removal": 305,
+      "after_auto_air_vent_removal": 301,
+      "after_crossover_gap_healing": 301
+    },
+    "short_dangling_overshoots_trimmed": 9,
+    "trimmed_by_system": {
+      "return": 5,
+      "supply": 4
+    },
+    "turn_display_valve_stubs_removed": 92,
+    "valve_stub_removals_by_block": {
+      "H-PICPNT-87": 92
+    },
+    "auto_air_vent_display_legs_removed": 4,
+    "auto_air_vent_removals_by_system": {
+      "return": 2,
+      "supply": 2
+    },
+    "pipe_crossover_gaps_healed_without_junction": 2,
+    "pipe_crossover_bridges_by_system": {
+      "return": 1,
+      "supply": 1
+    }
+  },
+  "parameters": {
+    "point_tolerance": 0.2,
+    "endpoint_quantum": 0.1,
+    "angle_tolerance_degrees": 1.0,
+    "max_dangling_overshoot_length": 10.0,
+    "max_dangling_overshoot_ratio": 0.1,
+    "min_overshoot_intersection_angle_degrees": 20.0,
+    "max_crossover_gap_length": 250.0,
+    "min_crossover_intersection_angle_degrees": 20.0,
+    "max_valve_display_stub_length": 200.0,
+    "turn_display_valve_block_names": [
+      "$VALVE$00000954",
+      "H-PICPNT-87",
+      "H-PICPNT-91"
+    ],
+    "max_auto_air_vent_display_leg_length": 1000.0,
+    "auto_air_vent_labels": [
+      "自动排气阀",
+      "自动放气阀"
+    ],
+    "inferred_layout": {
+      "anchor_label": "CRAH-4#-1-1",
+      "offset_x": 266584.7822907772,
+      "offset_y": 8680.30991093519,
+      "floor_boundary_1_2": 152680.30991093518,
+      "floor_boundary_2_3": 176680.30991093518,
+      "left_detail_x_max": 2476584.782290777,
+      "left_detail_y_min": 196680.30991093518,
+      "right_detail_x_min": 2553084.782290777,
+      "right_detail_y_max": 155180.30991093518
+    }
+  },
+  "source_file": "D:\\codex\\sh16_cad_graph\\data\\updated\\interim\\sh16-native-isometric_updated.fixed.dxf"
+}

@@ -1,0 +1,25 @@
+{
+  "tests": {
+    "cases": 4128,
+    "skipped": 1,
+    "passed": 4127
+  },
+  "history_features": 244,
+  "features": 247,
+  "engineering_pending_edges": 89,
+  "human_accepted": false,
+  "raw_reconstruction_completed": false,
+  "version": "v241.3",
+  "asset_files": 2176,
+  "registered_test_files": 904,
+  "answer_applications": {
+    "historical_verified": 57,
+    "native_replayed_groups": 1,
+    "native_replayed_edges": [
+      "E0426",
+      "E0542"
+    ],
+    "new_conflicts": 0
+  },
+  "scope": "Local SH16 execution evidence; project source paths remain external; not a self-contained full raw-CAD reconstruction."
+}

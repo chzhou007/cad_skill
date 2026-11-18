@@ -1,0 +1,13 @@
+# Full family entry backtests with explicit source roles
+
+Use for frozen SH16 rule regression on LF20 or another test set. A previous post-build circle/overlay replay is not evidence that the whole family entry has run from that drawing. Keep development in SH16; test findings on another project do not authorize speculative new geometry rules.
+
+Run `pipeline.py replay-family-source-backtest --manifest MANIFEST --output NEW --workers 6`. The manifest schema is `pinned_native_and_historical_prepared_family_backtest_v1`: pin a frozen skill snapshot and its root, then list unique cases with drawing, source role, original entry (`schematic` or `profiled_schematic`), source/config/bindings/profiles and optional materials, each with path/SHA256. Optional baseline graph/components are comparison inputs only. Every DXF passes strict readable native-text extraction before any job starts. Native lanes reject T3 source filenames. Historical prepared/reference-restored lanes remain separate evidence, never a native-source replacement.
+
+Reuse unchanged original builders. Keep output folders fresh and process/log records outside each graph output so the original no-overwrite check stays effective. Independent drawings/lanes may run concurrently; never share an output directory. Recheck top-level fixed inputs and the complete frozen code snapshot after execution. This is a family backtest, not a claim of transitive raw-build delivery closure.
+
+Compare exact system/source-handle/undirected path identity, then native node source handles and positions, endpoint adjacency, source drawn length and component ownership. Numeric IDs, counts and nearby coordinates cannot substitute. Preserve ID maps, semantic node-role differences and historical annotation non-transfer. A comparison mismatch is a result to diagnose, not permission to modify the baseline. Source-drawn lengths are not certified physical lengths.
+
+Report entry execution, same-stage geometry/adjacency/component comparison, later poststage coverage and HIL separately. Old occurrence contexts, proxy restoration, floor/DN observation and source-Pair confirmations may still need their original poststage owners. An exit0 or equal geometry does not prove their semantic completion. Single-feature controls and SH16 regression remain required for any shared rule change.
+
+Regression: `test_replay_family_source_backtest.py` protects role separation, T3/input/version gates, output case identity, exact source matching, semantic differences and ambiguous identity rejection. Complete native/prepared test cases supply the actual original entry execution evidence.

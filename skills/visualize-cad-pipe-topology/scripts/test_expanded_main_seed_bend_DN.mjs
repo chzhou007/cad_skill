@@ -1,0 +1,13 @@
+import assert from 'node:assert/strict';
+import {checkedAxisRuleVerticalDN,axisRuleVerticalDNCsvValues,axisRuleVerticalDNProperties} from '../assets/viewer/public/axis-rule-vertical-DN.js';
+const edge={edge_id:'E',system:'supply',attribute_paths:[[[0,0],[10,0],[10,8]]]};
+const row={edge_id:'E',system:'supply',path_index:0,segment_index:1,scope_points:[[10,0],[10,8]],nominal_mm:300,axis_source_sha256:'a'.repeat(64),seed_text_handles:['TEXT'],seed_domains:[{edge_id:'E',path_index:0,segment_index:0,system:'supply',nominal_mm:300}],source_rules:['original_source_LINE_expanded_main_seed_and_two_arm_bends'],main_line_handles:['MAIN'],source_chains:[[null,'MAIN'],[null,'VERT']],expanded_main_seed_owners:[{text_handle:'TEXT',source_LINE:'MAIN',nominal_mm:300,system:'supply',source_LINE_scope_native_replayed:true,source_Z:0,through_T_node_ids:[]}],two_arm_bends:[{point_xy:[10,0],source_Z:0,source_arms:2,physical_T_crossed:false}],original_caption_owner_rules_replayed:true,source_LINE_scope_expansion_replayed:true,native_two_arm_continuity_replayed:true,same_original_path_seed:true,branch_DN_used_as_main_seed:false,annotation_barriers_checked:true,physical_length_mm:null,whole_edge_DN_assigned:false,related_HIL_confirmation_inherited:false,human_accepted:false};
+const context={current_rendered_graph_sha256:'d'.repeat(64),axis_rule_vertical_DN:{mode:'qualified_axis_rule_vertical_DN_context_v1',human_accepted:false,raw_graph_changed:false,physical_lengths_assigned:0,whole_edge_DN_assigned:0,source_bindings:{native_source:'a'.repeat(64),native_graph:'b'.repeat(64),native_proof:'c'.repeat(64),rendered_graph:'d'.repeat(64)},records:[row],count:1}};
+assert.equal(checkedAxisRuleVerticalDN(edge,context).length,1);
+assert.equal(axisRuleVerticalDNCsvValues(edge,context).axis_rule_vertical_DN_segment_count,1);
+assert.match(axisRuleVerticalDNProperties(edge,true,context)[0][0],/弯头/);
+for(const mutate of [r=>r.seed_domains[0].path_index=1,r=>r.two_arm_bends[0].source_arms=3,r=>r.two_arm_bends[0].physical_T_crossed=true,r=>r.annotation_barriers_checked=false,r=>r.branch_DN_used_as_main_seed=true,r=>r.physical_length_mm=0,r=>r.expanded_main_seed_owners[0].source_LINE='OTHER',r=>r.expanded_main_seed_owners[0].nominal_mm=200,r=>r.source_chains[0][1]=null,r=>r.original_caption_owner_rules_replayed=false,r=>r.seed_domains=null]){
+ const broken=structuredClone(context);mutate(broken.axis_rule_vertical_DN.records[0]);assert.deepEqual(checkedAxisRuleVerticalDN(edge,broken),[]);
+}
+assert.deepEqual(checkedAxisRuleVerticalDN({...edge,system:'return'},context),[]);
+console.log('expanded native main seeds compose bends for vertical DN only; original-path, source, branch, caption and null-length guards passed');

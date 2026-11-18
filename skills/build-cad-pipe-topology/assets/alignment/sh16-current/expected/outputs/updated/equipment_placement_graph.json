@@ -1,0 +1,3943 @@
+{
+  "metadata": {
+    "scope": "node placement only",
+    "node_count": 393,
+    "equipment_count": 92,
+    "tee_count": 301,
+    "equipment_relocated_to_main_omission_marker": 62,
+    "edge_processing": "intentionally_not_started"
+  },
+  "nodes": [
+    {
+      "node_id": "CRAH-4#-1-1",
+      "node_type": "equipment",
+      "subtype": "CRAH",
+      "floor": 1,
+      "label": "CRAH-4#-1-1",
+      "x": 2503813.539823222,
+      "y": 138052.54413540073,
+      "placement_rule": "main-omission-marker:block:1"
+    },
+    {
+      "node_id": "CRAH-4#-1-2",
+      "node_type": "equipment",
+      "subtype": "CRAH",
+      "floor": 1,
+      "label": "CRAH-4#-1-2",
+      "x": 2506131.222988845,
+      "y": 140370.22730102148,
+      "placement_rule": "main-omission-marker:block:1"
+    },
+    {
+      "node_id": "CRAH-4#-1-3",
+      "node_type": "equipment",
+      "subtype": "CRAH",
+      "floor": 1,
+      "label": "CRAH-4#-1-3",
+      "x": 2499178.173491978,
+      "y": 133417.17780415853,
+      "placement_rule": "main-omission-marker:block:1"
+    },
+    {
+      "node_id": "CRAH-4#-1-4",
+      "node_type": "equipment",
+      "subtype": "CRAH",
+      "floor": 1,
+      "label": "CRAH-4#-1-4",
+      "x": 2501495.856657599,
+      "y": 135734.86096977995,
+      "placement_rule": "main-omission-marker:block:1"
+    },
+    {
+      "node_id": "CRAH-4#-1-5",
+      "node_type": "equipment",
+      "subtype": "CRAH",
+      "floor": 1,
+      "label": "CRAH-4#-1-5",
+      "x": 2524674.1638361616,
+      "y": 148485.71408085246,
+      "placement_rule": "block:2"
+    },
+    {
+      "node_id": "CRAH-4#-1-6",
+      "node_type": "equipment",
+      "subtype": "CRAH",
+      "floor": 1,
+      "label": "CRAH-4#-1-6",
+      "x": 2528567.6616055267,
+      "y": 148485.71408085246,
+      "placement_rule": "block:2"
+    },
+    {
+      "node_id": "CRAH-4#-1-7",
+      "node_type": "equipment",
+      "subtype": "CRAH",
+      "floor": 1,
+      "label": "CRAH-4#-1-7",
+      "x": 2532461.159374892,
+      "y": 148485.71408085246,
+      "placement_rule": "block:2"
+    },
+    {
+      "node_id": "CRAH-4#-1-8",
+      "node_type": "equipment",
+      "subtype": "CRAH",
+      "floor": 1,
+      "label": "CRAH-4#-1-8",
+      "x": 2536354.657144257,
+      "y": 148485.71408085246,
+      "placement_rule": "block:2"
+    },
+    {
+      "node_id": "CRAH-4#-1-9",
+      "node_type": "equipment",
+      "subtype": "CRAH",
+      "floor": 1,
+      "label": "CRAH-4#-1-9",
+      "x": 2511147.743438755,
+      "y": 133742.33925458894,
+      "placement_rule": "main-omission-marker:block:3"
+    },
+    {
+      "node_id": "CRAH-4#-1-10",
+      "node_type": "equipment",
+      "subtype": "CRAH",
+      "floor": 1,
+      "label": "CRAH-4#-1-10",
+      "x": 2514493.666428141,
+      "y": 133742.33925458894,
+      "placement_rule": "main-omission-marker:block:3"
+    },
+    {
+      "node_id": "CRAH-4#-1-11",
+      "node_type": "equipment",
+      "subtype": "CRAH",
+      "floor": 1,
+      "label": "CRAH-4#-1-11",
+      "x": 2517839.589417527,
+      "y": 133742.33925458894,
+      "placement_rule": "main-omission-marker:block:3"
+    },
+    {
+      "node_id": "CRAH-4#-1-12",
+      "node_type": "equipment",
+      "subtype": "CRAH",
+      "floor": 1,
+      "label": "CRAH-4#-1-12",
+      "x": 2521185.512406913,
+      "y": 133742.33925458894,
+      "placement_rule": "main-omission-marker:block:3"
+    },
+    {
+      "node_id": "CRAH-4#-1-13",
+      "node_type": "equipment",
+      "subtype": "CRAH",
+      "floor": 1,
+      "label": "CRAH-4#-1-13",
+      "x": 2536689.248503204,
+      "y": 141589.12600382886,
+      "placement_rule": "main-omission-marker:block:4"
+    },
+    {
+      "node_id": "CRAH-4#-1-14",
+      "node_type": "equipment",
+      "subtype": "CRAH",
+      "floor": 1,
+      "label": "CRAH-4#-1-14",
+      "x": 2537632.88527834,
+      "y": 142532.76277896424,
+      "placement_rule": "main-omission-marker:block:4"
+    },
+    {
+      "node_id": "CRAH-4#-1-15",
+      "node_type": "equipment",
+      "subtype": "CRAH",
+      "floor": 1,
+      "label": "CRAH-4#-1-15",
+      "x": 2538576.522053476,
+      "y": 143476.39955409977,
+      "placement_rule": "main-omission-marker:block:4"
+    },
+    {
+      "node_id": "CRAH-4#-1-16",
+      "node_type": "equipment",
+      "subtype": "CRAH",
+      "floor": 1,
+      "label": "CRAH-4#-1-16",
+      "x": 2539520.158828612,
+      "y": 144420.03632923515,
+      "placement_rule": "main-omission-marker:block:4"
+    },
+    {
+      "node_id": "CRAH-4#-1-17",
+      "node_type": "equipment",
+      "subtype": "CRAH",
+      "floor": 1,
+      "label": "CRAH-4#-1-17",
+      "x": 2540914.373041366,
+      "y": 132364.73040997586,
+      "placement_rule": "exploded-outline"
+    },
+    {
+      "node_id": "CRAH-4#-1-18",
+      "node_type": "equipment",
+      "subtype": "CRAH",
+      "floor": 1,
+      "label": "CRAH-4#-1-18",
+      "x": 2539446.088811768,
+      "y": 130896.4461803781,
+      "placement_rule": "exploded-outline"
+    },
+    {
+      "node_id": "CRAH-4#-2-1",
+      "node_type": "equipment",
+      "subtype": "CRAH",
+      "floor": 2,
+      "label": "CRAH-4#-2-1",
+      "x": 2477464.3835990755,
+      "y": 163877.81896371485,
+      "placement_rule": "exploded-outline"
+    },
+    {
+      "node_id": "CRAH-4#-2-2",
+      "node_type": "equipment",
+      "subtype": "CRAH",
+      "floor": 2,
+      "label": "CRAH-4#-2-2",
+      "x": 2479980.045716158,
+      "y": 163877.81896371485,
+      "placement_rule": "exploded-outline"
+    },
+    {
+      "node_id": "CRAH-4#-2-3",
+      "node_type": "equipment",
+      "subtype": "CRAH",
+      "floor": 2,
+      "label": "CRAH-4#-2-3",
+      "x": 2491222.4040361857,
+      "y": 167225.93176490592,
+      "placement_rule": "exploded-outline"
+    },
+    {
+      "node_id": "CRAH-4#-2-4",
+      "node_type": "equipment",
+      "subtype": "CRAH",
+      "floor": 2,
+      "label": "CRAH-4#-2-4",
+      "x": 2492852.903574934,
+      "y": 168856.43130365468,
+      "placement_rule": "exploded-outline"
+    },
+    {
+      "node_id": "CRAH-4#-2-5",
+      "node_type": "equipment",
+      "subtype": "CRAH",
+      "floor": 2,
+      "label": "CRAH-4#-2-5",
+      "x": 2513403.4164628237,
+      "y": 168133.60935900913,
+      "placement_rule": "main-omission-marker:block:1"
+    },
+    {
+      "node_id": "CRAH-4#-2-6",
+      "node_type": "equipment",
+      "subtype": "CRAH",
+      "floor": 2,
+      "label": "CRAH-4#-2-6",
+      "x": 2514945.406824356,
+      "y": 169675.5997205425,
+      "placement_rule": "main-omission-marker:block:1"
+    },
+    {
+      "node_id": "CRAH-4#-2-7",
+      "node_type": "equipment",
+      "subtype": "CRAH",
+      "floor": 2,
+      "label": "CRAH-4#-2-7",
+      "x": 2480776.22230086,
+      "y": 154155.6601168487,
+      "placement_rule": "main-omission-marker:block:7"
+    },
+    {
+      "node_id": "CRAH-4#-2-8",
+      "node_type": "equipment",
+      "subtype": "CRAH",
+      "floor": 2,
+      "label": "CRAH-4#-2-8",
+      "x": 2482717.602633527,
+      "y": 154155.6601168487,
+      "placement_rule": "main-omission-marker:block:7"
+    },
+    {
+      "node_id": "CRAH-4#-2-9",
+      "node_type": "equipment",
+      "subtype": "CRAH",
+      "floor": 2,
+      "label": "CRAH-4#-2-9",
+      "x": 2484658.9829661953,
+      "y": 154155.6601168487,
+      "placement_rule": "main-omission-marker:block:7"
+    },
+    {
+      "node_id": "CRAH-4#-2-10",
+      "node_type": "equipment",
+      "subtype": "CRAH",
+      "floor": 2,
+      "label": "CRAH-4#-2-10",
+      "x": 2486600.363298862,
+      "y": 154155.6601168487,
+      "placement_rule": "main-omission-marker:block:7"
+    },
+    {
+      "node_id": "CRAH-4#-2-11",
+      "node_type": "equipment",
+      "subtype": "CRAH",
+      "floor": 2,
+      "label": "CRAH-4#-2-11",
+      "x": 2488541.74363153,
+      "y": 154155.6601168487,
+      "placement_rule": "main-omission-marker:block:7"
+    },
+    {
+      "node_id": "CRAH-4#-2-12",
+      "node_type": "equipment",
+      "subtype": "CRAH",
+      "floor": 2,
+      "label": "CRAH-4#-2-12",
+      "x": 2490483.123964197,
+      "y": 154155.6601168487,
+      "placement_rule": "main-omission-marker:block:7"
+    },
+    {
+      "node_id": "CRAH-4#-2-13",
+      "node_type": "equipment",
+      "subtype": "CRAH",
+      "floor": 2,
+      "label": "CRAH-4#-2-13",
+      "x": 2492424.504296864,
+      "y": 154155.6601168487,
+      "placement_rule": "main-omission-marker:block:7"
+    },
+    {
+      "node_id": "CRAH-4#-2-14",
+      "node_type": "equipment",
+      "subtype": "CRAH",
+      "floor": 2,
+      "label": "CRAH-4#-2-14",
+      "x": 2494365.884629532,
+      "y": 154155.6601168487,
+      "placement_rule": "main-omission-marker:block:7"
+    },
+    {
+      "node_id": "CRAH-4#-2-15",
+      "node_type": "equipment",
+      "subtype": "CRAH",
+      "floor": 2,
+      "label": "CRAH-4#-2-15",
+      "x": 2496307.2649621987,
+      "y": 154155.6601168487,
+      "placement_rule": "main-omission-marker:block:7"
+    },
+    {
+      "node_id": "CRAH-4#-2-16",
+      "node_type": "equipment",
+      "subtype": "CRAH",
+      "floor": 2,
+      "label": "CRAH-4#-2-16",
+      "x": 2498248.645294866,
+      "y": 154155.6601168487,
+      "placement_rule": "main-omission-marker:block:7"
+    },
+    {
+      "node_id": "CRAH-4#-2-17",
+      "node_type": "equipment",
+      "subtype": "CRAH",
+      "floor": 2,
+      "label": "CRAH-4#-2-17",
+      "x": 2523737.605064337,
+      "y": 173053.76402625183,
+      "placement_rule": "block:5"
+    },
+    {
+      "node_id": "CRAH-4#-2-18",
+      "node_type": "equipment",
+      "subtype": "CRAH",
+      "floor": 2,
+      "label": "CRAH-4#-2-18",
+      "x": 2526030.339701264,
+      "y": 173053.76402625183,
+      "placement_rule": "block:5"
+    },
+    {
+      "node_id": "CRAH-4#-2-19",
+      "node_type": "equipment",
+      "subtype": "CRAH",
+      "floor": 2,
+      "label": "CRAH-4#-2-19",
+      "x": 2528323.074338191,
+      "y": 173053.76402625183,
+      "placement_rule": "block:5"
+    },
+    {
+      "node_id": "CRAH-4#-2-20",
+      "node_type": "equipment",
+      "subtype": "CRAH",
+      "floor": 2,
+      "label": "CRAH-4#-2-20",
+      "x": 2530615.808975118,
+      "y": 173053.76402625183,
+      "placement_rule": "block:5"
+    },
+    {
+      "node_id": "CRAH-4#-2-21",
+      "node_type": "equipment",
+      "subtype": "CRAH",
+      "floor": 2,
+      "label": "CRAH-4#-2-21",
+      "x": 2532908.5436120452,
+      "y": 173053.76402625183,
+      "placement_rule": "block:5"
+    },
+    {
+      "node_id": "CRAH-4#-2-22",
+      "node_type": "equipment",
+      "subtype": "CRAH",
+      "floor": 2,
+      "label": "CRAH-4#-2-22",
+      "x": 2535201.2782489723,
+      "y": 173053.76402625183,
+      "placement_rule": "block:5"
+    },
+    {
+      "node_id": "CRAH-4#-2-23",
+      "node_type": "equipment",
+      "subtype": "CRAH",
+      "floor": 2,
+      "label": "CRAH-4#-2-23",
+      "x": 2537494.0128858993,
+      "y": 173053.76402625183,
+      "placement_rule": "block:5"
+    },
+    {
+      "node_id": "CRAH-4#-2-24",
+      "node_type": "equipment",
+      "subtype": "CRAH",
+      "floor": 2,
+      "label": "CRAH-4#-2-24",
+      "x": 2539786.7475228263,
+      "y": 173053.76402625183,
+      "placement_rule": "block:5"
+    },
+    {
+      "node_id": "CRAH-4#-2-25",
+      "node_type": "equipment",
+      "subtype": "CRAH",
+      "floor": 2,
+      "label": "CRAH-4#-2-25",
+      "x": 2505894.4338761843,
+      "y": 154155.6601168487,
+      "placement_rule": "main-omission-marker:block:7"
+    },
+    {
+      "node_id": "CRAH-4#-2-26",
+      "node_type": "equipment",
+      "subtype": "CRAH",
+      "floor": 2,
+      "label": "CRAH-4#-2-26",
+      "x": 2507835.8142088507,
+      "y": 154155.6601168487,
+      "placement_rule": "main-omission-marker:block:7"
+    },
+    {
+      "node_id": "CRAH-4#-2-27",
+      "node_type": "equipment",
+      "subtype": "CRAH",
+      "floor": 2,
+      "label": "CRAH-4#-2-27",
+      "x": 2509777.194541518,
+      "y": 154155.6601168487,
+      "placement_rule": "main-omission-marker:block:7"
+    },
+    {
+      "node_id": "CRAH-4#-2-28",
+      "node_type": "equipment",
+      "subtype": "CRAH",
+      "floor": 2,
+      "label": "CRAH-4#-2-28",
+      "x": 2511718.574874186,
+      "y": 154155.6601168487,
+      "placement_rule": "main-omission-marker:block:7"
+    },
+    {
+      "node_id": "CRAH-4#-2-29",
+      "node_type": "equipment",
+      "subtype": "CRAH",
+      "floor": 2,
+      "label": "CRAH-4#-2-29",
+      "x": 2513659.955206853,
+      "y": 154155.6601168487,
+      "placement_rule": "main-omission-marker:block:7"
+    },
+    {
+      "node_id": "CRAH-4#-2-30",
+      "node_type": "equipment",
+      "subtype": "CRAH",
+      "floor": 2,
+      "label": "CRAH-4#-2-30",
+      "x": 2515601.335539521,
+      "y": 154155.6601168487,
+      "placement_rule": "main-omission-marker:block:7"
+    },
+    {
+      "node_id": "CRAH-4#-2-31",
+      "node_type": "equipment",
+      "subtype": "CRAH",
+      "floor": 2,
+      "label": "CRAH-4#-2-31",
+      "x": 2517542.715872188,
+      "y": 154155.6601168487,
+      "placement_rule": "main-omission-marker:block:7"
+    },
+    {
+      "node_id": "CRAH-4#-2-32",
+      "node_type": "equipment",
+      "subtype": "CRAH",
+      "floor": 2,
+      "label": "CRAH-4#-2-32",
+      "x": 2519484.096204855,
+      "y": 154155.6601168487,
+      "placement_rule": "main-omission-marker:block:7"
+    },
+    {
+      "node_id": "CRAH-4#-2-33",
+      "node_type": "equipment",
+      "subtype": "CRAH",
+      "floor": 2,
+      "label": "CRAH-4#-2-33",
+      "x": 2530757.213453541,
+      "y": 160225.1408995681,
+      "placement_rule": "main-omission-marker:block:4"
+    },
+    {
+      "node_id": "CRAH-4#-2-34",
+      "node_type": "equipment",
+      "subtype": "CRAH",
+      "floor": 2,
+      "label": "CRAH-4#-2-34",
+      "x": 2532282.215172356,
+      "y": 161750.14261838235,
+      "placement_rule": "main-omission-marker:block:4"
+    },
+    {
+      "node_id": "CRAH-4#-2-35",
+      "node_type": "equipment",
+      "subtype": "CRAH",
+      "floor": 2,
+      "label": "CRAH-4#-2-35",
+      "x": 2533807.216891171,
+      "y": 163275.1443371966,
+      "placement_rule": "main-omission-marker:block:4"
+    },
+    {
+      "node_id": "CRAH-4#-2-36",
+      "node_type": "equipment",
+      "subtype": "CRAH",
+      "floor": 2,
+      "label": "CRAH-4#-2-36",
+      "x": 2535332.218609986,
+      "y": 164800.14605601085,
+      "placement_rule": "main-omission-marker:block:4"
+    },
+    {
+      "node_id": "CRAH-4#-2-37",
+      "node_type": "equipment",
+      "subtype": "CRAH",
+      "floor": 2,
+      "label": "CRAH-4#-2-37",
+      "x": 2536857.2203288013,
+      "y": 166325.1477748251,
+      "placement_rule": "main-omission-marker:block:4"
+    },
+    {
+      "node_id": "CRAH-4#-2-38",
+      "node_type": "equipment",
+      "subtype": "CRAH",
+      "floor": 2,
+      "label": "CRAH-4#-2-38",
+      "x": 2538382.222047616,
+      "y": 167850.14949363936,
+      "placement_rule": "main-omission-marker:block:4"
+    },
+    {
+      "node_id": "CRAH-4#-3-1",
+      "node_type": "equipment",
+      "subtype": "CRAH",
+      "floor": 3,
+      "label": "CRAH-4#-3-1",
+      "x": 2495683.3795636147,
+      "y": 196522.4072291886,
+      "placement_rule": "block:5"
+    },
+    {
+      "node_id": "CRAH-4#-3-2",
+      "node_type": "equipment",
+      "subtype": "CRAH",
+      "floor": 3,
+      "label": "CRAH-4#-3-2",
+      "x": 2498090.4796968773,
+      "y": 196522.4072291886,
+      "placement_rule": "block:5"
+    },
+    {
+      "node_id": "CRAH-4#-3-3",
+      "node_type": "equipment",
+      "subtype": "CRAH",
+      "floor": 3,
+      "label": "CRAH-4#-3-3",
+      "x": 2500497.579830141,
+      "y": 196522.4072291886,
+      "placement_rule": "block:5"
+    },
+    {
+      "node_id": "CRAH-4#-3-4",
+      "node_type": "equipment",
+      "subtype": "CRAH",
+      "floor": 3,
+      "label": "CRAH-4#-3-4",
+      "x": 2502904.6799634025,
+      "y": 196522.4072291886,
+      "placement_rule": "block:5"
+    },
+    {
+      "node_id": "CRAH-4#-3-5",
+      "node_type": "equipment",
+      "subtype": "CRAH",
+      "floor": 3,
+      "label": "CRAH-4#-3-5",
+      "x": 2505311.780096666,
+      "y": 196522.4072291886,
+      "placement_rule": "block:5"
+    },
+    {
+      "node_id": "CRAH-4#-3-6",
+      "node_type": "equipment",
+      "subtype": "CRAH",
+      "floor": 3,
+      "label": "CRAH-4#-3-6",
+      "x": 2507718.8802299276,
+      "y": 196522.4072291886,
+      "placement_rule": "block:5"
+    },
+    {
+      "node_id": "CRAH-4#-3-7",
+      "node_type": "equipment",
+      "subtype": "CRAH",
+      "floor": 3,
+      "label": "CRAH-4#-3-7",
+      "x": 2521760.2341065677,
+      "y": 196522.4072291886,
+      "placement_rule": "block:5"
+    },
+    {
+      "node_id": "CRAH-4#-3-8",
+      "node_type": "equipment",
+      "subtype": "CRAH",
+      "floor": 3,
+      "label": "CRAH-4#-3-8",
+      "x": 2524090.0712513905,
+      "y": 196522.4072291886,
+      "placement_rule": "block:5"
+    },
+    {
+      "node_id": "CRAH-4#-3-9",
+      "node_type": "equipment",
+      "subtype": "CRAH",
+      "floor": 3,
+      "label": "CRAH-4#-3-9",
+      "x": 2526419.9083962133,
+      "y": 196522.4072291886,
+      "placement_rule": "block:5"
+    },
+    {
+      "node_id": "CRAH-4#-3-10",
+      "node_type": "equipment",
+      "subtype": "CRAH",
+      "floor": 3,
+      "label": "CRAH-4#-3-10",
+      "x": 2528749.745541036,
+      "y": 196522.4072291886,
+      "placement_rule": "block:5"
+    },
+    {
+      "node_id": "CRAH-4#-3-11",
+      "node_type": "equipment",
+      "subtype": "CRAH",
+      "floor": 3,
+      "label": "CRAH-4#-3-11",
+      "x": 2531079.58268586,
+      "y": 196522.4072291886,
+      "placement_rule": "block:5"
+    },
+    {
+      "node_id": "CRAH-4#-3-12",
+      "node_type": "equipment",
+      "subtype": "CRAH",
+      "floor": 3,
+      "label": "CRAH-4#-3-12",
+      "x": 2533409.4198306818,
+      "y": 196522.4072291886,
+      "placement_rule": "block:5"
+    },
+    {
+      "node_id": "CRAH-4#-3-13",
+      "node_type": "equipment",
+      "subtype": "CRAH",
+      "floor": 3,
+      "label": "CRAH-4#-3-13",
+      "x": 2480776.22230086,
+      "y": 177930.86423209836,
+      "placement_rule": "main-omission-marker:block:7"
+    },
+    {
+      "node_id": "CRAH-4#-3-14",
+      "node_type": "equipment",
+      "subtype": "CRAH",
+      "floor": 3,
+      "label": "CRAH-4#-3-14",
+      "x": 2482717.602633527,
+      "y": 177930.86423209836,
+      "placement_rule": "main-omission-marker:block:7"
+    },
+    {
+      "node_id": "CRAH-4#-3-15",
+      "node_type": "equipment",
+      "subtype": "CRAH",
+      "floor": 3,
+      "label": "CRAH-4#-3-15",
+      "x": 2484658.9829661953,
+      "y": 177930.86423209836,
+      "placement_rule": "main-omission-marker:block:7"
+    },
+    {
+      "node_id": "CRAH-4#-3-16",
+      "node_type": "equipment",
+      "subtype": "CRAH",
+      "floor": 3,
+      "label": "CRAH-4#-3-16",
+      "x": 2486600.363298862,
+      "y": 177930.86423209836,
+      "placement_rule": "main-omission-marker:block:7"
+    },
+    {
+      "node_id": "CRAH-4#-3-17",
+      "node_type": "equipment",
+      "subtype": "CRAH",
+      "floor": 3,
+      "label": "CRAH-4#-3-17",
+      "x": 2488541.74363153,
+      "y": 177930.86423209836,
+      "placement_rule": "main-omission-marker:block:7"
+    },
+    {
+      "node_id": "CRAH-4#-3-18",
+      "node_type": "equipment",
+      "subtype": "CRAH",
+      "floor": 3,
+      "label": "CRAH-4#-3-18",
+      "x": 2490483.123964197,
+      "y": 177930.86423209836,
+      "placement_rule": "main-omission-marker:block:7"
+    },
+    {
+      "node_id": "CRAH-4#-3-19",
+      "node_type": "equipment",
+      "subtype": "CRAH",
+      "floor": 3,
+      "label": "CRAH-4#-3-19",
+      "x": 2492424.504296864,
+      "y": 177930.86423209836,
+      "placement_rule": "main-omission-marker:block:7"
+    },
+    {
+      "node_id": "CRAH-4#-3-20",
+      "node_type": "equipment",
+      "subtype": "CRAH",
+      "floor": 3,
+      "label": "CRAH-4#-3-20",
+      "x": 2494365.884629532,
+      "y": 177930.86423209836,
+      "placement_rule": "main-omission-marker:block:7"
+    },
+    {
+      "node_id": "CRAH-4#-3-21",
+      "node_type": "equipment",
+      "subtype": "CRAH",
+      "floor": 3,
+      "label": "CRAH-4#-3-21",
+      "x": 2496307.2649621987,
+      "y": 177930.86423209836,
+      "placement_rule": "main-omission-marker:block:7"
+    },
+    {
+      "node_id": "CRAH-4#-3-22",
+      "node_type": "equipment",
+      "subtype": "CRAH",
+      "floor": 3,
+      "label": "CRAH-4#-3-22",
+      "x": 2498248.645294866,
+      "y": 177930.86423209836,
+      "placement_rule": "main-omission-marker:block:7"
+    },
+    {
+      "node_id": "CRAH-4#-3-23",
+      "node_type": "equipment",
+      "subtype": "CRAH",
+      "floor": 3,
+      "label": "CRAH-4#-3-23",
+      "x": 2505894.4338761843,
+      "y": 177930.86423209836,
+      "placement_rule": "main-omission-marker:block:7"
+    },
+    {
+      "node_id": "CRAH-4#-3-24",
+      "node_type": "equipment",
+      "subtype": "CRAH",
+      "floor": 3,
+      "label": "CRAH-4#-3-24",
+      "x": 2507835.8142088507,
+      "y": 177930.86423209836,
+      "placement_rule": "main-omission-marker:block:7"
+    },
+    {
+      "node_id": "CRAH-4#-3-25",
+      "node_type": "equipment",
+      "subtype": "CRAH",
+      "floor": 3,
+      "label": "CRAH-4#-3-25",
+      "x": 2509777.194541518,
+      "y": 177930.86423209836,
+      "placement_rule": "main-omission-marker:block:7"
+    },
+    {
+      "node_id": "CRAH-4#-3-26",
+      "node_type": "equipment",
+      "subtype": "CRAH",
+      "floor": 3,
+      "label": "CRAH-4#-3-26",
+      "x": 2511718.574874186,
+      "y": 177930.86423209836,
+      "placement_rule": "main-omission-marker:block:7"
+    },
+    {
+      "node_id": "CRAH-4#-3-27",
+      "node_type": "equipment",
+      "subtype": "CRAH",
+      "floor": 3,
+      "label": "CRAH-4#-3-27",
+      "x": 2513659.955206853,
+      "y": 177930.86423209836,
+      "placement_rule": "main-omission-marker:block:7"
+    },
+    {
+      "node_id": "CRAH-4#-3-28",
+      "node_type": "equipment",
+      "subtype": "CRAH",
+      "floor": 3,
+      "label": "CRAH-4#-3-28",
+      "x": 2515601.335539521,
+      "y": 177930.86423209836,
+      "placement_rule": "main-omission-marker:block:7"
+    },
+    {
+      "node_id": "CRAH-4#-3-29",
+      "node_type": "equipment",
+      "subtype": "CRAH",
+      "floor": 3,
+      "label": "CRAH-4#-3-29",
+      "x": 2517542.715872188,
+      "y": 177930.86423209836,
+      "placement_rule": "main-omission-marker:block:7"
+    },
+    {
+      "node_id": "CRAH-4#-3-30",
+      "node_type": "equipment",
+      "subtype": "CRAH",
+      "floor": 3,
+      "label": "CRAH-4#-3-30",
+      "x": 2519484.096204855,
+      "y": 177930.86423209836,
+      "placement_rule": "main-omission-marker:block:7"
+    },
+    {
+      "node_id": "CRAH-4#-3-31",
+      "node_type": "equipment",
+      "subtype": "CRAH",
+      "floor": 3,
+      "label": "CRAH-4#-3-31",
+      "x": 2530757.2134535396,
+      "y": 183693.7841025049,
+      "placement_rule": "main-omission-marker:block:4"
+    },
+    {
+      "node_id": "CRAH-4#-3-32",
+      "node_type": "equipment",
+      "subtype": "CRAH",
+      "floor": 3,
+      "label": "CRAH-4#-3-32",
+      "x": 2532282.215172355,
+      "y": 185218.78582131915,
+      "placement_rule": "main-omission-marker:block:4"
+    },
+    {
+      "node_id": "CRAH-4#-3-33",
+      "node_type": "equipment",
+      "subtype": "CRAH",
+      "floor": 3,
+      "label": "CRAH-4#-3-33",
+      "x": 2533807.21689117,
+      "y": 186743.7875401334,
+      "placement_rule": "main-omission-marker:block:4"
+    },
+    {
+      "node_id": "CRAH-4#-3-34",
+      "node_type": "equipment",
+      "subtype": "CRAH",
+      "floor": 3,
+      "label": "CRAH-4#-3-34",
+      "x": 2535332.218609985,
+      "y": 188268.78925894765,
+      "placement_rule": "main-omission-marker:block:4"
+    },
+    {
+      "node_id": "CRAH-4#-3-35",
+      "node_type": "equipment",
+      "subtype": "CRAH",
+      "floor": 3,
+      "label": "CRAH-4#-3-35",
+      "x": 2536857.2203288,
+      "y": 189793.7909777619,
+      "placement_rule": "main-omission-marker:block:4"
+    },
+    {
+      "node_id": "CRAH-4#-3-36",
+      "node_type": "equipment",
+      "subtype": "CRAH",
+      "floor": 3,
+      "label": "CRAH-4#-3-36",
+      "x": 2538382.222047615,
+      "y": 191318.79269657616,
+      "placement_rule": "main-omission-marker:block:4"
+    },
+    {
+      "node_id": "T001",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 1,
+      "label": "",
+      "x": 2497121.285540028,
+      "y": 132052.2870292372,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T002",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 1,
+      "label": "",
+      "x": 2496955.600115078,
+      "y": 132452.2870292372,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T003",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 1,
+      "label": "",
+      "x": 2522597.301707365,
+      "y": 134346.7319363382,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T004",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 1,
+      "label": "",
+      "x": 2507404.569568904,
+      "y": 134346.7319363383,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T005",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 1,
+      "label": "",
+      "x": 2507238.884143955,
+      "y": 134746.7319363383,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T006",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 1,
+      "label": "",
+      "x": 2523562.987132314,
+      "y": 134746.7319363383,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T007",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 1,
+      "label": "",
+      "x": 2529681.900033744,
+      "y": 135776.1151703252,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T008",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 1,
+      "label": "",
+      "x": 2539712.815037073,
+      "y": 135776.1151703252,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T009",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 1,
+      "label": "",
+      "x": 2542140.878666719,
+      "y": 135776.1151703252,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T010",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 1,
+      "label": "",
+      "x": 2510448.290139597,
+      "y": 135894.6918477677,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T011",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 1,
+      "label": "",
+      "x": 2513794.213128983,
+      "y": 135894.6918477677,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T012",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 1,
+      "label": "",
+      "x": 2517140.136118369,
+      "y": 135894.6918477677,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T013",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 1,
+      "label": "",
+      "x": 2520486.0591077553,
+      "y": 135894.6918477677,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T014",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 1,
+      "label": "",
+      "x": 2529416.214608794,
+      "y": 136076.1151703251,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T015",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 1,
+      "label": "",
+      "x": 2540437.079105784,
+      "y": 136076.1151703252,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T016",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 1,
+      "label": "",
+      "x": 2542865.142735431,
+      "y": 136076.1151703252,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T017",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 1,
+      "label": "",
+      "x": 2501307.4526086943,
+      "y": 136238.4540979032,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T018",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 1,
+      "label": "",
+      "x": 2510068.661104156,
+      "y": 136294.6918477677,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T019",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 1,
+      "label": "",
+      "x": 2513414.584093542,
+      "y": 136294.6918477677,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T020",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 1,
+      "label": "",
+      "x": 2516760.507082928,
+      "y": 136294.6918477677,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T021",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 1,
+      "label": "",
+      "x": 2520106.430072314,
+      "y": 136294.6918477677,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T022",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 1,
+      "label": "",
+      "x": 2500917.442090332,
+      "y": 136414.1290044916,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T023",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 1,
+      "label": "",
+      "x": 2503625.1357743153,
+      "y": 138556.13726352458,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T024",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 1,
+      "label": "",
+      "x": 2503235.125255953,
+      "y": 138731.81217011303,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T025",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 1,
+      "label": "",
+      "x": 2505942.818939938,
+      "y": 140873.8204291454,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T026",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 1,
+      "label": "",
+      "x": 2505552.808421576,
+      "y": 141049.4953357338,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T027",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 1,
+      "label": "",
+      "x": 2537839.752992346,
+      "y": 142144.5483115637,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T028",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 1,
+      "label": "",
+      "x": 2538440.16977765,
+      "y": 142320.7010281556,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T029",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 1,
+      "label": "",
+      "x": 2538783.389767482,
+      "y": 143088.1850866991,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T030",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 1,
+      "label": "",
+      "x": 2508260.502105561,
+      "y": 143191.50359476614,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T031",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 1,
+      "label": "",
+      "x": 2539383.806552786,
+      "y": 143264.33780329098,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T032",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 1,
+      "label": "",
+      "x": 2507870.4915871993,
+      "y": 143367.17850135453,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T033",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 1,
+      "label": "",
+      "x": 2539727.026542618,
+      "y": 144031.8218618346,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T034",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 1,
+      "label": "",
+      "x": 2540327.443327922,
+      "y": 144207.9745784265,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T035",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 1,
+      "label": "",
+      "x": 2487870.745279528,
+      "y": 144691.0028082993,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T036",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 1,
+      "label": "",
+      "x": 2509194.315894141,
+      "y": 144691.0028082994,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T037",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 1,
+      "label": "",
+      "x": 2540670.663317754,
+      "y": 144975.45863697,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T038",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 1,
+      "label": "",
+      "x": 2487705.059854579,
+      "y": 145091.0028082994,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T039",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 1,
+      "label": "",
+      "x": 2510160.001319091,
+      "y": 145091.0028082994,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T040",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 1,
+      "label": "",
+      "x": 2541271.080103058,
+      "y": 145151.6113535619,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T041",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 1,
+      "label": "",
+      "x": 2538566.738630669,
+      "y": 145226.6391922001,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T042",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 1,
+      "label": "",
+      "x": 2539432.424055618,
+      "y": 145526.6391922001,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T043",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 1,
+      "label": "",
+      "x": 2541376.651507063,
+      "y": 147470.8666436445,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T044",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 1,
+      "label": "",
+      "x": 2541210.966082114,
+      "y": 147870.8666436445,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T045",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 1,
+      "label": "",
+      "x": 2524459.905331431,
+      "y": 151351.4297346241,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T046",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 1,
+      "label": "",
+      "x": 2528353.403100796,
+      "y": 151351.4297346241,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T047",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 1,
+      "label": "",
+      "x": 2532246.900870161,
+      "y": 151351.4297346241,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T048",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 1,
+      "label": "",
+      "x": 2536140.398639526,
+      "y": 151351.4297346241,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T049",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 1,
+      "label": "",
+      "x": 2525533.310028937,
+      "y": 151751.4297346242,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T050",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 1,
+      "label": "",
+      "x": 2529426.807798302,
+      "y": 151751.4297346242,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T051",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 1,
+      "label": "",
+      "x": 2533320.305567667,
+      "y": 151751.4297346242,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T052",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 1,
+      "label": "",
+      "x": 2537213.803337032,
+      "y": 151751.4297346242,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T053",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 1,
+      "label": "",
+      "x": 2525481.27458841,
+      "y": 152024.25553987,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T054",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 1,
+      "label": "",
+      "x": 2529374.772357775,
+      "y": 152024.25553987,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T055",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 1,
+      "label": "",
+      "x": 2533268.27012714,
+      "y": 152024.25553987,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T056",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 1,
+      "label": "",
+      "x": 2537161.767896505,
+      "y": 152024.25553987,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T057",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 2,
+      "label": "",
+      "x": 2479560.545562951,
+      "y": 156597.4755833407,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T058",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 2,
+      "label": "",
+      "x": 2481501.9258956183,
+      "y": 156597.4755833407,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T059",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 2,
+      "label": "",
+      "x": 2483443.306228286,
+      "y": 156597.4755833407,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T060",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 2,
+      "label": "",
+      "x": 2485384.686560953,
+      "y": 156597.4755833407,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T061",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 2,
+      "label": "",
+      "x": 2487326.0668936213,
+      "y": 156597.4755833407,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T062",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 2,
+      "label": "",
+      "x": 2489267.447226288,
+      "y": 156597.4755833407,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T063",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 2,
+      "label": "",
+      "x": 2491208.827558955,
+      "y": 156597.4755833407,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T064",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 2,
+      "label": "",
+      "x": 2493150.207891623,
+      "y": 156597.4755833407,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T065",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 2,
+      "label": "",
+      "x": 2495091.58822429,
+      "y": 156597.4755833407,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T066",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 2,
+      "label": "",
+      "x": 2497032.9685569573,
+      "y": 156597.4755833407,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T067",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 2,
+      "label": "",
+      "x": 2504678.757138275,
+      "y": 156597.4755833407,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T068",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 2,
+      "label": "",
+      "x": 2506620.137470942,
+      "y": 156597.4755833407,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T069",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 2,
+      "label": "",
+      "x": 2508561.5178036094,
+      "y": 156597.4755833407,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T070",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 2,
+      "label": "",
+      "x": 2510502.8981362768,
+      "y": 156597.4755833407,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T071",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 2,
+      "label": "",
+      "x": 2512444.278468944,
+      "y": 156597.4755833407,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T072",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 2,
+      "label": "",
+      "x": 2514385.658801612,
+      "y": 156597.4755833407,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T073",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 2,
+      "label": "",
+      "x": 2516327.039134279,
+      "y": 156597.4755833407,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T074",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 2,
+      "label": "",
+      "x": 2518268.4194669463,
+      "y": 156597.4755833407,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T075",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 2,
+      "label": "",
+      "x": 2480716.569116617,
+      "y": 156997.4755833408,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T076",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 2,
+      "label": "",
+      "x": 2482657.949449284,
+      "y": 156997.4755833408,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T077",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 2,
+      "label": "",
+      "x": 2484599.3297819523,
+      "y": 156997.4755833408,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T078",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 2,
+      "label": "",
+      "x": 2486540.7101146188,
+      "y": 156997.4755833408,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T079",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 2,
+      "label": "",
+      "x": 2488482.090447287,
+      "y": 156997.4755833408,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T080",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 2,
+      "label": "",
+      "x": 2490423.470779954,
+      "y": 156997.4755833408,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T081",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 2,
+      "label": "",
+      "x": 2492364.851112621,
+      "y": 156997.4755833408,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T082",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 2,
+      "label": "",
+      "x": 2494306.231445289,
+      "y": 156997.4755833408,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T083",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 2,
+      "label": "",
+      "x": 2496247.6117779557,
+      "y": 156997.4755833408,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T084",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 2,
+      "label": "",
+      "x": 2498188.992110623,
+      "y": 156997.4755833408,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T085",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 2,
+      "label": "",
+      "x": 2505834.7806919413,
+      "y": 156997.4755833408,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T086",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 2,
+      "label": "",
+      "x": 2507776.1610246077,
+      "y": 156997.4755833408,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T087",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 2,
+      "label": "",
+      "x": 2509717.541357275,
+      "y": 156997.4755833408,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T088",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 2,
+      "label": "",
+      "x": 2511658.921689943,
+      "y": 156997.4755833408,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T089",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 2,
+      "label": "",
+      "x": 2513600.30202261,
+      "y": 156997.4755833408,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T090",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 2,
+      "label": "",
+      "x": 2515541.682355278,
+      "y": 156997.4755833408,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T091",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 2,
+      "label": "",
+      "x": 2517483.062687945,
+      "y": 156997.4755833408,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T092",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 2,
+      "label": "",
+      "x": 2519424.443020612,
+      "y": 156997.4755833408,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T093",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 2,
+      "label": "",
+      "x": 2478049.893472353,
+      "y": 157802.8757163562,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T094",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 2,
+      "label": "",
+      "x": 2499128.896781384,
+      "y": 157802.8757163562,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T095",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 2,
+      "label": "",
+      "x": 2502940.482924999,
+      "y": 157802.8757163562,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T096",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 2,
+      "label": "",
+      "x": 2521895.876603573,
+      "y": 157802.8757163562,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T097",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 2,
+      "label": "",
+      "x": 2478449.893472353,
+      "y": 158202.8757163562,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T098",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 2,
+      "label": "",
+      "x": 2499528.896781384,
+      "y": 158202.8757163562,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T099",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 2,
+      "label": "",
+      "x": 2503340.482924999,
+      "y": 158202.8757163562,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T100",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 2,
+      "label": "",
+      "x": 2522295.876603573,
+      "y": 158202.8757163562,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T101",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 2,
+      "label": "",
+      "x": 2527881.97729769,
+      "y": 159109.9278046204,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T102",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 2,
+      "label": "",
+      "x": 2528747.66272264,
+      "y": 159409.9278046204,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T103",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 2,
+      "label": "",
+      "x": 2531907.717942683,
+      "y": 160780.56320730294,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T104",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 2,
+      "label": "",
+      "x": 2532508.134727987,
+      "y": 160956.71592389484,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T105",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 2,
+      "label": "",
+      "x": 2533432.719661498,
+      "y": 162305.5649261172,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T106",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 2,
+      "label": "",
+      "x": 2534033.136446802,
+      "y": 162481.7176427091,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T107",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 2,
+      "label": "",
+      "x": 2534957.721380313,
+      "y": 163830.56664493144,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T108",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 2,
+      "label": "",
+      "x": 2535558.138165617,
+      "y": 164006.71936152334,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T109",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 2,
+      "label": "",
+      "x": 2483148.789051555,
+      "y": 164537.0965257248,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T110",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 2,
+      "label": "",
+      "x": 2482883.103626605,
+      "y": 164837.0965257248,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T111",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 2,
+      "label": "",
+      "x": 2536482.723099128,
+      "y": 165355.5683637457,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T112",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 2,
+      "label": "",
+      "x": 2537083.139884432,
+      "y": 165531.7210803376,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T113",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 2,
+      "label": "",
+      "x": 2484601.984151313,
+      "y": 165990.291625484,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T114",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 2,
+      "label": "",
+      "x": 2485745.65394585,
+      "y": 165990.291625484,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T115",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 2,
+      "label": "",
+      "x": 2489243.025872019,
+      "y": 165990.291625484,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T116",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 2,
+      "label": "",
+      "x": 2484436.298726364,
+      "y": 166390.291625484,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T117",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 2,
+      "label": "",
+      "x": 2486552.325163326,
+      "y": 166390.291625484,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T118",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 2,
+      "label": "",
+      "x": 2489864.107059561,
+      "y": 166390.291625484,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T119",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 2,
+      "label": "",
+      "x": 2485361.558510744,
+      "y": 166749.8659849143,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T120",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 2,
+      "label": "",
+      "x": 2538007.724817943,
+      "y": 166880.57008255995,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T121",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 2,
+      "label": "",
+      "x": 2485032.360793412,
+      "y": 166986.3536925315,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T122",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 2,
+      "label": "",
+      "x": 2538608.1416032473,
+      "y": 167056.72279915184,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T123",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 2,
+      "label": "",
+      "x": 2482745.519831757,
+      "y": 167704.4604002495,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T124",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 2,
+      "label": "",
+      "x": 2483145.519831758,
+      "y": 168104.4604002495,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T125",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 2,
+      "label": "",
+      "x": 2539532.7265367582,
+      "y": 168405.5718013742,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T126",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 2,
+      "label": "",
+      "x": 2540133.1433220617,
+      "y": 168581.7245179661,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T127",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 2,
+      "label": "",
+      "x": 2538505.913664999,
+      "y": 169168.1787469804,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T128",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 2,
+      "label": "",
+      "x": 2538240.228240051,
+      "y": 169468.1787469805,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T129",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 2,
+      "label": "",
+      "x": 2538966.555235723,
+      "y": 170194.505742653,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T130",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 2,
+      "label": "",
+      "x": 2539832.240660672,
+      "y": 170494.5057426528,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T131",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 2,
+      "label": "",
+      "x": 2515532.69557954,
+      "y": 170954.88565275376,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T132",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 2,
+      "label": "",
+      "x": 2515142.685061178,
+      "y": 171130.56055934218,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T133",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 2,
+      "label": "",
+      "x": 2558004.20492778,
+      "y": 171413.4917934392,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T134",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 2,
+      "label": "",
+      "x": 2558362.025449983,
+      "y": 171771.312315641,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T135",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 2,
+      "label": "",
+      "x": 2540810.966082114,
+      "y": 172038.916589044,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T136",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 2,
+      "label": "",
+      "x": 2546224.902754014,
+      "y": 172038.916589044,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T137",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 2,
+      "label": "",
+      "x": 2541776.651507063,
+      "y": 172438.9165890439,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T138",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 2,
+      "label": "",
+      "x": 2546628.352287136,
+      "y": 172438.916589044,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T139",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 2,
+      "label": "",
+      "x": 2517074.685941072,
+      "y": 172496.87601428712,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T140",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 2,
+      "label": "",
+      "x": 2561182.647187522,
+      "y": 172611.4638631995,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T141",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 2,
+      "label": "",
+      "x": 2516684.67542271,
+      "y": 172672.55092087554,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T142",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 2,
+      "label": "",
+      "x": 2560668.671659246,
+      "y": 172744.4375084424,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T143",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 2,
+      "label": "",
+      "x": 2554808.632590107,
+      "y": 172891.02133903696,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T144",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 2,
+      "label": "",
+      "x": 2554457.334236561,
+      "y": 173116.93817134385,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T145",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 2,
+      "label": "",
+      "x": 2561764.54582183,
+      "y": 173193.3624975075,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T146",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 2,
+      "label": "",
+      "x": 2561250.570293554,
+      "y": 173326.3361427503,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T147",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 2,
+      "label": "",
+      "x": 2552112.725585501,
+      "y": 173481.2381504731,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T148",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 2,
+      "label": "",
+      "x": 2552512.725585501,
+      "y": 173481.2381504731,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T149",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 2,
+      "label": "",
+      "x": 2555559.736759939,
+      "y": 173642.125508869,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T150",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 2,
+      "label": "",
+      "x": 2562346.444456138,
+      "y": 173775.2611318154,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T151",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 2,
+      "label": "",
+      "x": 2555208.438406393,
+      "y": 173868.04234117593,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T152",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 2,
+      "label": "",
+      "x": 2561832.468927862,
+      "y": 173908.2347770582,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T153",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 2,
+      "label": "",
+      "x": 2562928.343090446,
+      "y": 174357.1597661234,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T154",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 2,
+      "label": "",
+      "x": 2556310.840929771,
+      "y": 174393.22967870062,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T155",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 2,
+      "label": "",
+      "x": 2562414.36756217,
+      "y": 174490.1334113663,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T156",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 2,
+      "label": "",
+      "x": 2555959.542576225,
+      "y": 174619.146511008,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T157",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 2,
+      "label": "",
+      "x": 2563510.241724754,
+      "y": 174939.0584004315,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T158",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 2,
+      "label": "",
+      "x": 2562996.266196478,
+      "y": 175072.0320456743,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T159",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 2,
+      "label": "",
+      "x": 2557061.945099603,
+      "y": 175144.3338485327,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T160",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 2,
+      "label": "",
+      "x": 2556710.646746057,
+      "y": 175370.25068084005,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T161",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 2,
+      "label": "",
+      "x": 2564092.140359062,
+      "y": 175520.9570347382,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T162",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 2,
+      "label": "",
+      "x": 2563578.164830786,
+      "y": 175653.9306799811,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T163",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 2,
+      "label": "",
+      "x": 2557813.049269435,
+      "y": 175895.43801836474,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T164",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 2,
+      "label": "",
+      "x": 2524233.631213801,
+      "y": 175919.47968002356,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T165",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 2,
+      "label": "",
+      "x": 2526526.365850728,
+      "y": 175919.47968002356,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T166",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 2,
+      "label": "",
+      "x": 2528819.100487655,
+      "y": 175919.47968002356,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T167",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 2,
+      "label": "",
+      "x": 2531111.835124582,
+      "y": 175919.47968002356,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T168",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 2,
+      "label": "",
+      "x": 2533404.569761509,
+      "y": 175919.47968002356,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T169",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 2,
+      "label": "",
+      "x": 2535697.304398436,
+      "y": 175919.47968002356,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T170",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 2,
+      "label": "",
+      "x": 2537990.039035363,
+      "y": 175919.47968002356,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T171",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 2,
+      "label": "",
+      "x": 2540282.77367229,
+      "y": 175919.47968002356,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T172",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 2,
+      "label": "",
+      "x": 2564674.03899337,
+      "y": 176102.8556690463,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T173",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 2,
+      "label": "",
+      "x": 2557461.750915889,
+      "y": 176121.3548506715,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T174",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 2,
+      "label": "",
+      "x": 2564160.063465094,
+      "y": 176235.8293142891,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T175",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 2,
+      "label": "",
+      "x": 2523964.369830748,
+      "y": 176319.47968002356,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T176",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 2,
+      "label": "",
+      "x": 2526257.104467675,
+      "y": 176319.47968002356,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T177",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 2,
+      "label": "",
+      "x": 2528549.839104602,
+      "y": 176319.47968002356,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T178",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 2,
+      "label": "",
+      "x": 2530842.573741529,
+      "y": 176319.47968002356,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T179",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 2,
+      "label": "",
+      "x": 2533135.308378456,
+      "y": 176319.47968002356,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T180",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 2,
+      "label": "",
+      "x": 2535428.043015383,
+      "y": 176319.47968002356,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T181",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 2,
+      "label": "",
+      "x": 2537720.77765231,
+      "y": 176319.47968002356,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T182",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 2,
+      "label": "",
+      "x": 2540013.512289237,
+      "y": 176319.47968002356,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T183",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 2,
+      "label": "",
+      "x": 2558564.153439267,
+      "y": 176646.5421881964,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T184",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 3,
+      "label": "",
+      "x": 2479560.545562951,
+      "y": 180372.67969859036,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T185",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 3,
+      "label": "",
+      "x": 2481501.9258956183,
+      "y": 180372.67969859036,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T186",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 3,
+      "label": "",
+      "x": 2483443.306228286,
+      "y": 180372.67969859036,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T187",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 3,
+      "label": "",
+      "x": 2485384.686560953,
+      "y": 180372.67969859036,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T188",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 3,
+      "label": "",
+      "x": 2487326.0668936213,
+      "y": 180372.67969859036,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T189",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 3,
+      "label": "",
+      "x": 2489267.447226288,
+      "y": 180372.67969859036,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T190",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 3,
+      "label": "",
+      "x": 2491208.827558955,
+      "y": 180372.67969859036,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T191",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 3,
+      "label": "",
+      "x": 2493150.207891623,
+      "y": 180372.67969859036,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T192",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 3,
+      "label": "",
+      "x": 2495091.58822429,
+      "y": 180372.67969859036,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T193",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 3,
+      "label": "",
+      "x": 2497032.9685569573,
+      "y": 180372.67969859036,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T194",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 3,
+      "label": "",
+      "x": 2504678.757138275,
+      "y": 180372.67969859036,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T195",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 3,
+      "label": "",
+      "x": 2506620.137470942,
+      "y": 180372.67969859036,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T196",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 3,
+      "label": "",
+      "x": 2508561.5178036094,
+      "y": 180372.67969859036,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T197",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 3,
+      "label": "",
+      "x": 2510502.8981362768,
+      "y": 180372.67969859036,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T198",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 3,
+      "label": "",
+      "x": 2512444.278468944,
+      "y": 180372.67969859036,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T199",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 3,
+      "label": "",
+      "x": 2514385.658801612,
+      "y": 180372.67969859036,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T200",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 3,
+      "label": "",
+      "x": 2516327.039134279,
+      "y": 180372.67969859036,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T201",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 3,
+      "label": "",
+      "x": 2518268.4194669463,
+      "y": 180372.67969859036,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T202",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 3,
+      "label": "",
+      "x": 2480716.569116617,
+      "y": 180772.67969859045,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T203",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 3,
+      "label": "",
+      "x": 2482657.949449284,
+      "y": 180772.67969859045,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T204",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 3,
+      "label": "",
+      "x": 2484599.3297819523,
+      "y": 180772.67969859045,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T205",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 3,
+      "label": "",
+      "x": 2486540.7101146188,
+      "y": 180772.67969859045,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T206",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 3,
+      "label": "",
+      "x": 2488482.090447287,
+      "y": 180772.67969859045,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T207",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 3,
+      "label": "",
+      "x": 2490423.470779954,
+      "y": 180772.67969859045,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T208",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 3,
+      "label": "",
+      "x": 2492364.851112621,
+      "y": 180772.67969859045,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T209",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 3,
+      "label": "",
+      "x": 2494306.231445289,
+      "y": 180772.67969859045,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T210",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 3,
+      "label": "",
+      "x": 2496247.6117779557,
+      "y": 180772.67969859045,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T211",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 3,
+      "label": "",
+      "x": 2498188.992110623,
+      "y": 180772.67969859045,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T212",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 3,
+      "label": "",
+      "x": 2505834.7806919413,
+      "y": 180772.67969859045,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T213",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 3,
+      "label": "",
+      "x": 2507776.1610246077,
+      "y": 180772.67969859045,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T214",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 3,
+      "label": "",
+      "x": 2509717.541357275,
+      "y": 180772.67969859045,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T215",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 3,
+      "label": "",
+      "x": 2511658.921689943,
+      "y": 180772.67969859045,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T216",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 3,
+      "label": "",
+      "x": 2513600.30202261,
+      "y": 180772.67969859045,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T217",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 3,
+      "label": "",
+      "x": 2515541.682355278,
+      "y": 180772.67969859045,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T218",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 3,
+      "label": "",
+      "x": 2517483.062687945,
+      "y": 180772.67969859045,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T219",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 3,
+      "label": "",
+      "x": 2519424.443020612,
+      "y": 180772.67969859045,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T220",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 3,
+      "label": "",
+      "x": 2478049.893472353,
+      "y": 181578.0798316059,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T221",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 3,
+      "label": "",
+      "x": 2499128.896781384,
+      "y": 181578.0798316059,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T222",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 3,
+      "label": "",
+      "x": 2502940.482924999,
+      "y": 181578.0798316059,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T223",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 3,
+      "label": "",
+      "x": 2521895.876603573,
+      "y": 181578.0798316059,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T224",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 3,
+      "label": "",
+      "x": 2478449.893472353,
+      "y": 181978.0798316059,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T225",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 3,
+      "label": "",
+      "x": 2499528.896781384,
+      "y": 181978.0798316059,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T226",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 3,
+      "label": "",
+      "x": 2503340.482924999,
+      "y": 181978.0798316059,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T227",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 3,
+      "label": "",
+      "x": 2522295.876603573,
+      "y": 181978.0798316059,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T228",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 3,
+      "label": "",
+      "x": 2527881.97729769,
+      "y": 182578.5710075572,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T229",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 3,
+      "label": "",
+      "x": 2528747.66272264,
+      "y": 182878.5710075572,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T230",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 3,
+      "label": "",
+      "x": 2531907.717942682,
+      "y": 184249.20641023974,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T231",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 3,
+      "label": "",
+      "x": 2532508.1347279856,
+      "y": 184425.35912683164,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T232",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 3,
+      "label": "",
+      "x": 2477424.362570851,
+      "y": 185664.9576115417,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T233",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 3,
+      "label": "",
+      "x": 2478954.295542531,
+      "y": 185664.9576115417,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T234",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 3,
+      "label": "",
+      "x": 2480242.321509485,
+      "y": 185664.9576115417,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T235",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 3,
+      "label": "",
+      "x": 2533432.719661497,
+      "y": 185774.208129054,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T236",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 3,
+      "label": "",
+      "x": 2534033.136446801,
+      "y": 185950.3608456459,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T237",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 3,
+      "label": "",
+      "x": 2478103.172992418,
+      "y": 185964.9576115417,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T238",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 3,
+      "label": "",
+      "x": 2479633.105964099,
+      "y": 185964.9576115417,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T239",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 3,
+      "label": "",
+      "x": 2481108.006934434,
+      "y": 185964.9576115417,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T240",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 3,
+      "label": "",
+      "x": 2475668.917846721,
+      "y": 186393.228047331,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T241",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 3,
+      "label": "",
+      "x": 2475468.21576994,
+      "y": 186616.790039262,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T242",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 3,
+      "label": "",
+      "x": 2476427.202434648,
+      "y": 187151.5126352578,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T243",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 3,
+      "label": "",
+      "x": 2534957.721380312,
+      "y": 187299.20984786825,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T244",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 3,
+      "label": "",
+      "x": 2476226.500357867,
+      "y": 187375.0746271888,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T245",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 3,
+      "label": "",
+      "x": 2535558.138165616,
+      "y": 187475.36256446014,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T246",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 3,
+      "label": "",
+      "x": 2477185.487022575,
+      "y": 187909.7972231844,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T247",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 3,
+      "label": "",
+      "x": 2476984.784945794,
+      "y": 188133.3592151154,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T248",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 3,
+      "label": "",
+      "x": 2477943.771610501,
+      "y": 188668.081811111,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T249",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 3,
+      "label": "",
+      "x": 2536482.723099127,
+      "y": 188824.2115666825,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T250",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 3,
+      "label": "",
+      "x": 2477743.06953372,
+      "y": 188891.643803042,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T251",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 3,
+      "label": "",
+      "x": 2537083.139884431,
+      "y": 189000.3642832744,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T252",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 3,
+      "label": "",
+      "x": 2481274.505981325,
+      "y": 189258.1541449713,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T253",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 3,
+      "label": "",
+      "x": 2484401.203467863,
+      "y": 189258.1541449713,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T254",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 3,
+      "label": "",
+      "x": 2481136.525702805,
+      "y": 189558.1541449713,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T255",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 3,
+      "label": "",
+      "x": 2484135.518042914,
+      "y": 189558.1541449713,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T256",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 3,
+      "label": "",
+      "x": 2538007.724817942,
+      "y": 190349.21328549675,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T257",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 3,
+      "label": "",
+      "x": 2538608.141603246,
+      "y": 190525.36600208865,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T258",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 3,
+      "label": "",
+      "x": 2485750.467501129,
+      "y": 191173.1036031862,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T259",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 3,
+      "label": "",
+      "x": 2486716.152926078,
+      "y": 191573.1036031862,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T260",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 3,
+      "label": "",
+      "x": 2539532.7265367573,
+      "y": 191874.215004311,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T261",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 3,
+      "label": "",
+      "x": 2540133.143322061,
+      "y": 192050.3677209029,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T262",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 3,
+      "label": "",
+      "x": 2538505.913664999,
+      "y": 192636.8219499172,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T263",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 3,
+      "label": "",
+      "x": 2538240.22824005,
+      "y": 192936.8219499172,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T264",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 3,
+      "label": "",
+      "x": 2539768.644520684,
+      "y": 194465.2382305515,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T265",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 3,
+      "label": "",
+      "x": 2540734.329945633,
+      "y": 194865.2382305515,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T266",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 3,
+      "label": "",
+      "x": 2510622.006512654,
+      "y": 199388.1228829603,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T267",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 3,
+      "label": "",
+      "x": 2513029.106645917,
+      "y": 199388.1228829603,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T268",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 3,
+      "label": "",
+      "x": 2515436.206779179,
+      "y": 199388.1228829603,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T269",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 3,
+      "label": "",
+      "x": 2517843.306912442,
+      "y": 199388.1228829603,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T270",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 3,
+      "label": "",
+      "x": 2536235.283124969,
+      "y": 199388.1228829603,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T271",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 3,
+      "label": "",
+      "x": 2538565.120269791,
+      "y": 199388.1228829603,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T272",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 3,
+      "label": "",
+      "x": 2496179.405713078,
+      "y": 199388.12288296034,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T273",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 3,
+      "label": "",
+      "x": 2498586.505846341,
+      "y": 199388.12288296034,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T274",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 3,
+      "label": "",
+      "x": 2500993.6059796037,
+      "y": 199388.12288296034,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T275",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 3,
+      "label": "",
+      "x": 2503400.7061128663,
+      "y": 199388.12288296034,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T276",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 3,
+      "label": "",
+      "x": 2505807.806246129,
+      "y": 199388.12288296034,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T277",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 3,
+      "label": "",
+      "x": 2508214.906379391,
+      "y": 199388.12288296034,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T278",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 3,
+      "label": "",
+      "x": 2522256.260256031,
+      "y": 199388.12288296034,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T279",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 3,
+      "label": "",
+      "x": 2524586.097400854,
+      "y": 199388.12288296034,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T280",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 3,
+      "label": "",
+      "x": 2526915.934545677,
+      "y": 199388.12288296034,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T281",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 3,
+      "label": "",
+      "x": 2529245.7716905,
+      "y": 199388.12288296034,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T282",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 3,
+      "label": "",
+      "x": 2531575.608835323,
+      "y": 199388.12288296034,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T283",
+      "node_type": "physical_junction",
+      "subtype": "tee_return",
+      "floor": 3,
+      "label": "",
+      "x": 2533905.4459801447,
+      "y": 199388.12288296034,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T284",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 3,
+      "label": "",
+      "x": 2510352.745129601,
+      "y": 199788.1228829603,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T285",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 3,
+      "label": "",
+      "x": 2512759.845262863,
+      "y": 199788.1228829603,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T286",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 3,
+      "label": "",
+      "x": 2515166.945396126,
+      "y": 199788.1228829603,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T287",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 3,
+      "label": "",
+      "x": 2517574.045529389,
+      "y": 199788.1228829603,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T288",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 3,
+      "label": "",
+      "x": 2535966.021741915,
+      "y": 199788.1228829603,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T289",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 3,
+      "label": "",
+      "x": 2538295.858886738,
+      "y": 199788.1228829603,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T290",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 3,
+      "label": "",
+      "x": 2495910.144330025,
+      "y": 199788.12288296034,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T291",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 3,
+      "label": "",
+      "x": 2498317.244463288,
+      "y": 199788.12288296034,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T292",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 3,
+      "label": "",
+      "x": 2500724.344596551,
+      "y": 199788.12288296034,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T293",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 3,
+      "label": "",
+      "x": 2503131.4447298134,
+      "y": 199788.12288296034,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T294",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 3,
+      "label": "",
+      "x": 2505538.544863076,
+      "y": 199788.12288296034,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T295",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 3,
+      "label": "",
+      "x": 2507945.644996338,
+      "y": 199788.12288296034,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T296",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 3,
+      "label": "",
+      "x": 2521986.998872978,
+      "y": 199788.12288296034,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T297",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 3,
+      "label": "",
+      "x": 2524316.836017801,
+      "y": 199788.12288296034,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T298",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 3,
+      "label": "",
+      "x": 2526646.6731626242,
+      "y": 199788.12288296034,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T299",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 3,
+      "label": "",
+      "x": 2528976.510307447,
+      "y": 199788.12288296034,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T300",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 3,
+      "label": "",
+      "x": 2531306.34745227,
+      "y": 199788.12288296034,
+      "placement_rule": "preprocessed_three_ray_tee"
+    },
+    {
+      "node_id": "T301",
+      "node_type": "physical_junction",
+      "subtype": "tee_supply",
+      "floor": 3,
+      "label": "",
+      "x": 2533636.1845970917,
+      "y": 199788.12288296034,
+      "placement_rule": "preprocessed_three_ray_tee"
+    }
+  ],
+  "edges": []
+}

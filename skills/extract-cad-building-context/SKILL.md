@@ -5,7 +5,13 @@ description: Extract auditable architectural context from existing building-plan
 
 # Extract CAD Building Context
 
-Current release: **v1.1.3**. Use this for source-derived building context, rather than generating or redesigning a floor plan. Read `references/research-and-boundaries.md` for tool selection and limitations.
+`source_shaft_text_inventory.py` re-extracts all labels containing `井` already present in a supplied architectural context, validates their source chains, text and world positions, and lists nearby graph risers without assigning pipe ownership or a shaft boundary. Nested blocks and cached MULTILEADER text are supported through the existing source renderer. This is not a complete native text inventory: proxy copies may be skipped even when the context issue count is zero. Run `test_source_shaft_text_inventory.py` and shaft-source tests.
+
+`proxy_object_owner_inventory.py` distinguishes opaque `ACAD_PROXY_OBJECT` database entries from graphical `ACAD_PROXY_ENTITY` instances and traces owner metadata up to a graphical entity or block record, without decoding proprietary payload. A matching source-chain handle is metadata only; an absent match does not establish full visual or semantic coverage. Database totals are not the count skipped by a renderer. Run `test_proxy_object_owner_inventory.py` and source readability tests.
+
+User language requirements override the default English display. For a source-Chinese viewer, keep this skill's source text and English alias records unchanged, verify strict native decoding and source handles, and use the visualization skill's explicit source-label display option. The building sidecar remains an architectural evidence layer, not proof of room boundaries or equipment ownership.
+
+Current release: **v1.1.4**. Use this for source-derived building context, rather than generating or redesigning a floor plan. Read `references/research-and-boundaries.md` for tool selection and limitations.
 
 ## Workflow
 
@@ -35,3 +41,7 @@ Source layer exclusion v1.1.1: do not interpret the Chinese door character insid
 ## Log consolidation (2026-10-27)
 
 Read [building branch applicability](references/branch-applicability.md) for mixed drawings, support-only sheets, zero-result adapters and pipe/building isolation. Instruction/handoff revision only; the validated geometry/rendering algorithms from the previous release are retained.
+
+`shaft_label_source_candidates.py` verifies explicitly selected two-handle modelspace INSERT/TEXT chains against the readable source hash, block membership, original Chinese text and WCS transform, then lists nearby graph `out_of_plane_riser` candidates within a caller-specified radius. The architectural sidecar and graph must both reference the same source SHA-256. Radius is only a search scope: no shaft polygon, floor-to-floor identity, pipe ownership or connection is inferred. Nested chains deeper than one INSERT, xrefs and proxies are outside this helper and require separate handling. Run `test_shaft_label_source_candidates.py`, building context regression and a source-bound comparison. Keep per-floor source evidence and do not use candidates as accepted mappings.
+
+`floor_anchor_riser_evidence.py` tests an explicit floor translation hypothesis against at least three non-collinear, selected native INSERT/TEXT anchor pairs with exact source identity, block membership, text and transformed coordinates. The policy pins both sources, contexts, graphs and shaft-candidate reports; candidate risers must still match the bound graphs. Record how anchors were selected and alternative repeated matches. It computes spatial residuals only: selected anchors can be dependent on the hypothesized riser alignment, and near-zero residual is not physical connection or an isometric mapping. It does not search all possible registrations or estimate rotation/scale. Run `test_floor_anchor_riser_evidence.py` and source-bound checks.

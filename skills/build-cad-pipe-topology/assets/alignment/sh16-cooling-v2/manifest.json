@@ -1,0 +1,10 @@
+{
+  "expected/edge_summary.json": "1048160007657cb9be74732a5c7f77a55f1da32e90ae2dcf552a53a39ebda4dd",
+  "expected/graph_with_edges.json": "fd2765c2e43b7f520c1135fa0534ce125e3e28a5312e55be374de3083758c21a",
+  "inputs/04-冷却水系统原理图.dxf": "1d49b54b7e1e05403355054cba67572f753724dab509df5d5e3139906af5c291",
+  "inputs/bindings.json": "a1a8706a858cd2c30063b34be9f2126806db69726a817f418716edf55a23af9f",
+  "inputs/materials.json": "572d012cfda031e0fd9d2a5bb86e8923445105336c28b9873f171fe7a356eb8c",
+  "inputs/previous-graph.json": "c595742c733fd708d962c7bfaf6b2fdc7238a25989899c94e1a1cbd124de1b17",
+  "inputs/profiles.json": "cd81a81c1081a046de17fb0e97940108fe7d4dfb973dd85221cf6e62bcdf3dbc",
+  "inputs/source-profile.json": "e0667816884c299c714799d3585fc76002500bc40a61323b15410f096c95fa5a"
+}

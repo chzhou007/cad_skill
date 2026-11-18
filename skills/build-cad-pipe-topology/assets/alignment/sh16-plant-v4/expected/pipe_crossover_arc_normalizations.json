@@ -1,0 +1,328 @@
+[
+  {
+    "a": [
+      2215085.356408424,
+      319104.6264439465
+    ],
+    "b": [
+      2215354.5552688655,
+      319104.6264439465
+    ],
+    "system": "supply",
+    "handle": "23A9A",
+    "radius": 134.5994302207172,
+    "span": 180.0,
+    "source_display_geometry": {
+      "type": "ARC",
+      "center": [
+        2215219.955838645,
+        319104.6264439465
+      ],
+      "radius": 134.5994302207172,
+      "start_angle": 180.0,
+      "end_angle": 0.0
+    },
+    "normalization_status": "normalized",
+    "crossings": [
+      {
+        "crossing": [
+          2215219.9558386453,
+          319104.6264439465
+        ],
+        "crossed_system": "return",
+        "crossed_handle": "23B21",
+        "crossing_evidence": "native_pipe_interior"
+      }
+    ]
+  },
+  {
+    "a": [
+      2254057.5584950894,
+      319104.6264439465
+    ],
+    "b": [
+      2254326.7573555307,
+      319104.6264439465
+    ],
+    "system": "supply",
+    "handle": "23B20",
+    "radius": 134.5994302207172,
+    "span": 180.0,
+    "source_display_geometry": {
+      "type": "ARC",
+      "center": [
+        2254192.15792531,
+        319104.6264439465
+      ],
+      "radius": 134.5994302207172,
+      "start_angle": 180.0,
+      "end_angle": 0.0
+    },
+    "normalization_status": "normalized",
+    "crossings": [
+      {
+        "crossing": [
+          2254191.6226614174,
+          319104.6264439465
+        ],
+        "crossed_system": "return",
+        "crossed_handle": "23E92",
+        "crossing_evidence": "native_pipe_interior"
+      }
+    ]
+  },
+  {
+    "a": [
+      2235562.110316928,
+      326853.46587923344
+    ],
+    "b": [
+      2235562.110316928,
+      327089.2740785532
+    ],
+    "system": "supply",
+    "handle": "23F07",
+    "radius": 117.9040996598984,
+    "span": 180.0,
+    "source_display_geometry": {
+      "type": "ARC",
+      "center": [
+        2235562.110316928,
+        326971.3699788933
+      ],
+      "radius": 117.9040996598984,
+      "start_angle": 270.0,
+      "end_angle": 90.0
+    },
+    "normalization_status": "normalized",
+    "crossings": [
+      {
+        "crossing": [
+          2235562.110316928,
+          326971.3699788933
+        ],
+        "crossed_system": "supply",
+        "crossed_handle": "23A97",
+        "crossing_evidence": "native_pipe_interior"
+      }
+    ]
+  },
+  {
+    "a": [
+      2236127.284045653,
+      327969.36634584714
+    ],
+    "b": [
+      2236127.284045653,
+      328205.1745451669
+    ],
+    "system": "supply",
+    "handle": "23F09",
+    "radius": 117.9040996598984,
+    "span": 180.0,
+    "source_display_geometry": {
+      "type": "ARC",
+      "center": [
+        2236127.284045653,
+        328087.270445507
+      ],
+      "radius": 117.9040996598984,
+      "start_angle": 270.0,
+      "end_angle": 90.0
+    },
+    "normalization_status": "normalized",
+    "crossings": [
+      {
+        "crossing": [
+          2236127.284045653,
+          328087.26670540334
+        ],
+        "crossed_system": "return",
+        "crossed_handle": "23ABD",
+        "crossing_evidence": "native_pipe_interior"
+      }
+    ]
+  },
+  {
+    "a": [
+      2230607.571782254,
+      327089.2740785532
+    ],
+    "b": [
+      2230607.571782254,
+      326853.46587923344
+    ],
+    "system": "supply",
+    "handle": "23F53",
+    "radius": 117.9040996598984,
+    "span": 180.0,
+    "source_display_geometry": {
+      "type": "ARC",
+      "center": [
+        2230607.571782254,
+        326971.3699788933
+      ],
+      "radius": 117.9040996598984,
+      "start_angle": 90.0,
+      "end_angle": 270.0
+    },
+    "normalization_status": "normalized",
+    "crossings": [
+      {
+        "crossing": [
+          2230607.571782254,
+          326971.3699788933
+        ],
+        "crossed_system": "supply",
+        "crossed_handle": "23A97",
+        "crossing_evidence": "native_pipe_interior"
+      }
+    ]
+  },
+  {
+    "a": [
+      2230042.39805353,
+      328205.1745451669
+    ],
+    "b": [
+      2230042.39805353,
+      327969.36634584714
+    ],
+    "system": "supply",
+    "handle": "23F54",
+    "radius": 117.9040996598984,
+    "span": 180.0,
+    "source_display_geometry": {
+      "type": "ARC",
+      "center": [
+        2230042.39805353,
+        328087.270445507
+      ],
+      "radius": 117.9040996598984,
+      "start_angle": 90.0,
+      "end_angle": 270.0
+    },
+    "normalization_status": "normalized",
+    "crossings": [
+      {
+        "crossing": [
+          2230042.39805353,
+          328087.2661876677
+        ],
+        "crossed_system": "return",
+        "crossed_handle": "23F0B",
+        "crossing_evidence": "native_pipe_interior"
+      }
+    ]
+  },
+  {
+    "a": [
+      2213561.8779022545,
+      319104.6264439465
+    ],
+    "b": [
+      2213831.076762696,
+      319104.6264439465
+    ],
+    "system": "supply",
+    "handle": "23F59",
+    "radius": 134.5994302207172,
+    "span": 180.0,
+    "source_display_geometry": {
+      "type": "ARC",
+      "center": [
+        2213696.477332475,
+        319104.6264439465
+      ],
+      "radius": 134.5994302207172,
+      "start_angle": 180.0,
+      "end_angle": 0.0
+    },
+    "normalization_status": "normalized",
+    "crossings": [
+      {
+        "crossing": [
+          2213698.104284811,
+          319104.6264439465
+        ],
+        "crossed_system": "pending",
+        "crossed_handle": "23F58",
+        "crossing_evidence": "native_pipe_interior"
+      }
+    ]
+  },
+  {
+    "a": [
+      2198399.2065797905,
+      292820.9034746799
+    ],
+    "b": [
+      2198668.405440232,
+      292820.9034746799
+    ],
+    "system": "pending",
+    "handle": "23A82",
+    "radius": 134.5994302207172,
+    "span": 180.0,
+    "source_display_geometry": {
+      "type": "ARC",
+      "center": [
+        2198533.806010011,
+        292820.9034746799
+      ],
+      "radius": 134.5994302207172,
+      "start_angle": 180.0,
+      "end_angle": 0.0,
+      "source_handle": "23A82"
+    },
+    "normalization_status": "normalized",
+    "crossings": [
+      {
+        "crossing": [
+          2198533.8060100107,
+          292820.9034746799
+        ],
+        "crossed_system": "supply",
+        "crossed_handle": "23A6F",
+        "crossing_evidence": "native_pipe_interior"
+      }
+    ]
+  },
+  {
+    "a": [
+      2198399.2065797905,
+      292520.9034746799
+    ],
+    "b": [
+      2198668.405440232,
+      292520.9034746799
+    ],
+    "system": "pending",
+    "handle": "23EEE",
+    "radius": 134.5994302207172,
+    "span": 180.0,
+    "source_display_geometry": {
+      "type": "ARC",
+      "center": [
+        2198533.806010011,
+        292520.9034746799
+      ],
+      "radius": 134.5994302207172,
+      "start_angle": 180.0,
+      "end_angle": 0.0,
+      "source_handle": "23EEE"
+    },
+    "normalization_status": "normalized",
+    "crossings": [
+      {
+        "crossing": [
+          2198533.8060100107,
+          292520.9034746799
+        ],
+        "crossed_system": "supply",
+        "crossed_handle": "23A6F",
+        "crossing_evidence": "native_pipe_interior"
+      }
+    ]
+  }
+]

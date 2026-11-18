@@ -1,0 +1,1833 @@
+[
+  {
+    "source_handle": "23A46",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23A47",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23A49",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23A57",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23A64",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23A65",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23A66",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23A94",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23AA4",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23AA5",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23AA7",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23AAB",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23AAC",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23AB4",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23ABF",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23AC3",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23AC4",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23AC8",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23AD5",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23ADE",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23AE4",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23AEC",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23AF5",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23B06",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23B1B",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23B1C",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23B1D",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23B1E",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23B1F",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23B23",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23B26",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23B2B",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23B34",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23B3E",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23B46",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23B4F",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23B58",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23B61",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23B6B",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23B73",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23B7C",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23B80",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23B86",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23B87",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23B89",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23B90",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23B95",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23BA2",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23BA3",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23BA4",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23BAE",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23BB2",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23BB3",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23BB5",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23BB9",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23BBA",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23BC2",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23BCC",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23BCD",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23BD7",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23BD8",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23BD9",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23BDA",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23BDB",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23BDE",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23BE3",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23BEC",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23BF4",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23BFD",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23C01",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23C07",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23C10",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23C11",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23C12",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23C13",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23C14",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23C15",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23C16",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23C1F",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23C24",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23C25",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23C26",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23C27",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23C28",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23C29",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23C2A",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23C2B",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23C2C",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23C2D",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23C33",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23C38",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23C43",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23C44",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23C45",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23C47",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23C48",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23C49",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23C51",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23C56",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23C5E",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23C62",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23C71",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23C75",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23C88",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23C8D",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23C9A",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23C9F",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23CA7",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23CAB",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23CD2",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23CD3",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23CD8",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23CD9",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23CE3",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23CE8",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23CED",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23D37",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23D38",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23D39",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23D3A",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23D3B",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23D3C",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23D41",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23D42",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23D43",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23D44",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23D4D",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23D4E",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23D4F",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23D50",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23D51",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23D52",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23D53",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23D54",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23D55",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23D56",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23D57",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23D58",
+    "role": "edge_component"
+  },
+  {
+    "device_name": "GV-23D72",
+    "equipment_type": "Gate Valve",
+    "type_code": "GV",
+    "source_kind": "block_insert",
+    "source_block_name": "闸阀",
+    "source_top_handle": "23D72",
+    "source_handles": [
+      "23D72"
+    ],
+    "x": 2196204.24793752,
+    "y": 337726.2167560482,
+    "assignment_x": 2196204.24793752,
+    "assignment_y": 337726.2167560482,
+    "source_insert_x": 2196340.820440174,
+    "source_insert_y": 337885.5905314589,
+    "assignment_rule": "inclusive_source_bounds_contact_unreviewed",
+    "role": "reference_legend_only",
+    "source_legend_evidence": {
+      "bounds": [
+        2193635.032976173,
+        330710.8317050028,
+        2204135.032976173,
+        339810.8317050028
+      ],
+      "source_title_handle": "23D5D",
+      "source_caption_handles": [
+        "23D68",
+        "23D69",
+        "23D6C",
+        "23D6D",
+        "23DAB",
+        "23DAC",
+        "23DAD",
+        "23DAE",
+        "23DB6"
+      ],
+      "rule": "explicit_legend_title_and_at_least_six_known_source_symbol_captions_scale_bounded_region"
+    }
+  },
+  {
+    "device_name": "BF-23D73",
+    "equipment_type": "Butterfly Valve",
+    "type_code": "BF",
+    "source_kind": "block_insert",
+    "source_block_name": "蝶阀",
+    "source_top_handle": "23D73",
+    "source_handles": [
+      "23D73"
+    ],
+    "x": 2196190.2093096795,
+    "y": 338539.52108790056,
+    "assignment_x": 2196190.2093096795,
+    "assignment_y": 338539.52108790056,
+    "source_insert_x": 2196363.678689703,
+    "source_insert_y": 338408.9087918948,
+    "assignment_rule": "inclusive_source_bounds_contact_unreviewed",
+    "role": "reference_legend_only",
+    "source_legend_evidence": {
+      "bounds": [
+        2193635.032976173,
+        330710.8317050028,
+        2204135.032976173,
+        339810.8317050028
+      ],
+      "source_title_handle": "23D5D",
+      "source_caption_handles": [
+        "23D68",
+        "23D69",
+        "23D6C",
+        "23D6D",
+        "23DAB",
+        "23DAC",
+        "23DAD",
+        "23DAE",
+        "23DB6"
+      ],
+      "rule": "explicit_legend_title_and_at_least_six_known_source_symbol_captions_scale_bounded_region"
+    }
+  },
+  {
+    "device_name": "MFC-23D74",
+    "equipment_type": "Metal Flexible Connector",
+    "type_code": "MFC",
+    "source_kind": "block_insert",
+    "source_block_name": "金属软连接",
+    "source_top_handle": "23D74",
+    "source_handles": [
+      "23D74"
+    ],
+    "x": 2196209.7289139954,
+    "y": 332449.4276950363,
+    "assignment_x": 2196209.7289139954,
+    "assignment_y": 332449.4276950363,
+    "source_insert_x": 2196307.171099475,
+    "source_insert_y": 332533.815103065,
+    "assignment_rule": "inclusive_source_bounds_contact_unreviewed",
+    "role": "reference_legend_only",
+    "source_legend_evidence": {
+      "bounds": [
+        2193635.032976173,
+        330710.8317050028,
+        2204135.032976173,
+        339810.8317050028
+      ],
+      "source_title_handle": "23D5D",
+      "source_caption_handles": [
+        "23D68",
+        "23D69",
+        "23D6C",
+        "23D6D",
+        "23DAB",
+        "23DAC",
+        "23DAD",
+        "23DAE",
+        "23DB6"
+      ],
+      "rule": "explicit_legend_title_and_at_least_six_known_source_symbol_captions_scale_bounded_region"
+    }
+  },
+  {
+    "device_name": "MCV-23D75",
+    "equipment_type": "Motorized Control Valve",
+    "type_code": "MCV",
+    "source_kind": "block_insert",
+    "source_block_name": "电动调节阀",
+    "source_top_handle": "23D75",
+    "source_handles": [
+      "23D75"
+    ],
+    "x": 2200064.895198852,
+    "y": 338657.79163191793,
+    "assignment_x": 2200064.895198852,
+    "assignment_y": 338657.79163191793,
+    "source_insert_x": 2200238.364337367,
+    "source_insert_y": 338402.5105051843,
+    "assignment_rule": "inclusive_source_bounds_contact_unreviewed",
+    "role": "reference_legend_only",
+    "source_legend_evidence": {
+      "bounds": [
+        2193635.032976173,
+        330710.8317050028,
+        2204135.032976173,
+        339810.8317050028
+      ],
+      "source_title_handle": "23D5D",
+      "source_caption_handles": [
+        "23D68",
+        "23D69",
+        "23D6C",
+        "23D6D",
+        "23DAB",
+        "23DAC",
+        "23DAD",
+        "23DAE",
+        "23DB6"
+      ],
+      "rule": "explicit_legend_title_and_at_least_six_known_source_symbol_captions_scale_bounded_region"
+    }
+  },
+  {
+    "device_name": "PG-23D76",
+    "equipment_type": "Pressure Gauge",
+    "type_code": "PG",
+    "source_kind": "block_insert",
+    "source_block_name": "压力表",
+    "source_top_handle": "23D76",
+    "source_handles": [
+      "23D76"
+    ],
+    "x": 2196174.5202039867,
+    "y": 334125.0112534114,
+    "assignment_x": 2196174.5202039867,
+    "assignment_y": 334125.0112534114,
+    "source_insert_x": 2196285.606390845,
+    "source_insert_y": 333848.2455032838,
+    "assignment_rule": "inclusive_source_bounds_contact_unreviewed",
+    "role": "reference_legend_only",
+    "source_legend_evidence": {
+      "bounds": [
+        2193635.032976173,
+        330710.8317050028,
+        2204135.032976173,
+        339810.8317050028
+      ],
+      "source_title_handle": "23D5D",
+      "source_caption_handles": [
+        "23D68",
+        "23D69",
+        "23D6C",
+        "23D6D",
+        "23DAB",
+        "23DAC",
+        "23DAD",
+        "23DAE",
+        "23DB6"
+      ],
+      "rule": "explicit_legend_title_and_at_least_six_known_source_symbol_captions_scale_bounded_region"
+    }
+  },
+  {
+    "device_name": "TH-23D77",
+    "equipment_type": "Thermometer",
+    "type_code": "TH",
+    "source_kind": "block_insert",
+    "source_block_name": "温度表",
+    "source_top_handle": "23D77",
+    "source_handles": [
+      "23D77"
+    ],
+    "x": 2196255.7096303655,
+    "y": 335075.6509755382,
+    "assignment_x": 2196255.7096303655,
+    "assignment_y": 335075.6509755382,
+    "source_insert_x": 2759383.867280234,
+    "source_insert_y": -190301.9202691223,
+    "assignment_rule": "inclusive_source_bounds_contact_unreviewed",
+    "role": "reference_legend_only",
+    "source_legend_evidence": {
+      "bounds": [
+        2193635.032976173,
+        330710.8317050028,
+        2204135.032976173,
+        339810.8317050028
+      ],
+      "source_title_handle": "23D5D",
+      "source_caption_handles": [
+        "23D68",
+        "23D69",
+        "23D6C",
+        "23D6D",
+        "23DAB",
+        "23DAC",
+        "23DAD",
+        "23DAE",
+        "23DB6"
+      ],
+      "rule": "explicit_legend_title_and_at_least_six_known_source_symbol_captions_scale_bounded_region"
+    }
+  },
+  {
+    "device_name": "RFC-23D78",
+    "equipment_type": "Rubber Flexible Connector",
+    "type_code": "RFC",
+    "source_kind": "block_insert",
+    "source_block_name": "橡胶软连接",
+    "source_top_handle": "23D78",
+    "source_handles": [
+      "23D78"
+    ],
+    "x": 2196248.307627364,
+    "y": 333300.3753344567,
+    "assignment_x": 2196248.307627364,
+    "assignment_y": 333300.3753344567,
+    "source_insert_x": 1651514.272229278,
+    "source_insert_y": 917613.7196730924,
+    "assignment_rule": "inclusive_source_bounds_contact_unreviewed",
+    "role": "reference_legend_only",
+    "source_legend_evidence": {
+      "bounds": [
+        2193635.032976173,
+        330710.8317050028,
+        2204135.032976173,
+        339810.8317050028
+      ],
+      "source_title_handle": "23D5D",
+      "source_caption_handles": [
+        "23D68",
+        "23D69",
+        "23D6C",
+        "23D6D",
+        "23DAB",
+        "23DAC",
+        "23DAD",
+        "23DAE",
+        "23DB6"
+      ],
+      "rule": "explicit_legend_title_and_at_least_six_known_source_symbol_captions_scale_bounded_region"
+    }
+  },
+  {
+    "device_name": "SNS-23D7A",
+    "equipment_type": "Sensor",
+    "type_code": "SNS",
+    "source_kind": "block_insert",
+    "source_block_name": "传感器",
+    "source_top_handle": "23D7A",
+    "source_handles": [
+      "23D79",
+      "23D7A",
+      "23D7F",
+      "23D80",
+      "23D81",
+      "23D82"
+    ],
+    "x": 2200037.7795574805,
+    "y": 334099.41577346966,
+    "assignment_x": 2200037.7795574805,
+    "assignment_y": 334099.41577346966,
+    "source_insert_x": 2200040.622839165,
+    "source_insert_y": 334155.6646986685,
+    "assignment_rule": "inclusive_source_bounds_contact_unreviewed",
+    "role": "reference_legend_only",
+    "source_legend_evidence": {
+      "bounds": [
+        2193635.032976173,
+        330710.8317050028,
+        2204135.032976173,
+        339810.8317050028
+      ],
+      "source_title_handle": "23D5D",
+      "source_caption_handles": [
+        "23D68",
+        "23D69",
+        "23D6C",
+        "23D6D",
+        "23DAB",
+        "23DAC",
+        "23DAD",
+        "23DAE",
+        "23DB6"
+      ],
+      "rule": "explicit_legend_title_and_at_least_six_known_source_symbol_captions_scale_bounded_region"
+    }
+  },
+  {
+    "device_name": "SNS-23D83",
+    "equipment_type": "Sensor",
+    "type_code": "SNS",
+    "source_kind": "block_insert",
+    "source_block_name": "传感器",
+    "source_top_handle": "23D83",
+    "source_handles": [
+      "23D83",
+      "23D87",
+      "23D89",
+      "23D8A",
+      "23D8B",
+      "23D8C"
+    ],
+    "x": 2200032.5521624917,
+    "y": 333154.4322514294,
+    "assignment_x": 2200032.5521624917,
+    "assignment_y": 333154.4322514294,
+    "source_insert_x": 2200035.395444176,
+    "source_insert_y": 333210.6811766287,
+    "assignment_rule": "inclusive_source_bounds_contact_unreviewed",
+    "role": "reference_legend_only",
+    "source_legend_evidence": {
+      "bounds": [
+        2193635.032976173,
+        330710.8317050028,
+        2204135.032976173,
+        339810.8317050028
+      ],
+      "source_title_handle": "23D5D",
+      "source_caption_handles": [
+        "23D68",
+        "23D69",
+        "23D6C",
+        "23D6D",
+        "23DAB",
+        "23DAC",
+        "23DAD",
+        "23DAE",
+        "23DB6"
+      ],
+      "rule": "explicit_legend_title_and_at_least_six_known_source_symbol_captions_scale_bounded_region"
+    }
+  },
+  {
+    "device_name": "SNS-23D8D",
+    "equipment_type": "Sensor",
+    "type_code": "SNS",
+    "source_kind": "block_insert",
+    "source_block_name": "传感器",
+    "source_top_handle": "23D8D",
+    "source_handles": [
+      "23D8D",
+      "23D92",
+      "23D93",
+      "23D94",
+      "23D9F"
+    ],
+    "x": 2199996.850757048,
+    "y": 334949.5578272979,
+    "assignment_x": 2199996.850757048,
+    "assignment_y": 334949.5578272979,
+    "source_insert_x": 2199999.978366901,
+    "source_insert_y": 335011.4316450169,
+    "assignment_rule": "inclusive_source_bounds_contact_unreviewed",
+    "role": "reference_legend_only",
+    "source_legend_evidence": {
+      "bounds": [
+        2193635.032976173,
+        330710.8317050028,
+        2204135.032976173,
+        339810.8317050028
+      ],
+      "source_title_handle": "23D5D",
+      "source_caption_handles": [
+        "23D68",
+        "23D69",
+        "23D6C",
+        "23D6D",
+        "23DAB",
+        "23DAC",
+        "23DAD",
+        "23DAE",
+        "23DB6"
+      ],
+      "rule": "explicit_legend_title_and_at_least_six_known_source_symbol_captions_scale_bounded_region"
+    }
+  },
+  {
+    "device_name": "WM-23D9E",
+    "equipment_type": "Remote Water Meter",
+    "type_code": "WM",
+    "source_kind": "block_insert",
+    "source_block_name": "远传水表",
+    "source_top_handle": "23D9E",
+    "source_handles": [
+      "23D9E"
+    ],
+    "x": 2199997.3381889258,
+    "y": 336801.8609592292,
+    "assignment_x": 2199997.3381889258,
+    "assignment_y": 336801.8609592292,
+    "source_insert_x": 1631590.385152443,
+    "source_insert_y": 855421.5594603354,
+    "assignment_rule": "inclusive_source_bounds_contact_unreviewed",
+    "role": "reference_legend_only",
+    "source_legend_evidence": {
+      "bounds": [
+        2193635.032976173,
+        330710.8317050028,
+        2204135.032976173,
+        339810.8317050028
+      ],
+      "source_title_handle": "23D5D",
+      "source_caption_handles": [
+        "23D68",
+        "23D69",
+        "23D6C",
+        "23D6D",
+        "23DAB",
+        "23DAC",
+        "23DAD",
+        "23DAE",
+        "23DB6"
+      ],
+      "rule": "explicit_legend_title_and_at_least_six_known_source_symbol_captions_scale_bounded_region"
+    }
+  },
+  {
+    "device_name": "YS-23DA7",
+    "equipment_type": "Y Strainer",
+    "type_code": "YS",
+    "source_kind": "block_insert",
+    "source_block_name": "Y型过滤器",
+    "source_top_handle": "23DA7",
+    "source_handles": [
+      "23DA7"
+    ],
+    "x": 2196176.211310453,
+    "y": 336837.32657053444,
+    "assignment_x": 2196176.211310453,
+    "assignment_y": 336837.32657053444,
+    "source_insert_x": 2195978.44490491,
+    "source_insert_y": 336628.5588263131,
+    "assignment_rule": "inclusive_source_bounds_contact_unreviewed",
+    "role": "reference_legend_only",
+    "source_legend_evidence": {
+      "bounds": [
+        2193635.032976173,
+        330710.8317050028,
+        2204135.032976173,
+        339810.8317050028
+      ],
+      "source_title_handle": "23D5D",
+      "source_caption_handles": [
+        "23D68",
+        "23D69",
+        "23D6C",
+        "23D6D",
+        "23DAB",
+        "23DAC",
+        "23DAD",
+        "23DAE",
+        "23DB6"
+      ],
+      "rule": "explicit_legend_title_and_at_least_six_known_source_symbol_captions_scale_bounded_region"
+    }
+  },
+  {
+    "device_name": "CV-23DA8",
+    "equipment_type": "Check Valve",
+    "type_code": "CV",
+    "source_kind": "block_insert",
+    "source_block_name": "单向阀",
+    "source_top_handle": "23DA8",
+    "source_handles": [
+      "23DA8"
+    ],
+    "x": 2196218.9992325264,
+    "y": 335973.36651741783,
+    "assignment_x": 2196218.9992325264,
+    "assignment_y": 335973.36651741783,
+    "source_insert_x": 2196045.529996691,
+    "source_insert_y": 335815.4711686156,
+    "assignment_rule": "inclusive_source_bounds_contact_unreviewed",
+    "role": "reference_legend_only",
+    "source_legend_evidence": {
+      "bounds": [
+        2193635.032976173,
+        330710.8317050028,
+        2204135.032976173,
+        339810.8317050028
+      ],
+      "source_title_handle": "23D5D",
+      "source_caption_handles": [
+        "23D68",
+        "23D69",
+        "23D6C",
+        "23D6D",
+        "23DAB",
+        "23DAC",
+        "23DAD",
+        "23DAE",
+        "23DB6"
+      ],
+      "rule": "explicit_legend_title_and_at_least_six_known_source_symbol_captions_scale_bounded_region"
+    }
+  },
+  {
+    "device_name": "BV-23DB4",
+    "equipment_type": "Balancing Valve",
+    "type_code": "BV",
+    "source_kind": "block_insert",
+    "source_block_name": "平衡阀",
+    "source_top_handle": "23DB4",
+    "source_handles": [
+      "23DB4"
+    ],
+    "x": 2196202.71487197,
+    "y": 331547.7676489469,
+    "assignment_x": 2196202.71487197,
+    "assignment_y": 331547.7676489469,
+    "source_insert_x": 2766996.963312617,
+    "source_insert_y": -299818.4932691762,
+    "assignment_rule": "inclusive_source_bounds_contact_unreviewed",
+    "role": "reference_legend_only",
+    "source_legend_evidence": {
+      "bounds": [
+        2193635.032976173,
+        330710.8317050028,
+        2204135.032976173,
+        339810.8317050028
+      ],
+      "source_title_handle": "23D5D",
+      "source_caption_handles": [
+        "23D68",
+        "23D69",
+        "23D6C",
+        "23D6D",
+        "23DAB",
+        "23DAC",
+        "23DAD",
+        "23DAE",
+        "23DB6"
+      ],
+      "rule": "explicit_legend_title_and_at_least_six_known_source_symbol_captions_scale_bounded_region"
+    }
+  },
+  {
+    "source_handle": "23DBB",
+    "role": "measurement_assembly_member",
+    "group_ids": [
+      "INSTR-23D21"
+    ]
+  },
+  {
+    "source_handle": "23DBC",
+    "role": "measurement_assembly_member",
+    "group_ids": [
+      "INSTR-23D21"
+    ]
+  },
+  {
+    "source_handle": "23DBD",
+    "role": "measurement_assembly_member",
+    "group_ids": [
+      "INSTR-23D2E"
+    ]
+  },
+  {
+    "source_handle": "23DBE",
+    "role": "measurement_assembly_member",
+    "group_ids": [
+      "INSTR-23D2E"
+    ]
+  },
+  {
+    "device_name": "MBF-23DBF",
+    "equipment_type": "Motorized Butterfly Valve",
+    "type_code": "MBF",
+    "source_kind": "block_insert",
+    "source_block_name": "电动蝶阀",
+    "source_top_handle": "23DBF",
+    "source_handles": [
+      "23DBF"
+    ],
+    "x": 2200025.0110538774,
+    "y": 337699.07256109244,
+    "assignment_x": 2200025.0110538774,
+    "assignment_y": 337699.07256109244,
+    "source_insert_x": 2200198.480893294,
+    "source_insert_y": 337872.5780613234,
+    "assignment_rule": "inclusive_source_bounds_contact_unreviewed",
+    "role": "reference_legend_only",
+    "source_legend_evidence": {
+      "bounds": [
+        2193635.032976173,
+        330710.8317050028,
+        2204135.032976173,
+        339810.8317050028
+      ],
+      "source_title_handle": "23D5D",
+      "source_caption_handles": [
+        "23D68",
+        "23D69",
+        "23D6C",
+        "23D6D",
+        "23DAB",
+        "23DAC",
+        "23DAD",
+        "23DAE",
+        "23DB6"
+      ],
+      "rule": "explicit_legend_title_and_at_least_six_known_source_symbol_captions_scale_bounded_region"
+    }
+  },
+  {
+    "source_handle": "23DC2",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23DC3",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23DC5",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23DDC",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23DE1",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23DEE",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23DEF",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23DF0",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23DFD",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23DFE",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23E00",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23E04",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23E05",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23E0D",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23E17",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23E18",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23E22",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23E23",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23E24",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23E25",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23E26",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23E29",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23E2E",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23E37",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23E3F",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23E48",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23E4C",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23E52",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23E53",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23E54",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23E77",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23E78",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23E79",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23E7E",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23E7F",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23E80",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23E81",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23E82",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23E83",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23E88",
+    "role": "measurement_assembly_member",
+    "group_ids": [
+      "INSTR-23E6E"
+    ]
+  },
+  {
+    "source_handle": "23E89",
+    "role": "measurement_assembly_member",
+    "group_ids": [
+      "INSTR-23E6E"
+    ]
+  },
+  {
+    "source_handle": "23E8A",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23E8B",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23E8F",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23E90",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23E91",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23E93",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23E94",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23E95",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23E96",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23EE6",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23EE7",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23EE8",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23EE9",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23EEA",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23EEB",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23EEC",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23EF0",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23EFD",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23F0C",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23F0D",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23F0E",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23F2A",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23F2B",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23F31",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23F32",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23F3C",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23F41",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23F46",
+    "role": "edge_component"
+  },
+  {
+    "device_name": "PG-23F61",
+    "equipment_type": "Pressure Gauge",
+    "type_code": "PG",
+    "source_kind": "block_insert",
+    "source_block_name": "压力表",
+    "source_top_handle": "23F61",
+    "source_handles": [
+      "23F61"
+    ],
+    "x": 2202848.377180498,
+    "y": 314240.1702910702,
+    "assignment_x": 2202848.377180498,
+    "assignment_y": 314240.1702910702,
+    "source_insert_x": 2202460.90513031,
+    "source_insert_y": 314395.6909524785,
+    "assignment_rule": "inclusive_source_bounds_contact_unreviewed",
+    "role": "equipment_internal_component",
+    "owner_equipment": "SC01-01"
+  },
+  {
+    "device_name": "PG-23F67",
+    "equipment_type": "Pressure Gauge",
+    "type_code": "PG",
+    "source_kind": "block_insert",
+    "source_block_name": "压力表",
+    "source_top_handle": "23F67",
+    "source_handles": [
+      "23F67"
+    ],
+    "x": 2202826.3774053385,
+    "y": 316027.7576493506,
+    "assignment_x": 2202826.3774053385,
+    "assignment_y": 316027.7576493506,
+    "source_insert_x": 2202670.85674393,
+    "source_insert_y": 315640.2855991624,
+    "assignment_rule": "inclusive_source_bounds_contact_unreviewed",
+    "role": "equipment_internal_component",
+    "owner_equipment": "SC01-01"
+  },
+  {
+    "device_name": "GV-23F78",
+    "equipment_type": "Gate Valve",
+    "type_code": "GV",
+    "source_kind": "block_insert",
+    "source_block_name": "闸阀",
+    "source_top_handle": "23F78",
+    "source_handles": [
+      "23F78"
+    ],
+    "x": 2201661.33716011,
+    "y": 315299.0638261876,
+    "assignment_x": 2201661.33716011,
+    "assignment_y": 315299.0638261876,
+    "source_insert_x": 2201524.764657441,
+    "source_insert_y": 315139.6900507596,
+    "assignment_rule": "inclusive_source_bounds_contact_unreviewed",
+    "role": "equipment_internal_component",
+    "owner_equipment": "SC01-01"
+  },
+  {
+    "device_name": "GV-23F79",
+    "equipment_type": "Gate Valve",
+    "type_code": "GV",
+    "source_kind": "block_insert",
+    "source_block_name": "闸阀",
+    "source_top_handle": "23F79",
+    "source_handles": [
+      "23F79"
+    ],
+    "x": 2204489.213188409,
+    "y": 313703.9457546958,
+    "assignment_x": 2204489.213188409,
+    "assignment_y": 313703.9457546958,
+    "source_insert_x": 2204352.64068574,
+    "source_insert_y": 313544.5719792678,
+    "assignment_rule": "inclusive_source_bounds_contact_unreviewed",
+    "role": "equipment_internal_component",
+    "owner_equipment": "SC01-01"
+  },
+  {
+    "device_name": "GV-23F7A",
+    "equipment_type": "Gate Valve",
+    "type_code": "GV",
+    "source_kind": "block_insert",
+    "source_block_name": "闸阀",
+    "source_top_handle": "23F7A",
+    "source_handles": [
+      "23F7A"
+    ],
+    "x": 2201661.33716011,
+    "y": 313695.7836659787,
+    "assignment_x": 2201661.33716011,
+    "assignment_y": 313695.7836659787,
+    "source_insert_x": 2201524.764657441,
+    "source_insert_y": 313536.4098905507,
+    "assignment_rule": "inclusive_source_bounds_contact_unreviewed",
+    "role": "equipment_internal_component",
+    "owner_equipment": "SC01-01"
+  },
+  {
+    "device_name": "SNS-23F82",
+    "equipment_type": "Sensor",
+    "type_code": "SNS",
+    "source_kind": "block_insert",
+    "source_block_name": "传感器",
+    "source_top_handle": "23F82",
+    "source_handles": [
+      "23F82"
+    ],
+    "x": 2200257.3225059183,
+    "y": 316138.2622345432,
+    "assignment_x": 2200257.3225059183,
+    "assignment_y": 316138.2622345432,
+    "source_insert_x": 2200144.824655519,
+    "source_insert_y": 316138.2622345432,
+    "assignment_rule": "inclusive_source_bounds_contact_unreviewed",
+    "role": "equipment_internal_component",
+    "owner_equipment": "SC01-01"
+  },
+  {
+    "source_handle": "23F8A",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23F97",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23F9E",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23FA2",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23FA5",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23FAD",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23FB8",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23FB9",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "240AC",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "240BC",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "240BD",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "240BE",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "240BF",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "240CB",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "240D5",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "240DD",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "240F2",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23CF7",
+    "role": "measurement_assembly_member",
+    "group_ids": [
+      "INSTR-23CFB"
+    ]
+  },
+  {
+    "source_handle": "23CFD",
+    "role": "measurement_assembly_member",
+    "group_ids": [
+      "INSTR-23CFB"
+    ]
+  },
+  {
+    "source_handle": "23D0C",
+    "role": "measurement_assembly_member",
+    "group_ids": [
+      "INSTR-23D10"
+    ]
+  },
+  {
+    "source_handle": "23D12",
+    "role": "measurement_assembly_member",
+    "group_ids": [
+      "INSTR-23D10"
+    ]
+  },
+  {
+    "source_handle": "23E59",
+    "role": "measurement_assembly_member",
+    "group_ids": [
+      "INSTR-23E5D"
+    ]
+  },
+  {
+    "source_handle": "23E5F",
+    "role": "measurement_assembly_member",
+    "group_ids": [
+      "INSTR-23E5D"
+    ]
+  },
+  {
+    "source_handle": "23E9B",
+    "role": "measurement_assembly_member",
+    "group_ids": [
+      "INSTR-PANEL-23ACE"
+    ]
+  },
+  {
+    "source_handle": "23EA1",
+    "role": "measurement_assembly_member",
+    "group_ids": [
+      "INSTR-PANEL-23ACE"
+    ]
+  },
+  {
+    "source_handle": "23EA9",
+    "role": "measurement_assembly_member",
+    "group_ids": [
+      "INSTR-PANEL-23ACE"
+    ]
+  },
+  {
+    "source_handle": "23EAF",
+    "role": "measurement_assembly_member",
+    "group_ids": [
+      "INSTR-PANEL-23ACE"
+    ]
+  },
+  {
+    "source_handle": "23EC3",
+    "role": "measurement_assembly_member",
+    "group_ids": [
+      "INSTR-PANEL-23EBE"
+    ]
+  },
+  {
+    "source_handle": "23EC9",
+    "role": "measurement_assembly_member",
+    "group_ids": [
+      "INSTR-PANEL-23EBE"
+    ]
+  },
+  {
+    "source_handle": "23ED1",
+    "role": "measurement_assembly_member",
+    "group_ids": [
+      "INSTR-PANEL-23EBE"
+    ]
+  },
+  {
+    "source_handle": "23ED7",
+    "role": "measurement_assembly_member",
+    "group_ids": [
+      "INSTR-PANEL-23EBE"
+    ]
+  },
+  {
+    "source_handle": "23CDD",
+    "role": "edge_component"
+  },
+  {
+    "device_name": "SNS-23D95",
+    "equipment_type": "Sensor",
+    "type_code": "SNS",
+    "source_kind": "exploded_complete_native_template",
+    "source_block_name": "传感器",
+    "source_top_handle": "23D95",
+    "source_handles": [
+      "23D95",
+      "23D97",
+      "23D9A",
+      "23D9B",
+      "23D9C",
+      "23D9D"
+    ],
+    "x": 2199958.0361333615,
+    "y": 335786.23559985985,
+    "assignment_x": 2199958.0361333615,
+    "assignment_y": 335786.23559985985,
+    "source_insert_x": 2199958.0361333615,
+    "source_insert_y": 335786.23559985985,
+    "assignment_rule": "inclusive_source_bounds_contact_unreviewed",
+    "role": "reference_legend_only",
+    "source_legend_evidence": {
+      "bounds": [
+        2193635.032976173,
+        330710.8317050028,
+        2204135.032976173,
+        339810.8317050028
+      ],
+      "source_title_handle": "23D5D",
+      "source_caption_handles": [
+        "23D68",
+        "23D69",
+        "23D6C",
+        "23D6D",
+        "23DAB",
+        "23DAC",
+        "23DAD",
+        "23DAE",
+        "23DB6"
+      ],
+      "rule": "explicit_legend_title_and_at_least_six_known_source_symbol_captions_scale_bounded_region"
+    }
+  },
+  {
+    "source_handle": "23F36",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23CC8",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23CCD",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23F20",
+    "role": "edge_component"
+  },
+  {
+    "source_handle": "23F25",
+    "role": "edge_component"
+  }
+]

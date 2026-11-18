@@ -1,0 +1,286 @@
+{
+  "project_id": "SH16-04-7072a12b",
+  "system_layers": {
+    "HVAC-D-CWS": "supply",
+    "HVAC-D-CWR": "return"
+  },
+  "auxiliary_pipe_layer": "HVAC-D-BS",
+  "native_lead_layers": [
+    "HVAC-D-LH",
+    "HVAC-D-L1"
+  ],
+  "pump_lead_layer": "HVAC-D-LH",
+  "pump_tag_prefixes": [
+    "CHWP-",
+    "CWP-"
+  ],
+  "equipment_blocks": {
+    "chiller": {
+      "label": "Chiller",
+      "symbol_key": "EQ_CHILLER"
+    },
+    "HX": {
+      "label": "Heat Exchanger",
+      "symbol_key": "EQ_HX"
+    },
+    "A$C491C4D06": {
+      "label": "Cooling Tower",
+      "symbol_key": "EQ_CT"
+    }
+  },
+  "inline_types": {
+    "蝶阀": [
+      "Butterfly Valve",
+      "BF"
+    ],
+    "电动蝶阀": [
+      "Motorized Butterfly Valve",
+      "MBF"
+    ],
+    "橡胶软连接": [
+      "Rubber Flexible Connector",
+      "RFC"
+    ],
+    "金属软连接": [
+      "Metal Flexible Connector",
+      "MFC"
+    ],
+    "闸阀": [
+      "Gate Valve",
+      "GV"
+    ],
+    "Y型过滤器": [
+      "Y Strainer",
+      "YS"
+    ],
+    "单向阀": [
+      "Check Valve",
+      "CV"
+    ],
+    "电动调节阀": [
+      "Motorized Control Valve",
+      "MCV"
+    ],
+    "平衡阀": [
+      "Balancing Valve",
+      "BV"
+    ],
+    "防倒流截止器": [
+      "Backflow Preventer",
+      "BFP"
+    ],
+    "压力表": [
+      "Pressure Gauge",
+      "PG"
+    ],
+    "温度计+压力表": [
+      "Temperature and Pressure Instrument",
+      "TPI"
+    ],
+    "温度表": [
+      "Thermometer",
+      "TH"
+    ],
+    "远传水表": [
+      "Remote Water Meter",
+      "WM"
+    ],
+    "传感器": [
+      "Sensor",
+      "SNS"
+    ]
+  },
+  "inline_bridge_blocks": [
+    "Y型过滤器",
+    "单向阀",
+    "平衡阀",
+    "橡胶软连接",
+    "电动蝶阀",
+    "电动调节阀",
+    "蝶阀",
+    "远传水表",
+    "金属软连接",
+    "闸阀",
+    "防倒流截止器"
+  ],
+  "tolerance_native_units": 0.5,
+  "external_interfaces": [],
+  "ambiguous_system": "unclassified_water",
+  "inline_contact_fractions": {
+    "闸阀": 0.04
+  },
+  "material_equipment_rules": [
+    {
+      "tag_regex": "CST-[0-9]+",
+      "material_name_regex": "闭式蓄冷罐",
+      "preserve_tag": true,
+      "minimum_source_ports": 2,
+      "label": "Thermal Storage Tank"
+    },
+    {
+      "tag_regex": "SC[0-9]+-[0-9]+",
+      "material_name_regex": "^(全自动智能)?加药装置$",
+      "geometry_family": "vendor_package_enclosure",
+      "vendor_note_regex": "虚线框内为厂家配套",
+      "caption_regex": "(全自动智能)?加药装置",
+      "preserve_tag": true,
+      "minimum_source_ports": 2,
+      "label": "Dosing Unit"
+    }
+  ],
+  "exploded_flange_layers": [
+    "HVAC-D-阀门仪表"
+  ],
+  "source_terminal_glyph_rules": [],
+  "instrumentation": {
+    "hydraulic_main_layers": [
+      "HVAC-D-CWR",
+      "HVAC-D-CWS"
+    ],
+    "capillary_layers": [
+      "HVAC-D-CWS"
+    ]
+  },
+  "unresolved_terminal_policy": "explicit_virtual_boundary",
+  "exploded_valve_layers": [
+    "空调平面",
+    "HVAC-D-阀门仪表"
+  ],
+  "sensor_extension_blocks": [
+    "传感器"
+  ],
+  "straight_crossover_calibration": {
+    "blocks": [
+      "蝶阀",
+      "闸阀"
+    ],
+    "maximum_gap_symbol_diagonals": 2
+  },
+  "near_junction": {
+    "maximum_gap": 5,
+    "discovery_maximum_gap": 10,
+    "maximum_ratio": 0.05,
+    "minimum_angle_degrees": 20,
+    "verified_unknown_service_layers": [
+      "HVAC-D-N"
+    ],
+    "source_group_evidence": "Repeated DN80 native N-layer tower branches with 3.689-unit axial overshoot at same-layer main; physical contact only, hydraulic service remains unknown."
+  },
+  "paired_bar_display_tails": {
+    "bar_layers": [
+      "0"
+    ],
+    "maximum_length": 500
+  },
+  "native_equipment_rules": [
+    {
+      "tag_regex": "CWE-[0-9]+",
+      "source_block": "A$C1FA0043D",
+      "parameter_binding": "missing_schedule_reference_preserve_equipment",
+      "port_policy": "verified_closed_enclosure",
+      "maximum_tag_gap_text_heights": 4,
+      "maximum_tag_gap_body_diagonals": 0.5
+    }
+  ],
+  "additional_auxiliary_pipe_layers": [
+    "HVAC-D-N",
+    "HVAC-D-EQ"
+  ],
+  "exploded_template_blocks": [
+    "传感器",
+    "金属软连接",
+    "防倒流截止器"
+  ],
+  "native_equipment_terminal_snaps": [
+    {
+      "source_block": "A$C491C4D06",
+      "maximum_gap": 120,
+      "maximum_body_diagonal_ratio": 0.02,
+      "evidence": "Three repeated native towers: 3.689/24.768-unit side-port offsets; 95.466-unit circle terminal offsets; 107.015-unit bottom side port offset. Unique axial contour contact and unique complete source path exiting native equipment required.",
+      "allow_native_circle_contacts": true,
+      "allow_multisegment_source_exit": true
+    }
+  ],
+  "source_native_component_templates": [
+    {
+      "prototype_handles": [
+        "19FF7",
+        "19FF8",
+        "19FF9",
+        "19FFA",
+        "19FFB",
+        "19FFC",
+        "19FFD",
+        "19FFE",
+        "19FFF",
+        "1A000",
+        "1A001",
+        "1A002",
+        "1A003",
+        "1A004",
+        "1A005",
+        "1A00B"
+      ],
+      "label": "Inline Valve Assembly (subtype pending)",
+      "type_code": "IVA",
+      "semantic_status": "source_variant_subtype_pending",
+      "evidence": "Complete repeated source geometry: 14 lines plus two native hatch entities; no unproven backflow subtype assignment"
+    }
+  ],
+  "inline_contact_tolerance_evidence": {
+    "闸阀": "Repeated dosing-package gate valves have 7.065 / 12.420 native unit axial source-to-glyph gaps; .04 native symbol diagonal, opposed collinear source tails and unique complete symbol still required."
+  },
+  "required_physical_candidate_layers": [
+    "HVAC-D-N",
+    "HVAC-D-EQ"
+  ],
+  "required_final_source_handles": [
+    "19532",
+    "19533",
+    "19534",
+    "19544",
+    "19545",
+    "19546",
+    "19547",
+    "19548",
+    "1954D",
+    "19553",
+    "1955C",
+    "1955D",
+    "19B04",
+    "19B05",
+    "19B06",
+    "19B0E",
+    "19B0F",
+    "19B29",
+    "19B2A",
+    "19B2B",
+    "19B2C",
+    "19B2D",
+    "19B2E",
+    "19B2F",
+    "19B30",
+    "19B32",
+    "19E8B",
+    "19E8C",
+    "19E8D",
+    "19E95",
+    "19E96",
+    "19EA8",
+    "22BED",
+    "22BEE",
+    "22BEF",
+    "22C32",
+    "22C33",
+    "22C34",
+    "19F45",
+    "19F46",
+    "19F97",
+    "19F98",
+    "19FE6",
+    "19FE7"
+  ],
+  "native_equipment_multisegment_port_blocks": [
+    "A$C491C4D06"
+  ]
+}

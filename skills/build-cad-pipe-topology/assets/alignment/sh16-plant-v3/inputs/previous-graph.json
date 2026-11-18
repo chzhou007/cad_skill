@@ -1,0 +1,2782 @@
+{
+  "task_id": "SH16-03-e9049b84",
+  "status": "partial_pending_human_review",
+  "source_sha256": "a44a241690d88cf67276e986b5e84d6b356763f1bae07737521df073a0125c2c",
+  "source_file": "E:\\codex\\CAD\\output\\SH16-11tasks-v1\\sources\\DXF\\03-冷冻水系统原理图.dxf",
+  "data_language": "English",
+  "nodes": [
+    {
+      "node_id": "CH-01",
+      "node_type": "equipment",
+      "subtype": "Chiller",
+      "floor": "Schematic",
+      "label": "CH-01",
+      "x": 2216141.655276927,
+      "y": 311511.9773015595,
+      "source_handle": "23A45",
+      "source_block": "chiller",
+      "symbol_key": "EQ_CHILLER",
+      "source_tag_handle": "23A77",
+      "profile_candidates": [
+        "CH-01-03"
+      ],
+      "recognition_status": "source_native_block_and_explicit_tag_unreviewed"
+    },
+    {
+      "node_id": "CHWP-1",
+      "node_type": "equipment",
+      "subtype": "Chilled Water Pump",
+      "floor": "Schematic",
+      "label": "CHWP-1",
+      "x": 2211023.074275275,
+      "y": 297998.4283187816,
+      "source_handles": [
+        "23A5D",
+        "23A5C",
+        "23A5E",
+        "23A5F"
+      ],
+      "source_block": "exploded_pump_triangle_circle",
+      "symbol_key": "EQ_PUMP",
+      "profile_candidates": [
+        "CHWP-01-03"
+      ],
+      "recognition_status": "circle_plus_three_line_signature_and_bounded_unique_tag_unreviewed"
+    },
+    {
+      "node_id": "HE-01",
+      "node_type": "equipment",
+      "subtype": "Heat Exchanger",
+      "floor": "Schematic",
+      "label": "HE-01",
+      "x": 2211377.4393816097,
+      "y": 310719.28198817815,
+      "source_handle": "23AA3",
+      "source_block": "HX",
+      "symbol_key": "EQ_HX",
+      "source_tag_handle": "23ABA",
+      "profile_candidates": [
+        "HE-01-03"
+      ],
+      "recognition_status": "source_native_block_and_explicit_tag_unreviewed"
+    },
+    {
+      "node_id": "CH-02",
+      "node_type": "equipment",
+      "subtype": "Chiller",
+      "floor": "Schematic",
+      "label": "CH-02",
+      "x": 2235281.7373264013,
+      "y": 311511.9773015595,
+      "source_handle": "23B85",
+      "source_block": "chiller",
+      "symbol_key": "EQ_CHILLER",
+      "source_tag_handle": "23BA8",
+      "profile_candidates": [
+        "CH-01-03"
+      ],
+      "recognition_status": "source_native_block_and_explicit_tag_unreviewed"
+    },
+    {
+      "node_id": "CHWP-2",
+      "node_type": "equipment",
+      "subtype": "Chilled Water Pump",
+      "floor": "Schematic",
+      "label": "CHWP-2",
+      "x": 2230163.15632475,
+      "y": 297998.4283187816,
+      "source_handles": [
+        "23B9B",
+        "23B9A",
+        "23B9C",
+        "23B9D"
+      ],
+      "source_block": "exploded_pump_triangle_circle",
+      "symbol_key": "EQ_PUMP",
+      "profile_candidates": [
+        "CHWP-01-03"
+      ],
+      "recognition_status": "circle_plus_three_line_signature_and_bounded_unique_tag_unreviewed"
+    },
+    {
+      "node_id": "HE-02",
+      "node_type": "equipment",
+      "subtype": "Heat Exchanger",
+      "floor": "Schematic",
+      "label": "HE-02",
+      "x": 2230517.521431084,
+      "y": 310719.28198817815,
+      "source_handle": "23BB1",
+      "source_block": "HX",
+      "symbol_key": "EQ_HX",
+      "source_tag_handle": "23BC8",
+      "profile_candidates": [
+        "HE-01-03"
+      ],
+      "recognition_status": "source_native_block_and_explicit_tag_unreviewed"
+    },
+    {
+      "node_id": "CH-03",
+      "node_type": "equipment",
+      "subtype": "Chiller",
+      "floor": "Schematic",
+      "label": "CH-03",
+      "x": 2253349.8532854784,
+      "y": 311511.9773015502,
+      "source_handle": "23DC1",
+      "source_block": "chiller",
+      "symbol_key": "EQ_CHILLER",
+      "source_tag_handle": "23DF4",
+      "profile_candidates": [
+        "CH-01-03"
+      ],
+      "recognition_status": "source_native_block_and_explicit_tag_unreviewed"
+    },
+    {
+      "node_id": "CHWP-3",
+      "node_type": "equipment",
+      "subtype": "Chilled Water Pump",
+      "floor": "Schematic",
+      "label": "CHWP-3",
+      "x": 2248231.272283828,
+      "y": 297998.4283187723,
+      "source_handles": [
+        "23DE7",
+        "23DE6",
+        "23DE8",
+        "23DE9"
+      ],
+      "source_block": "exploded_pump_triangle_circle",
+      "symbol_key": "EQ_PUMP",
+      "profile_candidates": [
+        "CHWP-01-03"
+      ],
+      "recognition_status": "circle_plus_three_line_signature_and_bounded_unique_tag_unreviewed"
+    },
+    {
+      "node_id": "HE-03",
+      "node_type": "equipment",
+      "subtype": "Heat Exchanger",
+      "floor": "Schematic",
+      "label": "HE-03",
+      "x": 2248585.637390163,
+      "y": 310719.28198816883,
+      "source_handle": "23DFC",
+      "source_block": "HX",
+      "symbol_key": "EQ_HX",
+      "source_tag_handle": "23E13",
+      "profile_candidates": [
+        "HE-01-03"
+      ],
+      "recognition_status": "source_native_block_and_explicit_tag_unreviewed"
+    },
+    {
+      "node_id": "T001",
+      "node_type": "tee",
+      "floor": "Schematic",
+      "label": "T001",
+      "x": 2254191.622661417,
+      "y": 328087.2667054024,
+      "system": "return",
+      "source_handles": [
+        "23ABD",
+        "23E92"
+      ],
+      "recognition_status": "three_ray_same_system_terminal_contact_unreviewed"
+    },
+    {
+      "node_id": "T002",
+      "node_type": "tee",
+      "floor": "Schematic",
+      "label": "T002",
+      "x": 2215219.955838645,
+      "y": 328087.2526093514,
+      "system": "return",
+      "source_handles": [
+        "23C4B",
+        "23F0B"
+      ],
+      "recognition_status": "three_ray_same_system_terminal_contact_unreviewed"
+    },
+    {
+      "node_id": "T003",
+      "node_type": "tee",
+      "floor": "Schematic",
+      "label": "T003",
+      "x": 2254191.622661418,
+      "y": 317400.4257935675,
+      "system": "return",
+      "source_handles": [
+        "23B22",
+        "23E92"
+      ],
+      "recognition_status": "three_ray_same_system_terminal_contact_unreviewed"
+    },
+    {
+      "node_id": "T004",
+      "node_type": "tee",
+      "floor": "Schematic",
+      "label": "T004",
+      "x": 2215219.955838646,
+      "y": 317400.4237542188,
+      "system": "return",
+      "source_handles": [
+        "23B21",
+        "23B22"
+      ],
+      "recognition_status": "three_ray_same_system_terminal_contact_unreviewed"
+    },
+    {
+      "node_id": "T005",
+      "node_type": "tee",
+      "floor": "Schematic",
+      "label": "T005",
+      "x": 2211022.403292954,
+      "y": 303519.5135482343,
+      "system": "return",
+      "source_handles": [
+        "23A67",
+        "23AAE"
+      ],
+      "recognition_status": "three_ray_same_system_terminal_contact_unreviewed"
+    },
+    {
+      "node_id": "T006",
+      "node_type": "tee",
+      "floor": "Schematic",
+      "label": "T006",
+      "x": 2214065.707200558,
+      "y": 303519.5135482343,
+      "system": "return",
+      "source_handles": [
+        "23AAE",
+        "23AAF",
+        "23ADD"
+      ],
+      "recognition_status": "three_ray_same_system_terminal_contact_unreviewed"
+    },
+    {
+      "node_id": "T007",
+      "node_type": "tee",
+      "floor": "Schematic",
+      "label": "T007",
+      "x": 2230162.485342428,
+      "y": 303519.5135482343,
+      "system": "return",
+      "source_handles": [
+        "23BA5",
+        "23BBC"
+      ],
+      "recognition_status": "three_ray_same_system_terminal_contact_unreviewed"
+    },
+    {
+      "node_id": "T008",
+      "node_type": "tee",
+      "floor": "Schematic",
+      "label": "T008",
+      "x": 2233205.789250032,
+      "y": 303519.5135482343,
+      "system": "return",
+      "source_handles": [
+        "23BBC",
+        "23BBD",
+        "23BCB"
+      ],
+      "recognition_status": "three_ray_same_system_terminal_contact_unreviewed"
+    },
+    {
+      "node_id": "T009",
+      "node_type": "tee",
+      "floor": "Schematic",
+      "label": "T009",
+      "x": 2248230.601301506,
+      "y": 303519.513548225,
+      "system": "return",
+      "source_handles": [
+        "23DF1",
+        "23E07"
+      ],
+      "recognition_status": "three_ray_same_system_terminal_contact_unreviewed"
+    },
+    {
+      "node_id": "T010",
+      "node_type": "tee",
+      "floor": "Schematic",
+      "label": "T010",
+      "x": 2251273.90520911,
+      "y": 303519.513548225,
+      "system": "return",
+      "source_handles": [
+        "23E07",
+        "23E08",
+        "23E16"
+      ],
+      "recognition_status": "three_ray_same_system_terminal_contact_unreviewed"
+    },
+    {
+      "node_id": "T011",
+      "node_type": "tee",
+      "floor": "Schematic",
+      "label": "T011",
+      "x": 2211022.403292947,
+      "y": 293328.7341397114,
+      "system": "return",
+      "source_handles": [
+        "23A62",
+        "23A68",
+        "23A69"
+      ],
+      "recognition_status": "three_ray_same_system_terminal_contact_unreviewed"
+    },
+    {
+      "node_id": "T012",
+      "node_type": "tee",
+      "floor": "Schematic",
+      "label": "T012",
+      "x": 2230162.48534242,
+      "y": 293328.7341397114,
+      "system": "return",
+      "source_handles": [
+        "23A6A",
+        "23A6B",
+        "23BA0"
+      ],
+      "recognition_status": "three_ray_same_system_terminal_contact_unreviewed"
+    },
+    {
+      "node_id": "T013",
+      "node_type": "tee",
+      "floor": "Schematic",
+      "label": "T013",
+      "x": 2248230.601301499,
+      "y": 293328.7341397021,
+      "system": "return",
+      "source_handles": [
+        "23A6C",
+        "23DEC"
+      ],
+      "recognition_status": "three_ray_same_system_terminal_contact_unreviewed"
+    },
+    {
+      "node_id": "T014",
+      "node_type": "tee",
+      "floor": "Schematic",
+      "label": "T014",
+      "x": 2230042.39805353,
+      "y": 326971.3699788933,
+      "system": "supply",
+      "source_handles": [
+        "23A97",
+        "23F2D"
+      ],
+      "recognition_status": "three_ray_same_system_terminal_contact_unreviewed"
+    },
+    {
+      "node_id": "T015",
+      "node_type": "tee",
+      "floor": "Schematic",
+      "label": "T015",
+      "x": 2236127.284045653,
+      "y": 326971.3699788933,
+      "system": "supply",
+      "source_handles": [
+        "23A97",
+        "23F0A"
+      ],
+      "recognition_status": "three_ray_same_system_terminal_contact_unreviewed"
+    },
+    {
+      "node_id": "T016",
+      "node_type": "tee",
+      "floor": "Schematic",
+      "label": "T016",
+      "x": 2243430.693679932,
+      "y": 326971.3699788933,
+      "system": "supply",
+      "source_handles": [
+        "23A97",
+        "23C17"
+      ],
+      "recognition_status": "three_ray_same_system_terminal_contact_unreviewed"
+    },
+    {
+      "node_id": "T017",
+      "node_type": "tee",
+      "floor": "Schematic",
+      "label": "T017",
+      "x": 2223133.723680999,
+      "y": 326971.3699788868,
+      "system": "supply",
+      "source_handles": [
+        "23A95",
+        "23A97"
+      ],
+      "recognition_status": "three_ray_same_system_terminal_contact_unreviewed"
+    },
+    {
+      "node_id": "T018",
+      "node_type": "tee",
+      "floor": "Schematic",
+      "label": "T018",
+      "x": 2230607.571782255,
+      "y": 319104.6264439465,
+      "system": "supply",
+      "source_handles": [
+        "23A9C",
+        "23F19"
+      ],
+      "recognition_status": "three_ray_same_system_terminal_contact_unreviewed"
+    },
+    {
+      "node_id": "T019",
+      "node_type": "tee",
+      "floor": "Schematic",
+      "label": "T019",
+      "x": 2235562.110316928,
+      "y": 319104.6264439465,
+      "system": "supply",
+      "source_handles": [
+        "23A9F",
+        "23CC2"
+      ],
+      "recognition_status": "three_ray_same_system_terminal_contact_unreviewed"
+    },
+    {
+      "node_id": "T020",
+      "node_type": "tee",
+      "floor": "Schematic",
+      "label": "T020",
+      "x": 2243430.693679932,
+      "y": 319104.6264439465,
+      "system": "supply",
+      "source_handles": [
+        "23A9F",
+        "23C17"
+      ],
+      "recognition_status": "three_ray_same_system_terminal_contact_unreviewed"
+    },
+    {
+      "node_id": "T021",
+      "node_type": "tee",
+      "floor": "Schematic",
+      "label": "T021",
+      "x": 2223133.723680999,
+      "y": 319104.62644394,
+      "system": "supply",
+      "source_handles": [
+        "23A95",
+        "23A9B",
+        "23A9C"
+      ],
+      "recognition_status": "three_ray_same_system_terminal_contact_unreviewed"
+    },
+    {
+      "node_id": "T022",
+      "node_type": "tee",
+      "floor": "Schematic",
+      "label": "T022",
+      "x": 2217089.368251011,
+      "y": 290966.4454562112,
+      "system": "supply",
+      "source_handles": [
+        "23A51",
+        "23A72"
+      ],
+      "recognition_status": "three_ray_same_system_terminal_contact_unreviewed"
+    },
+    {
+      "node_id": "T023",
+      "node_type": "tee",
+      "floor": "Schematic",
+      "label": "T023",
+      "x": 2236229.450300486,
+      "y": 290966.4454562112,
+      "system": "supply",
+      "source_handles": [
+        "23A72",
+        "23B8F"
+      ],
+      "recognition_status": "three_ray_same_system_terminal_contact_unreviewed"
+    },
+    {
+      "node_id": "T024",
+      "node_type": "tee",
+      "floor": "Schematic",
+      "label": "T024",
+      "x": 2254297.566259564,
+      "y": 290966.4454562019,
+      "system": "supply",
+      "source_handles": [
+        "23A73",
+        "23DDB"
+      ],
+      "recognition_status": "three_ray_same_system_terminal_contact_unreviewed"
+    }
+  ],
+  "edges": [
+    {
+      "edge_id": "E0001",
+      "start_node_id": "CH-01",
+      "end_node_id": "T006",
+      "system": "return",
+      "edge_type": "tee_to_equipment",
+      "floor": "Schematic",
+      "path_length": 8037.135145458335,
+      "path_points": [
+        [
+          2216300.724645135,
+          309321.6312491165
+        ],
+        [
+          2216300.724645135,
+          309059.5107428299
+        ],
+        [
+          2216300.724645134,
+          308891.8916952114
+        ],
+        [
+          2216300.724645134,
+          305405.2278339479
+        ],
+        [
+          2214065.707200558,
+          305405.2278339479
+        ],
+        [
+          2214065.707200558,
+          303519.5135482343
+        ]
+      ],
+      "attribute_paths": [
+        [
+          [
+            2216300.724645135,
+            309321.6312491165
+          ],
+          [
+            2216300.724645135,
+            309059.5107428299
+          ],
+          [
+            2216300.724645134,
+            308891.8916952114
+          ],
+          [
+            2216300.724645134,
+            305405.2278339479
+          ],
+          [
+            2214065.707200558,
+            305405.2278339479
+          ],
+          [
+            2214065.707200558,
+            303519.5135482343
+          ]
+        ]
+      ],
+      "source_handles": [
+        "23A4D",
+        "23A4F",
+        "23A50",
+        "23AA1",
+        "23AAF",
+        "23D53"
+      ],
+      "normalizations": [
+        "native_two_flange_symbol_axis"
+      ],
+      "equipment_inventory": [
+        {
+          "equipment_type": "Motorized Butterfly Valve",
+          "count": 1,
+          "device_names": [
+            "MBF-23B1B"
+          ]
+        },
+        {
+          "equipment_type": "Butterfly Valve",
+          "count": 1,
+          "device_names": [
+            "BF-23C43"
+          ]
+        },
+        {
+          "equipment_type": "Rubber Flexible Connector",
+          "count": 1,
+          "device_names": [
+            "RFC-23D53"
+          ]
+        }
+      ],
+      "source_display_geometry": []
+    },
+    {
+      "edge_id": "E0002",
+      "start_node_id": "T011",
+      "end_node_id": "CHWP-1",
+      "system": "return",
+      "edge_type": "tee_to_equipment",
+      "floor": "Schematic",
+      "path_length": 4421.909235392348,
+      "path_points": [
+        [
+          2211022.403292947,
+          293328.7341397114
+        ],
+        [
+          2211022.403292947,
+          297375.288717306
+        ],
+        [
+          2211022.403292947,
+          297542.9077649254
+        ],
+        [
+          2211022.403292947,
+          297750.64337510377
+        ]
+      ],
+      "attribute_paths": [
+        [
+          [
+            2211022.403292947,
+            293328.7341397114
+          ],
+          [
+            2211022.403292947,
+            297375.288717306
+          ],
+          [
+            2211022.403292947,
+            297542.9077649254
+          ],
+          [
+            2211022.403292947,
+            297750.64337510377
+          ]
+        ]
+      ],
+      "source_handles": [
+        "23A60",
+        "23A62",
+        "23A63",
+        "23D4D"
+      ],
+      "normalizations": [
+        "native_equipment_connection_lead",
+        "native_two_flange_symbol_axis"
+      ],
+      "equipment_inventory": [
+        {
+          "equipment_type": "Butterfly Valve",
+          "count": 1,
+          "device_names": [
+            "BF-23A65"
+          ]
+        },
+        {
+          "equipment_type": "Y Strainer",
+          "count": 1,
+          "device_names": [
+            "YS-23A66"
+          ]
+        },
+        {
+          "equipment_type": "Rubber Flexible Connector",
+          "count": 1,
+          "device_names": [
+            "RFC-23D4D"
+          ]
+        }
+      ],
+      "source_display_geometry": []
+    },
+    {
+      "edge_id": "E0003",
+      "start_node_id": "T011",
+      "end_node_id": "T004",
+      "system": "return",
+      "edge_type": "tee_to_tee",
+      "floor": "Schematic",
+      "path_length": 49313.54296389702,
+      "path_points": [
+        [
+          2211022.403292947,
+          293328.7341397114
+        ],
+        [
+          2200500.253910774,
+          293328.7341397105
+        ],
+        [
+          2200500.253910768,
+          317400.4257935563
+        ],
+        [
+          2215219.955838646,
+          317400.4237542188
+        ]
+      ],
+      "attribute_paths": [
+        [
+          [
+            2211022.403292947,
+            293328.7341397114
+          ],
+          [
+            2200500.253910774,
+            293328.7341397105
+          ],
+          [
+            2200500.253910768,
+            317400.4257935563
+          ],
+          [
+            2215219.955838646,
+            317400.4237542188
+          ]
+        ]
+      ],
+      "source_handles": [
+        "23A68",
+        "23A6E",
+        "23B22"
+      ],
+      "normalizations": [],
+      "equipment_inventory": [
+        {
+          "equipment_type": "Butterfly Valve",
+          "count": 2,
+          "device_names": [
+            "BF-23A94",
+            "BF-23E8F"
+          ]
+        },
+        {
+          "equipment_type": "Sensor",
+          "count": 2,
+          "device_names": [
+            "SNS-23B2B",
+            "SNS-23B58"
+          ]
+        }
+      ],
+      "source_display_geometry": []
+    },
+    {
+      "edge_id": "E0004",
+      "start_node_id": "T005",
+      "end_node_id": "CHWP-1",
+      "system": "return",
+      "edge_type": "tee_to_equipment",
+      "floor": "Schematic",
+      "path_length": 5273.300285774283,
+      "path_points": [
+        [
+          2211022.403292954,
+          303519.5135482343
+        ],
+        [
+          2211022.403292947,
+          298636.8573547125
+        ],
+        [
+          2211022.403292947,
+          298469.2383070949
+        ],
+        [
+          2211022.403292947,
+          298428.599706264
+        ],
+        [
+          2211022.403292947,
+          298246.21326246
+        ]
+      ],
+      "attribute_paths": [
+        [
+          [
+            2211022.403292954,
+            303519.5135482343
+          ],
+          [
+            2211022.403292947,
+            298636.8573547125
+          ],
+          [
+            2211022.403292947,
+            298469.2383070949
+          ],
+          [
+            2211022.403292947,
+            298428.599706264
+          ],
+          [
+            2211022.403292947,
+            298246.21326246
+          ]
+        ]
+      ],
+      "source_handles": [
+        "23A5B",
+        "23A61",
+        "23A67",
+        "23D4E"
+      ],
+      "normalizations": [
+        "native_equipment_connection_lead",
+        "native_two_flange_symbol_axis"
+      ],
+      "equipment_inventory": [
+        {
+          "equipment_type": "Check Valve",
+          "count": 1,
+          "device_names": [
+            "CV-23A64"
+          ]
+        },
+        {
+          "equipment_type": "Butterfly Valve",
+          "count": 1,
+          "device_names": [
+            "BF-23B26"
+          ]
+        },
+        {
+          "equipment_type": "Pressure Gauge",
+          "count": 1,
+          "device_names": [
+            "PG-23D37"
+          ]
+        },
+        {
+          "equipment_type": "Rubber Flexible Connector",
+          "count": 1,
+          "device_names": [
+            "RFC-23D4E"
+          ]
+        }
+      ],
+      "source_display_geometry": []
+    },
+    {
+      "edge_id": "E0005",
+      "start_node_id": "T005",
+      "end_node_id": "HE-01",
+      "system": "return",
+      "edge_type": "tee_to_equipment",
+      "floor": "Schematic",
+      "path_length": 5802.117700882198,
+      "path_points": [
+        [
+          2211022.403292954,
+          303519.5135482343
+        ],
+        [
+          2211022.403292954,
+          308891.8916952114
+        ],
+        [
+          2211022.403292955,
+          309059.5107428299
+        ],
+        [
+          2211022.403292955,
+          309321.6312491165
+        ]
+      ],
+      "attribute_paths": [
+        [
+          [
+            2211022.403292954,
+            303519.5135482343
+          ],
+          [
+            2211022.403292954,
+            308891.8916952114
+          ],
+          [
+            2211022.403292955,
+            309059.5107428299
+          ],
+          [
+            2211022.403292955,
+            309321.6312491165
+          ]
+        ]
+      ],
+      "source_handles": [
+        "23A67",
+        "23AAA",
+        "23D51"
+      ],
+      "normalizations": [
+        "native_two_flange_symbol_axis"
+      ],
+      "equipment_inventory": [
+        {
+          "equipment_type": "Butterfly Valve",
+          "count": 1,
+          "device_names": [
+            "BF-23AAC"
+          ]
+        },
+        {
+          "equipment_type": "Rubber Flexible Connector",
+          "count": 1,
+          "device_names": [
+            "RFC-23D51"
+          ]
+        }
+      ],
+      "source_display_geometry": []
+    },
+    {
+      "edge_id": "E0006",
+      "start_node_id": "T005",
+      "end_node_id": "T006",
+      "system": "return",
+      "edge_type": "tee_to_tee",
+      "floor": "Schematic",
+      "path_length": 3043.3039076039568,
+      "path_points": [
+        [
+          2211022.403292954,
+          303519.5135482343
+        ],
+        [
+          2214065.707200558,
+          303519.5135482343
+        ]
+      ],
+      "attribute_paths": [
+        [
+          [
+            2211022.403292954,
+            303519.5135482343
+          ],
+          [
+            2214065.707200558,
+            303519.5135482343
+          ]
+        ]
+      ],
+      "source_handles": [
+        "23AAE"
+      ],
+      "normalizations": [],
+      "equipment_inventory": [
+        {
+          "equipment_type": "Motorized Butterfly Valve",
+          "count": 1,
+          "device_names": [
+            "MBF-23B1E"
+          ]
+        }
+      ],
+      "source_display_geometry": []
+    },
+    {
+      "edge_id": "E0007",
+      "start_node_id": "T012",
+      "end_node_id": "CHWP-2",
+      "system": "return",
+      "edge_type": "tee_to_equipment",
+      "floor": "Schematic",
+      "path_length": 4421.909235392348,
+      "path_points": [
+        [
+          2230162.48534242,
+          293328.7341397114
+        ],
+        [
+          2230162.485342421,
+          297375.288717306
+        ],
+        [
+          2230162.485342421,
+          297542.9077649254
+        ],
+        [
+          2230162.485342421,
+          297750.64337510377
+        ]
+      ],
+      "attribute_paths": [
+        [
+          [
+            2230162.48534242,
+            293328.7341397114
+          ],
+          [
+            2230162.485342421,
+            297375.288717306
+          ],
+          [
+            2230162.485342421,
+            297542.9077649254
+          ],
+          [
+            2230162.485342421,
+            297750.64337510377
+          ]
+        ]
+      ],
+      "source_handles": [
+        "23B9E",
+        "23BA0",
+        "23BA1",
+        "23D4F"
+      ],
+      "normalizations": [
+        "native_equipment_connection_lead",
+        "native_two_flange_symbol_axis"
+      ],
+      "equipment_inventory": [
+        {
+          "equipment_type": "Butterfly Valve",
+          "count": 1,
+          "device_names": [
+            "BF-23BA3"
+          ]
+        },
+        {
+          "equipment_type": "Y Strainer",
+          "count": 1,
+          "device_names": [
+            "YS-23BA4"
+          ]
+        },
+        {
+          "equipment_type": "Rubber Flexible Connector",
+          "count": 1,
+          "device_names": [
+            "RFC-23D4F"
+          ]
+        }
+      ],
+      "source_display_geometry": []
+    },
+    {
+      "edge_id": "E0008",
+      "start_node_id": "T013",
+      "end_node_id": "CHWP-3",
+      "system": "return",
+      "edge_type": "tee_to_equipment",
+      "floor": "Schematic",
+      "path_length": 4421.909235392348,
+      "path_points": [
+        [
+          2248230.601301499,
+          293328.7341397021
+        ],
+        [
+          2248230.601301499,
+          297375.2887172967
+        ],
+        [
+          2248230.601301499,
+          297542.9077649161
+        ],
+        [
+          2248230.601301499,
+          297750.64337509446
+        ]
+      ],
+      "attribute_paths": [
+        [
+          [
+            2248230.601301499,
+            293328.7341397021
+          ],
+          [
+            2248230.601301499,
+            297375.2887172967
+          ],
+          [
+            2248230.601301499,
+            297542.9077649161
+          ],
+          [
+            2248230.601301499,
+            297750.64337509446
+          ]
+        ]
+      ],
+      "source_handles": [
+        "23DEA",
+        "23DEC",
+        "23DED",
+        "23E7E"
+      ],
+      "normalizations": [
+        "native_equipment_connection_lead",
+        "native_two_flange_symbol_axis"
+      ],
+      "equipment_inventory": [
+        {
+          "equipment_type": "Butterfly Valve",
+          "count": 1,
+          "device_names": [
+            "BF-23DEF"
+          ]
+        },
+        {
+          "equipment_type": "Y Strainer",
+          "count": 1,
+          "device_names": [
+            "YS-23DF0"
+          ]
+        },
+        {
+          "equipment_type": "Rubber Flexible Connector",
+          "count": 1,
+          "device_names": [
+            "RFC-23E7E"
+          ]
+        }
+      ],
+      "source_display_geometry": []
+    },
+    {
+      "edge_id": "E0009",
+      "start_node_id": "T001",
+      "end_node_id": "T003",
+      "system": "return",
+      "edge_type": "tee_to_tee",
+      "floor": "Schematic",
+      "path_length": 10686.840911834908,
+      "path_points": [
+        [
+          2254191.622661417,
+          328087.2667054024
+        ],
+        [
+          2254191.622661418,
+          317400.4257935675
+        ]
+      ],
+      "attribute_paths": [
+        [
+          [
+            2254191.622661417,
+            328087.2667054024
+          ],
+          [
+            2254191.622661418,
+            317400.4257935675
+          ]
+        ]
+      ],
+      "source_handles": [
+        "23E92"
+      ],
+      "normalizations": [],
+      "equipment_inventory": [
+        {
+          "equipment_type": "Butterfly Valve",
+          "count": 1,
+          "device_names": [
+            "BF-23E91"
+          ]
+        }
+      ],
+      "source_display_geometry": []
+    },
+    {
+      "edge_id": "E0010",
+      "start_node_id": "T004",
+      "end_node_id": "T002",
+      "system": "return",
+      "edge_type": "tee_to_tee",
+      "floor": "Schematic",
+      "path_length": 10686.828855132626,
+      "path_points": [
+        [
+          2215219.955838646,
+          317400.4237542188
+        ],
+        [
+          2215219.955838645,
+          320444.1396806909
+        ],
+        [
+          2215219.955838645,
+          328087.2526093514
+        ]
+      ],
+      "attribute_paths": [
+        [
+          [
+            2215219.955838646,
+            317400.4237542188
+          ],
+          [
+            2215219.955838645,
+            320444.1396806909
+          ],
+          [
+            2215219.955838645,
+            328087.2526093514
+          ]
+        ]
+      ],
+      "source_handles": [
+        "23B21",
+        "23C4B"
+      ],
+      "normalizations": [],
+      "equipment_inventory": [
+        {
+          "equipment_type": "Butterfly Valve",
+          "count": 1,
+          "device_names": [
+            "BF-23C44"
+          ]
+        }
+      ],
+      "source_display_geometry": []
+    },
+    {
+      "edge_id": "E0011",
+      "start_node_id": "T004",
+      "end_node_id": "T003",
+      "system": "return",
+      "edge_type": "tee_to_tee",
+      "floor": "Schematic",
+      "path_length": 38971.66682277206,
+      "path_points": [
+        [
+          2215219.955838646,
+          317400.4237542188
+        ],
+        [
+          2254191.622661418,
+          317400.4257935675
+        ]
+      ],
+      "attribute_paths": [
+        [
+          [
+            2215219.955838646,
+            317400.4237542188
+          ],
+          [
+            2254191.622661418,
+            317400.4257935675
+          ]
+        ]
+      ],
+      "source_handles": [
+        "23B22"
+      ],
+      "normalizations": [],
+      "equipment_inventory": [
+        {
+          "equipment_type": "Butterfly Valve",
+          "count": 2,
+          "device_names": [
+            "BF-23E90",
+            "BF-23E93"
+          ]
+        }
+      ],
+      "source_display_geometry": []
+    },
+    {
+      "edge_id": "E0012",
+      "start_node_id": "CH-02",
+      "end_node_id": "T008",
+      "system": "return",
+      "edge_type": "tee_to_equipment",
+      "floor": "Schematic",
+      "path_length": 8037.135145459266,
+      "path_points": [
+        [
+          2235440.806694609,
+          309321.6312491165
+        ],
+        [
+          2235440.806694609,
+          309059.5107428299
+        ],
+        [
+          2235440.806694609,
+          308891.8916952114
+        ],
+        [
+          2235440.806694609,
+          305405.2278339479
+        ],
+        [
+          2233205.789250032,
+          305405.2278339479
+        ],
+        [
+          2233205.789250032,
+          303519.5135482343
+        ]
+      ],
+      "attribute_paths": [
+        [
+          [
+            2235440.806694609,
+            309321.6312491165
+          ],
+          [
+            2235440.806694609,
+            309059.5107428299
+          ],
+          [
+            2235440.806694609,
+            308891.8916952114
+          ],
+          [
+            2235440.806694609,
+            305405.2278339479
+          ],
+          [
+            2233205.789250032,
+            305405.2278339479
+          ],
+          [
+            2233205.789250032,
+            303519.5135482343
+          ]
+        ]
+      ],
+      "source_handles": [
+        "23B8B",
+        "23B8D",
+        "23B8E",
+        "23BAF",
+        "23BBD",
+        "23D57"
+      ],
+      "normalizations": [
+        "native_two_flange_symbol_axis"
+      ],
+      "equipment_inventory": [
+        {
+          "equipment_type": "Butterfly Valve",
+          "count": 1,
+          "device_names": [
+            "BF-23B90"
+          ]
+        },
+        {
+          "equipment_type": "Motorized Butterfly Valve",
+          "count": 1,
+          "device_names": [
+            "MBF-23BD7"
+          ]
+        },
+        {
+          "equipment_type": "Rubber Flexible Connector",
+          "count": 1,
+          "device_names": [
+            "RFC-23D57"
+          ]
+        }
+      ],
+      "source_display_geometry": []
+    },
+    {
+      "edge_id": "E0013",
+      "start_node_id": "T007",
+      "end_node_id": "CHWP-2",
+      "system": "return",
+      "edge_type": "tee_to_equipment",
+      "floor": "Schematic",
+      "path_length": 5273.300285774283,
+      "path_points": [
+        [
+          2230162.485342428,
+          303519.5135482343
+        ],
+        [
+          2230162.485342421,
+          298636.8573547125
+        ],
+        [
+          2230162.485342421,
+          298469.2383070949
+        ],
+        [
+          2230162.485342421,
+          298428.599706264
+        ],
+        [
+          2230162.485342421,
+          298246.21326246
+        ]
+      ],
+      "attribute_paths": [
+        [
+          [
+            2230162.485342428,
+            303519.5135482343
+          ],
+          [
+            2230162.485342421,
+            298636.8573547125
+          ],
+          [
+            2230162.485342421,
+            298469.2383070949
+          ],
+          [
+            2230162.485342421,
+            298428.599706264
+          ],
+          [
+            2230162.485342421,
+            298246.21326246
+          ]
+        ]
+      ],
+      "source_handles": [
+        "23B99",
+        "23B9F",
+        "23BA5",
+        "23D50"
+      ],
+      "normalizations": [
+        "native_equipment_connection_lead",
+        "native_two_flange_symbol_axis"
+      ],
+      "equipment_inventory": [
+        {
+          "equipment_type": "Check Valve",
+          "count": 1,
+          "device_names": [
+            "CV-23BA2"
+          ]
+        },
+        {
+          "equipment_type": "Butterfly Valve",
+          "count": 1,
+          "device_names": [
+            "BF-23BDE"
+          ]
+        },
+        {
+          "equipment_type": "Rubber Flexible Connector",
+          "count": 1,
+          "device_names": [
+            "RFC-23D50"
+          ]
+        }
+      ],
+      "source_display_geometry": []
+    },
+    {
+      "edge_id": "E0014",
+      "start_node_id": "T007",
+      "end_node_id": "HE-02",
+      "system": "return",
+      "edge_type": "tee_to_equipment",
+      "floor": "Schematic",
+      "path_length": 5802.117700882198,
+      "path_points": [
+        [
+          2230162.485342428,
+          303519.5135482343
+        ],
+        [
+          2230162.485342428,
+          308891.8916952114
+        ],
+        [
+          2230162.485342429,
+          309059.5107428299
+        ],
+        [
+          2230162.485342429,
+          309321.6312491165
+        ]
+      ],
+      "attribute_paths": [
+        [
+          [
+            2230162.485342428,
+            303519.5135482343
+          ],
+          [
+            2230162.485342428,
+            308891.8916952114
+          ],
+          [
+            2230162.485342429,
+            309059.5107428299
+          ],
+          [
+            2230162.485342429,
+            309321.6312491165
+          ]
+        ]
+      ],
+      "source_handles": [
+        "23BA5",
+        "23BB8",
+        "23D55"
+      ],
+      "normalizations": [
+        "native_two_flange_symbol_axis"
+      ],
+      "equipment_inventory": [
+        {
+          "equipment_type": "Butterfly Valve",
+          "count": 1,
+          "device_names": [
+            "BF-23BBA"
+          ]
+        },
+        {
+          "equipment_type": "Rubber Flexible Connector",
+          "count": 1,
+          "device_names": [
+            "RFC-23D55"
+          ]
+        }
+      ],
+      "source_display_geometry": []
+    },
+    {
+      "edge_id": "E0015",
+      "start_node_id": "T007",
+      "end_node_id": "T008",
+      "system": "return",
+      "edge_type": "tee_to_tee",
+      "floor": "Schematic",
+      "path_length": 3043.3039076039568,
+      "path_points": [
+        [
+          2230162.485342428,
+          303519.5135482343
+        ],
+        [
+          2233205.789250032,
+          303519.5135482343
+        ]
+      ],
+      "attribute_paths": [
+        [
+          [
+            2230162.485342428,
+            303519.5135482343
+          ],
+          [
+            2233205.789250032,
+            303519.5135482343
+          ]
+        ]
+      ],
+      "source_handles": [
+        "23BBC"
+      ],
+      "normalizations": [],
+      "equipment_inventory": [
+        {
+          "equipment_type": "Motorized Butterfly Valve",
+          "count": 1,
+          "device_names": [
+            "MBF-23BDA"
+          ]
+        }
+      ],
+      "source_display_geometry": []
+    },
+    {
+      "edge_id": "E0016",
+      "start_node_id": "CH-03",
+      "end_node_id": "T010",
+      "system": "return",
+      "edge_type": "tee_to_equipment",
+      "floor": "Schematic",
+      "path_length": 8037.135145457869,
+      "path_points": [
+        [
+          2253508.922653687,
+          309321.6312491072
+        ],
+        [
+          2253508.922653687,
+          309059.5107428206
+        ],
+        [
+          2253508.922653686,
+          308891.8916952021
+        ],
+        [
+          2253508.922653686,
+          305405.2278339395
+        ],
+        [
+          2251273.90520911,
+          305405.2278339395
+        ],
+        [
+          2251273.90520911,
+          303519.513548225
+        ]
+      ],
+      "attribute_paths": [
+        [
+          [
+            2253508.922653687,
+            309321.6312491072
+          ],
+          [
+            2253508.922653687,
+            309059.5107428206
+          ],
+          [
+            2253508.922653686,
+            308891.8916952021
+          ],
+          [
+            2253508.922653686,
+            305405.2278339395
+          ],
+          [
+            2251273.90520911,
+            305405.2278339395
+          ],
+          [
+            2251273.90520911,
+            303519.513548225
+          ]
+        ]
+      ],
+      "source_handles": [
+        "23DD7",
+        "23DD9",
+        "23DDA",
+        "23DFA",
+        "23E08",
+        "23E82"
+      ],
+      "normalizations": [
+        "native_two_flange_symbol_axis"
+      ],
+      "equipment_inventory": [
+        {
+          "equipment_type": "Butterfly Valve",
+          "count": 1,
+          "device_names": [
+            "BF-23DDC"
+          ]
+        },
+        {
+          "equipment_type": "Motorized Butterfly Valve",
+          "count": 1,
+          "device_names": [
+            "MBF-23E22"
+          ]
+        },
+        {
+          "equipment_type": "Rubber Flexible Connector",
+          "count": 1,
+          "device_names": [
+            "RFC-23E82"
+          ]
+        }
+      ],
+      "source_display_geometry": []
+    },
+    {
+      "edge_id": "E0017",
+      "start_node_id": "T009",
+      "end_node_id": "CHWP-3",
+      "system": "return",
+      "edge_type": "tee_to_equipment",
+      "floor": "Schematic",
+      "path_length": 5273.300285774283,
+      "path_points": [
+        [
+          2248230.601301506,
+          303519.513548225
+        ],
+        [
+          2248230.601301499,
+          298636.8573547032
+        ],
+        [
+          2248230.601301499,
+          298469.2383070856
+        ],
+        [
+          2248230.601301499,
+          298428.5997062547
+        ],
+        [
+          2248230.601301499,
+          298246.2132624507
+        ]
+      ],
+      "attribute_paths": [
+        [
+          [
+            2248230.601301506,
+            303519.513548225
+          ],
+          [
+            2248230.601301499,
+            298636.8573547032
+          ],
+          [
+            2248230.601301499,
+            298469.2383070856
+          ],
+          [
+            2248230.601301499,
+            298428.5997062547
+          ],
+          [
+            2248230.601301499,
+            298246.2132624507
+          ]
+        ]
+      ],
+      "source_handles": [
+        "23DE5",
+        "23DEB",
+        "23DF1",
+        "23E7F"
+      ],
+      "normalizations": [
+        "native_equipment_connection_lead",
+        "native_two_flange_symbol_axis"
+      ],
+      "equipment_inventory": [
+        {
+          "equipment_type": "Check Valve",
+          "count": 1,
+          "device_names": [
+            "CV-23DEE"
+          ]
+        },
+        {
+          "equipment_type": "Butterfly Valve",
+          "count": 1,
+          "device_names": [
+            "BF-23E29"
+          ]
+        },
+        {
+          "equipment_type": "Pressure Gauge",
+          "count": 1,
+          "device_names": [
+            "PG-23E77"
+          ]
+        },
+        {
+          "equipment_type": "Rubber Flexible Connector",
+          "count": 1,
+          "device_names": [
+            "RFC-23E7F"
+          ]
+        }
+      ],
+      "source_display_geometry": []
+    },
+    {
+      "edge_id": "E0018",
+      "start_node_id": "T009",
+      "end_node_id": "HE-03",
+      "system": "return",
+      "edge_type": "tee_to_equipment",
+      "floor": "Schematic",
+      "path_length": 5802.117700882198,
+      "path_points": [
+        [
+          2248230.601301506,
+          303519.513548225
+        ],
+        [
+          2248230.601301506,
+          308891.8916952021
+        ],
+        [
+          2248230.601301507,
+          309059.5107428206
+        ],
+        [
+          2248230.601301507,
+          309321.6312491072
+        ]
+      ],
+      "attribute_paths": [
+        [
+          [
+            2248230.601301506,
+            303519.513548225
+          ],
+          [
+            2248230.601301506,
+            308891.8916952021
+          ],
+          [
+            2248230.601301507,
+            309059.5107428206
+          ],
+          [
+            2248230.601301507,
+            309321.6312491072
+          ]
+        ]
+      ],
+      "source_handles": [
+        "23DF1",
+        "23E03",
+        "23E80"
+      ],
+      "normalizations": [
+        "native_two_flange_symbol_axis"
+      ],
+      "equipment_inventory": [
+        {
+          "equipment_type": "Butterfly Valve",
+          "count": 1,
+          "device_names": [
+            "BF-23E05"
+          ]
+        },
+        {
+          "equipment_type": "Rubber Flexible Connector",
+          "count": 1,
+          "device_names": [
+            "RFC-23E80"
+          ]
+        }
+      ],
+      "source_display_geometry": []
+    },
+    {
+      "edge_id": "E0019",
+      "start_node_id": "T009",
+      "end_node_id": "T010",
+      "system": "return",
+      "edge_type": "tee_to_tee",
+      "floor": "Schematic",
+      "path_length": 3043.3039076039568,
+      "path_points": [
+        [
+          2248230.601301506,
+          303519.513548225
+        ],
+        [
+          2251273.90520911,
+          303519.513548225
+        ]
+      ],
+      "attribute_paths": [
+        [
+          [
+            2248230.601301506,
+            303519.513548225
+          ],
+          [
+            2251273.90520911,
+            303519.513548225
+          ]
+        ]
+      ],
+      "source_handles": [
+        "23E07"
+      ],
+      "normalizations": [],
+      "equipment_inventory": [
+        {
+          "equipment_type": "Motorized Butterfly Valve",
+          "count": 1,
+          "device_names": [
+            "MBF-23E25"
+          ]
+        }
+      ],
+      "source_display_geometry": []
+    },
+    {
+      "edge_id": "E0020",
+      "start_node_id": "T022",
+      "end_node_id": "CH-01",
+      "system": "supply",
+      "edge_type": "tee_to_equipment",
+      "floor": "Schematic",
+      "path_length": 18355.18579290528,
+      "path_points": [
+        [
+          2217089.368251011,
+          290966.4454562112
+        ],
+        [
+          2217089.368251018,
+          303519.5135482343
+        ],
+        [
+          2217089.368251018,
+          308891.8916952114
+        ],
+        [
+          2217089.368251018,
+          309059.5107428299
+        ],
+        [
+          2217089.368251018,
+          309321.6312491165
+        ]
+      ],
+      "attribute_paths": [
+        [
+          [
+            2217089.368251011,
+            290966.4454562112
+          ],
+          [
+            2217089.368251018,
+            303519.5135482343
+          ],
+          [
+            2217089.368251018,
+            308891.8916952114
+          ],
+          [
+            2217089.368251018,
+            309059.5107428299
+          ],
+          [
+            2217089.368251018,
+            309321.6312491165
+          ]
+        ]
+      ],
+      "source_handles": [
+        "23A4A",
+        "23A4E",
+        "23A51",
+        "23D54"
+      ],
+      "normalizations": [
+        "native_equipment_connection_lead",
+        "native_two_flange_symbol_axis"
+      ],
+      "equipment_inventory": [
+        {
+          "equipment_type": "Butterfly Valve",
+          "count": 2,
+          "device_names": [
+            "BF-23ADE",
+            "BF-23B80"
+          ]
+        },
+        {
+          "equipment_type": "Temperature and Pressure Instrument",
+          "count": 1,
+          "device_names": [
+            "TPI-23C11"
+          ]
+        },
+        {
+          "equipment_type": "Rubber Flexible Connector",
+          "count": 1,
+          "device_names": [
+            "RFC-23D54"
+          ]
+        }
+      ],
+      "source_display_geometry": []
+    },
+    {
+      "edge_id": "E0021",
+      "start_node_id": "T022",
+      "end_node_id": "T023",
+      "system": "supply",
+      "edge_type": "tee_to_tee",
+      "floor": "Schematic",
+      "path_length": 19140.08204947505,
+      "path_points": [
+        [
+          2217089.368251011,
+          290966.4454562112
+        ],
+        [
+          2236229.450300486,
+          290966.4454562112
+        ]
+      ],
+      "attribute_paths": [
+        [
+          [
+            2217089.368251011,
+            290966.4454562112
+          ],
+          [
+            2236229.450300486,
+            290966.4454562112
+          ]
+        ]
+      ],
+      "source_handles": [
+        "23A72"
+      ],
+      "normalizations": [],
+      "equipment_inventory": [
+        {
+          "equipment_type": "Butterfly Valve",
+          "count": 2,
+          "device_names": [
+            "BF-23BDB",
+            "BF-23C2B"
+          ]
+        }
+      ],
+      "source_display_geometry": []
+    },
+    {
+      "edge_id": "E0022",
+      "start_node_id": "T023",
+      "end_node_id": "T024",
+      "system": "supply",
+      "edge_type": "tee_to_tee",
+      "floor": "Schematic",
+      "path_length": 18068.115959078074,
+      "path_points": [
+        [
+          2236229.450300486,
+          290966.4454562112
+        ],
+        [
+          2239107.711467608,
+          290966.4454562122
+        ],
+        [
+          2240185.784648657,
+          290966.4454562122
+        ],
+        [
+          2254297.566259564,
+          290966.4454562019
+        ]
+      ],
+      "attribute_paths": [
+        [
+          [
+            2236229.450300486,
+            290966.4454562112
+          ],
+          [
+            2239107.711467608,
+            290966.4454562122
+          ],
+          [
+            2240185.784648657,
+            290966.4454562122
+          ],
+          [
+            2254297.566259564,
+            290966.4454562019
+          ]
+        ]
+      ],
+      "source_handles": [
+        "23A72",
+        "23A73"
+      ],
+      "normalizations": [],
+      "equipment_inventory": [
+        {
+          "equipment_type": "Butterfly Valve",
+          "count": 2,
+          "device_names": [
+            "BF-23C2A",
+            "BF-23E26"
+          ]
+        }
+      ],
+      "source_display_geometry": []
+    },
+    {
+      "edge_id": "E0023",
+      "start_node_id": "T023",
+      "end_node_id": "CH-02",
+      "system": "supply",
+      "edge_type": "tee_to_equipment",
+      "floor": "Schematic",
+      "path_length": 18355.18579290528,
+      "path_points": [
+        [
+          2236229.450300486,
+          290966.4454562112
+        ],
+        [
+          2236229.450300492,
+          303519.5135482343
+        ],
+        [
+          2236229.450300492,
+          308891.8916952114
+        ],
+        [
+          2236229.450300492,
+          309059.5107428299
+        ],
+        [
+          2236229.450300492,
+          309321.6312491165
+        ]
+      ],
+      "attribute_paths": [
+        [
+          [
+            2236229.450300486,
+            290966.4454562112
+          ],
+          [
+            2236229.450300492,
+            303519.5135482343
+          ],
+          [
+            2236229.450300492,
+            308891.8916952114
+          ],
+          [
+            2236229.450300492,
+            309059.5107428299
+          ],
+          [
+            2236229.450300492,
+            309321.6312491165
+          ]
+        ]
+      ],
+      "source_handles": [
+        "23B8A",
+        "23B8C",
+        "23B8F",
+        "23D58"
+      ],
+      "normalizations": [
+        "native_equipment_connection_lead",
+        "native_two_flange_symbol_axis"
+      ],
+      "equipment_inventory": [
+        {
+          "equipment_type": "Butterfly Valve",
+          "count": 2,
+          "device_names": [
+            "BF-23BCC",
+            "BF-23C01"
+          ]
+        },
+        {
+          "equipment_type": "Rubber Flexible Connector",
+          "count": 1,
+          "device_names": [
+            "RFC-23D58"
+          ]
+        }
+      ],
+      "source_display_geometry": []
+    },
+    {
+      "edge_id": "E0024",
+      "start_node_id": "T024",
+      "end_node_id": "T020",
+      "system": "supply",
+      "edge_type": "tee_to_tee",
+      "floor": "Schematic",
+      "path_length": 57146.20978207437,
+      "path_points": [
+        [
+          2254297.566259564,
+          290966.4454562019
+        ],
+        [
+          2261267.098048618,
+          290966.4454562122
+        ],
+        [
+          2261536.296909059,
+          290966.4454562122
+        ],
+        [
+          2262946.968411708,
+          290966.4454562122
+        ],
+        [
+          2263368.145379601,
+          290966.4454562122
+        ],
+        [
+          2263368.145379594,
+          319104.6244185872
+        ],
+        [
+          2254326.757355531,
+          319104.6264439465
+        ],
+        [
+          2254057.5584950894,
+          319104.6264439465
+        ],
+        [
+          2243430.693679932,
+          319104.6264439465
+        ]
+      ],
+      "attribute_paths": [
+        [
+          [
+            2254297.566259564,
+            290966.4454562019
+          ],
+          [
+            2261267.098048618,
+            290966.4454562122
+          ],
+          [
+            2261536.296909059,
+            290966.4454562122
+          ],
+          [
+            2262946.968411708,
+            290966.4454562122
+          ],
+          [
+            2263368.145379601,
+            290966.4454562122
+          ],
+          [
+            2263368.145379594,
+            319104.6244185872
+          ],
+          [
+            2254326.757355531,
+            319104.6264439465
+          ],
+          [
+            2254057.5584950894,
+            319104.6264439465
+          ],
+          [
+            2243430.693679932,
+            319104.6264439465
+          ]
+        ]
+      ],
+      "source_handles": [
+        "23A73",
+        "23A74",
+        "23A7A",
+        "23A7B",
+        "23A9F",
+        "23AA0",
+        "23B20"
+      ],
+      "normalizations": [
+        "semicircular_crossover_chord"
+      ],
+      "equipment_inventory": [
+        {
+          "equipment_type": "Sensor",
+          "count": 1,
+          "device_names": [
+            "SNS-23B4F"
+          ]
+        },
+        {
+          "equipment_type": "Butterfly Valve",
+          "count": 2,
+          "device_names": [
+            "BF-23C25",
+            "BF-23E54"
+          ]
+        }
+      ],
+      "source_display_geometry": [
+        {
+          "source_handle": "23B20",
+          "type": "ARC",
+          "center": [
+            2254192.15792531,
+            319104.6264439465
+          ],
+          "radius": 134.5994302207172,
+          "start_angle": 180.0,
+          "end_angle": 0.0
+        }
+      ]
+    },
+    {
+      "edge_id": "E0025",
+      "start_node_id": "T024",
+      "end_node_id": "CH-03",
+      "system": "supply",
+      "edge_type": "tee_to_equipment",
+      "floor": "Schematic",
+      "path_length": 18355.18579290528,
+      "path_points": [
+        [
+          2254297.566259564,
+          290966.4454562019
+        ],
+        [
+          2254297.56625957,
+          303519.513548225
+        ],
+        [
+          2254297.56625957,
+          308891.8916952021
+        ],
+        [
+          2254297.56625957,
+          309059.5107428206
+        ],
+        [
+          2254297.56625957,
+          309321.6312491072
+        ]
+      ],
+      "attribute_paths": [
+        [
+          [
+            2254297.566259564,
+            290966.4454562019
+          ],
+          [
+            2254297.56625957,
+            303519.513548225
+          ],
+          [
+            2254297.56625957,
+            308891.8916952021
+          ],
+          [
+            2254297.56625957,
+            309059.5107428206
+          ],
+          [
+            2254297.56625957,
+            309321.6312491072
+          ]
+        ]
+      ],
+      "source_handles": [
+        "23DD6",
+        "23DD8",
+        "23DDB",
+        "23E83"
+      ],
+      "normalizations": [
+        "native_equipment_connection_lead",
+        "native_two_flange_symbol_axis"
+      ],
+      "equipment_inventory": [
+        {
+          "equipment_type": "Butterfly Valve",
+          "count": 2,
+          "device_names": [
+            "BF-23E17",
+            "BF-23E4C"
+          ]
+        },
+        {
+          "equipment_type": "Rubber Flexible Connector",
+          "count": 1,
+          "device_names": [
+            "RFC-23E83"
+          ]
+        }
+      ],
+      "source_display_geometry": []
+    },
+    {
+      "edge_id": "E0026",
+      "start_node_id": "T021",
+      "end_node_id": "T017",
+      "system": "supply",
+      "edge_type": "tee_to_tee",
+      "floor": "Schematic",
+      "path_length": 7866.743534946814,
+      "path_points": [
+        [
+          2223133.723680999,
+          319104.62644394
+        ],
+        [
+          2223133.723680999,
+          326971.3699788868
+        ]
+      ],
+      "attribute_paths": [
+        [
+          [
+            2223133.723680999,
+            319104.62644394
+          ],
+          [
+            2223133.723680999,
+            326971.3699788868
+          ]
+        ]
+      ],
+      "source_handles": [
+        "23A95"
+      ],
+      "normalizations": [],
+      "equipment_inventory": [
+        {
+          "equipment_type": "Motorized Butterfly Valve",
+          "count": 1,
+          "device_names": [
+            "MBF-23C10"
+          ]
+        }
+      ],
+      "source_display_geometry": []
+    },
+    {
+      "edge_id": "E0027",
+      "start_node_id": "T021",
+      "end_node_id": "T018",
+      "system": "supply",
+      "edge_type": "tee_to_tee",
+      "floor": "Schematic",
+      "path_length": 7473.84810125595,
+      "path_points": [
+        [
+          2223133.723680999,
+          319104.62644394
+        ],
+        [
+          2226518.649601862,
+          319104.6264439465
+        ],
+        [
+          2230607.571782255,
+          319104.6264439465
+        ]
+      ],
+      "attribute_paths": [
+        [
+          [
+            2223133.723680999,
+            319104.62644394
+          ],
+          [
+            2226518.649601862,
+            319104.6264439465
+          ],
+          [
+            2230607.571782255,
+            319104.6264439465
+          ]
+        ]
+      ],
+      "source_handles": [
+        "23A9B",
+        "23A9C"
+      ],
+      "normalizations": [],
+      "equipment_inventory": [
+        {
+          "equipment_type": "Butterfly Valve",
+          "count": 2,
+          "device_names": [
+            "BF-23C45",
+            "BF-23EE7"
+          ]
+        }
+      ],
+      "source_display_geometry": []
+    },
+    {
+      "edge_id": "E0028",
+      "start_node_id": "T017",
+      "end_node_id": "T014",
+      "system": "supply",
+      "edge_type": "tee_to_tee",
+      "floor": "Schematic",
+      "path_length": 6908.674372531008,
+      "path_points": [
+        [
+          2223133.723680999,
+          326971.3699788868
+        ],
+        [
+          2230042.39805353,
+          326971.3699788933
+        ]
+      ],
+      "attribute_paths": [
+        [
+          [
+            2223133.723680999,
+            326971.3699788868
+          ],
+          [
+            2230042.39805353,
+            326971.3699788933
+          ]
+        ]
+      ],
+      "source_handles": [
+        "23A97"
+      ],
+      "normalizations": [],
+      "equipment_inventory": [
+        {
+          "equipment_type": "Butterfly Valve",
+          "count": 2,
+          "device_names": [
+            "BF-23C48",
+            "BF-23EE6"
+          ]
+        }
+      ],
+      "source_display_geometry": []
+    },
+    {
+      "edge_id": "E0029",
+      "start_node_id": "T014",
+      "end_node_id": "T015",
+      "system": "supply",
+      "edge_type": "tee_to_tee",
+      "floor": "Schematic",
+      "path_length": 6084.885992122814,
+      "path_points": [
+        [
+          2230042.39805353,
+          326971.3699788933
+        ],
+        [
+          2236127.284045653,
+          326971.3699788933
+        ]
+      ],
+      "attribute_paths": [
+        [
+          [
+            2230042.39805353,
+            326971.3699788933
+          ],
+          [
+            2236127.284045653,
+            326971.3699788933
+          ]
+        ]
+      ],
+      "source_handles": [
+        "23A97"
+      ],
+      "normalizations": [],
+      "equipment_inventory": [
+        {
+          "equipment_type": "Butterfly Valve",
+          "count": 2,
+          "device_names": [
+            "BF-23C49",
+            "BF-23EEC"
+          ]
+        }
+      ],
+      "source_display_geometry": []
+    },
+    {
+      "edge_id": "E0030",
+      "start_node_id": "T015",
+      "end_node_id": "T016",
+      "system": "supply",
+      "edge_type": "tee_to_tee",
+      "floor": "Schematic",
+      "path_length": 7303.409634279087,
+      "path_points": [
+        [
+          2236127.284045653,
+          326971.3699788933
+        ],
+        [
+          2243430.693679932,
+          326971.3699788933
+        ]
+      ],
+      "attribute_paths": [
+        [
+          [
+            2236127.284045653,
+            326971.3699788933
+          ],
+          [
+            2243430.693679932,
+            326971.3699788933
+          ]
+        ]
+      ],
+      "source_handles": [
+        "23A97"
+      ],
+      "normalizations": [],
+      "equipment_inventory": [
+        {
+          "equipment_type": "Butterfly Valve",
+          "count": 2,
+          "device_names": [
+            "BF-23C27",
+            "BF-23EE8"
+          ]
+        }
+      ],
+      "source_display_geometry": []
+    },
+    {
+      "edge_id": "E0031",
+      "start_node_id": "T016",
+      "end_node_id": "T020",
+      "system": "supply",
+      "edge_type": "tee_to_tee",
+      "floor": "Schematic",
+      "path_length": 7866.743534946814,
+      "path_points": [
+        [
+          2243430.693679932,
+          326971.3699788933
+        ],
+        [
+          2243430.693679932,
+          319104.6264439465
+        ]
+      ],
+      "attribute_paths": [
+        [
+          [
+            2243430.693679932,
+            326971.3699788933
+          ],
+          [
+            2243430.693679932,
+            319104.6264439465
+          ]
+        ]
+      ],
+      "source_handles": [
+        "23C17"
+      ],
+      "normalizations": [],
+      "equipment_inventory": [
+        {
+          "equipment_type": "Motorized Butterfly Valve",
+          "count": 1,
+          "device_names": [
+            "MBF-23C24"
+          ]
+        }
+      ],
+      "source_display_geometry": []
+    },
+    {
+      "edge_id": "E0032",
+      "start_node_id": "T018",
+      "end_node_id": "T019",
+      "system": "supply",
+      "edge_type": "tee_to_tee",
+      "floor": "Schematic",
+      "path_length": 4954.538534672931,
+      "path_points": [
+        [
+          2230607.571782255,
+          319104.6264439465
+        ],
+        [
+          2233476.783712272,
+          319104.6264439465
+        ],
+        [
+          2235562.110316928,
+          319104.6264439465
+        ]
+      ],
+      "attribute_paths": [
+        [
+          [
+            2230607.571782255,
+            319104.6264439465
+          ],
+          [
+            2233476.783712272,
+            319104.6264439465
+          ],
+          [
+            2235562.110316928,
+            319104.6264439465
+          ]
+        ]
+      ],
+      "source_handles": [
+        "23A9C",
+        "23A9F"
+      ],
+      "normalizations": [],
+      "equipment_inventory": [
+        {
+          "equipment_type": "Butterfly Valve",
+          "count": 2,
+          "device_names": [
+            "BF-23C47",
+            "BF-23EEA"
+          ]
+        }
+      ],
+      "source_display_geometry": []
+    },
+    {
+      "edge_id": "E0033",
+      "start_node_id": "T019",
+      "end_node_id": "T020",
+      "system": "supply",
+      "edge_type": "tee_to_tee",
+      "floor": "Schematic",
+      "path_length": 7868.583363004029,
+      "path_points": [
+        [
+          2235562.110316928,
+          319104.6264439465
+        ],
+        [
+          2243430.693679932,
+          319104.6264439465
+        ]
+      ],
+      "attribute_paths": [
+        [
+          [
+            2235562.110316928,
+            319104.6264439465
+          ],
+          [
+            2243430.693679932,
+            319104.6264439465
+          ]
+        ]
+      ],
+      "source_handles": [
+        "23A9F"
+      ],
+      "normalizations": [],
+      "equipment_inventory": [
+        {
+          "equipment_type": "Butterfly Valve",
+          "count": 2,
+          "device_names": [
+            "BF-23EE9",
+            "BF-23EEB"
+          ]
+        }
+      ],
+      "source_display_geometry": []
+    }
+  ]
+}

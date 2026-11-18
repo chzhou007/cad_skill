@@ -1,0 +1,20 @@
+{
+  "schema": "byte_preserved_SH16_project_native_adapters_v1",
+  "project": "SH16-10",
+  "source_sha256": "4008f96373fe154c5ad1de1892f6b1dbd0e07ff9582267f819f8a66a7ba268e1",
+  "files": {
+    "related_corner": {
+      "filename": "sh16_related_corner_known_issue_v1.py",
+      "sha256": "a53e7fe7c4fb40cc62c20641817cbe6b4a1e9efcf4630b7c11e7b25ffd918c87",
+      "original_source": "E:\\codex\\CAD\\work\\feature-regression-registry\\sh16_related_corner_known_issue_v1.py"
+    },
+    "capped_roles": {
+      "filename": "sh16_source_capped_branch_roles_v1.py",
+      "sha256": "5bfbd40f8f9cf959d9b9199cfddd59b2cf9817da260941faa2d2c04bc5b68200",
+      "original_source": "E:\\codex\\CAD\\work\\feature-regression-registry\\sh16_source_capped_branch_roles_v1.py"
+    }
+  },
+  "entry": "project_scoped_graph_descendants.py; captured files are legacy owners, not standalone relocated project launchers",
+  "general_circle_rule": false,
+  "new_human_confirmation": false
+}

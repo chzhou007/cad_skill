@@ -31,7 +31,8 @@ def prepare(dxf,bindings_path,profiles_path,config,output_dir):
   if t=='LINE':return {'type':t,'a':xy(e.dxf.start),'b':xy(e.dxf.end)}
   if t=='ARC':return {'type':t,'center':xy(e.dxf.center),'radius':e.dxf.radius,'start_angle':e.dxf.start_angle,'end_angle':e.dxf.end_angle}
   return {'type':t}
- doc=ezdxf.readfile(SRC);m=doc.modelspace();segments=[];arcs=[]
+ from source_readability import read_source
+ doc,readability=read_source(SRC);write('source_readability.json',readability);m=doc.modelspace();segments=[];arcs=[]
  for e in m:
   sy=SYSTEMS.get(e.dxf.layer)
   if not sy:continue
@@ -50,10 +51,13 @@ def prepare(dxf,bindings_path,profiles_path,config,output_dir):
   norm,status=normalize_arc(a,original_segments+bs_segments,bs_segments)
   arc_audit.append(dict(a,normalization_status=status,crossings=norm.get('crossings',[])if norm else []))
   if norm:bs_segments.append(norm)
- symbols=[]
+ symbols=[];symbol_bounds_audit=[]
+ from source_symbol_bounds import visible_symbol_bounds
  for e in m.query('INSERT'):
   if e.dxf.name not in TYPES:continue
-  b=bbox.extents([e]);symbols.append({'handle':e.dxf.handle,'block':e.dxf.name,'bounds':[b.extmin.x,b.extmin.y,b.extmax.x,b.extmax.y],'insert':xy(e.dxf.insert),'bridge_allowed':e.dxf.name in BRIDGES,'entity':e})
+  bounds,bounds_audit=visible_symbol_bounds(e);symbol_bounds_audit.append(bounds_audit)
+  symbols.append({'handle':e.dxf.handle,'block':e.dxf.name,'bounds':bounds,'insert':xy(e.dxf.insert),'bridge_allowed':e.dxf.name in BRIDGES,'entity':e,'nonrendering_metadata':bounds_audit['nonrendering_metadata']})
+ write('source_symbol_bounds_audit.json',symbol_bounds_audit)
  # Recover flexible joints from their actual two-flange native signature, never block INSERT origin.
  pump_prototypes=[]
  for ce in m.query('CIRCLE'):

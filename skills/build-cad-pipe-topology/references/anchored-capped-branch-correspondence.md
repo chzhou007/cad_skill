@@ -1,0 +1,17 @@
+# Reapply native cap declarations at independently mapped main Ts
+
+Use when an unmatched axis branch terminates at a source-declared capped marker and the floor plan already has a native caption/leader/marker/frontier witness. Run complete native cap discovery and the separate axis marker-port reader first. Recognizing each view independently is not yet cross-view adoption.
+
+`pipeline.py reconstruct-capped-branch-correspondence --manifest MANIFEST --output NEW` composes the existing whole-view discovery, capped source-role, outward branch, native T, path and marker-port owners. The manifest pins `plan_discovery`, `axis_caps`, `provider`, `axis_graph`, `axis_source`, `current_T_source_config`, `viewer_manifest`, and `current_effective`. Original discovery receipts retain their full source/graph inputs. Validate independently with `validate-capped-branch-correspondence --verify-output NEW`.
+
+Require a unique same-floor/same-system plan leaf, the same independently mapped ordinary T, and two individually adopted ordinary main-arm correspondences in both views. Native cap qualifier and quantity must agree, but quantity alone never establishes correspondence and never expands extra ports. Re-read the plan's caption, leader and complete marker, both native T stars, complete source paths, and the independently owned axis port. Retain the original source marker's display segment exclusion only; any other missing or competing coverage blocks adoption.
+
+Reuse `source_capped_branch_roles.apply` on a private reading graph. Its already proved capped interface may be adapted to the existing outward reader's drawing-interface schema. Do not overwrite raw/local graph roles, retire nodes, invent a physical device, transfer the supply result to return, or claim connectivity beyond the cap. Preserve unknown omitted lengths, all drawing-11 vertical ownership and every old DN value.
+
+Publish with `refresh-capped-branch-viewer --parent VIEWER --output NEW --proof PROOF --parent-provider CURRENT_PROVIDER --templates TEMPLATES --port PORT`; verify with `validate-capped-branch-viewer --verify-output NEW`. Append only the new source-bound context and six export fields. Preserve every old source-context root and every old exported value, source graph, component instance and annotation. A newly published semantic context creates a new review identity; previous human acceptance does not transfer.
+
+The provider records a source-bounded branch correspondence, not a complete mixed-edge length or DN. Recompute completion counters through the existing actual-effective reader. Keep individual correspondence, reviewed range correspondence and whole attribute completion separate. Native qualification, actual facade adoption, browser/export evidence and HIL each have separate evidence.
+
+SH16 positive: native plan UT0192/E0183 at T-SOURCE-12A44, axis E0579/VDEV029-S01 at T289, both explicitly labelled `预留支管接口/共2处` and `盲板封堵`. E0463 return has no independently qualified plan cap record and remains unassigned by this rule. The other axis marker's `共4处` does not match the two-count plan cap. No length or whole-edge DN is added by this stage.
+
+Regression: unique anchored positive; caption-only and equal-quantity negatives; floor/system/port isolation; collapsed, grouped or ambiguous main-arm evidence; old writer preservation; duplicate source claims; changed geometry and unsupported physical-value claims. Run the existing source-cap, marker-port, outward-path and current-effective suites as inherited dependencies.

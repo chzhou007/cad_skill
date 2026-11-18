@@ -1,10 +1,13 @@
 from __future__ import annotations
 
 import argparse
+import json
+import os
 import subprocess
 import sys
 import tempfile
 from pathlib import Path
+from source_readability import read_source
 
 
 SKILL_ROOT = Path(__file__).resolve().parents[1]
@@ -31,9 +34,19 @@ def parse_args() -> argparse.Namespace:
 
 
 def run(case_dir: Path, output_dir: Path, visualization_dir: Path | None = None) -> None:
+    # On Windows piped children otherwise default to the active legacy codepage,
+    # even when this parent was started with ``-X utf8``. Keep source-file
+    # decoding independent and make all child text streams explicitly UTF-8.
+    child_env = os.environ.copy()
+    child_env.update(PYTHONUTF8='1', PYTHONIOENCODING='utf-8:strict')
     builder = case_dir / "implementation" / "src" / "build_edges.py"
     drawing = case_dir / "inputs" / "dxf" / "sh16-native-isometric_updated.fixed.dxf"
     legend = case_dir / "inputs" / "dxf" / "sh16-native-table.fixed.dxf"
+    for path in (drawing, legend):
+        _, proof = read_source(path)
+        print(json.dumps({'preflight': proof['status'], 'source': str(path),
+                          'sha256': proof['source_sha256'], 'codec': proof['actual_read_codec'],
+                          'chinese_entities': proof['native_chinese_entity_count']}, ensure_ascii=False), flush=True)
     validator = SKILL_ROOT / "scripts" / "validate_alignment.py"
     subprocess.run(
         [
@@ -46,7 +59,7 @@ def run(case_dir: Path, output_dir: Path, visualization_dir: Path | None = None)
             "--output-dir",
             str(output_dir),
         ],
-        check=True,
+        check=True, env=child_env,
     )
 
     subprocess.run(
@@ -58,7 +71,7 @@ def run(case_dir: Path, output_dir: Path, visualization_dir: Path | None = None)
             "--actual",
             str(output_dir),
         ],
-        check=True,
+        check=True, env=child_env,
     )
 
 
@@ -72,7 +85,7 @@ def run(case_dir: Path, output_dir: Path, visualization_dir: Path | None = None)
             '--dxf', str(drawing), '--legend-dxf', str(legend),
             '--config', str(companion / 'references' / 'sh16-profile.json'),
             '--output', str(visualization_dir),
-        ], check=True)
+        ], check=True, env=child_env)
 
 
 def main() -> None:

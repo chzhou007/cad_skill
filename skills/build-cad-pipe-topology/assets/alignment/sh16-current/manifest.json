@@ -1,0 +1,108 @@
+{
+  "case_id": "sh16-cad-pipe-topology-v1.2.1-junction-fix",
+  "created_at": "2026-10-19",
+  "description": "SH16 updated HVAC chilled-water CAD to adjacent-node graph alignment case, including non-connecting over/under pipe crossovers.",
+  "pipeline_entry": "implementation/src/build_edges.py",
+  "coverage_notes": {
+    "system_pipe_layer_arc_entities": 0,
+    "system_pipe_layer_bulged_polylines": 0,
+    "arc_crossover_rule": "specified_not_exercised"
+  },
+  "summary_metrics": {
+    "nodes.physical_equipment": 92,
+    "nodes.virtual_equipment": 30,
+    "nodes.virtual_equipment_ports": 62,
+    "nodes.tee": 305,
+    "nodes.total": 427,
+    "edges.total": 579,
+    "edges.by_type.tee_to_tee": 333,
+    "edges.by_type.tee_to_equipment": 184,
+    "edges.by_type.tee_to_virtual_equipment": 62,
+    "edge_device_instances.detected_in_drawing_scope": 1560,
+    "edge_device_instances.assigned_to_adjacent_node_edges": 1560,
+    "edge_device_instances.outside_current_node_graph": 0,
+    "edge_device_instances.by_type.球阀": 706,
+    "preprocessing_reused.pipe_crossover_gaps_healed_without_junction": 2,
+    "preprocessing_reused.exploded_ball_valves_recovered": 90,
+    "virtual_omission_interfaces.healed_or_stitched_ports": 5,
+    "validation.no_pipe_crossover_promoted_to_node": true,
+    "validation.all_detected_edge_devices_assigned_once": true,
+    "validation.unresolved_boundary_tail_devices": 0
+  },
+  "csv_row_counts": {
+    "topology_nodes.csv": 427,
+    "edges.csv": 579,
+    "edge_device_instances.csv": 1560,
+    "pipe_crossover_gap_bridges.csv": 2
+  },
+  "device_type_counts": {
+    "Y型汽/水过滤器": 92,
+    "压力表": 276,
+    "温度计": 184,
+    "球阀": 706,
+    "自动放气阀": 4,
+    "蝶阀": 92,
+    "金属软接": 206
+  },
+  "source_kind_counts": {
+    "block_insert": 1374,
+    "exploded_geometry": 90,
+    "turn_display_valve_folded_to_elbow": 92,
+    "semantic_attdef_folded_trim": 1,
+    "semantic_attdef_folded_remove": 3
+  },
+  "required_output_files": [
+    "topology_nodes.csv",
+    "edges.csv",
+    "edge_device_instances.csv",
+    "edge_equipment_by_type.csv",
+    "graph_with_edges.json",
+    "edge_summary.json",
+    "edge_graph_overview.png",
+    "edge_graph_by_floor.png",
+    "pipe_crossover_gap_bridges.csv",
+    "pipe_crossover_gap_before_after.png"
+  ],
+  "sha256": {
+    "inputs/dwg/sh16-native-isometric_updated.dwg": "8487139a607ccdbf772ebcddaf1ee7a548e7f23e3eba318e44c1de2fbd62739d",
+    "inputs/dwg/sh16-native-table.dwg": "da411cf6876accd82304b36692168aa8ade79e1d88696ff621e3fb7233f71f09",
+    "inputs/dxf/sh16-native-isometric_updated.fixed.dxf": "467dcbc9d9945fea866168159deca193f03eea2e749744491a905ab062565402",
+    "inputs/dxf/sh16-native-table.fixed.dxf": "bf37aff749c3d63621d3db3a27a29c5b41e657c6b6168d90f013cf56b42e47ef",
+    "expected/outputs/edges/edge_summary.json": "58e620e4231e60819c715099764bee7067671e4f830691f88dd089987f14adcb",
+    "expected/outputs/edges/edge_device_instances.csv": "ccfb5bd20831df4f294e0e7c377f08f757eb11a93ac77434a968193c1c32dea3",
+    "expected/outputs/edges/edges.csv": "fbb2f2c4c4e8f07523777e8f0c5c52e762511ab9e742ed9687d1b22356aaad18",
+    "expected/outputs/edges/topology_nodes.csv": "b58dc9300b85652ba1c7e7b40a6138cee7013a2fff4d637ee3dda1d7d813d1c4",
+    "expected/outputs/edges/pipe_crossover_gap_bridges.csv": "4288bc8a4e35f01be5080218cc2181db4221fb8590be55c74a80ba57aa3cd70a",
+    "implementation/src/analyze_graph.py": "3fcc412f32a9bbe1ac57c614c7cb0e2ddeccc40a68a7f8afaa506550ba7144f1",
+    "implementation/src/connect_equipment.py": "2bdeb58d11974bc2993de401cfaf5f998f5259d2e8b869c13f8cc83f2f97d0c2",
+    "implementation/src/build_edges.py": "e8a19797115f20f100d248e35dd00ba33b374f77fb86ab66184d865995bd4840",
+    "implementation/tests/test_preprocessing.py": "bdc02d56028964462048f1de2de84fb7078aa430550ff706c2663381e94dbf7a",
+    "implementation/tests/test_isometric_junctions.py": "ab4366410da456860d3c7a52734ad27a4d684b955cef3ba744160a79d11cc6db"
+  },
+  "junction_expectations": [
+    {
+      "node_id": "T302",
+      "x": 2474516.38334222,
+      "y": 185664.9576115417,
+      "degree": 3
+    },
+    {
+      "node_id": "T303",
+      "x": 2475240.647410932,
+      "y": 185964.9576115417,
+      "degree": 3
+    },
+    {
+      "node_id": "T304",
+      "x": 2478533.843944361,
+      "y": 189258.1541449713,
+      "degree": 3
+    },
+    {
+      "node_id": "T305",
+      "x": 2478409.57987565,
+      "y": 189558.1541449713,
+      "degree": 3
+    }
+  ]
+}

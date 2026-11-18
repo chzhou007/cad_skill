@@ -1,6 +1,8 @@
 """Serve a generated CAD viewer on loopback; reuse only this exact bundle."""
 import argparse
+import hashlib
 import json
+import os
 import socket
 import webbrowser
 from http.server import ThreadingHTTPServer, SimpleHTTPRequestHandler
@@ -19,7 +21,7 @@ def main():
     args = parser.parse_args()
     if not 1 <= args.port <= 65535:
         parser.error('Port must be between 1 and 65535')
-    marker = f'name="cad-viewer-build" content="{manifest["bundleId"]}"'
+    instance = hashlib.sha256(os.path.normcase(str(ROOT.parent.resolve())).encode('utf8')).hexdigest()
     for port in range(args.port, min(65536, args.port + (1 if args.strict_port else 30))):
         try:
             with socket.create_connection(('127.0.0.1', port), timeout=.2):
@@ -27,10 +29,10 @@ def main():
         except OSError:
             break
         try:
-            existing = urlopen(f'http://127.0.0.1:{port}', timeout=1).read().decode('utf8')
+            existing = json.loads(urlopen(f'http://127.0.0.1:{port}/api/instance', timeout=1).read().decode('utf8'))
         except Exception:
-            existing = ''
-        if marker in existing:
+            existing = {}
+        if isinstance(existing, dict) and existing.get('bundleId') == manifest['bundleId'] and existing.get('instanceId') == instance:
             url = f'http://127.0.0.1:{port}'
             print(f'This viewer is already running: {url}', flush=True)
             if args.open:

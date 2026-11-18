@@ -1,0 +1,302 @@
+{
+  "status": "source_derived_native_annotation_fixture_not_engineering_topology",
+  "original_source_sha256": "4008f96373fe154c5ad1de1892f6b1dbd0e07ff9582267f819f8a66a7ba268e1",
+  "original_text_preflight": {
+    "status": "PASS_STRICT_NATIVE_TEXT",
+    "source_sha256": "4008f96373fe154c5ad1de1892f6b1dbd0e07ff9582267f819f8a66a7ba268e1",
+    "dxf_version": "AC1027",
+    "legacy_header_encoding": "utf-8",
+    "actual_read_codec": "utf-8",
+    "native_chinese_entity_count": 1008,
+    "native_chinese_samples": [
+      {
+        "handle": "12A2A",
+        "entity_type": "TEXT",
+        "text": "金属软管"
+      },
+      {
+        "handle": "12A30",
+        "entity_type": "TEXT",
+        "text": "金属软管"
+      },
+      {
+        "handle": "12A38",
+        "entity_type": "TEXT",
+        "text": "预留支管接口/共4处"
+      },
+      {
+        "handle": "12A39",
+        "entity_type": "TEXT",
+        "text": "盲板封堵"
+      },
+      {
+        "handle": "12A4F",
+        "entity_type": "TEXT",
+        "text": "预留支管接口/共2处"
+      },
+      {
+        "handle": "12A50",
+        "entity_type": "TEXT",
+        "text": "盲板封堵"
+      },
+      {
+        "handle": "1895B",
+        "entity_type": "TEXT",
+        "text": "三层顶部水管平面图"
+      },
+      {
+        "handle": "2BD47",
+        "entity_type": "TEXT",
+        "text": "三层顶部水管平面图"
+      },
+      {
+        "handle": "18034",
+        "entity_type": "ATTDEF",
+        "text": "单语音地插"
+      },
+      {
+        "handle": "17AE3",
+        "entity_type": "TEXT",
+        "text": "区域位置示意图"
+      },
+      {
+        "handle": "17AE7",
+        "entity_type": "TEXT",
+        "text": "给排水"
+      },
+      {
+        "handle": "17AE8",
+        "entity_type": "TEXT",
+        "text": "签"
+      },
+      {
+        "handle": "17AE9",
+        "entity_type": "TEXT",
+        "text": "会"
+      },
+      {
+        "handle": "17AEA",
+        "entity_type": "TEXT",
+        "text": "栏"
+      },
+      {
+        "handle": "17AEB",
+        "entity_type": "TEXT",
+        "text": "签 名"
+      },
+      {
+        "handle": "17AEC",
+        "entity_type": "TEXT",
+        "text": "专 业"
+      },
+      {
+        "handle": "17AED",
+        "entity_type": "TEXT",
+        "text": "日 期"
+      },
+      {
+        "handle": "17AEE",
+        "entity_type": "TEXT",
+        "text": "电 气"
+      },
+      {
+        "handle": "17AEF",
+        "entity_type": "TEXT",
+        "text": "暖 通"
+      },
+      {
+        "handle": "17AF0",
+        "entity_type": "TEXT",
+        "text": "弱 电"
+      },
+      {
+        "handle": "17AF1",
+        "entity_type": "TEXT",
+        "text": "建 筑"
+      },
+      {
+        "handle": "17AF2",
+        "entity_type": "TEXT",
+        "text": "工 艺"
+      },
+      {
+        "handle": "17AF3",
+        "entity_type": "TEXT",
+        "text": "结 构"
+      },
+      {
+        "handle": "17B01",
+        "entity_type": "TEXT",
+        "text": "实 名"
+      },
+      {
+        "handle": "17B0C",
+        "entity_type": "TEXT",
+        "text": "设 计 人"
+      },
+      {
+        "handle": "17B0E",
+        "entity_type": "TEXT",
+        "text": "设计总负责人"
+      },
+      {
+        "handle": "17B10",
+        "entity_type": "TEXT",
+        "text": "绘 图 人"
+      },
+      {
+        "handle": "17B11",
+        "entity_type": "TEXT",
+        "text": "出图日期"
+      },
+      {
+        "handle": "17B12",
+        "entity_type": "TEXT",
+        "text": "专业负责人"
+      },
+      {
+        "handle": "17B13",
+        "entity_type": "TEXT",
+        "text": "校 对 人"
+      }
+    ],
+    "scope": "Encoding integrity only; visual font legibility and exact project label reconciliation remain required. No binary proxy decoding."
+  },
+  "fixture_text_preflight": {
+    "status": "PASS_STRICT_NATIVE_TEXT",
+    "source_sha256": "f8d9cfd40bcefa1180590c9eca72005c8f030eae6c081d97e1f48df36c2cdc96",
+    "dxf_version": "AC1027",
+    "legacy_header_encoding": "utf-8",
+    "actual_read_codec": "utf-8",
+    "native_chinese_entity_count": 1,
+    "native_chinese_samples": [
+      {
+        "handle": "37",
+        "entity_type": "TEXT",
+        "text": "三层顶部水管平面图"
+      }
+    ],
+    "scope": "Encoding integrity only; visual font legibility and exact project label reconciliation remain required. No binary proxy decoding."
+  },
+  "fixture_source_sha256": "f8d9cfd40bcefa1180590c9eca72005c8f030eae6c081d97e1f48df36c2cdc96",
+  "exact_native_line_copies": [
+    {
+      "original_handle": "B5A2",
+      "fixture_handle": "2F",
+      "native_start": [
+        2321648.795553552,
+        -42027.00905788095,
+        0.0
+      ],
+      "native_end": [
+        2303598.356138608,
+        -60177.44847282508,
+        0.0
+      ]
+    },
+    {
+      "original_handle": "B5A4",
+      "fixture_handle": "30",
+      "native_start": [
+        2303598.356138608,
+        -54358.33853542196,
+        0.0
+      ],
+      "native_end": [
+        2321648.795553552,
+        -36307.89912047783,
+        0.0
+      ]
+    },
+    {
+      "original_handle": "B681",
+      "fixture_handle": "31",
+      "native_start": [
+        2331565.175479894,
+        -54358.33853542196,
+        0.0
+      ],
+      "native_end": [
+        2349615.614894838,
+        -36307.89912047783,
+        0.0
+      ]
+    },
+    {
+      "original_handle": "B682",
+      "fixture_handle": "32",
+      "native_start": [
+        2349615.614894838,
+        -42027.00905788095,
+        0.0
+      ],
+      "native_end": [
+        2331565.175479894,
+        -60177.44847282508,
+        0.0
+      ]
+    },
+    {
+      "original_handle": "B5A5",
+      "fixture_handle": "33",
+      "native_start": [
+        2352063.177596347,
+        -36307.89912048092,
+        0.0
+      ],
+      "native_end": [
+        2370113.617011246,
+        -54358.33853547004,
+        0.0
+      ]
+    },
+    {
+      "original_handle": "B5A6",
+      "fixture_handle": "34",
+      "native_start": [
+        2352063.177596333,
+        -42027.00905788403,
+        0.0
+      ],
+      "native_end": [
+        2370113.617011232,
+        -60177.44847287316,
+        0.0
+      ]
+    },
+    {
+      "original_handle": "B5EB",
+      "fixture_handle": "35",
+      "native_start": [
+        2374820.360968465,
+        -36307.89912048092,
+        0.0
+      ],
+      "native_end": [
+        2392870.800383365,
+        -54358.33853547004,
+        0.0
+      ]
+    },
+    {
+      "original_handle": "B5EC",
+      "fixture_handle": "36",
+      "native_start": [
+        2374820.360968451,
+        -42027.00905788403,
+        0.0
+      ],
+      "native_end": [
+        2392870.80038335,
+        -60177.44847287316,
+        0.0
+      ]
+    }
+  ],
+  "title_text": "三层顶部水管平面图",
+  "graph_is_annotation_reader_binding_only": true,
+  "original_full_source_proof": "sh16-detail-corner-context-native-and-related-regression-v1.json",
+  "connections_added": 0,
+  "physical_values_assigned": 0,
+  "human_accepted": false
+}

@@ -6,6 +6,19 @@ import test_builder as fixture
 import cad_geometry as cg
 HERE=Path(__file__).resolve().parent
 class NewDrawingViewerContract(unittest.TestCase):
+ def test_source_hairline_zoom_does_not_change_native_fill_geometry(self):
+  paths=[([(0,0),(1,0)],False),([(0,0),(1,0),(1,1),(0,0)],True)]
+  markup=cg.svg_shapes(paths,lambda x,y:(x,y),screen_stroke=True);self.assertIn('vector-effect="non-scaling-stroke"',markup);self.assertIn('stroke-width=".7"',markup);self.assertIn('fill="currentColor" stroke="none"',markup);self.assertNotIn('non-scaling-stroke',cg.svg_shapes(paths,lambda x,y:(x,y)))
+ def test_equipment_subset_keeps_only_its_native_modules_at_parent_placement(self):
+  d=ezdxf.readfile(self.root/'demo.dxf');block=d.blocks.new('FLOOR_EQUIPMENT');a=block.add_line((0,0),(.02,0));block.add_line((1,0),(2,0));parent=d.modelspace().add_blockref('FLOOR_EQUIPMENT',(.01,.02),dxfattribs={'xscale':-1});d.saveas(self.root/'demo.dxf');g=json.loads((self.root/'graph.json').read_text());g['nodes'][0].update(display_source_chain=[parent.dxf.handle],display_source_handles=[a.dxf.handle]);(self.root/'graph.json').write_text(json.dumps(g));ret=self.build();self.assertEqual(ret.returncode,0,ret.stderr);out=json.loads((self.out/'public/data/graph.json').read_text());self.assertEqual(len(out['nodes'][0]['sourceGeometry']),1);self.assertEqual(out['nodes'][0]['display_source_handles'],[a.dxf.handle]);self.assertEqual(json.loads((self.out/'quality-gate.json').read_text())['machine_status'],'PASS')
+ def test_complete_native_head_with_service_conflict_is_visible_without_reclassification(self):
+  import csv
+  with(self.root/'devices.csv').open(encoding='utf-8-sig',newline='')as f:rows=list(csv.DictReader(f))
+  rows[0]['source_top_handle']='SOURCE-SENSOR';rows[0]['source_head_status']='complete_tagged_head'
+  with(self.root/'devices.csv').open('w',encoding='utf-8-sig',newline='')as f:
+   w=csv.DictWriter(f,list(rows[0]));w.writeheader();w.writerows(rows)
+  g=json.loads((self.root/'graph.json').read_text());g['sourceInstrumentHeadCoverage']=[dict(source_sensor_handle='SOURCE-SENSOR',source_service_tag_conflict=True,source_service_tags=['CHWS-1'])];(self.root/'graph.json').write_text(json.dumps(g))
+  ret=self.build();self.assertEqual(ret.returncode,0,ret.stderr);out=json.loads((self.out/'public/data/graph.json').read_text());self.assertTrue(out['instances'][0]['source_service_tag_conflict']);self.assertEqual(out['instances'][0]['source_head_status'],'complete_tagged_head');self.assertIn('source service tag conflicts',out['componentReview'][0]['reason']);self.assertFalse((self.out/'annotations').exists())
  def setUp(self):
   self.tmp=tempfile.TemporaryDirectory();self.root=fixture.create_fixture(Path(self.tmp.name)/'inputs');self.out=Path(self.tmp.name)/'viewer'
  def tearDown(self):self.tmp.cleanup()
@@ -36,6 +49,8 @@ class NewDrawingViewerContract(unittest.TestCase):
   g['componentSourceGeometry']=[{'device_name':name,'paths':[{'points':[[0,0],[.005,.005]],'fill':False}]}];(self.root/'graph.json').write_text(json.dumps(g));ret=self.build();self.assertEqual(ret.returncode,0,ret.stderr);actual=json.loads((self.out/'public/data/graph.json').read_text());row=actual['instances'][0];self.assertEqual(len(row['related_edge_ids']),2);self.assertEqual(len(row['sourceGeometry'][0]['points']),2);self.assertNotEqual(row['sourceGeometry'][0]['points'][0],row['sourceGeometry'][0]['points'][1])
  def test_unresolved_virtual_terminal_is_hint_not_human_error(self):
   g=json.loads((self.root/'graph.json').read_text());n=g['nodes'][-1];n.update(node_type='virtual_equipment',boundary_type='unresolved_source_terminal',review_required=True,ports=[{'port_id':'END-P1','system':'supply','x':n['x'],'y':n['y']}]);g['edges'][-1]['end_port_id']='END-P1';(self.root/'graph.json').write_text(json.dumps(g));ret=self.build();self.assertEqual(ret.returncode,0,ret.stderr);actual=json.loads((self.out/'public/data/graph.json').read_text());hint=next(r for r in actual['review']if r['id']==n['node_id']);self.assertIn('Unresolved source terminal',hint['reason']);self.assertTrue(hint['automatic_hint']);self.assertFalse((self.out/'annotations').exists())
+ def test_equipment_pending_source_comparison_is_a_hint(self):
+  g=json.loads((self.root/'graph.json').read_text());n=g['nodes'][0];n['review_queue']='source_comparison';(self.root/'graph.json').write_text(json.dumps(g));ret=self.build();self.assertEqual(ret.returncode,0,ret.stderr);actual=json.loads((self.out/'public/data/graph.json').read_text());hint=next(r for r in actual['review'] if r['id']==n['node_id']);self.assertIn('Algorithm interpretation pending',hint['reason']);self.assertTrue(hint['automatic_hint'])
  def test_standard_csv_source_handles_generate_native_geometry(self):
   import csv
   d=ezdxf.readfile(self.root/'demo.dxf');h=next(iter(d.modelspace().query('LINE'))).dxf.handle

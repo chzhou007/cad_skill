@@ -1,0 +1,90 @@
+[
+  {
+    "source_pipe_handles": [
+      "23AD4"
+    ],
+    "x": 2252159.351742063,
+    "y": 338177.6794548265,
+    "status": "unresolved_source_endpoint",
+    "rule": "retained_native_pipe_endpoint_without_proven_equipment_or_external_boundary",
+    "external_connection_confirmed": false,
+    "node_id": "UT0001"
+  },
+  {
+    "source_pipe_handles": [
+      "23ABE"
+    ],
+    "x": 2217252.226757999,
+    "y": 338177.6794548256,
+    "status": "unresolved_source_endpoint",
+    "rule": "retained_native_pipe_endpoint_without_proven_equipment_or_external_boundary",
+    "external_connection_confirmed": false,
+    "node_id": "UT0002"
+  },
+  {
+    "source_pipe_handles": [
+      "23ADB"
+    ],
+    "x": 2254191.622661415,
+    "y": 338163.1909369657,
+    "status": "unresolved_source_endpoint",
+    "rule": "retained_native_pipe_endpoint_without_proven_equipment_or_external_boundary",
+    "external_connection_confirmed": false,
+    "node_id": "UT0003"
+  },
+  {
+    "source_pipe_handles": [
+      "23AD2"
+    ],
+    "x": 2215219.955838646,
+    "y": 338163.1909369647,
+    "status": "unresolved_source_endpoint",
+    "rule": "retained_native_pipe_endpoint_without_proven_equipment_or_external_boundary",
+    "external_connection_confirmed": false,
+    "node_id": "UT0004"
+  },
+  {
+    "source_pipe_handles": [
+      "240C6"
+    ],
+    "x": 2205985.437850699,
+    "y": 323762.0866009309,
+    "status": "unresolved_source_endpoint",
+    "rule": "retained_native_pipe_endpoint_without_proven_equipment_or_external_boundary",
+    "external_connection_confirmed": false,
+    "node_id": "UT0005"
+  },
+  {
+    "source_pipe_handles": [
+      "23B15"
+    ],
+    "x": 2212193.328194829,
+    "y": 315781.6690932231,
+    "status": "unresolved_source_endpoint",
+    "rule": "retained_native_pipe_endpoint_without_proven_equipment_or_external_boundary",
+    "external_connection_confirmed": false,
+    "node_id": "UT0006"
+  },
+  {
+    "source_pipe_handles": [
+      "23A81"
+    ],
+    "x": 2205258.733283881,
+    "y": 292820.9034746799,
+    "status": "unresolved_source_endpoint",
+    "rule": "retained_native_pipe_endpoint_without_proven_equipment_or_external_boundary",
+    "external_connection_confirmed": false,
+    "node_id": "UT0007"
+  },
+  {
+    "source_pipe_handles": [
+      "23EF4"
+    ],
+    "x": 2205558.73328388,
+    "y": 292525.0248762721,
+    "status": "unresolved_source_endpoint",
+    "rule": "retained_native_pipe_endpoint_without_proven_equipment_or_external_boundary",
+    "external_connection_confirmed": false,
+    "node_id": "UT0008"
+  }
+]

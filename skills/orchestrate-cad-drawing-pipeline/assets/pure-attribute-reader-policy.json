@@ -1,0 +1,90 @@
+{
+  "mode": "shipped_pure_attribute_reader_inputs_v1",
+  "reader_function_fingerprints": [
+    "efca93c1b7e1e0893c368ee19ebd8155e2c38c6c45365664c4a55d7ab94f61d1"
+  ],
+  "module_sha256": {
+    "anchor-bounded-main-attributes.js": [
+      "cd6d16f3a33ac0c8d79da21f729f2d1406ebdddcd00057ccaebd90f967c49fba",
+      "fd41867077175275e0b572e1aa43ee7af2c35ed7f58ee5f6ba1d3d01d60c5ccb"
+    ],
+    "anchored-floor-main-attributes.js": [
+      "656ac7972924bd041f9eab52ee10e32a36d43092b36c9f28ca113b30caebc287"
+    ],
+    "axis-riser-attributes.js": [
+      "2ecd4667120f7d6afc8553638c77ceb5710e51c5730b1be6d5397fe32de5b6c0"
+    ],
+    "current-floor-plan-scopes.js": [
+      "ce1547e496060e2dc6c49061c7941430278a0f2d020acd9654dd606e827e963e"
+    ],
+    "current-named-prefix-evidence.js": [
+      "535bd725d2e02d7f0369095717358bb943eddc9bcb8462a075a2af074285a9c5"
+    ],
+    "current-plan-scope-attributes.js": [
+      "2e89b4d3b6c7b66824ced8f87f9297a8a0fd41a0769d497bbecbcfde43dee891"
+    ],
+    "edge-attributes.js": [
+      "6a60ace4d6e6da954f066fa7c251c4a7a509b60c07d3d83ac4c0e958d9be9a51",
+      "cbceefd776f1d05c5f9ed95d7156639e6068a52801e6c523f850dc6bfabae457",
+      "2b5755848392fbd6704a4e884be10d18eb6d3a7e911ab9ca8213294e3966bd6c",
+      "30aa47998465914281aedabfdaf0a1f692e474e2d3b6288be18e9e3d4de71a61",
+      "792823d9e765e713440ee429c73fa55d5c55345140090afcac0459611658d1ed",
+      "6f084c62d9576ec07b375f84bc094b878ca1504efcd9806347c8aab3fa20e8f5",
+      "f2cce796aa2d78cf0733de64cb185a27c1d277434f65790c7c64504b355beb79",
+      "903dfec25667ee1a33cd5a499680b71813c548b69a4f6fb07433153646cb19ff",
+      "3a6af037710c16bef42b9847e73ba9e7f2ad9ec5d3100e5e3880cefb0a97d15e",
+      "a0d31238f2667deb3f93ffc26d0b4bfdc5df140f3da29bdd9a50eab01fcb8860",
+      "e7f787230be7816b5ad4214b287bb4209067a0de8436d196758b45bea3fb033b"
+    ],
+    "external-feed-plan-attributes.js": [
+      "8b88b45e80359379f57105e456f7725b07e8ef131692c7cafd7d6b3810abf578"
+    ],
+    "full-batch-plan-attributes.js": [
+      "22bba075647bff90178ed1ca39882ec8aac2f1e21011594e54227b86c3736346"
+    ],
+    "ordered-branch-plan-attributes.js": [
+      "b3bd553b85b2ce4b6c017bee5db11586c4d3b1604802cde207a93131eca0b0ee"
+    ],
+    "ordered-owner-plan-runs.js": [
+      "bf5a753c9c43c6fd7517301781b4c217e34ac719aec7d7482e7c87d05ca758b9",
+      "edb736eacde3e3b0032d6be53faae2647312eeb9719d4abdaff5a78478d42840"
+    ],
+    "upper-floor-plan-segments.js": [
+      "b6ddcc07ca098746a305cabbb6e3ee5171bee0fa77e5d045d3fc577d8d1fe842"
+    ],
+    "alias-member-interface-attributes.js": [
+      "8d86d09e6d48a3d4b2266535ca4e824eeada111d74c44f1b852a536c60c879da"
+    ],
+    "alias-member-bridge-attributes.js": [
+      "819889c5228edab82fad867a61026b3a5ef03178c2b821d9a827f89a109f2e7e"
+    ],
+    "graph-first-attribute-extensions.js": [
+      "32985be45895a17d981beacdd8d35debedd608cbe8ae804dc94154c3160fc71f",
+      "db7e871e5ae1641107df6856334b7434b248e7f88f5fc93a1957e0123b6485bf"
+    ],
+    "cycle-carrier-guard-attributes.js": [
+      "7e1a85cb5b3ed9c3f9451d6d7637f7d0de7c8b199251e5470a365e0af91142c2",
+      "4beca4abb3f2958d01901bc7091ebd5b4b25c40d48208e584a557858440ac6b6",
+      "549e2e04a23a0628fee6b72ecd371db06c9259ee5e5b4812935125cc75294981"
+    ],
+    "riser-header-member-attributes.js": [
+      "b1f2ca7a2caa24a722b16a802f6201062c58f49e657c7624733b1cb1159eacd2"
+    ],
+    "cohort-member-plan-attributes.js": [
+      "37b84fade4be6c22a58f3a7001143c80e738d7993172e52a239481b79f0ed66c",
+      "88badc175588a0d85487c292954dc14dde7410cf6fa539f35a263c70c953b2f3"
+    ],
+    "component-inventory-attribute-bridge.js": [
+      "c95c0b163db8d2dca3cbae156b3ff41ae418637dd8ea3995fe8edd33ff4546a9",
+      "be5325a73b46b162ef9b4f4ee31165a84e50a1b5f813917421bac2f556112113"
+    ],
+    "contact-owner-plan-attributes.js": [
+      "4b6e8238e8a0f339f0c6f1d656966244296710d8bf4bb79cf5cdd5f272fad1bf"
+    ],
+    "omission-vertical-DN.js": [
+      "2c386c27ace5f47afacb1d4cad17b68953c69bc360746afddd1bc7948f79b742"
+    ]
+  },
+  "provenance": "reviewed shipped 138,139,141 snapshots and 144 directional alias-interface modules; pure relative attribute modules only; no fetching, DOM, storage, random or clock calls; reviewed146 alias bridge pure UI and CSV modules, no I/O or dynamic imports",
+  "physical_or_human_acceptance": false
+}

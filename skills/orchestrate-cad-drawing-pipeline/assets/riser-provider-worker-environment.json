@@ -1,0 +1,5 @@
+{
+  "scope": "isolated_pure_native_worker_only",
+  "stable_transport_context": "CAD-riser-provider-native-closure-v1",
+  "meaning": "Only the isolated native worker transport marker is fixed; all actual environment values remain in the original complete before/after binding."
+}

@@ -1,0 +1,13 @@
+# Reuse of a bounded attribute artifact with native reader evidence
+
+Use `pipeline.py reuse-bounded-attribute-artifact --native-run RUN --cache-root CACHE --output NEW_OUTPUT` for repeated application of the unchanged `rebuild_bounded_main_complete_extents` artifact. It uses the original complete dependency capsule engine through a separate versioned owner adapter. Original owner tables, geometry algorithms and `validate-*` controls remain unchanged.
+
+A cold miss runs the original verifier. A warm hit must check the complete current skill/interpreter binding and all transitive source, configuration, file, directory and negative-probe dependencies. The proof bytes must match exactly. Report `dependency_checked_reuse` separately from `native_replay_performed`; neither grants human acceptance or creates a mapping/value. `--force-native` remains a full native control.
+
+The only subprocess bridge is the shipped read-only effective-attribute reader. Both Python function fingerprints and its literal JavaScript import closure must match the explicit policy. Bind graph/manifest, policy, actual Node executable/DLLs, package files and their absent ancestor probes; recheck those bytes after execution. Unknown modules, dynamic imports, changed code, `NODE_OPTIONS` or `NODE_PATH` fall back to the original uncacheable subprocess. A late input mutation raises instead of returning stale values. No other subprocess is exempted.
+
+Preload the known owner import graph before runtime binding, retaining and merging its actual dependency capture. Import preloading must not hide source/configuration dependencies. Cold and warm measurements use separate fresh processes with identical declared environment, working directory and arguments apart from output location. Keep operational outputs outside the source artifact. Do not claim a whole-pipeline speedup from a reader microbenchmark.
+
+Initialize the installed numerical runtime before starting source dependency observation. NumPy temporarily changes an OpenBLAS environment variable while importing; doing that during native observation correctly disables reuse. Require NumPy to resolve inside the installed library trees covered by the original complete before/after byte binding. This is runtime initialization, never an exemption for source/verifier environment changes; all such changes during native replay still disable reuse.
+
+Tests cover actual Node output equality, content changes with preserved size/time, a newly present package file, unsupported code/environment fallback, late input changes, exact proof bytes, independent owner tables and CLI dispatch. A release additionally requires a real installed cold/warm run with unchanged proof bytes and all registered historical tests.

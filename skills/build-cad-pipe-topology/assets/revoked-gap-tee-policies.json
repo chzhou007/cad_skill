@@ -1,0 +1,6 @@
+{
+  "schema_version": 1,
+  "revoked": {
+    "10eb1a100aff4556993d86301cd7297588fa833dfab7a3a581454a3206a19a2a": "SH16 10: user source markup shows the 12D89 branch reaches circle 12D98, not the vertically projected point on main 12D79. Preserve the previous result as history."
+  }
+}

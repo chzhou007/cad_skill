@@ -37,6 +37,26 @@ class NativeEquipmentPorts(unittest.TestCase):
     def test_inward_ray_rejected(self):
         g=graph([[3,10]]);g['edges'][0]['path_points']=[[3,10],[3,5],[3,-20]]
         _,a=bind(g,[instance()],self.profile);self.assertEqual(a['physical_port_count'],0)
+    def test_enclosed_terminal_requires_opt_in_and_actual_native_exit(self):
+        g=graph([[3,2]]);body=instance()
+        _,a=bind(g,[body],self.profile);self.assertEqual(a['physical_port_count'],0)
+        body['enclosed_terminal_ownership']=True
+        out,a=bind(g,[body],self.profile);self.assertEqual(a['physical_port_count'],1)
+        self.assertEqual(out['edges'][0]['path_points'],g['edges'][0]['path_points'])
+        self.assertEqual(a['contacts'][0]['outline_crossing'],[3,0])
+        g['edges'][0]['attribute_paths']=[[[3,-1],[3,-18]]]
+        _,a=bind(g,[body],self.profile);self.assertEqual(a['physical_port_count'],0)
+    def test_enclosed_pipe_never_exits_or_competing_owners_stays_pending(self):
+        g=graph([[3,2]]);body=instance();body['enclosed_terminal_ownership']=True
+        g['edges'][0]['path_points']=[[3,2],[3,4]];g['edges'][0]['attribute_paths']=[g['edges'][0]['path_points']]
+        _,a=bind(g,[body],self.profile);self.assertEqual(a['physical_port_count'],0)
+        g=graph([[3,2]])
+        second=copy.deepcopy(body);second['node_id']='EQ-OTHER'
+        _,a=bind(g,[body,second],self.profile);self.assertEqual(a['physical_port_count'],0)
+    def test_pipe_section_inside_body_is_not_an_equipment_port(self):
+        body=instance();body['enclosed_terminal_ownership']=True;g=graph([[3,2]])
+        _,a=bind(g,[body],self.profile,source_markers=[{'handle':'SECTION','center':[3,2],'radius':1}])
+        self.assertEqual(a['physical_port_count'],0);self.assertEqual(a['candidate_contacts'][0]['status'],'pending_pipe_glyph_before_equipment_ownership')
     def test_competing_owners_rejected(self):
         _,a=bind(graph(),[instance(),instance('EQ-F1-B')],self.profile);self.assertEqual(a['physical_port_count'],0)
     def test_known_destination_and_floor_protected(self):

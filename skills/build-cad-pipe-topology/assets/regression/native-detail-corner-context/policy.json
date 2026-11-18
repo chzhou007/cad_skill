@@ -1,0 +1,28 @@
+{
+  "source_sha256": "f8d9cfd40bcefa1180590c9eca72005c8f030eae6c081d97e1f48df36c2cdc96",
+  "graph_sha256": "31598fcaccd225aff5d723086eaed1121701cf106d8f720cb1271d6977f39f71",
+  "annotation_layer": "空调平面",
+  "allowed_linetypes": [
+    "DASH"
+  ],
+  "frames": [
+    {
+      "frame_id": "A",
+      "line_handles": [
+        "2F",
+        "30",
+        "31",
+        "32"
+      ]
+    },
+    {
+      "frame_id": "B",
+      "line_handles": [
+        "33",
+        "34",
+        "35",
+        "36"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "previous_fixture": "sh16-plant-v5",
+  "reason": "Current source-native equipment retention explicitly distinguishes reference parameters from effective assignment. The old expected graph omitted this metadata.",
+  "added_field": "parameter_binding_state",
+  "value": "reference_candidates_only",
+  "equipment_nodes": [
+    "CH-01",
+    "CHWP-1",
+    "HE-01",
+    "CH-02",
+    "CHWP-2",
+    "HE-02",
+    "CH-03",
+    "CHWP-3",
+    "HE-03",
+    "ECT-01",
+    "ECT-02",
+    "CST-1",
+    "CST-2",
+    "SC01-01"
+  ],
+  "node_edge_geometry_changed": false,
+  "original_fixture_preserved": true,
+  "added_crossover_witness_metadata": {
+    "crossings": 3,
+    "fields": [
+      "crossed_handles",
+      "crossing_evidence"
+    ],
+    "coordinates_and_acceptance_unchanged": true
+  }
+}

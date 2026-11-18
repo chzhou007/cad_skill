@@ -1,0 +1,10 @@
+{
+  "expected/edge_summary.json": "368b1daabd49d3dee6359cc3709042c185774480ea05a284ca2840da9b36b758",
+  "expected/graph_with_edges.json": "c595742c733fd708d962c7bfaf6b2fdc7238a25989899c94e1a1cbd124de1b17",
+  "inputs/04-\u51b7\u5374\u6c34\u7cfb\u7edf\u539f\u7406\u56fe.dxf": "1d49b54b7e1e05403355054cba67572f753724dab509df5d5e3139906af5c291",
+  "inputs/bindings.json": "a1a8706a858cd2c30063b34be9f2126806db69726a817f418716edf55a23af9f",
+  "inputs/materials.json": "572d012cfda031e0fd9d2a5bb86e8923445105336c28b9873f171fe7a356eb8c",
+  "inputs/previous-graph.json": "388d82dd9edb67aa72531cf46f398a821485d1a8e9e0d0f947437dce6cbf7850",
+  "inputs/profiles.json": "cd81a81c1081a046de17fb0e97940108fe7d4dfb973dd85221cf6e62bcdf3dbc",
+  "inputs/source-profile.json": "1121951cb4cdefd6372aae49844533ffc1ea8d1384a803d53521ef81ff2c84d5"
+}

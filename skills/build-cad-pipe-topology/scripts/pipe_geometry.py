@@ -33,21 +33,27 @@ def intersection(a,b,c,d):
  t=cross(sub(c,a),w)/den;u=cross(sub(c,a),v)/den
  if 1e-7<t<1-1e-7 and 1e-7<u<1-1e-7:return(a[0]+t*v[0],a[1]+t*v[1])
 def point_bbox(p,b):return math.hypot(max(b[0]-p[0],0,p[0]-b[2]),max(b[1]-p[1],0,p[1]-b[3]))
-def build_network(segments):
+def build_network(segments, partition_by_source_system=False):
  # Cut only at existing same-system pipe endpoints: pure crossings never join.
- vertices=[]
- def key(p):
+ vertices=[];vertex_partitions=[]
+ def partition(s):
+  if not partition_by_source_system:return None
+  value=s.get('source_system')
+  if not isinstance(value,str) or not value:raise ValueError('Source system required for separated networks')
+  return value
+ def key(p,part):
   for i,v in enumerate(vertices):
-   if dist(v,p)<=TOL:return i
-  vertices.append(p);return len(vertices)-1
- endpoints=[(s['system'],p)for s in segments for p in [s['a'],s['b']]]
+   if vertex_partitions[i]==part and dist(v,p)<=TOL:return i
+  vertices.append(p);vertex_partitions.append(part);return len(vertices)-1
+ endpoints=[(s['system'],partition(s),p)for s in segments for p in [s['a'],s['b']]]
  adjacency=collections.defaultdict(list);pieces=[]
  for s in segments:
   protected=s.get('normalization')=='semicircular_crossover_chord' or s.get('crossing_connectivity')=='independent_pipes_no_junction'
-  pts=[s['a'],s['b']] if protected else [p for sy,p in endpoints if sy==s['system'] and on(p,s['a'],s['b'])]
+  part=partition(s)
+  pts=[s['a'],s['b']] if protected else [p for sy,sp,p in endpoints if sy==s['system'] and sp==part and on(p,s['a'],s['b'])]
   pts.sort(key=lambda p:dist(s['a'],p));ids=[]
   for p in pts:
-   k=key(p)
+   k=key(p,part)
    if not ids or ids[-1]!=k:ids.append(k)
   for u,v in zip(ids,ids[1:]):
    if u==v:continue

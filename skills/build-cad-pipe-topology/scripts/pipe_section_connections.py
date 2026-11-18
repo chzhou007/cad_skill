@@ -15,6 +15,37 @@ def remap_id(value,mapping):
     while value in mapping and value not in visited:visited.add(value);value=mapping[value]
     return value
 
+def remap_length_audit(audit,mapping):
+    for record in audit.get('source_length_separation',[]):
+        record['edge_id']=mapping.get(record['edge_id'],record['edge_id'])
+
+def separate_graphic_bridge_lengths(graph):
+    """Keep drawn line length separate from schematic circle connector length."""
+    g=copy.deepcopy(graph);candidates=[]
+    for e in g['edges']:
+        if e.get('connection_mode')!='source_calibrated_pipe_section_continuity':continue
+        if e.get('path_length_complete') is False:
+            raise ValueError('section edge already has incomplete-length policy')
+        paths=e.get('attribute_paths') or []
+        if not paths or any(len(p)<2 for p in paths):raise ValueError('section source paths missing')
+        source=sum(distance(a,b) for path in paths for a,b in zip(path,path[1:]))
+        recorded=e.get('source_path_length');bridge=e.get('semantic_bridge_drawing_length');total=e.get('path_length')
+        if not all(isinstance(x,(int,float)) and math.isfinite(x) and x>=0 for x in (recorded,bridge,total)) or not e.get('source_connector_handles'):
+            raise ValueError('section source length evidence incomplete')
+        if abs(source-recorded)>.1 or abs(total-recorded-bridge)>.1 or bridge<=0:
+            raise ValueError('section source length does not reconcile')
+        candidates.append((e,source,total,bridge))
+    audit=[]
+    for e,source,total,bridge in candidates:
+        e['path_length_before_graphic_separation']=total
+        if 'length_scope' in e:e['length_scope_before_graphic_separation']=e['length_scope']
+        e['path_length']=source
+        e['path_length_complete']=False
+        e['path_length_scope']='source_drawn_pipe_only_section_connector_length_unknown'
+        e['length_scope']='Source-drawn paths only; schematic connector and installed physical length are unknown.'
+        audit.append({'edge_id':e['edge_id'],'source_drawn_length':source,'graphic_connector_length':bridge,'previous_drawing_route_length':total,'physical_connector_length':'unknown'})
+    return g,audit
+
 def apply_to_doc(doc,graph,profile,prior=None):
     circles=[]
     for e in doc.modelspace().query('CIRCLE'):
@@ -37,6 +68,7 @@ def apply_to_doc(doc,graph,profile,prior=None):
     for c in audit['connections']:
         if c.get('retained_edge_id'):c['retained_edge_id']=renames.get(c['retained_edge_id'],c['retained_edge_id'])
     for record in audit['retired_nodes'].values():record['edge_id']=renames.get(record['edge_id'],record['edge_id'])
+    remap_length_audit(audit,renames)
     audit['stable_edge_reconciliation']=renames
     audit['edge_id_mapping']={k:renames.get(v,v)for k,v in audit['edge_id_mapping'].items()}
     return result,audit
@@ -44,6 +76,8 @@ def apply_to_doc(doc,graph,profile,prior=None):
 def reconnect(graph,circles,edge_source_layers,profile):
     if not profile.get('calibration_evidence')or not profile.get('readability_verified'):
         raise ValueError('Readable native source calibration is required before pipe section trials')
+    if 'separate_graphic_bridge_length' in profile and not isinstance(profile['separate_graphic_bridge_length'],bool):
+        raise ValueError('separate_graphic_bridge_length must be boolean')
     g=copy.deepcopy(graph);nodes={n['node_id']:n for n in g['nodes']};edges={e['edge_id']:e for e in g['edges']}
     layers={k:set(v)for k,v in edge_source_layers.items()};tol=profile['contact_tolerance'];audit=[];edge_map={};retired_nodes={}
     eligible=[c for c in circles if c['layer']in profile['pipe_layers']and any(abs(c['r']-r)<=tol for r in profile['radii'])]
@@ -130,9 +164,14 @@ def reconnect(graph,circles,edge_source_layers,profile):
                           retained_edge_id=anchor['edge_id'],retired_edge_id=other['edge_id'],contact_angle=angle,
                           source_paths_preserved=True,relative_elevation='unverified'))
     g['nodes']=list(nodes.values());g['edges']=list(edges.values())
+    length_audit=[]
+    if profile.get('separate_graphic_bridge_length',False):
+        g,length_audit=separate_graphic_bridge_lengths(g)
     final_map={k:remap_id(v,edge_map)for k,v in edge_map.items()}
     for row in audit:
         if row['status']=='applied':row['retained_edge_id']=remap_id(row['retained_edge_id'],edge_map)
     for v in retired_nodes.values():v['edge_id']=remap_id(v['edge_id'],edge_map)
     g.setdefault('metadata',{})['pipe_section_reconstruction']={'applied':sum(r['status']=='applied'for r in audit),'profile':profile['id'],'relative_elevation':'unverified','fabricated_equipment':0}
-    return g,{'connections':audit,'edge_id_mapping':final_map,'retired_nodes':retired_nodes,'calibration_evidence':profile['calibration_evidence']}
+    result={'connections':audit,'edge_id_mapping':final_map,'retired_nodes':retired_nodes,'calibration_evidence':profile['calibration_evidence']}
+    if length_audit:result['source_length_separation']=length_audit
+    return g,result

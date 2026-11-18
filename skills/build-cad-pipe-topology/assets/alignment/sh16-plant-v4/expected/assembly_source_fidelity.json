@@ -1,0 +1,624 @@
+[
+  {
+    "id": "INSTR-23CFB",
+    "members": [
+      {
+        "member": "23CF7",
+        "required_source_handles": [
+          "23CF7",
+          "23CF8",
+          "23CF9",
+          "23CFA"
+        ]
+      },
+      {
+        "member": "23CFD",
+        "required_source_handles": [
+          "23CFD",
+          "23CFE",
+          "23CFF",
+          "23D00"
+        ]
+      }
+    ],
+    "required_source_handles": [
+      "23CF3",
+      "23CF4",
+      "23CF5",
+      "23CF6",
+      "23CF7",
+      "23CF8",
+      "23CF9",
+      "23CFA",
+      "23CFB",
+      "23CFC",
+      "23CFD",
+      "23CFE",
+      "23CFF",
+      "23D00",
+      "23D02",
+      "23D03",
+      "23D04",
+      "23D05",
+      "23D06",
+      "23D07"
+    ],
+    "exported_source_handles": [
+      "23CF3",
+      "23CF4",
+      "23CF5",
+      "23CF6",
+      "23CF7",
+      "23CF8",
+      "23CF9",
+      "23CFA",
+      "23CFB",
+      "23CFC",
+      "23CFD",
+      "23CFE",
+      "23CFF",
+      "23D00",
+      "23D02",
+      "23D03",
+      "23D04",
+      "23D05",
+      "23D06",
+      "23D07"
+    ],
+    "missing_source_handles": [],
+    "status": "PASS"
+  },
+  {
+    "id": "INSTR-23D10",
+    "members": [
+      {
+        "member": "23D0C",
+        "required_source_handles": [
+          "23D0C",
+          "23D0D",
+          "23D0E",
+          "23D0F"
+        ]
+      },
+      {
+        "member": "23D12",
+        "required_source_handles": [
+          "23D12",
+          "23D13",
+          "23D14",
+          "23D15"
+        ]
+      }
+    ],
+    "required_source_handles": [
+      "23D08",
+      "23D09",
+      "23D0A",
+      "23D0B",
+      "23D0C",
+      "23D0D",
+      "23D0E",
+      "23D0F",
+      "23D10",
+      "23D11",
+      "23D12",
+      "23D13",
+      "23D14",
+      "23D15",
+      "23D17",
+      "23D18",
+      "23D19",
+      "23D1A",
+      "23D1B",
+      "23D1C"
+    ],
+    "exported_source_handles": [
+      "23D08",
+      "23D09",
+      "23D0A",
+      "23D0B",
+      "23D0C",
+      "23D0D",
+      "23D0E",
+      "23D0F",
+      "23D10",
+      "23D11",
+      "23D12",
+      "23D13",
+      "23D14",
+      "23D15",
+      "23D17",
+      "23D18",
+      "23D19",
+      "23D1A",
+      "23D1B",
+      "23D1C"
+    ],
+    "missing_source_handles": [],
+    "status": "PASS"
+  },
+  {
+    "id": "INSTR-23D21",
+    "members": [
+      {
+        "member": "23DBB",
+        "required_source_handles": [
+          "23DBB"
+        ]
+      },
+      {
+        "member": "23DBC",
+        "required_source_handles": [
+          "23DBC"
+        ]
+      }
+    ],
+    "required_source_handles": [
+      "23D1D",
+      "23D1E",
+      "23D1F",
+      "23D20",
+      "23D21",
+      "23D22",
+      "23D24",
+      "23D25",
+      "23D26",
+      "23D27",
+      "23D28",
+      "23D29",
+      "23DBB",
+      "23DBC"
+    ],
+    "exported_source_handles": [
+      "23D1D",
+      "23D1E",
+      "23D1F",
+      "23D20",
+      "23D21",
+      "23D22",
+      "23D24",
+      "23D25",
+      "23D26",
+      "23D27",
+      "23D28",
+      "23D29",
+      "23DBB",
+      "23DBC"
+    ],
+    "missing_source_handles": [],
+    "status": "PASS"
+  },
+  {
+    "id": "INSTR-23D2E",
+    "members": [
+      {
+        "member": "23DBD",
+        "required_source_handles": [
+          "23DBD"
+        ]
+      },
+      {
+        "member": "23DBE",
+        "required_source_handles": [
+          "23DBE"
+        ]
+      }
+    ],
+    "required_source_handles": [
+      "23D2A",
+      "23D2B",
+      "23D2C",
+      "23D2D",
+      "23D2E",
+      "23D2F",
+      "23D31",
+      "23D32",
+      "23D33",
+      "23D34",
+      "23D35",
+      "23D36",
+      "23DBD",
+      "23DBE"
+    ],
+    "exported_source_handles": [
+      "23D2A",
+      "23D2B",
+      "23D2C",
+      "23D2D",
+      "23D2E",
+      "23D2F",
+      "23D31",
+      "23D32",
+      "23D33",
+      "23D34",
+      "23D35",
+      "23D36",
+      "23DBD",
+      "23DBE"
+    ],
+    "missing_source_handles": [],
+    "status": "PASS"
+  },
+  {
+    "id": "INSTR-23E5D",
+    "members": [
+      {
+        "member": "23E59",
+        "required_source_handles": [
+          "23E59",
+          "23E5A",
+          "23E5B",
+          "23E5C"
+        ]
+      },
+      {
+        "member": "23E5F",
+        "required_source_handles": [
+          "23E5F",
+          "23E60",
+          "23E61",
+          "23E62"
+        ]
+      }
+    ],
+    "required_source_handles": [
+      "23E55",
+      "23E56",
+      "23E57",
+      "23E58",
+      "23E59",
+      "23E5A",
+      "23E5B",
+      "23E5C",
+      "23E5D",
+      "23E5E",
+      "23E5F",
+      "23E60",
+      "23E61",
+      "23E62",
+      "23E64",
+      "23E65",
+      "23E66",
+      "23E67",
+      "23E68",
+      "23E69"
+    ],
+    "exported_source_handles": [
+      "23E55",
+      "23E56",
+      "23E57",
+      "23E58",
+      "23E59",
+      "23E5A",
+      "23E5B",
+      "23E5C",
+      "23E5D",
+      "23E5E",
+      "23E5F",
+      "23E60",
+      "23E61",
+      "23E62",
+      "23E64",
+      "23E65",
+      "23E66",
+      "23E67",
+      "23E68",
+      "23E69"
+    ],
+    "missing_source_handles": [],
+    "status": "PASS"
+  },
+  {
+    "id": "INSTR-23E6E",
+    "members": [
+      {
+        "member": "23E88",
+        "required_source_handles": [
+          "23E88"
+        ]
+      },
+      {
+        "member": "23E89",
+        "required_source_handles": [
+          "23E89"
+        ]
+      }
+    ],
+    "required_source_handles": [
+      "23E6A",
+      "23E6B",
+      "23E6C",
+      "23E6D",
+      "23E6E",
+      "23E6F",
+      "23E71",
+      "23E72",
+      "23E73",
+      "23E74",
+      "23E75",
+      "23E76",
+      "23E88",
+      "23E89"
+    ],
+    "exported_source_handles": [
+      "23E6A",
+      "23E6B",
+      "23E6C",
+      "23E6D",
+      "23E6E",
+      "23E6F",
+      "23E71",
+      "23E72",
+      "23E73",
+      "23E74",
+      "23E75",
+      "23E76",
+      "23E88",
+      "23E89"
+    ],
+    "missing_source_handles": [],
+    "status": "PASS"
+  },
+  {
+    "id": "INSTR-PANEL-23ACE",
+    "members": [
+      {
+        "member": "23E9B",
+        "required_source_handles": [
+          "23E9B",
+          "23E9C",
+          "23E9D",
+          "23E9E"
+        ]
+      },
+      {
+        "member": "23EA1",
+        "required_source_handles": [
+          "23EA1",
+          "23EA2",
+          "23EA3",
+          "23EA4"
+        ]
+      },
+      {
+        "member": "23EA9",
+        "required_source_handles": [
+          "23EA9",
+          "23EAA",
+          "23EAB",
+          "23EAC"
+        ]
+      },
+      {
+        "member": "23EAF",
+        "required_source_handles": [
+          "23EAF",
+          "23EB0",
+          "23EB1",
+          "23EB2"
+        ]
+      }
+    ],
+    "required_source_handles": [
+      "23ACC",
+      "23ACD",
+      "23ACE",
+      "23E97",
+      "23E98",
+      "23E99",
+      "23E9A",
+      "23E9B",
+      "23E9C",
+      "23E9D",
+      "23E9E",
+      "23E9F",
+      "23EA0",
+      "23EA1",
+      "23EA2",
+      "23EA3",
+      "23EA4",
+      "23EA5",
+      "23EA6",
+      "23EA7",
+      "23EA8",
+      "23EA9",
+      "23EAA",
+      "23EAB",
+      "23EAC",
+      "23EAD",
+      "23EAE",
+      "23EAF",
+      "23EB0",
+      "23EB1",
+      "23EB2",
+      "23EB3",
+      "23EB4",
+      "23EB5",
+      "23EB6",
+      "23EB7",
+      "23EB8",
+      "23EB9",
+      "23EBA",
+      "23EBB",
+      "23EBC",
+      "23EBD"
+    ],
+    "exported_source_handles": [
+      "23ACC",
+      "23ACD",
+      "23ACE",
+      "23E97",
+      "23E98",
+      "23E99",
+      "23E9A",
+      "23E9B",
+      "23E9C",
+      "23E9D",
+      "23E9E",
+      "23E9F",
+      "23EA0",
+      "23EA1",
+      "23EA2",
+      "23EA3",
+      "23EA4",
+      "23EA5",
+      "23EA6",
+      "23EA7",
+      "23EA8",
+      "23EA9",
+      "23EAA",
+      "23EAB",
+      "23EAC",
+      "23EAD",
+      "23EAE",
+      "23EAF",
+      "23EB0",
+      "23EB1",
+      "23EB2",
+      "23EB3",
+      "23EB4",
+      "23EB5",
+      "23EB6",
+      "23EB7",
+      "23EB8",
+      "23EB9",
+      "23EBA",
+      "23EBB",
+      "23EBC",
+      "23EBD"
+    ],
+    "missing_source_handles": [],
+    "status": "PASS"
+  },
+  {
+    "id": "INSTR-PANEL-23EBE",
+    "members": [
+      {
+        "member": "23EC3",
+        "required_source_handles": [
+          "23EC3",
+          "23EC4",
+          "23EC5",
+          "23EC6"
+        ]
+      },
+      {
+        "member": "23EC9",
+        "required_source_handles": [
+          "23EC9",
+          "23ECA",
+          "23ECB",
+          "23ECC"
+        ]
+      },
+      {
+        "member": "23ED1",
+        "required_source_handles": [
+          "23ED1",
+          "23ED2",
+          "23ED3",
+          "23ED4"
+        ]
+      },
+      {
+        "member": "23ED7",
+        "required_source_handles": [
+          "23ED7",
+          "23ED8",
+          "23ED9",
+          "23EDA"
+        ]
+      }
+    ],
+    "required_source_handles": [
+      "23AD6",
+      "23AD7",
+      "23EBE",
+      "23EBF",
+      "23EC0",
+      "23EC1",
+      "23EC2",
+      "23EC3",
+      "23EC4",
+      "23EC5",
+      "23EC6",
+      "23EC7",
+      "23EC8",
+      "23EC9",
+      "23ECA",
+      "23ECB",
+      "23ECC",
+      "23ECD",
+      "23ECE",
+      "23ECF",
+      "23ED0",
+      "23ED1",
+      "23ED2",
+      "23ED3",
+      "23ED4",
+      "23ED5",
+      "23ED6",
+      "23ED7",
+      "23ED8",
+      "23ED9",
+      "23EDA",
+      "23EDB",
+      "23EDC",
+      "23EDD",
+      "23EDE",
+      "23EDF",
+      "23EE0",
+      "23EE1",
+      "23EE2",
+      "23EE3",
+      "23EE4",
+      "23EE5"
+    ],
+    "exported_source_handles": [
+      "23AD6",
+      "23AD7",
+      "23EBE",
+      "23EBF",
+      "23EC0",
+      "23EC1",
+      "23EC2",
+      "23EC3",
+      "23EC4",
+      "23EC5",
+      "23EC6",
+      "23EC7",
+      "23EC8",
+      "23EC9",
+      "23ECA",
+      "23ECB",
+      "23ECC",
+      "23ECD",
+      "23ECE",
+      "23ECF",
+      "23ED0",
+      "23ED1",
+      "23ED2",
+      "23ED3",
+      "23ED4",
+      "23ED5",
+      "23ED6",
+      "23ED7",
+      "23ED8",
+      "23ED9",
+      "23EDA",
+      "23EDB",
+      "23EDC",
+      "23EDD",
+      "23EDE",
+      "23EDF",
+      "23EE0",
+      "23EE1",
+      "23EE2",
+      "23EE3",
+      "23EE4",
+      "23EE5"
+    ],
+    "missing_source_handles": [],
+    "status": "PASS"
+  }
+]

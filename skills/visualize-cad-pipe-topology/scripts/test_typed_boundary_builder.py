@@ -1,0 +1,12 @@
+import hashlib,json,subprocess,sys,tempfile,unittest,zipfile
+from pathlib import Path
+import ezdxf
+from test_builder import create_fixture,HERE
+class TypedBoundaryBuild(unittest.TestCase):
+ def test_builder_packages_canonical_and_viewer_proxy(self):
+  with tempfile.TemporaryDirectory() as temp:
+   root=create_fixture(Path(temp)/'input');out=Path(temp)/'viewer';p=root/'demo.dxf';d=ezdxf.readfile(p);m=d.modelspace();line=m.add_line((.004,.004),(.005,.005));circle=m.add_circle((.005,.005),.0001);d.saveas(p)
+   graph_path=root/'graph.json';g=json.loads(graph_path.read_text(encoding='utf8'));g['nodes']=[n for n in g['nodes'] if n['node_id']!='UNIT-B'];e=next(e for e in g['edges'] if e['edge_id']=='P-C');e['end_node_id']=None;e['end_boundary_id']='A1';e['source_handles']=[line.dxf.handle];g['metadata']={'graph_format':'experimental-typed-boundaries-v1','source_sha256':hashlib.sha256(p.read_bytes()).hexdigest(),'hil_ready':False};g['boundary_anchors']=[{'boundary_id':'A1','kind':'expert_non_node_source_boundary','system':'supply','x':.005,'y':.005,'source_pipe_handle':line.dxf.handle,'source_circle_handle':circle.dxf.handle,'expert_issue':'ERR-TEST','connectivity_beyond_boundary':'unknown','legacy_node':{'node_id':'old','node_type':'virtual_equipment','subtype':'unresolved_source_terminal','system':'supply','floor':'Roof','x':.005,'y':.005}}];graph_path.write_text(json.dumps(g),encoding='utf8');original=graph_path.read_bytes()
+   cmd=[sys.executable,str(HERE/'build_visualization.py'),'--graph',str(graph_path),'--devices',str(root/'devices.csv'),'--dxf',str(p),'--config',str(root/'config.json'),'--output',str(out)];r=subprocess.run(cmd,text=True,capture_output=True);self.assertEqual(r.returncode,0,r.stderr);self.assertEqual((out/'public/data/canonical-typed-boundaries.json').read_bytes(),original);view=json.loads((out/'public/data/graph.json').read_text(encoding='utf8'));n=next(n for n in view['nodes'] if n['node_id']=='A1');self.assertTrue(n['viewer_non_node_boundary']);self.assertFalse(n['ports'][0]['physical_port_verified']);self.assertFalse(view['metadata']['hil_ready']);self.assertIsNone(next(e for e in g['edges'] if e['edge_id']=='P-C')['end_node_id']);self.assertEqual(next(e for e in view['edges'] if e['edge_id']=='P-C')['end_node_id'],'A1');
+   with zipfile.ZipFile(out.with_suffix('.zip')) as z:self.assertIn('viewer/public/data/canonical-typed-boundaries.json',z.namelist());self.assertIsNone(z.testzip())
+if __name__=='__main__':unittest.main()

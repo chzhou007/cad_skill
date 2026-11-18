@@ -1,0 +1,1452 @@
+[
+  {
+    "source_sensor_handle": "23A57",
+    "source_handles": [
+      "23A53",
+      "23A54",
+      "23A55",
+      "23A56",
+      "23A57"
+    ],
+    "candidate_head_handles": [
+      "23A55"
+    ],
+    "status": "complete_tagged_head",
+    "source_head_handle": "23A55",
+    "source_head_tag": "TIT-1",
+    "leader_handles": [
+      "23A56"
+    ],
+    "native_block_lead": false,
+    "source_role": "edge_component",
+    "edge_id": "E0035"
+  },
+  {
+    "source_sensor_handle": "23AB4",
+    "source_handles": [
+      "23AB1",
+      "23AB2",
+      "23AB3",
+      "23AB4",
+      "23B82"
+    ],
+    "candidate_head_handles": [
+      "23AB2"
+    ],
+    "status": "complete_tagged_head",
+    "source_head_handle": "23AB2",
+    "source_head_tag": "TIT-1",
+    "leader_handles": [
+      "23B82"
+    ],
+    "native_block_lead": false,
+    "source_role": "edge_component",
+    "edge_id": "E0040"
+  },
+  {
+    "source_sensor_handle": "23ABF",
+    "source_handles": [
+      "23ABF",
+      "23AFA",
+      "23AFB",
+      "23B05"
+    ],
+    "candidate_head_handles": [
+      "23AFB"
+    ],
+    "status": "complete_tagged_head",
+    "source_head_handle": "23AFB",
+    "source_head_tag": "FIT-A",
+    "leader_handles": [
+      "23AFA"
+    ],
+    "native_block_lead": false,
+    "source_role": "edge_component",
+    "edge_id": "E0116"
+  },
+  {
+    "source_sensor_handle": "23AC4",
+    "source_handles": [
+      "23AC4",
+      "23AFC",
+      "23AFD",
+      "23AFE",
+      "23AFF"
+    ],
+    "candidate_head_handles": [
+      "23AFE"
+    ],
+    "status": "complete_tagged_head",
+    "source_head_handle": "23AFE",
+    "source_head_tag": "TIT-A",
+    "leader_handles": [
+      "23AFF"
+    ],
+    "native_block_lead": false,
+    "source_role": "edge_component",
+    "edge_id": "E0116"
+  },
+  {
+    "source_sensor_handle": "23AC8",
+    "source_handles": [
+      "23AC8",
+      "23B00",
+      "23B01",
+      "23B02",
+      "23B03"
+    ],
+    "candidate_head_handles": [
+      "23B02"
+    ],
+    "status": "complete_tagged_head",
+    "source_head_handle": "23B02",
+    "source_head_tag": "TIT-A",
+    "leader_handles": [
+      "23B03"
+    ],
+    "native_block_lead": false,
+    "source_role": "edge_component",
+    "edge_id": "E0113"
+  },
+  {
+    "source_sensor_handle": "23AE4",
+    "source_handles": [
+      "23AE0",
+      "23AE1",
+      "23AE2",
+      "23AE3",
+      "23AE4"
+    ],
+    "candidate_head_handles": [
+      "23AE2"
+    ],
+    "status": "complete_tagged_head",
+    "source_head_handle": "23AE2",
+    "source_head_tag": "TIT-0",
+    "leader_handles": [
+      "23AE3"
+    ],
+    "native_block_lead": false,
+    "source_role": "edge_component",
+    "edge_id": "E0042"
+  },
+  {
+    "source_sensor_handle": "23AEC",
+    "source_handles": [
+      "23AE8",
+      "23AE9",
+      "23AEA",
+      "23AEB",
+      "23AEC"
+    ],
+    "candidate_head_handles": [
+      "23AEA"
+    ],
+    "status": "complete_tagged_head",
+    "source_head_handle": "23AEA",
+    "source_head_tag": "TIT-0",
+    "leader_handles": [
+      "23AEB"
+    ],
+    "native_block_lead": false,
+    "source_role": "edge_component",
+    "edge_id": "E0024"
+  },
+  {
+    "source_sensor_handle": "23AF5",
+    "source_handles": [
+      "23AF1",
+      "23AF2",
+      "23AF3",
+      "23AF4",
+      "23AF5"
+    ],
+    "candidate_head_handles": [
+      "23AF3"
+    ],
+    "status": "complete_tagged_head",
+    "source_head_handle": "23AF3",
+    "source_head_tag": "TIT-0",
+    "leader_handles": [
+      "23AF4"
+    ],
+    "native_block_lead": false,
+    "source_role": "edge_component",
+    "edge_id": "E0026"
+  },
+  {
+    "source_sensor_handle": "23B06",
+    "source_handles": [
+      "23B06",
+      "23B0B",
+      "23B0C",
+      "23B0D",
+      "23B0E"
+    ],
+    "candidate_head_handles": [
+      "23B0D"
+    ],
+    "status": "complete_tagged_head",
+    "source_head_handle": "23B0D",
+    "source_head_tag": "FIT-1",
+    "leader_handles": [
+      "23B0E"
+    ],
+    "native_block_lead": false,
+    "source_role": "edge_component",
+    "edge_id": "E0108"
+  },
+  {
+    "source_sensor_handle": "23B2B",
+    "source_handles": [
+      "23B27",
+      "23B28",
+      "23B29",
+      "23B2A",
+      "23B2B"
+    ],
+    "candidate_head_handles": [
+      "23B29"
+    ],
+    "status": "complete_tagged_head",
+    "source_head_handle": "23B29",
+    "source_head_tag": "TIT-0",
+    "leader_handles": [
+      "23B2A"
+    ],
+    "native_block_lead": false,
+    "source_role": "edge_component",
+    "edge_id": "E0048"
+  },
+  {
+    "source_sensor_handle": "23B34",
+    "source_handles": [
+      "23B30",
+      "23B31",
+      "23B32",
+      "23B33",
+      "23B34"
+    ],
+    "candidate_head_handles": [
+      "23B32"
+    ],
+    "status": "complete_tagged_head",
+    "source_head_handle": "23B32",
+    "source_head_tag": "TIT-0",
+    "leader_handles": [
+      "23B33"
+    ],
+    "native_block_lead": false,
+    "source_role": "edge_component",
+    "edge_id": "E0056"
+  },
+  {
+    "source_sensor_handle": "23B3E",
+    "source_handles": [
+      "23B3A",
+      "23B3B",
+      "23B3C",
+      "23B3D",
+      "23B3E"
+    ],
+    "candidate_head_handles": [
+      "23B3C"
+    ],
+    "status": "complete_tagged_head",
+    "source_head_handle": "23B3C",
+    "source_head_tag": "PIT-1",
+    "leader_handles": [
+      "23B3D"
+    ],
+    "native_block_lead": false,
+    "source_role": "edge_component",
+    "edge_id": "E0035"
+  },
+  {
+    "source_sensor_handle": "23B46",
+    "source_handles": [
+      "23B42",
+      "23B43",
+      "23B44",
+      "23B45",
+      "23B46"
+    ],
+    "candidate_head_handles": [
+      "23B44"
+    ],
+    "status": "complete_tagged_head",
+    "source_head_handle": "23B44",
+    "source_head_tag": "PIT-0",
+    "leader_handles": [
+      "23B45"
+    ],
+    "native_block_lead": false,
+    "source_role": "edge_component",
+    "edge_id": "E0042"
+  },
+  {
+    "source_sensor_handle": "23B4F",
+    "source_handles": [
+      "23B4B",
+      "23B4C",
+      "23B4D",
+      "23B4E",
+      "23B4F"
+    ],
+    "candidate_head_handles": [
+      "23B4D"
+    ],
+    "status": "complete_tagged_head",
+    "source_head_handle": "23B4D",
+    "source_head_tag": "PIT-0",
+    "leader_handles": [
+      "23B4E"
+    ],
+    "native_block_lead": false,
+    "source_role": "edge_component",
+    "edge_id": "E0024"
+  },
+  {
+    "source_sensor_handle": "23B58",
+    "source_handles": [
+      "23B54",
+      "23B55",
+      "23B56",
+      "23B57",
+      "23B58"
+    ],
+    "candidate_head_handles": [
+      "23B56"
+    ],
+    "status": "complete_tagged_head",
+    "source_head_handle": "23B56",
+    "source_head_tag": "PIT-0",
+    "leader_handles": [
+      "23B57"
+    ],
+    "native_block_lead": false,
+    "source_role": "edge_component",
+    "edge_id": "E0048"
+  },
+  {
+    "source_sensor_handle": "23B61",
+    "source_handles": [
+      "23B5D",
+      "23B5E",
+      "23B5F",
+      "23B60",
+      "23B61"
+    ],
+    "candidate_head_handles": [
+      "23B5F"
+    ],
+    "status": "complete_tagged_head",
+    "source_head_handle": "23B5F",
+    "source_head_tag": "PIT-0",
+    "leader_handles": [
+      "23B60"
+    ],
+    "native_block_lead": false,
+    "source_role": "edge_component",
+    "edge_id": "E0056"
+  },
+  {
+    "source_sensor_handle": "23B6B",
+    "source_handles": [
+      "23B67",
+      "23B68",
+      "23B69",
+      "23B6A",
+      "23B6B"
+    ],
+    "candidate_head_handles": [
+      "23B69"
+    ],
+    "status": "complete_tagged_head",
+    "source_head_handle": "23B69",
+    "source_head_tag": "PIT-1",
+    "leader_handles": [
+      "23B6A"
+    ],
+    "native_block_lead": false,
+    "source_role": "edge_component",
+    "edge_id": "E0108"
+  },
+  {
+    "source_sensor_handle": "23B73",
+    "source_handles": [
+      "23B70",
+      "23B71",
+      "23B72",
+      "23B73",
+      "23B83"
+    ],
+    "candidate_head_handles": [
+      "23B71"
+    ],
+    "status": "complete_tagged_head",
+    "source_head_handle": "23B71",
+    "source_head_tag": "PIT-1",
+    "leader_handles": [
+      "23B83"
+    ],
+    "native_block_lead": false,
+    "source_role": "edge_component",
+    "edge_id": "E0040"
+  },
+  {
+    "source_sensor_handle": "23B7C",
+    "source_handles": [
+      "23B78",
+      "23B79",
+      "23B7A",
+      "23B7B",
+      "23B7C"
+    ],
+    "candidate_head_handles": [
+      "23B7A"
+    ],
+    "status": "complete_tagged_head",
+    "source_head_handle": "23B7A",
+    "source_head_tag": "TIT-1",
+    "leader_handles": [
+      "23B7B"
+    ],
+    "native_block_lead": false,
+    "source_role": "edge_component",
+    "edge_id": "E0108"
+  },
+  {
+    "source_sensor_handle": "23B95",
+    "source_handles": [
+      "23B92",
+      "23B93",
+      "23B94",
+      "23B95",
+      "23C06"
+    ],
+    "candidate_head_handles": [
+      "23C06"
+    ],
+    "status": "complete_tagged_head",
+    "source_head_handle": "23C06",
+    "source_head_tag": "TIT-2",
+    "leader_handles": [
+      "23B94"
+    ],
+    "native_block_lead": false,
+    "source_role": "edge_component",
+    "edge_id": "E0061"
+  },
+  {
+    "source_sensor_handle": "23BC2",
+    "source_handles": [
+      "23BBF",
+      "23BC0",
+      "23BC1",
+      "23BC2",
+      "23C02"
+    ],
+    "candidate_head_handles": [
+      "23BC0"
+    ],
+    "status": "complete_tagged_head",
+    "source_head_handle": "23BC0",
+    "source_head_tag": "TIT-2",
+    "leader_handles": [
+      "23C02"
+    ],
+    "native_block_lead": false,
+    "source_role": "edge_component",
+    "edge_id": "E0076"
+  },
+  {
+    "source_sensor_handle": "23BCD",
+    "source_handles": [
+      "23BCD",
+      "23BD2",
+      "23BD3",
+      "23BD4",
+      "23BD5"
+    ],
+    "candidate_head_handles": [
+      "23BD4"
+    ],
+    "status": "complete_tagged_head",
+    "source_head_handle": "23BD4",
+    "source_head_tag": "FIT-2",
+    "leader_handles": [
+      "23BD5"
+    ],
+    "native_block_lead": false,
+    "source_role": "edge_component",
+    "edge_id": "E0119"
+  },
+  {
+    "source_sensor_handle": "23BE3",
+    "source_handles": [
+      "23BE0",
+      "23BE1",
+      "23BE2",
+      "23BE3",
+      "23C05"
+    ],
+    "candidate_head_handles": [
+      "23C05"
+    ],
+    "status": "complete_tagged_head",
+    "source_head_handle": "23C05",
+    "source_head_tag": "PIT-2",
+    "leader_handles": [
+      "23BE2"
+    ],
+    "native_block_lead": false,
+    "source_role": "edge_component",
+    "edge_id": "E0061"
+  },
+  {
+    "source_sensor_handle": "23BEC",
+    "source_handles": [
+      "23BE8",
+      "23BE9",
+      "23BEA",
+      "23BEB",
+      "23BEC"
+    ],
+    "candidate_head_handles": [
+      "23BEA"
+    ],
+    "status": "complete_tagged_head",
+    "source_head_handle": "23BEA",
+    "source_head_tag": "PIT-2",
+    "leader_handles": [
+      "23BEB"
+    ],
+    "native_block_lead": false,
+    "source_role": "edge_component",
+    "edge_id": "E0119"
+  },
+  {
+    "source_sensor_handle": "23BF4",
+    "source_handles": [
+      "23BF1",
+      "23BF2",
+      "23BF3",
+      "23BF4",
+      "23C03"
+    ],
+    "candidate_head_handles": [
+      "23BF2"
+    ],
+    "status": "complete_tagged_head",
+    "source_head_handle": "23BF2",
+    "source_head_tag": "PIT-2",
+    "leader_handles": [
+      "23C03"
+    ],
+    "native_block_lead": false,
+    "source_role": "edge_component",
+    "edge_id": "E0076"
+  },
+  {
+    "source_sensor_handle": "23BFD",
+    "source_handles": [
+      "23BF9",
+      "23BFA",
+      "23BFB",
+      "23BFC",
+      "23BFD"
+    ],
+    "candidate_head_handles": [
+      "23BFB"
+    ],
+    "status": "complete_tagged_head",
+    "source_head_handle": "23BFB",
+    "source_head_tag": "TIT-2",
+    "leader_handles": [
+      "23BFC"
+    ],
+    "native_block_lead": false,
+    "source_role": "edge_component",
+    "edge_id": "E0119"
+  },
+  {
+    "source_sensor_handle": "23C07",
+    "source_handles": [
+      "23C07",
+      "23C0C",
+      "23C0D",
+      "23C0E"
+    ],
+    "candidate_head_handles": [
+      "23C0D"
+    ],
+    "status": "complete_tagged_head",
+    "source_head_handle": "23C0D",
+    "source_head_tag": "FIT-D",
+    "leader_handles": [
+      "23C0C"
+    ],
+    "native_block_lead": false,
+    "source_role": "edge_component",
+    "edge_id": "E0115"
+  },
+  {
+    "source_sensor_handle": "23C1F",
+    "source_handles": [
+      "23C1B",
+      "23C1C",
+      "23C1D",
+      "23C1E",
+      "23C1F"
+    ],
+    "candidate_head_handles": [
+      "23C1D"
+    ],
+    "status": "complete_tagged_head",
+    "source_head_handle": "23C1D",
+    "source_head_tag": "TIT-0",
+    "leader_handles": [
+      "23C1E"
+    ],
+    "native_block_lead": false,
+    "source_role": "edge_component",
+    "edge_id": "E0031"
+  },
+  {
+    "source_sensor_handle": "23C33",
+    "source_handles": [
+      "23C2F",
+      "23C30",
+      "23C31",
+      "23C33"
+    ],
+    "candidate_head_handles": [
+      "23C31"
+    ],
+    "status": "complete_tagged_head",
+    "source_head_handle": "23C31",
+    "source_head_tag": "PIT-A",
+    "leader_handles": [
+      "23C2F"
+    ],
+    "native_block_lead": true,
+    "source_role": "edge_component",
+    "edge_id": "E0116"
+  },
+  {
+    "source_sensor_handle": "23C38",
+    "source_handles": [
+      "23C38",
+      "23C3D",
+      "23C3E",
+      "23C3F"
+    ],
+    "candidate_head_handles": [
+      "23C3F"
+    ],
+    "status": "complete_tagged_head",
+    "source_head_handle": "23C3F",
+    "source_head_tag": "PIT-A",
+    "leader_handles": [
+      "23C3D"
+    ],
+    "native_block_lead": true,
+    "source_role": "edge_component",
+    "edge_id": "E0113"
+  },
+  {
+    "source_sensor_handle": "23C51",
+    "source_handles": [
+      "23C4D",
+      "23C4E",
+      "23C4F",
+      "23C51"
+    ],
+    "candidate_head_handles": [
+      "23C4F"
+    ],
+    "status": "complete_tagged_head",
+    "source_head_handle": "23C4F",
+    "source_head_tag": "PIT-A",
+    "leader_handles": [
+      "23C4D"
+    ],
+    "native_block_lead": true,
+    "source_role": "edge_component",
+    "edge_id": "E0116"
+  },
+  {
+    "source_sensor_handle": "23C56",
+    "source_handles": [
+      "23C56",
+      "23C5B",
+      "23C5C",
+      "23C5D"
+    ],
+    "candidate_head_handles": [
+      "23C5D"
+    ],
+    "status": "complete_tagged_head",
+    "source_head_handle": "23C5D",
+    "source_head_tag": "PIT-A",
+    "leader_handles": [
+      "23C5B"
+    ],
+    "native_block_lead": true,
+    "source_role": "edge_component",
+    "edge_id": "E0113"
+  },
+  {
+    "source_sensor_handle": "23C5E",
+    "source_handles": [
+      "23C5E",
+      "23C66",
+      "23C67",
+      "23C68",
+      "23C69"
+    ],
+    "candidate_head_handles": [
+      "23C68"
+    ],
+    "status": "complete_tagged_head",
+    "source_head_handle": "23C68",
+    "source_head_tag": "TIT-A",
+    "leader_handles": [
+      "23C69"
+    ],
+    "native_block_lead": false,
+    "source_role": "edge_component",
+    "edge_id": "E0116"
+  },
+  {
+    "source_sensor_handle": "23C62",
+    "source_handles": [
+      "23C62",
+      "23C6A",
+      "23C6B",
+      "23C6C",
+      "23C6D"
+    ],
+    "candidate_head_handles": [
+      "23C6C"
+    ],
+    "status": "complete_tagged_head",
+    "source_head_handle": "23C6C",
+    "source_head_tag": "TIT-A",
+    "leader_handles": [
+      "23C6D"
+    ],
+    "native_block_lead": false,
+    "source_role": "edge_component",
+    "edge_id": "E0113"
+  },
+  {
+    "source_sensor_handle": "23C71",
+    "source_handles": [
+      "23C71",
+      "23C79",
+      "23C7A",
+      "23C7B",
+      "23C7C"
+    ],
+    "candidate_head_handles": [
+      "23C7B"
+    ],
+    "status": "complete_tagged_head",
+    "source_head_handle": "23C7B",
+    "source_head_tag": "TIT-B",
+    "leader_handles": [
+      "23C7C"
+    ],
+    "native_block_lead": false,
+    "source_role": "edge_component",
+    "edge_id": "E0115"
+  },
+  {
+    "source_sensor_handle": "23C75",
+    "source_handles": [
+      "23C75",
+      "23C7D",
+      "23C7E",
+      "23C7F",
+      "23C80"
+    ],
+    "candidate_head_handles": [
+      "23C7F"
+    ],
+    "status": "complete_tagged_head",
+    "source_head_handle": "23C7F",
+    "source_head_tag": "TIT-B",
+    "leader_handles": [
+      "23C80"
+    ],
+    "native_block_lead": false,
+    "source_role": "edge_component",
+    "edge_id": "E0114"
+  },
+  {
+    "source_sensor_handle": "23C88",
+    "source_handles": [
+      "23C84",
+      "23C85",
+      "23C86",
+      "23C88"
+    ],
+    "candidate_head_handles": [
+      "23C86"
+    ],
+    "status": "complete_tagged_head",
+    "source_head_handle": "23C86",
+    "source_head_tag": "PIT-B",
+    "leader_handles": [
+      "23C84"
+    ],
+    "native_block_lead": true,
+    "source_role": "edge_component",
+    "edge_id": "E0115"
+  },
+  {
+    "source_sensor_handle": "23C8D",
+    "source_handles": [
+      "23C8D",
+      "23C92",
+      "23C93",
+      "23C94"
+    ],
+    "candidate_head_handles": [
+      "23C94"
+    ],
+    "status": "complete_tagged_head",
+    "source_head_handle": "23C94",
+    "source_head_tag": "PIT-B",
+    "leader_handles": [
+      "23C92"
+    ],
+    "native_block_lead": true,
+    "source_role": "edge_component",
+    "edge_id": "E0114"
+  },
+  {
+    "source_sensor_handle": "23C9A",
+    "source_handles": [
+      "23C96",
+      "23C97",
+      "23C98",
+      "23C9A"
+    ],
+    "candidate_head_handles": [
+      "23C98"
+    ],
+    "status": "complete_tagged_head",
+    "source_head_handle": "23C98",
+    "source_head_tag": "PIT-B",
+    "leader_handles": [
+      "23C96"
+    ],
+    "native_block_lead": true,
+    "source_role": "edge_component",
+    "edge_id": "E0115"
+  },
+  {
+    "source_sensor_handle": "23C9F",
+    "source_handles": [
+      "23C9F",
+      "23CA4",
+      "23CA5",
+      "23CA6"
+    ],
+    "candidate_head_handles": [
+      "23CA6"
+    ],
+    "status": "complete_tagged_head",
+    "source_head_handle": "23CA6",
+    "source_head_tag": "PIT-B",
+    "leader_handles": [
+      "23CA4"
+    ],
+    "native_block_lead": true,
+    "source_role": "edge_component",
+    "edge_id": "E0114"
+  },
+  {
+    "source_sensor_handle": "23CA7",
+    "source_handles": [
+      "23CA7",
+      "23CAF",
+      "23CB0",
+      "23CB1",
+      "23CB2"
+    ],
+    "candidate_head_handles": [
+      "23CB1"
+    ],
+    "status": "complete_tagged_head",
+    "source_head_handle": "23CB1",
+    "source_head_tag": "TIT-B",
+    "leader_handles": [
+      "23CB2"
+    ],
+    "native_block_lead": false,
+    "source_role": "edge_component",
+    "edge_id": "E0115"
+  },
+  {
+    "source_sensor_handle": "23CAB",
+    "source_handles": [
+      "23CAB",
+      "23CB3",
+      "23CB4",
+      "23CB5",
+      "23CB6"
+    ],
+    "candidate_head_handles": [
+      "23CB5"
+    ],
+    "status": "complete_tagged_head",
+    "source_head_handle": "23CB5",
+    "source_head_tag": "TIT-B",
+    "leader_handles": [
+      "23CB6"
+    ],
+    "native_block_lead": false,
+    "source_role": "edge_component",
+    "edge_id": "E0114"
+  },
+  {
+    "source_sensor_handle": "23CD9",
+    "source_handles": [
+      "23CBA",
+      "23CBB",
+      "23CBC",
+      "23CD9",
+      "23CE1"
+    ],
+    "candidate_head_handles": [
+      "23CBC"
+    ],
+    "status": "complete_tagged_head",
+    "source_head_handle": "23CBC",
+    "source_head_tag": "TIT-X2",
+    "leader_handles": [
+      "23CE1"
+    ],
+    "native_block_lead": false,
+    "source_role": "edge_component",
+    "edge_id": "E0064"
+  },
+  {
+    "source_sensor_handle": "23CE3",
+    "source_handles": [
+      "23CBE",
+      "23CBF",
+      "23CC0",
+      "23CE3",
+      "23CE7"
+    ],
+    "candidate_head_handles": [
+      "23CC0"
+    ],
+    "status": "complete_tagged_head",
+    "source_head_handle": "23CC0",
+    "source_head_tag": "TIT-X2",
+    "leader_handles": [
+      "23CE7"
+    ],
+    "native_block_lead": false,
+    "source_role": "edge_component",
+    "edge_id": "E0068"
+  },
+  {
+    "source_sensor_handle": "23CED",
+    "source_handles": [
+      "23CEA",
+      "23CEB",
+      "23CEC",
+      "23CED",
+      "23CF1",
+      "23CF2"
+    ],
+    "candidate_head_handles": [
+      "23CEC"
+    ],
+    "status": "complete_tagged_head",
+    "source_head_handle": "23CEC",
+    "source_head_tag": "PIT-X2",
+    "leader_handles": [
+      "23CF1",
+      "23CF2"
+    ],
+    "native_block_lead": false,
+    "source_role": "edge_component",
+    "edge_id": "E0064"
+  },
+  {
+    "source_sensor_handle": "23D7A",
+    "source_handles": [
+      "23D79",
+      "23D7A",
+      "23D7F",
+      "23D80",
+      "23D81",
+      "23D82"
+    ],
+    "candidate_head_handles": [
+      "23D81"
+    ],
+    "status": "complete_tagged_head",
+    "source_head_handle": "23D81",
+    "source_head_tag": "TIT-X",
+    "leader_handles": [
+      "23D79",
+      "23D82"
+    ],
+    "native_block_lead": false,
+    "source_role": "reference_legend_only"
+  },
+  {
+    "source_sensor_handle": "23D83",
+    "source_handles": [
+      "23D83",
+      "23D87",
+      "23D89",
+      "23D8A",
+      "23D8B",
+      "23D8C"
+    ],
+    "candidate_head_handles": [
+      "23D8B"
+    ],
+    "status": "complete_tagged_head",
+    "source_head_handle": "23D8B",
+    "source_head_tag": "PIT-X",
+    "leader_handles": [
+      "23D87",
+      "23D8C"
+    ],
+    "native_block_lead": false,
+    "source_role": "reference_legend_only"
+  },
+  {
+    "source_sensor_handle": "23D8D",
+    "source_handles": [
+      "23D8D",
+      "23D92",
+      "23D93",
+      "23D94",
+      "23D9F"
+    ],
+    "candidate_head_handles": [
+      "23D93"
+    ],
+    "status": "complete_tagged_head",
+    "source_head_handle": "23D93",
+    "source_head_tag": "FIT-X",
+    "leader_handles": [
+      "23D9F"
+    ],
+    "native_block_lead": false,
+    "source_role": "reference_legend_only"
+  },
+  {
+    "source_sensor_handle": "23DE1",
+    "source_handles": [
+      "23DDE",
+      "23DDF",
+      "23DE0",
+      "23DE1",
+      "23E51"
+    ],
+    "candidate_head_handles": [
+      "23E51"
+    ],
+    "status": "complete_tagged_head",
+    "source_head_handle": "23E51",
+    "source_head_tag": "TIT-3",
+    "leader_handles": [
+      "23DE0"
+    ],
+    "native_block_lead": false,
+    "source_role": "edge_component",
+    "edge_id": "E0062"
+  },
+  {
+    "source_sensor_handle": "23E0D",
+    "source_handles": [
+      "23E0A",
+      "23E0B",
+      "23E0C",
+      "23E0D",
+      "23E4D"
+    ],
+    "candidate_head_handles": [
+      "23E0B"
+    ],
+    "status": "complete_tagged_head",
+    "source_head_handle": "23E0B",
+    "source_head_tag": "TIT-3",
+    "leader_handles": [
+      "23E4D"
+    ],
+    "native_block_lead": false,
+    "source_role": "edge_component",
+    "edge_id": "E0087"
+  },
+  {
+    "source_sensor_handle": "23E18",
+    "source_handles": [
+      "23E18",
+      "23E1D",
+      "23E1E",
+      "23E1F",
+      "23E20"
+    ],
+    "candidate_head_handles": [
+      "23E1F"
+    ],
+    "status": "complete_tagged_head",
+    "source_head_handle": "23E1F",
+    "source_head_tag": "FIT-3",
+    "leader_handles": [
+      "23E20"
+    ],
+    "native_block_lead": false,
+    "source_role": "edge_component",
+    "edge_id": "E0122"
+  },
+  {
+    "source_sensor_handle": "23E2E",
+    "source_handles": [
+      "23E2B",
+      "23E2C",
+      "23E2D",
+      "23E2E",
+      "23E50"
+    ],
+    "candidate_head_handles": [
+      "23E50"
+    ],
+    "status": "complete_tagged_head",
+    "source_head_handle": "23E50",
+    "source_head_tag": "PIT-3",
+    "leader_handles": [
+      "23E2D"
+    ],
+    "native_block_lead": false,
+    "source_role": "edge_component",
+    "edge_id": "E0062"
+  },
+  {
+    "source_sensor_handle": "23E37",
+    "source_handles": [
+      "23E33",
+      "23E34",
+      "23E35",
+      "23E36",
+      "23E37"
+    ],
+    "candidate_head_handles": [
+      "23E35"
+    ],
+    "status": "complete_tagged_head",
+    "source_head_handle": "23E35",
+    "source_head_tag": "PIT-3",
+    "leader_handles": [
+      "23E36"
+    ],
+    "native_block_lead": false,
+    "source_role": "edge_component",
+    "edge_id": "E0122"
+  },
+  {
+    "source_sensor_handle": "23E3F",
+    "source_handles": [
+      "23E3C",
+      "23E3D",
+      "23E3E",
+      "23E3F",
+      "23E4E"
+    ],
+    "candidate_head_handles": [
+      "23E3D"
+    ],
+    "status": "complete_tagged_head",
+    "source_head_handle": "23E3D",
+    "source_head_tag": "PIT-3",
+    "leader_handles": [
+      "23E4E"
+    ],
+    "native_block_lead": false,
+    "source_role": "edge_component",
+    "edge_id": "E0087"
+  },
+  {
+    "source_sensor_handle": "23E48",
+    "source_handles": [
+      "23E44",
+      "23E45",
+      "23E46",
+      "23E47",
+      "23E48"
+    ],
+    "candidate_head_handles": [
+      "23E46"
+    ],
+    "status": "complete_tagged_head",
+    "source_head_handle": "23E46",
+    "source_head_tag": "TIT-3",
+    "leader_handles": [
+      "23E47"
+    ],
+    "native_block_lead": false,
+    "source_role": "edge_component",
+    "edge_id": "E0122"
+  },
+  {
+    "source_sensor_handle": "23F32",
+    "source_handles": [
+      "23F11",
+      "23F12",
+      "23F13",
+      "23F32",
+      "23F3A"
+    ],
+    "candidate_head_handles": [
+      "23F13"
+    ],
+    "status": "complete_tagged_head",
+    "source_head_handle": "23F13",
+    "source_head_tag": "TIT-X2",
+    "leader_handles": [
+      "23F3A"
+    ],
+    "native_block_lead": false,
+    "source_role": "edge_component",
+    "edge_id": "E0063"
+  },
+  {
+    "source_sensor_handle": "23F3C",
+    "source_handles": [
+      "23F15",
+      "23F16",
+      "23F17",
+      "23F3C",
+      "23F40"
+    ],
+    "candidate_head_handles": [
+      "23F17"
+    ],
+    "status": "complete_tagged_head",
+    "source_head_handle": "23F17",
+    "source_head_tag": "TIT-X2",
+    "leader_handles": [
+      "23F40"
+    ],
+    "native_block_lead": false,
+    "source_role": "edge_component",
+    "edge_id": "E0092"
+  },
+  {
+    "source_sensor_handle": "23F46",
+    "source_handles": [
+      "23F43",
+      "23F44",
+      "23F45",
+      "23F46",
+      "23F4A",
+      "23F4B"
+    ],
+    "candidate_head_handles": [
+      "23F45"
+    ],
+    "status": "complete_tagged_head",
+    "source_head_handle": "23F45",
+    "source_head_tag": "PIT-X2",
+    "leader_handles": [
+      "23F4A",
+      "23F4B"
+    ],
+    "native_block_lead": false,
+    "source_role": "edge_component",
+    "edge_id": "E0063"
+  },
+  {
+    "source_sensor_handle": "23F82",
+    "source_handles": [
+      "23F82"
+    ],
+    "candidate_head_handles": [],
+    "status": "pending_no_proven_head",
+    "nearby_unassigned_heads": [],
+    "source_role": "equipment_internal_component"
+  },
+  {
+    "source_sensor_handle": "23FA5",
+    "source_handles": [
+      "23FA5",
+      "23FAA",
+      "23FAB",
+      "23FAC",
+      "24090"
+    ],
+    "candidate_head_handles": [
+      "23FAC"
+    ],
+    "status": "complete_tagged_head",
+    "source_head_handle": "23FAC",
+    "source_head_tag": "PIT-B1",
+    "leader_handles": [
+      "24090"
+    ],
+    "native_block_lead": false,
+    "source_role": "edge_component",
+    "edge_id": "E0094"
+  },
+  {
+    "source_sensor_handle": "23FAD",
+    "source_handles": [
+      "23FAD",
+      "23FB1",
+      "23FB3",
+      "23FB4",
+      "23FB5",
+      "23FB6"
+    ],
+    "candidate_head_handles": [
+      "23FB5"
+    ],
+    "status": "complete_tagged_head",
+    "source_head_handle": "23FB5",
+    "source_head_tag": "PIT-B1",
+    "leader_handles": [
+      "23FB1",
+      "23FB6"
+    ],
+    "native_block_lead": false,
+    "source_role": "edge_component",
+    "edge_id": "E0094"
+  },
+  {
+    "source_sensor_handle": "240D5",
+    "source_handles": [
+      "240D5"
+    ],
+    "candidate_head_handles": [],
+    "status": "pending_no_proven_head",
+    "nearby_unassigned_heads": [
+      {
+        "source_head_handle": "240DC",
+        "source_tag": "PIT-B1",
+        "source_center": [
+          2263073.571082516,
+          327053.0508166591
+        ],
+        "body_to_circle_clearance": 94.44844402060471,
+        "status": "nearby_source_head_only_not_assigned_without_native_leader"
+      }
+    ],
+    "source_role": "edge_component",
+    "edge_id": "E0057"
+  },
+  {
+    "source_sensor_handle": "240DD",
+    "source_handles": [
+      "240DD",
+      "240E1",
+      "240E3",
+      "240E4",
+      "240E5",
+      "240E6"
+    ],
+    "candidate_head_handles": [
+      "240E5"
+    ],
+    "status": "complete_tagged_head",
+    "source_head_handle": "240E5",
+    "source_head_tag": "PIT-B1",
+    "leader_handles": [
+      "240E1",
+      "240E6"
+    ],
+    "native_block_lead": false,
+    "source_role": "edge_component",
+    "edge_id": "E0057"
+  },
+  {
+    "source_sensor_handle": "23CDD",
+    "source_handles": [
+      "23CDD",
+      "23CDF",
+      "23CE2",
+      "23F01",
+      "23F02",
+      "23F03"
+    ],
+    "candidate_head_handles": [
+      "23F03"
+    ],
+    "status": "complete_tagged_head",
+    "source_head_handle": "23F03",
+    "source_head_tag": "SFIT-X2",
+    "leader_handles": [
+      "23CE2",
+      "23F01",
+      "23F02",
+      "23F03"
+    ],
+    "native_block_lead": false,
+    "source_role": "edge_component",
+    "edge_id": "E0064"
+  },
+  {
+    "source_sensor_handle": "23D95",
+    "source_handles": [
+      "23D95",
+      "23D97",
+      "23D9A",
+      "23D9B",
+      "23D9C",
+      "23D9D"
+    ],
+    "candidate_head_handles": [
+      "23D9C"
+    ],
+    "status": "complete_tagged_head",
+    "source_head_handle": "23D9C",
+    "source_head_tag": "SFIT-X",
+    "leader_handles": [
+      "23D9A",
+      "23D9B",
+      "23D9C",
+      "23D9D"
+    ],
+    "native_block_lead": false,
+    "source_role": "reference_legend_only"
+  },
+  {
+    "source_sensor_handle": "23F36",
+    "source_handles": [
+      "23F36",
+      "23F38",
+      "23F3B",
+      "23F50",
+      "23F51",
+      "23F52"
+    ],
+    "candidate_head_handles": [
+      "23F52"
+    ],
+    "status": "complete_tagged_head",
+    "source_head_handle": "23F52",
+    "source_head_tag": "SFIT-X2",
+    "leader_handles": [
+      "23F3B",
+      "23F50",
+      "23F51",
+      "23F52"
+    ],
+    "native_block_lead": false,
+    "source_role": "edge_component",
+    "edge_id": "E0063"
+  }
+]

@@ -1,0 +1,586 @@
+[
+  {
+    "node_id": "CH-01",
+    "port_id": "CH-01-P01",
+    "vertex": 5,
+    "x": 2216300.724645135,
+    "y": 309321.6312491165,
+    "source_equipment_handles": [
+      "23A45"
+    ],
+    "source_pipe_handles": [
+      "23A4F"
+    ],
+    "contact_rule": "native_pipe_terminal_on_equipment_primitive_and_outward_bbox_exit",
+    "edge_id": "E0105",
+    "system": "return"
+  },
+  {
+    "node_id": "CH-01",
+    "port_id": "CH-01-P02",
+    "vertex": 156,
+    "x": 2217089.368251018,
+    "y": 309321.6312491165,
+    "source_equipment_handles": [
+      "23A45"
+    ],
+    "source_pipe_handles": [
+      "23A4E"
+    ],
+    "contact_rule": "native_pipe_terminal_on_equipment_primitive_and_outward_bbox_exit",
+    "edge_id": "E0104",
+    "system": "supply"
+  },
+  {
+    "node_id": "CH-01",
+    "port_id": "CH-01-P03",
+    "vertex": 391,
+    "x": 2215316.977345487,
+    "y": 313702.3233541808,
+    "source_equipment_handles": [
+      "23A45"
+    ],
+    "source_pipe_handles": [
+      "23B14"
+    ],
+    "contact_rule": "native_pipe_terminal_on_equipment_primitive_and_outward_bbox_exit",
+    "edge_id": "E0099",
+    "system": "unclassified_water"
+  },
+  {
+    "node_id": "CHWP-1",
+    "port_id": "CHWP-1-P01",
+    "vertex": 158,
+    "x": 2211022.403292947,
+    "y": 298246.21326246,
+    "source_equipment_handles": [
+      "23A5D",
+      "23A5C",
+      "23A5E",
+      "23A5F"
+    ],
+    "source_pipe_handles": [
+      "23A5B",
+      "23A61"
+    ],
+    "contact_rule": "native_pipe_terminal_on_equipment_primitive_and_outward_bbox_exit",
+    "edge_id": "E0108",
+    "system": "return"
+  },
+  {
+    "node_id": "CHWP-1",
+    "port_id": "CHWP-1-P02",
+    "vertex": 159,
+    "x": 2211022.403292947,
+    "y": 297750.64337510377,
+    "source_equipment_handles": [
+      "23A5D",
+      "23A5C",
+      "23A5E",
+      "23A5F"
+    ],
+    "source_pipe_handles": [
+      "23A60",
+      "23A63"
+    ],
+    "contact_rule": "native_pipe_terminal_on_equipment_primitive_and_outward_bbox_exit",
+    "edge_id": "E0106",
+    "system": "return"
+  },
+  {
+    "node_id": "HE-01",
+    "port_id": "HE-01-P01",
+    "vertex": 71,
+    "x": 2211732.475470266,
+    "y": 309321.6312491165,
+    "source_equipment_handles": [
+      "23AA3"
+    ],
+    "source_pipe_handles": [
+      "23AA9"
+    ],
+    "contact_rule": "native_pipe_terminal_on_equipment_primitive_and_outward_bbox_exit",
+    "edge_id": "E0040",
+    "system": "supply"
+  },
+  {
+    "node_id": "HE-01",
+    "port_id": "HE-01-P02",
+    "vertex": 73,
+    "x": 2211022.403292955,
+    "y": 309321.6312491165,
+    "source_equipment_handles": [
+      "23AA3"
+    ],
+    "source_pipe_handles": [
+      "23AAA"
+    ],
+    "contact_rule": "native_pipe_terminal_on_equipment_primitive_and_outward_bbox_exit",
+    "edge_id": "E0005",
+    "system": "return"
+  },
+  {
+    "node_id": "CH-02",
+    "port_id": "CH-02-P01",
+    "vertex": 94,
+    "x": 2235440.806694609,
+    "y": 309321.6312491165,
+    "source_equipment_handles": [
+      "23B85"
+    ],
+    "source_pipe_handles": [
+      "23B8D"
+    ],
+    "contact_rule": "native_pipe_terminal_on_equipment_primitive_and_outward_bbox_exit",
+    "edge_id": "E0118",
+    "system": "return"
+  },
+  {
+    "node_id": "CH-02",
+    "port_id": "CH-02-P02",
+    "vertex": 163,
+    "x": 2236229.450300492,
+    "y": 309321.6312491165,
+    "source_equipment_handles": [
+      "23B85"
+    ],
+    "source_pipe_handles": [
+      "23B8C"
+    ],
+    "contact_rule": "native_pipe_terminal_on_equipment_primitive_and_outward_bbox_exit",
+    "edge_id": "E0117",
+    "system": "supply"
+  },
+  {
+    "node_id": "CH-02",
+    "port_id": "CH-02-P03",
+    "vertex": 396,
+    "x": 2234457.059394961,
+    "y": 313702.3233541808,
+    "source_equipment_handles": [
+      "23B85"
+    ],
+    "source_pipe_handles": [
+      "23BD6"
+    ],
+    "contact_rule": "native_pipe_terminal_on_equipment_primitive_and_outward_bbox_exit",
+    "edge_id": "E0102",
+    "system": "unclassified_water"
+  },
+  {
+    "node_id": "CHWP-2",
+    "port_id": "CHWP-2-P01",
+    "vertex": 165,
+    "x": 2230162.485342421,
+    "y": 298246.21326246,
+    "source_equipment_handles": [
+      "23B9B",
+      "23B9A",
+      "23B9C",
+      "23B9D"
+    ],
+    "source_pipe_handles": [
+      "23B99",
+      "23B9F"
+    ],
+    "contact_rule": "native_pipe_terminal_on_equipment_primitive_and_outward_bbox_exit",
+    "edge_id": "E0119",
+    "system": "return"
+  },
+  {
+    "node_id": "CHWP-2",
+    "port_id": "CHWP-2-P02",
+    "vertex": 166,
+    "x": 2230162.485342421,
+    "y": 297750.64337510377,
+    "source_equipment_handles": [
+      "23B9B",
+      "23B9A",
+      "23B9C",
+      "23B9D"
+    ],
+    "source_pipe_handles": [
+      "23B9E",
+      "23BA1"
+    ],
+    "contact_rule": "native_pipe_terminal_on_equipment_primitive_and_outward_bbox_exit",
+    "edge_id": "E0110",
+    "system": "return"
+  },
+  {
+    "node_id": "HE-02",
+    "port_id": "HE-02-P01",
+    "vertex": 103,
+    "x": 2230872.55751974,
+    "y": 309321.6312491165,
+    "source_equipment_handles": [
+      "23BB1"
+    ],
+    "source_pipe_handles": [
+      "23BB7"
+    ],
+    "contact_rule": "native_pipe_terminal_on_equipment_primitive_and_outward_bbox_exit",
+    "edge_id": "E0076",
+    "system": "supply"
+  },
+  {
+    "node_id": "HE-02",
+    "port_id": "HE-02-P02",
+    "vertex": 105,
+    "x": 2230162.485342429,
+    "y": 309321.6312491165,
+    "source_equipment_handles": [
+      "23BB1"
+    ],
+    "source_pipe_handles": [
+      "23BB8"
+    ],
+    "contact_rule": "native_pipe_terminal_on_equipment_primitive_and_outward_bbox_exit",
+    "edge_id": "E0014",
+    "system": "return"
+  },
+  {
+    "node_id": "CH-03",
+    "port_id": "CH-03-P01",
+    "vertex": 120,
+    "x": 2253508.922653687,
+    "y": 309321.6312491072,
+    "source_equipment_handles": [
+      "23DC1"
+    ],
+    "source_pipe_handles": [
+      "23DD9"
+    ],
+    "contact_rule": "native_pipe_terminal_on_equipment_primitive_and_outward_bbox_exit",
+    "edge_id": "E0121",
+    "system": "return"
+  },
+  {
+    "node_id": "CH-03",
+    "port_id": "CH-03-P02",
+    "vertex": 170,
+    "x": 2254297.56625957,
+    "y": 309321.6312491072,
+    "source_equipment_handles": [
+      "23DC1"
+    ],
+    "source_pipe_handles": [
+      "23DD8"
+    ],
+    "contact_rule": "native_pipe_terminal_on_equipment_primitive_and_outward_bbox_exit",
+    "edge_id": "E0120",
+    "system": "supply"
+  },
+  {
+    "node_id": "CH-03",
+    "port_id": "CH-03-P03",
+    "vertex": 397,
+    "x": 2252525.175354039,
+    "y": 313702.3233541714,
+    "source_equipment_handles": [
+      "23DC1"
+    ],
+    "source_pipe_handles": [
+      "23E21"
+    ],
+    "contact_rule": "native_pipe_terminal_on_equipment_primitive_and_outward_bbox_exit",
+    "edge_id": "E0101",
+    "system": "unclassified_water"
+  },
+  {
+    "node_id": "CHWP-3",
+    "port_id": "CHWP-3-P01",
+    "vertex": 172,
+    "x": 2248230.601301499,
+    "y": 298246.2132624507,
+    "source_equipment_handles": [
+      "23DE7",
+      "23DE6",
+      "23DE8",
+      "23DE9"
+    ],
+    "source_pipe_handles": [
+      "23DE5",
+      "23DEB"
+    ],
+    "contact_rule": "native_pipe_terminal_on_equipment_primitive_and_outward_bbox_exit",
+    "edge_id": "E0122",
+    "system": "return"
+  },
+  {
+    "node_id": "CHWP-3",
+    "port_id": "CHWP-3-P02",
+    "vertex": 173,
+    "x": 2248230.601301499,
+    "y": 297750.64337509446,
+    "source_equipment_handles": [
+      "23DE7",
+      "23DE6",
+      "23DE8",
+      "23DE9"
+    ],
+    "source_pipe_handles": [
+      "23DEA",
+      "23DED"
+    ],
+    "contact_rule": "native_pipe_terminal_on_equipment_primitive_and_outward_bbox_exit",
+    "edge_id": "E0112",
+    "system": "return"
+  },
+  {
+    "node_id": "HE-03",
+    "port_id": "HE-03-P01",
+    "vertex": 129,
+    "x": 2248940.673478818,
+    "y": 309321.6312491072,
+    "source_equipment_handles": [
+      "23DFC"
+    ],
+    "source_pipe_handles": [
+      "23E02"
+    ],
+    "contact_rule": "native_pipe_terminal_on_equipment_primitive_and_outward_bbox_exit",
+    "edge_id": "E0087",
+    "system": "supply"
+  },
+  {
+    "node_id": "HE-03",
+    "port_id": "HE-03-P02",
+    "vertex": 131,
+    "x": 2248230.601301507,
+    "y": 309321.6312491072,
+    "source_equipment_handles": [
+      "23DFC"
+    ],
+    "source_pipe_handles": [
+      "23E03"
+    ],
+    "contact_rule": "native_pipe_terminal_on_equipment_primitive_and_outward_bbox_exit",
+    "edge_id": "E0018",
+    "system": "return"
+  },
+  {
+    "node_id": "ECT-01",
+    "port_id": "ECT-01-P01",
+    "vertex": 211,
+    "x": 2204381.109746101,
+    "y": 322661.240593025,
+    "source_equipment_handles": [
+      "23FBD"
+    ],
+    "source_pipe_handles": [
+      "24091"
+    ],
+    "contact_rule": "native_pipe_terminal_on_equipment_primitive_and_outward_bbox_exit",
+    "edge_id": "E0098",
+    "system": "return"
+  },
+  {
+    "node_id": "ECT-01",
+    "port_id": "ECT-01-P02",
+    "vertex": 214,
+    "x": 2201650.9263654,
+    "y": 325407.5866009309,
+    "source_equipment_handles": [
+      "23FBD"
+    ],
+    "source_pipe_handles": [
+      "240C8"
+    ],
+    "contact_rule": "native_pipe_terminal_on_equipment_primitive_and_outward_bbox_exit",
+    "edge_id": "E0094",
+    "system": "return"
+  },
+  {
+    "node_id": "ECT-01",
+    "port_id": "ECT-01-P03",
+    "vertex": 217,
+    "x": 2202997.184506702,
+    "y": 325407.5866009309,
+    "source_equipment_handles": [
+      "23FBD"
+    ],
+    "source_pipe_handles": [
+      "240CA"
+    ],
+    "contact_rule": "native_pipe_terminal_on_equipment_primitive_and_outward_bbox_exit",
+    "edge_id": "E0095",
+    "system": "return"
+  },
+  {
+    "node_id": "ECT-02",
+    "port_id": "ECT-02-P01",
+    "vertex": 218,
+    "x": 2260168.697616209,
+    "y": 325244.9084157078,
+    "source_equipment_handles": [
+      "240EE"
+    ],
+    "source_pipe_handles": [
+      "240F1"
+    ],
+    "contact_rule": "native_pipe_terminal_on_equipment_primitive_and_outward_bbox_exit",
+    "edge_id": "E0055",
+    "system": "return"
+  },
+  {
+    "node_id": "ECT-02",
+    "port_id": "ECT-02-P02",
+    "vertex": 403,
+    "x": 2258784.77237681,
+    "y": 322498.5624078019,
+    "source_equipment_handles": [
+      "240EE"
+    ],
+    "source_pipe_handles": [
+      "240EF"
+    ],
+    "contact_rule": "native_pipe_terminal_on_equipment_primitive_and_outward_bbox_exit",
+    "edge_id": "E0103",
+    "system": "makeup_water"
+  },
+  {
+    "node_id": "ECT-02",
+    "port_id": "ECT-02-P03",
+    "vertex": 404,
+    "x": 2261514.95575751,
+    "y": 325244.9084157078,
+    "source_equipment_handles": [
+      "240EE"
+    ],
+    "source_pipe_handles": [
+      "240F0"
+    ],
+    "contact_rule": "native_pipe_terminal_on_equipment_primitive_and_outward_bbox_exit",
+    "edge_id": "E0057",
+    "system": "return"
+  },
+  {
+    "node_id": "CST-1",
+    "port_id": "CST-1-P01",
+    "vertex": 139,
+    "x": 2228711.393510881,
+    "y": 333061.2381507121,
+    "source_equipment_handles": [
+      "23F18"
+    ],
+    "source_pipe_handles": [
+      "23F1B"
+    ],
+    "contact_rule": "native_pipe_terminal_on_equipment_primitive_and_outward_bbox_exit",
+    "edge_id": "E0092",
+    "system": "supply"
+  },
+  {
+    "node_id": "CST-1",
+    "port_id": "CST-1-P02",
+    "vertex": 142,
+    "x": 2228711.393510881,
+    "y": 331445.8984977019,
+    "source_equipment_handles": [
+      "23F18"
+    ],
+    "source_pipe_handles": [
+      "23F1D"
+    ],
+    "contact_rule": "native_pipe_terminal_on_equipment_primitive_and_outward_bbox_exit",
+    "edge_id": "E0063",
+    "system": "supply"
+  },
+  {
+    "node_id": "CST-2",
+    "port_id": "CST-2-P01",
+    "vertex": 110,
+    "x": 2237458.288588303,
+    "y": 333061.2381507121,
+    "source_equipment_handles": [
+      "23CC1"
+    ],
+    "source_pipe_handles": [
+      "23CC3"
+    ],
+    "contact_rule": "native_pipe_terminal_on_equipment_primitive_and_outward_bbox_exit",
+    "edge_id": "E0068",
+    "system": "supply"
+  },
+  {
+    "node_id": "CST-2",
+    "port_id": "CST-2-P02",
+    "vertex": 113,
+    "x": 2237458.288588303,
+    "y": 331445.8984977019,
+    "source_equipment_handles": [
+      "23CC1"
+    ],
+    "source_pipe_handles": [
+      "23CC5"
+    ],
+    "contact_rule": "native_pipe_terminal_on_equipment_primitive_and_outward_bbox_exit",
+    "edge_id": "E0064",
+    "system": "supply"
+  },
+  {
+    "node_id": "SC01-01",
+    "port_id": "SC01-01-P01",
+    "vertex": 27,
+    "x": 2200500.253910769,
+    "y": 312924.4557484857,
+    "source_equipment_handles": [
+      "23F75"
+    ],
+    "source_pipe_handles": [
+      "23A6E"
+    ],
+    "contact_rule": "native_pipe_terminal_on_equipment_primitive_and_outward_bbox_exit",
+    "edge_id": "E0048",
+    "system": "return"
+  },
+  {
+    "node_id": "SC01-01",
+    "port_id": "SC01-01-P02",
+    "vertex": 28,
+    "x": 2200500.2539107683,
+    "y": 316376.7423846217,
+    "source_equipment_handles": [
+      "23F75"
+    ],
+    "source_pipe_handles": [
+      "23A6E"
+    ],
+    "contact_rule": "native_pipe_terminal_on_equipment_primitive_and_outward_bbox_exit",
+    "edge_id": "E0058",
+    "system": "return"
+  },
+  {
+    "node_id": "SC01-01",
+    "port_id": "SC01-01-P03",
+    "vertex": 146,
+    "x": 2200408.512415019,
+    "y": 313695.7852594995,
+    "source_equipment_handles": [
+      "23F75"
+    ],
+    "source_pipe_handles": [
+      "23F62"
+    ],
+    "contact_rule": "native_pipe_terminal_on_equipment_primitive_and_outward_bbox_exit",
+    "edge_id": "E0060",
+    "system": "cooling_water"
+  },
+  {
+    "node_id": "SC01-01",
+    "port_id": "SC01-01-P04",
+    "vertex": 151,
+    "x": 2206377.732805744,
+    "y": 313703.9473482166,
+    "source_equipment_handles": [
+      "23F75"
+    ],
+    "source_pipe_handles": [
+      "23F70"
+    ],
+    "contact_rule": "native_pipe_terminal_on_equipment_primitive_and_outward_bbox_exit",
+    "edge_id": "E0093",
+    "system": "cooling_water"
+  }
+]

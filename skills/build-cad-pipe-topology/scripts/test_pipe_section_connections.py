@@ -38,6 +38,22 @@ class SectionTests(unittest.TestCase):
   out,_=reconnect(g,c,l,p);self.assertEqual(out['edges'][0]['equipment_inventory'][0]['count'],2)
   g['edges'][0]['diameter_nominal_mm']=50;g['edges'][1]['diameter_nominal_mm']=100
   self.assertEqual(len(reconnect(g,c,l,p)[0]['edges']),2)
+ def test_opt_in_excludes_graphic_connector_from_source_length(self):
+  g,c,l,p=self.fixture();p['separate_graphic_bridge_length']=True
+  out,a=reconnect(g,c,l,p);edge=out['edges'][0]
+  self.assertEqual(edge['path_length'],12);self.assertEqual(edge['path_length_before_graphic_separation'],13)
+  self.assertFalse(edge['path_length_complete']);self.assertEqual(a['source_length_separation'][0]['graphic_connector_length'],1)
+  self.assertEqual(edge['path_points'],[[-10,0],[0,0],[0,1],[0,3]])
+ def test_source_length_validation_fails_closed(self):
+  from pipe_section_connections import separate_graphic_bridge_lengths
+  g,c,l,p=self.fixture();out,_=reconnect(g,c,l,p);out['edges'][0]['source_path_length']+=1;before=copy.deepcopy(out)
+  with self.assertRaisesRegex(ValueError,'does not reconcile'):separate_graphic_bridge_lengths(out)
+  self.assertEqual(out,before)
+ def test_length_audit_tracks_multiple_id_reconciliation_stages(self):
+  from pipe_section_connections import remap_length_audit
+  audit={'source_length_separation':[{'edge_id':'TEMP','source_drawn_length':12}]}
+  remap_length_audit(audit,{'TEMP':'MID'});remap_length_audit(audit,{'MID':'FINAL'})
+  self.assertEqual(audit['source_length_separation'][0]['edge_id'],'FINAL')
  def test_prior_edge_id_is_reconciled_after_native_connection(self):
   import ezdxf
   from pipe_section_connections import apply_to_doc

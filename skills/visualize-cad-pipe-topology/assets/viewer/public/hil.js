@@ -1,6 +1,6 @@
 import {nativePaths,geometryBounds,portableObject,clipPaths,sourceAnnotationMarkup} from './native-rendering.js';
 import {buildingPairContext} from './architecture.js';
-import {pendingSourceObjectMarkup} from './native-rendering.js';
+import {pendingSourceObjectMarkup,sourceTerminalMarkup} from './native-rendering.js';
 const $=s=>document.querySelector(s);
 const NS='http://www.w3.org/2000/svg';
 const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -70,10 +70,14 @@ export async function initHil(api){
     inflight=(async()=>{try{
       const result=await request('/api/review','PUT',{baseRevision:snapshot.revision,document:snapshot,confirm,reviewer,invalidateConfirmation:!!snapshot.invalidateConfirmation});
       if(generation===dirty)doc=result;else{doc.revision=result.revision;doc.updatedAt=result.updatedAt;}
-      saved=generation;failed=false;saveMessage='Saved';return true;
+      saved=generation;failed=false;saveMessage='Saved';document.dispatchEvent(new CustomEvent('hil-document-updated',{detail:clone(doc)}));return true;
     }catch(e){failed=true;saveMessage='Save failed: '+e.message;return false;}finally{inflight=null;renderPanel();renderOverlays();}})();
     const ok=await inflight;if(ok&&dirty>saved)return persist();return ok;
   }
+  document.addEventListener('edge-review-saved',e=>{
+    if(dirty===saved&&!inflight){doc=clone(e.detail);renderPanel();renderOverlays();}
+    else{saveMessage='Edge attributes changed; pending notes retained. Reload after saving a backup.';failed=true;renderPanel();}
+  });
   function commit(errors){
     undo.push(clone(doc.errors));if(undo.length>30)undo.shift();
     if(structural(errors)!==structural(doc.errors))doc.confirmation=null;
@@ -89,16 +93,16 @@ export async function initHil(api){
   function renderPanel(){
     $('#hil-save-status').textContent=saveMessage;$('#hil-save-status').className=failed?'hil-save-failed':'';
     const active=doc.errors.filter(e=>!e.closed),nodes=new Set(active.flatMap(e=>e.nodes)),edges=new Set(active.flatMap(e=>e.edges)),confirmed=!!doc.confirmation;
-    $('#hil-summary').textContent=`${active.length} open issue groups · ${nodes.size} marked nodes · ${edges.size} marked edges. ${confirmed?(data.metadata?.extraction_status==='partial'?'Remaining loaded items confirmed; source coverage remains pending.':'Remaining items confirmed.'):'Remaining items unreviewed.'}`;
+    $('#hil-summary').textContent=`${active.length} open issue groups \u00b7 ${nodes.size} marked nodes \u00b7 ${edges.size} marked edges. ${confirmed?(data.metadata?.extraction_status==='partial'?'Remaining loaded items confirmed; source coverage remains pending.':'Remaining items confirmed.'):'Remaining items unreviewed.'}`;
     $('#hil-selection').textContent=`Selected: ${selectedNodes.size} nodes + ${selectedEdges.size} edges${region?' + custom region':''}`;
-    $('#hil-confirmation').textContent=confirmed?`Entire dataset confirmed by ${doc.confirmation.reviewer} · ${doc.confirmation.confirmedAt}`:'Entire-dataset review not confirmed.';
+    $('#hil-confirmation').textContent=confirmed?`Entire dataset confirmed by ${doc.confirmation.reviewer} \u00b7 ${doc.confirmation.confirmedAt}`:'Entire-dataset review not confirmed.';
     const q=$('#hil-filter').value.toLowerCase(),filter=$('#hil-status-filter').value;
     const shown=doc.errors.filter(e=>(filter==='all'||(filter==='closed'?e.closed:filter==='explained'?!e.closed&&e.expertResponses?.length:!e.closed&&!e.expertResponses?.length))&&
       `${e.label} ${e.note} ${e.nodes.join(' ')} ${e.edges.join(' ')}`.toLowerCase().includes(q));
-    $('#hil-list').innerHTML=shown.map(e=>`<article class="hil-card ${e.id===currentId?'active':''}"><button class="hil-issue-title" data-focus="${e.id}">${esc(e.label)} · ${e.closed?'Closed':e.expertResponses?.length?'Explained':'Open'}</button>
-      <p class="hil-note-text">${esc(e.note||'No explanation provided')}</p><small>${e.nodes.length} nodes + ${e.edges.length} edges · r${e.issueRevision||1}</small>
+    $('#hil-list').innerHTML=shown.map(e=>`<article class="hil-card ${e.id===currentId?'active':''}"><button class="hil-issue-title" data-focus="${e.id}">${esc(e.label)} \u00b7 ${e.closed?'Closed':e.expertResponses?.length?'Explained':'Open'}</button>
+      <p class="hil-note-text">${esc(e.note||'No explanation provided')}</p><small>${e.nodes.length} nodes + ${e.edges.length} edges \u00b7 r${e.issueRevision||1}</small>
       <div class="hil-panel-tools"><button data-edit="${e.id}">Edit</button><button data-pair="${e.id}">Pair</button><button data-remove="${e.id}">Remove</button></div>
-      ${(e.expertResponses||[]).map(r=>`<details><summary>Expert: ${esc(r.expertName||'Unnamed')} · ${esc(r.verdict)}</summary><p class="hil-note-text">${esc(r.reason)}</p><p>Expected: ${esc(r.expectedConnection)}</p><p>Suggestion: ${esc(r.suggestion)}</p></details>`).join('')}</article>`).join('')||'<p>No matching issues.</p>';
+      ${(e.expertResponses||[]).map(r=>`<details><summary>Expert: ${esc(r.expertName||'Unnamed')} \u00b7 ${esc(r.verdict)}</summary><p class="hil-note-text">${esc(r.reason)}</p><p>Expected: ${esc(r.expectedConnection)}</p><p>Suggestion: ${esc(r.suggestion)}</p></details>`).join('')}</article>`).join('')||'<p>No matching issues.</p>';
     $('#hil-history').textContent=(doc.historicalResponses||[]).map(r=>`${r.issueId}: ${r.reason} (${r.historicalReason})`).join('\n')||'No historical responses.';
     $('#hil-undo').disabled=!undo.length;$('#hil-mark').disabled=!selectionBox();
     for(const b of $('#hil-list').querySelectorAll('[data-focus]'))b.onclick=()=>focusIssue(b.dataset.focus);
@@ -124,7 +128,7 @@ export async function initHil(api){
         markup+=`<rect data-issue="${e.id}" x="${x}" y="${y}" width="${w}" height="${h}" fill="${focus?'#dc262608':'none'}" stroke="#dc2626" stroke-width="${focus?2:1.1}" stroke-dasharray="4 3" vector-effect="non-scaling-stroke"/>`;
         let lx=Math.max(view[0]+8*unit,Math.min(x,view[0]+view[2]-190*unit)),ly=Math.max(view[1]+30*unit,y-5*unit);
         while(labelSlots.some(p=>Math.abs(p[0]-lx)<480*unit&&Math.abs(p[1]-ly)<23*unit))ly+=24*unit;
-        labelSlots.push([lx,ly]);const text=e.label+(expanded&&e.note?' · '+[...e.note].slice(0,Math.max(6,Math.floor(svg.clientWidth/12)-18)).join(''):'');
+        labelSlots.push([lx,ly]);const text=e.label+(expanded&&e.note?' \u00b7 '+[...e.note].slice(0,Math.max(6,Math.floor(svg.clientWidth/12)-18)).join(''):'');
         markup+=`<g data-issue="${e.id}" class="hil-svg-label"><title>${esc(e.note||'No explanation provided')}</title><rect x="${lx}" y="${ly-16*unit}" width="${Math.min(Math.max(100,svg.clientWidth-24),Math.max(98,text.length*12))*unit}" height="${22*unit}" rx="${3*unit}" fill="white" stroke="#dc2626" stroke-width="1" vector-effect="non-scaling-stroke"/><text x="${lx+5*unit}" y="${ly}" fill="#b91c1c" font-size="${12*unit}">${esc(text)}</text></g>`;
       }
       for(const id of selectedEdges){const e=model.edges.get(id);markup+=`<path d="${path(e.points)}" fill="none" stroke="#2462ed" stroke-width="5" stroke-opacity=".65" vector-effect="non-scaling-stroke" pointer-events="none"/>`;}
@@ -144,7 +148,7 @@ export async function initHil(api){
     $('#hil-dialog-title').textContent=e?`Edit ${e.label}`:'Mark Error';$('#hil-note').value=editing.note;
     $('#hil-resolution').hidden=!e;$('#hil-resolution').open=false;$('#hil-replace-targets').hidden=!e;$('#hil-closed').checked=!!editing.closed;$('#hil-closure').value=editing.closureNote||'';$('#hil-dialog-message').textContent='';targetSummary();$('#hil-error-dialog').showModal();$('#hil-note').focus();
   }
-  function targetSummary(){$('#hil-targets').textContent=`${editing.nodes.length} nodes + ${editing.edges.length} edges · ${editing.nodes.concat(editing.edges).join(', ')||'Region only (missing object)'}`;}
+  function targetSummary(){$('#hil-targets').textContent=`${editing.nodes.length} nodes + ${editing.edges.length} edges \u00b7 ${editing.nodes.concat(editing.edges).join(', ')||'Region only (missing object)'}`;}
   function pad(box,f=.15){const p=Math.max(box[2],box[3])*f;return[box[0]-p,box[1]-p,box[2]+2*p,box[3]+2*p]}
   function point(svg,e){const p=svg.createSVGPoint();p.x=e.clientX;p.y=e.clientY;const q=p.matrixTransform(svg.getScreenCTM().inverse());return[q.x,q.y]}
   function hit(e){const target=e.target.closest('[data-issue],[data-node],[data-edge]');if(target?.dataset.issue)return{issue:target.dataset.issue};if(target?.dataset.node)return{node:target.dataset.node};if(target?.dataset.edge)return{edge:target.dataset.edge};return null;}
@@ -179,7 +183,7 @@ export async function initHil(api){
   $('#hil-error-form').onsubmit=e=>{e.preventDefault();const closed=$('#hil-closed').checked,conclusion=$('#hil-closure').value;if(closed&&!conclusion.trim()){$('#hil-dialog-message').textContent='Enter a conclusion before closing.';return;}
     editing.note=$('#hil-note').value;editing.author=$('#hil-author').value;editing.closed=closed;editing.closureNote=conclusion;
     const next=doc.errors.filter(x=>x.id!==editing.id);next.push(editing);currentId=editing.id;commit(next);$('#hil-error-dialog').close();};
-  $('#hil-finish').onclick=async()=>{if(!await persist())return;$('#hil-finish-count').textContent=`Entire dataset: ${data.nodes.length} nodes and ${data.edges.length} edges · ${doc.errors.filter(e=>!e.closed).length} marked error groups.`;$('#hil-finish-author').value=$('#hil-author').value;$('#hil-finish-error').textContent='';$('#hil-finish-dialog').showModal()};
+  $('#hil-finish').onclick=async()=>{if(!await persist())return;$('#hil-finish-count').textContent=`Entire dataset: ${data.nodes.length} nodes and ${data.edges.length} edges \u00b7 ${doc.errors.filter(e=>!e.closed).length} marked error groups.`;$('#hil-finish-author').value=$('#hil-author').value;$('#hil-finish-error').textContent='';$('#hil-finish-dialog').showModal()};
   $('#hil-finish-cancel').onclick=()=>$('#hil-finish-dialog').close();
   $('#hil-finish-form').onsubmit=async e=>{e.preventDefault();if(await persist(true,$('#hil-finish-author').value)){$('#hil-finish-dialog').close()}else $('#hil-finish-error').textContent=saveMessage};
   $('#hil-retry').onclick=()=>{if(!doc.datasetId){location.reload();return;}saved=-1;void persist()};
@@ -189,11 +193,11 @@ export async function initHil(api){
     const value=JSON.parse(await file.text());if(!await persist())throw Error('Save pending edits before importing.');
     if(Array.isArray(value.errors)){
       if(value.datasetId!==doc.datasetId)throw Error('Backup belongs to another dataset; no object labels were applied.');
-      if(!confirm('Replace current error groups with this backup? Current revisions remain in local history.'))return;
-      commit(clone(value.errors));if(!await persist())return;
-      const responses=value.errors.flatMap(e=>e.expertResponses||[]).concat(value.historicalResponses||[]);
-      if(responses.length){const r=await request('/api/expert','POST',{baseRevision:doc.revision,response:{responses}});doc=r.document;}
-      api.notify('Error groups restored. Entire-dataset confirmation must be completed again.');doc.confirmation=null;doc.invalidateConfirmation=true;saved=-1;await persist();
+      if(!confirm('\u6062\u590d\u6b64\u5907\u4efd\u7684\u5168\u90e8\u95ee\u9898\u6279\u6ce8\u3001\u4eba\u5de5\u7ba1\u5f84\u3001\u957f\u5ea6\u548c\u5907\u6ce8\uff1f\u5f53\u524d\u7248\u672c\u4f1a\u4fdd\u7559\u5728\u672c\u5730\u5386\u53f2\u4e2d\uff1b\u6574\u56fe\u9a8c\u6536\u9700\u91cd\u65b0\u786e\u8ba4\u3002'))return;
+      doc=await request('/api/restore-backup','POST',{baseRevision:doc.revision,document:value});
+      undo=[];dirty=0;saved=0;failed=false;saveMessage='Saved';
+      document.dispatchEvent(new CustomEvent('hil-document-updated',{detail:clone(doc)}));
+      api.notify('\u5907\u4efd\u5df2\u5b8c\u6574\u6062\u590d\uff1a\u95ee\u9898\u6279\u6ce8\u3001\u7ba1\u5f84\u3001\u957f\u5ea6\u53ca\u5907\u6ce8\u3002\u6574\u56fe\u9a8c\u6536\u9700\u91cd\u65b0\u786e\u8ba4\u3002');
     }else{const r=await request('/api/expert','POST',{baseRevision:doc.revision,response:value});doc=r.document;api.notify(`Expert import: ${r.imported} applied, ${r.historical} historical, ${r.duplicates} duplicates.`);}
     renderPanel();renderOverlays();
   }catch(error){api.notify('Import failed: '+error.message)}finally{e.target.value=''}};
@@ -226,8 +230,8 @@ export async function initHil(api){
     const edges=data.edges.filter(e=>polylineIntersects(e.points,box));
     const unit=box[2]/1600;
     const defs='<defs>'+Object.entries(data.symbols).map(([code,s])=>`<symbol id="pair-${code}" viewBox="0 0 64 64">${s.markup}</symbol>`).join('')+'</defs>';
-    const pairPath=e=>clipPaths([{points:e.points,fill:false}],box).map(p=>path(p.points)).join(' ');
-    const pipes=edges.map(e=>`<path d="${pairPath(e)}" fill="none" stroke="${data.systems[e.system].color}" stroke-width="1.6" stroke-dasharray="${data.systems[e.system].dash||'none'}" vector-effect="non-scaling-stroke"/>`).join('');
+    const pairPath=e=>clipPaths([...((e.source_path_coverage||e.connection_mode==='source_calibrated_wave_omission_unreviewed'||e.path_length_scope==='drawing_paths_excluding_source_crossover_gaps_physical_length_unknown')?e.sourcePaths:[e.points]),...(e.deviceSourcePaths||[])].map(points=>({points,fill:false})),box).map(p=>path(p.points)).join(' ');
+    const pipes=edges.map(e=>`<path d="${pairPath(e)}" fill="none" stroke="${data.systems[e.system].color}" stroke-width="1.6" stroke-dasharray="${data.systems[e.system].dash||'none'}" vector-effect="non-scaling-stroke"/>`+clipPaths((e.unverifiedPaths||[]).map(points=>({points,fill:false})),box).map(p=>`<path d="${path(p.points)}" fill="none" stroke="#8b6577" stroke-width="1.3" stroke-dasharray="2 5" vector-effect="non-scaling-stroke"><title>\u56fe\u793a\u903b\u8f91\u8fde\u63a5\uff1a\u9650\u5b9a\u8303\u56f4\u5185\u672a\u627e\u5230\u6e90\u7ebf\u89c1\u8bc1\uff0c\u7269\u7406\u957f\u5ea6\u672a\u77e5</title></path>`).join('')).join('');
     const glyphs=nodes.map(n=>{const s=6*unit;return n.node_type==='equipment'?portableObject(n,unit,'pair-','equipment',box):n.node_type==='virtual_equipment'?`<path d="M${n.px},${n.py-s} l${s},${s} l${-s},${s} l${-s},${-s} Z" fill="white" stroke="#354b6b" stroke-width="1" vector-effect="non-scaling-stroke"/>`:`<circle cx="${n.px}" cy="${n.py}" r="${3*unit}" fill="white" stroke="#354b6b" vector-effect="non-scaling-stroke"/>`}).join('')+components.map(d=>portableObject(d,unit,'pair-','component',box)).join('');
     const sources=indexSource().filter(s=>intersects(box,s.bounds));
     const cad=`<g fill="none" stroke="#63778f" color="#63778f">${sources.map(s=>{
@@ -236,14 +240,15 @@ export async function initHil(api){
     }).join('')}</g>`;
     const selectionLabels=[...issue.nodes.map(id=>{const n=model.nodes.get(id);return{id,p:[n.px,n.py]}}),...issue.edges.map(id=>{const points=clipPaths([{points:model.edges.get(id).points,fill:false}],box).flatMap(p=>p.points);return{id,p:points[Math.floor(points.length/2)]}})].filter(x=>x.p).map(x=>`<text x="${x.p[0]+5*unit}" y="${x.p[1]-5*unit}" font-size="${14*unit}" font-family="Arial" fill="#b91c1c" stroke="white" stroke-width="${2*unit}" paint-order="stroke">${esc(x.id)}</text>`).join('');
     const height=Math.max(600,Math.min(1600,Math.round(1600*box[3]/box[2]))),note=[...issue.note].slice(0,100).join('')+(issue.note.length>100?'...':'');
-    const wrapper=(body,annotated,title)=>`<svg xmlns="${NS}" width="1600" height="${height+100}" viewBox="0 0 1600 ${height+100}"><rect width="100%" height="100%" fill="white"/>${defs}<text x="20" y="28" font-family="Segoe UI,Arial" font-size="20" fill="#24344d">${esc(title)} | ${esc(issue.label)} | drawing units</text><svg x="0" y="45" width="1600" height="${height}" viewBox="${box.join(' ')}" preserveAspectRatio="xMidYMid meet">${body}${annotated?`${selectionLabels}<rect x="${issue.region[0]}" y="${issue.region[1]}" width="${issue.region[2]}" height="${issue.region[3]}" fill="none" stroke="#dc2626" stroke-width="3" stroke-dasharray="6 4" vector-effect="non-scaling-stroke"/>${issue.nodes.map(id=>model.nodes.get(id)).map(n=>`<circle cx="${n.px}" cy="${n.py}" r="${8*unit}" fill="#dc262620" stroke="#dc2626" vector-effect="non-scaling-stroke"/>`).join('')}${issue.edges.map(id=>model.edges.get(id)).map(e=>`<path d="${pairPath(e)}" fill="none" stroke="#dc2626" stroke-width="3" vector-effect="non-scaling-stroke"/>`).join('')}`:''}</svg><text x="20" y="${height+76}" font-family="Segoe UI,Arial" font-size="16" fill="${annotated?'#b91c1c':'#63778f'}">${annotated?esc(note||'No explanation provided'):'Local source geometry; English building aliases, originals in context.json.'}</text></svg>`;
-    const building=api.buildingContext?.data;
+    const building=api.buildingContext?.data,sourcePreferred=api.buildingContext?.sourcePreferred||false;
+    const substituteLabels=(data.sourceAnnotations||[]).some(r=>r.rendering==='substitute_font_native_position_rotation_width_not_exact_glyphs');
+    const wrapper=(body,annotated,title)=>`<svg xmlns="${NS}" width="1600" height="${height+125}" viewBox="0 0 1600 ${height+125}"><rect width="100%" height="100%" fill="white"/>${defs}<text x="20" y="28" font-family="Segoe UI,Arial" font-size="20" fill="#24344d">${esc(title)} | ${esc(issue.label)} | drawing units</text><svg x="0" y="45" width="1600" height="${height}" viewBox="${box.join(' ')}" preserveAspectRatio="xMidYMid meet">${body}${annotated?`${selectionLabels}<rect x="${issue.region[0]}" y="${issue.region[1]}" width="${issue.region[2]}" height="${issue.region[3]}" fill="none" stroke="#dc2626" stroke-width="3" stroke-dasharray="6 4" vector-effect="non-scaling-stroke"/>${issue.nodes.map(id=>model.nodes.get(id)).map(n=>`<circle cx="${n.px}" cy="${n.py}" r="${8*unit}" fill="#dc262620" stroke="#dc2626" vector-effect="non-scaling-stroke"/>`).join('')}${issue.edges.map(id=>model.edges.get(id)).map(e=>`<path d="${pairPath(e)}" fill="none" stroke="#dc2626" stroke-width="3" vector-effect="non-scaling-stroke"/>`).join('')}`:''}</svg><text x="20" y="${height+76}" font-family="Segoe UI,Arial" font-size="16" fill="${annotated?'#b91c1c':'#63778f'}">${annotated?esc(note||'No explanation provided'):sourcePreferred?'Local source geometry; original building labels.':'Local source geometry; English building aliases, originals in context.json.'}</text>${substituteLabels?`<text x="20" y="${height+103}" font-family="Microsoft YaHei, Noto Sans CJK SC, SimSun, sans-serif" font-size="15" fill="#63778f">\u8bbe\u5907\u7f16\u53f7\u91c7\u7528\u66ff\u4ee3\u5b57\u4f53\uff0c\u5b57\u5f62\u53ca\u6587\u5b57\u8fb9\u754c\u975e\u539f CAD \u5b57\u5f62\uff1b\u8bbe\u5907\u5f52\u5c5e\u672a\u786e\u8ba4\u3002</text>`:''}</svg>`;
     const annotationText=sourceAnnotationMarkup(data.sourceAnnotations,box);
-    return{vectors:Object.fromEntries(['cad','topology'].flatMap(pane=>['original','annotated'].map(kind=>[`${pane}-${kind}.svg`,wrapper((pane==='cad'?cad+buildingPairContext(building,box,true):buildingPairContext(building,box)+pendingSourceObjectMarkup(data.pendingSourceObjects,box)+pipes+glyphs)+annotationText,kind==='annotated',pane==='cad'?'CAD':'Topology')]))),sources:sources.map(s=>({vectorId:s.vectorId,sourceHandle:s.sourceHandle,bounds:s.bounds}))};
+    return{vectors:Object.fromEntries(['cad','topology'].flatMap(pane=>['original','annotated'].map(kind=>[`${pane}-${kind}.svg`,wrapper((pane==='cad'?cad+buildingPairContext(building,box,true,sourcePreferred):buildingPairContext(building,box,false,sourcePreferred)+pendingSourceObjectMarkup(data.pendingSourceObjects,box)+sourceTerminalMarkup(data.sourceTerminalGlyphs,box)+pipes+glyphs)+annotationText,kind==='annotated',pane==='cad'?'CAD':'Topology')]))),sources:sources.map(s=>({vectorId:s.vectorId,sourceHandle:s.sourceHandle,bounds:s.bounds}))};
   }
   async function showPreview(){
     const issue=doc.errors.find(e=>e.id===previewIds[previewAt]);if(!issue)return;
-    $('#hil-pair-caption').textContent=`${previewAt+1} / ${previewIds.length} · ${issue.label} · ${issue.note||'No explanation provided'}`;
+    $('#hil-pair-caption').textContent=`${previewAt+1} / ${previewIds.length} \u00b7 ${issue.label} \u00b7 ${issue.note||'No explanation provided'}`;
     $('#hil-pair-message').textContent='';const {vectors}=pairVectors(issue,previewBoxes.get(issue.id));
     $('#hil-pair-images').replaceChildren();
     for(const pane of ['topology','cad']){const img=new Image();img.alt=pane+' annotated preview';img.src='data:image/svg+xml;charset=utf-8,'+encodeURIComponent(vectors[pane+'-annotated.svg']);$('#hil-pair-images').append(img)}

@@ -1,6 +1,28 @@
 """Portable native-source regression; synthetic geometry tests complement this case."""
-import argparse,hashlib,json,subprocess,sys,tempfile
+import argparse,copy,hashlib,json,subprocess,sys,tempfile
 from pathlib import Path
+import ezdxf
+
+def historical_comparable(current,baseline,doc):
+ """Compare immutable baseline while checking new native metadata independently."""
+ checked=[]
+ def walk(a,b):
+  if isinstance(a,dict) and isinstance(b,dict):
+   for key in list(a):
+    if key=='source_attributes' and key not in b:
+     owner=doc.entitydb.get(a.get('source_top_handle',''))
+     assert owner is not None and owner.dxftype()=='INSERT','Metadata owner missing'
+     owned={attr.dxf.handle:attr for attr in owner.attribs}
+     for row in a[key]:
+      attr=owned.get(row['source_handle']);assert attr is not None,'Metadata not attached to source owner'
+      assert row=={'source_handle':attr.dxf.handle,'tag':attr.dxf.tag,'text':attr.dxf.text,'invisible':bool(attr.dxf.flags&1)},'Metadata differs from source'
+      assert '\ufffd' not in row['text'] and not any(0xd800<=ord(c)<=0xdfff for c in row['text']),'Unreadable metadata'
+      checked.append(row['source_handle'])
+     del a[key]
+    elif key in b:walk(a[key],b[key])
+  elif isinstance(a,list) and isinstance(b,list):
+   for x,y in zip(a,b):walk(x,y)
+ work=copy.deepcopy(current);walk(work,baseline);return work,checked
 
 def run(case,out):
  manifest=json.loads((case/'manifest.json').read_text(encoding='utf8'))
@@ -11,12 +33,16 @@ def run(case,out):
  for key,p in [('dxf',next(i.glob('*.dxf'))),('bindings',i/'bindings.json'),('profiles',i/'profiles.json'),('materials',i/'materials.json'),('config',i/'source-profile.json'),('previous-graph',i/'previous-graph.json'),('output-dir',out)]:cmd+=['--'+key,str(p)]
  subprocess.run(cmd,check=True)
  files=[p.name for p in sorted(expected.glob('*.json'))]
+ doc=ezdxf.readfile(next(i.glob('*.dxf')),errors='strict');metadata_checks=[]
  for name in files:
-  assert json.loads((out/name).read_text(encoding='utf8'))==json.loads((expected/name).read_text(encoding='utf8')),'Regression mismatch: '+name
+  actual=json.loads((out/name).read_text(encoding='utf8'));baseline=json.loads((expected/name).read_text(encoding='utf8'))
+  comparable,checked=historical_comparable(actual,baseline,doc);metadata_checks.extend(checked)
+  assert comparable==baseline,'Regression mismatch: '+name
  g=json.loads((out/'graph_with_edges.json').read_text(encoding='utf8'));arcs=json.loads((out/'pipe_crossover_arc_normalizations.json').read_text(encoding='utf8'));summary=json.loads((out/'edge_summary.json').read_text(encoding='utf8'))
- assert summary['equipment_physical_ports']==summary['equipment_ports_with_edges']==35
- for arc in arcs:
-  assert arc['normalization_status']=='normalized'
+ baseline_summary=json.loads((expected/'edge_summary.json').read_text(encoding='utf8'))
+ assert summary['equipment_physical_ports']==summary['equipment_ports_with_edges']==baseline_summary['equipment_physical_ports']
+ normalized_arcs=[arc for arc in arcs if arc['normalization_status']=='normalized']
+ for arc in normalized_arcs:
   assert any(arc['handle']in edge['source_handles']for edge in g['edges']),'Jump lacks complete logical edge: '+arc['handle']
   for crossing in arc['crossings']:
    x,y=crossing['crossing']
@@ -44,7 +70,7 @@ def run(case,out):
   for gap in straight:
    for c in gap['crossings']:
     assert not any(abs(n['x']-c['crossing'][0])<.5 and abs(n['y']-c['crossing'][1])<.5 for n in g['nodes'])
- result={'status':'PASS','case':case.name,'compared_files':files,'equipment_ports':'35/35','normalized_jumps_on_completed_edges':'9/9','crossover_nodes':0,'review_status':'unreviewed'}
+ result={'status':'PASS','case':case.name,'compared_files':files,'added_source_metadata_handles_checked':sorted(set(metadata_checks)),'baseline_unchanged':True,'equipment_ports':f"{summary['equipment_ports_with_edges']}/{baseline_summary['equipment_physical_ports']}",'normalized_jumps_on_completed_edges':f'{len(normalized_arcs)}/{len(normalized_arcs)}','other_source_arcs':len(arcs)-len(normalized_arcs),'crossover_nodes':0,'review_status':'unreviewed'}
  (out/'regression-report.json').write_text(json.dumps(result,indent=2),encoding='utf8');print(json.dumps(result,indent=2))
 
 if __name__=='__main__':

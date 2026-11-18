@@ -1,0 +1,6 @@
+# Preserve CAD source bytes; do not normalize drawing records or render text diffs.
+*.dxf -text -diff
+*.dwg -text -diff
+*.png -text -diff
+*.jpg -text -diff
+*.jpeg -text -diff

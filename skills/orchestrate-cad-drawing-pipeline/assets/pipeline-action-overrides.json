@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "purpose": "Curated navigation notes only. Commands, implementation paths, and parameters are discovered from source; these notes do not select project rules or supply executable arguments.",
+  "commands": {
+    "plan": {
+      "description": "固定输入、逐图任务和阶段路由；不执行全部提取。",
+      "stage": "input_lock_and_plan",
+      "notes": ["Choose a new output directory and bind the actual project configuration. A routing plan is not a completed reconstruction."]
+    },
+    "validate": {
+      "description": "校验已有任务阶段契约。",
+      "stage": "stage_contract_validation",
+      "notes": ["Exit 0/2/1 means passed/pending/failed. Artifact and contract checks do not establish source topology or human acceptance."]
+    },
+    "validate-known-rule-batch": {
+      "description": "验证已生成的同类规则批处理产物。",
+      "stage": "batch_rule_validation",
+      "notes": ["This command validates an existing batch run. It does not infer a rule or generate a project-specific manifest."]
+    },
+    "validate-full-batch-plan-fusion": {
+      "description": "验证全批次平面属性融合产物。",
+      "stage": "attribute_fusion_validation",
+      "notes": ["Use the actual source-bound fusion run. Passing the checker is separate from current viewer publication and human acceptance."]
+    },
+    "package-current-review": {
+      "description": "按明确绑定与哈希封装当前专家复核查看器。",
+      "stage": "current_review_delivery",
+      "notes": ["The delegated entry point requires binding, binding-sha256 and a new output path. A runnable review package does not certify raw-input reconstruction or human acceptance."]
+    },
+    "receive-current-review-answers": {
+      "description": "接收指定问题的专家答复并保留来源收据。",
+      "stage": "review_answer_receipt",
+      "notes": ["Receiving answers is separate from native rule application, source replay, publication and acceptance. Existing answers, reply, page-root, output and question-id are explicit owner arguments."]
+    },
+    "merge-current-source-review-queue": {
+      "description": "合并当前源图复核队列。",
+      "stage": "review_queue",
+      "notes": ["Merging a queue does not resolve its questions or replace source validation."]
+    }
+  }
+}

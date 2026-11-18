@@ -3,7 +3,7 @@ import statistics
 import pipe_geometry as pg
 import math
 
-def recover_straight_crossovers(segments,symbols,calibration,discovery_audit=None):
+def recover_straight_crossovers(segments,symbols,calibration,discovery_audit=None,source_circles=None,circle_conflicts=None):
  if not calibration:return [],[]
  ds=[pg.dist(s['bounds'][:2],s['bounds'][2:])for s in symbols if s['block']in calibration.get('blocks',[])]
  limit=calibration.get('maximum_gap_native_units')
@@ -17,7 +17,7 @@ def recover_straight_crossovers(segments,symbols,calibration,discovery_audit=Non
   if service in [None,'unclassified_water','pending']and s.get('source_layer')in calibration.get('verified_unknown_service_layers',[]):return ('verified_source_layer',s['source_layer'])
   return service
  def record(p,q,sp,sq):
-  row={'a':p,'b':q,'source_handles':sorted(set(hs(sp)+hs(sq))),'source_layers':[sp.get('source_layer'),sq.get('source_layer')],'source_services':[cls(sp),cls(sq)],'status':'pending','reason':'candidate_discovered_before_service_filter'}
+  row={'a':p,'b':q,'source_handles':sorted(set(hs(sp)+hs(sq))),'source_layers':[sp.get('source_layer',sp.get('layer')),sq.get('source_layer',sq.get('layer'))],'source_services':[cls(sp),cls(sq)],'status':'pending','reason':'candidate_discovered_before_service_filter'}
   if discovery_audit is not None:discovery_audit.append(row)
   return row
  def hs(s):return s.get('source_handles',[s['handle']])
@@ -79,11 +79,17 @@ def recover_straight_crossovers(segments,symbols,calibration,discovery_audit=Non
    if len(crossings)!=1:row['reason']='no_independent_crossed_pipe'if not crossings else'multiple_independent_crossings';continue
    if group(sp)!=group(sq):row['reason']='conflicting_source_groups';continue
    if group(sp)in [None,'unclassified_water','pending']:row['reason']='source_group_not_verified_despite_crossing_evidence';continue
+   circle_hits=[{'circle_handle':c['handle'],'center':list(c['center']),'radius':c['radius'],'circle_system':c.get('system')} for c in (source_circles or []) if pg.dist(c['center'],crossings[0]['crossing'])<=pg.TOL]
+   if circle_hits:row['circle_conflicts']=circle_hits
    row['reason']='qualified_unique_source_group_and_crossing'
    key=tuple(sorted([tuple(round(v,5)for v in p),tuple(round(v,5)for v in q)]));matches[key]=(p,q,sp,sq,crossings);discovered_by_key[key]=row
  spans=[];audit=[];rows=list(matches.values())
  for p,q,sp,sq,crossings in rows:
   key=tuple(sorted([tuple(round(v,5)for v in p),tuple(round(v,5)for v in q)]));row=discovered_by_key[key]
+  if row.get('circle_conflicts'):
+   row['reason']='source_circle_at_crossing_requires_comparison'
+   if circle_conflicts is not None:circle_conflicts.append(dict(row))
+   continue
   if sum(any(pg.dist(a,b)<=pg.TOL for a in [p,q]for b in [x,y])for x,y,*_ in rows)!=1:row['reason']='ambiguous_terminal_pairing';continue
   row.update(status='applied',reason='unique_source_group_opposed_tails_independent_crossed_pipe')
   handles=sorted(set(hs(sp)+hs(sq)));handle='CROSS-GAP-'+handles[0]

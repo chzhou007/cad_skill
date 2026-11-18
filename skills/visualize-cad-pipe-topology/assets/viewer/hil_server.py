@@ -56,7 +56,11 @@ class ReviewStore:
     def __init__(self, root):
         self.root = Path(root)
         self.manifest = json.loads((self.root/'public/data/manifest.json').read_text(encoding='utf8'))
-        self.graph = json.loads((self.root/'public/data/graph.json').read_text(encoding='utf8'))
+        graph_bytes = (self.root/'public/data/graph.json').read_bytes()
+        expected = self.manifest.get('reviewContentHashes', {}).get('viewer_graph')
+        if expected is not None and (not isinstance(expected, str) or hashlib.sha256(graph_bytes).hexdigest() != expected):
+            raise ReviewError('Viewer graph differs from manifest; rebuild before review', 409)
+        self.graph = json.loads(graph_bytes.decode('utf8'))
         self.dataset = identity(self.manifest)
         self.folder = self.root/'annotations'/self.dataset
         self.lock = threading.RLock()
@@ -338,26 +342,46 @@ class HilHandlerMixin:
         self.wfile.write(body)
 
     def do_GET(self):
-        if self.path == '/api/review':
+        if self.path == '/api/instance':
+            # Folder identity, not just bundle identity: never write annotations
+            # into a different extraction of the same offline archive.
+            root = os.path.normcase(str(self.review_store.root.resolve()))
+            return self.json_reply(200, {'bundleId': self.review_store.manifest['bundleId'],
+                'instanceId': hashlib.sha256(root.encode('utf8')).hexdigest()})
+        if self.path in ('/api/review', '/api/edge-review'):
             with self.review_store.lock:
                 return self.json_reply(200,self.review_store.read())
         return super().do_GET()
 
     def mutation(self):
         try:
+            rejection = None
             host = self.headers.get('Host','')
             if not re.fullmatch(r'(127\.0\.0\.1|localhost):\d+',host) or self.headers.get('Origin') != 'http://'+host:
-                raise ReviewError('Local same-origin requests only',403)
-            if self.headers.get('Content-Type','').split(';')[0] != 'application/json':
-                raise ReviewError('JSON requests only',415)
+                rejection = ReviewError('Local same-origin requests only',403)
+            elif self.headers.get('Content-Type','').split(';')[0] != 'application/json':
+                rejection = ReviewError('JSON requests only',415)
             length = int(self.headers.get('Content-Length','0'))
             if not 0 < length <= 64*1024*1024:
-                raise ReviewError('Request is empty or exceeds 64 MiB',413)
-            payload = json.loads(self.rfile.read(length))
+                raise rejection or ReviewError('Request is empty or exceeds 64 MiB',413)
+            # Drain a bounded, framed body before replying. Closing a Windows
+            # socket with unread request data can reset it and hide a 403/415.
+            body = self.rfile.read(length)
+            if rejection is not None:
+                raise rejection
+            if len(body) != length:
+                raise ReviewError('Incomplete request body',400)
+            payload = json.loads(body)
+            if self.path == '/api/edge-review' and self.command == 'PUT':
+                from edge_review_store import save_edge_review
+                return self.json_reply(200, save_edge_review(self.review_store, payload))
             if self.path == '/api/review' and self.command == 'PUT':
                 return self.json_reply(200,self.review_store.save(payload))
             if self.path == '/api/expert' and self.command == 'POST':
                 return self.json_reply(200,self.review_store.import_expert(payload))
+            if self.path == '/api/restore-backup' and self.command == 'POST':
+                from review_backup import restore_backup
+                return self.json_reply(200, restore_backup(self.review_store, payload))
             if self.path == '/api/pairs' and self.command == 'POST':
                 body = self.review_store.pair_zip(payload)
                 self.send_response(200)

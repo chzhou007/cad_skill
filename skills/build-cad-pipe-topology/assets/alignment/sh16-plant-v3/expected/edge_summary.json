@@ -1,0 +1,30 @@
+{
+  "task_id": "SH16-03-e9049b84",
+  "status": "partial_unreviewed",
+  "nodes": 73,
+  "edges": 90,
+  "equipment_nodes": 14,
+  "tee_nodes": 56,
+  "virtual_interfaces": 3,
+  "edges_by_system": {
+    "supply": 31,
+    "return": 51,
+    "cooling_water": 1,
+    "unclassified_water": 6,
+    "makeup_water": 1
+  },
+  "assigned_components": 131,
+  "unresolved_components": 118,
+  "recognized_inline_instances": 249,
+  "source_arcs": 9,
+  "normalized_jumps": 9,
+  "equipment_physical_ports": 35,
+  "equipment_ports_with_edges": 35,
+  "unresolved_equipment_tags": 0,
+  "unresolved_path_groups": 44,
+  "atomic_source_pieces": 449,
+  "atomic_pieces_on_edges": 393,
+  "mixed_source_junctions": 10,
+  "unknown_system_edges": 6,
+  "human_review": "unreviewed"
+}

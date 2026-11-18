@@ -1,0 +1,67 @@
+{
+  "source_scope": "SH16 空调水系统主图",
+  "node_definition": {
+    "equipment": "带 CRAH 编号的非阀门设备图形，每台折叠为 1 个设备节点",
+    "physical_junction": "同一供水或回水管网上形成三条唯一射线且含一对反向共线射线的 T 型连通点"
+  },
+  "excluded": [
+    "阀门、软接、仪表和标注不计为节点",
+    "图框和文字不计为节点",
+    "双层水氟换热器接管示意图、冷冻水型机房专用空调接管示意图、水氟换热器接管示意图不计入主系统实例",
+    "本轮未把管线端点和普通弯头定义为节点"
+  ],
+  "counts": {
+    "equipment_nodes": 92,
+    "tee_junction_nodes": 300,
+    "total_nodes": 392,
+    "equipment_by_floor": {
+      "1": 18,
+      "2": 38,
+      "3": 36
+    },
+    "tee_by_floor_band": {
+      "1": 56,
+      "2": 126,
+      "3": 118
+    },
+    "tee_by_system": {
+      "return": 149,
+      "supply": 151
+    }
+  },
+  "preprocessing": {
+    "short_dangling_overshoots_trimmed": 9,
+    "trimmed_by_system": {
+      "return": 5,
+      "supply": 4
+    },
+    "turn_display_valve_stubs_removed": 92,
+    "valve_stub_removals_by_block": {
+      "H-PICPNT-87": 92
+    },
+    "auto_air_vent_display_legs_removed": 4,
+    "auto_air_vent_removals_by_system": {
+      "return": 2,
+      "supply": 2
+    }
+  },
+  "parameters": {
+    "point_tolerance": 0.2,
+    "endpoint_quantum": 0.1,
+    "angle_tolerance_degrees": 1.0,
+    "max_dangling_overshoot_length": 10.0,
+    "max_dangling_overshoot_ratio": 0.1,
+    "min_overshoot_intersection_angle_degrees": 20.0,
+    "max_valve_display_stub_length": 200.0,
+    "turn_display_valve_block_names": [
+      "$VALVE$00000954",
+      "H-PICPNT-87",
+      "H-PICPNT-91"
+    ],
+    "max_auto_air_vent_display_leg_length": 1000.0,
+    "auto_air_vent_labels": [
+      "自动排气阀",
+      "自动放气阀"
+    ]
+  }
+}

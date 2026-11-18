@@ -36,14 +36,15 @@ def strokes(entity, tolerance=1):
     except (TypeError, ValueError, AttributeError, NotImplementedError):
         return []
 
-def svg_shapes(items, transform):
+def svg_shapes(items, transform, screen_stroke=False):
     parts = []
     for pts, fill in items:
         if len(pts) < 2:
             continue
         xy = [transform(x, y) for x, y in pts]
         d = 'M' + ' L'.join(f'{x:.3f},{y:.3f}' for x, y in xy)
-        parts.append(f'<path d="{d}" fill="{"currentColor" if fill else "none"}"/>')
+        style=' stroke="none"'if screen_stroke and fill else ' stroke-width=".7" vector-effect="non-scaling-stroke"'if screen_stroke else ''
+        parts.append(f'<path d="{d}" fill="{"currentColor" if fill else "none"}"{style}/>')
     return ''.join(parts)
 
 def symbol(doc, block_name, cabinet=False):

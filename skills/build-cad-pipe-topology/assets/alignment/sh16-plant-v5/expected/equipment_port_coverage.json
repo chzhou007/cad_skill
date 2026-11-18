@@ -1,0 +1,365 @@
+[
+  {
+    "equipment_id": "CH-01",
+    "source_block": "chiller",
+    "source_port_count": 3,
+    "ports_with_logical_edges": 3,
+    "ports_without_completed_edges": [],
+    "edges": [
+      {
+        "edge_id": "E0104",
+        "system": "supply",
+        "source_systems": [
+          "supply"
+        ]
+      },
+      {
+        "edge_id": "E0105",
+        "system": "return",
+        "source_systems": [
+          "return"
+        ]
+      },
+      {
+        "edge_id": "E0099",
+        "system": "unclassified_water",
+        "source_systems": []
+      }
+    ]
+  },
+  {
+    "equipment_id": "CHWP-1",
+    "source_block": "exploded_pump_triangle_circle",
+    "source_port_count": 2,
+    "ports_with_logical_edges": 2,
+    "ports_without_completed_edges": [],
+    "edges": [
+      {
+        "edge_id": "E0106",
+        "system": "return",
+        "source_systems": [
+          "return"
+        ]
+      },
+      {
+        "edge_id": "E0108",
+        "system": "return",
+        "source_systems": [
+          "return"
+        ]
+      }
+    ]
+  },
+  {
+    "equipment_id": "HE-01",
+    "source_block": "HX",
+    "source_port_count": 2,
+    "ports_with_logical_edges": 2,
+    "ports_without_completed_edges": [],
+    "edges": [
+      {
+        "edge_id": "E0040",
+        "system": "supply",
+        "source_systems": [
+          "supply"
+        ]
+      },
+      {
+        "edge_id": "E0005",
+        "system": "return",
+        "source_systems": [
+          "return"
+        ]
+      }
+    ]
+  },
+  {
+    "equipment_id": "CH-02",
+    "source_block": "chiller",
+    "source_port_count": 3,
+    "ports_with_logical_edges": 3,
+    "ports_without_completed_edges": [],
+    "edges": [
+      {
+        "edge_id": "E0117",
+        "system": "supply",
+        "source_systems": [
+          "supply"
+        ]
+      },
+      {
+        "edge_id": "E0118",
+        "system": "return",
+        "source_systems": [
+          "return"
+        ]
+      },
+      {
+        "edge_id": "E0102",
+        "system": "unclassified_water",
+        "source_systems": []
+      }
+    ]
+  },
+  {
+    "equipment_id": "CHWP-2",
+    "source_block": "exploded_pump_triangle_circle",
+    "source_port_count": 2,
+    "ports_with_logical_edges": 2,
+    "ports_without_completed_edges": [],
+    "edges": [
+      {
+        "edge_id": "E0110",
+        "system": "return",
+        "source_systems": [
+          "return"
+        ]
+      },
+      {
+        "edge_id": "E0119",
+        "system": "return",
+        "source_systems": [
+          "return"
+        ]
+      }
+    ]
+  },
+  {
+    "equipment_id": "HE-02",
+    "source_block": "HX",
+    "source_port_count": 2,
+    "ports_with_logical_edges": 2,
+    "ports_without_completed_edges": [],
+    "edges": [
+      {
+        "edge_id": "E0076",
+        "system": "supply",
+        "source_systems": [
+          "supply"
+        ]
+      },
+      {
+        "edge_id": "E0014",
+        "system": "return",
+        "source_systems": [
+          "return"
+        ]
+      }
+    ]
+  },
+  {
+    "equipment_id": "CH-03",
+    "source_block": "chiller",
+    "source_port_count": 3,
+    "ports_with_logical_edges": 3,
+    "ports_without_completed_edges": [],
+    "edges": [
+      {
+        "edge_id": "E0120",
+        "system": "supply",
+        "source_systems": [
+          "supply"
+        ]
+      },
+      {
+        "edge_id": "E0121",
+        "system": "return",
+        "source_systems": [
+          "return"
+        ]
+      },
+      {
+        "edge_id": "E0101",
+        "system": "unclassified_water",
+        "source_systems": []
+      }
+    ]
+  },
+  {
+    "equipment_id": "CHWP-3",
+    "source_block": "exploded_pump_triangle_circle",
+    "source_port_count": 2,
+    "ports_with_logical_edges": 2,
+    "ports_without_completed_edges": [],
+    "edges": [
+      {
+        "edge_id": "E0112",
+        "system": "return",
+        "source_systems": [
+          "return"
+        ]
+      },
+      {
+        "edge_id": "E0122",
+        "system": "return",
+        "source_systems": [
+          "return"
+        ]
+      }
+    ]
+  },
+  {
+    "equipment_id": "HE-03",
+    "source_block": "HX",
+    "source_port_count": 2,
+    "ports_with_logical_edges": 2,
+    "ports_without_completed_edges": [],
+    "edges": [
+      {
+        "edge_id": "E0087",
+        "system": "supply",
+        "source_systems": [
+          "supply"
+        ]
+      },
+      {
+        "edge_id": "E0018",
+        "system": "return",
+        "source_systems": [
+          "return"
+        ]
+      }
+    ]
+  },
+  {
+    "equipment_id": "ECT-01",
+    "source_block": "A$C4EB43500",
+    "source_port_count": 3,
+    "ports_with_logical_edges": 3,
+    "ports_without_completed_edges": [],
+    "edges": [
+      {
+        "edge_id": "E0094",
+        "system": "return",
+        "source_systems": [
+          "return"
+        ]
+      },
+      {
+        "edge_id": "E0095",
+        "system": "return",
+        "source_systems": [
+          "return"
+        ]
+      },
+      {
+        "edge_id": "E0098",
+        "system": "return",
+        "source_systems": [
+          "return"
+        ]
+      }
+    ]
+  },
+  {
+    "equipment_id": "ECT-02",
+    "source_block": "A$C4EB43500",
+    "source_port_count": 3,
+    "ports_with_logical_edges": 3,
+    "ports_without_completed_edges": [],
+    "edges": [
+      {
+        "edge_id": "E0055",
+        "system": "return",
+        "source_systems": [
+          "return"
+        ]
+      },
+      {
+        "edge_id": "E0057",
+        "system": "return",
+        "source_systems": [
+          "return"
+        ]
+      },
+      {
+        "edge_id": "E0103",
+        "system": "makeup_water",
+        "source_systems": []
+      }
+    ]
+  },
+  {
+    "equipment_id": "CST-1",
+    "source_block": "source_closed_equipment_contour",
+    "source_port_count": 2,
+    "ports_with_logical_edges": 2,
+    "ports_without_completed_edges": [],
+    "edges": [
+      {
+        "edge_id": "E0063",
+        "system": "supply",
+        "source_systems": [
+          "supply"
+        ]
+      },
+      {
+        "edge_id": "E0092",
+        "system": "supply",
+        "source_systems": [
+          "supply"
+        ]
+      }
+    ]
+  },
+  {
+    "equipment_id": "CST-2",
+    "source_block": "source_closed_equipment_contour",
+    "source_port_count": 2,
+    "ports_with_logical_edges": 2,
+    "ports_without_completed_edges": [],
+    "edges": [
+      {
+        "edge_id": "E0064",
+        "system": "supply",
+        "source_systems": [
+          "supply"
+        ]
+      },
+      {
+        "edge_id": "E0068",
+        "system": "supply",
+        "source_systems": [
+          "supply"
+        ]
+      }
+    ]
+  },
+  {
+    "equipment_id": "SC01-01",
+    "source_block": "source_closed_equipment_contour",
+    "source_port_count": 4,
+    "ports_with_logical_edges": 4,
+    "ports_without_completed_edges": [],
+    "edges": [
+      {
+        "edge_id": "E0048",
+        "system": "return",
+        "source_systems": [
+          "return"
+        ]
+      },
+      {
+        "edge_id": "E0058",
+        "system": "return",
+        "source_systems": [
+          "return"
+        ]
+      },
+      {
+        "edge_id": "E0060",
+        "system": "cooling_water",
+        "source_systems": [
+          "cooling_water"
+        ]
+      },
+      {
+        "edge_id": "E0093",
+        "system": "cooling_water",
+        "source_systems": [
+          "cooling_water"
+        ]
+      }
+    ]
+  }
+]

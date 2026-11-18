@@ -1,0 +1,13 @@
+# Inherited expert and calibrated circle evidence
+
+`native_inherited_duplicate_circle_evidence.collect(doc, graph, node_id, source_hash, graph_hash, policy=None)` reads historical `expert_confirmed_circle`, `calibrated_duplicate_circle` and explicitly policy-bound legacy edge `source_circle_connection` contracts. This is a read-only local source witness. A formal caller must independently replay the graph owner and then validate the complete equipment branch before allowing correspondence.
+
+Do not send these rim-ending branches to the ordinary centre-touch T reader or a technical-review-only reader. Its `missing or ambiguous graph T ray` or missing technical-comparison binding can mean an unsupported historical evidence schema; it does not itself prove a disconnected source pipe or justify another expert question.
+
+The reader reuses historical repair-root binding, native Z checks, full branch signature calibration and coincident LINE comparison. It requires three same-system graph incidences, one real source rim ray, two distinct main rays and one canonical source owner per graph main edge. Every duplicate native main must remain the same layer and 3D LINE. Preserve their unresolved physical identity; source duplicates are not additional physical pipes.
+
+An expert control needs its unchanged external issue file, SHA256, source hash, note, selected branch and source bounds. A technical candidate must match the complete native branch signature, circle radius, system, floor and Z against that control. It remains technically calibrated, without inherited human confirmation. A legacy edge-only case additionally needs an explicit `policy.external_cases[node_id]` containing `issue`, `issue_sha256`, `issue_id` and `control_node_id`; a nearby issue or guessed filename is insufficient.
+
+Never create a rim-to-centre pipe, a physical port or an installed length. Validate separate crossover gaps through the existing crossover/path evidence reader; a local three-ray witness does not certify the rest of a branch or a whole plan.
+
+Run `test_native_inherited_duplicate_circle_evidence.py` and the registered historical circle, duplicate-source, crossover and branch-inventory tests. SH16 10 current local source witnesses cover six equipment pairs (12 contacts). The standard v2 inventory does not dispatch this reader. Use the separate [versioned v3 inventory consumer](inherited-circle-branch-inventory.md), which replays the complete v2 parent and complete selected branches. Its native run must pass before claiming formal coverage; the local witness alone is insufficient. Correspondence remains a separate stage.

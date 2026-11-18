@@ -1,0 +1,1294 @@
+[
+  {
+    "source_head_handle": "23A55",
+    "source_tag": "TIT-1",
+    "source_layer": "EQUIP-楼控",
+    "source_handles": [
+      "23A55",
+      "23A54",
+      "23A53"
+    ],
+    "center": [
+      2218062.072559709,
+      302108.1842675887
+    ],
+    "status": "represented_source_geometry"
+  },
+  {
+    "source_head_handle": "23AB2",
+    "source_tag": "TIT-1",
+    "source_layer": "EQUIP-楼控",
+    "source_handles": [
+      "23AB2",
+      "23AB1",
+      "23AB3"
+    ],
+    "center": [
+      2212718.683878722,
+      307413.5524283543
+    ],
+    "status": "represented_source_geometry"
+  },
+  {
+    "source_head_handle": "23AE2",
+    "source_tag": "TIT-0",
+    "source_layer": "EQUIP-楼控",
+    "source_handles": [
+      "23AE2",
+      "23AE1",
+      "23AE0"
+    ],
+    "center": [
+      2199449.730245283,
+      291939.1497649027
+    ],
+    "status": "represented_source_geometry"
+  },
+  {
+    "source_head_handle": "23AEA",
+    "source_tag": "TIT-0",
+    "source_layer": "EQUIP-楼控",
+    "source_handles": [
+      "23AEA",
+      "23AE9",
+      "23AE8"
+    ],
+    "center": [
+      2262452.22114433,
+      291939.1497649036
+    ],
+    "status": "represented_source_geometry"
+  },
+  {
+    "source_head_handle": "23AF3",
+    "source_tag": "TIT-0",
+    "source_layer": "EQUIP-楼控",
+    "source_handles": [
+      "23AF3",
+      "23AF2",
+      "23AF1"
+    ],
+    "center": [
+      2222161.019372308,
+      322632.0946901727
+    ],
+    "status": "represented_source_geometry"
+  },
+  {
+    "source_head_handle": "23AFE",
+    "source_tag": "TIT-A",
+    "source_layer": "EQUIP-楼控",
+    "source_handles": [
+      "23AFE",
+      "23AFD",
+      "23AFC"
+    ],
+    "center": [
+      2214235.664077576,
+      335150.0618632089
+    ],
+    "status": "represented_source_geometry"
+  },
+  {
+    "source_head_handle": "23B02",
+    "source_tag": "TIT-A",
+    "source_layer": "EQUIP-楼控",
+    "source_handles": [
+      "23B02",
+      "23B01",
+      "23B00"
+    ],
+    "center": [
+      2216267.934996926,
+      335150.0618632089
+    ],
+    "status": "represented_source_geometry"
+  },
+  {
+    "source_head_handle": "23AFB",
+    "source_tag": "FIT-A",
+    "source_layer": "EQUIP-楼控",
+    "source_handles": [
+      "23AFB",
+      "23B05"
+    ],
+    "center": [
+      2214238.289434588,
+      332603.6380022753
+    ],
+    "status": "represented_source_geometry"
+  },
+  {
+    "source_head_handle": "23B0D",
+    "source_tag": "FIT-1",
+    "source_layer": "EQUIP-楼控",
+    "source_handles": [
+      "23B0D",
+      "23B0C",
+      "23B0B"
+    ],
+    "center": [
+      2211995.107601641,
+      302483.6207975901
+    ],
+    "status": "represented_source_geometry"
+  },
+  {
+    "source_head_handle": "23B29",
+    "source_tag": "TIT-0",
+    "source_layer": "EQUIP-楼控",
+    "source_handles": [
+      "23B29",
+      "23B28",
+      "23B27"
+    ],
+    "center": [
+      2202606.472706396,
+      294301.4383584799
+    ],
+    "status": "represented_source_geometry"
+  },
+  {
+    "source_head_handle": "23B32",
+    "source_tag": "TIT-0",
+    "source_layer": "EQUIP-楼控",
+    "source_handles": [
+      "23B32",
+      "23B31",
+      "23B30"
+    ],
+    "center": [
+      2259647.036958763,
+      294301.4383584799
+    ],
+    "status": "represented_source_geometry"
+  },
+  {
+    "source_head_handle": "23B3C",
+    "source_tag": "PIT-1",
+    "source_layer": "EQUIP-楼控",
+    "source_handles": [
+      "23B3C",
+      "23B3B",
+      "23B3A"
+    ],
+    "center": [
+      2218062.072559709,
+      302758.1842675887
+    ],
+    "status": "represented_source_geometry"
+  },
+  {
+    "source_head_handle": "23B44",
+    "source_tag": "PIT-0",
+    "source_layer": "EQUIP-楼控",
+    "source_handles": [
+      "23B44",
+      "23B43",
+      "23B42"
+    ],
+    "center": [
+      2200365.654480553,
+      291939.1497649027
+    ],
+    "status": "represented_source_geometry"
+  },
+  {
+    "source_head_handle": "23B4D",
+    "source_tag": "PIT-0",
+    "source_layer": "EQUIP-楼控",
+    "source_handles": [
+      "23B4D",
+      "23B4C",
+      "23B4B"
+    ],
+    "center": [
+      2261564.93183677,
+      291939.1497649027
+    ],
+    "status": "represented_source_geometry"
+  },
+  {
+    "source_head_handle": "23B56",
+    "source_tag": "PIT-0",
+    "source_layer": "EQUIP-楼控",
+    "source_handles": [
+      "23B56",
+      "23B55",
+      "23B54"
+    ],
+    "center": [
+      2201679.72978524,
+      294301.4383584799
+    ],
+    "status": "represented_source_geometry"
+  },
+  {
+    "source_head_handle": "23B5F",
+    "source_tag": "PIT-0",
+    "source_layer": "EQUIP-楼控",
+    "source_handles": [
+      "23B5F",
+      "23B5E",
+      "23B5D"
+    ],
+    "center": [
+      2260429.007601498,
+      294301.4383584808
+    ],
+    "status": "represented_source_geometry"
+  },
+  {
+    "source_head_handle": "23B69",
+    "source_tag": "PIT-1",
+    "source_layer": "EQUIP-楼控",
+    "source_handles": [
+      "23B69",
+      "23B68",
+      "23B67"
+    ],
+    "center": [
+      2211995.10760164,
+      300356.8841254448
+    ],
+    "status": "represented_source_geometry"
+  },
+  {
+    "source_head_handle": "23B71",
+    "source_tag": "PIT-1",
+    "source_layer": "EQUIP-楼控",
+    "source_handles": [
+      "23B71",
+      "23B70",
+      "23B72"
+    ],
+    "center": [
+      2212718.683878722,
+      306803.5524283543
+    ],
+    "status": "represented_source_geometry"
+  },
+  {
+    "source_head_handle": "23B7A",
+    "source_tag": "TIT-1",
+    "source_layer": "EQUIP-楼控",
+    "source_handles": [
+      "23B7A",
+      "23B79",
+      "23B78"
+    ],
+    "center": [
+      2211995.10760164,
+      301046.8841254448
+    ],
+    "status": "represented_source_geometry"
+  },
+  {
+    "source_head_handle": "23C06",
+    "source_tag": "TIT-2",
+    "source_layer": "EQUIP-楼控",
+    "source_handles": [
+      "23C06",
+      "23B93",
+      "23B92"
+    ],
+    "center": [
+      2237202.154609183,
+      302108.1842675887
+    ],
+    "status": "represented_source_geometry"
+  },
+  {
+    "source_head_handle": "23BC0",
+    "source_tag": "TIT-2",
+    "source_layer": "EQUIP-楼控",
+    "source_handles": [
+      "23BC0",
+      "23BBF",
+      "23BC1"
+    ],
+    "center": [
+      2231858.765928197,
+      307413.5524283543
+    ],
+    "status": "represented_source_geometry"
+  },
+  {
+    "source_head_handle": "23BD4",
+    "source_tag": "FIT-2",
+    "source_layer": "EQUIP-楼控",
+    "source_handles": [
+      "23BD4",
+      "23BD3",
+      "23BD2"
+    ],
+    "center": [
+      2231135.189651115,
+      302483.6207975901
+    ],
+    "status": "represented_source_geometry"
+  },
+  {
+    "source_head_handle": "23C05",
+    "source_tag": "PIT-2",
+    "source_layer": "EQUIP-楼控",
+    "source_handles": [
+      "23C05",
+      "23BE1",
+      "23BE0"
+    ],
+    "center": [
+      2237202.154609183,
+      302758.1842675887
+    ],
+    "status": "represented_source_geometry"
+  },
+  {
+    "source_head_handle": "23BEA",
+    "source_tag": "PIT-2",
+    "source_layer": "EQUIP-楼控",
+    "source_handles": [
+      "23BEA",
+      "23BE9",
+      "23BE8"
+    ],
+    "center": [
+      2231135.189651115,
+      300356.8841254448
+    ],
+    "status": "represented_source_geometry"
+  },
+  {
+    "source_head_handle": "23BF2",
+    "source_tag": "PIT-2",
+    "source_layer": "EQUIP-楼控",
+    "source_handles": [
+      "23BF2",
+      "23BF1",
+      "23BF3"
+    ],
+    "center": [
+      2231858.765928197,
+      306803.5524283543
+    ],
+    "status": "represented_source_geometry"
+  },
+  {
+    "source_head_handle": "23BFB",
+    "source_tag": "TIT-2",
+    "source_layer": "EQUIP-楼控",
+    "source_handles": [
+      "23BFB",
+      "23BFA",
+      "23BF9"
+    ],
+    "center": [
+      2231135.189651115,
+      301046.8841254448
+    ],
+    "status": "represented_source_geometry"
+  },
+  {
+    "source_head_handle": "23C0D",
+    "source_tag": "FIT-D",
+    "source_layer": "EQUIP-楼控",
+    "source_handles": [
+      "23C0D",
+      "23C0E"
+    ],
+    "center": [
+      2255150.113675533,
+      332603.6380022762
+    ],
+    "status": "represented_source_geometry"
+  },
+  {
+    "source_head_handle": "23C1D",
+    "source_tag": "TIT-0",
+    "source_layer": "EQUIP-楼控",
+    "source_handles": [
+      "23C1D",
+      "23C1C",
+      "23C1B"
+    ],
+    "center": [
+      2242457.989371242,
+      322632.0946901792
+    ],
+    "status": "represented_source_geometry"
+  },
+  {
+    "source_head_handle": "23C31",
+    "source_tag": "PIT-A",
+    "source_layer": "EQUIP-楼控",
+    "source_handles": [
+      "23C31",
+      "23C30",
+      "23C2F"
+    ],
+    "center": [
+      2214235.663834984,
+      333294.6841203159
+    ],
+    "status": "represented_source_geometry"
+  },
+  {
+    "source_head_handle": "23C3F",
+    "source_tag": "PIT-A",
+    "source_layer": "EQUIP-楼控",
+    "source_handles": [
+      "23C3F",
+      "23C3E",
+      "23C3D"
+    ],
+    "center": [
+      2216267.934996926,
+      333294.3110179638
+    ],
+    "status": "represented_source_geometry"
+  },
+  {
+    "source_head_handle": "23C4F",
+    "source_tag": "PIT-A",
+    "source_layer": "EQUIP-楼控",
+    "source_handles": [
+      "23C4F",
+      "23C4E",
+      "23C4D"
+    ],
+    "center": [
+      2214235.663834984,
+      333930.76937881
+    ],
+    "status": "represented_source_geometry"
+  },
+  {
+    "source_head_handle": "23C5D",
+    "source_tag": "PIT-A",
+    "source_layer": "EQUIP-楼控",
+    "source_handles": [
+      "23C5D",
+      "23C5C",
+      "23C5B"
+    ],
+    "center": [
+      2216267.934996926,
+      333930.396276458
+    ],
+    "status": "represented_source_geometry"
+  },
+  {
+    "source_head_handle": "23C68",
+    "source_tag": "TIT-A",
+    "source_layer": "EQUIP-楼控",
+    "source_handles": [
+      "23C68",
+      "23C67",
+      "23C66"
+    ],
+    "center": [
+      2214235.664077576,
+      334529.3062161466
+    ],
+    "status": "represented_source_geometry"
+  },
+  {
+    "source_head_handle": "23C6C",
+    "source_tag": "TIT-A",
+    "source_layer": "EQUIP-楼控",
+    "source_handles": [
+      "23C6C",
+      "23C6B",
+      "23C6A"
+    ],
+    "center": [
+      2216267.934996926,
+      334529.3062161457
+    ],
+    "status": "represented_source_geometry"
+  },
+  {
+    "source_head_handle": "23C7B",
+    "source_tag": "TIT-B",
+    "source_layer": "EQUIP-楼控",
+    "source_handles": [
+      "23C7B",
+      "23C7A",
+      "23C79"
+    ],
+    "center": [
+      2255152.739032545,
+      335150.6188231174
+    ],
+    "status": "represented_source_geometry"
+  },
+  {
+    "source_head_handle": "23C7F",
+    "source_tag": "TIT-B",
+    "source_layer": "EQUIP-楼控",
+    "source_handles": [
+      "23C7F",
+      "23C7E",
+      "23C7D"
+    ],
+    "center": [
+      2253120.468113195,
+      335150.6188231174
+    ],
+    "status": "represented_source_geometry"
+  },
+  {
+    "source_head_handle": "23C86",
+    "source_tag": "PIT-B",
+    "source_layer": "EQUIP-楼控",
+    "source_handles": [
+      "23C86",
+      "23C85",
+      "23C84"
+    ],
+    "center": [
+      2255152.739275137,
+      333295.2410802243
+    ],
+    "status": "represented_source_geometry"
+  },
+  {
+    "source_head_handle": "23C94",
+    "source_tag": "PIT-B",
+    "source_layer": "EQUIP-楼控",
+    "source_handles": [
+      "23C94",
+      "23C93",
+      "23C92"
+    ],
+    "center": [
+      2253120.468113195,
+      333294.8679778723
+    ],
+    "status": "represented_source_geometry"
+  },
+  {
+    "source_head_handle": "23C98",
+    "source_tag": "PIT-B",
+    "source_layer": "EQUIP-楼控",
+    "source_handles": [
+      "23C98",
+      "23C97",
+      "23C96"
+    ],
+    "center": [
+      2255152.739275137,
+      333931.3263387184
+    ],
+    "status": "represented_source_geometry"
+  },
+  {
+    "source_head_handle": "23CA6",
+    "source_tag": "PIT-B",
+    "source_layer": "EQUIP-楼控",
+    "source_handles": [
+      "23CA6",
+      "23CA5",
+      "23CA4"
+    ],
+    "center": [
+      2253120.468113195,
+      333930.9532363664
+    ],
+    "status": "represented_source_geometry"
+  },
+  {
+    "source_head_handle": "23CB1",
+    "source_tag": "TIT-B",
+    "source_layer": "EQUIP-楼控",
+    "source_handles": [
+      "23CB1",
+      "23CB0",
+      "23CAF"
+    ],
+    "center": [
+      2255152.739032545,
+      334529.863176055
+    ],
+    "status": "represented_source_geometry"
+  },
+  {
+    "source_head_handle": "23CB5",
+    "source_tag": "TIT-B",
+    "source_layer": "EQUIP-楼控",
+    "source_handles": [
+      "23CB5",
+      "23CB4",
+      "23CB3"
+    ],
+    "center": [
+      2253120.468113195,
+      334529.8631760541
+    ],
+    "status": "represented_source_geometry"
+  },
+  {
+    "source_head_handle": "23CBC",
+    "source_tag": "TIT-X2",
+    "source_layer": "EQUIP-楼控",
+    "source_handles": [
+      "23CBC",
+      "23CBB",
+      "23CBA"
+    ],
+    "center": [
+      2236994.509561326,
+      331047.3854144088
+    ],
+    "status": "represented_source_geometry"
+  },
+  {
+    "source_head_handle": "23CC0",
+    "source_tag": "TIT-X2",
+    "source_layer": "EQUIP-楼控",
+    "source_handles": [
+      "23CC0",
+      "23CBF",
+      "23CBE"
+    ],
+    "center": [
+      2236429.335832602,
+      332349.058414232
+    ],
+    "status": "represented_source_geometry"
+  },
+  {
+    "source_head_handle": "23CEC",
+    "source_tag": "PIT-X2",
+    "source_layer": "EQUIP-楼控",
+    "source_handles": [
+      "23CEC",
+      "23CEB",
+      "23CEA"
+    ],
+    "center": [
+      2236968.426446603,
+      330392.5886238583
+    ],
+    "status": "represented_source_geometry"
+  },
+  {
+    "source_head_handle": "23CFB",
+    "source_tag": "DPS",
+    "source_layer": "EQUIP-楼控",
+    "source_handles": [
+      "23CFB",
+      "23CFC"
+    ],
+    "center": [
+      2212192.630644464,
+      298020.9533968603
+    ],
+    "status": "represented_source_geometry"
+  },
+  {
+    "source_head_handle": "23D03",
+    "source_tag": "DPIT-1",
+    "source_layer": "EQUIP-楼控",
+    "source_handles": [
+      "23D03",
+      "23D05",
+      "23D02"
+    ],
+    "center": [
+      2212957.514112686,
+      298020.9533968603
+    ],
+    "status": "represented_source_geometry"
+  },
+  {
+    "source_head_handle": "23D10",
+    "source_tag": "DPS",
+    "source_layer": "EQUIP-楼控",
+    "source_handles": [
+      "23D10",
+      "23D11"
+    ],
+    "center": [
+      2231332.712693938,
+      298020.9533968603
+    ],
+    "status": "represented_source_geometry"
+  },
+  {
+    "source_head_handle": "23D18",
+    "source_tag": "DPIT-2",
+    "source_layer": "EQUIP-楼控",
+    "source_handles": [
+      "23D18",
+      "23D1A",
+      "23D17"
+    ],
+    "center": [
+      2232097.596162161,
+      298020.9533968603
+    ],
+    "status": "represented_source_geometry"
+  },
+  {
+    "source_head_handle": "23D21",
+    "source_tag": "DPS",
+    "source_layer": "EQUIP-楼控",
+    "source_handles": [
+      "23D21",
+      "23D22"
+    ],
+    "center": [
+      2218219.674105911,
+      307219.5922928851
+    ],
+    "status": "represented_source_geometry"
+  },
+  {
+    "source_head_handle": "23D25",
+    "source_tag": "DPIT-1",
+    "source_layer": "EQUIP-楼控",
+    "source_handles": [
+      "23D25",
+      "23D27",
+      "23D24"
+    ],
+    "center": [
+      2218984.557574133,
+      307219.5922928851
+    ],
+    "status": "represented_source_geometry"
+  },
+  {
+    "source_head_handle": "23D2E",
+    "source_tag": "DPS",
+    "source_layer": "EQUIP-楼控",
+    "source_handles": [
+      "23D2E",
+      "23D2F"
+    ],
+    "center": [
+      2237359.756155385,
+      307219.5922928851
+    ],
+    "status": "represented_source_geometry"
+  },
+  {
+    "source_head_handle": "23D32",
+    "source_tag": "DPIT-2",
+    "source_layer": "EQUIP-楼控",
+    "source_handles": [
+      "23D32",
+      "23D34",
+      "23D31"
+    ],
+    "center": [
+      2238124.639623607,
+      307219.5922928851
+    ],
+    "status": "represented_source_geometry"
+  },
+  {
+    "source_head_handle": "23D81",
+    "source_tag": "TIT-X",
+    "source_layer": "HVAC-D-阀门仪表",
+    "source_handles": [
+      "23D81",
+      "23D80",
+      "23D7F"
+    ],
+    "center": [
+      2200037.77955748,
+      334420.0883931767
+    ],
+    "status": "reference_legend_only"
+  },
+  {
+    "source_head_handle": "23D8B",
+    "source_tag": "PIT-X",
+    "source_layer": "HVAC-D-阀门仪表",
+    "source_handles": [
+      "23D8B",
+      "23D8A",
+      "23D89"
+    ],
+    "center": [
+      2200037.829940269,
+      333475.1048711369
+    ],
+    "status": "reference_legend_only"
+  },
+  {
+    "source_head_handle": "23D93",
+    "source_tag": "FIT-X",
+    "source_layer": "HVAC-D-阀门仪表",
+    "source_handles": [
+      "23D93",
+      "23D94",
+      "23D92"
+    ],
+    "center": [
+      2199997.06862123,
+      335295.5954770472
+    ],
+    "status": "reference_legend_only"
+  },
+  {
+    "source_head_handle": "23D9C",
+    "source_tag": "SFIT-X",
+    "source_layer": "HVAC-D-阀门仪表",
+    "source_handles": [
+      "23D9C",
+      "23D9B",
+      "23D9A"
+    ],
+    "center": [
+      2199958.036133362,
+      336098.3485035987
+    ],
+    "status": "reference_legend_only"
+  },
+  {
+    "source_head_handle": "23DA0",
+    "source_tag": "DPS",
+    "source_layer": "HVAC-D-阀门仪表",
+    "source_handles": [
+      "23DA0",
+      "23DA1"
+    ],
+    "center": [
+      2200039.611273874,
+      332278.7753190657
+    ],
+    "status": "reference_legend_only"
+  },
+  {
+    "source_head_handle": "23DA4",
+    "source_tag": "DPIT-X",
+    "source_layer": "HVAC-D-阀门仪表",
+    "source_handles": [
+      "23DA4",
+      "23DA6",
+      "23DA3"
+    ],
+    "center": [
+      2200039.611273874,
+      332661.2170531776
+    ],
+    "status": "reference_legend_only"
+  },
+  {
+    "source_head_handle": "23E51",
+    "source_tag": "TIT-3",
+    "source_layer": "EQUIP-楼控",
+    "source_handles": [
+      "23E51",
+      "23DDF",
+      "23DDE"
+    ],
+    "center": [
+      2255270.270568262,
+      302108.1842675794
+    ],
+    "status": "represented_source_geometry"
+  },
+  {
+    "source_head_handle": "23E0B",
+    "source_tag": "TIT-3",
+    "source_layer": "EQUIP-楼控",
+    "source_handles": [
+      "23E0B",
+      "23E0A",
+      "23E0C"
+    ],
+    "center": [
+      2249926.881887274,
+      307413.552428345
+    ],
+    "status": "represented_source_geometry"
+  },
+  {
+    "source_head_handle": "23E1F",
+    "source_tag": "FIT-3",
+    "source_layer": "EQUIP-楼控",
+    "source_handles": [
+      "23E1F",
+      "23E1E",
+      "23E1D"
+    ],
+    "center": [
+      2249203.305610194,
+      302483.6207975808
+    ],
+    "status": "represented_source_geometry"
+  },
+  {
+    "source_head_handle": "23E50",
+    "source_tag": "PIT-3",
+    "source_layer": "EQUIP-楼控",
+    "source_handles": [
+      "23E50",
+      "23E2C",
+      "23E2B"
+    ],
+    "center": [
+      2255270.270568262,
+      302758.1842675794
+    ],
+    "status": "represented_source_geometry"
+  },
+  {
+    "source_head_handle": "23E35",
+    "source_tag": "PIT-3",
+    "source_layer": "EQUIP-楼控",
+    "source_handles": [
+      "23E35",
+      "23E34",
+      "23E33"
+    ],
+    "center": [
+      2249203.305610193,
+      300356.8841254355
+    ],
+    "status": "represented_source_geometry"
+  },
+  {
+    "source_head_handle": "23E3D",
+    "source_tag": "PIT-3",
+    "source_layer": "EQUIP-楼控",
+    "source_handles": [
+      "23E3D",
+      "23E3C",
+      "23E3E"
+    ],
+    "center": [
+      2249926.881887274,
+      306803.552428345
+    ],
+    "status": "represented_source_geometry"
+  },
+  {
+    "source_head_handle": "23E46",
+    "source_tag": "TIT-3",
+    "source_layer": "EQUIP-楼控",
+    "source_handles": [
+      "23E46",
+      "23E45",
+      "23E44"
+    ],
+    "center": [
+      2249203.305610193,
+      301046.8841254355
+    ],
+    "status": "represented_source_geometry"
+  },
+  {
+    "source_head_handle": "23E5D",
+    "source_tag": "DPS",
+    "source_layer": "EQUIP-楼控",
+    "source_handles": [
+      "23E5D",
+      "23E5E"
+    ],
+    "center": [
+      2249400.828653016,
+      298020.953396851
+    ],
+    "status": "represented_source_geometry"
+  },
+  {
+    "source_head_handle": "23E65",
+    "source_tag": "DPIT-3",
+    "source_layer": "EQUIP-楼控",
+    "source_handles": [
+      "23E65",
+      "23E67",
+      "23E64"
+    ],
+    "center": [
+      2250165.712121239,
+      298020.953396851
+    ],
+    "status": "represented_source_geometry"
+  },
+  {
+    "source_head_handle": "23E6E",
+    "source_tag": "DPS",
+    "source_layer": "EQUIP-楼控",
+    "source_handles": [
+      "23E6E",
+      "23E6F"
+    ],
+    "center": [
+      2255427.872114463,
+      307219.5922928758
+    ],
+    "status": "represented_source_geometry"
+  },
+  {
+    "source_head_handle": "23E72",
+    "source_tag": "DPIT-3",
+    "source_layer": "EQUIP-楼控",
+    "source_handles": [
+      "23E72",
+      "23E74",
+      "23E71"
+    ],
+    "center": [
+      2256192.755582685,
+      307219.5922928758
+    ],
+    "status": "represented_source_geometry"
+  },
+  {
+    "source_head_handle": "23E9F",
+    "source_tag": "DPS",
+    "source_layer": "EQUIP-楼控",
+    "source_handles": [
+      "23E9F",
+      "23EA0"
+    ],
+    "center": [
+      2216188.587628063,
+      336980.4261744309
+    ],
+    "status": "represented_source_geometry"
+  },
+  {
+    "source_head_handle": "23EAD",
+    "source_tag": "DPS",
+    "source_layer": "EQUIP-楼控",
+    "source_handles": [
+      "23EAD",
+      "23EAE"
+    ],
+    "center": [
+      2216188.587628063,
+      337668.9760378178
+    ],
+    "status": "represented_source_geometry"
+  },
+  {
+    "source_head_handle": "23EB7",
+    "source_tag": "DPIT",
+    "source_layer": "EQUIP-楼控",
+    "source_handles": [
+      "23EB7",
+      "23EB6",
+      "23EB5"
+    ],
+    "center": [
+      2216188.587628063,
+      336246.3879714057
+    ],
+    "status": "represented_source_geometry"
+  },
+  {
+    "source_head_handle": "23EBB",
+    "source_tag": "DPIT",
+    "source_layer": "EQUIP-楼控",
+    "source_handles": [
+      "23EBB",
+      "23EBA",
+      "23EB9"
+    ],
+    "center": [
+      2216188.587628063,
+      338429.031534259
+    ],
+    "status": "represented_source_geometry"
+  },
+  {
+    "source_head_handle": "23EC7",
+    "source_tag": "DPS",
+    "source_layer": "EQUIP-楼控",
+    "source_handles": [
+      "23EC7",
+      "23EC8"
+    ],
+    "center": [
+      2253127.98353148,
+      336980.9831343394
+    ],
+    "status": "represented_source_geometry"
+  },
+  {
+    "source_head_handle": "23ED5",
+    "source_tag": "DPS",
+    "source_layer": "EQUIP-楼控",
+    "source_handles": [
+      "23ED5",
+      "23ED6"
+    ],
+    "center": [
+      2253127.98353148,
+      337669.5329977263
+    ],
+    "status": "represented_source_geometry"
+  },
+  {
+    "source_head_handle": "23EDF",
+    "source_tag": "DPIT",
+    "source_layer": "EQUIP-楼控",
+    "source_handles": [
+      "23EDF",
+      "23EDE",
+      "23EDD"
+    ],
+    "center": [
+      2253127.98353148,
+      336246.9449313141
+    ],
+    "status": "represented_source_geometry"
+  },
+  {
+    "source_head_handle": "23EE3",
+    "source_tag": "DPIT",
+    "source_layer": "EQUIP-楼控",
+    "source_handles": [
+      "23EE3",
+      "23EE2",
+      "23EE1"
+    ],
+    "center": [
+      2253127.98353148,
+      338429.5884941675
+    ],
+    "status": "represented_source_geometry"
+  },
+  {
+    "source_head_handle": "23F03",
+    "source_tag": "SFIT-X2",
+    "source_layer": "EQUIP-楼控",
+    "source_handles": [
+      "23F03",
+      "23F02",
+      "23F01"
+    ],
+    "center": [
+      2236989.697685916,
+      329643.9766709788
+    ],
+    "status": "represented_source_geometry"
+  },
+  {
+    "source_head_handle": "23F13",
+    "source_tag": "TIT-X2",
+    "source_layer": "EQUIP-楼控",
+    "source_handles": [
+      "23F13",
+      "23F12",
+      "23F11"
+    ],
+    "center": [
+      2229175.172537857,
+      331047.3854144088
+    ],
+    "status": "represented_source_geometry"
+  },
+  {
+    "source_head_handle": "23F17",
+    "source_tag": "TIT-X2",
+    "source_layer": "EQUIP-楼控",
+    "source_handles": [
+      "23F17",
+      "23F16",
+      "23F15"
+    ],
+    "center": [
+      2229740.346266581,
+      332349.058414232
+    ],
+    "status": "represented_source_geometry"
+  },
+  {
+    "source_head_handle": "23F45",
+    "source_tag": "PIT-X2",
+    "source_layer": "EQUIP-楼控",
+    "source_handles": [
+      "23F45",
+      "23F44",
+      "23F43"
+    ],
+    "center": [
+      2229201.25565258,
+      330392.5886238583
+    ],
+    "status": "represented_source_geometry"
+  },
+  {
+    "source_head_handle": "23F52",
+    "source_tag": "SFIT-X2",
+    "source_layer": "EQUIP-楼控",
+    "source_handles": [
+      "23F52",
+      "23F51",
+      "23F50"
+    ],
+    "center": [
+      2229179.984413268,
+      329643.9766709788
+    ],
+    "status": "represented_source_geometry"
+  },
+  {
+    "source_head_handle": "23FAC",
+    "source_tag": "PIT-B1",
+    "source_layer": "EQUIP-楼控",
+    "source_handles": [
+      "23FAC",
+      "23FAB",
+      "23FAA"
+    ],
+    "center": [
+      2197341.295096347,
+      327215.729001882
+    ],
+    "status": "represented_source_geometry"
+  },
+  {
+    "source_head_handle": "23FB5",
+    "source_tag": "PIT-B1",
+    "source_layer": "EQUIP-楼控",
+    "source_handles": [
+      "23FB5",
+      "23FB4",
+      "23FB3"
+    ],
+    "center": [
+      2196632.258341455,
+      327215.729001882
+    ],
+    "status": "represented_source_geometry"
+  },
+  {
+    "source_head_handle": "240DC",
+    "source_tag": "PIT-B1",
+    "source_layer": "EQUIP-楼控",
+    "source_handles": [
+      "240DC",
+      "240DB",
+      "240DA"
+    ],
+    "center": [
+      2263073.571082516,
+      327053.0508166591
+    ],
+    "status": "pending_unrepresented_tagged_head"
+  },
+  {
+    "source_head_handle": "240E5",
+    "source_tag": "PIT-B1",
+    "source_layer": "EQUIP-楼控",
+    "source_handles": [
+      "240E5",
+      "240E4",
+      "240E3"
+    ],
+    "center": [
+      2263782.607837406,
+      327053.0508166591
+    ],
+    "status": "represented_source_geometry"
+  }
+]

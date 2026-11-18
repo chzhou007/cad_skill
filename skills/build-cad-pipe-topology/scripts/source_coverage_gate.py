@@ -6,9 +6,10 @@ def source_coverage_gate(doc,graph,config,output):
  edges=graph['edges'];nodes=graph['nodes'];represented={h for e in edges for h in e.get('source_handles',[])}
  active=set(config['system_layers'])|{config['auxiliary_pipe_layer']}|set(config.get('additional_auxiliary_pipe_layers',[]))
  required=set(config.get('required_physical_candidate_layers',[]));layers=collections.defaultdict(collections.Counter);ledger=[];blocks=[]
+ glyph_handles={h for g in graph.get('sourceTerminalGlyphs',[])for h in g['source_handles']}
  for entity in doc.modelspace():
   layer=entity.dxf.layer;typ=entity.dxftype();layers[layer][typ]+=1;handle=entity.dxf.handle
-  status='final_edge_source'if handle in represented else'candidate_layer_context'if layer in active else'outside_physical_candidate_layers_requires_context_classification'
+  status='final_edge_source'if handle in represented else'source_terminal_glyph_context'if handle in glyph_handles else'candidate_layer_context'if layer in active else'outside_physical_candidate_layers_requires_context_classification'
   ledger.append({'source_handle':handle,'source_layer':layer,'entity_type':typ,'status':status})
  for layer in sorted(required-active):blocks.append({'rule':'required_source_layer_not_loaded','layer':layer})
  degree=collections.Counter(n for e in edges for n in [e['start_node_id'],e['end_node_id']]);nodeids={n['node_id']for n in nodes}

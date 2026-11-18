@@ -19,7 +19,7 @@ class PipelineIdentityTest(unittest.TestCase):
             params.write_text(json.dumps({'source_sha256':m['sourceHashes']['main_dxf'],'task_id':'DEMO-X','effective':{'diameter':{'value':50,'unit':'mm','source_handle':'fixture'}}}),encoding='utf8')
             extra=['--building-context',str(sidecar/'architecture.json'),'--parameters',str(params)]
             second=root/'second';r=subprocess.run(args+extra+['--output',str(second)],capture_output=True,text=True);self.assertEqual(r.returncode,0,r.stderr)
-            m2=json.loads((second/'public/data/manifest.json').read_text());self.assertEqual(m2['buildingPreparationMode'],'external_stage');self.assertIn('parameters',m2['reviewContentHashes']);self.assertEqual(m2['viewerVersion'],m2['visualizationSkill'])
+            m2=json.loads((second/'public/data/manifest.json').read_text());self.assertEqual(m2['buildingPreparationMode'],'external_stage');self.assertIn('parameters',m2['reviewContentHashes']);self.assertEqual(m2['viewerVersion'],m2['visualizationSkill']);self.assertEqual(m2['viewerVersion'],(Path(__file__).resolve().parents[1]/'VERSION').read_text(encoding='utf8').strip()+'-HIL')
             self.assertTrue((second/'public/data/effective-parameters.json').is_file())
             bad=json.loads((sidecar/'architecture.json').read_text());bad['source_sha256']='wrong';(sidecar/'architecture.json').write_text(json.dumps(bad),encoding='utf8')
             r=subprocess.run(args+extra+['--output',str(root/'bad')],capture_output=True,text=True);self.assertNotEqual(r.returncode,0);self.assertFalse((root/'bad').exists())
@@ -35,4 +35,5 @@ class PipelineIdentityTest(unittest.TestCase):
         m['reviewContentHashes']={'architecture':'a','parameters':'p'};new=identity(m);self.assertNotEqual(legacy,new)
         m['bundleId']='new UI';m['viewerVersion']='new';self.assertEqual(new,identity(m))
         m['reviewContentHashes']['parameters']='p2';self.assertNotEqual(new,identity(m))
+        m['reviewContentHashes']['named_leader_screen']='candidate';candidate=identity(m);self.assertNotEqual(candidate,new);m['reviewContentHashes']['named_leader_screen']='changed';self.assertNotEqual(candidate,identity(m))
 if __name__=='__main__':unittest.main()

@@ -1,0 +1,252 @@
+[
+  {
+    "handle": "23CDD",
+    "source_handles": [
+      "23CDD",
+      "23CDF",
+      "23CE2",
+      "23F01",
+      "23F02",
+      "23F03"
+    ],
+    "block": "传感器",
+    "bounds": [
+      2236127.284045652,
+      329519.4759681023,
+      2236603.659711226,
+      329768.4773738554
+    ],
+    "insert": [
+      2236365.471878439,
+      329643.9766709788
+    ],
+    "bridge_allowed": false,
+    "source_kind": "exploded_complete_native_template",
+    "recognition_rule": "all_native_prototype_segments_similarity_matched",
+    "prototype_segment_count": 5,
+    "head_evidence": {
+      "source_sensor_handle": "23CDD",
+      "source_handles": [
+        "23CDD",
+        "23CDF",
+        "23CE2",
+        "23F01",
+        "23F02",
+        "23F03"
+      ],
+      "candidate_head_handles": [
+        "23F03"
+      ],
+      "status": "complete_tagged_head",
+      "source_head_handle": "23F03",
+      "source_head_tag": "SFIT-X2",
+      "leader_handles": [
+        "23CE2",
+        "23F01",
+        "23F02",
+        "23F03"
+      ],
+      "native_block_lead": false
+    }
+  },
+  {
+    "handle": "23D95",
+    "source_handles": [
+      "23D95",
+      "23D97",
+      "23D9A",
+      "23D9B",
+      "23D9C",
+      "23D9D"
+    ],
+    "block": "传感器",
+    "bounds": [
+      2199895.785781923,
+      335667.1416834665,
+      2200020.2864848,
+      335905.3295162532
+    ],
+    "insert": [
+      2199958.0361333615,
+      335786.23559985985
+    ],
+    "bridge_allowed": false,
+    "source_kind": "exploded_complete_native_template",
+    "recognition_rule": "all_native_prototype_segments_similarity_matched",
+    "prototype_segment_count": 5,
+    "head_evidence": {
+      "source_sensor_handle": "23D95",
+      "source_handles": [
+        "23D95",
+        "23D97",
+        "23D9A",
+        "23D9B",
+        "23D9C",
+        "23D9D"
+      ],
+      "candidate_head_handles": [
+        "23D9C"
+      ],
+      "status": "complete_tagged_head",
+      "source_head_handle": "23D9C",
+      "source_head_tag": "SFIT-X",
+      "leader_handles": [
+        "23D9A",
+        "23D9B",
+        "23D9C",
+        "23D9D"
+      ],
+      "native_block_lead": false
+    }
+  },
+  {
+    "handle": "23F36",
+    "source_handles": [
+      "23F36",
+      "23F38",
+      "23F3B",
+      "23F50",
+      "23F51",
+      "23F52"
+    ],
+    "block": "传感器",
+    "bounds": [
+      2229566.022387958,
+      329519.4759681023,
+      2230042.398053531,
+      329768.4773738554
+    ],
+    "insert": [
+      2229804.210220745,
+      329643.9766709788
+    ],
+    "bridge_allowed": false,
+    "source_kind": "exploded_complete_native_template",
+    "recognition_rule": "all_native_prototype_segments_similarity_matched",
+    "prototype_segment_count": 5,
+    "head_evidence": {
+      "source_sensor_handle": "23F36",
+      "source_handles": [
+        "23F36",
+        "23F38",
+        "23F3B",
+        "23F50",
+        "23F51",
+        "23F52"
+      ],
+      "candidate_head_handles": [
+        "23F52"
+      ],
+      "status": "complete_tagged_head",
+      "source_head_handle": "23F52",
+      "source_head_tag": "SFIT-X2",
+      "leader_handles": [
+        "23F3B",
+        "23F50",
+        "23F51",
+        "23F52"
+      ],
+      "native_block_lead": false
+    }
+  },
+  {
+    "handle": "23CC8",
+    "source_handles": [
+      "23CC8",
+      "23CC9",
+      "23CCA",
+      "23CCB",
+      "23CCC"
+    ],
+    "block": "金属软连接",
+    "bounds": [
+      2236497.894351432,
+      332976.8507426838,
+      2236692.778722391,
+      333145.6255587405
+    ],
+    "insert": [
+      2236595.3365369113,
+      333061.23815071216
+    ],
+    "bridge_allowed": false,
+    "source_kind": "exploded_complete_native_template",
+    "recognition_rule": "all_native_prototype_segments_similarity_matched",
+    "prototype_segment_count": 5
+  },
+  {
+    "handle": "23CCD",
+    "source_handles": [
+      "23CCD",
+      "23CCE",
+      "23CCF",
+      "23CD0",
+      "23CD1"
+    ],
+    "block": "金属软连接",
+    "bounds": [
+      2237063.080565352,
+      331361.5110896727,
+      2237257.96493631,
+      331530.2859057302
+    ],
+    "insert": [
+      2237160.522750831,
+      331445.89849770145
+    ],
+    "bridge_allowed": false,
+    "source_kind": "exploded_complete_native_template",
+    "recognition_rule": "all_native_prototype_segments_similarity_matched",
+    "prototype_segment_count": 5
+  },
+  {
+    "handle": "23F20",
+    "source_handles": [
+      "23F20",
+      "23F21",
+      "23F22",
+      "23F23",
+      "23F24"
+    ],
+    "block": "金属软连接",
+    "bounds": [
+      2229476.903376792,
+      332976.8507426838,
+      2229671.787747752,
+      333145.6255587405
+    ],
+    "insert": [
+      2229574.345562272,
+      333061.23815071216
+    ],
+    "bridge_allowed": false,
+    "source_kind": "exploded_complete_native_template",
+    "recognition_rule": "all_native_prototype_segments_similarity_matched",
+    "prototype_segment_count": 5
+  },
+  {
+    "handle": "23F25",
+    "source_handles": [
+      "23F25",
+      "23F26",
+      "23F27",
+      "23F28",
+      "23F29"
+    ],
+    "block": "金属软连接",
+    "bounds": [
+      2228911.717162873,
+      331361.5110896727,
+      2229106.601533832,
+      331530.2859057302
+    ],
+    "insert": [
+      2229009.159348353,
+      331445.89849770145
+    ],
+    "bridge_allowed": false,
+    "source_kind": "exploded_complete_native_template",
+    "recognition_rule": "all_native_prototype_segments_similarity_matched",
+    "prototype_segment_count": 5
+  }
+]

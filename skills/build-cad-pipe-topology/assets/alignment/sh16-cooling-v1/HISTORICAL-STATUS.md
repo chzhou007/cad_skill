@@ -1,0 +1,1 @@
+Historical v3.7 known-bad profile: 14 crossing-proven source gaps were skipped. Retained immutable inputs/expected graph. Use --expect-source-blockers with v1.12.1; do not promote its old counts as current acceptance.

@@ -32,6 +32,14 @@ class PipelineTest(unittest.TestCase):
     def test_unknown_stays_pending(self):
         self.cfg['tasks'][0]['family']='unknown';t=self.start();self.complete(t);self.assertEqual(validate(self.run)['status'],'pending')
     def test_completed_contracts(self):t=self.start();self.complete(t);self.assertEqual(validate(self.run)['status'],'completed')
+    def test_actual_topology_artifact_blocks_unbound_equipment(self):
+        t=self.start();self.complete(t)
+        gp=self.run/'A/topology.json';write(gp,{'nodes':[{'node_id':'tower','node_type':'equipment','source_port_completeness':'unbound_source_contacts_require_comparison','source_port_candidates':[{'status':'source_mark_candidate_not_bound'}]}],'edges':[]})
+        t['stages']['topology']['artifacts'][0]['sha256']=sha(gp)
+        cp=self.run/'A/source_comparison.json';comparison=read(cp);comparison['graph_sha256']=sha(gp);write(cp,comparison)
+        t['stages']['source_comparison']['artifacts'][0]['sha256']=sha(cp);self.save(t)
+        result=validate(self.run);self.assertEqual(result['status'],'pending')
+        self.assertTrue(any('equipment nodes have unresolved source-port ownership' in p for p in result['tasks'][0]['pending']))
     def test_changed_source_fails(self):
         self.start();(self.root/'source.dxf').write_text('changed');self.assertEqual(validate(self.run)['status'],'failed')
     def test_changed_profile_fails(self):

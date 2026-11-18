@@ -1,0 +1,201 @@
+"""Refresh attribute presentation on an unchanged, qualified portable artifact.
+
+This reuses the rendered artifact; it never reconstructs a graph or substitutes
+for its topology owner's native comparison. Changed source inputs require a
+normal rebuild instead. Historical annotations remain under their old identity.
+"""
+import argparse,copy,hashlib,json,shutil,subprocess,sys,tempfile,zipfile
+from pathlib import Path
+
+MODE='qualified_native_viewer_noncompound_main_attribute_refresh_v1'
+ALLOWED={'public/edge-attributes.js','public/full-batch-plan-attributes.js','public/ordered-branch-plan-attributes.js','public/anchor-bounded-main-attributes.js','public/app.js'}
+def sha(path):return hashlib.sha256(Path(path).read_bytes()).hexdigest()
+def load(path):return json.loads(Path(path).read_text(encoding='utf8'))
+def encoded(value):return (json.dumps(value,ensure_ascii=False,sort_keys=True,indent=2)+'\n').encode('utf8')
+def inventory(root):return {p.relative_to(root).as_posix():sha(p)for p in Path(root).rglob('*')if p.is_file()and'__pycache__'not in p.parts and p.suffix!='.pyc'}
+def artifact_inventory(root):
+    # Launch diagnostics are operational output, not rendered/source content.
+    return {p:h for p,h in inventory(root).items()if not p.startswith('startup-logs/')}
+
+def parent_check(parent,graph,devices,source,legend,comparison):
+    parent=Path(parent);manifest=load(parent/'public/data/manifest.json');quality=load(parent/'quality-gate.json');report=load(comparison)
+    inputs={'graph':graph,'devices':devices,'main_dxf':source}
+    if manifest['sourceHashes'].get('legend_dxf'):
+        if legend is None:raise ValueError('original legend source is required')
+        inputs['legend_dxf']=legend
+    if any(sha(p)!=manifest['sourceHashes'][key]for key,p in inputs.items()):raise ValueError('native inputs changed; rebuild instead of refreshing presentation')
+    if report.get('errors')!=[]or report.get('graph_sha256')!=sha(graph):raise ValueError('original topology source comparison does not qualify this graph')
+    if quality.get('machine_status')!='PASS'or quality['graph_sha256']!=sha(parent/'public/data/graph.json'):raise ValueError('parent native rendering has not passed')
+    if load(parent/'validation-report.json').get('status')!='passed':raise ValueError('parent schema check has not passed')
+    for name,digest in manifest['templateHashes'].items():
+        content=(parent/name).read_bytes()
+        if name=='public/index.html':content=content.decode('utf8').replace(manifest['bundleId'],'__BUILD_ID__').encode('utf8')
+        if hashlib.sha256(content).hexdigest()!=digest:raise ValueError('parent template bytes changed: '+name)
+    if manifest.get('reviewContentHashes',{}).get('viewer_graph')!=quality['graph_sha256']:raise ValueError('rendered source identity is not exact')
+    return manifest,inputs
+
+def revised_manifest(original,changes,effective_hash,implementation_hash,port,context=None):
+    if not changes or not set(changes)<=ALLOWED:raise ValueError('only the declared attribute templates may change')
+    if not isinstance(port,int)or isinstance(port,bool)or not 1024<=port<=65535:raise ValueError('explicit local viewer port required')
+    result=copy.deepcopy(original);result['templateHashes'].update(changes);result['preferredPort']=port
+    # Effective presentation changes require review invalidation even though
+    # canonical and rendered graph bytes do not change.
+    result.setdefault('reviewContentHashes',{})['effective_edge_attributes']=effective_hash
+    if context is not None:
+        result['attributeValueContext']=copy.deepcopy(context)
+        result['reviewContentHashes']['attribute_value_context']=hashlib.sha256(encoded(context)).hexdigest()
+    result['attributeTemplateRefresh']=dict(mode=MODE,parent_bundle_id=original['bundleId'],changed_templates=changes,
+        implementation_sha256=implementation_hash,source_reconstruction_performed=False,human_confirmation_inherited=False)
+    result['bundleId']=hashlib.sha256(encoded(dict(parent=original['bundleId'],templates=changes,effective=effective_hash,implementation=implementation_hash,port=port))).hexdigest()[:20]
+    return result
+
+def effective_attributes(bundle):
+    script="""import fs from 'node:fs';import{pathToFileURL}from'node:url';
+const m=await import(pathToFileURL(process.argv[1])),g=JSON.parse(fs.readFileSync(process.argv[2],'utf8')),manifest=JSON.parse(fs.readFileSync(process.argv[3],'utf8'));
+process.stdout.write(JSON.stringify(g.edges.map(e=>({edge_id:e.edge_id,values:m.crossViewAttributeCsvValues(e,manifest.attributeValueContext)}))));"""
+    result=subprocess.run(['node','--input-type=module','-e',script,str(Path(bundle)/'public/edge-attributes.js'),str(Path(bundle)/'public/data/graph.json'),str(Path(bundle)/'public/data/manifest.json')],capture_output=True,text=True,encoding='utf8',creationflags=getattr(subprocess,'CREATE_NO_WINDOW',0))
+    if result.returncode:raise ValueError('actual effective CSV reader failed: '+result.stderr)
+    return json.loads(result.stdout)
+
+
+def check_effective_delta(prior,current,context):
+    old={r['edge_id']:r['values']for r in prior};new={r['edge_id']:r['values']for r in current};targets={r['axis_edge_id']:r for r in context['records']}
+    if len(old)!=len(prior)or len(new)!=len(current)or set(old)!=set(new)or len(targets)!=len(context['records']):raise ValueError('effective edge inventory differs')
+    fields={'batch_complete_horizontal_centerline_mm','noncompound_main_mapping_id','noncompound_main_plan_edge','noncompound_main_DN_mm','noncompound_main_complete_centerline_mm','noncompound_main_plan_source_sha256','noncompound_main_source_order','noncompound_main_evidence_json'};changes=[];new_lengths=[]
+    for eid,before in old.items():
+        after=new[eid]
+        if eid not in targets:
+            if before!=after:raise ValueError('unrelated effective attributes changed '+eid)
+            continue
+        r=targets[eid]
+        if before.get('diameter_nominal_mm')!=r['nominal_mm']or after.get('diameter_nominal_mm')!=r['nominal_mm']:raise ValueError('independently known DN changed '+eid)
+        value=r['complete_horizontal_centerline_route_mm'];old_complete=before.get('batch_complete_horizontal_centerline_mm');legacy=before.get('crossview_whole_edge_length_mm')
+        if old_complete not in(None,'',value)or after.get('batch_complete_horizontal_centerline_mm')!=value:raise ValueError('complete main metric differs '+eid)
+        known_legacy=legacy not in(None,'')
+        if known_legacy and(before.get('crossview_whole_edge_length_kind')!='floor_plan_horizontal_main_centerline_route'or legacy!=value):raise ValueError('existing typed length conflicts with native centreline '+eid)
+        if not known_legacy and old_complete in(None,''):new_lengths.append(eid)
+        changed={k:dict(before=before.get(k),after=after.get(k))for k in before.keys()|after.keys()if before.get(k)!=after.get(k)}
+        if not set(changed)<=fields:raise ValueError('unrelated target values changed '+eid)
+        changes.append(dict(edge_id=eid,fields=changed))
+    return dict(target_edges=len(targets),complete_main_lengths_added=len(new_lengths),newly_complete_edge_ids=new_lengths,complete_main_lengths_requalified=len(changes),effective_changes=changes,unrelated_values_preserved=True,all_existing_DN_preserved=True,whole_installed_lengths_assigned=0)
+
+
+def refresh(parent,graph,devices,source,legend,comparison,templates,output,port,group_policy=None,main_proof=None,retained_member_proof=None,retained_branch_proof=None,DN_result=None,DN_receipt=None,member_proof=None,extent_proof=None):
+    parent,templates,output=map(lambda p:Path(p).resolve(),(parent,templates,output));archive=output.with_name(output.name+'.zip')
+    if output.exists()or archive.exists():raise FileExistsError(output)
+    if parent==output or parent in output.parents:raise ValueError('new bundle must be outside its parent')
+    manifest,inputs=parent_check(parent,graph,devices,source,legend,comparison);before=artifact_inventory(parent)
+    context=copy.deepcopy(manifest.get('attributeValueContext'));native=load(graph)
+    if native.get('sourceFullPlanBatchAttributes'):
+        if group_policy is None:raise ValueError('complete batch presentation requires its source-pinned group orientation policy')
+        from uniform_path_group_DN_context import from_artifact
+        expected=manifest['sourceHashes'].get('full_batch_plan_policy')
+        fresh=from_artifact(graph,parent/'public/data/graph.json',group_policy,manifest['sourceHashes']['graph'],expected)
+        if context is None:context=fresh
+        else:
+            if any(context.get(k)!=v for k,v in fresh.items()):raise ValueError('qualified prior group context changed')
+            context.update(fresh)
+        inputs['group_policy']=Path(group_policy)
+    if main_proof is None or context is None:raise ValueError('native ordered length proof and qualified group policy required')
+    from anchor_bounded_main_context import from_artifact as main_context,retained_branches
+    from ordered_group_metric_context import retained_member_bindings
+    retained=None
+    if context.get('member_plan_runs'):
+        if retained_member_proof is None:raise ValueError('original member source binding required to retain old values')
+        retained=retained_member_bindings(retained_member_proof,context);inputs['retained_member_proof']=Path(retained_member_proof)
+    if retained_branch_proof is None or DN_result is None or DN_receipt is None:raise ValueError('retained branch proof and qualified local DN inputs required')
+    retained_branch=retained_branches(retained_branch_proof,graph,parent/'public/data/graph.json',context)
+    context['anchor_bounded_mains']=main_context(graph,parent/'public/data/graph.json',main_proof,DN_result,DN_receipt,parent/'public/data/manifest.json',context)
+    inputs.update(retained_branch_proof=Path(retained_branch_proof),DN_result=Path(DN_result),DN_receipt=Path(DN_receipt))
+    inputs['main_proof']=Path(main_proof)
+    if member_proof is None:raise ValueError('native member proof required')
+    from compound_member_attribute_context import from_artifact as member_context
+    context['compound_member_mains']=member_context(graph,parent/'public/data/graph.json',member_proof)
+    inputs['member_proof']=Path(member_proof)
+    if extent_proof is None:raise ValueError('native noncompound extent proof required')
+    from noncompound_main_extent_context import from_artifact as extent_context
+    context['noncompound_main_extents']=extent_context(graph,parent/'public/data/graph.json',extent_proof,context)
+    inputs['extent_proof']=Path(extent_proof)
+    original_inputs={str(p):sha(p)for p in list(inputs.values())+[Path(comparison)]};changes={}
+    for name in ALLOWED:
+        replacement=templates/name
+        if not replacement.is_file():raise ValueError('complete attribute template dependency set required')
+        if manifest['templateHashes'].get(name)!=sha(replacement):changes[name]=sha(replacement)
+    if not changes:raise ValueError('no attribute template change to package')
+    implementation_hash=sha(__file__);shutil.copytree(parent,output,ignore=shutil.ignore_patterns('__pycache__','*.pyc'))
+    prior=effective_attributes(parent)
+    for name in changes:
+        target=output/name;target.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(templates/name,target)
+    if context is not None:
+        provisional=copy.deepcopy(manifest);provisional['attributeValueContext']=context
+        (output/'public/data/manifest.json').write_bytes(encoded(provisional))
+    current=effective_attributes(output);current_hash=hashlib.sha256(encoded(current)).hexdigest()
+    member_delta=check_effective_delta(prior,current,context['noncompound_main_extents'])
+    revised=revised_manifest(manifest,changes,current_hash,implementation_hash,port,context)
+    (output/'public/data/manifest.json').write_bytes(encoded(revised))
+    p=output/'public/index.html';p.write_text(p.read_text(encoding='utf8').replace(manifest['bundleId'],revised['bundleId']),encoding='utf8')
+    shutil.copyfile(output/'quality-gate.json',output/'quality-gate-parent.json');shutil.copyfile(output/'validation-report.json',output/'validation-report-parent.json')
+    owner=Path(__file__).resolve().parents[2]/'build-cad-pipe-topology/scripts'
+    if str(owner)not in sys.path:sys.path.insert(0,str(owner))
+    from source_readability import read_source
+    from validate_visualization import validate_bundle
+    from post_drawing_gate import check
+    doc,preflight=read_source(source);validation=validate_bundle(output,native_doc=doc,native_source_sha256=sha(source))
+    (output/'validation-report.json').write_bytes(encoded(validation));quality=check(output,source)
+    if quality['machine_status']!='PASS':raise ValueError('refreshed artifact fails actual native rendering check')
+    # Every source/graph/CAD/component payload and old annotation stays exact.
+    for name,digest in before.items():
+        if name.startswith(('public/data/','annotations/'))and name!='public/data/manifest.json'and sha(output/name)!=digest:raise ValueError('source data or historical annotation changed')
+    if artifact_inventory(parent)!=before or any(sha(p)!=h for p,h in original_inputs.items()):raise ValueError('parent or native inputs changed during refresh')
+    if any(sha(templates/name)!=h for name,h in changes.items()):raise ValueError('attribute templates changed during refresh')
+    patch=output/'noncompound-main-attribute-refresh';patch.mkdir()
+    (patch/'parent-effective-attributes.json').write_bytes(encoded(prior));(patch/'current-effective-attributes.json').write_bytes(encoded(current))
+    audit=dict(mode=MODE,status='qualified_cached_viewer_attribute_templates_refreshed_actual_native_schema_and_fidelity_passed_browser_pending',
+        parent=str(parent),template_root=str(templates),input_paths={k:str(Path(v).resolve())for k,v in inputs.items()},comparison_path=str(Path(comparison).resolve()),parent_manifest_sha256=before['public/data/manifest.json'],parent_file_hashes=before,
+        original_native_inputs=original_inputs,source_comparison_sha256=sha(comparison),source_preflight=preflight,
+        parent_bundle_id=manifest['bundleId'],bundle_id=revised['bundleId'],changes=changes,
+        canonical_graph_mutated=False,rendered_graph_mutated=False,component_assignments_mutated=False,extent_effective_delta=member_delta,
+        source_reconstruction_performed=False,source_comparison_replayed=False,original_qualified_artifact_reused=True,
+        effective_attribute_hash=current_hash,old_annotations_preserved=True,human_confirmation_inherited=False,
+        uniform_group_DN_child_domains=context['child_DN_domains']if context else 0,bounded_main_context_attributes_added=True,bounded_main_context_edges=context['anchor_bounded_mains']['axis_edges'],retained_branch_context=retained_branch,ordered_plan_metric_children=context['ordered_group_plan_runs']['axis_edges'],retained_member_context=retained,
+        native_schema=validation,actual_native_machine_status=quality['machine_status'],human_accepted=False)
+    (output/'noncompound-main-attribute-refresh.json').write_bytes(encoded(audit))
+    with zipfile.ZipFile(archive,'x',zipfile.ZIP_DEFLATED)as stream:
+        for relative in sorted(inventory(output)):stream.write(output/relative,output.name+'/'+relative)
+    with zipfile.ZipFile(archive)as stream:
+        if stream.testzip()is not None:raise ValueError('refreshed ZIP failed')
+    return audit
+
+def verify(output):
+    output=Path(output).resolve();saved=load(output/'noncompound-main-attribute-refresh.json');manifest=load(output/'public/data/manifest.json')
+    if saved['mode']!=MODE or manifest['attributeTemplateRefresh']['implementation_sha256']!=sha(__file__):raise ValueError('refresh implementation changed')
+    if artifact_inventory(saved['parent'])!=saved['parent_file_hashes']:raise ValueError('qualified parent artifact changed')
+    inputs=saved['input_paths']
+    with tempfile.TemporaryDirectory(prefix='.attribute-refresh-replay-',dir=output.parent)as name:
+        scratch=Path(name).resolve()
+        if not scratch.is_relative_to(output.parent):raise ValueError('replay scratch outside its owned directory')
+        replay=scratch/'viewer'
+        fresh=refresh(saved['parent'],inputs['graph'],inputs['devices'],inputs['main_dxf'],inputs.get('legend_dxf'),saved['comparison_path'],saved['template_root'],replay,manifest['preferredPort'],inputs.get('group_policy'),inputs.get('main_proof'),inputs.get('retained_member_proof'),inputs.get('retained_branch_proof'),inputs.get('DN_result'),inputs.get('DN_receipt'),inputs.get('member_proof'),inputs.get('extent_proof'))
+        if encoded(fresh)!=(output/'noncompound-main-attribute-refresh.json').read_bytes():raise ValueError('independent attribute refresh audit differs')
+        expected={p:h for p,h in artifact_inventory(replay).items()if not p.startswith('annotations/')}
+        actual={p:h for p,h in artifact_inventory(output).items()if not p.startswith('annotations/')}
+        if expected!=actual:raise ValueError('independent refreshed portable bundle bytes differ')
+        for relative,digest in saved['parent_file_hashes'].items():
+            if relative.startswith('annotations/')and sha(output/relative)!=digest:raise ValueError('historical annotations changed')
+    return dict(status='pending',artifact_replay='passed',canonical_graph_mutated=False,source_reconstruction_performed=False,
+        bundle_id=manifest['bundleId'],source_comparison_replayed=False,human_accepted=False,
+        pending=['Inspect effective properties/CSV and native CAD in the actual browser; HIL stays separate'])
+
+def main():
+    p=argparse.ArgumentParser(description=__doc__)
+    names=('parent','graph','devices','source','comparison','templates','output')
+    for key in names:p.add_argument('--'+key,type=Path)
+    p.add_argument('--extent-proof',type=Path);p.add_argument('--member-proof',type=Path);p.add_argument('--main-proof',type=Path);p.add_argument('--retained-member-proof',type=Path);p.add_argument('--retained-branch-proof',type=Path);p.add_argument('--DN-result',type=Path);p.add_argument('--DN-receipt',type=Path);p.add_argument('--legend',type=Path);p.add_argument('--group-policy',type=Path);p.add_argument('--port',type=int);p.add_argument('--verify-output',type=Path);a=p.parse_args()
+    if a.verify_output:
+        if any(getattr(a,k)is not None for k in names+('legend','group_policy','port','main_proof','retained_member_proof','retained_branch_proof','DN_result','DN_receipt','member_proof','extent_proof')):p.error('verification uses its original bound inputs')
+        result=verify(a.verify_output)
+    else:
+        if any(getattr(a,k)is None for k in names+('port',)):p.error('complete parent, native inputs, templates, output and port required')
+        result=refresh(a.parent,a.graph,a.devices,a.source,a.legend,a.comparison,a.templates,a.output,a.port,a.group_policy,a.main_proof,a.retained_member_proof,a.retained_branch_proof,a.DN_result,a.DN_receipt,a.member_proof,a.extent_proof)
+    print(result['status'])
+if __name__=='__main__':main()

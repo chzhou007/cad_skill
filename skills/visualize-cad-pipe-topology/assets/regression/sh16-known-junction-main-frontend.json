@@ -1,0 +1,904 @@
+{
+  "edges": [
+    {
+      "edge_id": "E0178",
+      "start_node_id": "T115",
+      "end_node_id": "T131",
+      "edge_type": "tee_to_tee",
+      "system": "return",
+      "floor_start": 2,
+      "floor_end": 2,
+      "start_x": 2489243.025872019,
+      "start_y": 165990.291625484,
+      "end_x": 2515532.69557954,
+      "end_y": 170954.88565275376,
+      "path_length": 28346.071885292084,
+      "path_points": [
+        [
+          2489243.025872019,
+          165990.291625484
+        ],
+        [
+          2510568.101552269,
+          165990.291625484
+        ],
+        [
+          2515532.69557954,
+          170954.88565275376
+        ]
+      ],
+      "attribute_paths": [
+        [
+          [
+            2489243.025872019,
+            165990.291625484
+          ],
+          [
+            2510568.101552269,
+            165990.291625484
+          ],
+          [
+            2515532.69557954,
+            170954.88565275376
+          ]
+        ]
+      ],
+      "device_label": null,
+      "source_insert_handle": null,
+      "connection_mode": "continuous_original_cad_pipe",
+      "start_port_id": null,
+      "end_port_id": null,
+      "equipment_inventory": [
+        {
+          "equipment_type": "球阀",
+          "count": 2,
+          "device_names": [
+            "球阀-BV0188",
+            "球阀-BV0214"
+          ]
+        }
+      ],
+      "anchored_floor_main_attributes": {
+        "mapping_id": "SH16-F2-KNOWN-T-0003",
+        "floor": 2,
+        "system": "return",
+        "axis_edge": "E0178",
+        "plan_edges": [
+          "E0046"
+        ],
+        "iso_edges": [
+          "E0178"
+        ],
+        "status": "source_checked_known_junction_main_attributes_human_pending",
+        "scope": "native_same_floor_T_to_T_main",
+        "scope_paths": [
+          [
+            [
+              2489243.025872019,
+              165990.291625484
+            ],
+            [
+              2510568.101552269,
+              165990.291625484
+            ],
+            [
+              2515532.69557954,
+              170954.88565275376
+            ]
+          ]
+        ],
+        "nominal_mm": 200.0,
+        "diameter_evidence": {
+          "edge_id": "E0046",
+          "system": "return",
+          "nominal_mm": 200.0,
+          "status": "direct_plan_DN",
+          "lineage": [
+            {
+              "nominal_mm": 200.0,
+              "evidence": [
+                {
+                  "evidence_id": "source:B674",
+                  "edge_path": [
+                    "E0046"
+                  ],
+                  "through_T_ids": []
+                }
+              ]
+            }
+          ],
+          "scope_paths": [
+            [
+              [
+                2323480.77203877,
+                73789.36496305223
+              ],
+              [
+                2347362.640006672,
+                73789.36496305223
+              ],
+              [
+                2347362.640006672,
+                77169.09965398676
+              ]
+            ]
+          ],
+          "scope": "source_checked_native_through_plan_pipe_paths_only",
+          "human_accepted": false
+        },
+        "horizontal_projection": {
+          "status": "native_plan_horizontal_projection_partial_length",
+          "value_mm": 27261.602658836753,
+          "pieces": [
+            {
+              "plan_edge": "E0046",
+              "path_index": 0,
+              "segment_index": 0,
+              "source_line_handle": "B660",
+              "points": [
+                [
+                  2323480.77203877,
+                  73789.36496305223
+                ],
+                [
+                  2347362.640006672,
+                  73789.36496305223
+                ]
+              ],
+              "length_mm": 23881.867967902217
+            },
+            {
+              "plan_edge": "E0046",
+              "path_index": 0,
+              "segment_index": 1,
+              "source_line_handle": "B662",
+              "points": [
+                [
+                  2347362.640006672,
+                  73789.36496305223
+                ],
+                [
+                  2347362.640006672,
+                  77169.09965398676
+                ]
+              ],
+              "length_mm": 3379.734690934536
+            }
+          ],
+          "installed_whole_edge_length_mm": null,
+          "unshown_connection_length_mm": null,
+          "scope": "floor-plan XY pipe projection only; no axis drawing lengths or omitted connectors added"
+        },
+        "inline_interiors_unknown": false,
+        "complete_horizontal_centerline_route_mm": 27261.602658836753,
+        "pipe_net_cut_length_mm": null,
+        "installed_whole_edge_length_mm": null,
+        "physical_ports_verified": false,
+        "human_accepted": false,
+        "related_HIL_confirmation_inherited": false,
+        "source_sha256": {
+          "plan": "f38158cef1d9adfa8da14a05da735a42d3ee683d675665899701855c356a2a2b",
+          "iso": "46e141850450148aca1951b76b249298a45c32cc12e4f21474f2bb580fcd677b"
+        },
+        "local_graph_sha256": {
+          "plan": "48c2723c20dc95ebbe38f702abc44c08b93b13d5092cde58c7a84f19b11338bc",
+          "iso": "cd850f9eb7f20186b14ffc9e49309cc090c7aff946ab3bd50b669d8c84cfef0d"
+        },
+        "mapping_sha256": "018d1332e7f7bc1b3ef7edfbe420e2356b7bf975f3c3590d4aa583419044ee59",
+        "attribute_scope_sha256": "891e9e4f634b7395a3c3115ee3a6a4d54d0367f14db0b172e651c32d68fe8f6a",
+        "parent_graph_sha256": "385e5f46dc6ebd49d229aba8e252bc060cf1fee1b7b085e948b095c5e4722ff6"
+      }
+    },
+    {
+      "edge_id": "E0191",
+      "start_node_id": "T139",
+      "end_node_id": "T164",
+      "edge_type": "tee_to_tee",
+      "system": "return",
+      "floor_start": 2,
+      "floor_end": 2,
+      "start_x": 2517074.685941072,
+      "start_y": 172496.87601428712,
+      "end_x": 2524233.631213801,
+      "end_y": 175919.47968002356,
+      "path_length": 8576.634129704786,
+      "path_points": [
+        [
+          2517074.685941072,
+          172496.87601428712
+        ],
+        [
+          2520497.289606808,
+          175919.4796800235
+        ],
+        [
+          2524233.631213801,
+          175919.47968002356
+        ]
+      ],
+      "attribute_paths": [
+        [
+          [
+            2517074.685941072,
+            172496.87601428712
+          ],
+          [
+            2520497.289606808,
+            175919.4796800235
+          ],
+          [
+            2524233.631213801,
+            175919.47968002356
+          ]
+        ]
+      ],
+      "device_label": null,
+      "source_insert_handle": null,
+      "connection_mode": "continuous_original_cad_pipe",
+      "start_port_id": null,
+      "end_port_id": null,
+      "equipment_inventory": [
+        {
+          "equipment_type": "球阀",
+          "count": 2,
+          "device_names": [
+            "球阀-BV0238",
+            "球阀-BV0278"
+          ]
+        },
+        {
+          "equipment_type": "金属软接",
+          "count": 2,
+          "device_names": [
+            "金属软接-MFJ0011",
+            "金属软接-MFJ0012"
+          ]
+        }
+      ],
+      "anchored_floor_main_attributes": {
+        "mapping_id": "SH16-F2-KNOWN-T-0001",
+        "floor": 2,
+        "system": "return",
+        "axis_edge": "E0191",
+        "plan_edges": [
+          "E-EQUIP-B8B0"
+        ],
+        "iso_edges": [
+          "E0191"
+        ],
+        "status": "source_checked_known_junction_main_attributes_human_pending",
+        "scope": "native_same_floor_T_to_T_main",
+        "scope_paths": [
+          [
+            [
+              2517074.685941072,
+              172496.87601428712
+            ],
+            [
+              2520497.289606808,
+              175919.4796800235
+            ],
+            [
+              2524233.631213801,
+              175919.47968002356
+            ]
+          ]
+        ],
+        "nominal_mm": 200.0,
+        "diameter_evidence": {
+          "edge_id": "E-EQUIP-B8B0",
+          "system": "return",
+          "nominal_mm": 200.0,
+          "status": "direct_plan_DN",
+          "lineage": [
+            {
+              "nominal_mm": 200.0,
+              "evidence": [
+                {
+                  "evidence_id": "source:B859",
+                  "edge_path": [
+                    "E-EQUIP-B8B0"
+                  ],
+                  "through_T_ids": []
+                }
+              ]
+            }
+          ],
+          "scope_paths": [
+            [
+              [
+                2352252.602498967,
+                94469.36497620471
+              ],
+              [
+                2350639.41774623,
+                94469.36497620471
+              ]
+            ],
+            [
+              [
+                2347362.640006672,
+                79719.09965398688
+              ],
+              [
+                2347362.640006672,
+                94469.36497620471
+              ]
+            ],
+            [
+              [
+                2347362.640006672,
+                94469.36497620471
+              ],
+              [
+                2347860.138477181,
+                94469.36497620471
+              ]
+            ],
+            [
+              [
+                2348160.138477181,
+                94469.36497620471
+              ],
+              [
+                2350339.41774623,
+                94469.36497620471
+              ]
+            ]
+          ],
+          "scope": "source_checked_native_through_plan_pipe_paths_only",
+          "human_accepted": false
+        },
+        "horizontal_projection": {
+          "status": "native_plan_pipe_XY_inline_interiors_unknown",
+          "value_mm": 19040.22781451291,
+          "pieces": [
+            {
+              "plan_edge": "E-EQUIP-B8B0",
+              "path_index": 0,
+              "segment_index": 0,
+              "source_line_handle": "B666",
+              "points": [
+                [
+                  2352252.602498967,
+                  94469.36497620471
+                ],
+                [
+                  2350639.41774623,
+                  94469.36497620471
+                ]
+              ],
+              "length_mm": 1613.184752737172
+            },
+            {
+              "plan_edge": "E-EQUIP-B8B0",
+              "path_index": 1,
+              "segment_index": 0,
+              "source_line_handle": "B662",
+              "points": [
+                [
+                  2347362.640006672,
+                  79719.09965398688
+                ],
+                [
+                  2347362.640006672,
+                  94469.36497620471
+                ]
+              ],
+              "length_mm": 14750.265322217834
+            },
+            {
+              "plan_edge": "E-EQUIP-B8B0",
+              "path_index": 2,
+              "segment_index": 0,
+              "source_line_handle": "B668",
+              "points": [
+                [
+                  2347362.640006672,
+                  94469.36497620471
+                ],
+                [
+                  2347860.138477181,
+                  94469.36497620471
+                ]
+              ],
+              "length_mm": 497.49847050895914
+            },
+            {
+              "plan_edge": "E-EQUIP-B8B0",
+              "path_index": 3,
+              "segment_index": 0,
+              "source_line_handle": "B667",
+              "points": [
+                [
+                  2348160.138477181,
+                  94469.36497620471
+                ],
+                [
+                  2350339.41774623,
+                  94469.36497620471
+                ]
+              ],
+              "length_mm": 2179.279269048944
+            }
+          ],
+          "installed_whole_edge_length_mm": null,
+          "unshown_connection_length_mm": null,
+          "inline_joint_interior_length_mm": null,
+          "joint_graphic_spans_added": false,
+          "scope": "native source-drawn floor-plan pipe XY only; all inline marker spans excluded"
+        },
+        "inline_interiors_unknown": true,
+        "complete_horizontal_centerline_route_mm": null,
+        "pipe_net_cut_length_mm": null,
+        "installed_whole_edge_length_mm": null,
+        "physical_ports_verified": false,
+        "human_accepted": false,
+        "related_HIL_confirmation_inherited": false,
+        "source_sha256": {
+          "plan": "f38158cef1d9adfa8da14a05da735a42d3ee683d675665899701855c356a2a2b",
+          "iso": "46e141850450148aca1951b76b249298a45c32cc12e4f21474f2bb580fcd677b"
+        },
+        "local_graph_sha256": {
+          "plan": "48c2723c20dc95ebbe38f702abc44c08b93b13d5092cde58c7a84f19b11338bc",
+          "iso": "cd850f9eb7f20186b14ffc9e49309cc090c7aff946ab3bd50b669d8c84cfef0d"
+        },
+        "mapping_sha256": "018d1332e7f7bc1b3ef7edfbe420e2356b7bf975f3c3590d4aa583419044ee59",
+        "attribute_scope_sha256": "891e9e4f634b7395a3c3115ee3a6a4d54d0367f14db0b172e651c32d68fe8f6a",
+        "parent_graph_sha256": "385e5f46dc6ebd49d229aba8e252bc060cf1fee1b7b085e948b095c5e4722ff6"
+      }
+    },
+    {
+      "edge_id": "E0298",
+      "start_node_id": "T118",
+      "end_node_id": "T132",
+      "edge_type": "tee_to_tee",
+      "system": "supply",
+      "floor_start": 2,
+      "floor_end": 2,
+      "start_x": 2489864.107059561,
+      "start_y": 166390.291625484,
+      "end_x": 2515142.685061178,
+      "end_y": 171130.56055934218,
+      "path_length": 27242.061683316868,
+      "path_points": [
+        [
+          2489864.107059561,
+          166390.291625484
+        ],
+        [
+          2510402.41612732,
+          166390.291625484
+        ],
+        [
+          2515142.685061178,
+          171130.56055934218
+        ]
+      ],
+      "attribute_paths": [
+        [
+          [
+            2489864.107059561,
+            166390.291625484
+          ],
+          [
+            2510402.41612732,
+            166390.291625484
+          ],
+          [
+            2515142.685061178,
+            171130.56055934218
+          ]
+        ]
+      ],
+      "device_label": null,
+      "source_insert_handle": null,
+      "connection_mode": "continuous_original_cad_pipe",
+      "start_port_id": null,
+      "end_port_id": null,
+      "equipment_inventory": [
+        {
+          "equipment_type": "球阀",
+          "count": 2,
+          "device_names": [
+            "球阀-BV0193",
+            "球阀-BV0215"
+          ]
+        }
+      ],
+      "anchored_floor_main_attributes": {
+        "mapping_id": "SH16-F2-KNOWN-T-0004",
+        "floor": 2,
+        "system": "supply",
+        "axis_edge": "E0298",
+        "plan_edges": [
+          "E0129"
+        ],
+        "iso_edges": [
+          "E0298"
+        ],
+        "status": "source_checked_known_junction_main_attributes_human_pending",
+        "scope": "native_same_floor_T_to_T_main",
+        "scope_paths": [
+          [
+            [
+              2489864.107059561,
+              166390.291625484
+            ],
+            [
+              2510402.41612732,
+              166390.291625484
+            ],
+            [
+              2515142.685061178,
+              171130.56055934218
+            ]
+          ]
+        ],
+        "nominal_mm": 200.0,
+        "diameter_evidence": {
+          "edge_id": "E0129",
+          "system": "supply",
+          "nominal_mm": 200.0,
+          "status": "direct_plan_DN",
+          "lineage": [
+            {
+              "nominal_mm": 200.0,
+              "evidence": [
+                {
+                  "evidence_id": "source:B673",
+                  "edge_path": [
+                    "E0129"
+                  ],
+                  "through_T_ids": []
+                }
+              ]
+            }
+          ],
+          "scope_paths": [
+            [
+              [
+                2323680.77203877,
+                74239.36496305223
+              ],
+              [
+                2346912.640006672,
+                74239.36496305223
+              ],
+              [
+                2346912.640006672,
+                77469.09965398676
+              ]
+            ]
+          ],
+          "scope": "source_checked_native_through_plan_pipe_paths_only",
+          "human_accepted": false
+        },
+        "horizontal_projection": {
+          "status": "native_plan_horizontal_projection_partial_length",
+          "value_mm": 26461.602658836753,
+          "pieces": [
+            {
+              "plan_edge": "E0129",
+              "path_index": 0,
+              "segment_index": 0,
+              "source_line_handle": "B65F",
+              "points": [
+                [
+                  2323680.77203877,
+                  74239.36496305223
+                ],
+                [
+                  2346912.640006672,
+                  74239.36496305223
+                ]
+              ],
+              "length_mm": 23231.867967902217
+            },
+            {
+              "plan_edge": "E0129",
+              "path_index": 0,
+              "segment_index": 1,
+              "source_line_handle": "B661",
+              "points": [
+                [
+                  2346912.640006672,
+                  74239.36496305223
+                ],
+                [
+                  2346912.640006672,
+                  77469.09965398676
+                ]
+              ],
+              "length_mm": 3229.734690934536
+            }
+          ],
+          "installed_whole_edge_length_mm": null,
+          "unshown_connection_length_mm": null,
+          "scope": "floor-plan XY pipe projection only; no axis drawing lengths or omitted connectors added"
+        },
+        "inline_interiors_unknown": false,
+        "complete_horizontal_centerline_route_mm": 26461.602658836753,
+        "pipe_net_cut_length_mm": null,
+        "installed_whole_edge_length_mm": null,
+        "physical_ports_verified": false,
+        "human_accepted": false,
+        "related_HIL_confirmation_inherited": false,
+        "source_sha256": {
+          "plan": "f38158cef1d9adfa8da14a05da735a42d3ee683d675665899701855c356a2a2b",
+          "iso": "46e141850450148aca1951b76b249298a45c32cc12e4f21474f2bb580fcd677b"
+        },
+        "local_graph_sha256": {
+          "plan": "48c2723c20dc95ebbe38f702abc44c08b93b13d5092cde58c7a84f19b11338bc",
+          "iso": "cd850f9eb7f20186b14ffc9e49309cc090c7aff946ab3bd50b669d8c84cfef0d"
+        },
+        "mapping_sha256": "018d1332e7f7bc1b3ef7edfbe420e2356b7bf975f3c3590d4aa583419044ee59",
+        "attribute_scope_sha256": "891e9e4f634b7395a3c3115ee3a6a4d54d0367f14db0b172e651c32d68fe8f6a",
+        "parent_graph_sha256": "385e5f46dc6ebd49d229aba8e252bc060cf1fee1b7b085e948b095c5e4722ff6"
+      }
+    },
+    {
+      "edge_id": "E0312",
+      "start_node_id": "T141",
+      "end_node_id": "T175",
+      "edge_type": "tee_to_tee",
+      "system": "supply",
+      "floor_start": 2,
+      "floor_end": 2,
+      "start_x": 2516684.67542271,
+      "start_y": 172672.55092087554,
+      "end_x": 2523964.369830748,
+      "end_y": 176319.47968002356,
+      "path_length": 8790.301761085353,
+      "path_points": [
+        [
+          2516684.67542271,
+          172672.55092087554
+        ],
+        [
+          2520331.604181859,
+          176319.4796800235
+        ],
+        [
+          2523964.369830748,
+          176319.47968002356
+        ]
+      ],
+      "attribute_paths": [
+        [
+          [
+            2516684.67542271,
+            172672.55092087554
+          ],
+          [
+            2520331.604181859,
+            176319.4796800235
+          ],
+          [
+            2523964.369830748,
+            176319.47968002356
+          ]
+        ]
+      ],
+      "device_label": null,
+      "source_insert_handle": null,
+      "connection_mode": "continuous_original_cad_pipe",
+      "start_port_id": null,
+      "end_port_id": null,
+      "equipment_inventory": [
+        {
+          "equipment_type": "球阀",
+          "count": 2,
+          "device_names": [
+            "球阀-BV0243",
+            "球阀-BV0291"
+          ]
+        },
+        {
+          "equipment_type": "金属软接",
+          "count": 2,
+          "device_names": [
+            "金属软接-MFJ0013",
+            "金属软接-MFJ0014"
+          ]
+        }
+      ],
+      "anchored_floor_main_attributes": {
+        "mapping_id": "SH16-F2-KNOWN-T-0002",
+        "floor": 2,
+        "system": "supply",
+        "axis_edge": "E0312",
+        "plan_edges": [
+          "E-EQUIP-B8B1"
+        ],
+        "iso_edges": [
+          "E0312"
+        ],
+        "status": "source_checked_known_junction_main_attributes_human_pending",
+        "scope": "native_same_floor_T_to_T_main",
+        "scope_paths": [
+          [
+            [
+              2516684.67542271,
+              172672.55092087554
+            ],
+            [
+              2520331.604181859,
+              176319.4796800235
+            ],
+            [
+              2523964.369830748,
+              176319.47968002356
+            ]
+          ]
+        ],
+        "nominal_mm": 200.0,
+        "diameter_evidence": {
+          "edge_id": "E-EQUIP-B8B1",
+          "system": "supply",
+          "nominal_mm": 200.0,
+          "status": "direct_plan_DN",
+          "lineage": [
+            {
+              "nominal_mm": 200.0,
+              "evidence": [
+                {
+                  "evidence_id": "source:B858",
+                  "edge_path": [
+                    "E-EQUIP-B8B1"
+                  ],
+                  "through_T_ids": []
+                }
+              ]
+            }
+          ],
+          "scope_paths": [
+            [
+              [
+                2351952.602498967,
+                94919.36497620471
+              ],
+              [
+                2350639.41774623,
+                94919.36497620471
+              ]
+            ],
+            [
+              [
+                2346912.640006672,
+                80019.09965398688
+              ],
+              [
+                2346912.640006672,
+                94919.36497620471
+              ]
+            ],
+            [
+              [
+                2346912.640006672,
+                94919.36497620471
+              ],
+              [
+                2347860.138477181,
+                94919.36497620471
+              ]
+            ],
+            [
+              [
+                2348160.138477181,
+                94919.36497620471
+              ],
+              [
+                2350339.41774623,
+                94919.36497620471
+              ]
+            ]
+          ],
+          "scope": "source_checked_native_through_plan_pipe_paths_only",
+          "human_accepted": false
+        },
+        "horizontal_projection": {
+          "status": "native_plan_pipe_XY_inline_interiors_unknown",
+          "value_mm": 19340.22781451291,
+          "pieces": [
+            {
+              "plan_edge": "E-EQUIP-B8B1",
+              "path_index": 0,
+              "segment_index": 0,
+              "source_line_handle": "B663",
+              "points": [
+                [
+                  2351952.602498967,
+                  94919.36497620471
+                ],
+                [
+                  2350639.41774623,
+                  94919.36497620471
+                ]
+              ],
+              "length_mm": 1313.184752737172
+            },
+            {
+              "plan_edge": "E-EQUIP-B8B1",
+              "path_index": 1,
+              "segment_index": 0,
+              "source_line_handle": "B661",
+              "points": [
+                [
+                  2346912.640006672,
+                  80019.09965398688
+                ],
+                [
+                  2346912.640006672,
+                  94919.36497620471
+                ]
+              ],
+              "length_mm": 14900.265322217834
+            },
+            {
+              "plan_edge": "E-EQUIP-B8B1",
+              "path_index": 2,
+              "segment_index": 0,
+              "source_line_handle": "B665",
+              "points": [
+                [
+                  2346912.640006672,
+                  94919.36497620471
+                ],
+                [
+                  2347860.138477181,
+                  94919.36497620471
+                ]
+              ],
+              "length_mm": 947.4984705089591
+            },
+            {
+              "plan_edge": "E-EQUIP-B8B1",
+              "path_index": 3,
+              "segment_index": 0,
+              "source_line_handle": "B664",
+              "points": [
+                [
+                  2348160.138477181,
+                  94919.36497620471
+                ],
+                [
+                  2350339.41774623,
+                  94919.36497620471
+                ]
+              ],
+              "length_mm": 2179.279269048944
+            }
+          ],
+          "installed_whole_edge_length_mm": null,
+          "unshown_connection_length_mm": null,
+          "inline_joint_interior_length_mm": null,
+          "joint_graphic_spans_added": false,
+          "scope": "native source-drawn floor-plan pipe XY only; all inline marker spans excluded"
+        },
+        "inline_interiors_unknown": true,
+        "complete_horizontal_centerline_route_mm": null,
+        "pipe_net_cut_length_mm": null,
+        "installed_whole_edge_length_mm": null,
+        "physical_ports_verified": false,
+        "human_accepted": false,
+        "related_HIL_confirmation_inherited": false,
+        "source_sha256": {
+          "plan": "f38158cef1d9adfa8da14a05da735a42d3ee683d675665899701855c356a2a2b",
+          "iso": "46e141850450148aca1951b76b249298a45c32cc12e4f21474f2bb580fcd677b"
+        },
+        "local_graph_sha256": {
+          "plan": "48c2723c20dc95ebbe38f702abc44c08b93b13d5092cde58c7a84f19b11338bc",
+          "iso": "cd850f9eb7f20186b14ffc9e49309cc090c7aff946ab3bd50b669d8c84cfef0d"
+        },
+        "mapping_sha256": "018d1332e7f7bc1b3ef7edfbe420e2356b7bf975f3c3590d4aa583419044ee59",
+        "attribute_scope_sha256": "891e9e4f634b7395a3c3115ee3a6a4d54d0367f14db0b172e651c32d68fe8f6a",
+        "parent_graph_sha256": "385e5f46dc6ebd49d229aba8e252bc060cf1fee1b7b085e948b095c5e4722ff6"
+      }
+    }
+  ],
+  "source_parent_sha256": "385e5f46dc6ebd49d229aba8e252bc060cf1fee1b7b085e948b095c5e4722ff6",
+  "mapping_sha256": "018d1332e7f7bc1b3ef7edfbe420e2356b7bf975f3c3590d4aa583419044ee59",
+  "attributes_sha256": "891e9e4f634b7395a3c3115ee3a6a4d54d0367f14db0b172e651c32d68fe8f6a",
+  "fixture_kind": "actual_pure_fusion_output_consumer_contract_not_complete_native_batch_acceptance"
+}

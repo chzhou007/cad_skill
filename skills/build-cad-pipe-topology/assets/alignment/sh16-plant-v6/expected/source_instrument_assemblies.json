@@ -1,0 +1,490 @@
+[
+  {
+    "id": "INSTR-23CFB",
+    "label": "Differential Pressure Assembly",
+    "source_kind": "source_measurement_assembly",
+    "source_handles": [
+      "23CF3",
+      "23CF4",
+      "23CF5",
+      "23CF6",
+      "23CF7",
+      "23CF8",
+      "23CF9",
+      "23CFA",
+      "23CFB",
+      "23CFC",
+      "23CFD",
+      "23CFE",
+      "23CFF",
+      "23D00",
+      "23D02",
+      "23D03",
+      "23D04",
+      "23D05",
+      "23D06",
+      "23D07"
+    ],
+    "native_capillary_handles": [
+      "23CF3",
+      "23CF4",
+      "23CF5",
+      "23CF6",
+      "23D06",
+      "23D07"
+    ],
+    "component_handles": [
+      "23CF7",
+      "23CFD"
+    ],
+    "attachment_points": [
+      [
+        2211022.403292948,
+        299278.6371539737
+      ],
+      [
+        2211022.403292949,
+        296632.1430671651
+      ]
+    ],
+    "display_center": [
+      2212192.630644464,
+      298020.9533968603
+    ],
+    "hydraulic_connection": false,
+    "rule": "complete_DPS_circle_and_tag_two_main_taps_two_body_contacts_all_gaps_at_native_valves",
+    "related_edge_ids": [
+      "E0106",
+      "E0108"
+    ]
+  },
+  {
+    "id": "INSTR-23D10",
+    "label": "Differential Pressure Assembly",
+    "source_kind": "source_measurement_assembly",
+    "source_handles": [
+      "23D08",
+      "23D09",
+      "23D0A",
+      "23D0B",
+      "23D0C",
+      "23D0D",
+      "23D0E",
+      "23D0F",
+      "23D10",
+      "23D11",
+      "23D12",
+      "23D13",
+      "23D14",
+      "23D15",
+      "23D17",
+      "23D18",
+      "23D19",
+      "23D1A",
+      "23D1B",
+      "23D1C"
+    ],
+    "native_capillary_handles": [
+      "23D08",
+      "23D09",
+      "23D0A",
+      "23D0B",
+      "23D1B",
+      "23D1C"
+    ],
+    "component_handles": [
+      "23D0C",
+      "23D12"
+    ],
+    "attachment_points": [
+      [
+        2230162.485342422,
+        299278.6371539737
+      ],
+      [
+        2230162.485342423,
+        296632.1430671651
+      ]
+    ],
+    "display_center": [
+      2231332.712693938,
+      298020.9533968603
+    ],
+    "hydraulic_connection": false,
+    "rule": "complete_DPS_circle_and_tag_two_main_taps_two_body_contacts_all_gaps_at_native_valves",
+    "related_edge_ids": [
+      "E0110",
+      "E0119"
+    ]
+  },
+  {
+    "id": "INSTR-23D21",
+    "label": "Differential Pressure Assembly",
+    "source_kind": "source_measurement_assembly",
+    "source_handles": [
+      "23D1D",
+      "23D1E",
+      "23D1F",
+      "23D20",
+      "23D21",
+      "23D22",
+      "23D24",
+      "23D25",
+      "23D26",
+      "23D27",
+      "23D28",
+      "23D29",
+      "23DBB",
+      "23DBC"
+    ],
+    "native_capillary_handles": [
+      "23D1D",
+      "23D1E",
+      "23D1F",
+      "23D20",
+      "23D28",
+      "23D29"
+    ],
+    "component_handles": [
+      "23DBB",
+      "23DBC"
+    ],
+    "attachment_points": [
+      [
+        2217089.368251018,
+        307219.5922928851
+      ],
+      [
+        2216300.724645135,
+        308477.2760499984
+      ]
+    ],
+    "display_center": [
+      2218219.674105911,
+      307219.5922928851
+    ],
+    "hydraulic_connection": false,
+    "rule": "complete_DPS_circle_and_tag_two_main_taps_two_body_contacts_all_gaps_at_native_valves",
+    "related_edge_ids": [
+      "E0104",
+      "E0105"
+    ]
+  },
+  {
+    "id": "INSTR-23D2E",
+    "label": "Differential Pressure Assembly",
+    "source_kind": "source_measurement_assembly",
+    "source_handles": [
+      "23D2A",
+      "23D2B",
+      "23D2C",
+      "23D2D",
+      "23D2E",
+      "23D2F",
+      "23D31",
+      "23D32",
+      "23D33",
+      "23D34",
+      "23D35",
+      "23D36",
+      "23DBD",
+      "23DBE"
+    ],
+    "native_capillary_handles": [
+      "23D2A",
+      "23D2B",
+      "23D2C",
+      "23D2D",
+      "23D35",
+      "23D36"
+    ],
+    "component_handles": [
+      "23DBD",
+      "23DBE"
+    ],
+    "attachment_points": [
+      [
+        2236229.450300493,
+        307219.5922928851
+      ],
+      [
+        2235440.806694609,
+        308477.2760499984
+      ]
+    ],
+    "display_center": [
+      2237359.756155385,
+      307219.5922928851
+    ],
+    "hydraulic_connection": false,
+    "rule": "complete_DPS_circle_and_tag_two_main_taps_two_body_contacts_all_gaps_at_native_valves",
+    "related_edge_ids": [
+      "E0117",
+      "E0118"
+    ]
+  },
+  {
+    "id": "INSTR-23E5D",
+    "label": "Differential Pressure Assembly",
+    "source_kind": "source_measurement_assembly",
+    "source_handles": [
+      "23E55",
+      "23E56",
+      "23E57",
+      "23E58",
+      "23E59",
+      "23E5A",
+      "23E5B",
+      "23E5C",
+      "23E5D",
+      "23E5E",
+      "23E5F",
+      "23E60",
+      "23E61",
+      "23E62",
+      "23E64",
+      "23E65",
+      "23E66",
+      "23E67",
+      "23E68",
+      "23E69"
+    ],
+    "native_capillary_handles": [
+      "23E55",
+      "23E56",
+      "23E57",
+      "23E58",
+      "23E68",
+      "23E69"
+    ],
+    "component_handles": [
+      "23E59",
+      "23E5F"
+    ],
+    "attachment_points": [
+      [
+        2248230.6013015,
+        299278.6371539643
+      ],
+      [
+        2248230.601301501,
+        296632.1430671558
+      ]
+    ],
+    "display_center": [
+      2249400.828653016,
+      298020.953396851
+    ],
+    "hydraulic_connection": false,
+    "rule": "complete_DPS_circle_and_tag_two_main_taps_two_body_contacts_all_gaps_at_native_valves",
+    "related_edge_ids": [
+      "E0112",
+      "E0122"
+    ]
+  },
+  {
+    "id": "INSTR-23E6E",
+    "label": "Differential Pressure Assembly",
+    "source_kind": "source_measurement_assembly",
+    "source_handles": [
+      "23E6A",
+      "23E6B",
+      "23E6C",
+      "23E6D",
+      "23E6E",
+      "23E6F",
+      "23E71",
+      "23E72",
+      "23E73",
+      "23E74",
+      "23E75",
+      "23E76",
+      "23E88",
+      "23E89"
+    ],
+    "native_capillary_handles": [
+      "23E6A",
+      "23E6B",
+      "23E6C",
+      "23E6D",
+      "23E75",
+      "23E76"
+    ],
+    "component_handles": [
+      "23E88",
+      "23E89"
+    ],
+    "attachment_points": [
+      [
+        2254297.56625957,
+        307219.5922928758
+      ],
+      [
+        2253508.922653687,
+        308477.2760499891
+      ]
+    ],
+    "display_center": [
+      2255427.872114463,
+      307219.5922928758
+    ],
+    "hydraulic_connection": false,
+    "rule": "complete_DPS_circle_and_tag_two_main_taps_two_body_contacts_all_gaps_at_native_valves",
+    "related_edge_ids": [
+      "E0120",
+      "E0121"
+    ]
+  },
+  {
+    "id": "INSTR-PANEL-23ACE",
+    "label": "Differential Pressure Panel",
+    "source_kind": "source_measurement_panel",
+    "source_handles": [
+      "23ACC",
+      "23ACD",
+      "23ACE",
+      "23E97",
+      "23E98",
+      "23E99",
+      "23E9A",
+      "23E9B",
+      "23E9C",
+      "23E9D",
+      "23E9E",
+      "23E9F",
+      "23EA0",
+      "23EA1",
+      "23EA2",
+      "23EA3",
+      "23EA4",
+      "23EA5",
+      "23EA6",
+      "23EA7",
+      "23EA8",
+      "23EA9",
+      "23EAA",
+      "23EAB",
+      "23EAC",
+      "23EAD",
+      "23EAE",
+      "23EAF",
+      "23EB0",
+      "23EB1",
+      "23EB2",
+      "23EB3",
+      "23EB4",
+      "23EB5",
+      "23EB6",
+      "23EB7",
+      "23EB8",
+      "23EB9",
+      "23EBA",
+      "23EBB",
+      "23EBC",
+      "23EBD"
+    ],
+    "native_capillary_handles": [],
+    "component_handles": [
+      "23E9B",
+      "23EA1",
+      "23EA9",
+      "23EAF"
+    ],
+    "attachment_points": [
+      [
+        2217252.226757999,
+        338177.6794548256
+      ],
+      [
+        2215219.955838646,
+        338163.1909369647
+      ]
+    ],
+    "display_center": [
+      2216234.451964018,
+      337341.3327564223
+    ],
+    "hydraulic_connection": false,
+    "rule": "closed_native_panel_two_DPS_two_DPIT_two_independent_typed_riser_terminals",
+    "related_edge_ids": [
+      "E0113",
+      "E0116"
+    ]
+  },
+  {
+    "id": "INSTR-PANEL-23EBE",
+    "label": "Differential Pressure Panel",
+    "source_kind": "source_measurement_panel",
+    "source_handles": [
+      "23AD6",
+      "23AD7",
+      "23EBE",
+      "23EBF",
+      "23EC0",
+      "23EC1",
+      "23EC2",
+      "23EC3",
+      "23EC4",
+      "23EC5",
+      "23EC6",
+      "23EC7",
+      "23EC8",
+      "23EC9",
+      "23ECA",
+      "23ECB",
+      "23ECC",
+      "23ECD",
+      "23ECE",
+      "23ECF",
+      "23ED0",
+      "23ED1",
+      "23ED2",
+      "23ED3",
+      "23ED4",
+      "23ED5",
+      "23ED6",
+      "23ED7",
+      "23ED8",
+      "23ED9",
+      "23EDA",
+      "23EDB",
+      "23EDC",
+      "23EDD",
+      "23EDE",
+      "23EDF",
+      "23EE0",
+      "23EE1",
+      "23EE2",
+      "23EE3",
+      "23EE4",
+      "23EE5"
+    ],
+    "native_capillary_handles": [],
+    "component_handles": [
+      "23EC3",
+      "23EC9",
+      "23ED1",
+      "23ED7"
+    ],
+    "attachment_points": [
+      [
+        2252159.351742063,
+        338177.6794548265
+      ],
+      [
+        2254191.622661415,
+        338163.1909369657
+      ]
+    ],
+    "display_center": [
+      2253173.847867435,
+      337341.8897163307
+    ],
+    "hydraulic_connection": false,
+    "rule": "closed_native_panel_two_DPS_two_DPIT_two_independent_typed_riser_terminals",
+    "related_edge_ids": [
+      "E0114",
+      "E0115"
+    ]
+  }
+]

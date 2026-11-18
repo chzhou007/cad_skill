@@ -1,0 +1,6 @@
+{
+  "code": "DBALANCE",
+  "label": "Balancing Valve",
+  "source_names": ["balancing_valve", "平衡阀"],
+  "symbol": {"drawing": "main", "block": "平衡阀"}
+}

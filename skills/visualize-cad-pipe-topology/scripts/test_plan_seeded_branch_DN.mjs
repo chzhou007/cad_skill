@@ -1,0 +1,19 @@
+import assert from 'node:assert/strict';
+import {checkedPlanBranchDN,planBranchDNCsvValues,planBranchDNProperties} from '../assets/viewer/public/plan-seeded-branch-DN.js';
+const h='a'.repeat(64),edge={edge_id:'E',system:'supply',floor_start:2,floor_end:2,start_node_id:'T',end_node_id:'V',attribute_paths:[[[0,0],[0,-10],[20,-30],[21,-31]]]};
+const vertical={edge_id:'E',path_index:0,segment_index:0,scope_points:[[0,0],[0,-10]],nominal_mm:200,system:'supply',axis_source_sha256:h,human_accepted:false};
+const old={diameter_nominal_mm:null,axis_rule_vertical_DN_segments_json:JSON.stringify([vertical])};
+const record={axis_edge_id:'E',axis_nodes:['T','V'],axis_attribute_paths:structuredClone(edge.attribute_paths),system:'supply',floor:2,nominal_mm:200,axis_T:'T',main_arms:['L','R'],source_scope_id:'PLAN',horizontal_segment_domains:[{edge_id:'E',system:'supply',path_index:0,segment_index:1,scope_points:[[0,-10],[20,-30]],direction_class:'horizontal',native_source_status:'single_source_line_covers'}],excluded_marker_display_segment:2,retained_vertical_domains:[{...vertical,source_field:'axis_rule_vertical_DN_segments_json',new_vertical_value_assigned:false}],whole_physical_DN_complete:true,plan_source_sha256:h,native_axis_source_sha256:h,axis_labels_validation_only:true,individual_device_correspondence_assigned:false,new_vertical_values_assigned:0,physical_length_mm:null,related_HIL_confirmation_inherited:false,human_accepted:false};
+const root={mode:'qualified_plan_seeded_axis_branch_DN_current_viewer_v1',records:[record],count:1,source_bindings:{native_proof:h,parent_provider:h,native_axis_graph:h,native_axis_source:h,rendered_graph:h,attribute_context_graph:h,plan_source:h,plan_graph:h},complete_original_native_replay:true,graph_mutated:false,vertical_values_assigned:0,physical_lengths_assigned:0,individual_device_correspondences_assigned:0,human_accepted:false};
+const context={current_rendered_graph_sha256:h,plan_seeded_axis_branch_DN:root};
+assert.equal(checkedPlanBranchDN(edge,context,old).nominal_mm,200);assert.equal(Object.keys(planBranchDNCsvValues(edge,context,old)).length,6);
+assert.ok(planBranchDNProperties(edge,true,context,old).some(([k])=>k==='竖段管径来源'));
+assert.ok(!('physical_length_mm'in planBranchDNCsvValues(edge,context,old)));
+for(const mutate of[c=>c.plan_seeded_axis_branch_DN.records[0].horizontal_segment_domains[0].segment_index=2,c=>c.plan_seeded_axis_branch_DN.records[0].horizontal_segment_domains[0].scope_points=[[0,0],[1,1]],c=>c.plan_seeded_axis_branch_DN.records[0].retained_vertical_domains=[],c=>c.plan_seeded_axis_branch_DN.records[0].retained_vertical_domains[0].axis_source_sha256='b'.repeat(64),c=>c.plan_seeded_axis_branch_DN.records[0].individual_device_correspondence_assigned=true,c=>c.plan_seeded_axis_branch_DN.records[0].physical_length_mm=0,c=>c.plan_seeded_axis_branch_DN.source_bindings.plan_source='b'.repeat(64),c=>c.plan_seeded_axis_branch_DN.records.push(structuredClone(record))]){
+ const bad=structuredClone(context);mutate(bad);assert.equal(checkedPlanBranchDN(edge,bad,old),null);assert.deepEqual(planBranchDNCsvValues(edge,bad,old),{});
+}
+for(const bad of[{...old,axis_rule_vertical_DN_segments_json:'[]'},{...old,diameter_nominal_mm:80},{...old,axis_rule_vertical_DN_segments_json:JSON.stringify([{...vertical,nominal_mm:80}])}])assert.equal(checkedPlanBranchDN(edge,context,bad),null);
+const partial=structuredClone(context);partial.plan_seeded_axis_branch_DN.records[0].retained_vertical_domains=[];partial.plan_seeded_axis_branch_DN.records[0].whole_physical_DN_complete=false;
+assert.equal(checkedPlanBranchDN(edge,partial,{}).whole_physical_DN_complete,false);
+assert.equal(checkedPlanBranchDN({...edge,system:'return'},context,old),null);
+console.log('Plan main DN, exact retained11 vertical partition, separate source/identity and unknown length guards passed');

@@ -1,0 +1,101 @@
+[
+  {
+    "a": [
+      2216790.090435891,
+      293328.7341397114
+    ],
+    "b": [
+      2217465.742515404,
+      293328.7341397114
+    ],
+    "source_handles": [
+      "23A69",
+      "23A6A"
+    ],
+    "gap_length": 675.6520795128308,
+    "maximum_gap": 859.8871898136075,
+    "calibration_blocks": [
+      "蝶阀",
+      "闸阀"
+    ],
+    "crossings": [
+      {
+        "crossing": [
+          2217089.368251012,
+          293328.7341397114
+        ],
+        "crossed_handle": "23A51",
+        "crossed_source_system": "supply"
+      }
+    ],
+    "status": "normalized",
+    "crossing_connectivity": "independent_pipes_no_junction",
+    "relative_elevation": "unknown"
+  },
+  {
+    "a": [
+      2236043.99292734,
+      293328.7341397114
+    ],
+    "b": [
+      2236407.981729463,
+      293328.7341397114
+    ],
+    "source_handles": [
+      "23A6B",
+      "23A6C"
+    ],
+    "gap_length": 363.98880212334916,
+    "maximum_gap": 859.8871898136075,
+    "calibration_blocks": [
+      "蝶阀",
+      "闸阀"
+    ],
+    "crossings": [
+      {
+        "crossing": [
+          2236229.4503004868,
+          293328.7341397114
+        ],
+        "crossed_handle": "23B8F",
+        "crossed_source_system": "supply"
+      }
+    ],
+    "status": "normalized",
+    "crossing_connectivity": "independent_pipes_no_junction",
+    "relative_elevation": "unknown"
+  },
+  {
+    "a": [
+      2254074.009045362,
+      293328.7341397114
+    ],
+    "b": [
+      2254580.15815454,
+      293328.7341397114
+    ],
+    "source_handles": [
+      "23A6C",
+      "23A6D"
+    ],
+    "gap_length": 506.1491091782227,
+    "maximum_gap": 859.8871898136075,
+    "calibration_blocks": [
+      "蝶阀",
+      "闸阀"
+    ],
+    "crossings": [
+      {
+        "crossing": [
+          2254297.566259565,
+          293328.7341397114
+        ],
+        "crossed_handle": "23DDB",
+        "crossed_source_system": "supply"
+      }
+    ],
+    "status": "normalized",
+    "crossing_connectivity": "independent_pipes_no_junction",
+    "relative_elevation": "unknown"
+  }
+]

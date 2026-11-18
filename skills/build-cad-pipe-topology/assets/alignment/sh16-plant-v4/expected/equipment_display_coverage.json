@@ -1,0 +1,156 @@
+[
+  {
+    "node_id": "CH-01",
+    "status": "native_body",
+    "source_handles": [
+      "23A45"
+    ]
+  },
+  {
+    "node_id": "CHWP-1",
+    "rule": "complete_pump_body_unique_radial_lead_to_short_side_midpoint_of_closed_rectangle",
+    "status": "complete_native_display_family",
+    "candidates": [
+      [
+        "23B24",
+        "23A75"
+      ]
+    ],
+    "source_handles": [
+      "23A5C",
+      "23A5D",
+      "23A5E",
+      "23A5F",
+      "23A75",
+      "23B24"
+    ]
+  },
+  {
+    "node_id": "HE-01",
+    "status": "native_body",
+    "source_handles": [
+      "23AA3"
+    ]
+  },
+  {
+    "node_id": "CH-02",
+    "status": "native_body",
+    "source_handles": [
+      "23B85"
+    ]
+  },
+  {
+    "node_id": "CHWP-2",
+    "rule": "complete_pump_body_unique_radial_lead_to_short_side_midpoint_of_closed_rectangle",
+    "status": "complete_native_display_family",
+    "candidates": [
+      [
+        "23BDC",
+        "23BA6"
+      ]
+    ],
+    "source_handles": [
+      "23B9A",
+      "23B9B",
+      "23B9C",
+      "23B9D",
+      "23BA6",
+      "23BDC"
+    ]
+  },
+  {
+    "node_id": "HE-02",
+    "status": "native_body",
+    "source_handles": [
+      "23BB1"
+    ]
+  },
+  {
+    "node_id": "CH-03",
+    "status": "native_body",
+    "source_handles": [
+      "23DC1"
+    ]
+  },
+  {
+    "node_id": "CHWP-3",
+    "rule": "complete_pump_body_unique_radial_lead_to_short_side_midpoint_of_closed_rectangle",
+    "status": "complete_native_display_family",
+    "candidates": [
+      [
+        "23E27",
+        "23DF2"
+      ]
+    ],
+    "source_handles": [
+      "23DE6",
+      "23DE7",
+      "23DE8",
+      "23DE9",
+      "23DF2",
+      "23E27"
+    ]
+  },
+  {
+    "node_id": "HE-03",
+    "status": "native_body",
+    "source_handles": [
+      "23DFC"
+    ]
+  },
+  {
+    "node_id": "ECT-01",
+    "status": "native_body",
+    "source_handles": [
+      "23FBD"
+    ]
+  },
+  {
+    "node_id": "ECT-02",
+    "status": "native_body",
+    "source_handles": [
+      "240EE"
+    ]
+  },
+  {
+    "node_id": "CST-1",
+    "status": "native_body",
+    "source_handles": [
+      "23F18"
+    ]
+  },
+  {
+    "node_id": "CST-2",
+    "status": "native_body",
+    "source_handles": [
+      "23CC1"
+    ]
+  },
+  {
+    "node_id": "SC01-01",
+    "status": "native_verified_package_enclosure",
+    "source_handles": [
+      "23F5E",
+      "23F5F",
+      "23F61",
+      "23F65",
+      "23F68",
+      "23F69",
+      "23F6A",
+      "23F6B",
+      "23F6C",
+      "23F6D",
+      "23F72",
+      "23F73",
+      "23F74",
+      "23F75",
+      "23F78",
+      "23F79",
+      "23F7A",
+      "23F7B",
+      "23F88",
+      "23F8D",
+      "23F8E"
+    ]
+  }
+]

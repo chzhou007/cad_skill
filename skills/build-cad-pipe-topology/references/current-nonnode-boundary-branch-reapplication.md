@@ -1,0 +1,15 @@
+# Reapply existing non-node source boundaries across complete current main Ts
+
+A source edge with `end_node_id: null` and an explicit `end_boundary_id` is not automatically broken topology. Preserve the non-node boundary and its source evidence. Never fabricate a terminal node, restore a retired virtual device, or infer a remote equipment instance to make matching easier.
+
+Run `pipeline.py reconstruct-nonnode-boundary-branches --manifest MANIFEST --output NEW`. Pin the current complete provider, axis graph/source, all three plan graphs/sources, current T configuration, viewer manifest and actual effective values. Strict Chinese extraction precedes experiments. Screen every explicit plan boundary edge, retain existing writers, and record a specific pending reason for unsupported types or absent independent anchors.
+
+Reuse the unchanged `ordered_anchor_branch_paths.retained_boundary_geometry` for expert two-bar boundaries, including its inherited rounding and XYZ preservation. Reuse the complete independent main-arm guard, original outward reader, native T readers, current plan source-path audit and separate axis marker-port collector. Require both adopted ordinary main arms, a unique off-main branch, same system/floor, exact retained boundary identity and complete native pipe coverage. Only the independently re-read axis marker display segment is excluded from physical coverage; it does not connect supply and return.
+
+`validate-nonnode-boundary-branches --verify-output NEW` independently recomputes the complete cohort. Matching assigns drawing scope only: no whole-edge DN, omitted or installed length, physical port or remote equipment identity. All vertical parts remain drawing-11 owned.
+
+Adopt through `refresh-nonnode-boundary-viewer --parent VIEWER --output NEW --proof PROOF --parent-provider CURRENT_PROVIDER --templates TEMPLATES --port PORT`; validate with `validate-nonnode-boundary-viewer --verify-output NEW`. Append a distinct context and six export fields. Preserve every old context root, every old exported cell, cap-stage provenance, original graph/components and annotation history. Recompute the provider and actual-effective completion census. Native qualification, actual reader adoption, browser/CSV evidence and HIL remain separate gates.
+
+SH16 current cohort: ten non-node boundary edges; eight already have providers. Existing rules qualify return 10/E0166 → 11/E0462 and supply 10/E0182 → 11/E0578 at independently mapped main Ts. A-UT0094 and A-UT0191 remain non-node source boundaries. Unknown UT0095 and the earlier capped UT0192 are distinct types and cannot inherit this result by visual adjacency.
+
+Regression: explicit null endpoint with retained boundary; old-writer preservation; missing/duplicate boundary ownership; unsupported boundary type; false node promotion; no ordinary anchor; incomplete main-arm proof; different systems/ports/floors and invalid source scope. Inherit the source-boundary, original outward/T/path, capped correspondence and actual-effective suites. Never replace source identity with row order, nearest coordinates or equal DN.

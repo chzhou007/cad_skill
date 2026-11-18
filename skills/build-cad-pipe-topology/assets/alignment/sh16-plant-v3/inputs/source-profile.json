@@ -1,0 +1,163 @@
+{
+  "project_id": "SH16-03-e9049b84",
+  "system_layers": {
+    "HVAC-D-CHWS": "supply",
+    "HVAC-D-CHWR": "return",
+    "HVAC-D-CWS": "cooling_water"
+  },
+  "auxiliary_pipe_layer": "HVAC-D-BS",
+  "native_lead_layers": [
+    "HVAC-D-LH",
+    "HVAC-D-L1"
+  ],
+  "pump_lead_layer": "HVAC-D-LH",
+  "pump_tag_prefixes": [
+    "CHWP-",
+    "CWP-"
+  ],
+  "equipment_blocks": {
+    "chiller": {
+      "label": "Chiller",
+      "symbol_key": "EQ_CHILLER"
+    },
+    "HX": {
+      "label": "Heat Exchanger",
+      "symbol_key": "EQ_HX"
+    }
+  },
+  "inline_types": {
+    "蝶阀": [
+      "Butterfly Valve",
+      "BF"
+    ],
+    "电动蝶阀": [
+      "Motorized Butterfly Valve",
+      "MBF"
+    ],
+    "橡胶软连接": [
+      "Rubber Flexible Connector",
+      "RFC"
+    ],
+    "金属软连接": [
+      "Metal Flexible Connector",
+      "MFC"
+    ],
+    "闸阀": [
+      "Gate Valve",
+      "GV"
+    ],
+    "Y型过滤器": [
+      "Y Strainer",
+      "YS"
+    ],
+    "单向阀": [
+      "Check Valve",
+      "CV"
+    ],
+    "电动调节阀": [
+      "Motorized Control Valve",
+      "MCV"
+    ],
+    "平衡阀": [
+      "Balancing Valve",
+      "BV"
+    ],
+    "防倒流截止器": [
+      "Backflow Preventer",
+      "BFP"
+    ],
+    "压力表": [
+      "Pressure Gauge",
+      "PG"
+    ],
+    "温度计+压力表": [
+      "Temperature and Pressure Instrument",
+      "TPI"
+    ],
+    "温度表": [
+      "Thermometer",
+      "TH"
+    ],
+    "远传水表": [
+      "Remote Water Meter",
+      "WM"
+    ],
+    "传感器": [
+      "Sensor",
+      "SNS"
+    ]
+  },
+  "inline_bridge_blocks": [
+    "Y型过滤器",
+    "单向阀",
+    "平衡阀",
+    "橡胶软连接",
+    "电动蝶阀",
+    "电动调节阀",
+    "蝶阀",
+    "远传水表",
+    "金属软连接",
+    "闸阀",
+    "防倒流截止器"
+  ],
+  "tolerance_native_units": 0.5,
+  "external_interfaces": [
+    {
+      "text_regex": "接自冷却水箱补水",
+      "system": "makeup_water",
+      "label": "Cooling Water Tank Makeup",
+      "annotation_layers": [
+        "HVAC-D-TEXT",
+        "HVAC-D-BZ"
+      ],
+      "max_tip_gap_text_heights": 0.15
+    }
+  ],
+  "ambiguous_system": "unclassified_water",
+  "inline_contact_fractions": {
+    "防倒流截止器": 0.15
+  },
+  "inline_contact_tolerance_evidence": {
+    "防倒流截止器": {
+      "source_block": "防倒流截止器",
+      "source_insert_handle": "240AC",
+      "observed_pipe_to_visible_primitive_gap": 71.6473278161,
+      "rule": "unique pair of opposite collinear pipe terminals spanning the complete native block; bounded drafting clearance; source classification remains pending"
+    }
+  },
+  "material_equipment_rules": [
+    {
+      "tag_regex": "CST-[0-9]+",
+      "material_name_regex": "闭式蓄冷罐",
+      "preserve_tag": true,
+      "minimum_source_ports": 2,
+      "label": "Thermal Storage Tank"
+    },
+    {
+      "tag_regex": "SC[0-9]+-[0-9]+",
+      "material_name_regex": "^加药装置$",
+      "geometry_family": "vendor_package_enclosure",
+      "vendor_note_regex": "虚线框内为厂家配套",
+      "caption_regex": "加药装置",
+      "preserve_tag": true,
+      "minimum_source_ports": 2,
+      "label": "Dosing Unit"
+    }
+  ],
+  "exploded_flange_layers": [
+    "HVAC-D-阀门仪表"
+  ],
+  "source_terminal_glyph_rules": [
+    {
+      "symbol_layers": [
+        "HVAC-D-LH",
+        "U-ANNO-TTLB"
+      ],
+      "pipe_layers": [
+        "HVAC-D-CWS"
+      ],
+      "system": "cooling_water",
+      "label": "Source-marked Terminal"
+    }
+  ]
+}

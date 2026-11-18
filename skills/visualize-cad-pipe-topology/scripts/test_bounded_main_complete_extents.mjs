@@ -1,0 +1,27 @@
+import test from 'node:test';import assert from 'node:assert/strict';
+import {checkedBoundedMainExtent,checkedBoundedMainQuarantine,boundedMainCsvValues,boundedMainProperties} from '../assets/viewer/public/anchor-bounded-main-attributes.js';
+import {crossViewAttributeCsvValues,edgeAttributeCsvFields} from '../assets/viewer/public/edge-attributes.js';
+function fixture(){
+ const h='a'.repeat(64),v='b'.repeat(64),edge={edge_id:'A',system:'supply',start_node_id:'T1',end_node_id:'T2',floor_start:2,floor_end:2,attribute_paths:[[[0,0],[100,0]]]};
+ const row={axis_edge_id:'A',mapping_id:'M',floor:2,system:'supply',axis_start_node:'T1',axis_end_node:'T2',axis_attribute_paths:structuredClone(edge.attribute_paths),plan_edges:['P'],plan_Ts:['P1','P2'],axis_Ts:['T1','T2'],nominal_mm:300,plan_DN_record:{nominal_mm:300,system:'supply',human_accepted:false,lineage:[]},plan_horizontal_projection:{value_mm:20000,pieces:[{plan_edge:'P',length_mm:20000}],installed_whole_edge_length_mm:null},metric_reader:'inherited_native_plan_projection',whole_axis_DN_selected:true,whole_axis_physical_length_mm:null,net_pipe_cut_length_mm:null,related_HIL_confirmation_inherited:false,human_accepted:false,source_sha256:{plan:h,iso:h},plan_graph_sha256:h,DN_status:'exact_qualified_local_plan_DN_retained_not_fresh_global_DN_rebuild'};
+ const context={source_graph_sha256:h,rendered_graph_sha256:v,anchor_bounded_mains:{mode:'qualified_native_anchor_bounded_main_attributes_v1',records:[row],axis_edges:1,source_bindings:{axis_graph:h,rendered_graph:v,native_proof:h,DN_receipt:h,DN_result:h},local_topology_mutated:false,physical_lengths_assigned:0,human_accepted:false}};
+ return{edge,row,context};
+}
+function complete(){
+ const f=fixture(),h='a'.repeat(64),v='b'.repeat(64);const r={axis_edge_id:'A',mapping_id:'M',plan_edge_id:'P',nominal_mm:300,system:'supply',axis_start_node:'T1',axis_end_node:'T2',axis_attribute_paths:structuredClone(f.edge.attribute_paths),prior_bounded_scope:structuredClone(f.row),complete_horizontal_centerline_route_mm:20000,whole_installed_length_mm:null,net_pipe_cut_length_mm:null,source_paths_mutated:false,related_HIL_confirmation_inherited:false,human_accepted:false,source_hashes:{plan:{graph_sha256:h,source_sha256:h},iso:{graph_sha256:h,source_sha256:h}}};
+ f.context.anchor_bounded_mains.complete_main_extents={mode:'qualified_native_bounded_main_complete_extents_v1',records:[r],axis_edges:1,source_bindings:{axis_graph:h,rendered_graph:v,native_proof:h,bounded_parent_proof:h,plan_graph:h,axis_local_graph:h},existing_correspondences_unchanged:true,DN_observations_preserved:true,old_bounded_records_preserved:true,local_graphs_mutated:false,installed_lengths_assigned:0,net_pipe_cut_lengths_assigned:0,human_accepted:false};return{...f,r};
+}
+test('complete centreline enters actual common CSV without changing existing DN or installed length',()=>{
+ const f=complete();assert.equal(checkedBoundedMainExtent(f.edge,f.context),f.r);const value=crossViewAttributeCsvValues(f.edge,f.context);assert.equal(value.batch_complete_horizontal_centerline_mm,20000);assert.equal(value.diameter_nominal_mm,300);assert.equal(value.crossview_whole_edge_length_mm,'');assert.equal(Object.fromEntries(boundedMainProperties(f.edge,true,f.context))['完整水平中心线路由'],'20.000 m');assert(edgeAttributeCsvFields.includes('bounded_main_complete_extent_proof_sha256'));
+ const old=structuredClone(f.context);delete old.anchor_bounded_mains.complete_main_extents;const before=crossViewAttributeCsvValues(f.edge,old);for(const[k,v]of Object.entries(before))assert.deepEqual(value[k],v,k);
+});
+test('changed original owner, scope, proof hash or physical value disables only completion',()=>{
+ for(const mode of['owner','path','proof','physical','DN','metric']){
+ const f=complete();if(mode==='owner')f.r.prior_bounded_scope.mapping_id='other';if(mode==='path')f.r.axis_attribute_paths[0][1][0]=99;if(mode==='proof')f.context.anchor_bounded_mains.complete_main_extents.source_bindings.native_proof='bad';if(mode==='physical')f.r.whole_installed_length_mm=0;if(mode==='DN')f.r.nominal_mm=200;if(mode==='metric')f.r.complete_horizontal_centerline_route_mm=19999;assert.equal(checkedBoundedMainExtent(f.edge,f.context),null,mode);assert.equal(boundedMainCsvValues(f.edge,f.context).diameter_nominal_mm,300);assert.equal(boundedMainCsvValues(f.edge,f.context).batch_complete_horizontal_centerline_mm,undefined);
+ }
+});
+
+test('native compound carrier removes active scalar but preserves mapping and source observation',()=>{
+ const f=complete(),root=f.context.anchor_bounded_mains.complete_main_extents;root.records=[];root.axis_edges=0;f.r.complete_horizontal_centerline_route_mm=null;f.r.reason='compound_carrier_requires_its_member_identity_not_scalar_main_extent';f.r.carrier_evidence=[{source_LINE:'L',edges:[{edge_id:'P'}],declarations:[{normalized_text:'DN300(3.600)/DN200(3.000)',members:[{nominal_mm:300},{nominal_mm:200}]}]}];root.quarantined_records=[f.r];root.quarantined_axis_edges=1;
+ assert.equal(checkedBoundedMainQuarantine(f.edge,f.context),f.r);const csv=crossViewAttributeCsvValues(f.edge,f.context);assert.equal(csv.diameter_nominal_mm,'');assert.equal(csv.diameter_status,'compound_carrier_member_identity_pending');assert.equal(csv.bounded_main_prior_scalar_DN_mm,300);assert.equal(csv.bounded_main_plan_pipe_XY_mm,20000);assert.equal(csv.crossview_mapping_id,'M');assert.equal(csv.crossview_plan_horizontal_projection_mm,'');assert.equal(csv.batch_complete_horizontal_centerline_mm,undefined);
+});

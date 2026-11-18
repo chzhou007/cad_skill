@@ -1,5 +1,6 @@
 """Regression tests for local HIL persistence, review semantics and portable pairs."""
 import base64
+import hashlib
 import copy
 import io
 import json
@@ -59,6 +60,20 @@ class HilTest(unittest.TestCase):
         self.assertEqual(identity(other),identity(self.manifest))
         other['sourceHashes']['graph']='new-topology'
         self.assertNotEqual(identity(other),identity(self.manifest))
+
+    def test_bound_viewer_graph_rejects_changed_bytes_and_changes_identity(self):
+        graph_path=self.root/'public/data/graph.json'
+        manifest_path=self.root/'public/data/manifest.json'
+        manifest=copy.deepcopy(self.manifest)
+        manifest['reviewContentHashes']={'viewer_graph':hashlib.sha256(graph_path.read_bytes()).hexdigest()}
+        manifest_path.write_text(json.dumps(manifest),encoding='utf8')
+        store=ReviewStore(self.root)
+        self.assertNotEqual(store.dataset,self.store.dataset)
+        data=json.loads(graph_path.read_text(encoding='utf8'))
+        data['edges'][0]['start_node_id']='N2'
+        graph_path.write_text(json.dumps(data),encoding='utf8')
+        with self.assertRaises(ReviewError) as error: ReviewStore(self.root)
+        self.assertEqual(error.exception.status,409)
 
     def test_unicode_restart_source_coordinates_and_history(self):
         d=self.initial();e=d['errors'][0]
@@ -183,19 +198,39 @@ class HilTest(unittest.TestCase):
         thread=threading.Thread(target=server.serve_forever,daemon=True);thread.start()
         origin=f'http://127.0.0.1:{server.server_port}'
         try:
-            doc=json.load(urlopen(origin+'/api/review',timeout=3))
+            with urlopen(origin+'/api/review',timeout=3) as response:doc=json.load(response)
             doc['errors']=[self.issue()];body=json.dumps({'baseRevision':0,'document':doc}).encode()
             for headers,status in [({'Origin':'http://untrusted.test','Content-Type':'application/json'},403),
                                    ({'Origin':origin,'Content-Type':'text/plain'},415)]:
                 with self.subTest(status=status):
                     with self.assertRaises(HTTPError) as exc:urlopen(Request(origin+'/api/review',data=body,method='PUT',headers=headers),timeout=3)
                     self.assertEqual(exc.exception.code,status)
+                    with exc.exception as response:self.assertIn('error',json.load(response))
             request=Request(origin+'/api/review',data=body,method='PUT',headers={'Origin':origin,'Content-Type':'application/json'})
-            self.assertEqual(json.load(urlopen(request,timeout=3))['revision'],1)
+            with urlopen(request,timeout=3) as response:self.assertEqual(json.load(response)['revision'],1)
             with self.assertRaises(HTTPError) as exc:urlopen(request,timeout=3)
             self.assertEqual(exc.exception.code,409)
+            exc.exception.close()
         finally:
             server.shutdown();server.server_close();thread.join(timeout=3)
+
+    def test_rejected_request_body_is_consumed_before_reply_without_mutation(self):
+        for origin,content_type,status in [('http://untrusted.test','application/json',403),
+                                           ('http://localhost:1234','text/plain',415)]:
+            with self.subTest(status=status):
+                body=b'not JSON: must never be parsed or saved'
+                class Handler(HilHandlerMixin):
+                    headers={'Host':'localhost:1234','Origin':origin,
+                             'Content-Type':content_type,'Content-Length':str(len(body))}
+                    rfile=io.BytesIO(body)
+                    review_store=self.store
+                    def json_reply(handler,code,value):
+                        self.assertEqual(handler.rfile.tell(),len(body))
+                        self.assertEqual(code,status)
+                        self.assertIn('error',value)
+                with patch.object(self.store,'save') as save,patch.object(self.store,'import_expert') as expert:
+                    Handler().mutation()
+                    save.assert_not_called();expert.assert_not_called()
 
 
 if __name__=='__main__':unittest.main()
